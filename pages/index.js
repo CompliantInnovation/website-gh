@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import HeaderNav from '../components/HeaderNav'
-import Image from 'next/image'
 import LogoAnimation from '../components/LogoAnimation'
 import NumberScroll from '../components/NumberScroll'
 import Carousel from '../components/Carousel'
