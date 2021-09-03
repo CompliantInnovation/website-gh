@@ -8,12 +8,11 @@ module.exports = {
   exportPathMap: function () {
     return {
       '/': { page: '/' },
-      '/about': { page: '/about' },
-      '/medical-device': { page: '/medical-device' }
+      '/about': { page: '/about' }
     }
   },
   //assetPrefix: '',
-  assetPrefix: !debug ? '/website-gh/' : '',
+  assetPrefix: '/website-gh/',
   webpack: (config, { dev }) => {
     // Perform customizations to webpack config
     // console.log('webpack');
