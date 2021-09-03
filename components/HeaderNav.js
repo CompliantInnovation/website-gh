@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import logo from '../public/images/logo.svg'
 
 export default function HeaderNav() {
   const router = useRouter()
@@ -8,7 +9,7 @@ export default function HeaderNav() {
     <nav>
       <Link href='/'>
         <a>
-          <image src='/images/logo.svg' height={60} width={140} />
+          <image src={logo} height={60} width={140} />
         </a>
       </Link>
 
