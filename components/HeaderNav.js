@@ -5,7 +5,7 @@ import logo from '../public/images/blog-post.png'
 export default function HeaderNav() {
   const router = useRouter()
 
-  console.log('logo', logo.src)
+  console.log('logo', logo)
 
   return (
     <nav>
