@@ -1,0 +1,45 @@
+:root {
+  --blueDark: #234681;
+  --blueDocspera: #0096fa;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+p {
+  font-size: 16px;
+  max-width: 450px;
+}
+
+/* button {
+  background-color: var(--blueDocspera);
+  border: none;
+  border-radius: 5px;
+  filter: drop-shadow(0, 3px, 6px, black);
+  color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+} */
+
+* {
+  box-sizing: border-box;
+}
+
+.carousel-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.case-study-section,
+.blog-section {
+  max-width: 1150px;
+}
