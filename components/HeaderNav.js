@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { useRouter } from 'next/router'
 
 export default function HeaderNav() {
@@ -9,7 +8,7 @@ export default function HeaderNav() {
     <nav>
       <Link href='/'>
         <a>
-          <Image src='/images/logo.svg' height={60} width={140} />
+          <image src='/images/logo.svg' height={60} width={140} />
         </a>
       </Link>
 
