@@ -44,6 +44,8 @@ export default function HeaderNav() {
           padding-right: 30px;
           position: fixed;
           top: 0;
+          z-index: 10000;
+          height: 50px;
         }
 
         #right-side {
