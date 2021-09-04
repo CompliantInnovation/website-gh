@@ -14,7 +14,7 @@ export default function Home() {
       </Head>
       <HeaderNav />
 
-      {/* <img id='landing-bg' src='/images/hexagon_bottom.png' width={'100%'} /> */}
+      <img id='landing-bg' src='/images/hexagon_bottom.png' width={'100%'} />
       {/* <Image src='/images/hexagon_bottom.png' height={1200} width={2300} /> */}
 
       <div id='logo-animation'>
@@ -64,7 +64,7 @@ export default function Home() {
           </p>
         </div>
 
-        {/* <img id='connecting-graphic' src='/images/connecting2.png' /> */}
+        <img id='connecting-graphic' src='/images/connecting2.png' />
       </div>
 
       <div className='carousel-container'>
