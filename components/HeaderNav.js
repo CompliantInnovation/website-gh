@@ -11,7 +11,7 @@ export default function HeaderNav() {
     <nav>
       <Link href='/'>
         <a>
-          <image src={logo.src} height={60} width={140} />
+          <image src={logo} height={60} width={140} />
         </a>
       </Link>
 
