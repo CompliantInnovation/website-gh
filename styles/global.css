@@ -1,6 +1,7 @@
 :root {
   --blueDark: #234681;
   --blueDocspera: #0096fa;
+  --blueLight: #daf0fb;
 }
 
 html,
@@ -15,7 +16,7 @@ body {
 
 p {
   font-size: 16px;
-  max-width: 450px;
+  max-width: 550px;
 }
 
 /* button {
