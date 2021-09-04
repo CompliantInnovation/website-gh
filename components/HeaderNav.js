@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import logo from '../public/static/blog-post.png'
+import logo from '../public/images/blog-post.png'
 
 export default function HeaderNav() {
   const router = useRouter()

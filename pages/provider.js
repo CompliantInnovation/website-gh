@@ -48,7 +48,7 @@ export default function Provider() {
           </p>
           <div className='provider-solutions-row'>
             <div>
-              {/* <img src='images/scheduling.png' /> */}
+              <img src='images/scheduling.png' />
               <h4>Integrated Surgical Scheduling</h4>
               <h6>Coordination across entire care team</h6>
               <p>
@@ -60,7 +60,7 @@ export default function Provider() {
               </p>
             </div>
             <div>
-              {/* <img src='/images/smart-scheduling.png' /> */}
+              <img src='/images/smart-scheduling.png' />
               <h4>Optimized & Coordinated</h4>
               <h6>Coordination across entire care team</h6>
               <p>
@@ -71,7 +71,7 @@ export default function Provider() {
               </p>
             </div>
             <div>
-              {/* <img src='/images/episode-of-care.png' /> */}
+              <img src='/images/episode-of-care.png' />
               <h4>Episode of Care</h4>
               <h6>Coordination across entire care team</h6>
               <p>
