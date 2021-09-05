@@ -1,16 +1,28 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { useMedia } from '../hooks/useMedia'
 
 export default function HeaderNav() {
   const router = useRouter()
+  const isBrowser = () => typeof window !== 'undefined'
+
+  let tabletSize
+  if (isBrowser) {
+    tabletSize = useMedia('(max-width: 775px)')
+  }
 
   return (
     <nav>
-      <Link href='/'>
+      {isBrowser && (
         <a>
-          <image src={'images/logo.svg'} height={60} width={140} />
+          <img
+            src={`${tabletSize ? 'images/logo-short.png' : 'images/logo.svg'}`}
+            height={`${tabletSize ? 40 : 70}`}
+            width={`${tabletSize ? 40 : 150}`}
+          />
         </a>
-      </Link>
+      )}
+      {/* <Link href='/'></Link> */}
 
       <div id='right-side'>
         <div id='nav-items'>
@@ -44,11 +56,12 @@ export default function HeaderNav() {
           position: fixed;
           top: 0;
           z-index: 10000;
-          height: 50px;
+          height: 60px;
         }
 
         #right-side {
           display: flex;
+          align-items: center;
         }
 
         #nav-items {
