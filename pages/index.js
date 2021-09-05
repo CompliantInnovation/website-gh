@@ -14,8 +14,8 @@ export default function Home() {
       </Head>
       <HeaderNav />
 
-      <img id='landing-bg' src='/images/hexagon_bottom.png' width={'100%'} />
-      {/* <Image src='/images/hexagon_bottom.png' height={1200} width={2300} /> */}
+      <img id='landing-bg' src='images/hexagon_bottom.png' width={'100%'} />
+      {/* <Image src='images/hexagon_bottom.png' height={1200} width={2300} /> */}
 
       <div id='logo-animation'>
         <LogoAnimation />
@@ -23,20 +23,15 @@ export default function Home() {
 
       <div className='statistics'>
         <NumberScroll
-          imgSrc='/images/patient-volume.png'
+          imgSrc='images/patient-volume.png'
           number={100000}
           title='Monthly Patient Volume'
           plus
         />
+        <NumberScroll imgSrc='images/surgeon-users.png' number={6000} title='Surgical Users' plus />
+        <NumberScroll imgSrc='images/episodic-cases.png' number={350000} title='Episodic Cases' />
         <NumberScroll
-          imgSrc='/images/surgeon-users.png'
-          number={6000}
-          title='Surgical Users'
-          plus
-        />
-        <NumberScroll imgSrc='/images/episodic-cases.png' number={350000} title='Episodic Cases' />
-        <NumberScroll
-          imgSrc='/images/practices.png'
+          imgSrc='images/practices.png'
           number={300}
           title='Practices, ASCs & Hospitals'
           plus
@@ -64,7 +59,7 @@ export default function Home() {
           </p>
         </div>
 
-        <img id='connecting-graphic' src='/images/connecting2.png' />
+        <img id='connecting-graphic' src='images/connecting2.png' />
       </div>
 
       <div className='carousel-container'>

@@ -20,23 +20,23 @@ export default function MedicalDevicePage() {
         </p>
         <div className='statistics'>
           <NumberScroll
-            imgSrc='/images/surgeon-users.png'
+            imgSrc='images/surgeon-users.png'
             number={6000}
             title='Surgeon Users'
             plus
           />
           <NumberScroll
-            imgSrc='/images/surgical-cases.png'
+            imgSrc='images/surgical-cases.png'
             number={350000}
             title='Surgical Cases'
             plus
           />
           <NumberScroll
-            imgSrc='/images/medical-device.png'
+            imgSrc='images/medical-device.png'
             number={'3/5'}
             title='Top Medical Device Companies'
           />
-          <NumberScroll imgSrc='/images/tech-partners.png' number={30} title='Tech Partners' plus />
+          <NumberScroll imgSrc='images/tech-partners.png' number={30} title='Tech Partners' plus />
         </div>
 
         <div id='offerings-section'>
@@ -156,7 +156,7 @@ export default function MedicalDevicePage() {
         <div id='insights-section'>
           <h2>Data Intelligence & RWD Insights</h2>
           <p>Support the capture of real-word data and insights across the surgical continuum</p>
-          <img src='/images/demand-intel.png' />
+          <img src='images/demand-intel.png' />
           <div id='insights-copy-div'>
             <div>
               <div className='insight-title-div'>
