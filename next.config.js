@@ -5,7 +5,7 @@
 const debug = process.env.NODE_ENV !== 'production'
 
 module.exports = {
-  basePath: '/website-gh',
+  // basePath: '/website-gh',
   exportPathMap: function () {
     return {
       '/': { page: '/' },
@@ -13,8 +13,8 @@ module.exports = {
     }
   },
   //assetPrefix: '',
-  // assetPrefix: !debug ? '/website-gh/' : '',
-  assetPrefix: '/website-gh/',
+  assetPrefix: !debug ? '/website-gh/' : '',
+  // assetPrefix: '/website-gh/',
   webpack: (config, { dev }) => {
     // Perform customizations to webpack config
     // console.log('webpack');
