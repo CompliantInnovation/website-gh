@@ -20,25 +20,29 @@ export default function Provider() {
         </p>
 
         <div className='statistics'>
-          <NumberScroll imgSrc='images/surgeon-users.png' number={6000} title='Surgeons' plus />
-          <NumberScroll
-            imgSrc='images/patient-volume.png'
-            number={100000}
-            title='Monthly Patient Visits'
-            plus
-          />
-          <NumberScroll
-            imgSrc='images/practices.png'
-            number={300}
-            title='Practices, ASCs and Hospitals'
-            plus
-          />
-          <NumberScroll
-            imgSrc='images/tech-partners.png'
-            number={350000}
-            title='Tech Partners'
-            plus
-          />
+          <div>
+            <NumberScroll imgSrc='images/surgeon-users.png' number={6000} title='Surgeons' plus />
+            <NumberScroll
+              imgSrc='images/patient-volume.png'
+              number={100000}
+              title='Monthly Patient Visits'
+              plus
+            />
+          </div>
+          <div>
+            <NumberScroll
+              imgSrc='images/practices.png'
+              number={300}
+              title='Practices, ASCs and Hospitals'
+              plus
+            />
+            <NumberScroll
+              imgSrc='images/tech-partners.png'
+              number={350000}
+              title='Tech Partners'
+              plus
+            />
+          </div>
         </div>
 
         <div className='provider-solutions'>
@@ -90,15 +94,11 @@ export default function Provider() {
         .container {
           padding: 0 5vw;
         }
-        .statistics {
-          padding-top: 200px;
-          display: flex;
-          justify-content: center;
-        }
         h2 {
           margin-top: 80px;
           max-width: 600px;
         }
+
         .provider-solutions {
           margin: 0 auto;
           max-width: 1150px;
