@@ -20,21 +20,21 @@ export default function Provider() {
         </p>
 
         <div className='statistics'>
-          <NumberScroll imgSrc='/images/surgeon-users.png' number={6000} title='Surgeons' plus />
+          <NumberScroll imgSrc='images/surgeon-users.png' number={6000} title='Surgeons' plus />
           <NumberScroll
-            imgSrc='/images/patient-volume.png'
+            imgSrc='images/patient-volume.png'
             number={100000}
             title='Monthly Patient Visits'
             plus
           />
           <NumberScroll
-            imgSrc='/images/practices.png'
+            imgSrc='images/practices.png'
             number={300}
             title='Practices, ASCs and Hospitals'
             plus
           />
           <NumberScroll
-            imgSrc='/images/tech-partners.png'
+            imgSrc='images/tech-partners.png'
             number={350000}
             title='Tech Partners'
             plus
@@ -60,7 +60,7 @@ export default function Provider() {
               </p>
             </div>
             <div>
-              <img src='/images/smart-scheduling.png' />
+              <img src='images/smart-scheduling.png' />
               <h4>Optimized & Coordinated</h4>
               <h6>Coordination across entire care team</h6>
               <p>
@@ -71,7 +71,7 @@ export default function Provider() {
               </p>
             </div>
             <div>
-              <img src='/images/episode-of-care.png' />
+              <img src='images/episode-of-care.png' />
               <h4>Episode of Care</h4>
               <h6>Coordination across entire care team</h6>
               <p>
