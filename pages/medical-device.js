@@ -107,7 +107,7 @@ export default function MedicalDevicePage() {
               <li>Right Location</li>
             </ul>
           </p>
-          <img src='/images/advanced-case-notification.svg' />
+          <img src='images/advanced-case-notification.svg' />
         </div>
 
         <div className='provider-solutions'>
@@ -129,7 +129,7 @@ export default function MedicalDevicePage() {
               </p>
             </div>
             <div>
-              <img src='/images/smart-scheduling.png' />
+              <img src='images/smart-scheduling.png' />
               <h4>Optimized & Coordinated</h4>
               <h6>Coordination across entire care team</h6>
               <p>
@@ -140,7 +140,7 @@ export default function MedicalDevicePage() {
               </p>
             </div>
             <div>
-              <img src='/images/episode-of-care.png' />
+              <img src='images/episode-of-care.png' />
               <h4>Episode of Care</h4>
               <h6>Coordination across entire care team</h6>
               <p>
