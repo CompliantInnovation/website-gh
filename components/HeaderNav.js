@@ -14,15 +14,16 @@ export default function HeaderNav() {
   return (
     <nav>
       {isBrowser && (
-        <a>
-          <img
-            src={`${tabletSize ? 'images/logo-short.png' : 'images/logo.svg'}`}
-            height={`${tabletSize ? 40 : 70}`}
-            width={`${tabletSize ? 40 : 150}`}
-          />
-        </a>
+        <Link href='/'>
+          <a>
+            <img
+              src={`${tabletSize ? 'images/logo-short.png' : 'images/logo.svg'}`}
+              height={`${tabletSize ? 40 : 70}`}
+              width={`${tabletSize ? 40 : 150}`}
+            />
+          </a>
+        </Link>
       )}
-      {/* <Link href='/'></Link> */}
 
       <div id='right-side'>
         <div id='nav-items'>
