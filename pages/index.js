@@ -22,20 +22,29 @@ export default function Home() {
       </div>
 
       <div className='statistics'>
-        <NumberScroll
-          imgSrc='images/patient-volume.png'
-          number={100000}
-          title='Monthly Patient Volume'
-          plus
-        />
-        <NumberScroll imgSrc='images/surgeon-users.png' number={6000} title='Surgical Users' plus />
-        <NumberScroll imgSrc='images/episodic-cases.png' number={350000} title='Episodic Cases' />
-        <NumberScroll
-          imgSrc='images/practices.png'
-          number={300}
-          title='Practices, ASCs & Hospitals'
-          plus
-        />
+        <div>
+          <NumberScroll
+            imgSrc='images/patient-volume.png'
+            number={100000}
+            title='Monthly Patient Volume'
+            plus
+          />
+          <NumberScroll
+            imgSrc='images/surgeon-users.png'
+            number={6000}
+            title='Surgical Users'
+            plus
+          />
+        </div>
+        <div>
+          <NumberScroll imgSrc='images/episodic-cases.png' number={350000} title='Episodic Cases' />
+          <NumberScroll
+            imgSrc='images/practices.png'
+            number={300}
+            title='Practices, ASCs & Hospitals'
+            plus
+          />
+        </div>
       </div>
 
       <div id='connecting-section'>
@@ -90,12 +99,6 @@ export default function Home() {
           margin: 0 auto;
           margin-top: 100px;
           width: 70%;
-        }
-
-        .statistics {
-          padding-top: 200px;
-          display: flex;
-          justify-content: center;
         }
 
         #connecting-section {

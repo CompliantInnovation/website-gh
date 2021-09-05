@@ -1,6 +1,14 @@
 import { useSpring, animated, config } from 'react-spring'
+import { useMedia } from '../hooks/useMedia'
 
 export default function NumberScroll({ imgSrc, number, title, plus, order }) {
+  const isBrowser = () => typeof window !== 'undefined'
+
+  let tabletSize
+  if (isBrowser) {
+    tabletSize = useMedia('(max-width: 775px)')
+  }
+
   const spring = useSpring({
     from: { val: 0 },
     to: { val: typeof number == 'number' ? number : 0 },
@@ -8,14 +16,24 @@ export default function NumberScroll({ imgSrc, number, title, plus, order }) {
   })
 
   const styles = useSpring({
-    from: { opacity: 0, fontSize: '3vw', margin: 0, color: 'var(--blueDocspera)' },
-    to: { opacity: 1 },
+    from: {
+      opacity: 0,
+      fontSize: tabletSize ? '5vw' : '3vw',
+      margin: 0,
+      color: 'var(--blueDocspera)'
+    },
+    to: { opacity: 1, fontSize: tabletSize ? '5vw' : '3vw' },
     config: { duration: 2000, config: config.molasses }
   })
 
   const plusStyles = useSpring({
-    from: { opacity: 0, fontSize: '3vw', margin: 0, color: 'var(--blueDocspera)' },
-    to: { opacity: 1 },
+    from: {
+      opacity: 0,
+      fontSize: tabletSize ? '5vw' : '3vw',
+      margin: 0,
+      color: 'var(--blueDocspera)'
+    },
+    to: { opacity: 1, fontSize: tabletSize ? '5vw' : '3vw' },
     config: { duration: 2500 }
   })
 
@@ -27,10 +45,10 @@ export default function NumberScroll({ imgSrc, number, title, plus, order }) {
           <animated.h1 style={styles}>
             {isNaN(spring) && spring.val.to((val) => Math.floor(val))}
           </animated.h1>
-          <animated.h1 style={plusStyles}>{plus && '+'}</animated.h1>
+          <animated.h1 style={tabletSize ? plusStyles : plusStyles}>{plus && '+'}</animated.h1>
         </div>
       ) : (
-        <animated.h1 style={styles}>{number}</animated.h1>
+        <animated.h1 style={tabletSize ? styles : styles}>{number}</animated.h1>
       )}
       <span className='title'>{title}</span>
 
@@ -49,12 +67,6 @@ export default function NumberScroll({ imgSrc, number, title, plus, order }) {
           display: flex;
           flex-direction: column;
           align-items: center;
-          width: 300px;
-        }
-
-        h1 {
-          font-size: 3vw;
-          margin: 0;
         }
 
         .title {

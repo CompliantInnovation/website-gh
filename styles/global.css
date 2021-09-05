@@ -44,3 +44,44 @@ p {
 .blog-section {
   max-width: 1150px;
 }
+
+/*  Statistics styles on index.js, provider.js & medical-device.js */
+.statistics {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.statistics > div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-grow: 1;
+}
+
+@media (max-width: 800px) {
+  .statistics {
+    flex-direction: column;
+  }
+
+  .statistics > div {
+    margin-top: 50px;
+    flex-grow: 1;
+  }
+
+  .statistics > div > div {
+    width: 50%;
+  }
+
+  .statistics > div > div > img {
+    width: 30%;
+    height: auto;
+  }
+
+  .statistics > div > div > span {
+    width: 70%;
+  }
+}
