@@ -19,51 +19,55 @@ export default function MedicalDevicePage() {
           patient-specific data, enabling insights and driving efficient supply chain.
         </p>
         <div className='statistics'>
-          <NumberScroll
-            imgSrc='images/surgeon-users.png'
-            number={6000}
-            title='Surgeon Users'
-            plus
-          />
-          <NumberScroll
-            imgSrc='images/surgical-cases.png'
-            number={350000}
-            title='Surgical Cases'
-            plus
-          />
-          <NumberScroll
-            imgSrc='images/medical-device.png'
-            number={'3/5'}
-            title='Top Medical Device Companies'
-          />
-          <NumberScroll imgSrc='images/tech-partners.png' number={30} title='Tech Partners' plus />
+          <div>
+            <NumberScroll
+              imgSrc='images/surgeon-users.png'
+              number={6000}
+              title='Surgeon Users'
+              plus
+            />
+            <NumberScroll
+              imgSrc='images/surgical-cases.png'
+              number={350000}
+              title='Surgical Cases'
+              plus
+            />
+          </div>
+          <div>
+            <NumberScroll
+              imgSrc='images/medical-device.png'
+              number={'3/5'}
+              title='Top Medical Device Companies'
+            />
+            <NumberScroll
+              imgSrc='images/tech-partners.png'
+              number={30}
+              title='Tech Partners'
+              plus
+            />
+          </div>
         </div>
 
         <div id='offerings-section'>
           <div id='offerings'>
-            <h2>Enterprise Offerings and Outcomes</h2>
+            <h2 style={{ marginBottom: 0 }}>Enterprise Offerings</h2>
+            <p style={{ color: 'white', marginTop: 0, fontSize: 20 }}> & Outcomes</p>
             <div id='offerings-divs'>
               <div>
-                <div className='title'>
-                  <img />
-                  <h4>Advanced Case Notification</h4>
-                </div>
+                <img />
+                <h4>Advanced Case Notification</h4>
                 <p>Early case demand signal to improve supply chain and robotics</p>
                 <button>View</button>
               </div>
               <div>
-                <div className='title'>
-                  <img />
-                  <h4>Integrated Provider Solutions</h4>
-                </div>
+                <img />
+                <h4>Integrated Provider Solutions</h4>
                 <p>Enhance enterprise software offerings</p>
                 <button>View</button>
               </div>
               <div>
-                <div className='title'>
-                  <img />
-                  <h4>Data Intelligence</h4>
-                </div>
+                <img />
+                <h4>Data Intelligence</h4>
                 <p>Enhance enterprise software offerings</p>
                 <button>View</button>
               </div>
@@ -72,8 +76,10 @@ export default function MedicalDevicePage() {
         </div>
 
         <div id='solve-challenges-section'>
-          <h2>Solve Urgent Challenges</h2>
-          <p>With early, integrated, real-time capture of surgical cases:</p>
+          <h2 style={{ marginBottom: 0 }}>Solve Urgent Challenges</h2>
+          <p style={{ marginTop: 0 }}>
+            With early, integrated, real-time capture of surgical cases:
+          </p>
           <div id='solve-challenges-divs'>
             <div>
               <img />
@@ -97,22 +103,24 @@ export default function MedicalDevicePage() {
         </div>
 
         <div id='advanced-case-notification'>
-          <h2>Advanced Case Notification</h2>
-          <p>Improves Supply Chain Efficiencies</p>
-          <p>
+          <p style={{ marginTop: 100, marginBottom: 0 }}>Advanced Case Notification</p>
+          <h2 style={{ margin: 0 }}>Improve Supply Chain Efficiencies</h2>
+          <div style={{ display: 'flex', marginLeft: -20, marginTop: 20 }}>
             <ul>
-              <li>Inventory</li>
-              <li>Shipping</li>
-              <li>Right Size</li>
-              <li>Right Location</li>
+              <li className='badge'>Inventory</li>
+              <li className='badge'>Shipping</li>
             </ul>
-          </p>
-          <img src='images/advanced-case-notification.svg' />
+            <ul>
+              <li className='badge'>Right Size</li>
+              <li className='badge'>Right Location</li>
+            </ul>
+          </div>
+          <img src='images/advanced-case-notification.png' />
         </div>
 
         <div className='provider-solutions'>
-          <h2>Integrated Provider Solutions</h2>
-          <p>
+          <h2 style={{ marginBottom: 0 }}>Integrated Provider Solutions</h2>
+          <p style={{ marginTop: 0 }}>
             Best in class SaaS, real-time, predictive platform for the entire surgical ecosystem
           </p>
           <div className='provider-solutions-row'>
@@ -215,12 +223,6 @@ export default function MedicalDevicePage() {
           margin-top: 80px;
         }
 
-        .statistics {
-          padding-top: 200px;
-          display: flex;
-          justify-content: center;
-        }
-
         #offerings-section {
           margin-top: 100px;
           padding: 150px 0;
@@ -256,13 +258,9 @@ export default function MedicalDevicePage() {
         }
 
         #offerings-divs img {
-          width: 30px;
-          height: 30px;
+          width: 100%;
+          height: 175px;
           margin-right: 10px;
-        }
-
-        #offerings-divs .title {
-          display: flex;
         }
 
         #offerings-divs h4 {
@@ -281,10 +279,8 @@ export default function MedicalDevicePage() {
 
         #solve-challenges-divs > div {
           background-color: white;
-          border-radius: 10px;
           margin: 10px;
           padding: 10px;
-          filter: drop-shadow(0 0px 10px lightgray);
         }
 
         #solve-challenges-divs > div > img {
@@ -334,12 +330,24 @@ export default function MedicalDevicePage() {
           padding: 0 5vw;
         }
 
-        #advanced-case-notification ul {
-          margin-left: -20px;
+        #advanced-case-notification img {
+          margin-top: 20px;
+          width: 100%;
         }
 
-        #advanced-case-notification img {
-          width: 100%;
+        #advanced-case-notification ul {
+          margin-top: 0;
+          // display: flex;
+        }
+
+        #advanced-case-notification li {
+          border-radius: 3px;
+          // padding: 5px 8px;
+          margin: 2px;
+          // color: white;
+          color: var(--blueDocspera);
+          font-weight: 500;
+          // letter-spacing: 0.7px;
         }
 
         .provider-solutions {
