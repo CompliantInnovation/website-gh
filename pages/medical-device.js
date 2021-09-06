@@ -2,7 +2,7 @@ import Head from 'next/head'
 import HeaderNav from '../components/HeaderNav'
 import NumberScroll from '../components/NumberScroll'
 import Carousel from '../components/Carousel'
-import Footer from '../components/Footer'
+import FooterBar from '../components/Footer'
 
 export default function MedicalDevicePage() {
   return (
@@ -103,8 +103,8 @@ export default function MedicalDevicePage() {
         </div>
 
         <div id='advanced-case-notification'>
-          <p style={{ marginTop: 100, marginBottom: 0 }}>Advanced Case Notification</p>
-          <h2 style={{ margin: 0 }}>Improve Supply Chain Efficiencies</h2>
+          <h2 style={{ marginTop: 100, marginBottom: 0 }}>Advanced Case Notification</h2>
+          <p style={{ margin: 0 }}>Improve Supply Chain Efficiencies</p>
           <div style={{ display: 'flex', marginLeft: -20, marginTop: 20 }}>
             <ul>
               <li className='badge'>Inventory</li>
@@ -197,7 +197,7 @@ export default function MedicalDevicePage() {
           </div>
         </div>
       </div>
-      <Footer />
+      <FooterBar />
 
       <style jsx>{`
         .container > h2,
@@ -224,8 +224,8 @@ export default function MedicalDevicePage() {
         }
 
         #offerings-section {
-          margin-top: 100px;
-          padding: 150px 0;
+          margin-top: 50px;
+          padding: 70px 0 100px 0;
           width: 100%;
           background-color: var(--blueDocspera);
         }

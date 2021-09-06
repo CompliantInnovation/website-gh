@@ -3,7 +3,7 @@ import HeaderNav from '../components/HeaderNav'
 import LogoAnimation from '../components/LogoAnimation'
 import NumberScroll from '../components/NumberScroll'
 import Carousel from '../components/Carousel'
-import Footer from '../components/footer'
+import FooterBar from '../components/Footer'
 
 export default function Home() {
   return (
@@ -83,7 +83,7 @@ export default function Home() {
         </div>
       </div>
 
-      <Footer />
+      <FooterBar />
       <style jsx>{`
         .container {
           width: 100%;
