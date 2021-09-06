@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import HeaderNav from '../components/HeaderNav'
 import NumberScroll from '../components/NumberScroll'
-import Footer from '../components/Footer'
+import FooterBar from '../components/Footer'
 
 export default function Provider() {
   return (
@@ -13,7 +13,9 @@ export default function Provider() {
       <HeaderNav />
 
       <div className='container'>
-        <h2>Intelligent Surgical Coordination Enabling Efficiency and Profitability</h2>
+        <h2 style={{ maxWidth: 450 }}>
+          Intelligent Surgical Coordination: Enabling Efficiency and Profitability
+        </h2>
         <p>
           DocSpera is an integrated solution, helping manage coordination across multiple sites and
           teams, drive improved efficiencies and deliver better care.
@@ -89,7 +91,7 @@ export default function Provider() {
         </div>
       </div>
 
-      <Footer />
+      <FooterBar />
       <style jsx>{`
         .container {
           padding: 0 5vw;
