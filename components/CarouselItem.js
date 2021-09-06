@@ -21,10 +21,12 @@ export default function CarouselItem({ itemInfo }) {
           max-width: 250px;
           font-weight: 700;
           height: 50px;
+          margin-top: 10px;
         }
         .body {
           max-width: 250px;
           align-self: flex-end;
+          margin-top: 20px;
         }
       `}</style>
     </div>
