@@ -33,7 +33,7 @@ export default function NumberScroll({ imgSrc, number, title, plus, order }) {
       margin: 0,
       color: 'var(--blueDocspera)'
     },
-    to: { opacity: 1, fontSize: tabletSize ? '5vw' : '3vw' },
+    to: { opacity: 1 },
     config: { duration: 2500 }
   })
 
