@@ -68,7 +68,7 @@ export default function MedicalDevicePage() {
               <div>
                 <img />
                 <h4>Data Intelligence</h4>
-                <p>Enhance enterprise software offerings</p>
+                <p>Support the capture of real-world data across the surgical continuum</p>
                 <button>View</button>
               </div>
             </div>
