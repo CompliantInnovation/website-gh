@@ -13,7 +13,7 @@ module.exports = {
     }
   },
   //assetPrefix: '',
-  assetPrefix: !debug ? '/website-gh' : '',
+  assetPrefix: !debug ? '/website-ghs' : '',
   // assetPrefix: '/website-gh/',
   webpack: (config, { dev }) => {
     // Perform customizations to webpack config
