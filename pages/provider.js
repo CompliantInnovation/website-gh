@@ -23,9 +23,14 @@ export default function Provider() {
 
         <div className='statistics'>
           <div>
-            <NumberScroll imgSrc='images/surgeon-users.png' number={6000} title='Surgeons' plus />
             <NumberScroll
-              imgSrc='images/patient-volume.png'
+              imgSrc='website-gh/images/surgeon-users.png'
+              number={6000}
+              title='Surgeons'
+              plus
+            />
+            <NumberScroll
+              imgSrc='website-gh/images/patient-volume.png'
               number={100000}
               title='Monthly Patient Visits'
               plus
@@ -33,13 +38,13 @@ export default function Provider() {
           </div>
           <div>
             <NumberScroll
-              imgSrc='images/practices.png'
+              imgSrc='website-gh/images/practices.png'
               number={300}
               title='Practices, ASCs and Hospitals'
               plus
             />
             <NumberScroll
-              imgSrc='images/tech-partners.png'
+              imgSrc='website-gh/images/tech-partners.png'
               number={350000}
               title='Tech Partners'
               plus
@@ -54,7 +59,7 @@ export default function Provider() {
           </p>
           <div className='provider-solutions-row'>
             <div>
-              <img src='images/scheduling.png' />
+              <img src='website-gh/images/scheduling.png' />
               <h4>Integrated Surgical Scheduling</h4>
               <h6>Coordination across entire care team</h6>
               <p>
@@ -66,7 +71,7 @@ export default function Provider() {
               </p>
             </div>
             <div>
-              <img src='images/smart-scheduling.png' />
+              <img src='website-gh/images/smart-scheduling.png' />
               <h4>Optimized & Coordinated</h4>
               <h6>Coordination across entire care team</h6>
               <p>
@@ -77,7 +82,7 @@ export default function Provider() {
               </p>
             </div>
             <div>
-              <img src='images/episode-of-care.png' />
+              <img src='website-gh/images/episode-of-care.png' />
               <h4>Episode of Care</h4>
               <h6>Coordination across entire care team</h6>
               <p>
