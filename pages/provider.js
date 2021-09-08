@@ -52,7 +52,7 @@ export default function Provider() {
           </div>
         </div>
 
-        <div className='provider-solutions'>
+        <div className='provider-solutions inner-div'>
           <h2>Integrated Provider Solutions</h2>
           <p>
             Best in class SaaS, real-time, predictive platform for the entire surgical ecosystem
@@ -94,6 +94,45 @@ export default function Provider() {
             </div>
           </div>
         </div>
+
+        <div id='seamless-integration' className='inner-div'>
+          <h2>Seamless Integration </h2>
+          <img src='website-gh/images/seamless-integration.png' />
+        </div>
+
+        <div id='rapid-integration' className='inner-div'>
+          <h2>Rapid Integration & Deployment at Scale</h2>
+          <p>Integrated with over 30 EMR and 3rd party systems</p>
+          <div className='logos'>
+            <div>
+              <img src='website-gh/images/logos/athena-health.png' width={220} />
+              <img src='website-gh/images/logos/prime.png' width={120} />
+              <img src='website-gh/images/logos/modernizing-medicine.png' width={190} />
+              <img src='website-gh/images/logos/medstrat.jpg' width={190} />
+            </div>
+            <div>
+              <img src='website-gh/images/logos/CMS.jpg' height={50} width={100} />
+              <img src='website-gh/images/logos/centricity.png' width={150} />
+              <img src='website-gh/images/logos/app-orchard.png' width={150} />
+              <img src='website-gh/images/logos/medent.png' width={180} />
+            </div>
+            <div>
+              <img src='website-gh/images/logos/cerner.png' width={170} />
+              <img src='website-gh/images/logos/next-gen.jpg' width={140} />
+              <img src='website-gh/images/logos/elation-health.jpg' width={190} />
+              <img src='website-gh/images/logos/e-clinical-works.jpg' width={180} />
+            </div>
+            <div>
+              <img src='website-gh/images/logos/allscripts.png' width={170} />
+              <img src='website-gh/images/logos/drchrono.png' width={140} />
+              <img src='website-gh/images/logos/greenway.png' width={150} />
+              <img src='website-gh/images/logos/SRS.jpg' width={120} />
+            </div>
+            <div>
+              <img src='website-gh/images/logos/brain-lab.jpg' width={190} />
+            </div>
+          </div>
+        </div>
       </div>
 
       <FooterBar />
@@ -104,11 +143,6 @@ export default function Provider() {
         h2 {
           margin-top: 80px;
           max-width: 600px;
-        }
-
-        .provider-solutions {
-          margin: 0 auto;
-          max-width: 1150px;
         }
 
         .provider-solutions-row {
@@ -146,6 +180,27 @@ export default function Provider() {
 
         .provider-solutions-row p {
           max-width: 300px;
+        }
+
+        #seamless-integration {
+        }
+
+        #seamless-integration img {
+          display: block;
+          margin: 10px auto;
+          width: 100%;
+          margin-top: 30px;
+        }
+
+        #rapid-integration .logos div {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          height: 100px;
+        }
+
+        #rapid-integration .logos img {
+          // border: 1px solid blue;
         }
       `}</style>
     </>

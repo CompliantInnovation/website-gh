@@ -4,6 +4,8 @@
 
 const debug = process.env.NODE_ENV !== 'production'
 
+console.log('DEBUG', debug)
+
 module.exports = {
   // basePath: '/website-gh',
   exportPathMap: function () {
