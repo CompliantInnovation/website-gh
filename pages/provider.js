@@ -4,6 +4,45 @@ import NumberScroll from '../components/NumberScroll'
 import FooterBar from '../components/Footer'
 
 export default function Provider() {
+  let testimonials = [
+    {
+      quote:
+        'Dr. Mayle saves time, reduces redundant work and errors using DocSpera at California Pacific Orthopaedics (CPOSM).',
+      name: 'Robert E. Mayle, Jr MD',
+      location: 'California Pacific Orthopaedics (CPOSM)',
+      pic: 'RobertMaley.png'
+    },
+    {
+      quote:
+        'Overall, DocSpera is a great solution for practices or providers looking to collaborate and share information about patients and cases',
+      name: 'Orrin Franko MD',
+      location: 'East Bay Hand Medical Center',
+      pic: 'OrrinFranko.png'
+    },
+    {
+      quote:
+        'The DocSpera scheduling platform has been a tremendous asset to my surgical practice. The extremely user­friendly mobile app offers remarkable flexibility and provides seamless communication between the surgical team and industry reps, ensuring no preoperative planning or scheduling detail goes unrecognized',
+      name: 'Shane Seroyer, MD',
+      location: 'TMI Sports Medicine & Orthopedic Surgery Arlington',
+      pic: 'ShaneSeroyer.png'
+    },
+    {
+      quote:
+        'DocSpera has been an invaluable tool in my practice; it streamlined my transition into the bundle payment model with very little disruption in my practice workflow. Data collected from DocSpera has allowed us to improve clinical processes and procedures AND provided us with valuable information for commercial payor negotiations',
+      name: 'Aaron Salyapongse MD',
+      location: 'Stanford Health Care -­ ValleyCare',
+      pic: 'AaronSalyapongse.png'
+    },
+
+    {
+      quote:
+        'I do a fair bit of team coverage for athletic teams. Connecting w. the athletic trainers is a breeze, they love the real-time interaction and HIPAA compliance as well... Best under-recognized app on the market to keep busy docs organized. A true hidden gem',
+      name: 'Christopher Donaldson, MD',
+      location: 'Western Pennsylvania Orthopedic & Sport Medicine',
+      pic: 'ChristopherDonaldson.png'
+    }
+  ]
+
   return (
     <>
       <Head>
@@ -20,6 +59,7 @@ export default function Provider() {
           DocSpera is an integrated solution, helping manage coordination across multiple sites and
           teams, drive improved efficiencies and deliver better care.
         </p>
+        {/* <img src='website-gh/images/surgeon-doodle.png' id='surgeon-doodle' /> */}
 
         <div className='statistics'>
           <div>
@@ -174,16 +214,80 @@ export default function Provider() {
             </div>
           </div>
         </div>
+
+        <div className='inner-div'>
+          <h2 style={{ marginBottom: 50 }}>Testimonials</h2>
+          <div id='testimonials'>
+            {testimonials.map((t, idx) => {
+              return (
+                <div className='testimonial' key={idx}>
+                  <img
+                    src={`website-gh/images/testimonials/${t.pic}`}
+                    className='testimonial-img'
+                  />
+                  <div>
+                    <p>"...{t.quote}..."</p>
+                    <span className='name'> - {t.name}</span>
+                    <p className='location'>{t.location}</p>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+
+        <div className='inner-div'>
+          <h2 style={{ minWidth: '100%', marginBottom: 50 }}>
+            Join 300+ Institutions Using DocSpera Across the US
+          </h2>
+          <div className='logos'>
+            <div>
+              <img src='website-gh/images/logos/UCSF.png' width={100} />
+              <img src='website-gh/images/logos/orthocare.jpg' width={170} />
+              <img src='website-gh/images/logos/TMI.jpg' width={170} />
+              <img src='website-gh/images/logos/webster.png' width={160} />
+            </div>
+            <div>
+              <img src='website-gh/images/logos/emerge-ortho.jpg' width={180} />
+              <img src='website-gh/images/logos/DOC.png' width={150} />
+              <img src='website-gh/images/logos/mos.png' width={170} />
+              <img src='website-gh/images/logos/CPO.png' width={180} />
+            </div>
+            <div>
+              <img src='website-gh/images/logos/baylor.jpg' width={160} />
+              <img src='website-gh/images/logos/childress.png' width={200} />
+              <img src='website-gh/images/logos/trinity.png' width={180} />
+              <img src='website-gh/images/logos/louisville.png' width={170} />
+            </div>
+            <div>
+              <img src='website-gh/images/logos/washington.png' width={200} />
+            </div>
+          </div>
+        </div>
       </div>
 
       <FooterBar />
       <style jsx>{`
         .container {
           padding: 0 5vw;
+          p
         }
         h2 {
           margin-top: 80px;
           max-width: 600px;
+          z-index: 10;
+        }
+
+        .statistics {
+          margin-top: 200px;
+        }
+
+        #surgeon-doodle {
+          // position: absolute;
+          width: 80%;
+          display: block;
+          margin: 0 auto;
+          z-index: -10000;
         }
 
         .provider-solutions-row {
@@ -233,7 +337,7 @@ export default function Provider() {
           margin-top: 30px;
         }
 
-        #rapid-integration .logos div {
+        .logos div {
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -270,6 +374,41 @@ export default function Provider() {
           width: 50px;
           margin-right: 20px;
           margin-left: 5px;
+        }
+
+        #testimonials {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .testimonial {
+          width: 47%;
+          filter: drop-shadow(0 0px 5px lightgray);
+          background-color: white;
+          border-radius: 10px;
+          margin: 10px;
+          padding: 10px;
+        }
+
+        .testimonial > div {
+          margin-left: 20px;
+        }
+
+        .testimonial-img {
+          height: 100px;
+          border-radius: 100px;
+          display: block;
+          margin: 10px auto;
+          margin-bottom: 20px;
+        }
+
+        .name {
+
+        }
+
+        .location {
+          color: gray;
         }
       `}</style>
     </>
