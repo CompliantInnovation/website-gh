@@ -49,7 +49,7 @@ export default function MedicalDevicePage() {
         </div>
 
         <div id='offerings-section'>
-          <div id='offerings'>
+          <div id='offerings' className='inner-div'>
             <h2 style={{ marginBottom: 0 }}>Enterprise Offerings</h2>
             <p style={{ color: 'white', marginTop: 0, fontSize: 20 }}> & Outcomes</p>
             <div id='offerings-divs'>
@@ -75,7 +75,7 @@ export default function MedicalDevicePage() {
           </div>
         </div>
 
-        <div id='solve-challenges-section'>
+        <div id='solve-challenges-section' className='inner-div'>
           <h2 style={{ marginBottom: 0 }}>Solve Urgent Challenges</h2>
           <p style={{ marginTop: 0 }}>
             With early, integrated, real-time capture of surgical cases:
@@ -102,7 +102,7 @@ export default function MedicalDevicePage() {
           </div>
         </div>
 
-        <div id='advanced-case-notification'>
+        <div id='advanced-case-notification' className='inner-div'>
           <h2 style={{ marginTop: 100, marginBottom: 0 }}>Advanced Case Notification</h2>
           <p style={{ margin: 0 }}>Improve Supply Chain Efficiencies</p>
           <div style={{ display: 'flex', marginLeft: -20, marginTop: 20 }}>
@@ -118,7 +118,7 @@ export default function MedicalDevicePage() {
           <img src='website-gh/images/advanced-case-notification.png' />
         </div>
 
-        <div className='provider-solutions'>
+        <div className='provider-solutions inner-div'>
           <h2 style={{ marginBottom: 0 }}>Integrated Provider Solutions</h2>
           <p style={{ marginTop: 0 }}>
             Best in class SaaS, real-time, predictive platform for the entire surgical ecosystem
@@ -161,7 +161,7 @@ export default function MedicalDevicePage() {
           </div>
         </div>
 
-        <div id='insights-section'>
+        <div id='insights-section' className='inner-div'>
           <h2>Data Intelligence & RWD Insights</h2>
           <p>Support the capture of real-word data and insights across the surgical continuum</p>
           <img src='website-gh/images/demand-intel.png' />
@@ -236,8 +236,6 @@ export default function MedicalDevicePage() {
         }
 
         #offerings {
-          margin: 0 auto;
-          max-width: 1150px;
           padding: 0 5vw;
         }
 
@@ -267,12 +265,6 @@ export default function MedicalDevicePage() {
           margin: 0;
         }
 
-        #solve-challenges-section {
-          margin: 0 auto;
-          max-width: 1150px;
-          padding: 0 5vw;
-        }
-
         #solve-challenges-divs {
           display: flex;
         }
@@ -286,12 +278,6 @@ export default function MedicalDevicePage() {
         #solve-challenges-divs > div > img {
           width: 100%;
           min-height: 100px;
-        }
-
-        #insights-section {
-          margin: 0 auto;
-          max-width: 1150px;
-          padding: 0 5vw;
         }
 
         #insights-section > img {
@@ -324,12 +310,6 @@ export default function MedicalDevicePage() {
           margin-right: 10px;
         }
 
-        #advanced-case-notification {
-          margin: 0 auto;
-          max-width: 1150px;
-          padding: 0 5vw;
-        }
-
         #advanced-case-notification img {
           margin-top: 20px;
           width: 100%;
@@ -348,12 +328,6 @@ export default function MedicalDevicePage() {
           color: var(--blueDocspera);
           font-weight: 500;
           // letter-spacing: 0.7px;
-        }
-
-        .provider-solutions {
-          margin: 0 auto;
-          max-width: 1150px;
-          padding: 0 5vw;
         }
 
         .provider-solutions-row {
