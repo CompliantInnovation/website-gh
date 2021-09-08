@@ -38,6 +38,12 @@ h2 {
   box-sizing: border-box;
 }
 
+.inner-div {
+  margin: 0 auto;
+  max-width: 1150px;
+  padding: 100px 5vw;
+}
+
 .carousel-container {
   width: 100%;
   display: flex;
