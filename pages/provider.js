@@ -113,14 +113,14 @@ export default function Provider() {
             <div>
               <img src='website-gh/images/logos/CMS.jpg' height={50} width={100} />
               <img src='website-gh/images/logos/centricity.png' width={150} />
-              <img src='website-gh/images/logos/app-orchard.png' width={150} />
               <img src='website-gh/images/logos/medent.png' width={180} />
+              <img src='website-gh/images/logos/app-orchard.png' width={150} />
             </div>
             <div>
-              <img src='website-gh/images/logos/cerner.png' width={170} />
-              <img src='website-gh/images/logos/next-gen.jpg' width={140} />
               <img src='website-gh/images/logos/elation-health.jpg' width={190} />
+              <img src='website-gh/images/logos/next-gen.jpg' width={140} />
               <img src='website-gh/images/logos/e-clinical-works.jpg' width={180} />
+              <img src='website-gh/images/logos/cerner.png' width={170} />
             </div>
             <div>
               <img src='website-gh/images/logos/allscripts.png' width={170} />
@@ -130,6 +130,47 @@ export default function Provider() {
             </div>
             <div>
               <img src='website-gh/images/logos/brain-lab.jpg' width={190} />
+            </div>
+          </div>
+        </div>
+
+        <div id='designed-for-providers' className='inner-div'>
+          <h2>Designed for Providers Like You</h2>
+          <div>
+            <img id='mock-up-img' src='website-gh/images/mockups.png' />
+
+            <div>
+              <div className='box'>
+                <img src='website-gh/images/surgical.svg' />
+                <div>
+                  <h4>Built for the Surgical Environment</h4>
+                  <p>
+                    Used by thousands of surgeons across hundreds of institution with varying
+                    surgical pathways
+                  </p>
+                </div>
+              </div>
+              <div className='box'>
+                <img src='website-gh/images/security.svg' />
+                <div>
+                  <h4>Secure</h4>
+                  <p>Provider verified, SOC 2 level and HIPAA compliant</p>
+                </div>
+              </div>
+              <div className='box'>
+                <img src='website-gh/images/data-driven.svg' />
+                <div>
+                  <h4>Driven by Data</h4>
+                  <p>Comprehensive and longitudinal data across the continuum of care</p>
+                </div>
+              </div>
+              <div className='box'>
+                <img src='website-gh/images/integration.svg' />
+                <div>
+                  <h4>Effortless Integration</h4>
+                  <p>Web and mobile interface easily integrate with other critical systems</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -199,8 +240,36 @@ export default function Provider() {
           height: 100px;
         }
 
-        #rapid-integration .logos img {
-          // border: 1px solid blue;
+        #designed-for-providers > div {
+          display: flex;
+          margin-top: 50px;
+          align-items: center;
+        }
+
+        #mock-up-img {
+          max-height: 400px;
+          margin-right: 50px;
+        }
+
+        #designed-for-providers .box {
+          border: 2px solid var(--blueDocspera);
+          margin: 10px 0;
+          padding: 10px;
+          border-radius: 10px;
+          filter: drop-shadow(0 0px 5px lightgray);
+          background-color: white;
+          display: flex;
+          align-items: center;
+        }
+
+        #designed-for-providers .box h4 {
+          margin: 0;
+        }
+
+        #designed-for-providers .box img {
+          width: 50px;
+          margin-right: 20px;
+          margin-left: 5px;
         }
       `}</style>
     </>
