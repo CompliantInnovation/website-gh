@@ -12,9 +12,16 @@ export default function HeaderNav() {
     tabletSize = useMedia('(max-width: 775px)')
   }
 
-  const [openDropdown, setOpenDropdown] = useState(false);
-  const handleDropdownClick = () => {
-    setOpenDropdown(!openDropdown);
+  const [productDropdown, setProductDropdown] = useState(false);
+  const handleProductDropdownClick = () => {
+    setProductDropdown(!productDropdown);
+    setContactDropdown(false);
+  }
+
+  const [contactDropdown, setContactDropdown] = useState(false);
+  const handleContactDropdownClick = () => {
+    setContactDropdown(!contactDropdown);
+    setProductDropdown(false);
   }
 
   return (
@@ -34,31 +41,35 @@ export default function HeaderNav() {
       <div id='right-side'>
         <div id='nav-items'>
 
-          <a className={router.pathname == '/product' && 'active_a'} onClick={handleDropdownClick}>
+          <a className={productDropdown && 'active_a'} onClick={handleProductDropdownClick}>
             <span>Product</span>
-            <div className={router.pathname == '/product' && 'underline'}></div>
+            <div className={productDropdown && 'underline'}></div>
           </a>
-          {openDropdown && (
+          {productDropdown && (
             
-            <div className='dropdown'>
-            <div className='box'>
-              <h4><img src='/images/surgeon-users.png' />Providers &gt;</h4>
-              <ul>
-                <li>Episode of Care</li>
-                <li>Prioritized Rebooking</li>
-                <li>Data Intelligence &amp; RWD Insights</li>
-              </ul>
-            </div>
-            <div className='box'>
-            <h4><img src='/images/medical-device.png' />Medical Device &gt;</h4>
-              <ul>
-                <li>Advanced Case Notification</li>
-                <li>Integrated Provider Solutions</li>
-                <li>Data Intelligence &amp; RWD Insights</li>
-              </ul>
-            </div>
+            <div className='product-dropdown'>
+              <Link href='/provider' >
+                <div className='box'>
+                  <h4><img src='/images/surgeon-users.png' />Providers &gt;</h4>
+                  <ul>
+                    <li>Episode of Care</li>
+                    <li>Prioritized Rebooking</li>
+                    <li>Data Intelligence &amp; RWD Insights</li>
+                  </ul>
+                </div>
+              </Link>
+              <Link href='/medical-device'>
+                <div className='box'>
+                  <h4><img src='/images/medical-device.png' />Medical Device &gt;</h4>
+                  <ul>
+                    <li>Advanced Case Notification</li>
+                    <li>Integrated Provider Solutions</li>
+                    <li>Data Intelligence &amp; RWD Insights</li>
+                  </ul>
+                </div>
+              </Link>
           </div>
-
+     
           )}
 
           <Link href='/company'>
@@ -67,12 +78,22 @@ export default function HeaderNav() {
               <div className={router.pathname == '/company' && 'underline'}></div>
             </a>
           </Link>
-          <Link href='/contact'>
-            <a className={router.pathname == '/contact' && 'active_a'}>
-              <span>Contact</span>
-              <div className={router.pathname == '/contact' && 'underline'}></div>
-            </a>
-          </Link>
+
+          <a className={contactDropdown && 'active_a'} onClick={handleContactDropdownClick}>
+            <span>Contact</span>
+            <div className={contactDropdown && 'underline'}></div>
+            {contactDropdown && (
+              <div className='contact-dropdown'>
+                <ul >
+                  <li>Contact Us</li>
+                  <li>Request Demo</li>
+                </ul>
+              </div>
+            )}
+          </a>
+           
+
+
           <a className='active_a' href='https://blog.d4.docspera.com/' target='_blank'>
             <span>Blog</span>
             <div className='underline'></div>
@@ -125,6 +146,7 @@ export default function HeaderNav() {
           text-decoration: none;
           padding-right: 30px;
           font-size: 16px;
+
         }
 
         a:hover {
@@ -154,7 +176,7 @@ export default function HeaderNav() {
           font-size: 16px;
         }
 
-        .dropdown {
+        .product-dropdown {
           display: flex;
           align-items: center;
           justify-content: center;
@@ -162,8 +184,8 @@ export default function HeaderNav() {
           top: 100%;
           left: 0;
           width: 100%;
-          background-color: white;
-          opacity: 65%;
+          background-color: rgba(255, 255, 255, 0.65);
+
           padding: 50px 0;
        
         }
@@ -171,13 +193,14 @@ export default function HeaderNav() {
         .box {
           margin: 30px;
           padding: 12px;
-          background-color: white;
+       
           z-index: 10;
         }
 
         .box:hover {
-          box-shadow: 0px 0px 3px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.1);
           border-radius: 5px;
+          background-color: rgba(255, 255, 255, 1);
         }
 
         .box h4 {
@@ -205,6 +228,36 @@ export default function HeaderNav() {
           padding: 0 0 4px 10px;
           color: grey;
       
+        }
+
+        .contact-dropdown {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          top: 100%;
+          left: 67%;
+          background-color: rgba(255, 255, 255, 1);
+          padding:0 10px;
+          color: black;
+        }
+
+        .contact-dropdown ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+        }
+        .contact-dropdown li {
+          font-size: 14px;
+          padding-bottom: 10px;
+          color: grey;
+      
+        }
+
+        .contact-dropdown li:hover {
+          color: black;
+          cursor: default;
+          font-weight: bold;
         }
 
         h4 {
