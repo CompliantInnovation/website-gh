@@ -13,13 +13,13 @@ export default function HeaderNav() {
   }
 
   const [productDropdown, setProductDropdown] = useState(false);
-  const handleProductDropdownClick = () => {
+  const handleProductOnHover = () => {
     setProductDropdown(!productDropdown);
     setContactDropdown(false);
   }
 
   const [contactDropdown, setContactDropdown] = useState(false);
-  const handleContactDropdownClick = () => {
+  const handleContactOnHover = () => {
     setContactDropdown(!contactDropdown);
     setProductDropdown(false);
   }
@@ -41,7 +41,7 @@ export default function HeaderNav() {
       <div id='right-side'>
         <div id='nav-items'>
 
-          <a className={productDropdown && 'active_a'} onClick={handleProductDropdownClick}>
+          <a className={productDropdown && 'active_a'} onMouseEnter={handleProductOnHover}>
             <span>Product</span>
             <div className={productDropdown && 'underline'}></div>
           </a>
@@ -79,10 +79,11 @@ export default function HeaderNav() {
             </a>
           </Link>
 
-          <a className={contactDropdown && 'active_a'} onClick={handleContactDropdownClick}>
+          <a className={contactDropdown && 'active_a'} onMouseEnter={handleContactOnHover}>
             <span>Contact</span>
             <div className={contactDropdown && 'underline'}></div>
-            {contactDropdown && (
+          </a>
+          {contactDropdown && (
               <div className='contact-dropdown'>
                 <ul >
                   <li>Contact Us</li>
@@ -90,7 +91,6 @@ export default function HeaderNav() {
                 </ul>
               </div>
             )}
-          </a>
            
 
 
