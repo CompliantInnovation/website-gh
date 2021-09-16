@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import HeaderNav from '../components/HeaderNav'
+import Link from 'next/link'
 import LogoAnimation from '../components/LogoAnimation'
 import NumberScroll from '../components/NumberScroll'
 import Carousel from '../components/Carousel'
@@ -67,8 +68,24 @@ export default function Home() {
             </ul>
           </p>
         </div>
-
         <img id='connecting-graphic' src='images/connecting2.png' />
+      </div>
+
+      <div id='container'>
+        <div className='box' style={{ marginRight: 30 }}>
+          <h4><img src='/images/surgeon-users.png' />Providers</h4>
+          <p><span>&#10140;</span> Episode of Care</p>
+          <p><span>&#10140;</span> Prioritized Rebooking</p>
+          <p><span>&#10140;</span> Data Intelligence &amp; RWD Insights</p>
+          <Link href='/provider' ><button>View More &nbsp;  &gt;</button></Link>
+        </div>
+        <div className='box'>
+          <h4><img src='/images/medical-device.png' />Medical Device Enterprise</h4>
+          <p><span>&#10140;</span> Advanced Case Notification</p>
+          <p><span>&#10140;</span> Integrated Provider Solutions</p>
+          <p><span>&#10140;</span> Data Intelligence &amp; RWD Insights</p>
+          <Link href='/medical-device' ><button>View More &nbsp;  &gt;</button></Link>
+        </div>
       </div>
 
       <div className='carousel-container'>
@@ -140,6 +157,68 @@ export default function Home() {
         #words-div > h2 {
           font-weight: 200;
         }
+
+        #container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+  
+        }
+
+        .box {      
+          width: 35%;
+          padding: 25px 150px;
+          border-radius: 10px;
+          background-color: white;
+        }
+        .box:hover {
+          box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.1);
+          border-radius: 5px;
+          background-color: rgba(255, 255, 255, 1);
+        }
+
+        .box h4 {
+          display: flex;
+          align-items: center;
+          margin:0 0 15px 0;
+        }
+
+        .box img {
+          filter: brightness(0%);
+          height: 30px;
+          margin-right: 10px;
+        }
+
+        .box p {
+          display: flex;
+          align-items: center;
+          font-size: 14px;
+          color: grey;
+          margin-bottom: 5px;
+        }
+
+        .box p > span {
+          padding-right: 10px;
+          font-size: 15px;
+          color: var(--blueDocspera);
+        }
+
+        .box button {
+          background-color: var(--blueDocspera);
+          border: none;
+          border-radius: 5px;
+          filter: drop-shadow(0, 3px, 6px, black);
+          color: white;
+          padding: 10px 15px;
+          font-size: 14px;
+          margin-top: 10px;
+        }
+
+        .box button:hover {
+          box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.1);
+        }
+
       `}</style>
     </div>
   )
