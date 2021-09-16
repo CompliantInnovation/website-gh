@@ -24,6 +24,14 @@ export default function HeaderNav() {
     setProductDropdown(false);
   }
 
+  const [blogHover, setBlogHover] = useState(false);
+  const handleBlogOnHover = () => {
+    setBlogHover(!blogHover);
+    setContactDropdown(false);
+    setProductDropdown(false);
+  }
+
+
   return (
     <nav>
       {isBrowser && (
@@ -47,7 +55,7 @@ export default function HeaderNav() {
           </a>
           {productDropdown && (
             
-            <div className='product-dropdown'>
+            <div className='product-dropdown' onMouseLeave={handleProductOnHover}>
               <Link href='/provider' >
                 <div className='box'>
                   <h4><img src='/images/surgeon-users.png' />Providers &gt;</h4>
@@ -78,25 +86,24 @@ export default function HeaderNav() {
               <div className={router.pathname == '/company' && 'underline'}></div>
             </a>
           </Link>
-
-          <a className={contactDropdown && 'active_a'} onMouseEnter={handleContactOnHover}>
+          <div className='dropdown'  >
+          <p className={contactDropdown && 'active_a'}  onMouseEnter={handleContactOnHover}>
             <span>Contact</span>
-            <div className={contactDropdown && 'underline'}></div>
-          </a>
+            <div className={contactDropdown && 'underline'} ></div>
+          </p>
           {contactDropdown && (
-              <div className='contact-dropdown'>
+              <div className='contact-dropdown' onMouseLeave={handleContactOnHover}>
                 <ul >
                   <li>Contact Us</li>
                   <li>Request Demo</li>
                 </ul>
               </div>
             )}
+          </div>
            
-
-
-          <a className='active_a' href='https://blog.d4.docspera.com/' target='_blank'>
+          <a className={blogHover && 'active_a'} href='https://blog.d4.docspera.com/' target='_blank' onMouseEnter={handleBlogOnHover} onMouseLeave={handleBlogOnHover}>
             <span>Blog</span>
-            <div className='underline'></div>
+            <div className={blogHover && 'underline'}></div>
           </a>
           {/* <Link href='/provider'>
             <a className={router.pathname == '/provider' && 'active_a'}>
@@ -144,14 +151,12 @@ export default function HeaderNav() {
         a {
           color: var(--blueDark);
           text-decoration: none;
-          padding-right: 30px;
+          padding-right: 50px;
           font-size: 16px;
-
         }
 
         a:hover {
           color: var(--blueDocspera);
-          
         }
         
         .active_a {
@@ -185,22 +190,18 @@ export default function HeaderNav() {
           left: 0;
           width: 100%;
           background-color: rgba(255, 255, 255, 0.65);
-
           padding: 50px 0;
-       
         }
 
         .box {
           margin: 30px;
           padding: 12px;
-       
-          z-index: 10;
         }
 
         .box:hover {
-          box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.1);
-          border-radius: 5px;
-          background-color: rgba(255, 255, 255, 1);
+          filter: drop-shadow(0px 0px 0.3rem lightgrey);
+          border-radius: 10px;
+          background-color: rgba(255, 255, 255, 0.90);
         }
 
         .box h4 {
@@ -220,14 +221,32 @@ export default function HeaderNav() {
           list-style-type: none;
           margin: 5px 0;
           padding: 0;
+          border-left: 2px solid lightgrey;
         }
 
         .box li {
           font-size: 14px;
-          border-left: 2px solid lightgrey;
           padding: 0 0 4px 10px;
           color: grey;
-      
+        }
+
+        .dropdown {
+          position: relative;
+          padding-right: 50px;
+        }
+        .dropdown:hover {
+          color: var(--blueDocspera);
+        }
+
+
+        .dropdown p {
+          color: var(--blueDark);
+          margin: 0;
+          font-size: 16px;
+        }
+
+        .dropdown p:hover {
+          color: var(--blueDocspera);
         }
 
         .contact-dropdown {
@@ -236,10 +255,12 @@ export default function HeaderNav() {
           justify-content: center;
           position: absolute;
           top: 100%;
-          left: 67%;
-          background-color: rgba(255, 255, 255, 1);
-          padding:0 10px;
+          left: -16%;
+          background-color: rgba(255, 255, 255, 0.65);
+          padding: 0px 10px;
           color: black;
+          width: 130px;
+          margin-top: 16px;
         }
 
         .contact-dropdown ul {
