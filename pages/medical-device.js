@@ -57,19 +57,19 @@ export default function MedicalDevicePage() {
                 <img />
                 <h4>Advanced Case Notification</h4>
                 <p>Early case demand signal to improve supply chain and robotics</p>
-                <button>View</button>
+                <button><a href='#advanced-case-notification'>View</a></button>
               </div>
               <div>
                 <img />
                 <h4>Integrated Provider Solutions</h4>
                 <p>Enhance enterprise software offerings</p>
-                <button>View</button>
+                <button><a href='#integrated-providers-solutions'>View</a></button>
               </div>
               <div>
                 <img />
                 <h4>Data Intelligence</h4>
                 <p>Support the capture of real-world data across the surgical continuum</p>
-                <button>View</button>
+                <button><a href='#insights-section'>View</a></button>
               </div>
             </div>
           </div>
@@ -118,7 +118,7 @@ export default function MedicalDevicePage() {
           <img src='website-gh/images/advanced-case-notification.png' />
         </div>
 
-        <div className='provider-solutions inner-div'>
+        <div id='integrated-providers-solutions' className='provider-solutions inner-div'>
           <h2 style={{ marginBottom: 0 }}>Integrated Provider Solutions</h2>
           <p style={{ marginTop: 0 }}>
             Best in class SaaS, real-time, predictive platform for the entire surgical ecosystem
@@ -217,6 +217,11 @@ export default function MedicalDevicePage() {
           position: absolute;
           right: 10px;
           bottom: 10px;
+        }
+
+        a {
+          text-decoration: none;
+          color: inherit;
         }
 
         h2 {
