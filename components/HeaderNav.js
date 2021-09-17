@@ -31,6 +31,11 @@ export default function HeaderNav() {
     setProductDropdown(false);
   }
 
+  const [isLogin, setIsLogin] = useState(false);
+  const handleLogin = () => {
+    setIsLogin(!isLogin)
+  }
+
 
   return (
     <nav>
@@ -87,10 +92,10 @@ export default function HeaderNav() {
             </a>
           </Link>
           <div className='dropdown'  >
-          <p className={contactDropdown && 'active_a'}  onMouseEnter={handleContactOnHover}>
-            <span>Contact</span>
-            <div className={contactDropdown && 'underline'} ></div>
-          </p>
+            <p className={contactDropdown && 'active_a'}  onMouseEnter={handleContactOnHover}>
+              <span>Contact</span>
+              <div className={contactDropdown && 'underline'} ></div>
+            </p>
           {contactDropdown && (
               <div className='contact-dropdown' onMouseLeave={handleContactOnHover}>
                 <ul >
@@ -119,7 +124,8 @@ export default function HeaderNav() {
             </a>
           </Link> */}
         </div>
-        <button>Log In</button>
+        {router.pathname == '/login' || isLogin ? <button onClick={handleLogin}>Request Demo</button> : <Link href='/login'><button>Log In</button></Link> }
+        
       </div>
 
       <style jsx>{`
