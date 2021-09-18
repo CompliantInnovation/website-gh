@@ -2,6 +2,7 @@
   --blueDark: #234681;
   --blueDocspera: #0096fa;
   --blueLight: #daf0fb;
+  --blueFaint: #f6fcff;
 }
 
 html,
@@ -42,6 +43,13 @@ h2 {
   margin: 0 auto;
   max-width: 1150px;
   padding: 100px 5vw;
+  /* transform: translate(500px, 0); */
+}
+
+.translate {
+  /* transition-delay: 0.5s; */
+  /* transition: all 1s ease-out; */
+  transform: translate(-200px, 0px);
 }
 
 .carousel-container {
