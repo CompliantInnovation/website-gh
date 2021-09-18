@@ -18,16 +18,17 @@ export default function MedicalDevicePage() {
           DocSpera is an integrated, comprehensive, and compliant digital solution powering
           patient-specific data, enabling insights and driving efficient supply chain.
         </p>
+        {/* <img src='images/business.png' id='business' /> */}
         <div className='statistics'>
           <div>
             <NumberScroll
-              imgSrc='website-gh/images/surgeon-users.png'
+              imgSrc='images/surgeon-users.png'
               number={6000}
               title='Surgeon Users'
               plus
             />
             <NumberScroll
-              imgSrc='website-gh/images/surgical-cases.png'
+              imgSrc='images/surgical-cases.png'
               number={350000}
               title='Surgical Cases'
               plus
@@ -35,12 +36,12 @@ export default function MedicalDevicePage() {
           </div>
           <div>
             <NumberScroll
-              imgSrc='website-gh/images/medical-device.png'
+              imgSrc='images/medical-device.png'
               number={'3/5'}
               title='Top Medical Device Companies'
             />
             <NumberScroll
-              imgSrc='website-gh/images/tech-partners.png'
+              imgSrc='images/tech-partners.png'
               number={30}
               title='Tech Partners'
               plus
@@ -50,23 +51,22 @@ export default function MedicalDevicePage() {
 
         <div id='offerings-section'>
           <div id='offerings' className='inner-div'>
-            <h2 style={{ marginBottom: 0 }}>Enterprise Offerings</h2>
-            <p style={{ color: 'white', marginTop: 0, fontSize: 20 }}> & Outcomes</p>
+            <h2 style={{ marginBottom: 20 }}>Enterprise Offerings & Advantages</h2>
             <div id='offerings-divs'>
               <div>
-                <img />
+                <img src='images/case-notification.png' />
                 <h4>Advanced Case Notification</h4>
                 <p>Early case demand signal to improve supply chain and robotics</p>
                 <button>View</button>
               </div>
               <div>
-                <img />
+                <img src='images/provider-solutions.png' height='auto' />
                 <h4>Integrated Provider Solutions</h4>
                 <p>Enhance enterprise software offerings</p>
                 <button>View</button>
               </div>
               <div>
-                <img />
+                <img src='images/data-intelligence.png' />
                 <h4>Data Intelligence</h4>
                 <p>Support the capture of real-world data across the surgical continuum</p>
                 <button>View</button>
@@ -82,21 +82,21 @@ export default function MedicalDevicePage() {
           </p>
           <div id='solve-challenges-divs'>
             <div>
-              <img />
+              <img src='images/cancellations.png' />
               <p>
                 Improve inventory management across shipping, sterilization, tray sizing,
                 cancellation management, etc
               </p>
             </div>
             <div>
-              <img />
+              <img src='images/data-driven.png' />
               <p>
                 Deepen your understanding of your product performance in real world clinical
                 settings
               </p>
             </div>
             <div>
-              <img />
+              <img src='images/strategic.png' />
               <p>Strengthen market position through strategic offerings & engagements</p>
             </div>
           </div>
@@ -115,48 +115,50 @@ export default function MedicalDevicePage() {
               <li className='badge'>Right Location</li>
             </ul>
           </div>
-          <img src='website-gh/images/advanced-case-notification.png' />
+          <img src='images/advanced-case-notification.png' />
         </div>
 
-        <div className='provider-solutions inner-div'>
-          <h2 style={{ marginBottom: 0 }}>Integrated Provider Solutions</h2>
-          <p style={{ marginTop: 0 }}>
-            Best in class SaaS, real-time, predictive platform for the entire surgical ecosystem
-          </p>
-          <div className='provider-solutions-row'>
-            <div>
-              <img src='website-gh/images/scheduling.png' />
-              <h4>Integrated Surgical Scheduling</h4>
-              <h6>Coordination across entire care team</h6>
-              <p>
-                <ul>
-                  <li>Case scheduling & OR management</li>
-                  <li>Image Sharing</li>
-                  <li>EMR & Telelhealth intergration</li>
-                </ul>
-              </p>
-            </div>
-            <div>
-              <img src='website-gh/images/smart-scheduling.png' />
-              <h4>Optimized & Coordinated</h4>
-              <h6>Coordination across entire care team</h6>
-              <p>
-                <ul>
-                  <li>Real time coordination between clinic, OR Team & Device Rep</li>
-                  <li>Intelligent case backlog booking</li>
-                </ul>
-              </p>
-            </div>
-            <div>
-              <img src='website-gh/images/episode-of-care.png' />
-              <h4>Episode of Care</h4>
-              <h6>Coordination across entire care team</h6>
-              <p>
-                <ul>
-                  <li>Post-acute management and recovery coordination</li>
-                  <li>Risk stratification & management</li>
-                </ul>
-              </p>
+        <div style={{ backgroundColor: 'var(--blueFaint)' }}>
+          <div className='provider-solutions inner-div'>
+            <h2 style={{ marginBottom: 0 }}>Integrated Provider Solutions</h2>
+            <p style={{ marginTop: 0 }}>
+              Best in class SaaS, real-time, predictive platform for the entire surgical ecosystem
+            </p>
+            <div className='provider-solutions-row'>
+              <div>
+                <img src='images/scheduling.png' />
+                <h4>Integrated Surgical Scheduling</h4>
+                <h6>Coordination across entire care team</h6>
+                <p>
+                  <ul>
+                    <li>Case scheduling & OR management</li>
+                    <li>Image Sharing</li>
+                    <li>EMR & Telelhealth intergration</li>
+                  </ul>
+                </p>
+              </div>
+              <div>
+                <img src='images/smart-scheduling.png' />
+                <h4>Optimized & Coordinated</h4>
+                <h6>Coordination across entire care team</h6>
+                <p>
+                  <ul>
+                    <li>Real time coordination between clinic, OR Team & Device Rep</li>
+                    <li>Intelligent case backlog booking</li>
+                  </ul>
+                </p>
+              </div>
+              <div>
+                <img src='images/episode-of-care.png' />
+                <h4>Episode of Care</h4>
+                <h6>Coordination across entire care team</h6>
+                <p>
+                  <ul>
+                    <li>Post-acute management and recovery coordination</li>
+                    <li>Risk stratification & management</li>
+                  </ul>
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -164,25 +166,25 @@ export default function MedicalDevicePage() {
         <div id='insights-section' className='inner-div'>
           <h2>Data Intelligence & RWD Insights</h2>
           <p>Support the capture of real-word data and insights across the surgical continuum</p>
-          <img src='website-gh/images/demand-intel.png' />
+          <img src='images/demand-intel.png' />
           <div id='insights-copy-div'>
             <div>
               <div className='insight-title-div'>
-                <img src='' />
+                <img src='images/line-graph.png' />
                 <h4>Demand Intelligence</h4>
               </div>
               <p>View aggregated case demand information by region</p>
             </div>
             <div>
               <div className='insight-title-div'>
-                <img src='' />
+                <img src='images/mac.png' />
                 <h4>Market Intelligence</h4>
               </div>
               <p>Understand market share across specialty and therapeutic areas</p>
             </div>
             <div>
               <div className='insight-title-div'>
-                <img src='' />
+                <img src='images/target.png' />
                 <h4>Device Intelligence & Registry</h4>
               </div>
               <p>Longitudinal data from pre-op to recovery and support post market surveillance</p>
@@ -223,6 +225,18 @@ export default function MedicalDevicePage() {
           margin-top: 80px;
         }
 
+        #business {
+          width: 100%;
+          position: absolute;
+          top: 0;
+          z-index: -1000;
+          border: none;
+        }
+
+        .statistics {
+          margin-top: 200px;
+        }
+
         #offerings-section {
           margin-top: 50px;
           padding: 70px 0 100px 0;
@@ -257,8 +271,13 @@ export default function MedicalDevicePage() {
 
         #offerings-divs img {
           width: 100%;
-          height: 175px;
-          margin-right: 10px;
+          max-height: 175px;
+          height: auto;
+          width: auto;
+          border-radius: 5px;
+          display: block;
+          margin: 0 auto;
+          margin-bottom: 10px;
         }
 
         #offerings-divs h4 {
@@ -273,11 +292,15 @@ export default function MedicalDevicePage() {
           background-color: white;
           margin: 10px;
           padding: 10px;
+          text-align: center;
         }
 
         #solve-challenges-divs > div > img {
-          width: 100%;
+          max-height: 150px;
           min-height: 100px;
+          display: block;
+          margin: 0 auto;
+          margin-bottom: 15px;
         }
 
         #insights-section > img {
@@ -302,11 +325,14 @@ export default function MedicalDevicePage() {
         .insight-title-div {
           display: flex;
           align-items: center;
+          margin-bottom: 10px;
+          height: 50px;
         }
 
         .insight-title-div img {
-          height: 25px;
-          width: 25px;
+          width: 40px;
+          height: auto;
+          max-height: 40px;
           margin-right: 10px;
         }
 
@@ -317,17 +343,13 @@ export default function MedicalDevicePage() {
 
         #advanced-case-notification ul {
           margin-top: 0;
-          // display: flex;
         }
 
         #advanced-case-notification li {
           border-radius: 3px;
-          // padding: 5px 8px;
           margin: 2px;
-          // color: white;
           color: var(--blueDocspera);
           font-weight: 500;
-          // letter-spacing: 0.7px;
         }
 
         .provider-solutions-row {
