@@ -63,7 +63,7 @@ export default function HeaderNav() {
             <div className='product-dropdown' onMouseLeave={handleProductOnHover}>
               <Link href='/provider' >
                 <div className='box'>
-                  <h4><img src='/images/surgeon-users.png' />Providers &gt;</h4>
+                  <h4><img src='/images/surgeon-users.png' />Providers <img className='chevron-img' src='/images/chevron.png' /></h4>
                   <ul>
                     <li>Episode of Care</li>
                     <li>Prioritized Rebooking</li>
@@ -73,7 +73,7 @@ export default function HeaderNav() {
               </Link>
               <Link href='/medical-device'>
                 <div className='box'>
-                  <h4><img src='/images/medical-device.png' />Medical Device &gt;</h4>
+                  <h4><img src='/images/medical-device.png' />Medical Device <img className='chevron-img' src='/images/chevron.png' /></h4>
                   <ul>
                     <li>Advanced Case Notification</li>
                     <li>Integrated Provider Solutions</li>
@@ -91,7 +91,7 @@ export default function HeaderNav() {
               <div className={router.pathname == '/company' && 'underline'}></div>
             </a>
           </Link>
-          <div className='dropdown'  >
+          <div className='dropdown'>
             <p className={contactDropdown && 'active_a'}  onMouseEnter={handleContactOnHover}>
               <span>Contact</span>
               <div className={contactDropdown && 'underline'} ></div>
@@ -195,7 +195,7 @@ export default function HeaderNav() {
           top: 100%;
           left: 0;
           width: 100%;
-          background-color: rgba(255, 255, 255, 0.65);
+          background-color: rgba(255, 255, 255, 1);
           padding: 50px 0;
         }
 
@@ -207,7 +207,7 @@ export default function HeaderNav() {
         .box:hover {
           filter: drop-shadow(0px 0px 0.3rem lightgrey);
           border-radius: 10px;
-          background-color: rgba(255, 255, 255, 0.90);
+          background-color: rgba(255, 255, 255, 1);
         }
 
         .box h4 {
@@ -221,6 +221,11 @@ export default function HeaderNav() {
           filter: brightness(0%);
           height: 30px;
           margin-right: 10px;
+        }
+
+        .box .chevron-img {
+          height: 12px;
+          padding: 0 30px;
         }
 
         .box ul {
@@ -262,7 +267,7 @@ export default function HeaderNav() {
           position: absolute;
           top: 100%;
           left: -16%;
-          background-color: rgba(255, 255, 255, 0.65);
+          background-color: rgba(255, 255, 255, 1);
           padding: 0px 10px;
           color: black;
           width: 130px;
