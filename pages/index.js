@@ -71,20 +71,20 @@ export default function Home() {
         <img id='connecting-graphic' src='images/connecting2.png' />
       </div>
 
-      <div id='container'>
-        <div className='box' style={{ marginRight: 30 }}>
+      <div className='product-section'>
+        <div className='box'>
           <h4><img src='/images/surgeon-users.png' />Providers</h4>
           <p><span>&#10140;</span> Episode of Care</p>
           <p><span>&#10140;</span> Prioritized Rebooking</p>
           <p><span>&#10140;</span> Data Intelligence &amp; RWD Insights</p>
-          <Link href='/provider' ><button>View More &nbsp;  &gt;</button></Link>
+          <Link href='/provider'><button>View More <img className='chevron-img' src='/images/chevron.png' /></button></Link>
         </div>
         <div className='box'>
           <h4><img src='/images/medical-device.png' />Medical Device Enterprise</h4>
           <p><span>&#10140;</span> Advanced Case Notification</p>
           <p><span>&#10140;</span> Integrated Provider Solutions</p>
           <p><span>&#10140;</span> Data Intelligence &amp; RWD Insights</p>
-          <Link href='/medical-device' ><button>View More &nbsp;  &gt;</button></Link>
+          <Link href='/medical-device' ><button>View More <img className='chevron-img' src='/images/chevron.png' /></button></Link>
         </div>
       </div>
 
@@ -158,7 +158,7 @@ export default function Home() {
           font-weight: 200;
         }
 
-        #container {
+        .product-section {
           display: flex;
           align-items: center;
           justify-content: center;
@@ -166,11 +166,17 @@ export default function Home() {
   
         }
 
+        .product-section .chevron-img {
+          filter: brightness(0) invert(1);
+          height: 10px;
+          margin: 0 0 0 10px;
+        }
+
         .box {      
-          width: 35%;
-          padding: 25px 150px;
+          padding: 25px 100px;
           border-radius: 10px;
-          background-color: white;
+          background-color: rgba(255, 255, 255, 1);
+          margin: 0 15px;
         }
         .box:hover {
           box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.1);
@@ -217,6 +223,32 @@ export default function Home() {
 
         .box button:hover {
           box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.1);
+        }
+
+
+        @media (max-width: 1024px) {
+          .product-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+       
+          }
+          .box {   
+            width: 45%;
+            padding: 25px 50px;
+        }
+
+        @media (max-width: 768px) {
+          .product-section {
+            display: flex;
+            flex-direction: column;
+  
+          }
+          .box {   
+            width: 100%;   
+            padding: 30px;
+            margin-bottom: 10px;
+          }
         }
 
       `}</style>
