@@ -5,6 +5,10 @@
   --blueFaint: #f6fcff;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   padding: 0;
