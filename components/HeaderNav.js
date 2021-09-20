@@ -165,7 +165,7 @@ export default function HeaderNav() {
           color: var(--blueDocspera);
         }
         
-        .active_a {
+        .active_a, .dropdown .active_a {
           color: var(--blueDocspera);
           font-weight: 600;
         }
