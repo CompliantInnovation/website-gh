@@ -47,7 +47,7 @@ export default function Provider() {
     },
     {
       quote:
-        'The DocSpera scheduling platform has been a tremendous asset to my surgical practice. The extremely user­friendly mobile app offers remarkable flexibility and provides seamless communication between the surgical team and industry reps, ensuring no preoperative planning or scheduling detail goes unrecognized',
+        'The DocSpera scheduling platform has been a tremendous asset to my surgical practice. The extremely user­ friendly mobile app offers remarkable flexibility and provides seamless communication between the surgical team and industry reps, ensuring no preoperative planning or scheduling detail goes unrecognized',
       name: 'Shane Seroyer, MD',
       location: 'TMI Sports Medicine & Orthopedic Surgery Arlington',
       pic: 'ShaneSeroyer.png'
@@ -279,6 +279,7 @@ export default function Provider() {
             </div>
             <div>
               <img src='images/logos/washington.png' width={200} />
+              <img src='images/logos/englewood.png' width={160} />
             </div>
           </div>
         </div>
@@ -428,6 +429,8 @@ export default function Provider() {
         .location {
           color: gray;
         }
+
+
       `}</style>
     </>
   )
