@@ -163,6 +163,7 @@ export default function Home() {
           align-items: center;
           justify-content: center;
           width: 100%;
+          margin: 0px 0 60px 0;
   
         }
 
