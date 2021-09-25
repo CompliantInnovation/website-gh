@@ -103,7 +103,7 @@ export default function MedicalDevicePage() {
             </div>
             <div>
               <img src='images/strategic.png' />
-              <p>Strengthen market position through strategic offerings & engagements</p>
+              <p>Strengthen market position through diversified offerings & strategic engagements</p>
             </div>
           </div>
         </div>
@@ -139,31 +139,34 @@ export default function MedicalDevicePage() {
                   <ul>
                     <li>Case scheduling & OR management</li>
                     <li>Image Sharing</li>
-                    <li>EMR & Telelhealth intergration</li>
+                    <li>EMR & Telehealth intergration</li>
                   </ul>
                 </p>
+                <div>Integrated Workflow</div>
               </div>
               <div>
                 <img src='images/smart-scheduling.png' />
-                <h4>Optimized & Coordinated</h4>
-                <h6>Coordination across entire care team</h6>
+                <h4>Surgical Dashboard</h4>
+                <h6>Manage upcoming cases</h6>
                 <p>
                   <ul>
-                    <li>Real time coordination between clinic, OR Team & Device Rep</li>
+                    <li>Real-time coordination between Clinic, OR Team & Device Rep</li>
                     <li>Intelligent case backlog booking</li>
                   </ul>
                 </p>
+                <div>Optimized and Coordinated</div>
               </div>
               <div>
                 <img src='images/episode-of-care.png' />
-                <h4>Episode of Care</h4>
-                <h6>Coordination across entire care team</h6>
+                <h4>Episode of Care Tracker</h4>
+                <h6>Post operative care management</h6>
                 <p>
                   <ul>
                     <li>Post-acute management and recovery coordination</li>
                     <li>Risk stratification & management</li>
                   </ul>
                 </p>
+                <div>Outcomes and Risk Management</div>
               </div>
             </div>
           </div>
@@ -398,6 +401,16 @@ export default function MedicalDevicePage() {
 
         .provider-solutions-row p {
           max-width: 300px;
+        }
+
+        .provider-solutions-row > div > div {
+          padding: 10px ;
+          background-color: var(--blueDocspera);
+          text-align: center;
+          border-radius: 18px;
+          color: white;
+          width: 100%;
+    
         }
       `}</style>
     </>
