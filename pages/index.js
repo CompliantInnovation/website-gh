@@ -17,7 +17,7 @@ export default function Home() {
 
       <img id='landing-bg' src='images/hexagon_bottom.png' width={'100%'} />
       {/* <Image src='images/hexagon_bottom.png' height={1200} width={2300} /> */}
-
+      
       <div id='logo-animation'>
         <LogoAnimation />
       </div>
@@ -33,7 +33,7 @@ export default function Home() {
           <NumberScroll
             imgSrc='images/surgeon-users.png'
             number={6000}
-            title='Surgical Users'
+            title='Surgeon Users'
             plus
           />
         </div>
@@ -49,7 +49,10 @@ export default function Home() {
       </div>
 
       <div id='connecting-section'>
+        
         <div id='words-div'>
+        <h1>DocSpera Integrated Care Coordination Platform</h1>
+
           <h2>
             Connecting <b>Surgeons</b>, <br /> <b>Care Teams</b> & <b>Medical Device Co.</b>
           </h2>
@@ -85,6 +88,19 @@ export default function Home() {
           <p><span>&#10140;</span> Integrated Provider Solutions</p>
           <p><span>&#10140;</span> Data Intelligence &amp; RWD Insights</p>
           <Link href='/medical-device' ><button>View More <img className='chevron-img' src='/images/chevron.png' /></button></Link>
+        </div>
+      </div>
+      
+      <div className='collab-section'>
+        <h2>DocSpera works with leading health solution providers and Organizations</h2>
+        <div className='collaborators'>
+          <div>Innovaccer</div>
+          <div>AthenaHealth Marketplace</div>
+          <div>EPIC App Orchard</div>
+          <div>DOLBY</div>
+          <div>AAHKS</div>
+          <div>Anterior Hip Foundation</div>
+          <div>CMS</div>
         </div>
       </div>
 
@@ -226,6 +242,27 @@ export default function Home() {
           box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.1);
         }
 
+
+        .collab-section {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          padding: 100px 0;
+          width: 100%;
+     
+        }
+
+        .collaborators {
+          display: grid;
+          grid-template-columns: 1fr  1fr 1fr;
+          grid-template-rows: 1fr 1fr; 
+          column-gap: 10px;
+          row-gap: 10px;
+          justify-items: center;
+          align-items: center;
+          margin-top: 20px;
+        }
 
         @media (max-width: 1024px) {
           .product-section {
