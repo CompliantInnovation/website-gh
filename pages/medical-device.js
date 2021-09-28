@@ -24,7 +24,7 @@ export default function MedicalDevicePage() {
             <NumberScroll
               imgSrc='images/surgeon-users.png'
               number={6000}
-              title='Surgeon Users'
+              title='Surgeons'
               plus
             />
             <NumberScroll
@@ -38,12 +38,12 @@ export default function MedicalDevicePage() {
             <NumberScroll
               imgSrc='images/medical-device.png'
               number={'3/5'}
-              title='Top Medical Device Companies'
+              title='Top Global Medical Device Companies'
             />
             <NumberScroll
               imgSrc='images/tech-partners.png'
               number={30}
-              title='Tech Partners'
+              title='Technology Partners'
               plus
             />
           </div>
@@ -51,28 +51,34 @@ export default function MedicalDevicePage() {
 
         <div id='offerings-section'>
           <div id='offerings' className='inner-div'>
-            <h2 style={{ marginBottom: 20 }}>Enterprise Offerings & Advantages</h2>
+            <h2 style={{ marginBottom: 20 }}>Enterprise Offerings & Outcomes</h2>
             <div id='offerings-divs'>
               <div>
+                <h3>Docspera Demand</h3>
                 <img src='images/case-notification.png' />
                 <h4>Advanced Case Notification</h4>
                 <p>Early case demand signal to improve supply chain and robotics</p>
+                <p className='outcome'>Outcome: Advanced case signal from ~5 days to ~5 weeks</p>
                 <button>
                   <a href='#advanced-case-notification'>View</a>
                 </button>
               </div>
               <div>
+                <h3>DocSpera Provider Premium</h3>
                 <img src='images/provider-solutions.png' height='auto' />
                 <h4>Integrated Provider Solutions</h4>
-                <p>Enhance enterprise software offerings</p>
+                <p>Integrated platform & modules to enhance & complement enterprise software offerings</p>
+                <p className='outcome'>Outcome: Expand Enterprise capabilities into digital software offerings</p>
                 <button>
                   <a href='#integrated-providers-solutions'>View</a>
                 </button>
               </div>
               <div>
+                <h3>DocSpera Insights</h3>
                 <img src='images/data-intelligence.png' />
-                <h4>Data Intelligence</h4>
-                <p>Support the capture of real-world data across the surgical continuum</p>
+                <h4>Data Intelligence & RWD Insights</h4>
+                <p>Support the capture of real-world data across the surgical continuum (from surgical decision to recovery)</p>
+                <p className='outcome'>Outcome: Provide data registry enablement, regional trends and outcome studies</p>
                 <button>
                   <a href='#insights-section'>View</a>
                 </button>
@@ -82,34 +88,49 @@ export default function MedicalDevicePage() {
         </div>
 
         <div id='solve-challenges-section' className='inner-div'>
-          <h2 style={{ marginBottom: 0 }}>Solve Urgent Challenges</h2>
+          <h2 style={{ marginBottom: 0 }}>Solve Urgent CXO Level Challenges</h2>
           <p style={{ marginTop: 0 }}>
             With early, integrated, real-time capture of surgical cases:
           </p>
           <div id='solve-challenges-divs'>
             <div>
               <img src='images/cancellations.png' />
-              <p>
+              {/* <p>
                 Improve inventory management across shipping, sterilization, tray sizing,
                 cancellation management, etc
-              </p>
+              </p> */}
+              <p>Improved inventory management and transparency through earlier, more integrated real-time capture of surgical case</p>
+              <p>70% reduction in implant needs driving improvements across shipping, sterilization, tray sizing, cancellation management, etc.</p>
             </div>
             <div>
               <img src='images/data-driven.png' />
-              <p>
+              {/* <p>
                 Deepen your understanding of your product performance in real world clinical
                 settings
-              </p>
+              </p> */}
+              <p>Deeper understanding of your product performance across continuum of care</p>
+              <p>Access real-world data and gain insight of your product performance in real-world clinical settings</p>
             </div>
             <div>
               <img src='images/strategic.png' />
-              <p>Strengthen market position through strategic offerings & engagements</p>
+              {/* <p>Strengthen market position through diversified offerings & strategic engagements</p> */}
+              <p>Strengthen market position through diversified offerings to become a more strategic partner to your customers</p>
+              <p>Complement implant sales with digital offerings that extends your solutions in more strategic engagements</p>
+            </div>
+            <div>
+              <img src='' alt='Deliver' />
+              {/* <p>Deliver trackable and easily managed risk–sharing based offerings</p> */}
+              <p>Deliver trackable and easily managed risk–sharing based offerings </p>
+              <p>Easily provide your hospital customers with value and risk sharing based models using DocSpera clinically integrated platforms</p>
             </div>
           </div>
         </div>
 
         <div id='advanced-case-notification' className='inner-div'>
-          <h2 style={{ marginTop: 100, marginBottom: 0 }}>Advanced Case Notification</h2>
+        <h3 style={{ marginTop: 100, marginBottom: 0 }}>DocSpera Demand</h3>
+        <h2 style={{ marginTop: 0, marginBottom: 0 }}>Real Time Advanced Case Notification</h2>
+          {/* <h2 style={{ marginTop: 100, marginBottom: 0 }}> Real Time Advanced Case Notification</h2> */}
+ 
           <p style={{ margin: 0 }}>Improve Supply Chain Efficiencies</p>
           <div style={{ display: 'flex', marginLeft: -20, marginTop: 20 }}>
             <ul>
@@ -126,7 +147,8 @@ export default function MedicalDevicePage() {
 
         <div style={{ backgroundColor: 'var(--blueFaint)' }}>
           <div id='integrated-providers-solutions' className='provider-solutions inner-div'>
-            <h2 style={{ marginBottom: 0 }}>Integrated Provider Solutions</h2>
+          <h3 style={{ marginTop: 100, marginBottom: 0 }}>DocSpera Provider Premium</h3>
+            <h2 style={{ marginTop: 0, marginBottom: 0 }}>Integrated Provider Solutions</h2>
             <p style={{ marginTop: 0 }}>
               Best in class SaaS, real-time, predictive platform for the entire surgical ecosystem
             </p>
@@ -139,38 +161,42 @@ export default function MedicalDevicePage() {
                   <ul>
                     <li>Case scheduling & OR management</li>
                     <li>Image Sharing</li>
-                    <li>EMR & Telelhealth intergration</li>
+                    <li>EMR & Telehealth intergration</li>
                   </ul>
                 </p>
+                <div>Integrated Workflow</div>
               </div>
               <div>
                 <img src='images/smart-scheduling.png' />
-                <h4>Optimized & Coordinated</h4>
-                <h6>Coordination across entire care team</h6>
+                <h4>Surgical Dashboard</h4>
+                <h6>Manage upcoming cases</h6>
                 <p>
                   <ul>
-                    <li>Real time coordination between clinic, OR Team & Device Rep</li>
+                    <li>Real-time coordination between Clinic, OR Team & Device Rep</li>
                     <li>Intelligent case backlog booking</li>
                   </ul>
                 </p>
+                <div>Optimized and Coordinated</div>
               </div>
               <div>
                 <img src='images/episode-of-care.png' />
-                <h4>Episode of Care</h4>
-                <h6>Coordination across entire care team</h6>
+                <h4>Episode of Care Tracker</h4>
+                <h6>Post operative care management</h6>
                 <p>
                   <ul>
                     <li>Post-acute management and recovery coordination</li>
                     <li>Risk stratification & management</li>
                   </ul>
                 </p>
+                <div>Outcomes and Risk Management</div>
               </div>
             </div>
           </div>
         </div>
 
         <div id='insights-section' className='inner-div'>
-          <h2>Data Intelligence & RWD Insights</h2>
+        <h3 style={{ marginTop: 100, marginBottom: 0 }}>DocSpera Insights</h3>
+          <h2 style={{ marginTop: 0, marginBottom: 0 }}>Data Intelligence & RWD Insights</h2>
           <p>Support the capture of real-word data and insights across the surgical continuum</p>
           <img src='images/demand-intel.png' />
           <div id='insights-copy-div'>
@@ -291,8 +317,13 @@ export default function MedicalDevicePage() {
           margin-bottom: 10px;
         }
 
-        #offerings-divs h4 {
+        #offerings-divs h4, h3 {
           margin: 0;
+        }
+
+        #offerings-divs .outcome {
+          color: var(--blueDocspera);
+     
         }
 
         #solve-challenges-divs {
@@ -312,6 +343,12 @@ export default function MedicalDevicePage() {
           display: block;
           margin: 0 auto;
           margin-bottom: 15px;
+        }
+
+        #solve-challenges-divs > div > p:nth-child(3) {
+          font-size: 12px;
+          color: grey;
+
         }
 
         #insights-section > img {
@@ -398,6 +435,16 @@ export default function MedicalDevicePage() {
 
         .provider-solutions-row p {
           max-width: 300px;
+        }
+
+        .provider-solutions-row > div > div {
+          padding: 10px ;
+          background-color: var(--blueDocspera);
+          text-align: center;
+          border-radius: 18px;
+          color: white;
+          width: 100%;
+    
         }
       `}</style>
     </>
