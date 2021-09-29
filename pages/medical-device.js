@@ -169,55 +169,48 @@ export default function MedicalDevicePage() {
           <img src='images/advanced-case-notification.png' />
         </div>
 
-        <div
-          style={{ backgroundColor: 'var(--blueFaint)', display: 'flex', justifyContent: 'center' }}
-        >
-          <div id='integrated-providers-solutions' className='provider-solutions inner-div'>
-            <h3 style={{ marginTop: 100, marginBottom: 0 }}>DocSpera Provider Premium</h3>
-            <h2 style={{ marginTop: 0, marginBottom: 0 }}>Integrated Provider Solutions</h2>
-            <p style={{ marginTop: 0 }}>
-              Best in class SaaS, real-time, predictive platform for the entire surgical ecosystem
-            </p>
-            <div className='provider-solutions-row'>
-              <div>
-                <h4>Integrated Surgical Scheduling & Coordination Across Entire Care Team</h4>
-                <img src='images/scheduling.png' />
-                {/* <h6>Integrated Workflow</h6> */}
-                <p>
-                  <ul>
-                    <li>Case scheduling & OR management</li>
-                    <li>Image Sharing</li>
-                    <li>EMR & Telehealth intergration</li>
-                  </ul>
-                </p>
-                <div>Integrated Workflow</div>
-              </div>
-              <div>
-                <h4>Surgical Dashboard for Managing Upcoming Cases</h4>
-                <img src='images/smart-scheduling.png' />
-                <h4>Surgical Dashboard</h4>
-                <h6>Manage upcoming cases</h6>
-                <p>
-                  <ul>
-                    <li>Real-time coordination between Clinic, OR Team & Device Rep</li>
-                    <li>Intelligent case backlog booking</li>
-                  </ul>
-                </p>
-                <div>Optimized and Coordinated</div>
-              </div>
-              <div>
-                <h4>Episode of Care Tracker for Post Operatice Care Management</h4>
-                <img src='images/episode-of-care.png' />
-                <h4>Episode of Care Tracker</h4>
-                <h6>Post operative care management</h6>
-                <p>
-                  <ul>
-                    <li>Post-acute management and recovery coordination</li>
-                    <li>Risk stratification & management</li>
-                  </ul>
-                </p>
-                <div>Outcomes and Risk Management</div>
-              </div>
+        <div className='provider-solutions inner-div'>
+          <h2>Integrated Provider Solutions</h2>
+          <p>
+            Best in class SaaS, real-time, predictive platform for the entire surgical ecosystem
+          </p>
+          <div className='provider-solutions-row'>
+            <div>
+              <img src='images/scheduling.png' />
+              <h4>Integrated Surgical Scheduling</h4>
+              <h6>Coordination across entire care team</h6>
+              <p>
+                <ul>
+                  <li>Case scheduling & OR management</li>
+                  <li>Image Sharing</li>
+                  <li>EMR & Telehealth intergration</li>
+                </ul>
+              </p>
+              <div>Integrated Workflow</div>
+            </div>
+            <div>
+              <img src='images/smart-scheduling.png' />
+              <h4>Optimized & Coordinated</h4>
+              <h6>Manage upcoming cases</h6>
+              <p>
+                <ul>
+                  <li>Real-time coordination between Clinic, OR Team & Device Rep</li>
+                  <li>Intelligent case backlog booking</li>
+                </ul>
+              </p>
+              <div>Optimized and Coordinated</div>
+            </div>
+            <div>
+              <img src='images/episode-of-care.png' />
+              <h4>Episode of Care</h4>
+              <h6>Post operative care management</h6>
+              <p>
+                <ul>
+                  <li>Post-acute management and recovery coordination</li>
+                  <li>Risk stratification & management</li>
+                </ul>
+              </p>
+              <div>Outcomes and Risk Management</div>
             </div>
           </div>
         </div>
@@ -437,46 +430,26 @@ export default function MedicalDevicePage() {
           font-weight: 500;
         }
 
-        .provider-solutions {
-          background-color: white !important;
-          padding-top: 0;
-          padding-bottom: 40px;
-          margin-left: 5vw;
-          margin-right: 5vw;
-          border-radius: 10px;
-          border: 2px solid var(--blueDocspera);
-          filter: drop-shadow(0px 0px 0.3rem lightgrey);
-        }
-
-        .provider-solutions h2 {
-          margin-top: 40px;
-        }
-
         .provider-solutions-row {
           display: flex;
           justify-content: space-between;
-          flex-wrap: wrap;
         }
 
         .provider-solutions-row > div {
-          padding: 20px;
-          // max-width: 300px;
-          margin: 0 auto;
+          padding: 10px;
         }
 
         .provider-solutions-row img {
-          width: 100%;
-          // height: 160px;
+          width: 300px;
+          height: 180px;
           border-radius: 10px;
           filter: drop-shadow(0 0px 10px lightgray);
-          display: block;
-          margin: 0 auto;
         }
 
         .provider-solutions-row h4 {
           margin: 0;
           margin-top: 20px;
-          min-height: 95px;
+          color: var(--blueDocspera);
         }
 
         .provider-solutions-row h6 {
@@ -492,13 +465,6 @@ export default function MedicalDevicePage() {
 
         .provider-solutions-row p {
           max-width: 300px;
-          min-height: 100px;
-        }
-
-        .view-product-btn {
-          position: static;
-          width: 100%;
-          height: 40px;
         }
 
         .provider-solutions-row > div > div {
@@ -508,6 +474,12 @@ export default function MedicalDevicePage() {
           border-radius: 18px;
           color: white;
           width: 100%;
+        }
+
+        .view-product-btn {
+          position: static;
+          width: 100%;
+          height: 40px;
         }
       `}</style>
     </>
