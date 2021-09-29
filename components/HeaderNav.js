@@ -8,10 +8,12 @@ export default function HeaderNav() {
   const router = useRouter()
   const isBrowser = () => typeof window !== 'undefined'
 
-  let tabletSize
+  let tabletSize, mobileSize
   if (isBrowser) {
-    tabletSize = useMedia('(max-width: 775px)')
+    tabletSize = useMedia('(max-width: 775px)');
+    mobileSize = useMedia('(max-width: 480px)');
   }
+
 
   const [productDropdown, setProductDropdown] = useState(false);
   const handleProductOnHover = () => {
@@ -39,6 +41,7 @@ export default function HeaderNav() {
 
 
   return (
+    mobileSize ? <MobileNav /> : 
     <nav>
       {isBrowser && (
         <Link href='/' >
@@ -51,7 +54,7 @@ export default function HeaderNav() {
           </a>
         </Link>
       )}
-      <MobileNav />
+    
       {/* <div className='responsive-nav'>
         <img id='hamburger' src='/images/hamburger.png'/>
         <img id='x' src='/images/x.png'/>
