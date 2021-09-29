@@ -43,7 +43,7 @@ export default function MobileNav() {
           {mobileNav ? <img id='x' src='/images/x.png' onClick={openMenu} /> : <img id='hamburger' src='/images/hamburger.png' onClick={openMenu} />}
         </div>
         <div>
-          {router.pathname == '/login' || isLogin ? <button onClick={handleLogin}>Request Demo</button> : <Link href='/login'><button>Log In</button></Link>}
+          {router.pathname == '/login' || isLogin ? <a href='https://docspera.com/demo' target='_blank'> <button onClick={handleLogin}>Demo</button></a> : <Link href='/login'><button>Log In</button></Link>}
 
         </div>
 
@@ -102,8 +102,8 @@ export default function MobileNav() {
                 <div className='contact-dropdown' >
                   <div className='underline'></div>
                   <ul>
-                    <li><a href='https://docspera.com/support'>Contact Us</a></li>
-                    <li><a href='https://docspera.com/demo'>Request Demo</a></li>
+                    <li><a href='https://docspera.com/support' target='_blank'>Contact Us</a></li>
+                    <li><a href='https://docspera.com/demo' target='_blank'>Request Demo</a></li>
                   </ul>
                 </div>
               )}

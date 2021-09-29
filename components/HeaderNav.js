@@ -54,12 +54,7 @@ export default function HeaderNav() {
           </a>
         </Link>
       )}
-    
-      {/* <div className='responsive-nav'>
-        <img id='hamburger' src='/images/hamburger.png'/>
-        <img id='x' src='/images/x.png'/>
-      </div> */}
-
+  
       <div id='right-side'>
         <div id='nav-items'>
 
@@ -107,9 +102,9 @@ export default function HeaderNav() {
             </p>
           {contactDropdown && (
               <div className='contact-dropdown' onMouseLeave={handleContactOnHover}>
-                <ul >
-                  <li>Contact Us</li>
-                  <li>Request Demo</li>
+                <ul>
+                  <li><a href='https://docspera.com/support' target='_blank'>Contact Us</a></li>
+                  <li><a href='https://docspera.com/demo' target='_blank'>Request Demo</a></li>
                 </ul>
               </div>
             )}
@@ -133,7 +128,7 @@ export default function HeaderNav() {
             </a>
           </Link> */}
         </div>
-        {router.pathname == '/login' || isLogin ? <button onClick={handleLogin}>Request Demo</button> : <Link href='/login'><button>Log In</button></Link> }
+        {router.pathname == '/login' || isLogin ? <a className='demo-link' href='https://docspera.com/demo' target='_blank'><button onClick={handleLogin}>Request Demo</button></a> : <Link href='/login'><button>Log In</button></Link> }
         
       </div>
 
@@ -184,6 +179,10 @@ export default function HeaderNav() {
           width: 100%;
           background-color: var(--blueDocspera);
           border-radius: 10px;
+        }
+
+        .demo-link {
+          padding: 0;
         }
 
         button {
@@ -287,19 +286,22 @@ export default function HeaderNav() {
           list-style-type: none;
           margin: 0;
           padding: 0;
-        }
-        .contact-dropdown li {
-          font-size: 14px;
           padding-bottom: 10px;
+        }
+        .contact-dropdown li a {
+          font-size: 14px;
+          padding: 0 0 10px 0;
           color: grey;
       
         }
 
-        .contact-dropdown li:hover {
+        .contact-dropdown li a:hover {
           color: black;
           cursor: default;
           font-weight: bold;
         }
+
+       
 
         h4 {
           margin: 0;
