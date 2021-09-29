@@ -40,10 +40,10 @@ export default function Provider() {
     },
     {
       quote:
-        'Overall, DocSpera is a great solution for practices or providers looking to collaborate and share information about patients and cases',
-      name: 'Orrin Franko MD',
-      location: 'East Bay Hand Medical Center',
-      pic: 'OrrinFranko.png'
+        'I do a fair bit of team coverage for athletic teams. Connecting w. the athletic trainers is a breeze, they love the real-time interaction and HIPAA compliance as well... Best under-recognized app on the market to keep busy docs organized. A true hidden gem',
+      name: 'Christopher Donaldson, MD',
+      location: 'Western Pennsylvania Orthopedic & Sport Medicine',
+      pic: 'ChristopherDonaldson.png'
     },
     {
       quote:
@@ -58,14 +58,6 @@ export default function Provider() {
       name: 'Aaron Salyapongse MD',
       location: 'Stanford Health Care -­ ValleyCare',
       pic: 'AaronSalyapongse.png'
-    },
-
-    {
-      quote:
-        'I do a fair bit of team coverage for athletic teams. Connecting w. the athletic trainers is a breeze, they love the real-time interaction and HIPAA compliance as well... Best under-recognized app on the market to keep busy docs organized. A true hidden gem',
-      name: 'Christopher Donaldson, MD',
-      location: 'Western Pennsylvania Orthopedic & Sport Medicine',
-      pic: 'ChristopherDonaldson.png'
     }
   ]
 
@@ -82,10 +74,10 @@ export default function Provider() {
           Intelligent Surgical Coordination: Enabling Efficiency and Profitability
         </h2>
         <p>
-          DocSpera is an integrated surgical coordination, helping manage coordination across multiple sites and
-          teams, drive improved efficiencies and deliver better care.
+          DocSpera is an integrated surgical coordination, helping manage coordination across
+          multiple sites and teams, drive improved efficiencies and deliver better care.
         </p>
-        <img src='images/surgeon-doodle.png' id='surgeon-doodle' />
+        <img src='images/provider-art-work.png' id='surgeon-doodle' />
 
         <div className='statistics'>
           <div>
@@ -124,37 +116,37 @@ export default function Provider() {
               <h4>Integrated Surgical Scheduling</h4>
               <h6>Coordination across entire care team</h6>
               <p>
-                  <ul>
-                    <li>Case scheduling & OR management</li>
-                    <li>Image Sharing</li>
-                    <li>EMR & Telehealth intergration</li>
-                  </ul>
-                </p>
-                <div>Integrated Workflow</div>
+                <ul>
+                  <li>Case scheduling & OR management</li>
+                  <li>Image Sharing</li>
+                  <li>EMR & Telehealth intergration</li>
+                </ul>
+              </p>
+              <div>Integrated Workflow</div>
             </div>
             <div>
               <img src='images/smart-scheduling.png' />
               <h4>Optimized & Coordinated</h4>
               <h6>Manage upcoming cases</h6>
               <p>
-                  <ul>
-                    <li>Real-time coordination between Clinic, OR Team & Device Rep</li>
-                    <li>Intelligent case backlog booking</li>
-                  </ul>
-                </p>
-                <div>Optimized and Coordinated</div>
+                <ul>
+                  <li>Real-time coordination between Clinic, OR Team & Device Rep</li>
+                  <li>Intelligent case backlog booking</li>
+                </ul>
+              </p>
+              <div>Optimized and Coordinated</div>
             </div>
             <div>
               <img src='images/episode-of-care.png' />
               <h4>Episode of Care</h4>
               <h6>Post operative care management</h6>
               <p>
-                  <ul>
-                    <li>Post-acute management and recovery coordination</li>
-                    <li>Risk stratification & management</li>
-                  </ul>
-                </p>
-                <div>Outcomes and Risk Management</div>
+                <ul>
+                  <li>Post-acute management and recovery coordination</li>
+                  <li>Risk stratification & management</li>
+                </ul>
+              </p>
+              <div>Outcomes and Risk Management</div>
             </div>
           </div>
         </div>
@@ -191,9 +183,6 @@ export default function Provider() {
               <img src='images/logos/drchrono.png' width={140} />
               <img src='images/logos/greenway.png' width={150} />
               <img src='images/logos/SRS.jpg' width={120} />
-            </div>
-            <div>
-              <img src='images/logos/brain-lab.jpg' width={190} />
             </div>
           </div>
         </div>

@@ -12,30 +12,29 @@ export default function HeaderNav() {
     tabletSize = useMedia('(max-width: 775px)')
   }
 
-  const [productDropdown, setProductDropdown] = useState(false);
+  const [productDropdown, setProductDropdown] = useState(false)
   const handleProductOnHover = () => {
-    setProductDropdown(!productDropdown);
-    setContactDropdown(false);
+    setProductDropdown(!productDropdown)
+    setContactDropdown(false)
   }
 
-  const [contactDropdown, setContactDropdown] = useState(false);
+  const [contactDropdown, setContactDropdown] = useState(false)
   const handleContactOnHover = () => {
-    setContactDropdown(!contactDropdown);
-    setProductDropdown(false);
+    setContactDropdown(!contactDropdown)
+    setProductDropdown(false)
   }
 
-  const [blogHover, setBlogHover] = useState(false);
+  const [blogHover, setBlogHover] = useState(false)
   const handleBlogOnHover = () => {
-    setBlogHover(!blogHover);
-    setContactDropdown(false);
-    setProductDropdown(false);
+    setBlogHover(!blogHover)
+    setContactDropdown(false)
+    setProductDropdown(false)
   }
 
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(false)
   const handleLogin = () => {
     setIsLogin(!isLogin)
   }
-
 
   return (
     <nav>
@@ -53,17 +52,18 @@ export default function HeaderNav() {
 
       <div id='right-side'>
         <div id='nav-items'>
-
           <a className={productDropdown && 'active_a'} onMouseEnter={handleProductOnHover}>
             <span>Product</span>
             <div className={productDropdown && 'underline'}></div>
           </a>
           {productDropdown && (
-            
             <div className='product-dropdown' onMouseLeave={handleProductOnHover}>
-              <Link href='/provider' >
+              <Link href='/provider'>
                 <div className='box'>
-                  <h4><img src='/images/surgeon-users.png' />Providers <img className='chevron-img' src='/images/chevron.png' /></h4>
+                  <h4>
+                    <img src='/images/surgeon-users.png' />
+                    Providers <img className='chevron-img' src='/images/chevron.png' />
+                  </h4>
                   <ul>
                     <li>Episode of Care</li>
                     <li>Prioritized Rebooking</li>
@@ -73,7 +73,10 @@ export default function HeaderNav() {
               </Link>
               <Link href='/medical-device'>
                 <div className='box'>
-                  <h4><img src='/images/medical-device.png' />Medical Device <img className='chevron-img' src='/images/chevron.png' /></h4>
+                  <h4>
+                    <img src='/images/medical-device.png' />
+                    Medical Device <img className='chevron-img' src='/images/chevron.png' />
+                  </h4>
                   <ul>
                     <li>Advanced Case Notification</li>
                     <li>Integrated Provider Solutions</li>
@@ -81,8 +84,7 @@ export default function HeaderNav() {
                   </ul>
                 </div>
               </Link>
-          </div>
-     
+            </div>
           )}
 
           <Link href='/company'>
@@ -92,21 +94,27 @@ export default function HeaderNav() {
             </a>
           </Link>
           <div className='dropdown'>
-            <p className={contactDropdown && 'active_a'}  onMouseEnter={handleContactOnHover}>
+            <p className={contactDropdown && 'active_a'} onMouseEnter={handleContactOnHover}>
               <span>Contact</span>
-              <div className={contactDropdown && 'underline'} ></div>
+              <div className={contactDropdown && 'underline'}></div>
             </p>
-          {contactDropdown && (
+            {contactDropdown && (
               <div className='contact-dropdown' onMouseLeave={handleContactOnHover}>
-                <ul >
+                <ul>
                   <li>Contact Us</li>
                   <li>Request Demo</li>
                 </ul>
               </div>
             )}
           </div>
-           
-          <a className={blogHover && 'active_a'} href='https://blog.d4.docspera.com/' target='_blank' onMouseEnter={handleBlogOnHover} onMouseLeave={handleBlogOnHover}>
+
+          <a
+            className={blogHover && 'active_a'}
+            href='https://blog.d4.docspera.com/'
+            target='_blank'
+            onMouseEnter={handleBlogOnHover}
+            onMouseLeave={handleBlogOnHover}
+          >
             <span>Blog</span>
             <div className={blogHover && 'underline'}></div>
           </a>
@@ -124,8 +132,13 @@ export default function HeaderNav() {
             </a>
           </Link> */}
         </div>
-        {router.pathname == '/login' || isLogin ? <button onClick={handleLogin}>Request Demo</button> : <Link href='/login'><button>Log In</button></Link> }
-        
+        {router.pathname == '/login' || isLogin ? (
+          <button onClick={handleLogin}>Request Demo</button>
+        ) : (
+          <Link href='/login'>
+            <button>Log In</button>
+          </Link>
+        )}
       </div>
 
       <style jsx>{`
@@ -164,12 +177,13 @@ export default function HeaderNav() {
         a:hover {
           color: var(--blueDocspera);
         }
-        
-        .active_a, .dropdown .active_a {
+
+        .active_a,
+        .dropdown .active_a {
           color: var(--blueDocspera);
           font-weight: 600;
         }
-        
+
         .underline {
           height: 3px;
           width: 100%;
@@ -181,7 +195,7 @@ export default function HeaderNav() {
           background-color: var(--blueDocspera);
           border: none;
           border-radius: 5px;
-          filter: drop-shadow(0, 3px, 6px, black);
+          // filter: drop-shadow(0, 3px, 6px, black);
           color: white;
           padding: 10px 15px;
           font-size: 16px;
@@ -196,12 +210,12 @@ export default function HeaderNav() {
           left: 0;
           width: 100%;
           background-color: rgba(255, 255, 255, 1);
-          padding: 50px 0;
+          padding: 20px 0;
         }
 
         .box {
           margin: 30px;
-          padding: 12px;
+          padding: 40px;
         }
 
         .box:hover {
@@ -214,7 +228,6 @@ export default function HeaderNav() {
           display: flex;
           align-items: center;
           padding-bottom: 10px;
-   
         }
 
         .box img {
@@ -249,7 +262,6 @@ export default function HeaderNav() {
           color: var(--blueDocspera);
         }
 
-
         .dropdown p {
           color: var(--blueDark);
           margin: 0;
@@ -283,7 +295,6 @@ export default function HeaderNav() {
           font-size: 14px;
           padding-bottom: 10px;
           color: grey;
-      
         }
 
         .contact-dropdown li:hover {
