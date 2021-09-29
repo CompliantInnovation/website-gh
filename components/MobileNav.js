@@ -99,12 +99,11 @@ export default function MobileNav() {
               
               {contactDropdown && (
 
-                <div className='contact-dropdown' onClick={handleContactOnHover}>
+                <div className='contact-dropdown' >
                   <div className='underline'></div>
-
-                  <ul >
-                    <li>Contact Us</li>
-                    <li>Request Demo</li>
+                  <ul>
+                    <li><a href='https://docspera.com/support'>Contact Us</a></li>
+                    <li><a href='https://docspera.com/demo'>Request Demo</a></li>
                   </ul>
                 </div>
               )}
@@ -166,7 +165,12 @@ export default function MobileNav() {
               color: white;
               padding: 10px 15px;
               font-size: 16px;
-            }
+          }
+
+          a {
+            text-decoration: none;
+            color: black;
+          }
 
             .menu-item {
               background-color: var(--blueFaint);
@@ -180,7 +184,7 @@ export default function MobileNav() {
             .menu-item img {
               height: 16px;
             }
-            
+
             .product-container, .contact-container {
               background-color: var(--blueFaint);
               margin-bottom: 10px;
@@ -194,32 +198,43 @@ export default function MobileNav() {
               height: 2px;
               width: 95%;
               margin: auto;
-              background-color: grey;
+              background-color: lightgrey;
               border-radius: 10px;
+              margin-bottom: 10px;
             }
 
             .product-dropdown {
               padding-bottom: 10px;
+              font-size: 16px;
             }
 
             .box {
               display: flex;
               align-items: center;
               padding: 10px 20px;
-              margin-top: 10px;
             }
 
             .box img {
               filter: brightness(0%);
-              height: 30px;
+              height: 23px;
               margin-right: 10px;
             }
-    
+
             .box .chevron-img {
-              height: 12px;
+              height: 10px;
               padding: 0 30px;
             }
 
+            .contact-dropdown ul {
+              list-style-type: none;
+              padding-left: 20px;
+            }
+            .contact-dropdown li {
+              font-size: 16px;
+              padding-bottom: 10px;
+            }
+
+           
 
       `}</style>
         </nav>
