@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useMedia } from '../hooks/useMedia'
 import React, { useState } from 'react'
+import MobileNav from '../components/MobileNav'
 
 export default function HeaderNav() {
   const router = useRouter()
@@ -40,9 +41,9 @@ export default function HeaderNav() {
   return (
     <nav>
       {isBrowser && (
-        <Link href='/'>
+        <Link href='/' >
           <a>
-            <img
+            <img id='logo'
               src={`${tabletSize ? 'images/logo-short.png' : 'images/logo.svg'}`}
               height={`${tabletSize ? 40 : 70}`}
               width={`${tabletSize ? 40 : 150}`}
@@ -50,6 +51,11 @@ export default function HeaderNav() {
           </a>
         </Link>
       )}
+      <MobileNav />
+      {/* <div className='responsive-nav'>
+        <img id='hamburger' src='/images/hamburger.png'/>
+        <img id='x' src='/images/x.png'/>
+      </div> */}
 
       <div id='right-side'>
         <div id='nav-items'>
@@ -295,6 +301,35 @@ export default function HeaderNav() {
         h4 {
           margin: 0;
         }
+
+        // .responsive-nav {
+        //   display: none;
+        // }
+
+        // @media (max-width: 768px) {
+        //   #logo {
+        //     display:none;
+        //   }
+        //   #right-side {
+        //     display: flex;
+        //     background-color: white;
+        //     flex-direction: column;
+        //     align-items: center;
+        //     padding: 0;
+        //   }
+
+        //   .responsive-nav {
+        //     display: block; 
+        //     position: fixed;
+        //     top: 0;
+        //     right: 0;
+        //     transform: translate(-100%, 75%);
+        //     cursor: pointer;
+        //     z-index: 100;
+        //   }
+
+
+        // }
       `}</style>
     </nav>
   )
