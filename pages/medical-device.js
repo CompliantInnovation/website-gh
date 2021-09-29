@@ -94,7 +94,7 @@ export default function MedicalDevicePage() {
         </div>
 
         <div id='solve-challenges-section' className='inner-div'>
-          <h2 style={{ marginBottom: 0 }}>Solve Urgent CXO Level Challenges</h2>
+          <h2 style={{ marginBottom: 0 }}>Solve Urgent Challenges</h2>
           <p style={{ marginTop: 0 }}>
             With early, integrated, real-time capture of surgical cases:
           </p>
@@ -176,7 +176,10 @@ export default function MedicalDevicePage() {
           </p>
           <div className='provider-solutions-row'>
             <div>
-              <img src='images/scheduling.png' />
+              {/* <img src='images/scheduling.png' /> */}
+              <div className='img-div'>
+                <img src='images/share-calendar.png' />
+              </div>
               <h4>Integrated Surgical Scheduling</h4>
               <h6>Coordination across entire care team</h6>
               <p>
@@ -189,7 +192,9 @@ export default function MedicalDevicePage() {
               <div>Integrated Workflow</div>
             </div>
             <div>
-              <img src='images/smart-scheduling.png' />
+              <div className='img-div'>
+                <img src='images/smart-scheduling.png' />
+              </div>
               <h4>Optimized & Coordinated</h4>
               <h6>Manage upcoming cases</h6>
               <p>
@@ -201,7 +206,10 @@ export default function MedicalDevicePage() {
               <div>Optimized and Coordinated</div>
             </div>
             <div>
-              <img src='images/episode-of-care.png' />
+              {/* <img src='images/episode-of-care.png' /> */}
+              <div className='img-div'>
+                <img src='images/eoc-mac.png' />
+              </div>
               <h4>Episode of Care</h4>
               <h6>Post operative care management</h6>
               <p>
@@ -439,9 +447,14 @@ export default function MedicalDevicePage() {
           padding: 10px;
         }
 
+        .img-div {
+          height: 250px;
+          background-color: transparent !important;
+        }
+
         .provider-solutions-row img {
-          width: 300px;
-          height: 180px;
+          max-width: 300px;
+          height: 100%;
           border-radius: 10px;
           filter: drop-shadow(0 0px 10px lightgray);
         }
@@ -469,7 +482,7 @@ export default function MedicalDevicePage() {
 
         .provider-solutions-row > div > div {
           padding: 10px;
-          background-color: var(--blueDocspera);
+          // background-color: var(--blueDocspera);
           text-align: center;
           border-radius: 18px;
           color: white;

@@ -167,6 +167,10 @@ export default function HeaderNav() {
           padding-right: 15vh;
         }
 
+        #nav-items span {
+          cursor: pointer;
+        }
+
         a {
           color: var(--blueDark);
           text-decoration: none;
