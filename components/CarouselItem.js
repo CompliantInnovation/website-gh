@@ -1,21 +1,26 @@
 import Link from 'next/link'
-export default function CarouselItem({ itemInfo }) {
+export default function CarouselItem({ itemInfo, type }) {
   return (
     <div className='carousel-item'>
       <img src={itemInfo.img} height={125} width={250} />
       {/* TODO: Limit amount of text to be displayed as title space is 200px high */}
-      <p className='title'>{itemInfo.title}</p>
-      <p className='body'>{itemInfo.body}</p>
+      {itemInfo.title && <p className='title'>{itemInfo.title}</p>}
+      {itemInfo.bod && <p className='body'>{itemInfo.body}</p>}
+
       <style jsx>{`
         .carousel-item {
           padding: 10px;
-          align-self: stretch;
+          align-self: center;
           display: flex;
           flex-direction: column;
         }
         img {
-          border-radius: 10px;
-          filter: drop-shadow(0 0px 10px lightgray);
+          border-radius: ${type == 'case-study' || (type == 'blog' && '10px')};
+          filter: ${type == 'case-study' ||
+          (type == 'blog' && 'drop-shadow(0 0px 10px lightgray)')};
+          height: auto;
+          width: ${itemInfo.width}px;
+          user-select: none;
         }
         .title {
           max-width: 250px;
