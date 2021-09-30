@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import CarouselItem from './CarouselItem'
 import Chevron from './Chevron'
 import Link from 'next/link'
@@ -6,31 +6,38 @@ import Link from 'next/link'
 export default function Carousel({ content, type }) {
   const [current, setCurrent] = useState(0)
 
-  content = [
-    {
-      userId: 1,
-      id: 1,
-      img: type === 'blog' ? 'images/blog-post.png' : 'images/case-study.png',
-      title: 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
-      body: 'quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit'
-    },
-    {
-      userId: 1,
-      id: 2,
-      img: type === 'blog' ? 'images/blog-post.png' : 'images/case-study.png',
+  // content = [
+  //   {
+  //     userId: 1,
+  //     id: 1,
+  //     img: type === 'blog' ? 'images/blog-post.png' : 'images/case-study.png',
+  //     title: 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
+  //     body: 'quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit'
+  //   },
+  //   {
+  //     userId: 1,
+  //     id: 2,
+  //     img: type === 'blog' ? 'images/blog-post.png' : 'images/case-study.png',
 
-      title: 'qui est esse',
-      body: 'est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat'
-    },
-    {
-      userId: 1,
-      id: 3,
-      img: type === 'blog' ? 'images/blog-post.png' : 'images/case-study.png',
+  //     title: 'qui est esse',
+  //     body: 'est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat'
+  //   },
+  //   {
+  //     userId: 1,
+  //     id: 3,
+  //     img: type === 'blog' ? 'images/blog-post.png' : 'images/case-study.png',
 
-      title: 'ea molestias quasi exercitationem repellat qui ipsa sit aut',
-      body: 'et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel '
+  //     title: 'ea molestias quasi exercitationem repellat qui ipsa sit aut',
+  //     body: 'et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel '
+  //   }
+  // ]
+
+  useEffect(() => {
+    if (current + 2 == content.length) {
+      console.log('current!:', current)
+      setCurrent(0)
     }
-  ]
+  }, [current])
 
   const nextSlide = () => {
     if (current !== content.length - 1) {
@@ -54,8 +61,12 @@ export default function Carousel({ content, type }) {
         <div className='left-chevron' onClick={() => previousSlide()}>
           <Chevron color={current === 0 ? 'grey' : 'black'} />
         </div>
+
         {content.map((item, idx) => {
-          return <CarouselItem itemInfo={item} key={idx} />
+          console.log('idx', idx)
+          if (idx == current || idx == current + 1 || idx == current + 2) {
+            return <CarouselItem itemInfo={item} key={idx} type={type} />
+          }
         })}
         <div className='right-chevron' onClick={() => nextSlide()}>
           <Chevron />
@@ -65,6 +76,7 @@ export default function Carousel({ content, type }) {
         .container {
           display: flex;
           justify-content: center;
+          min-height: 200px;
         }
         .carousel {
           display: flex;

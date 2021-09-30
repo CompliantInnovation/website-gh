@@ -1,7 +1,7 @@
 import { useSpring, animated, config } from 'react-spring'
 import { useMedia } from '../hooks/useMedia'
 
-export default function NumberScroll({ imgSrc, number, title, plus, order }) {
+export default function NumberScroll({ imgSrc, number, title, plus, order, percent }) {
   const isBrowser = () => typeof window !== 'undefined'
 
   let tabletSize
@@ -45,7 +45,10 @@ export default function NumberScroll({ imgSrc, number, title, plus, order }) {
           <animated.h1 style={styles}>
             {isNaN(spring) && spring.val.to((val) => Math.floor(val))}
           </animated.h1>
-          <animated.h1 style={tabletSize ? plusStyles : plusStyles}>{plus && '+'}</animated.h1>
+          <animated.h1 style={tabletSize ? plusStyles : plusStyles}>
+            {plus && '+'}
+            {percent && '%'}
+          </animated.h1>
         </div>
       ) : (
         <animated.h1 style={tabletSize ? styles : styles}>{number}</animated.h1>
