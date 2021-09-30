@@ -1,8 +1,11 @@
 :root {
   --blueDark: #234681;
   --blueDocspera: #0096fa;
+  --blueSky: #b6e3f8;
   --blueLight: #daf0fb;
+  --blueXLight: #eef7fc;
   --blueFaint: #f6fcff;
+  --grayLight: #c9c9c9;
 }
 
 html {
