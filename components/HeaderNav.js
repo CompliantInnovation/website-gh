@@ -136,7 +136,7 @@ export default function HeaderNav() {
             </a>
           </Link> */}
         </div>
-        {router.pathname == '/login' || isLogin ? <a className='demo-link' href='https://docspera.com/demo' target='_blank'><button onClick={handleLogin}>Request Demo</button></a> : <Link href='/login'><button>Log In</button></Link> }
+        {router.pathname == '/login' || isLogin ? <a className='ext-link' href='https://docspera.com/demo' target='_blank'><button onClick={handleLogin}>Request Demo</button></a> : <a className='ext-link' href='https://docspera.com/login' target='_blank'><button onClick={handleLogin}>Log In</button></a> }
         
       </div>
 
@@ -194,7 +194,7 @@ export default function HeaderNav() {
           border-radius: 10px;
         }
 
-        .demo-link {
+        .ext-link {
           padding: 0;
         }
 

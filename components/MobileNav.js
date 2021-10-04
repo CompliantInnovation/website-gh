@@ -1,11 +1,9 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useMedia } from '../hooks/useMedia'
 import React, { useState } from 'react'
 
 export default function MobileNav() {
-    const router = useRouter()
-    const isBrowser = () => typeof window !== 'undefined'
+    const router = useRouter();
 
     const [productDropdown, setProductDropdown] = useState(false);
     const handleProductOnHover = () => {
@@ -39,13 +37,12 @@ export default function MobileNav() {
 
     return (
       <nav>
-        <div>
-          {mobileNav ? <img id='x' src='/images/x.png' onClick={openMenu} /> : <img id='hamburger' src='/images/hamburger.png' onClick={openMenu} />}
-        </div>
-        <div>
-          {router.pathname == '/login' || isLogin ? <a href='https://docspera.com/demo' target='_blank'> <button onClick={handleLogin}>Demo</button></a> : <Link href='/login'><button>Log In</button></Link>}
+       
+          {mobileNav ? <img id='x' src='/images/exit_icon.svg' onClick={openMenu} /> : <img id='hamburger' src='/images/hamburger.png' onClick={openMenu} />}
+       
+          {router.pathname == '/login' || isLogin ? <a href='https://docspera.com/demo' target='_blank'> <button onClick={handleLogin}>Demo</button></a> : <a href='https://docspera.com/login' target='_blank'><button onClick={handleLogin}>Log In</button></a>}
 
-        </div>
+      
 
 
         {mobileNav && (
@@ -61,7 +58,7 @@ export default function MobileNav() {
             <div className='product-container' onClick={handleProductOnHover}>
               <div className='menu-item'>
                 <div>Products</div>
-                <img className='chevron-img' src='/images/chevron.png' />
+                <img id={productDropdown ? 'chevron-img' : ''} src='/images/chevron.png' />
               </div>
               
               {productDropdown && (
@@ -94,7 +91,7 @@ export default function MobileNav() {
             <div className='contact-container' onClick={handleContactOnHover}>
               <div className='menu-item'>
                 <div>Contact</div>
-                <img className='chevron-img' src='/images/chevron.png' />
+                <img id={contactDropdown ? 'chevron-img' : ''} src='/images/chevron.png' />
               </div>
               
               {contactDropdown && (
@@ -122,12 +119,6 @@ export default function MobileNav() {
         )}
 
 
-
-
-
-
-
-
         <style jsx>{`
           nav {
             width: 100%;
@@ -149,12 +140,13 @@ export default function MobileNav() {
             align-items: left;
             justify-content: center;
             flex-direction: column;
-            position: fixed;
+            position: absolute;
             top: 100%;
             left: 0;
             width: 100%;
             background-color: var(--blueLight);
             padding: 30px;
+     
           }
 
           button {
@@ -167,72 +159,83 @@ export default function MobileNav() {
               font-size: 16px;
           }
 
+          #x, #hamburger {
+            height: 20px;
+            display: flex;
+            align-items: center;
+          }
+
           a {
             text-decoration: none;
             color: black;
           }
 
-            .menu-item {
-              background-color: var(--blueFaint);
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-              padding: 10px 20px;
-              margin-bottom: 10px;
-            }
+          .menu-item {
+            background-color: var(--blueFaint);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            margin-bottom: 10px;
+          }
 
-            .menu-item img {
-              height: 16px;
-            }
+          .menu-item img {
+            height: 16px;
+          }
 
-            .product-container, .contact-container {
-              background-color: var(--blueFaint);
-              margin-bottom: 10px;
-            }
+          .product-container, .contact-container {
+            background-color: var(--blueFaint);
+            margin-bottom: 10px;
+          }
 
-            .product-container .menu-item, .contact-container .menu-item {
-              margin: 0;
-            }
+          .product-container .menu-item, .contact-container .menu-item {
+            margin: 0;
+          }
 
-            .underline {
-              height: 2px;
-              width: 95%;
-              margin: auto;
-              background-color: lightgrey;
-              border-radius: 10px;
-              margin-bottom: 10px;
-            }
+          .underline {
+            height: 2px;
+            width: 95%;
+            margin: auto;
+            background-color: lightgrey;
+            border-radius: 10px;
+            margin-bottom: 10px;
+          }
 
-            .product-dropdown {
-              padding-bottom: 10px;
-              font-size: 16px;
-            }
+          .product-dropdown {
+            padding-bottom: 10px;
+            font-size: 16px;
+          }
 
-            .box {
-              display: flex;
-              align-items: center;
-              padding: 10px 20px;
-            }
+          .box {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+          }
 
-            .box img {
-              filter: brightness(0%);
-              height: 23px;
-              margin-right: 10px;
-            }
+          .box img {
+            filter: brightness(0%);
+            height: 23px;
+            margin-right: 10px;
+          }
 
-            .box .chevron-img {
-              height: 10px;
-              padding: 0 30px;
-            }
+          .box .chevron-img {
+            height: 10px;
+            padding: 0 30px;
+          }
 
-            .contact-dropdown ul {
-              list-style-type: none;
-              padding-left: 20px;
-            }
-            .contact-dropdown li {
-              font-size: 16px;
-              padding-bottom: 10px;
-            }
+          #chevron-img {
+            transform: rotate(90deg);
+            transition-duration: 0.2s;
+          }
+
+          .contact-dropdown ul {
+            list-style-type: none;
+            padding-left: 20px;
+          }
+          .contact-dropdown li {
+            font-size: 16px;
+            padding-bottom: 10px;
+          }
 
            
 
