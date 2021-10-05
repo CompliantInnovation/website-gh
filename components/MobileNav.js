@@ -139,12 +139,11 @@ export default function MobileNav() {
             display: flex;
             align-items: left;
             flex-direction: column;
-            position: absolute;
+            position: fixed;
             top: 60px;
             left: 0;
             width: 100%;
-            min-height: 100%;
-            height: 1000%;
+            height: 100%;
             background-color: var(--blueFaint);
             padding: 30px;
             z-index: 3;
