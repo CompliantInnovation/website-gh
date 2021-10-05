@@ -37,19 +37,20 @@ export default function MobileNav() {
 
     return (
       <nav>
+        <div className='nav-bar'>
        
           {mobileNav ? <img id='x' src='/images/exit_icon.svg' onClick={openMenu} /> : <img id='hamburger' src='/images/hamburger.png' onClick={openMenu} />}
        
           {router.pathname == '/login' || isLogin ? <a href='https://docspera.com/demo' target='_blank'> <button onClick={handleLogin}>Demo</button></a> : <a href='https://docspera.com/login' target='_blank'><button onClick={handleLogin}>Log In</button></a>}
 
-      
+      </div>
 
 
         {mobileNav && (
 
           <div className='mobile-menu'>
-            <Link href='/'>
-              <div className='menu-item'>
+            <Link href='/' >
+              <div className='menu-item' onClick={openMenu}>
                 <div>Home</div>
                 <img className='chevron-img' src='/images/chevron.png' />
               </div>
@@ -106,7 +107,7 @@ export default function MobileNav() {
               )}
             </div>
 
-            <a className={blogHover && 'active_a'} href='https://blog.d4.docspera.com/' target='_blank' onMouseEnter={handleBlogOnHover} onMouseLeave={handleBlogOnHover}>
+            <a className={blogHover && 'active_a'} href='https://blog.d4.docspera.com/' target='_blank' onMouseEnter={handleBlogOnHover} >
               <div className='menu-item'>
                 <div>Blog</div>
                 <img className='chevron-img' src='/images/chevron.png' />
@@ -120,7 +121,7 @@ export default function MobileNav() {
 
 
         <style jsx>{`
-          nav {
+          .nav-bar {
             width: 100%;
             display: flex;
             background-color: white;
@@ -130,22 +131,23 @@ export default function MobileNav() {
             padding: 10px 30px;
             position: fixed;
             top: 0;
-            z-index: 10000;
             height: 60px;
-
+            z-index: 3;
           }
 
           .mobile-menu {
             display: flex;
             align-items: left;
-            justify-content: center;
             flex-direction: column;
             position: absolute;
-            top: 100%;
+            top: 60px;
             left: 0;
             width: 100%;
-            background-color: var(--blueLight);
+            min-height: 100%;
+            height: 1000%;
+            background-color: var(--blueFaint);
             padding: 30px;
+            z-index: 3;
      
           }
 
@@ -163,20 +165,23 @@ export default function MobileNav() {
             height: 20px;
             display: flex;
             align-items: center;
+            cursor: pointer;
           }
 
           a {
             text-decoration: none;
             color: black;
+            cursor: pointer;
           }
 
           .menu-item {
-            background-color: var(--blueFaint);
+            background-color: white;
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 10px 20px;
             margin-bottom: 10px;
+            cursor: pointer;
           }
 
           .menu-item img {
@@ -184,7 +189,7 @@ export default function MobileNav() {
           }
 
           .product-container, .contact-container {
-            background-color: var(--blueFaint);
+            background-color: white;
             margin-bottom: 10px;
           }
 
@@ -193,7 +198,7 @@ export default function MobileNav() {
           }
 
           .underline {
-            height: 2px;
+            height: 1px;
             width: 95%;
             margin: auto;
             background-color: lightgrey;
@@ -204,12 +209,14 @@ export default function MobileNav() {
           .product-dropdown {
             padding-bottom: 10px;
             font-size: 16px;
+       
           }
 
           .box {
             display: flex;
             align-items: center;
             padding: 10px 20px;
+            cursor: pointer;
           }
 
           .box img {
@@ -231,10 +238,12 @@ export default function MobileNav() {
           .contact-dropdown ul {
             list-style-type: none;
             padding-left: 20px;
+          
           }
           .contact-dropdown li {
             font-size: 16px;
             padding-bottom: 10px;
+            cursor: pointer;
           }
 
            
