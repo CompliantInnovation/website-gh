@@ -183,6 +183,8 @@ export default function MobileNav() {
             padding: 10px 20px;
             margin-bottom: 10px;
             cursor: pointer;
+            border: 1px solid white;
+            border-radius: 3px;
           }
 
           .menu-item img {
