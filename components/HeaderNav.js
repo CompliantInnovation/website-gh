@@ -11,7 +11,7 @@ export default function HeaderNav() {
   let tabletSize, mobileSize
   if (isBrowser) {
     tabletSize = useMedia('(max-width: 775px)');
-    mobileSize = useMedia('(max-width: 480px)');
+    mobileSize = useMedia('(max-width: 530px)');
   }
 
 
