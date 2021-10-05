@@ -152,13 +152,14 @@ export default function MobileNav() {
           }
 
           button {
-              background-color: var(--blueDocspera);
-              border: none;
-              border-radius: 5px;
-              filter: drop-shadow(0, 3px, 6px, black);
-              color: white;
-              padding: 10px 15px;
-              font-size: 16px;
+            background-color: var(--blueDocspera);
+            border: none;
+            border-radius: 5px;
+            filter: drop-shadow(0, 3px, 6px, black);
+            color: white;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
           }
 
           #x, #hamburger {
