@@ -166,11 +166,25 @@ export default function HeaderNav() {
           padding-right: 15vh;
         }
 
+        @media (max-width:1000px){
+  
+          #nav-items {
+            padding:0 6vh;
+          }
+        }
+
+        @media (max-width: 804px) {
+          #nav-items {
+            padding:0 3vh;
+          }
+        }
+
         #nav-items span {
           cursor: pointer;
         }
 
-        a {
+      
+        #nav-items a {
           color: var(--blueDark);
           text-decoration: none;
           padding-right: 50px;
@@ -194,7 +208,7 @@ export default function HeaderNav() {
           border-radius: 10px;
         }
 
-        .ext-link {
+        #ext-link {
           padding: 0;
         }
 
@@ -301,8 +315,9 @@ export default function HeaderNav() {
         }
         .contact-dropdown li a {
           font-size: 14px;
-          padding: 0 0 10px 0;
+          padding-bottom: 10px;
           color: grey;
+          padding-right: 0 !important;
         }
 
         .contact-dropdown li a:hover {
