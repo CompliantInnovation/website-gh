@@ -33,6 +33,11 @@ export default function CarouselItem({ itemInfo, type }) {
           align-self: flex-end;
           margin-top: 20px;
         }
+        @media (max-width:1150px) {
+          img {
+            width: ${itemInfo.width/1.2}px;
+          }
+        }
       `}</style>
     </div>
   )

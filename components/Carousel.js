@@ -1,10 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import CarouselItem from './CarouselItem'
 import Chevron from './Chevron'
+import { useMedia } from '../hooks/useMedia'
 import Link from 'next/link'
 
 export default function Carousel({ content, type }) {
   const [current, setCurrent] = useState(0)
+  const isBrowser = () => typeof window !== 'undefined'
+
+  let tabletSize, mobileSize, desktopSize
+  if (isBrowser) {
+    tabletSize = useMedia('(min-width: 775px)');
+    mobileSize = useMedia('(max-width: 530px)');
+ 
+
+  }
 
   // content = [
   //   {
@@ -61,12 +71,29 @@ export default function Carousel({ content, type }) {
         <div className='left-chevron' onClick={() => previousSlide()}>
           <Chevron color={current === 0 ? 'grey' : 'black'} />
         </div>
-
         {content.map((item, idx) => {
+        
           console.log('idx', idx)
-          if (idx == current || idx == current + 1 || idx == current + 2) {
+          console.log(desktopSize)
+          console.log(tabletSize)
+          console.log(mobileSize)
+          if(tabletSize) {
+            if (idx == current || idx == current + 1 || idx == current + 2) {
+              console.log(current)
+              return <CarouselItem itemInfo={item} key={idx} type={type} />
+            }
+          } else if(mobileSize) {
+            if (idx == current) {
+              console.log(current)
+              return <CarouselItem itemInfo={item} key={idx} type={type} />
+            }
+          } else 
+          if (idx == current || idx == current + 1) {
+            console.log(current)
             return <CarouselItem itemInfo={item} key={idx} type={type} />
           }
+        
+        
         })}
         <div className='right-chevron' onClick={() => nextSlide()}>
           <Chevron />
@@ -97,6 +124,38 @@ export default function Carousel({ content, type }) {
           height: 40px;
           cursor: pointer;
           margin-left: 40px;
+        }
+
+        @media (max-width: 1150px) {
+          .right-chevron, .left-chevron {
+            width: 35px;
+            height: 35px;
+          }
+          .carousel {
+            min-width: 900px;
+          }
+        }
+
+        @media (max-width: 940px) {
+          .carousel {
+            min-width: 800px;
+          }
+        }
+        @media (max-width: 850px) {
+          .carousel {
+            min-width: 650px;
+          }
+        }
+        @media (max-width: 700px) {
+          .carousel {
+            min-width: 550px;
+          }
+        }
+
+        @media (max-width: 530px) {
+          .carousel {
+            min-width: 100px;
+          }
         }
       `}</style>
     </div>
