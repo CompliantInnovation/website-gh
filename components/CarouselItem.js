@@ -33,9 +33,14 @@ export default function CarouselItem({ itemInfo, type }) {
           align-self: flex-end;
           margin-top: 20px;
         }
-        @media (max-width:1150px) {
+        @media (max-width:614px) {
           img {
             width: ${itemInfo.width/1.2}px;
+          }
+        }
+        @media (max-width:368px) {
+          img {
+            width: ${itemInfo.width/1.7}px;
           }
         }
       `}</style>

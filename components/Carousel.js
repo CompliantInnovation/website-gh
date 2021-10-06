@@ -8,10 +8,10 @@ export default function Carousel({ content, type }) {
   const [current, setCurrent] = useState(0)
   const isBrowser = () => typeof window !== 'undefined'
 
-  let tabletSize, mobileSize, desktopSize
+  let tabletSize, mobileSize
   if (isBrowser) {
-    tabletSize = useMedia('(min-width: 775px)');
-    mobileSize = useMedia('(max-width: 530px)');
+    tabletSize = useMedia('(min-width: 810px)');
+    mobileSize = useMedia('(max-width: 614px)');
  
 
   }
@@ -74,9 +74,6 @@ export default function Carousel({ content, type }) {
         {content.map((item, idx) => {
         
           console.log('idx', idx)
-          console.log(desktopSize)
-          console.log(tabletSize)
-          console.log(mobileSize)
           if(tabletSize) {
             if (idx == current || idx == current + 1 || idx == current + 2) {
               console.log(current)
@@ -109,8 +106,11 @@ export default function Carousel({ content, type }) {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          max-width: 1150px;
-          min-width: 1100px;
+          width: 100%;
+          // max-width: 1150px;
+          // column-gap: 50px;
+          // min-width: 1100px;
+          
         }
         .left-chevron {
           width: 40px;
@@ -124,39 +124,31 @@ export default function Carousel({ content, type }) {
           height: 40px;
           cursor: pointer;
           margin-left: 40px;
+        
         }
 
-        @media (max-width: 1150px) {
+        @media (max-width: 810px) {
           .right-chevron, .left-chevron {
             width: 35px;
             height: 35px;
           }
-          .carousel {
-            min-width: 900px;
+        }
+
+        @media (max-width: 614px) {
+          .right-chevron, .left-chevron {
+            width: 25px;
+            height: 25px;
           }
         }
 
-        @media (max-width: 940px) {
-          .carousel {
-            min-width: 800px;
+        @media (max-width: 368px) {
+          .right-chevron, .left-chevron {
+            margin: 0;
+            width: 20px;
+            height: 20px;
           }
         }
-        @media (max-width: 850px) {
-          .carousel {
-            min-width: 650px;
-          }
-        }
-        @media (max-width: 700px) {
-          .carousel {
-            min-width: 550px;
-          }
-        }
-
-        @media (max-width: 530px) {
-          .carousel {
-            min-width: 100px;
-          }
-        }
+    
       `}</style>
     </div>
   )
