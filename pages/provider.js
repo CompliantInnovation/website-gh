@@ -74,8 +74,8 @@ export default function Provider() {
           Intelligent Surgical Coordination: Enabling Efficiency and Profitability
         </h2>
         <p>
-          DocSpera is an integrated surgical coordination, helping manage coordination across
-          multiple sites and teams, drive improved efficiencies and deliver better care.
+          DocSpera is an integrated surgical coordination solution to help manage 
+          coordination across multiple sites and teams, drive improved efficiencies and deliver better patient care.
         </p>
         <img src='images/provider-art-work.png' id='surgeon-doodle' />
 
@@ -113,8 +113,8 @@ export default function Provider() {
           <div className='provider-solutions-row'>
             <div>
               <img src='images/scheduling.png' />
-              <h4>Integrated Surgical Scheduling</h4>
-              <h6>Coordination across entire care team</h6>
+              <h4>Integrated Surgical Scheduling & Coordination Across Entire Care Team</h4>
+              {/* <h6>Coordination across entire care team</h6> */}
               <p>
                 <ul>
                   <li>Case scheduling & OR management</li>
@@ -126,8 +126,8 @@ export default function Provider() {
             </div>
             <div>
               <img src='images/smart-scheduling.png' />
-              <h4>Optimized & Coordinated</h4>
-              <h6>Manage upcoming cases</h6>
+              <h4>Surgical Dashboard for Managing Upcoming Cases</h4>
+              {/* <h6>Manage upcoming cases</h6> */}
               <p>
                 <ul>
                   <li>Real-time coordination between Clinic, OR Team & Device Rep</li>
@@ -138,8 +138,8 @@ export default function Provider() {
             </div>
             <div>
               <img src='images/episode-of-care.png' />
-              <h4>Episode of Care</h4>
-              <h6>Post operative care management</h6>
+              <h4>Episode of Care Tracker for Post Operative Care Management</h4>
+              {/* <h6>Post operative care management</h6> */}
               <p>
                 <ul>
                   <li>Post-acute management and recovery coordination</li>
@@ -159,26 +159,26 @@ export default function Provider() {
         <div id='rapid-integration' className='inner-div'>
           <h2>Rapid Integration & Deployment at Scale</h2>
           <p>Integrated with over 30 EMR and 3rd party systems</p>
-          <div className='logos'>
+          <div className='logos' id='emr'>
             <div>
               <img src='images/logos/athena-health.png' width={220} />
               <img src='images/logos/prime.png' width={120} />
               <img src='images/logos/modernizing-medicine.png' width={190} />
               <img src='images/logos/medstrat.jpg' width={190} />
-            </div>
-            <div>
+            {/* </div>
+            <div> */}
               <img src='images/logos/CMS.jpg' height={50} width={100} />
               <img src='images/logos/centricity.png' width={150} />
               <img src='images/logos/medent.png' width={180} />
               <img src='images/logos/app-orchard.png' width={150} />
-            </div>
-            <div>
+            {/* </div>
+            <div> */}
               <img src='images/logos/elation-health.jpg' width={190} />
               <img src='images/logos/next-gen.jpg' width={140} />
               <img src='images/logos/e-clinical-works.jpg' width={180} />
               <img src='images/logos/cerner.png' width={170} />
-            </div>
-            <div>
+            {/* </div>
+            <div> */}
               <img src='images/logos/allscripts.png' width={170} />
               <img src='images/logos/drchrono.png' width={140} />
               <img src='images/logos/greenway.png' width={150} />
@@ -363,6 +363,7 @@ export default function Provider() {
           align-items: center;
           justify-content: space-between;
           height: 100px;
+     
         }
 
         #designed-for-providers > div {
@@ -424,12 +425,36 @@ export default function Provider() {
           margin-bottom: 20px;
         }
 
-        .name {
+        .location {
+          color: gray;
+        }
+
+        #emr div {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          grid-auto-rows: 1fr;
+          grid-row-gap: 5px;
 
         }
 
-        .location {
-          color: gray;
+        @media (max-width: 890px) {
+          #emr img {
+            width: 20%;
+          }
+        }
+
+        @media (max-width: 650px) {
+        
+
+          #emr div {
+            
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            column-gap: 50px;
+ 
+          }
         }
 
 
