@@ -237,6 +237,7 @@ export default function HeaderNav() {
         .box {
           margin: 30px;
           padding: 40px;
+          cursor: pointer;
         }
 
         .box:hover {
@@ -305,6 +306,7 @@ export default function HeaderNav() {
           color: black;
           width: 130px;
           margin-top: 16px;
+     
         }
 
         .contact-dropdown ul {
@@ -312,18 +314,21 @@ export default function HeaderNav() {
           margin: 0;
           padding: 0;
           padding-bottom: 10px;
+
         }
         .contact-dropdown li a {
           font-size: 14px;
           padding-bottom: 10px;
           color: grey;
           padding-right: 0 !important;
+     
         }
 
         .contact-dropdown li a:hover {
           color: black;
           cursor: default;
           font-weight: bold;
+          cursor: pointer;
         }
 
        
