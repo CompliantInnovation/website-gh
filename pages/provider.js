@@ -358,13 +358,13 @@ export default function Provider() {
           margin-top: 30px;
         }
 
-        .logos div {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          height: 100px;
+        // .logos div {
+        //   display: flex;
+        //   align-items: center;
+        //   justify-content: space-between;
+        //   height: 100px;
      
-        }
+        // }
 
         #designed-for-providers > div {
           display: flex;
@@ -434,26 +434,59 @@ export default function Provider() {
           grid-template-columns: repeat(4, 1fr);
           grid-auto-rows: 1fr;
           grid-row-gap: 5px;
+          justify-content: space-between;   
+          align-items: center;
+          align-content: space-between;
 
         }
 
+
+        #emr div img:nth-child(4n-2), #emr div img:nth-child(4n-1) {
+          justify-self: center;
+        }
+
+
+        #emr div img:nth-child(4n) {
+          justify-self: end;
+        }
+ 
+
         @media (max-width: 890px) {
           #emr img {
-            width: 20%;
+            width: 80%;
           }
         }
 
         @media (max-width: 650px) {
-        
+          #emr img {
+            width: 60%;
+          }
 
-          #emr div {
-            
-            display: flex;
+          #emr div { 
+            display:grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: 1fr;
+            justify-content: space-between;   
             align-items: center;
-            justify-content: space-evenly;
-            flex-wrap: wrap;
-            column-gap: 50px;
- 
+          }
+
+          #emr div img:nth-child(2n) {
+            justify-self: center;
+          }
+          #emr div img:nth-child(2n-1) {
+            justify-self: center;
+          }
+        }
+
+        @media(max-width: 480px) {
+          #emr img {
+            width: 50%;
+          }
+
+          #emr div { 
+            display:grid;
+            grid-template-columns: 1fr;
+            grid-auto-rows: 100px;
           }
         }
 
