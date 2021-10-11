@@ -304,7 +304,7 @@ export default function HeaderNav() {
           background-color: rgba(255, 255, 255, 1);
           padding: 0px 10px;
           color: black;
-          width: 130px;
+          width: 140px;
           margin-top: 16px;
      
         }
@@ -317,7 +317,6 @@ export default function HeaderNav() {
 
         }
         .contact-dropdown li a {
-          font-size: 14px;
           padding-bottom: 10px;
           color: grey;
           padding-right: 0 !important;
