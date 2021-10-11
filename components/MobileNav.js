@@ -67,13 +67,13 @@ export default function MobileNav() {
                 <div className='product-dropdown'>
                   <div className='underline'></div>
                   <Link href='/provider' >
-                    <div className='box'>
+                    <div className='box' onClick={openMenu}>
                       <img src='/images/surgeon-users.png' /> Providers <img className='chevron-img' src='/images/chevron.png' />
 
                     </div>
                   </Link>
                   <Link href='/medical-device'>
-                    <div className='box'>
+                    <div className='box' onClick={openMenu}>
                       <img src='/images/medical-device.png' /> Medical Device <img className='chevron-img' src='/images/chevron.png' />
 
                     </div>

@@ -63,7 +63,7 @@ export default function HeaderNav() {
           {productDropdown && (
             <div className='product-dropdown' onMouseLeave={handleProductOnHover}>
               <Link href='/provider'>
-                <div className='box'>
+                <div className='box' onClick={handleProductOnHover}>
                   <h4>
                     <img src='/images/surgeon-users.png' />
                     Providers <img className='chevron-img' src='/images/chevron.png' />
@@ -76,7 +76,7 @@ export default function HeaderNav() {
                 </div>
               </Link>
               <Link href='/medical-device'>
-                <div className='box'>
+                <div className='box' onClick={handleProductOnHover}>
                   <h4>
                     <img src='/images/medical-device.png' />
                     Medical Device <img className='chevron-img' src='/images/chevron.png' />
