@@ -2,17 +2,20 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useMedia } from '../hooks/useMedia'
 import React, { useState } from 'react'
+import MobileNav from '../components/MobileNav'
 
 export default function HeaderNav() {
   const router = useRouter()
   const isBrowser = () => typeof window !== 'undefined'
 
-  let tabletSize
+  let tabletSize, mobileSize
   if (isBrowser) {
-    tabletSize = useMedia('(max-width: 775px)')
+    tabletSize = useMedia('(max-width: 775px)');
+    mobileSize = useMedia('(max-width: 530px)');
   }
 
-  const [productDropdown, setProductDropdown] = useState(false)
+
+  const [productDropdown, setProductDropdown] = useState(false);
   const handleProductOnHover = () => {
     setProductDropdown(!productDropdown)
     setContactDropdown(false)
@@ -37,11 +40,12 @@ export default function HeaderNav() {
   }
 
   return (
+    mobileSize ? <MobileNav /> : 
     <nav>
       {isBrowser && (
-        <Link href='/'>
+        <Link href='/' >
           <a>
-            <img
+            <img id='logo'
               src={`${tabletSize ? 'images/logo-short.png' : 'images/logo.svg'}`}
               height={`${tabletSize ? 40 : 70}`}
               width={`${tabletSize ? 40 : 150}`}
@@ -49,7 +53,7 @@ export default function HeaderNav() {
           </a>
         </Link>
       )}
-
+  
       <div id='right-side'>
         <div id='nav-items'>
           <a className={productDropdown && 'active_a'} onMouseEnter={handleProductOnHover}>
@@ -101,8 +105,8 @@ export default function HeaderNav() {
             {contactDropdown && (
               <div className='contact-dropdown' onMouseLeave={handleContactOnHover}>
                 <ul>
-                  <li>Contact Us</li>
-                  <li>Request Demo</li>
+                  <li><a href='https://docspera.com/support' target='_blank'>Contact Us</a></li>
+                  <li><a href='https://docspera.com/demo' target='_blank'>Request Demo</a></li>
                 </ul>
               </div>
             )}
@@ -132,13 +136,8 @@ export default function HeaderNav() {
             </a>
           </Link> */}
         </div>
-        {router.pathname == '/login' || isLogin ? (
-          <button onClick={handleLogin}>Request Demo</button>
-        ) : (
-          <Link href='/login'>
-            <button>Log In</button>
-          </Link>
-        )}
+        {router.pathname == '/login' || isLogin ? <a className='ext-link' href='https://docspera.com/demo' target='_blank'><button onClick={handleLogin}>Request Demo</button></a> : <a className='ext-link' href='https://docspera.com/login' target='_blank'><button onClick={handleLogin}>Log In</button></a> }
+        
       </div>
 
       <style jsx>{`
@@ -167,11 +166,25 @@ export default function HeaderNav() {
           padding-right: 15vh;
         }
 
+        @media (max-width:1000px){
+  
+          #nav-items {
+            padding:0 6vh;
+          }
+        }
+
+        @media (max-width: 804px) {
+          #nav-items {
+            padding:0 3vh;
+          }
+        }
+
         #nav-items span {
           cursor: pointer;
         }
 
-        a {
+      
+        #nav-items a {
           color: var(--blueDark);
           text-decoration: none;
           padding-right: 50px;
@@ -193,6 +206,10 @@ export default function HeaderNav() {
           width: 100%;
           background-color: var(--blueDocspera);
           border-radius: 10px;
+        }
+
+        #ext-link {
+          padding: 0;
         }
 
         button {
@@ -220,6 +237,7 @@ export default function HeaderNav() {
         .box {
           margin: 30px;
           padding: 40px;
+          cursor: pointer;
         }
 
         .box:hover {
@@ -288,28 +306,65 @@ export default function HeaderNav() {
           color: black;
           width: 130px;
           margin-top: 16px;
+     
         }
 
         .contact-dropdown ul {
           list-style-type: none;
           margin: 0;
           padding: 0;
+          padding-bottom: 10px;
+
         }
-        .contact-dropdown li {
+        .contact-dropdown li a {
           font-size: 14px;
           padding-bottom: 10px;
           color: grey;
+          padding-right: 0 !important;
+     
         }
 
-        .contact-dropdown li:hover {
+        .contact-dropdown li a:hover {
           color: black;
           cursor: default;
           font-weight: bold;
+          cursor: pointer;
         }
+
+       
 
         h4 {
           margin: 0;
         }
+
+        // .responsive-nav {
+        //   display: none;
+        // }
+
+        // @media (max-width: 768px) {
+        //   #logo {
+        //     display:none;
+        //   }
+        //   #right-side {
+        //     display: flex;
+        //     background-color: white;
+        //     flex-direction: column;
+        //     align-items: center;
+        //     padding: 0;
+        //   }
+
+        //   .responsive-nav {
+        //     display: block; 
+        //     position: fixed;
+        //     top: 0;
+        //     right: 0;
+        //     transform: translate(-100%, 75%);
+        //     cursor: pointer;
+        //     z-index: 100;
+        //   }
+
+
+        // }
       `}</style>
     </nav>
   )
