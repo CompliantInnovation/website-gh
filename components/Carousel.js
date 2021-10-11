@@ -1,10 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import CarouselItem from './CarouselItem'
 import Chevron from './Chevron'
+import { useMedia } from '../hooks/useMedia'
 import Link from 'next/link'
 
 export default function Carousel({ content, type }) {
   const [current, setCurrent] = useState(0)
+  const isBrowser = () => typeof window !== 'undefined'
+
+  let tabletSize, mobileSize
+  if (isBrowser) {
+    tabletSize = useMedia('(min-width: 810px)');
+    mobileSize = useMedia('(max-width: 614px)');
+ 
+
+  }
 
   // content = [
   //   {
@@ -61,12 +71,26 @@ export default function Carousel({ content, type }) {
         <div className='left-chevron' onClick={() => previousSlide()}>
           <Chevron color={current === 0 ? 'grey' : 'black'} />
         </div>
-
         {content.map((item, idx) => {
+        
           console.log('idx', idx)
-          if (idx == current || idx == current + 1 || idx == current + 2) {
+          if(tabletSize) {
+            if (idx == current || idx == current + 1 || idx == current + 2) {
+              console.log(current)
+              return <CarouselItem itemInfo={item} key={idx} type={type} />
+            }
+          } else if(mobileSize) {
+            if (idx == current) {
+              console.log(current)
+              return <CarouselItem itemInfo={item} key={idx} type={type} />
+            }
+          } else 
+          if (idx == current || idx == current + 1) {
+            console.log(current)
             return <CarouselItem itemInfo={item} key={idx} type={type} />
           }
+        
+        
         })}
         <div className='right-chevron' onClick={() => nextSlide()}>
           <Chevron />
@@ -82,8 +106,11 @@ export default function Carousel({ content, type }) {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          max-width: 1150px;
-          min-width: 1100px;
+          width: 100%;
+          // max-width: 1150px;
+          // column-gap: 50px;
+          // min-width: 1100px;
+          
         }
         .left-chevron {
           width: 40px;
@@ -97,7 +124,31 @@ export default function Carousel({ content, type }) {
           height: 40px;
           cursor: pointer;
           margin-left: 40px;
+        
         }
+
+        @media (max-width: 810px) {
+          .right-chevron, .left-chevron {
+            width: 35px;
+            height: 35px;
+          }
+        }
+
+        @media (max-width: 614px) {
+          .right-chevron, .left-chevron {
+            width: 25px;
+            height: 25px;
+          }
+        }
+
+        @media (max-width: 368px) {
+          .right-chevron, .left-chevron {
+            margin: 0;
+            width: 20px;
+            height: 20px;
+          }
+        }
+    
       `}</style>
     </div>
   )

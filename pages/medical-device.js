@@ -13,10 +13,10 @@ export default function MedicalDevicePage() {
       </Head>
       <HeaderNav />
       <div className='container'>
-        <h2>Power Your Digital Surgery Offerings & Data</h2>
+        <h2>Power Your Digital and Surgical solutions using a Comprehensive, Intelligent Care Coordination platform</h2>
         <p>
-          DocSpera is an integrated, comprehensive, and compliant digital solution powering
-          patient-specific data, enabling insights and driving efficient supply chain.
+          DocSpera is an integrated, comprehensive, and compliant digital solution powering patient-specific data, 
+          enabling Clinical insights, including an efficient supply chain.
         </p>
         <img src='images/medical-device-art-work.png' id='business' width={570} />
         <div className='statistics'>
@@ -29,10 +29,10 @@ export default function MedicalDevicePage() {
               plus
             />
           </div>
-          <div>
+          <div id='placement'>
             <NumberScroll
               imgSrc='images/medical-device.png'
-              number={60}
+              number={null}
               title='Top Global Medical Device Companies'
               percent
             />
@@ -53,22 +53,21 @@ export default function MedicalDevicePage() {
                 <h3>Docspera Demand</h3>
                 <img src='images/case-notification.png' />
                 <h4>Advanced Case Notification</h4>
-                <p>Early case demand signal to improve supply chain and robotics</p>
-                <p className='outcome'>Outcome: Advanced case signal from ~5 days to ~5 weeks</p>
+                <p>Early and reliable case demand signal to improve case support preparedness and supply chain management</p>
+                <p className='outcome'>BENEFIT: Up to 5 weeks additional time for more accurate case preparation</p>
                 <button>
                   <a href='#advanced-case-notification'>View</a>
                 </button>
               </div>
               <div>
-                <h3>DocSpera Provider Premium</h3>
+                <h3>DocSpera Integrator</h3>
                 <img src='images/provider-solutions.png' height='auto' />
                 <h4>Integrated Provider Solutions</h4>
                 <p>
-                  Integrated platform & modules to enhance & complement enterprise software
-                  offerings
+                Flexible platform & modules to integrate and enhance multiple enterprise software offerings
                 </p>
                 <p className='outcome'>
-                  Outcome: Expand Enterprise capabilities into digital software offerings
+                BENEFIT: Offer better digital offerings to providers, not just individual capabilities
                 </p>
                 <button>
                   <a href='#integrated-providers-solutions'>View</a>
@@ -79,11 +78,11 @@ export default function MedicalDevicePage() {
                 <img src='images/data-intelligence.png' />
                 <h4>Data Intelligence & RWD Insights</h4>
                 <p>
-                  Support the capture of real-world data across the surgical continuum (from
-                  surgical decision to recovery)
+                Support the capture of real-world data across the surgical continuum - from surgical decision to recovery. 
+
                 </p>
                 <p className='outcome'>
-                  Outcome: Provide data registry enablement, regional trends and outcome studies
+                BENEFIT: Provide clinical registry enablement, regional trends and outcome studies
                 </p>
                 <button>
                   <a href='#insights-section'>View</a>
@@ -94,20 +93,17 @@ export default function MedicalDevicePage() {
         </div>
 
         <div id='solve-challenges-section' className='inner-div'>
-          <h2 style={{ marginBottom: 0 }}>Solve Urgent Challenges</h2>
+          <h2 style={{ marginBottom: 0 }}>Solving Urgent C-Suite Challenges </h2>
           <p style={{ marginTop: 0 }}>
             With early, integrated, real-time capture of surgical cases:
           </p>
           <div id='solve-challenges-divs'>
             <div>
+              <h4>Inventory and Logistic Costs</h4>
               <img src='images/cancellations.png' />
-              {/* <p>
-                Improve inventory management across shipping, sterilization, tray sizing,
-                cancellation management, etc
-              </p> */}
               <p>
-                Improved inventory management and transparency through earlier, more integrated
-                real-time capture of surgical case
+                Improved case preparedness and  inventory management through earlier, more integrated
+                real-time updates of surgical case
               </p>
               <p>
                 70% reduction in implant needs driving improvements across shipping, sterilization,
@@ -115,11 +111,8 @@ export default function MedicalDevicePage() {
               </p>
             </div>
             <div>
+              <h4>Product/Data  Understanding</h4>
               <img src='images/data-driven.png' />
-              {/* <p>
-                Deepen your understanding of your product performance in real world clinical
-                settings
-              </p> */}
               <p>Deeper understanding of your product performance across continuum of care</p>
               <p>
                 Access real-world data and gain insight of your product performance in real-world
@@ -127,24 +120,15 @@ export default function MedicalDevicePage() {
               </p>
             </div>
             <div>
+              <h4>Market Penetration</h4>
               <img src='images/strategic.png' />
-              {/* <p>Strengthen market position through diversified offerings & strategic engagements</p> */}
               <p>
-                Strengthen market position through diversified offerings to become a more strategic
-                partner to your customers
+                Strengthen market position and become a more strategic partner to your customers through 
+                diversified and easily managed risk-sharing based offerings 
               </p>
               <p>
                 Complement implant sales with digital offerings that extends your solutions in more
                 strategic engagements
-              </p>
-            </div>
-            <div>
-              <img src='' alt='Deliver' />
-              {/* <p>Deliver trackable and easily managed risk–sharing based offerings</p> */}
-              <p>Deliver trackable and easily managed risk–sharing based offerings </p>
-              <p>
-                Easily provide your hospital customers with value and risk sharing based models
-                using DocSpera clinically integrated platforms
               </p>
             </div>
           </div>
@@ -155,7 +139,7 @@ export default function MedicalDevicePage() {
           <h2 style={{ marginTop: 0, marginBottom: 0 }}>Real Time Advanced Case Notification</h2>
           {/* <h2 style={{ marginTop: 100, marginBottom: 0 }}> Real Time Advanced Case Notification</h2> */}
 
-          <p style={{ margin: 0 }}>Improve Supply Chain Efficiencies</p>
+          <p style={{ margin: 0 }}>Improves Case Preparedness and Supply Chain Efficiencies</p>
           <div style={{ display: 'flex', marginLeft: -20, marginTop: 20 }}>
             <ul>
               <li className='badge'>Inventory</li>
@@ -180,13 +164,13 @@ export default function MedicalDevicePage() {
               <div className='img-div'>
                 <img src='images/share-calendar.png' />
               </div>
-              <h4>Integrated Surgical Scheduling</h4>
-              <h6>Coordination across entire care team</h6>
+              <h4>Integrated Surgical Scheduling & Coordination Across Entire Care Team</h4>
+              {/* <h6>Coordination across entire care team</h6> */}
               <p>
                 <ul>
                   <li>Case scheduling & OR management</li>
                   <li>Image Sharing</li>
-                  <li>EMR & Telehealth intergration</li>
+                  <li>EMR & Telehealth integration</li>
                 </ul>
               </p>
               <div>Integrated Workflow</div>
@@ -195,12 +179,12 @@ export default function MedicalDevicePage() {
               <div className='img-div'>
                 <img src='images/smart-scheduling.png' />
               </div>
-              <h4>Optimized & Coordinated</h4>
-              <h6>Manage upcoming cases</h6>
+              <h4>Surgical Dashboard for Managing Upcoming Cases</h4>
+              {/* <h6>Manage upcoming cases</h6> */}
               <p>
                 <ul>
                   <li>Real-time coordination between Clinic, OR Team & Device Rep</li>
-                  <li>Intelligent case backlog booking</li>
+                  <li>Intelligent case backlog and cancellations re-booking</li>
                 </ul>
               </p>
               <div>Optimized and Coordinated</div>
@@ -210,8 +194,8 @@ export default function MedicalDevicePage() {
               <div className='img-div'>
                 <img src='images/eoc-mac.png' />
               </div>
-              <h4>Episode of Care</h4>
-              <h6>Post operative care management</h6>
+              <h4>Episode of Care Tracker for Post operative care management </h4>
+              {/* <h6> Tracker for Post operative care management</h6> */}
               <p>
                 <ul>
                   <li>Post-acute management and recovery coordination</li>
@@ -226,7 +210,7 @@ export default function MedicalDevicePage() {
         <div id='insights-section' className='inner-div'>
           <h3 style={{ marginTop: 100, marginBottom: 0 }}>DocSpera Insights</h3>
           <h2 style={{ marginTop: 0, marginBottom: 0 }}>Data Intelligence & RWD Insights</h2>
-          <p>Support the capture of real-word data and insights across the surgical continuum</p>
+          <p>Support improved care delivery using real-world data and insights across the surgical continuum </p>
           <img src='images/demand-intel.png' />
           <div id='insights-copy-div'>
             <div>
@@ -384,7 +368,7 @@ export default function MedicalDevicePage() {
           margin-bottom: 15px;
         }
 
-        #solve-challenges-divs > div > p:nth-child(3) {
+        #solve-challenges-divs > div > p:nth-child(4) {
           font-size: 12px;
           color: grey;
         }
