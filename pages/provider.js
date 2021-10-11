@@ -159,7 +159,7 @@ export default function Provider() {
         <div id='rapid-integration' className='inner-div'>
           <h2>Rapid Integration & Deployment at Scale</h2>
           <p>Integrated with over 30 EMR and 3rd party systems</p>
-          <div className='logos' id='emr'>
+          <div className='logos'>
             <div>
               <img src='images/logos/athena-health.png' width={220} />
               <img src='images/logos/prime.png' width={120} />
@@ -256,20 +256,20 @@ export default function Provider() {
               <img src='images/logos/orthocare.jpg' width={170} />
               <img src='images/logos/TMI.jpg' width={170} />
               <img src='images/logos/webster.png' width={160} />
-            </div>
-            <div>
+            {/* </div>
+            <div> */}
               <img src='images/logos/emerge-ortho.jpg' width={180} />
               <img src='images/logos/DOC.png' width={150} />
               <img src='images/logos/mos.png' width={170} />
               <img src='images/logos/CPO.png' width={180} />
-            </div>
-            <div>
+            {/* </div>
+            <div> */}
               <img src='images/logos/baylor.jpg' width={160} />
               <img src='images/logos/childress.png' width={200} />
               <img src='images/logos/trinity.png' width={180} />
               <img src='images/logos/louisville.png' width={170} />
-            </div>
-            <div>
+            {/* </div>
+            <div> */}
               <img src='images/logos/washington.png' width={200} />
               <img src='images/logos/englewood.png' width={160} />
             </div>
@@ -429,7 +429,7 @@ export default function Provider() {
           color: gray;
         }
 
-        #emr div {
+        .logos div {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
           grid-auto-rows: 1fr;
@@ -441,28 +441,28 @@ export default function Provider() {
         }
 
 
-        #emr div img:nth-child(4n-2), #emr div img:nth-child(4n-1) {
+        .logos div img:nth-child(4n-2), .logos div img:nth-child(4n-1) {
           justify-self: center;
         }
 
 
-        #emr div img:nth-child(4n) {
+        .logos div img:nth-child(4n) {
           justify-self: end;
         }
  
 
         @media (max-width: 890px) {
-          #emr img {
+          .logos img {
             width: 80%;
           }
         }
 
         @media (max-width: 650px) {
-          #emr img {
+          .logos img {
             width: 60%;
           }
 
-          #emr div { 
+          .logos div { 
             display:grid;
             grid-template-columns: repeat(2, 1fr);
             grid-auto-rows: 1fr;
@@ -470,20 +470,20 @@ export default function Provider() {
             align-items: center;
           }
 
-          #emr div img:nth-child(2n) {
+          .logos div img:nth-child(2n) {
             justify-self: center;
           }
-          #emr div img:nth-child(2n-1) {
+          .logos div img:nth-child(2n-1) {
             justify-self: center;
           }
         }
 
         @media(max-width: 480px) {
-          #emr img {
+          .logos img {
             width: 50%;
           }
 
-          #emr div { 
+          .logos div { 
             display:grid;
             grid-template-columns: 1fr;
             grid-auto-rows: 100px;
