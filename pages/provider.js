@@ -354,6 +354,21 @@ export default function Provider() {
 
         }
 
+        // @media (max-width: 650px) {
+        //   .provider-solutions-row {
+        //     display: flex;
+        //     flex-direction: column;
+        //   }
+
+        //   .provider-solutions-row div {
+        //     align-content: center;
+        //     align-items: center;
+        //     margin-bottom: 10px;
+        //     padding: 0 50px;
+        //     width: 100%;
+        //   }
+        // }
+
         #seamless-integration img {
           display: block;
           margin: 10px auto;
@@ -498,6 +513,10 @@ export default function Provider() {
           .testimonial {
             width: 100%;
           }
+          #mock-up-img {
+            width: 85%;
+          } 
+       
         }
 
         @media(max-width: 480px) {
@@ -510,6 +529,7 @@ export default function Provider() {
             grid-template-columns: 1fr;
             grid-auto-rows: 100px;
           }
+      
         }
 
 
