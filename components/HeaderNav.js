@@ -197,7 +197,7 @@ export default function HeaderNav() {
 
         .active_a,
         .dropdown .active_a {
-          color: var(--blueDocspera);
+          color: var(--blueDark);
           font-weight: 600;
         }
 
@@ -291,7 +291,7 @@ export default function HeaderNav() {
         }
 
         .dropdown p:hover {
-          color: var(--blueDocspera);
+          color: var(--blueDark);
         }
 
         .contact-dropdown {
