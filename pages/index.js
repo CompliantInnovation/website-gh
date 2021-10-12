@@ -46,70 +46,54 @@ export default function Home() {
         </div>
       </div>
 
-      <div id='vision-section'>
-          <div id='vision' className='inner-div'>
-            <h2 style={{ marginBottom: 20 }}>Vision to Address Priorities and Unmet Need Through Patient’s Surgical Journey </h2>
-            <div id='vision-divs'>
-              <div>
-                <img src='' alt='img' />
-                <h4>PRE-OPERATIVE</h4>
-                <ul>
-                  <li>Avoiding last-minute surgery cancellations due to poor patient compliance with pre-surgery requirements</li>
-                  <li>Effective communication & connectivity between clinical office,  hospital, and vendors</li>
-                </ul>
+      <div className='inner-div'>
+        <div id='vision-section'>
+          {/* Iphone Calendar Mockups */}
+          <div style={{ width: '50%' }}>
+            <img id='iphone-calendar' src='images/product-shots/iphone-calendar.png' />
+          </div>
 
-              </div>
-              <div>
-                <img src='' alt='img' />
-                <h4>SURGICAL PLANNING</h4>
-                <ul>
-                  <li>Improve OR efficiency (e.g.  reduction in surgical inventory)</li>
-                  <li>Effective patient readiness and case backlog-management (e.g. managing pending cases and cancellations)</li>
-                </ul>
-              </div>
-              <div>
-                <img src='' alt='img' />
-                <h4>POST-OP MONITORING</h4>
-                <ul>
-                  <li>Post-op monitoring and outcome tracking</li>
-                  <li>Improve patient satisfaction</li>
-                </ul>
-              </div>
-            </div>
+          <div style={{ width: '50%' }}>
+            <h2>
+              Vision to Address Priorities and Unmet Needs Through Patient’s Surgical Journey{' '}
+            </h2>
+            {/* Timeline Graphic + Copy  "1. Pre-Operative..." */}
+            <img id='timeline-graphic' src='images/timeline-graphic.png' />
           </div>
         </div>
-
-      <div id='connecting-section' className='inner-div'>
-        <div id='words-div'>
-          <h1>DocSpera Integrated Care Coordination Platform</h1>
-          <h2>
-            Connecting <b>Surgeons</b>, <br /> <b>Care Teams</b> & <b>Medical Device Co.</b>
-          </h2>
-          <p style={{ maxWidth: 420, marginLeft: -20 }}>
-            <ul>
-              <li>
-                Single institution-agnostic interface managing cases from surgery decision to
-                recovery
-              </li>
-              <li>Seamlessly integrates with EMR systems and PACS</li>
-              <li>Current and reliable supply chain signaling for improved logistics and support.</li>
-              <li>
-                Enable early intervention with predictive indicators for patient compliance,
-                discharge info, & readmission
-              </li>
-            </ul>
-          </p>
-        </div>
-        <img id='connecting-graphic' src='images/connecting2.png' />
       </div>
 
-      
+      <div style={{ backgroundColor: 'var(--blueSky)' }}>
+        <div id='connecting-section' className='inner-div'>
+          <div id='words-div'>
+            <h1>DocSpera Integrated Care Coordination Platform</h1>
+            <h2>
+              Connecting <b>Surgeons</b>, <br /> <b>Care Teams</b> & <b>Medical Device Co.</b>
+            </h2>
+            <p style={{ maxWidth: 420, marginLeft: -20 }}>
+              <ul>
+                <li>
+                  Single institution-agnostic interface managing cases from surgery decision to
+                  recovery
+                </li>
+                <li>Seamlessly integrates with EMR systems and PACS</li>
+                <li>
+                  Current and reliable supply chain signaling for improved logistics and support.
+                </li>
+                <li>
+                  Enable early intervention with predictive indicators for patient compliance,
+                  discharge info, & readmission
+                </li>
+              </ul>
+            </p>
+          </div>
+          <img id='connecting-graphic' src='images/connected-graphic.png' />
+        </div>
+      </div>
 
       <div style={{ backgroundColor: 'var(--blueXLight)' }}>
         <div className='inner-div'>
-          <h2 style={{ marginLeft: 45, marginBottom: 20, fontWeight: 500 }}>
-            View Our Products For...
-          </h2>
+          <h2 className='products-h2'>View Our Products For...</h2>
           <div className='product-section'>
             <div className='box'>
               <h4>
@@ -156,7 +140,9 @@ export default function Home() {
       </div>
 
       <div className='inner-div'>
-        <h2>DocSpera works with leading health solution providers and Organizations</h2>
+        <h2 style={{ textAlign: 'center' }}>
+          DocSpera works with leading health solution providers and Organizations
+        </h2>
         <Carousel
           type='logo'
           content={[
@@ -247,27 +233,76 @@ export default function Home() {
           width: 70%;
         }
 
-        #connecting-section {
+
+
+
+
+
+        #vision-section {
           display: flex;
-          justify-content: center;
-          padding: 100px 0;
-          padding-top: 50px;
-          width: 100%;
+          align-items: center;
         }
 
-        @media (max-width: 970px) {
+        #iphone-calendar {
+          width: 110%;
+          margin-left: -60px;
+        }
+
+
+        #vision-section h2 {
+          max-width: 500px; 
+          margin-bottom: 20px;
+
+        }
+
+        #timeline-graphic {
+          max-width: 600px;
+        }
+
+        @media (max-width: 1100px) {
+          #vision-section {
+            flex-direction: column;
+          }
+        }
+
+        #connecting-section {
+          background-color: #2a83bf;
+          background-color: var(--blueSky);
+          display: flex;
+          justify-content: center;
+          flex: 1;
+          padding-top: 0px;
+          color: black;
+        }
+
+        #connecting-section h1 {
+          margin-top: 60px;
+        }
+
+        @media (max-width: 1270px) {
           #connecting-section {
             flex-direction: column;
           }
         }
 
         #connecting-graphic {
-          width: 50%;
+          width: 60%;
           align-self: flex-end;
+          margin-right: -160px;
+        }
+
+        @media (max-width: 1270px) {
+          #connecting-graphic {
+            margin-top: -150px;
+            margin-right: -30px;
+
+          }
         }
 
         @media (max-width: 800px) {
           #connecting-graphic {
+            margin-top: 10px;
+            margin-right: 0;
             width: 100%;
           }
         }
@@ -287,60 +322,17 @@ export default function Home() {
           font-weight: 200;
         }
 
-        #vision-section {
-          margin-top: 50px;
-          padding: 70px 0 100px 0;
-          width: 100%;
+        .products-h2 {
+          margin-left: 45px;
+          margin-bottom: 20px; 
+          font-weight: 500;
         }
 
-        #vision h2 {
-          margin-top: 0;
+        @media (max-width: 800px) {
+          .products-h2 {
+            margin-left: 0;
+          }
         }
-
-        #vision {
-          padding: 0 5vw;
-        }
-
-        #vision-divs {
-          display: flex;
-          justify-content: space-between;
-          flex: 1;
-        }
-
-        #vision-divs > div {
-          position: relative;
-          flex: 1;
-          border-radius: 10px;
-          background-color: white;
-          padding: 15px;
-          padding-bottom: 30px;
-          margin: 10px;
-        }
-
-        #vision-divs img {
-          width: 100%;
-          height: 175px;
-          border: 1px solid black;
-          max-height: 175px;
-       
-          width: auto;
-          border-radius: 5px;
-          display: block;
-          margin: 0 auto;
-          margin-bottom: 10px;
-        }
-
-        #vision-divs h4 {
-          margin: 0;
-          text-align: center;
-        }
-
-        #vision-divs li {
-          color: grey;
-          font-size: 14px;
-          margin-bottom: 10px;
-        }
-
 
         .product-section {
           display: flex;
@@ -353,7 +345,6 @@ export default function Home() {
 
         .product-section h4 {
           font-size: 24px;
-          // font-family: 'Varela Round';
         }
 
 
@@ -422,7 +413,8 @@ export default function Home() {
           display: block;
           margin: 0 auto;
           user-select: none;
-          margin-top: -100px;
+          margin-top: -120px;
+          margin-bottom: 150px;
         }
 
         .logos div {
