@@ -101,7 +101,7 @@ export default function Home() {
           <div className='product-section'>
             <div className='box'>
               <h4>
-                <img src='/images/surgeon-users.png' />
+                <img src='/website-gh/images/surgeon-users.png' />
                 Providers
               </h4>
               <p>
@@ -115,13 +115,13 @@ export default function Home() {
               </p>
               <Link href='/provider'>
                 <button>
-                  View More <img className='chevron-img' src='/images/chevron.png' />
+                  View More <img className='chevron-img' src='/website-gh/images/chevron.png' />
                 </button>
               </Link>
             </div>
             <div className='box'>
               <h4>
-                <img src='/images/medical-device.png' />
+                <img src='/website-gh/images/medical-device.png' />
                 Medical Device
               </h4>
               <p>
@@ -135,7 +135,7 @@ export default function Home() {
               </p>
               <Link href='/medical-device'>
                 <button>
-                  View More <img className='chevron-img' src='/images/chevron.png' />
+                  View More <img className='chevron-img' src='/website-gh/images/chevron.png' />
                 </button>
               </Link>
             </div>
@@ -182,7 +182,7 @@ export default function Home() {
         />
       </div>
 
-      <img id='map' src='/images/map-with-pins.png' alt='map of docspera locations' />
+      <img id='map' src='/website-gh/images/map-with-pins.png' alt='map of docspera locations' />
 
       {/* <div className='carousel-container'>
         <div className='blog-section'>
