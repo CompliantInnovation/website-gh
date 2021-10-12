@@ -440,21 +440,25 @@ export default function Provider() {
 
         }
 
-
         .logos div img:nth-child(4n-2), .logos div img:nth-child(4n-1) {
           justify-self: center;
         }
-
 
         .logos div img:nth-child(4n) {
           justify-self: end;
         }
  
-
         @media (max-width: 890px) {
           .logos img {
             width: 80%;
           }
+        }
+
+        @media (max-width: 835px) {
+          .testimonial {
+            width: 45%;
+          }
+
         }
 
         @media (max-width: 650px) {
@@ -475,6 +479,10 @@ export default function Provider() {
           }
           .logos div img:nth-child(2n-1) {
             justify-self: center;
+          }
+
+          .testimonial {
+            width: 100%;
           }
         }
 
