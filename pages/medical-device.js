@@ -13,17 +13,25 @@ export default function MedicalDevicePage() {
       </Head>
       <HeaderNav />
       <div className='container'>
-        <h2>Power Your Digital and Surgical solutions using a Comprehensive, Intelligent Care Coordination platform</h2>
+        <h2>
+          Power Your Digital and Surgical solutions using a Comprehensive, Intelligent Care
+          Coordination platform
+        </h2>
         <p>
-          DocSpera is an integrated, comprehensive, and compliant digital solution powering patient-specific data, 
-          enabling Clinical insights, including an efficient supply chain.
+          DocSpera is an integrated, comprehensive, and compliant digital solution powering
+          patient-specific data, enabling Clinical insights, including an efficient supply chain.
         </p>
-        <img src='images/medical-device-art-work.png' id='business' width={570} />
+        <img src='website-gh/images/medical-device-art-work.png' id='business' width={570} />
         <div className='statistics'>
           <div>
-            <NumberScroll imgSrc='images/surgeon-users.png' number={6000} title='Surgeons' plus />
             <NumberScroll
-              imgSrc='images/surgical-cases.png'
+              imgSrc='website-gh/images/surgeon-users.png'
+              number={6000}
+              title='Surgeons'
+              plus
+            />
+            <NumberScroll
+              imgSrc='website-gh/images/surgical-cases.png'
               number={350000}
               title='Surgical Cases'
               plus
@@ -31,13 +39,13 @@ export default function MedicalDevicePage() {
           </div>
           <div id='placement'>
             <NumberScroll
-              imgSrc='images/medical-device.png'
+              imgSrc='website-gh/images/medical-device.png'
               number={null}
               title='Top Global Medical Device Companies'
               percent
             />
             <NumberScroll
-              imgSrc='images/tech-partners.png'
+              imgSrc='website-gh/images/tech-partners.png'
               number={30}
               title='Technology Partners'
               plus
@@ -51,23 +59,30 @@ export default function MedicalDevicePage() {
             <div id='offerings-divs'>
               <div>
                 <h3>Docspera Demand</h3>
-                <img src='images/case-notification.png' />
+                <img src='website-gh/images/case-notification.png' />
                 <h4>Advanced Case Notification</h4>
-                <p>Early and reliable case demand signal to improve case support preparedness and supply chain management</p>
-                <p className='outcome'>BENEFIT: Up to 5 weeks additional time for more accurate case preparation</p>
+                <p>
+                  Early and reliable case demand signal to improve case support preparedness and
+                  supply chain management
+                </p>
+                <p className='outcome'>
+                  BENEFIT: Up to 5 weeks additional time for more accurate case preparation
+                </p>
                 <button>
                   <a href='#advanced-case-notification'>View</a>
                 </button>
               </div>
               <div>
                 <h3>DocSpera Integrator</h3>
-                <img src='images/provider-solutions.png' height='auto' />
+                <img src='website-gh/images/provider-solutions.png' height='auto' />
                 <h4>Integrated Provider Solutions</h4>
                 <p>
-                Flexible platform & modules to integrate and enhance multiple enterprise software offerings
+                  Flexible platform & modules to integrate and enhance multiple enterprise software
+                  offerings
                 </p>
                 <p className='outcome'>
-                BENEFIT: Offer better digital offerings to providers, not just individual capabilities
+                  BENEFIT: Offer better digital offerings to providers, not just individual
+                  capabilities
                 </p>
                 <button>
                   <a href='#integrated-providers-solutions'>View</a>
@@ -75,14 +90,14 @@ export default function MedicalDevicePage() {
               </div>
               <div>
                 <h3>DocSpera Insights</h3>
-                <img src='images/data-intelligence.png' />
+                <img src='website-gh/images/data-intelligence.png' />
                 <h4>Data Intelligence & RWD Insights</h4>
                 <p>
-                Support the capture of real-world data across the surgical continuum - from surgical decision to recovery. 
-
+                  Support the capture of real-world data across the surgical continuum - from
+                  surgical decision to recovery.
                 </p>
                 <p className='outcome'>
-                BENEFIT: Provide clinical registry enablement, regional trends and outcome studies
+                  BENEFIT: Provide clinical registry enablement, regional trends and outcome studies
                 </p>
                 <button>
                   <a href='#insights-section'>View</a>
@@ -100,9 +115,9 @@ export default function MedicalDevicePage() {
           <div id='solve-challenges-divs'>
             <div>
               <h4>Inventory and Logistic Costs</h4>
-              <img src='images/cancellations.png' />
+              <img src='website-gh/images/cancellations.png' />
               <p>
-                Improved case preparedness and  inventory management through earlier, more integrated
+                Improved case preparedness and inventory management through earlier, more integrated
                 real-time updates of surgical case
               </p>
               <p>
@@ -111,8 +126,8 @@ export default function MedicalDevicePage() {
               </p>
             </div>
             <div>
-              <h4>Product/Data  Understanding</h4>
-              <img src='images/data-driven.png' />
+              <h4>Product/Data Understanding</h4>
+              <img src='website-gh/images/data-driven.png' />
               <p>Deeper understanding of your product performance across continuum of care</p>
               <p>
                 Access real-world data and gain insight of your product performance in real-world
@@ -121,10 +136,10 @@ export default function MedicalDevicePage() {
             </div>
             <div>
               <h4>Market Penetration</h4>
-              <img src='images/strategic.png' />
+              <img src='website-gh/images/strategic.png' />
               <p>
-                Strengthen market position and become a more strategic partner to your customers through 
-                diversified and easily managed risk-sharing based offerings 
+                Strengthen market position and become a more strategic partner to your customers
+                through diversified and easily managed risk-sharing based offerings
               </p>
               <p>
                 Complement implant sales with digital offerings that extends your solutions in more
@@ -150,7 +165,7 @@ export default function MedicalDevicePage() {
               <li className='badge'>Right Location</li>
             </ul>
           </div>
-          <img src='images/advanced-case-notification.png' />
+          <img src='website-gh/images/advanced-case-notification.png' />
         </div>
 
         <div className='provider-solutions inner-div'>
@@ -160,9 +175,9 @@ export default function MedicalDevicePage() {
           </p>
           <div className='provider-solutions-row'>
             <div>
-              {/* <img src='images/scheduling.png' /> */}
+              {/* <img src='website-gh/images/scheduling.png' /> */}
               <div className='img-div'>
-                <img src='images/share-calendar.png' />
+                <img src='website-gh/images/share-calendar.png' />
               </div>
               <h4>Integrated Surgical Scheduling & Coordination Across Entire Care Team</h4>
               {/* <h6>Coordination across entire care team</h6> */}
@@ -177,7 +192,7 @@ export default function MedicalDevicePage() {
             </div>
             <div>
               <div className='img-div'>
-                <img src='images/smart-scheduling.png' />
+                <img src='website-gh/images/smart-scheduling.png' />
               </div>
               <h4>Surgical Dashboard for Managing Upcoming Cases</h4>
               {/* <h6>Manage upcoming cases</h6> */}
@@ -190,9 +205,9 @@ export default function MedicalDevicePage() {
               <div>Optimized and Coordinated</div>
             </div>
             <div>
-              {/* <img src='images/episode-of-care.png' /> */}
+              {/* <img src='website-gh/images/episode-of-care.png' /> */}
               <div className='img-div'>
-                <img src='images/eoc-mac.png' />
+                <img src='website-gh/images/eoc-mac.png' />
               </div>
               <h4>Episode of Care Tracker for Post operative care management </h4>
               {/* <h6> Tracker for Post operative care management</h6> */}
@@ -210,26 +225,29 @@ export default function MedicalDevicePage() {
         <div id='insights-section' className='inner-div'>
           <h3 style={{ marginTop: 100, marginBottom: 0 }}>DocSpera Insights</h3>
           <h2 style={{ marginTop: 0, marginBottom: 0 }}>Data Intelligence & RWD Insights</h2>
-          <p>Support improved care delivery using real-world data and insights across the surgical continuum </p>
-          <img src='images/demand-intel.png' />
+          <p>
+            Support improved care delivery using real-world data and insights across the surgical
+            continuum{' '}
+          </p>
+          <img src='website-gh/images/demand-intel.png' />
           <div id='insights-copy-div'>
             <div>
               <div className='insight-title-div'>
-                <img src='images/line-graph.png' />
+                <img src='website-gh/images/line-graph.png' />
                 <h4>Demand Intelligence</h4>
               </div>
               <p>View aggregated case demand information by region</p>
             </div>
             <div>
               <div className='insight-title-div'>
-                <img src='images/mac.png' />
+                <img src='website-gh/images/mac.png' />
                 <h4>Market Intelligence</h4>
               </div>
               <p>Understand market share across specialty and therapeutic areas</p>
             </div>
             <div>
               <div className='insight-title-div'>
-                <img src='images/target.png' />
+                <img src='website-gh/images/target.png' />
                 <h4>Device Intelligence & Registry</h4>
               </div>
               <p>Longitudinal data from pre-op to recovery and support post market surveillance</p>
