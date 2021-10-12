@@ -20,33 +20,43 @@ export default function Home() {
       </div>
       <img id='landing-bg' src='/website-gh/images/care-team.jpg' width={'100%'} />
 
-      <div className='statistics'>
-        <div>
-          <NumberScroll
-            imgSrc='/website-gh/images/patient-volume.png'
-            number={100000}
-            title='Monthly Patient Volume'
-            plus
-          />
-          <NumberScroll
-            imgSrc='/website-gh/images/surgeon-users.png'
-            number={6000}
-            title='Surgeon Users'
-            plus
-          />
-        </div>
-        <div>
-          <NumberScroll
-            imgSrc='/website-gh/images/episodic-cases.png'
-            number={350000}
-            title='Episodic Cases'
-          />
-          <NumberScroll
-            imgSrc='/website-gh/images/practices.png'
-            number={300}
-            title='Practices, ASCs & Hospitals'
-            plus
-          />
+      <div
+        // className='statistics'
+        style={{
+          backgroundColor: 'var(--blueXLight)',
+          maxWidth: '100%',
+          marginTop: -10,
+          paddingBottom: 10
+        }}
+      >
+        <div className='statistics'>
+          <div>
+            <NumberScroll
+              imgSrc='/website-gh/images/patient-volume.png'
+              number={100000}
+              title='Monthly Patient Volume'
+              plus
+            />
+            <NumberScroll
+              imgSrc='/website-gh/images/surgeon-users.png'
+              number={6000}
+              title='Surgeon Users'
+              plus
+            />
+          </div>
+          <div>
+            <NumberScroll
+              imgSrc='/website-gh/images/episodic-cases.png'
+              number={350000}
+              title='Episodic Cases'
+            />
+            <NumberScroll
+              imgSrc='/website-gh/images/practices.png'
+              number={300}
+              title='Practices, ASCs & Hospitals'
+              plus
+            />
+          </div>
         </div>
       </div>
 
@@ -115,7 +125,8 @@ export default function Home() {
               </p>
               <Link href='/provider'>
                 <button>
-                  View More <img className='chevron-img' src='/website-gh/images/chevron.png' />
+                  View Provider Products{' '}
+                  <img className='chevron-img' src='/website-gh/images/chevron.png' />
                 </button>
               </Link>
             </div>
@@ -135,7 +146,8 @@ export default function Home() {
               </p>
               <Link href='/medical-device'>
                 <button>
-                  View More <img className='chevron-img' src='/website-gh/images/chevron.png' />
+                  View Medical Device Products{' '}
+                  <img className='chevron-img' src='/website-gh/images/chevron.png' />
                 </button>
               </Link>
             </div>
@@ -144,7 +156,7 @@ export default function Home() {
       </div>
 
       <div className='inner-div'>
-        <h2 style={{ textAlign: 'center' }}>
+        <h2 id='docspera-works-h2'>
           DocSpera works with leading health solution providers and Organizations
         </h2>
         <Carousel
@@ -281,12 +293,8 @@ export default function Home() {
           }
 
           #vision-section h2 {
-            // max-width: 100%;
-            margin: 0 auto;
-
+            margin: 15px auto;
           }
-          
-
         }
   
         @media (max-width: 550px) {
@@ -374,9 +382,10 @@ export default function Home() {
         }
 
         .products-h2 {
+          text-align: center;
           margin-left: 45px;
           margin-bottom: 20px; 
-          font-weight: 500;
+          font-weight: 600;
         }
 
         @media (max-width: 800px) {
@@ -466,6 +475,26 @@ export default function Home() {
           user-select: none;
           margin-top: -120px;
           margin-bottom: 150px;
+        }
+
+        @media (max-width: 900px) {
+          #map {
+            width: 90%;
+            margin-top: -80px;
+          }
+        }
+
+        #docspera-works-h2 {
+          text-align: center;
+          margin-bottom: -40px; 
+          max-width: 600px;
+          margin: 0px auto -40px auto;
+        }
+
+        @media (max-width: 900px) {
+          #docspera-works-h2 { 
+            max-width: 600px;
+          }
         }
 
         .logos div {
