@@ -21,17 +21,12 @@ export default function MedicalDevicePage() {
           DocSpera is an integrated, comprehensive, and compliant digital solution powering
           patient-specific data, enabling Clinical insights, including an efficient supply chain.
         </p>
-        <img src='/website-gh/images/medical-device-art-work.png' id='business' width={570} />
+        <img src='images/medical-device-art-work.png' id='business' width={570} />
         <div className='statistics'>
           <div>
+            <NumberScroll imgsrc='images/surgeon-users.png' number={6000} title='Surgeons' plus />
             <NumberScroll
-              imgSrc='/website-gh/images/surgeon-users.png'
-              number={6000}
-              title='Surgeons'
-              plus
-            />
-            <NumberScroll
-              imgSrc='/website-gh/images/surgical-cases.png'
+              imgsrc='images/surgical-cases.png'
               number={350000}
               title='Surgical Cases'
               plus
@@ -39,13 +34,13 @@ export default function MedicalDevicePage() {
           </div>
           <div id='placement'>
             <NumberScroll
-              imgSrc='/website-gh/images/medical-device.png'
+              imgsrc='images/medical-device.png'
               number={null}
               title='Top Global Medical Device Companies'
               percent
             />
             <NumberScroll
-              imgSrc='/website-gh/images/tech-partners.png'
+              imgsrc='images/tech-partners.png'
               number={30}
               title='Technology Partners'
               plus
@@ -59,7 +54,7 @@ export default function MedicalDevicePage() {
             <div id='offerings-divs'>
               <div>
                 <h3>Docspera Demand</h3>
-                <img src='/website-gh/images/case-notification.png' />
+                <img src='images/case-notification.png' />
                 <h4>Advanced Case Notification</h4>
                 <p>
                   Early and reliable case demand signal to improve case support preparedness and
@@ -74,7 +69,7 @@ export default function MedicalDevicePage() {
               </div>
               <div>
                 <h3>DocSpera Integrator</h3>
-                <img src='/website-gh/images/provider-solutions.png' height='auto' />
+                <img src='images/provider-solutions.png' height='auto' />
                 <h4>Integrated Provider Solutions</h4>
                 <p>
                   Flexible platform & modules to integrate and enhance multiple enterprise software
@@ -90,7 +85,7 @@ export default function MedicalDevicePage() {
               </div>
               <div>
                 <h3>DocSpera Insights</h3>
-                <img src='/website-gh/images/data-intelligence.png' />
+                <img src='images/data-intelligence.png' />
                 <h4>Data Intelligence & RWD Insights</h4>
                 <p>
                   Support the capture of real-world data across the surgical continuum - from
@@ -115,7 +110,7 @@ export default function MedicalDevicePage() {
           <div id='solve-challenges-divs'>
             <div>
               <h4>Inventory and Logistic Costs</h4>
-              <img src='/website-gh/images/cancellations.png' />
+              <img src='images/cancellations.png' />
               <p>
                 Improved case preparedness and inventory management through earlier, more integrated
                 real-time updates of surgical case
@@ -127,7 +122,7 @@ export default function MedicalDevicePage() {
             </div>
             <div>
               <h4>Product/Data Understanding</h4>
-              <img src='/website-gh/images/data-driven.png' />
+              <img src='images/data-driven.png' />
               <p>Deeper understanding of your product performance across continuum of care</p>
               <p>
                 Access real-world data and gain insight of your product performance in real-world
@@ -136,7 +131,7 @@ export default function MedicalDevicePage() {
             </div>
             <div>
               <h4>Market Penetration</h4>
-              <img src='/website-gh/images/strategic.png' />
+              <img src='images/strategic.png' />
               <p>
                 Strengthen market position and become a more strategic partner to your customers
                 through diversified and easily managed risk-sharing based offerings
@@ -165,7 +160,7 @@ export default function MedicalDevicePage() {
               <li className='badge'>Right Location</li>
             </ul>
           </div>
-          <img src='/website-gh/images/advanced-case-notification.png' />
+          <img src='images/advanced-case-notification.png' />
         </div>
 
         <div className='provider-solutions inner-div'>
@@ -175,9 +170,9 @@ export default function MedicalDevicePage() {
           </p>
           <div className='provider-solutions-row'>
             <div>
-              {/* <img src='/website-gh/images/scheduling.png' /> */}
+              {/* <img src='images/scheduling.png' /> */}
               <div className='img-div'>
-                <img src='/website-gh/images/share-calendar.png' />
+                <img src='images/share-calendar.png' />
               </div>
               <h4>Integrated Surgical Scheduling & Coordination Across Entire Care Team</h4>
               {/* <h6>Coordination across entire care team</h6> */}
@@ -192,7 +187,7 @@ export default function MedicalDevicePage() {
             </div>
             <div>
               <div className='img-div'>
-                <img src='/website-gh/images/smart-scheduling.png' />
+                <img src='images/smart-scheduling.png' />
               </div>
               <h4>Surgical Dashboard for Managing Upcoming Cases</h4>
               {/* <h6>Manage upcoming cases</h6> */}
@@ -205,9 +200,9 @@ export default function MedicalDevicePage() {
               <div>Optimized and Coordinated</div>
             </div>
             <div>
-              {/* <img src='/website-gh/images/episode-of-care.png' /> */}
+              {/* <img src='images/episode-of-care.png' /> */}
               <div className='img-div'>
-                <img src='/website-gh/images/eoc-mac.png' />
+                <img src='images/eoc-mac.png' />
               </div>
               <h4>Episode of Care Tracker for Post operative care management </h4>
               {/* <h6> Tracker for Post operative care management</h6> */}
@@ -229,25 +224,25 @@ export default function MedicalDevicePage() {
             Support improved care delivery using real-world data and insights across the surgical
             continuum{' '}
           </p>
-          <img src='/website-gh/images/demand-intel.png' />
+          <img src='images/demand-intel.png' />
           <div id='insights-copy-div'>
             <div>
               <div className='insight-title-div'>
-                <img src='/website-gh/images/line-graph.png' />
+                <img src='images/line-graph.png' />
                 <h4>Demand Intelligence</h4>
               </div>
               <p>View aggregated case demand information by region</p>
             </div>
             <div>
               <div className='insight-title-div'>
-                <img src='/website-gh/images/mac.png' />
+                <img src='images/mac.png' />
                 <h4>Market Intelligence</h4>
               </div>
               <p>Understand market share across specialty and therapeutic areas</p>
             </div>
             <div>
               <div className='insight-title-div'>
-                <img src='/website-gh/images/target.png' />
+                <img src='images/target.png' />
                 <h4>Device Intelligence & Registry</h4>
               </div>
               <p>Longitudinal data from pre-op to recovery and support post market surveillance</p>

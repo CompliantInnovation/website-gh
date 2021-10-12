@@ -18,31 +18,27 @@ export default function Home() {
       <div id='hero-h1'>
         <h1>Intelligent Surgical Planning Software from Diagnosis to Recovery</h1>
       </div>
-      <img id='landing-bg' src='/website-gh/images/care-team.jpg' width={'100%'} />
+      <img id='landing-bg' src='images/care-team.jpg' width={'100%'} />
 
       <div className='statistics'>
         <div>
           <NumberScroll
-            imgSrc='/website-gh/images/patient-volume.png'
+            imgsrc='images/patient-volume.png'
             number={100000}
             title='Monthly Patient Volume'
             plus
           />
           <NumberScroll
-            imgSrc='/website-gh/images/surgeon-users.png'
+            imgsrc='images/surgeon-users.png'
             number={6000}
             title='Surgeon Users'
             plus
           />
         </div>
         <div>
+          <NumberScroll imgsrc='images/episodic-cases.png' number={350000} title='Episodic Cases' />
           <NumberScroll
-            imgSrc='/website-gh/images/episodic-cases.png'
-            number={350000}
-            title='Episodic Cases'
-          />
-          <NumberScroll
-            imgSrc='/website-gh/images/practices.png'
+            imgsrc='images/practices.png'
             number={300}
             title='Practices, ASCs & Hospitals'
             plus
@@ -53,8 +49,8 @@ export default function Home() {
       <div className='inner-div'>
         <div id='vision-section'>
           {/* Iphone Calendar Mockups */}
-          <div style={{ width: '50%' }}>
-            <img id='iphone-calendar' src='/website-gh/images/product-shots/iphone-calendar.png' />
+          <div id='iphone-calendar-div'>
+            <img id='iphone-calendar' src='images/product-shots/iphone-calendar.png' />
           </div>
 
           <div style={{ width: '50%' }}>
@@ -62,7 +58,7 @@ export default function Home() {
               Vision to Address Priorities and Unmet Needs Through Patient’s Surgical Journey{' '}
             </h2>
             {/* Timeline Graphic + Copy  "1. Pre-Operative..." */}
-            <img id='timeline-graphic' src='/website-gh/images/timeline-graphic.png' />
+            <img id='timeline-graphic' src='images/timeline-graphic.png' />
           </div>
         </div>
       </div>
@@ -91,7 +87,7 @@ export default function Home() {
               </ul>
             </p>
           </div>
-          <img id='connecting-graphic' src='/website-gh/images/connected-graphic.png' />
+          <img id='connecting-graphic' src='images/connected-graphic.png' />
         </div>
       </div>
 
@@ -101,7 +97,7 @@ export default function Home() {
           <div className='product-section'>
             <div className='box'>
               <h4>
-                <img src='/website-gh/images/surgeon-users.png' />
+                <img src='images/surgeon-users.png' />
                 Providers
               </h4>
               <p>
@@ -115,13 +111,13 @@ export default function Home() {
               </p>
               <Link href='/provider'>
                 <button>
-                  View More <img className='chevron-img' src='/website-gh/images/chevron.png' />
+                  View More <img className='chevron-img' src='images/chevron.png' />
                 </button>
               </Link>
             </div>
             <div className='box'>
               <h4>
-                <img src='/website-gh/images/medical-device.png' />
+                <img src='images/medical-device.png' />
                 Medical Device
               </h4>
               <p>
@@ -135,7 +131,7 @@ export default function Home() {
               </p>
               <Link href='/medical-device'>
                 <button>
-                  View More <img className='chevron-img' src='/website-gh/images/chevron.png' />
+                  View More <img className='chevron-img' src='images/chevron.png' />
                 </button>
               </Link>
             </div>
@@ -151,38 +147,38 @@ export default function Home() {
           type='logo'
           content={[
             {
-              img: '/website-gh/images/logos/innovacer.png',
+              img: 'images/logos/innovacer.png',
               width: 180
             },
             {
-              img: '/website-gh/images/logos/athena-health.png',
+              img: 'images/logos/athena-health.png',
               width: 210
             },
             {
-              img: '/website-gh/images/logos/app-orchard.png',
+              img: 'images/logos/app-orchard.png',
               width: 170
             },
             {
-              img: '/website-gh/images/logos/dolby.png',
+              img: 'images/logos/dolby.png',
               width: 160
             },
             {
-              img: '/website-gh/images/logos/AAHKS.jpg',
+              img: 'images/logos/AAHKS.jpg',
               width: 170
             },
             {
-              img: '/website-gh/images/logos/anterior-hip-foundation.png',
+              img: 'images/logos/anterior-hip-foundation.png',
               width: 180
             },
             {
-              img: '/website-gh/images/logos/CMS.jpg',
+              img: 'images/logos/CMS.jpg',
               width: 120
             }
           ]}
         />
       </div>
 
-      <img id='map' src='/website-gh/images/map-with-pins.png' alt='map of docspera locations' />
+      <img id='map' src='images/map-with-pins.png' alt='map of docspera locations' />
 
       {/* <div className='carousel-container'>
         <div className='blog-section'>
@@ -242,9 +238,15 @@ export default function Home() {
 
 
 
+        // VISION SECTION
+
         #vision-section {
           display: flex;
           align-items: center;
+        }
+
+        #iphone-calendar-div {
+          width: 50%;
         }
 
         #iphone-calendar {
@@ -267,7 +269,16 @@ export default function Home() {
           #vision-section {
             flex-direction: column;
           }
+
+          #iphone-calendar-div {
+            width: 100%;
+          }
         }
+
+
+
+
+        // CONNECTING SECTION
 
         #connecting-section {
           background-color: #2a83bf;
