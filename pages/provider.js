@@ -448,6 +448,17 @@ export default function Provider() {
           justify-self: end;
         }
  
+
+        @media (max-width: 1025px) {
+          #designed-for-providers > div {
+            flex-direction: column;
+          }
+
+          #mock-up-img {
+            margin-bottom: 40px;
+          }
+        }
+        
         @media (max-width: 890px) {
           .logos img {
             width: 80%;
