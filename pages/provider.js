@@ -78,18 +78,18 @@ export default function Provider() {
           across multiple sites and teams, drive improved efficiencies and deliver better patient
           care.
         </p>
-        <img src='website-gh/images/provider-art-work.png' id='surgeon-doodle' />
+        <img src='/website-gh/images/provider-art-work.png' id='surgeon-doodle' />
 
         <div className='statistics'>
           <div>
             <NumberScroll
-              imgSrc='website-gh/images/surgeon-users.png'
+              imgSrc='/website-gh/images/surgeon-users.png'
               number={6000}
               title='Surgeons'
               plus
             />
             <NumberScroll
-              imgSrc='website-gh/images/patient-volume.png'
+              imgSrc='/website-gh/images/patient-volume.png'
               number={100000}
               title='Monthly Patient Visits'
               plus
@@ -97,13 +97,13 @@ export default function Provider() {
           </div>
           <div>
             <NumberScroll
-              imgSrc='website-gh/images/practices.png'
+              imgSrc='/website-gh/images/practices.png'
               number={300}
               title='Practices, ASCs and Hospitals'
               plus
             />
             <NumberScroll
-              imgSrc='website-gh/images/surgical-cases.png'
+              imgSrc='/website-gh/images/surgical-cases.png'
               number={350000}
               title='Surgical Cases'
               plus
@@ -118,7 +118,7 @@ export default function Provider() {
           </p>
           <div className='provider-solutions-row'>
             <div>
-              <img src='website-gh/images/scheduling.png' />
+              <img src='/website-gh/images/scheduling.png' />
               <h4>Integrated Surgical Scheduling & Coordination Across Entire Care Team</h4>
               {/* <h6>Coordination across entire care team</h6> */}
               <p>
@@ -131,7 +131,7 @@ export default function Provider() {
               <div>Integrated Workflow</div>
             </div>
             <div>
-              <img src='website-gh/images/smart-scheduling.png' />
+              <img src='/website-gh/images/smart-scheduling.png' />
               <h4>Surgical Dashboard for Managing Upcoming Cases</h4>
               {/* <h6>Manage upcoming cases</h6> */}
               <p>
@@ -143,7 +143,7 @@ export default function Provider() {
               <div>Optimized and Coordinated</div>
             </div>
             <div>
-              <img src='website-gh/images/episode-of-care.png' />
+              <img src='/website-gh/images/episode-of-care.png' />
               <h4>Episode of Care Tracker for Post Operative Care Management</h4>
               {/* <h6>Post operative care management</h6> */}
               <p>
@@ -159,7 +159,7 @@ export default function Provider() {
 
         <div id='seamless-integration' className='inner-div'>
           <h2>Seamless Integration </h2>
-          <img src='website-gh/images/seamless-integration.png' />
+          <img src='/website-gh/images/seamless-integration.png' />
         </div>
 
         <div id='rapid-integration' className='inner-div'>
@@ -167,28 +167,28 @@ export default function Provider() {
           <p>Integrated with over 30 EMR and 3rd party systems</p>
           <div className='logos' id='emr'>
             <div>
-              <img src='website-gh/images/logos/athena-health.png' width={220} />
-              <img src='website-gh/images/logos/prime.png' width={120} />
-              <img src='website-gh/images/logos/modernizing-medicine.png' width={190} />
-              <img src='website-gh/images/logos/medstrat.jpg' width={190} />
+              <img src='/website-gh/images/logos/athena-health.png' width={220} />
+              <img src='/website-gh/images/logos/prime.png' width={120} />
+              <img src='/website-gh/images/logos/modernizing-medicine.png' width={190} />
+              <img src='/website-gh/images/logos/medstrat.jpg' width={190} />
               {/* </div>
             <div> */}
-              <img src='website-gh/images/logos/CMS.jpg' height={50} width={100} />
-              <img src='website-gh/images/logos/centricity.png' width={150} />
-              <img src='website-gh/images/logos/medent.png' width={180} />
-              <img src='website-gh/images/logos/app-orchard.png' width={150} />
+              <img src='/website-gh/images/logos/CMS.jpg' height={50} width={100} />
+              <img src='/website-gh/images/logos/centricity.png' width={150} />
+              <img src='/website-gh/images/logos/medent.png' width={180} />
+              <img src='/website-gh/images/logos/app-orchard.png' width={150} />
               {/* </div>
             <div> */}
-              <img src='website-gh/images/logos/elation-health.jpg' width={190} />
-              <img src='website-gh/images/logos/next-gen.jpg' width={140} />
-              <img src='website-gh/images/logos/e-clinical-works.jpg' width={180} />
-              <img src='website-gh/images/logos/cerner.png' width={170} />
+              <img src='/website-gh/images/logos/elation-health.jpg' width={190} />
+              <img src='/website-gh/images/logos/next-gen.jpg' width={140} />
+              <img src='/website-gh/images/logos/e-clinical-works.jpg' width={180} />
+              <img src='/website-gh/images/logos/cerner.png' width={170} />
               {/* </div>
             <div> */}
-              <img src='website-gh/images/logos/allscripts.png' width={170} />
-              <img src='website-gh/images/logos/drchrono.png' width={140} />
-              <img src='website-gh/images/logos/greenway.png' width={150} />
-              <img src='website-gh/images/logos/SRS.jpg' width={120} />
+              <img src='/website-gh/images/logos/allscripts.png' width={170} />
+              <img src='/website-gh/images/logos/drchrono.png' width={140} />
+              <img src='/website-gh/images/logos/greenway.png' width={150} />
+              <img src='/website-gh/images/logos/SRS.jpg' width={120} />
             </div>
           </div>
         </div>
@@ -196,11 +196,11 @@ export default function Provider() {
         <div id='designed-for-providers' className='inner-div'>
           <h2>Designed for Providers Like You</h2>
           <div>
-            <img id='mock-up-img' src='website-gh/images/mockups.png' />
+            <img id='mock-up-img' src='/website-gh/images/mockups.png' />
 
             <div>
               <div className='box'>
-                <img src='website-gh/images/surgical.svg' />
+                <img src='/website-gh/images/surgical.svg' />
                 <div>
                   <h4>Built for the Surgical Environment</h4>
                   <p>
@@ -210,21 +210,21 @@ export default function Provider() {
                 </div>
               </div>
               <div className='box'>
-                <img src='website-gh/images/security.svg' />
+                <img src='/website-gh/images/security.svg' />
                 <div>
                   <h4>Secure</h4>
                   <p>Provider verified, SOC 2 level and HIPAA compliant</p>
                 </div>
               </div>
               <div className='box'>
-                <img src='website-gh/images/data-driven.svg' />
+                <img src='/website-gh/images/data-driven.svg' />
                 <div>
                   <h4>Driven by Data</h4>
                   <p>Comprehensive and longitudinal data across the continuum of care</p>
                 </div>
               </div>
               <div className='box'>
-                <img src='website-gh/images/integration.svg' />
+                <img src='/website-gh/images/integration.svg' />
                 <div>
                   <h4>Effortless Integration</h4>
                   <p>Web and mobile interface easily integrate with other critical systems</p>
@@ -258,26 +258,26 @@ export default function Provider() {
           </h2>
           <div className='logos'>
             <div>
-              <img src='website-gh/images/logos/UCSF.png' width={100} />
-              <img src='website-gh/images/logos/orthocare.jpg' width={170} />
-              <img src='website-gh/images/logos/TMI.jpg' width={170} />
-              <img src='website-gh/images/logos/webster.png' width={160} />
+              <img src='/website-gh/images/logos/UCSF.png' width={100} />
+              <img src='/website-gh/images/logos/orthocare.jpg' width={170} />
+              <img src='/website-gh/images/logos/TMI.jpg' width={170} />
+              <img src='/website-gh/images/logos/webster.png' width={160} />
             </div>
             <div>
-              <img src='website-gh/images/logos/emerge-ortho.jpg' width={180} />
-              <img src='website-gh/images/logos/DOC.png' width={150} />
-              <img src='website-gh/images/logos/mos.png' width={170} />
-              <img src='website-gh/images/logos/CPO.png' width={180} />
+              <img src='/website-gh/images/logos/emerge-ortho.jpg' width={180} />
+              <img src='/website-gh/images/logos/DOC.png' width={150} />
+              <img src='/website-gh/images/logos/mos.png' width={170} />
+              <img src='/website-gh/images/logos/CPO.png' width={180} />
             </div>
             <div>
-              <img src='website-gh/images/logos/baylor.jpg' width={160} />
-              <img src='website-gh/images/logos/childress.png' width={200} />
-              <img src='website-gh/images/logos/trinity.png' width={180} />
-              <img src='website-gh/images/logos/louisville.png' width={170} />
+              <img src='/website-gh/images/logos/baylor.jpg' width={160} />
+              <img src='/website-gh/images/logos/childress.png' width={200} />
+              <img src='/website-gh/images/logos/trinity.png' width={180} />
+              <img src='/website-gh/images/logos/louisville.png' width={170} />
             </div>
             <div>
-              <img src='website-gh/images/logos/washington.png' width={200} />
-              <img src='website-gh/images/logos/englewood.png' width={160} />
+              <img src='/website-gh/images/logos/washington.png' width={200} />
+              <img src='/website-gh/images/logos/englewood.png' width={160} />
             </div>
           </div>
         </div>
