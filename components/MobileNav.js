@@ -38,9 +38,9 @@ export default function MobileNav() {
     <nav>
       <div className='nav-bar'>
         {mobileNav ? (
-          <img id='x' src='website-gh/images/exit_icon.svg' onClick={openMenu} />
+          <img id='x' src='/website-gh/images/exit_icon.svg' onClick={openMenu} />
         ) : (
-          <img id='hamburger' src='website-gh/images/hamburger.png' onClick={openMenu} />
+          <img id='hamburger' src='/website-gh/images/hamburger.png' onClick={openMenu} />
         )}
 
         {router.pathname == '/login' || isLogin ? (
@@ -60,14 +60,14 @@ export default function MobileNav() {
           <Link href='/'>
             <div className='menu-item' onClick={openMenu}>
               <div>Home</div>
-              <img className='chevron-img' src='website-gh/images/chevron.png' />
+              <img className='chevron-img' src='/website-gh/images/chevron.png' />
             </div>
           </Link>
 
           <div className='product-container' onClick={handleProductOnHover}>
             <div className='menu-item'>
               <div>Products</div>
-              <img id={productDropdown ? 'chevron-img' : ''} src='website-gh/images/chevron.png' />
+              <img id={productDropdown ? 'chevron-img' : ''} src='/website-gh/images/chevron.png' />
             </div>
 
             {productDropdown && (
@@ -75,14 +75,14 @@ export default function MobileNav() {
                 <div className='underline'></div>
                 <Link href='/provider'>
                   <div className='box'>
-                    <img src='website-gh/images/surgeon-users.png' /> Providers{' '}
-                    <img className='chevron-img' src='website-gh/images/chevron.png' />
+                    <img src='/website-gh/images/surgeon-users.png' /> Providers{' '}
+                    <img className='chevron-img' src='/website-gh/images/chevron.png' />
                   </div>
                 </Link>
                 <Link href='/medical-device'>
                   <div className='box'>
-                    <img src='website-gh/images/medical-device.png' /> Medical Device{' '}
-                    <img className='chevron-img' src='website-gh/images/chevron.png' />
+                    <img src='/website-gh/images/medical-device.png' /> Medical Device{' '}
+                    <img className='chevron-img' src='/website-gh/images/chevron.png' />
                   </div>
                 </Link>
               </div>
@@ -92,14 +92,14 @@ export default function MobileNav() {
           <Link href='/company'>
             <div className='menu-item'>
               <div>Our Company</div>
-              <img className='chevron-img' src='website-gh/images/chevron.png' />
+              <img className='chevron-img' src='/website-gh/images/chevron.png' />
             </div>
           </Link>
 
           <div className='contact-container' onClick={handleContactOnHover}>
             <div className='menu-item'>
               <div>Contact</div>
-              <img id={contactDropdown ? 'chevron-img' : ''} src='website-gh/images/chevron.png' />
+              <img id={contactDropdown ? 'chevron-img' : ''} src='/website-gh/images/chevron.png' />
             </div>
 
             {contactDropdown && (
@@ -129,7 +129,7 @@ export default function MobileNav() {
           >
             <div className='menu-item'>
               <div>Blog</div>
-              <img className='chevron-img' src='website-gh/images/chevron.png' />
+              <img className='chevron-img' src='/website-gh/images/chevron.png' />
             </div>
           </a>
         </div>
