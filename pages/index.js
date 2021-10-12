@@ -18,27 +18,31 @@ export default function Home() {
       <div id='hero-h1'>
         <h1>Intelligent Surgical Planning Software from Diagnosis to Recovery</h1>
       </div>
-      <img id='landing-bg' src='images/care-team.jpg' width={'100%'} />
+      <img id='landing-bg' src='website-gh/images/care-team.jpg' width={'100%'} />
 
       <div className='statistics'>
         <div>
           <NumberScroll
-            imgsrc='images/patient-volume.png'
+            imgSrc='website-gh/images/patient-volume.png'
             number={100000}
             title='Monthly Patient Volume'
             plus
           />
           <NumberScroll
-            imgsrc='images/surgeon-users.png'
+            imgSrc='website-gh/images/surgeon-users.png'
             number={6000}
             title='Surgeon Users'
             plus
           />
         </div>
         <div>
-          <NumberScroll imgsrc='images/episodic-cases.png' number={350000} title='Episodic Cases' />
           <NumberScroll
-            imgsrc='images/practices.png'
+            imgSrc='website-gh/images/episodic-cases.png'
+            number={350000}
+            title='Episodic Cases'
+          />
+          <NumberScroll
+            imgSrc='website-gh/images/practices.png'
             number={300}
             title='Practices, ASCs & Hospitals'
             plus
@@ -50,20 +54,20 @@ export default function Home() {
         <div id='vision-section'>
           {/* Iphone Calendar Mockups */}
           <div id='iphone-calendar-div'>
-            <img id='iphone-calendar' src='images/product-shots/iphone-calendar.png' />
+            <img id='iphone-calendar' src='website-gh/images/product-shots/iphone-calendar.png' />
           </div>
 
-          <div style={{ width: '50%' }}>
+          <div id='timeline-div'>
             <h2>
               Vision to Address Priorities and Unmet Needs Through Patient’s Surgical Journey{' '}
             </h2>
             {/* Timeline Graphic + Copy  "1. Pre-Operative..." */}
-            <img id='timeline-graphic' src='images/timeline-graphic.png' />
+            <img id='timeline-graphic' src='website-gh/images/timeline-graphic.png' />
           </div>
         </div>
       </div>
 
-      <div style={{ backgroundColor: 'var(--blueSky)' }}>
+      <div style={{ backgroundColor: 'var(--blueXLight)' }}>
         <div id='connecting-section' className='inner-div'>
           <div id='words-div'>
             <h1>DocSpera Integrated Care Coordination Platform</h1>
@@ -87,17 +91,17 @@ export default function Home() {
               </ul>
             </p>
           </div>
-          <img id='connecting-graphic' src='images/connected-graphic.png' />
+          <img id='connecting-graphic' src='website-gh/images/connected-graphic.png' />
         </div>
       </div>
 
-      <div style={{ backgroundColor: 'var(--blueXLight)' }}>
+      <div style={{ backgroundColor: 'var(--blueSky)' }}>
         <div className='inner-div'>
           <h2 className='products-h2'>View Our Products For...</h2>
           <div className='product-section'>
             <div className='box'>
               <h4>
-                <img src='images/surgeon-users.png' />
+                <img src='website-gh/images/surgeon-users.png' />
                 Providers
               </h4>
               <p>
@@ -111,13 +115,13 @@ export default function Home() {
               </p>
               <Link href='/provider'>
                 <button>
-                  View More <img className='chevron-img' src='images/chevron.png' />
+                  View More <img className='chevron-img' src='website-gh/images/chevron.png' />
                 </button>
               </Link>
             </div>
             <div className='box'>
               <h4>
-                <img src='images/medical-device.png' />
+                <img src='website-gh/images/medical-device.png' />
                 Medical Device
               </h4>
               <p>
@@ -131,7 +135,7 @@ export default function Home() {
               </p>
               <Link href='/medical-device'>
                 <button>
-                  View More <img className='chevron-img' src='images/chevron.png' />
+                  View More <img className='chevron-img' src='website-gh/images/chevron.png' />
                 </button>
               </Link>
             </div>
@@ -147,50 +151,38 @@ export default function Home() {
           type='logo'
           content={[
             {
-              img: 'images/logos/innovacer.png',
+              img: 'website-gh/images/logos/innovacer.png',
               width: 180
             },
             {
-              img: 'images/logos/athena-health.png',
+              img: 'website-gh/images/logos/athena-health.png',
               width: 210
             },
             {
-              img: 'images/logos/app-orchard.png',
+              img: 'website-gh/images/logos/app-orchard.png',
               width: 170
             },
             {
-              img: 'images/logos/dolby.png',
+              img: 'website-gh/images/logos/dolby.png',
               width: 160
             },
             {
-              img: 'images/logos/AAHKS.jpg',
+              img: 'website-gh/images/logos/AAHKS.jpg',
               width: 170
             },
             {
-              img: 'images/logos/anterior-hip-foundation.png',
+              img: 'website-gh/images/logos/anterior-hip-foundation.png',
               width: 180
             },
             {
-              img: 'images/logos/CMS.jpg',
+              img: 'website-gh/images/logos/CMS.jpg',
               width: 120
             }
           ]}
         />
       </div>
 
-      <img id='map' src='images/map-with-pins.png' alt='map of docspera locations' />
-
-      {/* <div className='carousel-container'>
-        <div className='blog-section'>
-          <h2>DocSpera Blog</h2>
-          <Carousel type='blog' />
-        </div>
-
-        <div className='case-study-section'>
-          <h2>Case Studies</h2>
-          <Carousel type='case-study' />
-        </div>
-      </div> */}
+      <img id='map' src='website-gh/images/map-with-pins.png' alt='map of docspera locations' />
 
       <FooterBar />
       <style jsx>{`
@@ -254,11 +246,13 @@ export default function Home() {
           margin-left: -60px;
         }
 
+        #timeline-div {
+          width: 50%;
+        }
 
         #vision-section h2 {
           max-width: 500px; 
           margin-bottom: 20px;
-
         }
 
         #timeline-graphic {
@@ -271,7 +265,49 @@ export default function Home() {
           }
 
           #iphone-calendar-div {
+            width: 60%;
+          }
+
+          #timeline-div {
             width: 100%;
+            overflow: hidden;
+          }
+
+          #timeline-graphic {
+            width: 110%;
+            display: block;
+            margin: 0 auto;
+            padding-left: 30px;
+          }
+
+          #vision-section h2 {
+            // max-width: 100%;
+            margin: 0 auto;
+
+          }
+          
+
+        }
+  
+        @media (max-width: 550px) {
+          #iphone-calendar-div {
+            width: 100%;
+          }
+
+          #vision-section h2 {
+            max-width: 100%;
+          }
+
+          #timeline-graphic {
+            padding: 0;
+          }
+        }
+  
+
+        @media (max-width: 400px) {
+          #timeline-graphic {
+            width: 120%;
+            margin-left: -10px;
           }
         }
 
@@ -282,7 +318,7 @@ export default function Home() {
 
         #connecting-section {
           background-color: #2a83bf;
-          background-color: var(--blueSky);
+          background-color: var(--blueXLight);
           display: flex;
           justify-content: center;
           flex: 1;
