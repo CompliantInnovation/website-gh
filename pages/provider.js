@@ -345,10 +345,13 @@ export default function Provider() {
           border-radius: 18px;
           color: white;
           width: 100%;
-    
         }
 
-        #seamless-integration {
+        .provider-solutions.inner-div > div > div {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
         }
 
         #seamless-integration img {
@@ -458,7 +461,7 @@ export default function Provider() {
             margin-bottom: 40px;
           }
         }
-        
+
         @media (max-width: 890px) {
           .logos img {
             width: 80%;
