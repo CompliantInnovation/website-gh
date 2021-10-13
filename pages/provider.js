@@ -51,11 +51,35 @@ export default function Provider() {
     
   ];
 
-  const [viewMore, setViewMore] = useState(false);
-  const numberOfLogos = viewMore ? emrLogos.length : 4;
+  const [viewMoreEmr, setViewMoreEmr] = useState(false);
+  const numberOfEmrLogos = viewMoreEmr ? emrLogos.length : 4;
   
-  const handleViewMore = () => {
-    setViewMore(!viewMore)
+  const handleViewMoreEmr = () => {
+    setViewMoreEmr(!viewMoreEmr)
+  }
+
+  const instLogos = [
+    {'img': 'UCSF.png', 'width': 100},
+    {'img': 'orthocare.jpg', 'width': 170},
+    {'img': 'TMI.jpg', 'width': 170},
+    {'img': 'webster.png', 'width': 160},
+    {'img': 'emerge-ortho.jpg', 'width': 180},
+    {'img': 'DOC.png', 'width': 150},
+    {'img': 'mos.png', 'width': 170},
+    {'img': 'CPO.png', 'width': 180},
+    {'img': 'baylor.jpg', 'width': 160},
+    {'img': 'childress.png', 'width': 200},
+    {'img': 'trinity.png', 'width': 180},
+    {'img': 'louisville.png', 'width': 170},
+    {'img': 'washington.png', 'width': 200},
+    {'img': 'englewood.png', 'width': 160},
+  ];
+
+  const [viewMoreInst, setViewMoreInst] = useState(false);
+  const numberOfInstLogos = viewMoreInst ? instLogos.length : 4;
+  
+  const handleViewMoreInst = () => {
+    setViewMoreInst(!viewMoreInst)
   }
 
   let testimonials = [
@@ -190,13 +214,13 @@ export default function Provider() {
           <div className='logos'>
             <div>
               {
-                emrLogos.slice(0, numberOfLogos).map((logo) => {
+                emrLogos.slice(0, numberOfEmrLogos).map((logo) => {
                   return (
                     <img src={`images/logos/${logo.img}`} height={logo.height} width={logo.width}/>
                   )
                 })
               }
-              <button onClick={handleViewMore}>{viewMore ? 'View Less' : 'View More'}</button>
+              <button onClick={handleViewMoreEmr}>{viewMoreEmr ? 'View Less' : 'View More'}</button>
             </div>
             <div>
               <img src='images/logos/athena-health.png' width={220} />
@@ -285,26 +309,33 @@ export default function Provider() {
           <h2 style={{ minWidth: '100%', marginBottom: 50 }}>
             Join 300+ Institutions Using DocSpera Across the US
           </h2>
-          <div className='logos'>
+          <div className='logos institutions'>
+          <div>
+              {
+                instLogos.slice(0, numberOfInstLogos).map((logo) => {
+                  return (
+                    <img src={`images/logos/${logo.img}`} height={logo.height} width={logo.width}/>
+                  )
+                })
+              }
+              <button onClick={handleViewMoreInst}>{viewMoreInst ? 'View Less' : 'View More'}</button>
+            </div>
             <div>
               <img src='images/logos/UCSF.png' width={100} />
               <img src='images/logos/orthocare.jpg' width={170} />
               <img src='images/logos/TMI.jpg' width={170} />
               <img src='images/logos/webster.png' width={160} />
-            {/* </div>
-            <div> */}
+
               <img src='images/logos/emerge-ortho.jpg' width={180} />
               <img src='images/logos/DOC.png' width={150} />
               <img src='images/logos/mos.png' width={170} />
               <img src='images/logos/CPO.png' width={180} />
-            {/* </div>
-            <div> */}
+
               <img src='images/logos/baylor.jpg' width={160} />
               <img src='images/logos/childress.png' width={200} />
               <img src='images/logos/trinity.png' width={180} />
               <img src='images/logos/louisville.png' width={170} />
-            {/* </div>
-            <div> */}
+ 
               <img src='images/logos/washington.png' width={200} />
               <img src='images/logos/englewood.png' width={160} />
             </div>
@@ -389,20 +420,20 @@ export default function Provider() {
 
         }
 
-        // @media (max-width: 650px) {
-        //   .provider-solutions-row {
-        //     display: flex;
-        //     flex-direction: column;
-        //   }
+        @media (max-width: 650px) {
+          .provider-solutions-row {
+            display: flex;
+            flex-direction: column;
+          }
 
-        //   .provider-solutions-row div {
-        //     align-content: center;
-        //     align-items: center;
-        //     margin-bottom: 10px;
-        //     padding: 0 50px;
-        //     width: 100%;
-        //   }
-        // }
+          .provider-solutions-row div {
+            align-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 0 50px;
+            width: 100%;
+          }
+        }
 
         #seamless-integration img {
           display: block;
@@ -418,9 +449,12 @@ export default function Provider() {
         //   height: 100px;
      
         // }
+
         .logos > div:nth-child(1) {
           display: none;
         }
+
+
 
         #designed-for-providers > div {
           display: flex;
@@ -485,15 +519,15 @@ export default function Provider() {
           color: gray;
         }
 
+      
+
         .logos div {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
           grid-auto-rows: 1fr;
-          grid-row-gap: 5px;
           justify-content: space-between;   
           align-items: center;
           align-content: space-between;
-
         }
 
         .logos div img:nth-child(4n-2), .logos div img:nth-child(4n-1) {
@@ -504,6 +538,9 @@ export default function Provider() {
           justify-self: end;
         }
  
+        .institutions div {
+          grid-row-gap: 20px;
+        }
 
         @media (max-width: 1025px) {
           #designed-for-providers > div {
@@ -563,16 +600,14 @@ export default function Provider() {
           }
 
           button {
-            background-color: var(--blueDocspera);
-            border: none;
+            background-color: white;
+            border: 2px solid gray;
             border-radius: 5px;
-            // filter: drop-shadow(0, 3px, 6px, black);
-            color: white;
-            padding: 10px 30px;
+            color: gray;
+            padding: 10px 50px;
             font-size: 16px;
             margin: auto;
             grid-column: span 2;
-            align-self: start;
           }
 
           .testimonial {
