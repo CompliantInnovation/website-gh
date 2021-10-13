@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import Head from 'next/head'
 import HeaderNav from '../components/HeaderNav'
 import NumberScroll from '../components/NumberScroll'
@@ -28,6 +29,33 @@ export default function Provider() {
     })
   } else {
     console.log('NOPE')
+  }
+
+  const emrLogos = [
+    {'img': 'athena-health.png', 'height': null ,  'width': 220},
+    {'img': 'prime.png', 'height': null , 'width': 120},
+    {'img': 'modernizing-medicine.png', 'height': null , 'width': 190},
+    {'img': 'medstrat.jpg', 'height': null , 'width': 190},
+    {'img': 'CMS.jpg', 'height': 50, 'width': 220},
+    {'img': 'centricity.png', 'height': null , 'width': 150},
+    {'img': 'medent.png', 'height': null , 'width': 180},
+    {'img': 'app-orchard.png', 'height': null , 'width': 150},
+    {'img': 'elation-health.jpg', 'height': null , 'width': 190},
+    {'img': 'next-gen.jpg', 'height': null , 'width': 140},
+    {'img': 'e-clinical-works.jpg', 'height': null , 'width': 180},
+    {'img': 'cerner.png', 'height': null , 'width': 170},
+    {'img': 'allscripts.png', 'height': null , 'width': 170},
+    {'img': 'drchrono.png', 'height': null , 'width': 140},
+    {'img': 'greenway.png', 'height': null , 'width': 150},
+    {'img': 'SRS.jpg', 'height': null , 'width': 120} 
+    
+  ];
+
+  const [viewMore, setViewMore] = useState(false);
+  const numberOfLogos = viewMore ? emrLogos.length : 4;
+  
+  const handleViewMore = () => {
+    setViewMore(!viewMore)
   }
 
   let testimonials = [
@@ -161,24 +189,31 @@ export default function Provider() {
           <p>Integrated with over 30 EMR and 3rd party systems</p>
           <div className='logos'>
             <div>
+              {
+                emrLogos.slice(0, numberOfLogos).map((logo) => {
+                  return (
+                    <img src={`images/logos/${logo.img}`} height={logo.height} width={logo.width}/>
+                  )
+                })
+              }
+              <button onClick={handleViewMore}>{viewMore ? 'View Less' : 'View More'}</button>
+            </div>
+            <div>
               <img src='images/logos/athena-health.png' width={220} />
               <img src='images/logos/prime.png' width={120} />
               <img src='images/logos/modernizing-medicine.png' width={190} />
               <img src='images/logos/medstrat.jpg' width={190} />
-            {/* </div>
-            <div> */}
+      
               <img src='images/logos/CMS.jpg' height={50} width={100} />
               <img src='images/logos/centricity.png' width={150} />
               <img src='images/logos/medent.png' width={180} />
               <img src='images/logos/app-orchard.png' width={150} />
-            {/* </div>
-            <div> */}
+  
               <img src='images/logos/elation-health.jpg' width={190} />
               <img src='images/logos/next-gen.jpg' width={140} />
               <img src='images/logos/e-clinical-works.jpg' width={180} />
               <img src='images/logos/cerner.png' width={170} />
-            {/* </div>
-            <div> */}
+
               <img src='images/logos/allscripts.png' width={170} />
               <img src='images/logos/drchrono.png' width={140} />
               <img src='images/logos/greenway.png' width={150} />
@@ -383,6 +418,9 @@ export default function Provider() {
         //   height: 100px;
      
         // }
+        .logos > div:nth-child(1) {
+          display: none;
+        }
 
         #designed-for-providers > div {
           display: flex;
@@ -491,8 +529,17 @@ export default function Provider() {
         }
 
         @media (max-width: 650px) {
+     
           .logos img {
             width: 60%;
+          }
+
+          .logos > div:nth-child(1) {
+            display: grid;
+          }
+
+          .logos > div:nth-child(2) {
+            display: none;
           }
 
           .logos div { 
@@ -508,6 +555,19 @@ export default function Provider() {
           }
           .logos div img:nth-child(2n-1) {
             justify-self: center;
+          }
+
+          button {
+            background-color: var(--blueDocspera);
+            border: none;
+            border-radius: 5px;
+            // filter: drop-shadow(0, 3px, 6px, black);
+            color: white;
+            padding: 10px 30px;
+            font-size: 16px;
+            margin: auto;
+            grid-column: span 2;
+            align-self: start;
           }
 
           .testimonial {
