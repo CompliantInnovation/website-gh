@@ -36,7 +36,7 @@ export default function Provider() {
     {'img': 'prime.png', 'height': null , 'width': 120},
     {'img': 'modernizing-medicine.png', 'height': null , 'width': 190},
     {'img': 'medstrat.jpg', 'height': null , 'width': 190},
-    {'img': 'CMS.jpg', 'height': 50, 'width': 220},
+    {'img': 'CMS.jpg', 'height': 65, 'width': 220},
     {'img': 'centricity.png', 'height': null , 'width': 150},
     {'img': 'medent.png', 'height': null , 'width': 180},
     {'img': 'app-orchard.png', 'height': null , 'width': 150},
@@ -204,7 +204,7 @@ export default function Provider() {
               <img src='images/logos/modernizing-medicine.png' width={190} />
               <img src='images/logos/medstrat.jpg' width={190} />
       
-              <img src='images/logos/CMS.jpg' height={50} width={100} />
+              <img src='images/logos/CMS.jpg' height={65} width={100} />
               <img src='images/logos/centricity.png' width={150} />
               <img src='images/logos/medent.png' width={180} />
               <img src='images/logos/app-orchard.png' width={150} />
@@ -534,6 +534,11 @@ export default function Provider() {
             width: 60%;
           }
 
+          .logos div:nth-child(1) > img:nth-child(5) {
+            height: 75px;
+
+          }
+
           .logos > div:nth-child(1) {
             display: grid;
           }
@@ -584,10 +589,20 @@ export default function Provider() {
             width: 50%;
           }
 
-          .logos div { 
+          .logos div:nth-child(1) > img:nth-child(5) {
+            height: 75px;
+            width: 40%;
+          }
+
+          .logos div  { 
             display:grid;
             grid-template-columns: 1fr;
-            grid-auto-rows: 100px;
+            grid-auto-rows: 120px;
+
+          }
+
+          button {
+            grid-column: auto;
           }
       
         }
