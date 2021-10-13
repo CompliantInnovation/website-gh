@@ -126,7 +126,6 @@ export default function FooterBar() {
 
       <style jsx>{`
         footer {
-          margin-top: 50px;
           width: 100%;
           background-color: var(--blueDocspera);
           display: flex;
@@ -148,8 +147,27 @@ export default function FooterBar() {
           margin-left: 5vw;
         }
 
+        @media (max-width: 600px) {
+          #footer-inner-div {
+            margin-left: 0;
+          }
+          #logo {
+            margin-left: 0;
+          }
+
+          #icons-div {
+            margin-left: 0;
+          }
+        }
+
         footer #logo {
           max-width: 300px;
+        }
+
+        @media (max-width: 600px) {
+          footer #logo {
+            max-width: 90%;
+          }
         }
 
         #icons-div {
