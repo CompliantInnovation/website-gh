@@ -10,8 +10,7 @@ module.exports = {
   // basePath: '/website-gh',
   exportPathMap: function () {
     return {
-      '/': { page: '/' },
-      '/about': { page: '/about' }
+      '/': { page: '/' }
     }
   },
   //assetPrefix: '',
