@@ -336,6 +336,17 @@ export default function HeaderNav() {
           margin: 0;
         }
 
+        @media (max-width: 650px) {
+          #nav-items a {
+            padding-right: 18px;
+          }
+          .dropdown {
+           
+            padding-right: 18px;
+          }
+
+
+        }
         // .responsive-nav {
         //   display: none;
         // }
