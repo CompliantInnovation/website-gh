@@ -70,9 +70,7 @@ export default function Provider() {
       <HeaderNav />
 
       <div className='container'>
-        <h2 style={{ maxWidth: 450 }}>
-          Intelligent Surgical Coordination: Enabling Efficiency and Profitability
-        </h2>
+        <h2>Intelligent Surgical Coordination: Enabling Efficiency and Profitability</h2>
         <p>
           DocSpera is an integrated surgical coordination solution to help manage coordination
           across multiple sites and teams, drive improved efficiencies and deliver better patient
@@ -292,22 +290,26 @@ export default function Provider() {
           padding: 0 5vw;
           p
         }
+        
         h2 {
           margin-top: 80px;
-          max-width: 600px;
+          margin-bottom: 20px;
+          max-width: 900px;
           z-index: 10;
         }
 
-        .statistics {
-          margin-top: 50px;
-        }
-
         #surgeon-doodle {
-          // position: absolute;
           width: 80%;
           display: block;
           margin: 0 auto;
           z-index: -10000;
+        }
+
+        @media (max-width: 700px) {
+          #surgeon-doodle {
+            margin-top: 40px;
+            width: 100%;
+          }
         }
 
         .provider-solutions-row {

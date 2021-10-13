@@ -2,12 +2,12 @@ import Head from 'next/head'
 import HeaderNav from '../components/HeaderNav'
 import FooterBar from '../components/Footer'
 
-export default function Home() {
+export default function Company() {
   return (
     <div className='container'>
       <Head>
         <title>DocSpera</title>
-        <link rel='icon' href='/favicon.ico' />
+        <link rel='icon' href='/website-gh/favicon.ico' />
       </Head>
       <HeaderNav />
 
