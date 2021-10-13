@@ -601,13 +601,15 @@ export default function Provider() {
 
           button {
             background-color: white;
-            border: 2px solid gray;
-            border-radius: 5px;
+            border: 1px solid gray;
+            border-radius: 10px;
             color: gray;
             padding: 10px 50px;
             font-size: 16px;
             margin: auto;
             grid-column: span 2;
+            filter: drop-shadow(0 5px  5px lightgray);
+            cursor: pointer;
           }
 
           .testimonial {
