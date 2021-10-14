@@ -6,7 +6,7 @@ export default function FooterBar() {
     <footer>
       <div id='footer-inner-div'>
         <div style={{ margin: 'auto 0', flexGrow: 1 }}>
-          <img id='logo' src='/images/logo-white.svg' />
+          <img id='logo' src='/website-gh/images/logo-white.svg' />
           <div id='icons-div'>
             <a href='https://docspera.com/appstore' target='_blank'>
               <AppleFilled style={{ color: 'var(--blueDark)', fontSize: 25, cursor: 'pointer' }} />
@@ -50,13 +50,13 @@ export default function FooterBar() {
             <Link href='/provider'>
               <div className='footer-menu-item'>
                 <a>Providers</a>
-                <img src='/images/chevron-white.png' />
+                <img src='/website-gh/images/chevron-white.png' />
               </div>
             </Link>
             <Link href='/medical-device'>
               <div className='footer-menu-item'>
                 <a>Medical Device</a>
-                <img src='/images/chevron-white.png' />
+                <img src='/website-gh/images/chevron-white.png' />
               </div>
             </Link>
 
@@ -66,19 +66,19 @@ export default function FooterBar() {
             <a href='https://docspera.com/scheduling' target='_blank'>
               <div className='footer-menu-item'>
                 <a>Integrated Scheduling</a>
-                <img src='/images/chevron-white.png' />
+                <img src='/website-gh/images/chevron-white.png' />
               </div>
             </a>
             <a href='https://docspera.com/or' target='_blank'>
               <div className='footer-menu-item'>
                 <a>Surgical Dashboards</a>
-                <img src='/images/chevron-white.png' />
+                <img src='/website-gh/images/chevron-white.png' />
               </div>
             </a>
             <a href='https://docspera.com/eoc' target='_blank'>
               <div className='footer-menu-item'>
                 <a>Episode of Care Tracker</a>
-                <img src='/images/chevron-white.png' />
+                <img src='/website-gh/images/chevron-white.png' />
               </div>
             </a>
           </div>
@@ -88,7 +88,7 @@ export default function FooterBar() {
             <Link href='/about'>
               <div className='footer-menu-item'>
                 <a>About Us</a>
-                <img src='/images/chevron-white.png' />
+                <img src='/website-gh/images/chevron-white.png' />
               </div>
             </Link>
 
@@ -99,14 +99,14 @@ export default function FooterBar() {
             <a href='https://docspera.com/support' target='_blank'>
               <div className='footer-menu-item'>
                 <a>Contact Us</a>
-                <img src='/images/chevron-white.png' />
+                <img src='/website-gh/images/chevron-white.png' />
               </div>
             </a>
 
             <a href='https://docspera.com/demo' target='_blank'>
               <div className='footer-menu-item'>
                 <a>Request Demo</a>
-                <img src='/images/chevron-white.png' />
+                <img src='/website-gh/images/chevron-white.png' />
               </div>
             </a>
 
@@ -117,7 +117,7 @@ export default function FooterBar() {
             <a href='https://blog.d4.docspera.com/' target='_blank'>
               <div className='footer-menu-item'>
                 <a>DocSpera Blog</a>
-                <img src='/images/chevron-white.png' />
+                <img src='/website-gh/images/chevron-white.png' />
               </div>
             </a>
           </div>
@@ -126,7 +126,6 @@ export default function FooterBar() {
 
       <style jsx>{`
         footer {
-          margin-top: 50px;
           width: 100%;
           background-color: var(--blueDocspera);
           display: flex;
@@ -148,8 +147,27 @@ export default function FooterBar() {
           margin-left: 5vw;
         }
 
+        @media (max-width: 600px) {
+          #footer-inner-div {
+            margin-left: 0;
+          }
+          #logo {
+            margin-left: 0;
+          }
+
+          #icons-div {
+            margin-left: 0;
+          }
+        }
+
         footer #logo {
           max-width: 300px;
+        }
+
+        @media (max-width: 600px) {
+          footer #logo {
+            max-width: 90%;
+          }
         }
 
         #icons-div {

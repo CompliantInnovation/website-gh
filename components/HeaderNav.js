@@ -10,12 +10,11 @@ export default function HeaderNav() {
 
   let tabletSize, mobileSize
   if (isBrowser) {
-    tabletSize = useMedia('(max-width: 775px)');
-    mobileSize = useMedia('(max-width: 530px)');
+    tabletSize = useMedia('(max-width: 775px)')
+    mobileSize = useMedia('(max-width: 530px)')
   }
 
-
-  const [productDropdown, setProductDropdown] = useState(false);
+  const [productDropdown, setProductDropdown] = useState(false)
   const handleProductOnHover = () => {
     setProductDropdown(!productDropdown)
     setContactDropdown(false)
@@ -39,21 +38,25 @@ export default function HeaderNav() {
     setIsLogin(!isLogin)
   }
 
-  return (
-    mobileSize ? <MobileNav /> : 
+  return mobileSize ? (
+    <MobileNav />
+  ) : (
     <nav>
       {isBrowser && (
-        <Link href='/' >
+        <Link href='/'>
           <a>
-            <img id='logo'
-              src={`${tabletSize ? 'images/logo-short.png' : 'images/logo.svg'}`}
+            <img
+              id='logo'
+              src={`${
+                tabletSize ? '/website-gh/images/logo-short.png' : '/website-gh/images/logo.svg'
+              }`}
               height={`${tabletSize ? 40 : 70}`}
               width={`${tabletSize ? 40 : 150}`}
             />
           </a>
         </Link>
       )}
-  
+
       <div id='right-side'>
         <div id='nav-items'>
           <a className={productDropdown && 'active_a'} onMouseEnter={handleProductOnHover}>
@@ -65,8 +68,8 @@ export default function HeaderNav() {
               <Link href='/provider'>
                 <div className='box' onClick={handleProductOnHover}>
                   <h4>
-                    <img src='/images/surgeon-users.png' />
-                    Providers <img className='chevron-img' src='/images/chevron.png' />
+                    <img src='/website-gh/images/surgeon-users.png' />
+                    Providers <img className='chevron-img' src='/website-gh/images/chevron.png' />
                   </h4>
                   <ul>
                     <li>Episode of Care</li>
@@ -78,8 +81,9 @@ export default function HeaderNav() {
               <Link href='/medical-device'>
                 <div className='box' onClick={handleProductOnHover}>
                   <h4>
-                    <img src='/images/medical-device.png' />
-                    Medical Device <img className='chevron-img' src='/images/chevron.png' />
+                    <img src='/website-gh/images/medical-device.png' />
+                    Medical Device{' '}
+                    <img className='chevron-img' src='/website-gh/images/chevron.png' />
                   </h4>
                   <ul>
                     <li>Advanced Case Notification</li>
@@ -105,8 +109,16 @@ export default function HeaderNav() {
             {contactDropdown && (
               <div className='contact-dropdown' onMouseLeave={handleContactOnHover}>
                 <ul>
-                  <li><a href='https://docspera.com/support' target='_blank'>Contact Us</a></li>
-                  <li><a href='https://docspera.com/demo' target='_blank'>Request Demo</a></li>
+                  <li>
+                    <a href='https://docspera.com/support' target='_blank'>
+                      Contact Us
+                    </a>
+                  </li>
+                  <li>
+                    <a href='https://docspera.com/demo' target='_blank'>
+                      Request Demo
+                    </a>
+                  </li>
                 </ul>
               </div>
             )}
@@ -136,8 +148,15 @@ export default function HeaderNav() {
             </a>
           </Link> */}
         </div>
-        {router.pathname == '/login' || isLogin ? <a className='ext-link' href='https://docspera.com/demo' target='_blank'><button onClick={handleLogin}>Request Demo</button></a> : <a className='ext-link' href='https://docspera.com/login' target='_blank'><button onClick={handleLogin}>Log In</button></a> }
-        
+        {router.pathname == '/login' || isLogin ? (
+          <a className='ext-link' href='https://docspera.com/demo' target='_blank'>
+            <button onClick={handleLogin}>Request Demo</button>
+          </a>
+        ) : (
+          <a className='ext-link' href='https://docspera.com/login' target='_blank'>
+            <button onClick={handleLogin}>Log In</button>
+          </a>
+        )}
       </div>
 
       <style jsx>{`
@@ -166,16 +185,15 @@ export default function HeaderNav() {
           padding-right: 15vh;
         }
 
-        @media (max-width:1000px){
-  
+        @media (max-width: 1000px) {
           #nav-items {
-            padding:0 6vh;
+            padding: 0 6vh;
           }
         }
 
         @media (max-width: 804px) {
           #nav-items {
-            padding:0 3vh;
+            padding: 0 3vh;
           }
         }
 
@@ -183,7 +201,6 @@ export default function HeaderNav() {
           cursor: pointer;
         }
 
-      
         #nav-items a {
           color: var(--blueDark);
           text-decoration: none;
@@ -306,7 +323,6 @@ export default function HeaderNav() {
           color: black;
           width: 140px;
           margin-top: 16px;
-     
         }
 
         .contact-dropdown ul {
@@ -314,13 +330,11 @@ export default function HeaderNav() {
           margin: 0;
           padding: 0;
           padding-bottom: 10px;
-
         }
         .contact-dropdown li a {
           padding-bottom: 10px;
           color: grey;
           padding-right: 0 !important;
-     
         }
 
         .contact-dropdown li a:hover {
@@ -329,8 +343,6 @@ export default function HeaderNav() {
           font-weight: bold;
           cursor: pointer;
         }
-
-       
 
         h4 {
           margin: 0;
@@ -364,7 +376,7 @@ export default function HeaderNav() {
         //   }
 
         //   .responsive-nav {
-        //     display: block; 
+        //     display: block;
         //     position: fixed;
         //     top: 0;
         //     right: 0;
@@ -372,7 +384,6 @@ export default function HeaderNav() {
         //     cursor: pointer;
         //     z-index: 100;
         //   }
-
 
         // }
       `}</style>
