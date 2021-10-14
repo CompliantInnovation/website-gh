@@ -66,7 +66,7 @@ export default function HeaderNav() {
           {productDropdown && (
             <div className='product-dropdown' onMouseLeave={handleProductOnHover}>
               <Link href='/provider'>
-                <div className='box'>
+                <div className='box' onClick={handleProductOnHover}>
                   <h4>
                     <img src='/website-gh/images/surgeon-users.png' />
                     Providers <img className='chevron-img' src='/website-gh/images/chevron.png' />
@@ -79,7 +79,7 @@ export default function HeaderNav() {
                 </div>
               </Link>
               <Link href='/medical-device'>
-                <div className='box'>
+                <div className='box' onClick={handleProductOnHover}>
                   <h4>
                     <img src='/website-gh/images/medical-device.png' />
                     Medical Device{' '}
@@ -214,7 +214,7 @@ export default function HeaderNav() {
 
         .active_a,
         .dropdown .active_a {
-          color: var(--blueDocspera);
+          color: var(--blueDark);
           font-weight: 600;
         }
 
@@ -308,7 +308,7 @@ export default function HeaderNav() {
         }
 
         .dropdown p:hover {
-          color: var(--blueDocspera);
+          color: var(--blueDark);
         }
 
         .contact-dropdown {
@@ -321,7 +321,7 @@ export default function HeaderNav() {
           background-color: rgba(255, 255, 255, 1);
           padding: 0px 10px;
           color: black;
-          width: 130px;
+          width: 140px;
           margin-top: 16px;
         }
 
@@ -332,7 +332,6 @@ export default function HeaderNav() {
           padding-bottom: 10px;
         }
         .contact-dropdown li a {
-          font-size: 14px;
           padding-bottom: 10px;
           color: grey;
           padding-right: 0 !important;
@@ -349,6 +348,17 @@ export default function HeaderNav() {
           margin: 0;
         }
 
+        @media (max-width: 650px) {
+          #nav-items a {
+            padding-right: 18px;
+          }
+          .dropdown {
+           
+            padding-right: 18px;
+          }
+
+
+        }
         // .responsive-nav {
         //   display: none;
         // }

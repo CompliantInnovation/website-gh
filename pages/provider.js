@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import Head from 'next/head'
 import HeaderNav from '../components/HeaderNav'
 import NumberScroll from '../components/NumberScroll'
@@ -28,6 +29,57 @@ export default function Provider() {
     })
   } else {
     console.log('NOPE')
+  }
+
+  const emrLogos = [
+    {'img': 'athena-health.png', 'height': null ,  'width': 220},
+    {'img': 'prime.png', 'height': null , 'width': 120},
+    {'img': 'modernizing-medicine.png', 'height': null , 'width': 190},
+    {'img': 'medstrat.jpg', 'height': null , 'width': 190},
+    {'img': 'CMS.jpg', 'height': 65, 'width': 220},
+    {'img': 'centricity.png', 'height': null , 'width': 150},
+    {'img': 'medent.png', 'height': null , 'width': 180},
+    {'img': 'app-orchard.png', 'height': null , 'width': 150},
+    {'img': 'elation-health.jpg', 'height': null , 'width': 190},
+    {'img': 'next-gen.jpg', 'height': null , 'width': 140},
+    {'img': 'e-clinical-works.jpg', 'height': null , 'width': 180},
+    {'img': 'cerner.png', 'height': null , 'width': 170},
+    {'img': 'allscripts.png', 'height': null , 'width': 170},
+    {'img': 'drchrono.png', 'height': null , 'width': 140},
+    {'img': 'greenway.png', 'height': null , 'width': 150},
+    {'img': 'SRS.jpg', 'height': null , 'width': 120} 
+    
+  ];
+
+  const [viewMoreEmr, setViewMoreEmr] = useState(false);
+  const numberOfEmrLogos = viewMoreEmr ? emrLogos.length : 4;
+  
+  const handleViewMoreEmr = () => {
+    setViewMoreEmr(!viewMoreEmr)
+  }
+
+  const instLogos = [
+    {'img': 'UCSF.png', 'width': 100},
+    {'img': 'orthocare.jpg', 'width': 170},
+    {'img': 'TMI.jpg', 'width': 170},
+    {'img': 'webster.png', 'width': 160},
+    {'img': 'emerge-ortho.jpg', 'width': 180},
+    {'img': 'DOC.png', 'width': 150},
+    {'img': 'mos.png', 'width': 170},
+    {'img': 'CPO.png', 'width': 180},
+    {'img': 'baylor.jpg', 'width': 160},
+    {'img': 'childress.png', 'width': 200},
+    {'img': 'trinity.png', 'width': 180},
+    {'img': 'louisville.png', 'width': 170},
+    {'img': 'washington.png', 'width': 200},
+    {'img': 'englewood.png', 'width': 160},
+  ];
+
+  const [viewMoreInst, setViewMoreInst] = useState(false);
+  const numberOfInstLogos = viewMoreInst ? instLogos.length : 4;
+  
+  const handleViewMoreInst = () => {
+    setViewMoreInst(!viewMoreInst)
   }
 
   let testimonials = [
@@ -163,30 +215,37 @@ export default function Provider() {
         <div id='rapid-integration' className='inner-div'>
           <h2>Rapid Integration & Deployment at Scale</h2>
           <p>Integrated with over 30 EMR and 3rd party systems</p>
-          <div className='logos' id='emr'>
+          <div className='logos'>
             <div>
-              <img src='/website-gh/images/logos/athena-health.png' width={220} />
-              <img src='/website-gh/images/logos/prime.png' width={120} />
-              <img src='/website-gh/images/logos/modernizing-medicine.png' width={190} />
-              <img src='/website-gh/images/logos/medstrat.jpg' width={190} />
-              {/* </div>
-            <div> */}
-              <img src='/website-gh/images/logos/CMS.jpg' height={50} width={100} />
-              <img src='/website-gh/images/logos/centricity.png' width={150} />
-              <img src='/website-gh/images/logos/medent.png' width={180} />
-              <img src='/website-gh/images/logos/app-orchard.png' width={150} />
-              {/* </div>
-            <div> */}
-              <img src='/website-gh/images/logos/elation-health.jpg' width={190} />
-              <img src='/website-gh/images/logos/next-gen.jpg' width={140} />
-              <img src='/website-gh/images/logos/e-clinical-works.jpg' width={180} />
-              <img src='/website-gh/images/logos/cerner.png' width={170} />
-              {/* </div>
-            <div> */}
-              <img src='/website-gh/images/logos/allscripts.png' width={170} />
-              <img src='/website-gh/images/logos/drchrono.png' width={140} />
-              <img src='/website-gh/images/logos/greenway.png' width={150} />
-              <img src='/website-gh/images/logos/SRS.jpg' width={120} />
+              {
+                emrLogos.slice(0, numberOfEmrLogos).map((logo) => {
+                  return (
+                    <img src={`images/logos/${logo.img}`} height={logo.height} width={logo.width}/>
+                  )
+                })
+              }
+              <button onClick={handleViewMoreEmr}>{viewMoreEmr ? 'View Less' : 'View More'}</button>
+            </div>
+            <div>
+              <img src='images/logos/athena-health.png' width={220} />
+              <img src='images/logos/prime.png' width={120} />
+              <img src='images/logos/modernizing-medicine.png' width={190} />
+              <img src='images/logos/medstrat.jpg' width={190} />
+      
+              <img src='images/logos/CMS.jpg' height={65} width={100} />
+              <img src='images/logos/centricity.png' width={150} />
+              <img src='images/logos/medent.png' width={180} />
+              <img src='images/logos/app-orchard.png' width={150} />
+  
+              <img src='images/logos/elation-health.jpg' width={190} />
+              <img src='images/logos/next-gen.jpg' width={140} />
+              <img src='images/logos/e-clinical-works.jpg' width={180} />
+              <img src='images/logos/cerner.png' width={170} />
+
+              <img src='images/logos/allscripts.png' width={170} />
+              <img src='images/logos/drchrono.png' width={140} />
+              <img src='images/logos/greenway.png' width={150} />
+              <img src='images/logos/SRS.jpg' width={120} />
             </div>
           </div>
         </div>
@@ -257,28 +316,35 @@ export default function Provider() {
           <h2 style={{ minWidth: '100%', marginBottom: 50 }}>
             Join 300+ Institutions Using DocSpera Across the US
           </h2>
-          <div className='logos'>
-            <div>
-              <img src='/website-gh/images/logos/UCSF.png' width={100} />
-              <img src='/website-gh/images/logos/orthocare.jpg' width={170} />
-              <img src='/website-gh/images/logos/TMI.jpg' width={170} />
-              <img src='/website-gh/images/logos/webster.png' width={160} />
+          <div className='logos institutions'>
+          <div>
+              {
+                instLogos.slice(0, numberOfInstLogos).map((logo) => {
+                  return (
+                    <img src={`images/logos/${logo.img}`} height={logo.height} width={logo.width}/>
+                  )
+                })
+              }
+              <button onClick={handleViewMoreInst}>{viewMoreInst ? 'View Less' : 'View More'}</button>
             </div>
             <div>
-              <img src='/website-gh/images/logos/emerge-ortho.jpg' width={180} />
-              <img src='/website-gh/images/logos/DOC.png' width={150} />
-              <img src='/website-gh/images/logos/mos.png' width={170} />
-              <img src='/website-gh/images/logos/CPO.png' width={180} />
-            </div>
-            <div>
-              <img src='/website-gh/images/logos/baylor.jpg' width={160} />
-              <img src='/website-gh/images/logos/childress.png' width={200} />
-              <img src='/website-gh/images/logos/trinity.png' width={180} />
-              <img src='/website-gh/images/logos/louisville.png' width={170} />
-            </div>
-            <div>
-              <img src='/website-gh/images/logos/washington.png' width={200} />
-              <img src='/website-gh/images/logos/englewood.png' width={160} />
+              <img src='images/logos/UCSF.png' width={100} />
+              <img src='images/logos/orthocare.jpg' width={170} />
+              <img src='images/logos/TMI.jpg' width={170} />
+              <img src='images/logos/webster.png' width={160} />
+
+              <img src='images/logos/emerge-ortho.jpg' width={180} />
+              <img src='images/logos/DOC.png' width={150} />
+              <img src='images/logos/mos.png' width={170} />
+              <img src='images/logos/CPO.png' width={180} />
+
+              <img src='images/logos/baylor.jpg' width={160} />
+              <img src='images/logos/childress.png' width={200} />
+              <img src='images/logos/trinity.png' width={180} />
+              <img src='images/logos/louisville.png' width={170} />
+ 
+              <img src='images/logos/washington.png' width={200} />
+              <img src='images/logos/englewood.png' width={160} />
             </div>
           </div>
         </div>
@@ -356,10 +422,28 @@ export default function Provider() {
           border-radius: 18px;
           color: white;
           width: 100%;
-    
         }
 
-        #seamless-integration {
+        .provider-solutions.inner-div > div > div {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+        }
+
+        @media (max-width: 650px) {
+          .provider-solutions-row {
+            display: flex;
+            flex-direction: column;
+          }
+
+          .provider-solutions-row div {
+            align-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 0 50px;
+            width: 100%;
+          }
         }
 
         #seamless-integration img {
@@ -376,6 +460,12 @@ export default function Provider() {
         //   height: 100px;
      
         // }
+
+        .logos > div:nth-child(1) {
+          display: none;
+        }
+
+
 
         #designed-for-providers > div {
           display: flex;
@@ -440,40 +530,72 @@ export default function Provider() {
           color: gray;
         }
 
-        #emr div {
+      
+
+        .logos div {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
           grid-auto-rows: 1fr;
-          grid-row-gap: 5px;
           justify-content: space-between;   
           align-items: center;
           align-content: space-between;
-
         }
 
-
-        #emr div img:nth-child(4n-2), #emr div img:nth-child(4n-1) {
+        .logos div img:nth-child(4n-2), .logos div img:nth-child(4n-1) {
           justify-self: center;
         }
 
-
-        #emr div img:nth-child(4n) {
+        .logos div img:nth-child(4n) {
           justify-self: end;
         }
  
+        .institutions div {
+          grid-row-gap: 20px;
+        }
+
+        @media (max-width: 1025px) {
+          #designed-for-providers > div {
+            flex-direction: column;
+          }
+
+          #mock-up-img {
+            margin-bottom: 40px;
+          }
+        }
 
         @media (max-width: 890px) {
-          #emr img {
+          .logos img {
             width: 80%;
           }
         }
 
+        @media (max-width: 835px) {
+          .testimonial {
+            width: 45%;
+          }
+
+        }
+
         @media (max-width: 650px) {
-          #emr img {
+     
+          .logos img {
             width: 60%;
           }
 
-          #emr div { 
+          .logos div:nth-child(1) > img:nth-child(5) {
+            height: 75px;
+
+          }
+
+          .logos > div:nth-child(1) {
+            display: grid;
+          }
+
+          .logos > div:nth-child(2) {
+            display: none;
+          }
+
+          .logos div { 
             display:grid;
             grid-template-columns: repeat(2, 1fr);
             grid-auto-rows: 1fr;
@@ -481,24 +603,56 @@ export default function Provider() {
             align-items: center;
           }
 
-          #emr div img:nth-child(2n) {
+          .logos div img:nth-child(2n) {
             justify-self: center;
           }
-          #emr div img:nth-child(2n-1) {
+          .logos div img:nth-child(2n-1) {
             justify-self: center;
           }
+
+          button {
+            background-color: white;
+            border: 1px solid gray;
+            border-radius: 10px;
+            color: gray;
+            padding: 10px 50px;
+            font-size: 16px;
+            margin: auto;
+            grid-column: span 2;
+            filter: drop-shadow(0 5px  5px lightgray);
+            cursor: pointer;
+          }
+
+          .testimonial {
+            width: 100%;
+          }
+          #mock-up-img {
+            width: 85%;
+          } 
+       
         }
 
         @media(max-width: 480px) {
-          #emr img {
+          .logos img {
             width: 50%;
           }
 
-          #emr div { 
+          .logos div:nth-child(1) > img:nth-child(5) {
+            height: 75px;
+            width: 40%;
+          }
+
+          .logos div  { 
             display:grid;
             grid-template-columns: 1fr;
-            grid-auto-rows: 100px;
+            grid-auto-rows: 120px;
+
           }
+
+          button {
+            grid-column: auto;
+          }
+      
         }
 
 
