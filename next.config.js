@@ -10,13 +10,12 @@ module.exports = {
   // basePath: '/website-gh',
   exportPathMap: function () {
     return {
-      '/': { page: '/' },
-      '/about': { page: '/about' }
+      '/': { page: '/' }
     }
   },
   //assetPrefix: '',
   assetPrefix: !debug ? '/website-gh' : '',
-  // assetPrefix: '/website-gh/',
+  // assetPrefix: '',
   webpack: (config, { dev }) => {
     // Perform customizations to webpack config
     // console.log('webpack');

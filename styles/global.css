@@ -28,8 +28,37 @@ p {
   margin-top: 0;
 }
 
+h1 {
+  font-size: 32px;
+}
+
 h2 {
+  font-size: 28px;
   margin-bottom: 0;
+}
+
+/* h4 {
+  font-size: 2vw;
+} */
+
+@media (max-width: 800px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 550px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
 }
 
 /* button {
@@ -53,6 +82,12 @@ h2 {
   /* transform: translate(500px, 0); */
 }
 
+@media (max-width: 800px) {
+  .inner-div {
+    padding: 50px 5vw;
+  }
+}
+
 .translate {
   /* transition-delay: 0.5s; */
   /* transition: all 1s ease-out; */
@@ -74,6 +109,7 @@ h2 {
 /*  Statistics styles on index.js, provider.js & medical-device.js */
 .statistics {
   padding-top: 50px;
+  padding-bottom: 50px;
   display: flex;
   justify-content: center;
   max-width: 1150px;
@@ -91,6 +127,8 @@ h2 {
 @media (max-width: 800px) {
   .statistics {
     flex-direction: column;
+    padding-top: 0;
+    padding-bottom: 20px;
   }
 
   .statistics > div {

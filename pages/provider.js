@@ -122,20 +122,24 @@ export default function Provider() {
       <HeaderNav />
 
       <div className='container'>
-        <h2 style={{ maxWidth: 450 }}>
-          Intelligent Surgical Coordination: Enabling Efficiency and Profitability
-        </h2>
+        <h2>Intelligent Surgical Coordination: Enabling Efficiency and Profitability</h2>
         <p>
-          DocSpera is an integrated surgical coordination solution to help manage 
-          coordination across multiple sites and teams, drive improved efficiencies and deliver better patient care.
+          DocSpera is an integrated surgical coordination solution to help manage coordination
+          across multiple sites and teams, drive improved efficiencies and deliver better patient
+          care.
         </p>
-        <img src='images/provider-art-work.png' id='surgeon-doodle' />
+        <img src='/website-gh/images/provider-art-work.png' id='surgeon-doodle' />
 
         <div className='statistics'>
           <div>
-            <NumberScroll imgSrc='images/surgeon-users.png' number={6000} title='Surgeons' plus />
             <NumberScroll
-              imgSrc='images/patient-volume.png'
+              imgSrc='/website-gh/images/surgeon-users.png'
+              number={6000}
+              title='Surgeons'
+              plus
+            />
+            <NumberScroll
+              imgSrc='/website-gh/images/patient-volume.png'
               number={100000}
               title='Monthly Patient Visits'
               plus
@@ -143,13 +147,13 @@ export default function Provider() {
           </div>
           <div>
             <NumberScroll
-              imgSrc='images/practices.png'
+              imgSrc='/website-gh/images/practices.png'
               number={300}
               title='Practices, ASCs and Hospitals'
               plus
             />
             <NumberScroll
-              imgSrc='images/surgical-cases.png'
+              imgSrc='/website-gh/images/surgical-cases.png'
               number={350000}
               title='Surgical Cases'
               plus
@@ -164,7 +168,7 @@ export default function Provider() {
           </p>
           <div className='provider-solutions-row'>
             <div>
-              <img src='images/scheduling.png' />
+              <img src='/website-gh/images/scheduling.png' />
               <h4>Integrated Surgical Scheduling & Coordination Across Entire Care Team</h4>
               {/* <h6>Coordination across entire care team</h6> */}
               <p>
@@ -177,7 +181,7 @@ export default function Provider() {
               <div>Integrated Workflow</div>
             </div>
             <div>
-              <img src='images/smart-scheduling.png' />
+              <img src='/website-gh/images/smart-scheduling.png' />
               <h4>Surgical Dashboard for Managing Upcoming Cases</h4>
               {/* <h6>Manage upcoming cases</h6> */}
               <p>
@@ -189,7 +193,7 @@ export default function Provider() {
               <div>Optimized and Coordinated</div>
             </div>
             <div>
-              <img src='images/episode-of-care.png' />
+              <img src='/website-gh/images/episode-of-care.png' />
               <h4>Episode of Care Tracker for Post Operative Care Management</h4>
               {/* <h6>Post operative care management</h6> */}
               <p>
@@ -205,7 +209,7 @@ export default function Provider() {
 
         <div id='seamless-integration' className='inner-div'>
           <h2>Seamless Integration </h2>
-          <img src='images/seamless-integration.png' />
+          <img src='/website-gh/images/seamless-integration.png' />
         </div>
 
         <div id='rapid-integration' className='inner-div'>
@@ -249,11 +253,11 @@ export default function Provider() {
         <div id='designed-for-providers' className='inner-div'>
           <h2>Designed for Providers Like You</h2>
           <div>
-            <img id='mock-up-img' src='images/mockups.png' />
+            <img id='mock-up-img' src='/website-gh/images/mockups.png' />
 
             <div>
               <div className='box'>
-                <img src='images/surgical.svg' />
+                <img src='/website-gh/images/surgical.svg' />
                 <div>
                   <h4>Built for the Surgical Environment</h4>
                   <p>
@@ -263,21 +267,21 @@ export default function Provider() {
                 </div>
               </div>
               <div className='box'>
-                <img src='images/security.svg' />
+                <img src='/website-gh/images/security.svg' />
                 <div>
                   <h4>Secure</h4>
                   <p>Provider verified, SOC 2 level and HIPAA compliant</p>
                 </div>
               </div>
               <div className='box'>
-                <img src='images/data-driven.svg' />
+                <img src='/website-gh/images/data-driven.svg' />
                 <div>
                   <h4>Driven by Data</h4>
                   <p>Comprehensive and longitudinal data across the continuum of care</p>
                 </div>
               </div>
               <div className='box'>
-                <img src='images/integration.svg' />
+                <img src='/website-gh/images/integration.svg' />
                 <div>
                   <h4>Effortless Integration</h4>
                   <p>Web and mobile interface easily integrate with other critical systems</p>
@@ -293,7 +297,10 @@ export default function Provider() {
             {testimonials.map((t, idx) => {
               return (
                 <div className='testimonial' key={idx}>
-                  <img src={`images/testimonials/${t.pic}`} className='testimonial-img' />
+                  <img
+                    src={`/website-gh/images/testimonials/${t.pic}`}
+                    className='testimonial-img'
+                  />
                   <div>
                     <p>"...{t.quote}..."</p>
                     <span className='name'> - {t.name}</span>
@@ -349,22 +356,26 @@ export default function Provider() {
           padding: 0 5vw;
           p
         }
+        
         h2 {
           margin-top: 80px;
-          max-width: 600px;
+          margin-bottom: 20px;
+          max-width: 900px;
           z-index: 10;
         }
 
-        .statistics {
-          margin-top: 50px;
-        }
-
         #surgeon-doodle {
-          // position: absolute;
           width: 80%;
           display: block;
           margin: 0 auto;
           z-index: -10000;
+        }
+
+        @media (max-width: 700px) {
+          #surgeon-doodle {
+            margin-top: 40px;
+            width: 100%;
+          }
         }
 
         .provider-solutions-row {

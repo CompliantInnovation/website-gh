@@ -18,102 +18,100 @@ export default function Home() {
       <div id='hero-h1'>
         <h1>Intelligent Surgical Planning Software from Diagnosis to Recovery</h1>
       </div>
-      <img id='landing-bg' src='images/care-team.jpg' width={'100%'} />
+      <img id='landing-bg' src='/website-gh/images/care-team.jpg' width={'100%'} />
 
-      <div className='statistics'>
-        <div>
-          <NumberScroll
-            imgSrc='images/patient-volume.png'
-            number={100000}
-            title='Monthly Patient Volume'
-            plus
-          />
-          <NumberScroll
-            imgSrc='images/surgeon-users.png'
-            number={6000}
-            title='Surgeon Users'
-            plus
-          />
-        </div>
-        <div>
-          <NumberScroll imgSrc='images/episodic-cases.png' number={350000} title='Episodic Cases' />
-          <NumberScroll
-            imgSrc='images/practices.png'
-            number={300}
-            title='Practices, ASCs & Hospitals'
-            plus
-          />
-        </div>
-      </div>
-
-      <div id='vision-section'>
-          <div id='vision' className='inner-div'>
-            <h2 style={{ marginBottom: 20 }}>Vision to Address Priorities and Unmet Need Through Patient’s Surgical Journey </h2>
-            <div id='vision-divs'>
-              <div>
-                <img src='' alt='img' />
-                <h4>PRE-OPERATIVE</h4>
-                <ul>
-                  <li>Avoiding last-minute surgery cancellations due to poor patient compliance with pre-surgery requirements</li>
-                  <li>Effective communication & connectivity between clinical office,  hospital, and vendors</li>
-                </ul>
-
-              </div>
-              <div>
-                <img src='' alt='img' />
-                <h4>SURGICAL PLANNING</h4>
-                <ul>
-                  <li>Improve OR efficiency (e.g.  reduction in surgical inventory)</li>
-                  <li>Effective patient readiness and case backlog-management (e.g. managing pending cases and cancellations)</li>
-                </ul>
-              </div>
-              <div>
-                <img src='' alt='img' />
-                <h4>POST-OP MONITORING</h4>
-                <ul>
-                  <li>Post-op monitoring and outcome tracking</li>
-                  <li>Improve patient satisfaction</li>
-                </ul>
-              </div>
-            </div>
+      <div
+        // className='statistics'
+        style={{
+          backgroundColor: 'var(--blueXLight)',
+          maxWidth: '100%',
+          marginTop: -10,
+          paddingBottom: 10
+        }}
+      >
+        <div className='statistics'>
+          <div>
+            <NumberScroll
+              imgSrc='/website-gh/images/patient-volume.png'
+              number={100000}
+              title='Monthly Patient Volume'
+              plus
+            />
+            <NumberScroll
+              imgSrc='/website-gh/images/surgeon-users.png'
+              number={6000}
+              title='Surgeon Users'
+              plus
+            />
+          </div>
+          <div>
+            <NumberScroll
+              imgSrc='/website-gh/images/episodic-cases.png'
+              number={350000}
+              title='Episodic Cases'
+            />
+            <NumberScroll
+              imgSrc='/website-gh/images/practices.png'
+              number={300}
+              title='Practices, ASCs & Hospitals'
+              plus
+            />
           </div>
         </div>
-
-      <div id='connecting-section' className='inner-div'>
-        <div id='words-div'>
-          <h1>DocSpera Integrated Care Coordination Platform</h1>
-          <h2>
-            Connecting <b>Surgeons</b>, <br /> <b>Care Teams</b> & <b>Medical Device Co.</b>
-          </h2>
-          <p style={{ maxWidth: 420, marginLeft: -20 }}>
-            <ul>
-              <li>
-                Single institution-agnostic interface managing cases from surgery decision to
-                recovery
-              </li>
-              <li>Seamlessly integrates with EMR systems and PACS</li>
-              <li>Current and reliable supply chain signaling for improved logistics and support.</li>
-              <li>
-                Enable early intervention with predictive indicators for patient compliance,
-                discharge info, & readmission
-              </li>
-            </ul>
-          </p>
-        </div>
-        <img id='connecting-graphic' src='images/connecting2.png' />
       </div>
 
-      
+      <div className='inner-div'>
+        <div id='vision-section'>
+          {/* Iphone Calendar Mockups */}
+          <div id='iphone-calendar-div'>
+            <img id='iphone-calendar' src='/website-gh/images/product-shots/iphone-calendar.png' />
+          </div>
+
+          <div id='timeline-div'>
+            <h2>
+              Vision to Address Priorities and Unmet Needs Through Patient’s Surgical Journey{' '}
+            </h2>
+            {/* Timeline Graphic + Copy  "1. Pre-Operative..." */}
+            <img id='timeline-graphic' src='/website-gh/images/timeline-graphic.png' />
+          </div>
+        </div>
+      </div>
 
       <div style={{ backgroundColor: 'var(--blueXLight)' }}>
+        <div id='connecting-section' className='inner-div'>
+          <div id='words-div'>
+            <h1>DocSpera Integrated Care Coordination Platform</h1>
+            <h2>
+              Connecting <b>Surgeons</b>, <br /> <b>Care Teams</b> & <b>Medical Device Co.</b>
+            </h2>
+            <p style={{ maxWidth: 420, marginLeft: -20 }}>
+              <ul>
+                <li>
+                  Single institution-agnostic interface managing cases from surgery decision to
+                  recovery
+                </li>
+                <li>Seamlessly integrates with EMR systems and PACS</li>
+                <li>
+                  Current and reliable supply chain signaling for improved logistics and support.
+                </li>
+                <li>
+                  Enable early intervention with predictive indicators for patient compliance,
+                  discharge info, & readmission
+                </li>
+              </ul>
+            </p>
+          </div>
+          <img id='connecting-graphic' src='/website-gh/images/connected-graphic.png' />
+        </div>
+      </div>
+
+      <div style={{ backgroundColor: 'var(--blueSky)' }}>
         <div className='inner-div'>
-          <h2 style={{ marginLeft: 45, marginBottom: 20, fontWeight: 500 }}>
-            View Our Products For...
-          </h2>
+          <h2 className='products-h2'>View Our Products For...</h2>
           <div className='product-section'>
             <div className='box'>
               <h4>
-                <img src='/images/surgeon-users.png' />
+                <img src='/website-gh/images/surgeon-users.png' />
                 Providers
               </h4>
               <p>
@@ -127,13 +125,14 @@ export default function Home() {
               </p>
               <Link href='/provider'>
                 <button>
-                  View More <img className='chevron-img' src='/images/chevron.png' />
+                  View Provider Products{' '}
+                  <img className='chevron-img' src='/website-gh/images/chevron.png' />
                 </button>
               </Link>
             </div>
             <div className='box'>
               <h4>
-                <img src='/images/medical-device.png' />
+                <img src='/website-gh/images/medical-device.png' />
                 Medical Device
               </h4>
               <p>
@@ -147,7 +146,8 @@ export default function Home() {
               </p>
               <Link href='/medical-device'>
                 <button>
-                  View More <img className='chevron-img' src='/images/chevron.png' />
+                  View Medical Device Products{' '}
+                  <img className='chevron-img' src='/website-gh/images/chevron.png' />
                 </button>
               </Link>
             </div>
@@ -156,55 +156,45 @@ export default function Home() {
       </div>
 
       <div className='inner-div'>
-        <h2>DocSpera works with leading health solution providers and Organizations</h2>
+        <h2 id='docspera-works-h2'>
+          DocSpera works with leading health solution providers and Organizations
+        </h2>
         <Carousel
           type='logo'
           content={[
             {
-              img: 'images/logos/innovacer.png',
+              img: '/website-gh/images/logos/innovacer.png',
               width: 180
             },
             {
-              img: 'images/logos/athena-health.png',
+              img: '/website-gh/images/logos/athena-health.png',
               width: 210
             },
             {
-              img: 'images/logos/app-orchard.png',
+              img: '/website-gh/images/logos/app-orchard.png',
               width: 170
             },
             {
-              img: 'images/logos/dolby.png',
+              img: '/website-gh/images/logos/dolby.png',
               width: 160
             },
             {
-              img: 'images/logos/AAHKS.jpg',
+              img: '/website-gh/images/logos/AAHKS.jpg',
               width: 170
             },
             {
-              img: 'images/logos/anterior-hip-foundation.png',
+              img: '/website-gh/images/logos/anterior-hip-foundation.png',
               width: 180
             },
             {
-              img: 'images/logos/CMS.jpg',
+              img: '/website-gh/images/logos/CMS.jpg',
               width: 120
             }
           ]}
         />
       </div>
 
-      <img id='map' src='/images/map-with-pins.png' alt='map of docspera locations' />
-
-      {/* <div className='carousel-container'>
-        <div className='blog-section'>
-          <h2>DocSpera Blog</h2>
-          <Carousel type='blog' />
-        </div>
-
-        <div className='case-study-section'>
-          <h2>Case Studies</h2>
-          <Carousel type='case-study' />
-        </div>
-      </div> */}
+      <img id='map' src='/website-gh/images/map-with-pins.png' alt='map of docspera locations' />
 
       <FooterBar />
       <style jsx>{`
@@ -247,27 +237,131 @@ export default function Home() {
           width: 70%;
         }
 
-        #connecting-section {
+
+
+
+
+
+        // VISION SECTION
+
+        #vision-section {
           display: flex;
-          justify-content: center;
-          padding: 100px 0;
-          padding-top: 50px;
-          width: 100%;
+          align-items: center;
         }
 
-        @media (max-width: 970px) {
+        #iphone-calendar-div {
+          width: 50%;
+        }
+
+        #iphone-calendar {
+          width: 110%;
+          margin-left: -60px;
+        }
+
+        #timeline-div {
+          width: 50%;
+        }
+
+        #vision-section h2 {
+          max-width: 500px; 
+          margin-bottom: 20px;
+        }
+
+        #timeline-graphic {
+          max-width: 600px;
+        }
+
+        @media (max-width: 1100px) {
+          #vision-section {
+            flex-direction: column;
+          }
+
+          #iphone-calendar-div {
+            width: 60%;
+          }
+
+          #timeline-div {
+            width: 100%;
+            overflow: hidden;
+          }
+
+          #timeline-graphic {
+            width: 110%;
+            display: block;
+            margin: 0 auto;
+            padding-left: 30px;
+          }
+
+          #vision-section h2 {
+            margin: 15px auto;
+          }
+        }
+  
+        @media (max-width: 550px) {
+          #iphone-calendar-div {
+            width: 100%;
+          }
+
+          #vision-section h2 {
+            max-width: 100%;
+          }
+
+          #timeline-graphic {
+            padding: 0;
+          }
+        }
+  
+
+        @media (max-width: 400px) {
+          #timeline-graphic {
+            width: 120%;
+            margin-left: -10px;
+          }
+        }
+
+
+
+
+        // CONNECTING SECTION
+
+        #connecting-section {
+          background-color: #2a83bf;
+          background-color: var(--blueXLight);
+          display: flex;
+          justify-content: center;
+          flex: 1;
+          padding-top: 0px;
+          color: black;
+        }
+
+        #connecting-section h1 {
+          margin-top: 60px;
+        }
+
+        @media (max-width: 1270px) {
           #connecting-section {
             flex-direction: column;
           }
         }
 
         #connecting-graphic {
-          width: 50%;
+          width: 60%;
           align-self: flex-end;
+          margin-right: -160px;
+        }
+
+        @media (max-width: 1270px) {
+          #connecting-graphic {
+            margin-top: -150px;
+            margin-right: -30px;
+
+          }
         }
 
         @media (max-width: 800px) {
           #connecting-graphic {
+            margin-top: 10px;
+            margin-right: 0;
             width: 100%;
           }
         }
@@ -287,60 +381,18 @@ export default function Home() {
           font-weight: 200;
         }
 
-        #vision-section {
-          margin-top: 50px;
-          padding: 70px 0 100px 0;
-          width: 100%;
-        }
-
-        #vision h2 {
-          margin-top: 0;
-        }
-
-        #vision {
-          padding: 0 5vw;
-        }
-
-        #vision-divs {
-          display: flex;
-          justify-content: space-between;
-          flex: 1;
-        }
-
-        #vision-divs > div {
-          position: relative;
-          flex: 1;
-          border-radius: 10px;
-          background-color: white;
-          padding: 15px;
-          padding-bottom: 30px;
-          margin: 10px;
-        }
-
-        #vision-divs img {
-          width: 100%;
-          height: 175px;
-          border: 1px solid black;
-          max-height: 175px;
-       
-          width: auto;
-          border-radius: 5px;
-          display: block;
-          margin: 0 auto;
-          margin-bottom: 10px;
-        }
-
-        #vision-divs h4 {
-          margin: 0;
+        .products-h2 {
           text-align: center;
+          margin-left: 45px;
+          margin-bottom: 20px; 
+          font-weight: 600;
         }
 
-        #vision-divs li {
-          color: grey;
-          font-size: 14px;
-          margin-bottom: 10px;
+        @media (max-width: 800px) {
+          .products-h2 {
+            margin-left: 0;
+          }
         }
-
 
         .product-section {
           display: flex;
@@ -353,7 +405,6 @@ export default function Home() {
 
         .product-section h4 {
           font-size: 24px;
-          // font-family: 'Varela Round';
         }
 
 
@@ -422,7 +473,28 @@ export default function Home() {
           display: block;
           margin: 0 auto;
           user-select: none;
-          margin-top: -100px;
+          margin-top: -120px;
+          margin-bottom: 150px;
+        }
+
+        @media (max-width: 900px) {
+          #map {
+            width: 90%;
+            margin-top: -80px;
+          }
+        }
+
+        #docspera-works-h2 {
+          text-align: center;
+          margin-bottom: -40px; 
+          max-width: 600px;
+          margin: 0px auto -40px auto;
+        }
+
+        @media (max-width: 900px) {
+          #docspera-works-h2 { 
+            max-width: 600px;
+          }
         }
 
         .logos div {
