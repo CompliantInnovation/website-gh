@@ -64,10 +64,40 @@ export default function MobileNav() {
             </div>
           </Link>
 
-          <div className='product-container' onClick={handleProductOnHover}>
-            <div className='menu-item'>
-              <div>Products</div>
-              <img id={productDropdown ? 'chevron-img' : ''} src='/website-gh/images/chevron.png' />
+        {mobileNav && (
+
+          <div className='mobile-menu'>
+            <Link href='/' >
+              <div className='menu-item' onClick={openMenu}>
+                <div>Home</div>
+                <img className='chevron-img' src='/images/chevron.png' />
+              </div>
+            </Link>
+
+            <div className='product-container' onClick={handleProductOnHover}>
+              <div className='menu-item'>
+                <div>Products</div>
+                <img id={productDropdown ? 'chevron-img' : ''} src='/images/chevron.png' />
+              </div>
+              
+              {productDropdown && (
+
+                <div className='product-dropdown'>
+                  <div className='underline'></div>
+                  <Link href='/provider' >
+                    <div className='box' onClick={openMenu}>
+                      <img src='/images/surgeon-users.png' /> Providers <img className='chevron-img' src='/images/chevron.png' />
+
+                    </div>
+                  </Link>
+                  <Link href='/medical-device'>
+                    <div className='box' onClick={openMenu}>
+                      <img src='/images/medical-device.png' /> Medical Device <img className='chevron-img' src='/images/chevron.png' />
+
+                    </div>
+                  </Link>
+                </div>
+              )}
             </div>
 
             {productDropdown && (
