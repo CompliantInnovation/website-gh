@@ -32,52 +32,51 @@ export default function Provider() {
   }
 
   const emrLogos = [
-    {'img': 'athena-health.png', 'height': null ,  'width': 220},
-    {'img': 'prime.png', 'height': null , 'width': 120},
-    {'img': 'modernizing-medicine.png', 'height': null , 'width': 190},
-    {'img': 'medstrat.jpg', 'height': null , 'width': 190},
-    {'img': 'CMS.jpg', 'height': 65, 'width': 220},
-    {'img': 'centricity.png', 'height': null , 'width': 150},
-    {'img': 'medent.png', 'height': null , 'width': 180},
-    {'img': 'app-orchard.png', 'height': null , 'width': 150},
-    {'img': 'elation-health.jpg', 'height': null , 'width': 190},
-    {'img': 'next-gen.jpg', 'height': null , 'width': 140},
-    {'img': 'e-clinical-works.jpg', 'height': null , 'width': 180},
-    {'img': 'cerner.png', 'height': null , 'width': 170},
-    {'img': 'allscripts.png', 'height': null , 'width': 170},
-    {'img': 'drchrono.png', 'height': null , 'width': 140},
-    {'img': 'greenway.png', 'height': null , 'width': 150},
-    {'img': 'SRS.jpg', 'height': null , 'width': 120} 
-    
-  ];
+    { img: 'athena-health.png', height: null, width: 220 },
+    { img: 'prime.png', height: null, width: 120 },
+    { img: 'modernizing-medicine.png', height: null, width: 190 },
+    { img: 'medstrat.jpg', height: null, width: 190 },
+    { img: 'CMS.jpg', height: 65, width: 220 },
+    { img: 'centricity.png', height: null, width: 150 },
+    { img: 'medent.png', height: null, width: 180 },
+    { img: 'app-orchard.png', height: null, width: 150 },
+    { img: 'elation-health.jpg', height: null, width: 190 },
+    { img: 'next-gen.jpg', height: null, width: 140 },
+    { img: 'e-clinical-works.jpg', height: null, width: 180 },
+    { img: 'cerner.png', height: null, width: 170 },
+    { img: 'allscripts.png', height: null, width: 170 },
+    { img: 'drchrono.png', height: null, width: 140 },
+    { img: 'greenway.png', height: null, width: 150 },
+    { img: 'SRS.jpg', height: null, width: 120 }
+  ]
 
-  const [viewMoreEmr, setViewMoreEmr] = useState(false);
-  const numberOfEmrLogos = viewMoreEmr ? emrLogos.length : 4;
-  
+  const [viewMoreEmr, setViewMoreEmr] = useState(false)
+  const numberOfEmrLogos = viewMoreEmr ? emrLogos.length : 4
+
   const handleViewMoreEmr = () => {
     setViewMoreEmr(!viewMoreEmr)
   }
 
   const instLogos = [
-    {'img': 'UCSF.png', 'width': 100},
-    {'img': 'orthocare.jpg', 'width': 170},
-    {'img': 'TMI.jpg', 'width': 170},
-    {'img': 'webster.png', 'width': 160},
-    {'img': 'emerge-ortho.jpg', 'width': 180},
-    {'img': 'DOC.png', 'width': 150},
-    {'img': 'mos.png', 'width': 170},
-    {'img': 'CPO.png', 'width': 180},
-    {'img': 'baylor.jpg', 'width': 160},
-    {'img': 'childress.png', 'width': 200},
-    {'img': 'trinity.png', 'width': 180},
-    {'img': 'louisville.png', 'width': 170},
-    {'img': 'washington.png', 'width': 200},
-    {'img': 'englewood.png', 'width': 160},
-  ];
+    { img: 'UCSF.png', width: 100 },
+    { img: 'orthocare.jpg', width: 170 },
+    { img: 'TMI.jpg', width: 170 },
+    { img: 'webster.png', width: 160 },
+    { img: 'emerge-ortho.jpg', width: 180 },
+    { img: 'DOC.png', width: 150 },
+    { img: 'mos.png', width: 170 },
+    { img: 'CPO.png', width: 180 },
+    { img: 'baylor.jpg', width: 160 },
+    { img: 'childress.png', width: 200 },
+    { img: 'trinity.png', width: 180 },
+    { img: 'louisville.png', width: 170 },
+    { img: 'washington.png', width: 200 },
+    { img: 'englewood.png', width: 160 }
+  ]
 
-  const [viewMoreInst, setViewMoreInst] = useState(false);
-  const numberOfInstLogos = viewMoreInst ? instLogos.length : 4;
-  
+  const [viewMoreInst, setViewMoreInst] = useState(false)
+  const numberOfInstLogos = viewMoreInst ? instLogos.length : 4
+
   const handleViewMoreInst = () => {
     setViewMoreInst(!viewMoreInst)
   }
@@ -128,18 +127,13 @@ export default function Provider() {
           across multiple sites and teams, drive improved efficiencies and deliver better patient
           care.
         </p>
-        <img src='/website-gh/images/provider-art-work.png' id='surgeon-doodle' />
+        <img src='images/provider-art-work.png' id='surgeon-doodle' />
 
         <div className='statistics'>
           <div>
+            <NumberScroll imgSrc='images/surgeon-users.png' number={6000} title='Surgeons' plus />
             <NumberScroll
-              imgSrc='/website-gh/images/surgeon-users.png'
-              number={6000}
-              title='Surgeons'
-              plus
-            />
-            <NumberScroll
-              imgSrc='/website-gh/images/patient-volume.png'
+              imgSrc='images/patient-volume.png'
               number={100000}
               title='Monthly Patient Visits'
               plus
@@ -147,13 +141,13 @@ export default function Provider() {
           </div>
           <div>
             <NumberScroll
-              imgSrc='/website-gh/images/practices.png'
+              imgSrc='images/practices.png'
               number={300}
               title='Practices, ASCs and Hospitals'
               plus
             />
             <NumberScroll
-              imgSrc='/website-gh/images/surgical-cases.png'
+              imgSrc='images/surgical-cases.png'
               number={350000}
               title='Surgical Cases'
               plus
@@ -168,7 +162,7 @@ export default function Provider() {
           </p>
           <div className='provider-solutions-row'>
             <div>
-              <img src='/website-gh/images/scheduling.png' />
+              <img src='images/scheduling.png' />
               <h4>Integrated Surgical Scheduling & Coordination Across Entire Care Team</h4>
               {/* <h6>Coordination across entire care team</h6> */}
               <p>
@@ -181,7 +175,7 @@ export default function Provider() {
               <div>Integrated Workflow</div>
             </div>
             <div>
-              <img src='/website-gh/images/smart-scheduling.png' />
+              <img src='images/smart-scheduling.png' />
               <h4>Surgical Dashboard for Managing Upcoming Cases</h4>
               {/* <h6>Manage upcoming cases</h6> */}
               <p>
@@ -193,7 +187,7 @@ export default function Provider() {
               <div>Optimized and Coordinated</div>
             </div>
             <div>
-              <img src='/website-gh/images/episode-of-care.png' />
+              <img src='images/episode-of-care.png' />
               <h4>Episode of Care Tracker for Post Operative Care Management</h4>
               {/* <h6>Post operative care management</h6> */}
               <p>
@@ -209,7 +203,7 @@ export default function Provider() {
 
         <div id='seamless-integration' className='inner-div'>
           <h2>Seamless Integration </h2>
-          <img src='/website-gh/images/seamless-integration.png' />
+          <img src='images/seamless-integration.png' />
         </div>
 
         <div id='rapid-integration' className='inner-div'>
@@ -217,13 +211,11 @@ export default function Provider() {
           <p>Integrated with over 30 EMR and 3rd party systems</p>
           <div className='logos'>
             <div>
-              {
-                emrLogos.slice(0, numberOfEmrLogos).map((logo) => {
-                  return (
-                    <img src={`images/logos/${logo.img}`} height={logo.height} width={logo.width}/>
-                  )
-                })
-              }
+              {emrLogos.slice(0, numberOfEmrLogos).map((logo) => {
+                return (
+                  <img src={`images/logos/${logo.img}`} height={logo.height} width={logo.width} />
+                )
+              })}
               <button onClick={handleViewMoreEmr}>{viewMoreEmr ? 'View Less' : 'View More'}</button>
             </div>
             <div>
@@ -231,12 +223,12 @@ export default function Provider() {
               <img src='images/logos/prime.png' width={120} />
               <img src='images/logos/modernizing-medicine.png' width={190} />
               <img src='images/logos/medstrat.jpg' width={190} />
-      
+
               <img src='images/logos/CMS.jpg' height={65} width={100} />
               <img src='images/logos/centricity.png' width={150} />
               <img src='images/logos/medent.png' width={180} />
               <img src='images/logos/app-orchard.png' width={150} />
-  
+
               <img src='images/logos/elation-health.jpg' width={190} />
               <img src='images/logos/next-gen.jpg' width={140} />
               <img src='images/logos/e-clinical-works.jpg' width={180} />
@@ -253,11 +245,11 @@ export default function Provider() {
         <div id='designed-for-providers' className='inner-div'>
           <h2>Designed for Providers Like You</h2>
           <div>
-            <img id='mock-up-img' src='/website-gh/images/mockups.png' />
+            <img id='mock-up-img' src='images/mockups.png' />
 
             <div>
               <div className='box'>
-                <img src='/website-gh/images/surgical.svg' />
+                <img src='images/surgical.svg' />
                 <div>
                   <h4>Built for the Surgical Environment</h4>
                   <p>
@@ -267,21 +259,21 @@ export default function Provider() {
                 </div>
               </div>
               <div className='box'>
-                <img src='/website-gh/images/security.svg' />
+                <img src='images/security.svg' />
                 <div>
                   <h4>Secure</h4>
                   <p>Provider verified, SOC 2 level and HIPAA compliant</p>
                 </div>
               </div>
               <div className='box'>
-                <img src='/website-gh/images/data-driven.svg' />
+                <img src='images/data-driven.svg' />
                 <div>
                   <h4>Driven by Data</h4>
                   <p>Comprehensive and longitudinal data across the continuum of care</p>
                 </div>
               </div>
               <div className='box'>
-                <img src='/website-gh/images/integration.svg' />
+                <img src='images/integration.svg' />
                 <div>
                   <h4>Effortless Integration</h4>
                   <p>Web and mobile interface easily integrate with other critical systems</p>
@@ -297,10 +289,7 @@ export default function Provider() {
             {testimonials.map((t, idx) => {
               return (
                 <div className='testimonial' key={idx}>
-                  <img
-                    src={`/website-gh/images/testimonials/${t.pic}`}
-                    className='testimonial-img'
-                  />
+                  <img src={`images/testimonials/${t.pic}`} className='testimonial-img' />
                   <div>
                     <p>"...{t.quote}..."</p>
                     <span className='name'> - {t.name}</span>
@@ -317,15 +306,15 @@ export default function Provider() {
             Join 300+ Institutions Using DocSpera Across the US
           </h2>
           <div className='logos institutions'>
-          <div>
-              {
-                instLogos.slice(0, numberOfInstLogos).map((logo) => {
-                  return (
-                    <img src={`images/logos/${logo.img}`} height={logo.height} width={logo.width}/>
-                  )
-                })
-              }
-              <button onClick={handleViewMoreInst}>{viewMoreInst ? 'View Less' : 'View More'}</button>
+            <div>
+              {instLogos.slice(0, numberOfInstLogos).map((logo) => {
+                return (
+                  <img src={`images/logos/${logo.img}`} height={logo.height} width={logo.width} />
+                )
+              })}
+              <button onClick={handleViewMoreInst}>
+                {viewMoreInst ? 'View Less' : 'View More'}
+              </button>
             </div>
             <div>
               <img src='images/logos/UCSF.png' width={100} />
@@ -342,7 +331,7 @@ export default function Provider() {
               <img src='images/logos/childress.png' width={200} />
               <img src='images/logos/trinity.png' width={180} />
               <img src='images/logos/louisville.png' width={170} />
- 
+
               <img src='images/logos/washington.png' width={200} />
               <img src='images/logos/englewood.png' width={160} />
             </div>

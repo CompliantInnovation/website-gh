@@ -18,27 +18,28 @@ export default function Home() {
       <div id='hero-h1'>
         <h1>Intelligent Surgical Planning Software from Diagnosis to Recovery</h1>
       </div>
-      <img id='landing-bg' src='/website-gh/images/care-team.jpg' width={'100%'} />
+      <div style={{ height: '95vh', overflow: 'hidden' }}>
+        <img id='landing-bg' src='images/iPad-landing.jpg' />
+      </div>
 
       <div
-        // className='statistics'
         style={{
           backgroundColor: 'var(--blueXLight)',
           maxWidth: '100%',
           marginTop: -10,
-          paddingBottom: 10
+          paddingBottom: 10,
         }}
       >
         <div className='statistics'>
           <div>
             <NumberScroll
-              imgSrc='/website-gh/images/patient-volume.png'
+              imgSrc='images/patient-volume.png'
               number={100000}
               title='Monthly Patient Volume'
               plus
             />
             <NumberScroll
-              imgSrc='/website-gh/images/surgeon-users.png'
+              imgSrc='images/surgeon-users.png'
               number={6000}
               title='Surgeon Users'
               plus
@@ -46,12 +47,12 @@ export default function Home() {
           </div>
           <div>
             <NumberScroll
-              imgSrc='/website-gh/images/episodic-cases.png'
+              imgSrc='images/episodic-cases.png'
               number={350000}
               title='Episodic Cases'
             />
             <NumberScroll
-              imgSrc='/website-gh/images/practices.png'
+              imgSrc='images/practices.png'
               number={300}
               title='Practices, ASCs & Hospitals'
               plus
@@ -64,7 +65,7 @@ export default function Home() {
         <div id='vision-section'>
           {/* Iphone Calendar Mockups */}
           <div id='iphone-calendar-div'>
-            <img id='iphone-calendar' src='/website-gh/images/product-shots/iphone-calendar.png' />
+            <img id='iphone-calendar' src='images/product-shots/iphone-calendar.png' />
           </div>
 
           <div id='timeline-div'>
@@ -72,7 +73,7 @@ export default function Home() {
               Vision to Address Priorities and Unmet Needs Through Patient’s Surgical Journey{' '}
             </h2>
             {/* Timeline Graphic + Copy  "1. Pre-Operative..." */}
-            <img id='timeline-graphic' src='/website-gh/images/timeline-graphic.png' />
+            <img id='timeline-graphic' src='images/timeline-graphic.png' />
           </div>
         </div>
       </div>
@@ -101,7 +102,7 @@ export default function Home() {
               </ul>
             </p>
           </div>
-          <img id='connecting-graphic' src='/website-gh/images/connected-graphic.png' />
+          <img id='connecting-graphic' src='images/connected-graphic.png' />
         </div>
       </div>
 
@@ -111,7 +112,7 @@ export default function Home() {
           <div className='product-section'>
             <div className='box'>
               <h4>
-                <img src='/website-gh/images/surgeon-users.png' />
+                <img src='images/surgeon-users.png' />
                 Providers
               </h4>
               <p>
@@ -125,14 +126,13 @@ export default function Home() {
               </p>
               <Link href='/provider'>
                 <button>
-                  View Provider Products{' '}
-                  <img className='chevron-img' src='/website-gh/images/chevron.png' />
+                  View Provider Products <img className='chevron-img' src='images/chevron.png' />
                 </button>
               </Link>
             </div>
             <div className='box'>
               <h4>
-                <img src='/website-gh/images/medical-device.png' />
+                <img src='images/medical-device.png' />
                 Medical Device
               </h4>
               <p>
@@ -147,7 +147,7 @@ export default function Home() {
               <Link href='/medical-device'>
                 <button>
                   View Medical Device Products{' '}
-                  <img className='chevron-img' src='/website-gh/images/chevron.png' />
+                  <img className='chevron-img' src='images/chevron.png' />
                 </button>
               </Link>
             </div>
@@ -163,38 +163,38 @@ export default function Home() {
           type='logo'
           content={[
             {
-              img: '/website-gh/images/logos/innovacer.png',
+              img: 'images/logos/innovacer.png',
               width: 180
             },
             {
-              img: '/website-gh/images/logos/athena-health.png',
+              img: 'images/logos/athena-health.png',
               width: 210
             },
             {
-              img: '/website-gh/images/logos/app-orchard.png',
+              img: 'images/logos/app-orchard.png',
               width: 170
             },
             {
-              img: '/website-gh/images/logos/dolby.png',
+              img: 'images/logos/dolby.png',
               width: 160
             },
             {
-              img: '/website-gh/images/logos/AAHKS.jpg',
+              img: 'images/logos/AAHKS.jpg',
               width: 170
             },
             {
-              img: '/website-gh/images/logos/anterior-hip-foundation.png',
+              img: 'images/logos/anterior-hip-foundation.png',
               width: 180
             },
             {
-              img: '/website-gh/images/logos/CMS.jpg',
+              img: 'images/logos/CMS.jpg',
               width: 120
             }
           ]}
         />
       </div>
 
-      <img id='map' src='/website-gh/images/map-with-pins.png' alt='map of docspera locations' />
+      <img id='map' src='images/map-with-pins.png' alt='map of docspera locations' />
 
       <FooterBar />
       <style jsx>{`
@@ -204,19 +204,20 @@ export default function Home() {
         }
 
         #hero-h1 {
-          color: var(--blueDocspera);
+          color: white ;
           position: absolute;
           top: 50px;
           border-radius: 10px;
           padding: 10px;
           text-align: center;
-          filter: drop-shadow(0 -10px 50px #cdf0fd);
+          // filter: drop-shadow(0 -10px 50px #cdf0fd);
           font-family: 'Varela Round';
           width: 100%;
+          text-shadow: 0 1px 4px RGBa(0,0,0, .6), 0 0 100px Black
         }
         
         #hero-h1 > h1 {
-          font-size: 3vw;
+          font-size: 64px;
           margin-bottom: 0;
           text-shadow: 0 1px 2px RGBa(0,0,0, .6), 0 0 50px #cdf0fd;
         }
@@ -225,19 +226,17 @@ export default function Home() {
           font-size: 20px;
         }
 
-
-
         #landing-bg {
           z-index: -100;
+          min-width: 100%;
+          height: 100%;
         }
 
-        #logo-animation {
-          margin: 0 auto;
-          margin-top: 100px;
-          width: 70%;
+        @media (max-width: ) {
+          #landing-bg {
+
+          }
         }
-
-
 
 
 
