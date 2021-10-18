@@ -57,7 +57,7 @@ export default function HeaderNav() {
 
       <div id='right-side'>
         <div id='nav-items'>
-          <a className={productDropdown && 'active_a'} onMouseEnter={handleProductOnHover}>
+          <a className={productDropdown && 'active_a' || ((router.pathname == '/provider' || router.pathname == '/medical-device') && 'active_a')} onMouseEnter={handleProductOnHover}>
             <span>PRODUCT</span>
             {/* <div className={productDropdown && 'underline'}></div> */}
           </a>
@@ -216,6 +216,7 @@ export default function HeaderNav() {
         .active_a,
         .dropdown .active_a {
           font-weight: 600;
+          background-color: rgba(0, 150, 250, 0.2);
         }
 
         // .underline {
@@ -319,13 +320,14 @@ export default function HeaderNav() {
           align-items: center;
           justify-content: center;
           position: absolute;
-          top: 100%;
-          left: -16%;
+          top: 110%;
+          left: -10%;
           background-color: rgba(255, 255, 255, 1);
           padding: 0px 10px;
           color: black;
           width: 140px;
           padding-top: 10px;
+          margin-top: 3px;
        
         }
 
