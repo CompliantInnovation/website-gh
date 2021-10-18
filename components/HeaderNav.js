@@ -44,9 +44,9 @@ export default function HeaderNav() {
     <nav>
       {isBrowser && (
         <Link href='/'>
-          <a>
+          <a id='logo'>
             <img
-              id='logo'
+             
               src={`${tabletSize ? 'images/logo-short.png' : 'images/logo.svg'}`}
               height={`${tabletSize ? 40 : 70}`}
               width={`${tabletSize ? 40 : 150}`}
@@ -217,6 +217,10 @@ export default function HeaderNav() {
         .dropdown .active_a {
           font-weight: 600;
           background-color: rgba(0, 150, 250, 0.2);
+        }
+
+        #logo:hover {
+          background-color: rgba(0, 0, 0, 0);
         }
 
         // .underline {
