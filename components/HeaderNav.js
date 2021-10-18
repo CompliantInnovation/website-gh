@@ -47,9 +47,7 @@ export default function HeaderNav() {
           <a>
             <img
               id='logo'
-              src={`${
-                tabletSize ? '/website-gh/images/logo-short.png' : '/website-gh/images/logo.svg'
-              }`}
+              src={`${tabletSize ? 'images/logo-short.png' : 'images/logo.svg'}`}
               height={`${tabletSize ? 40 : 70}`}
               width={`${tabletSize ? 40 : 150}`}
             />
@@ -68,8 +66,8 @@ export default function HeaderNav() {
               <Link href='/provider'>
                 <div className='box' onClick={handleProductOnHover}>
                   <h4>
-                    <img src='/website-gh/images/surgeon-users.png' />
-                    Providers <img className='chevron-img' src='/website-gh/images/chevron.png' />
+                    <img src='images/surgeon-users.png' />
+                    Providers <img className='chevron-img' src='images/chevron.png' />
                   </h4>
                   <ul>
                     <li>Episode of Care</li>
@@ -81,9 +79,8 @@ export default function HeaderNav() {
               <Link href='/medical-device'>
                 <div className='box' onClick={handleProductOnHover}>
                   <h4>
-                    <img src='/website-gh/images/medical-device.png' />
-                    Medical Device{' '}
-                    <img className='chevron-img' src='/website-gh/images/chevron.png' />
+                    <img src='images/medical-device.png' />
+                    Medical Device <img className='chevron-img' src='images/chevron.png' />
                   </h4>
                   <ul>
                     <li>Advanced Case Notification</li>
@@ -353,11 +350,8 @@ export default function HeaderNav() {
             padding-right: 18px;
           }
           .dropdown {
-           
             padding-right: 18px;
           }
-
-
         }
         // .responsive-nav {
         //   display: none;
