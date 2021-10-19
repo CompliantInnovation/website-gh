@@ -43,7 +43,7 @@ export default function NumberScroll({ imgSrc, number, title, plus, order, perce
       {typeof number === 'number' ? (
         <div style={{ display: 'flex' }}>
           <animated.h1 style={styles}>
-            {isNaN(spring) && spring.val.to((val) => Math.floor(val))}
+            {isNaN(spring) && spring.val.to((val) => Math.floor(val).toLocaleString('en-US'))}
           </animated.h1>
           <animated.h1 style={tabletSize ? plusStyles : plusStyles}>
             {plus && '+'}
