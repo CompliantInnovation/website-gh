@@ -22,9 +22,16 @@ body {
   font-size: 18px;
 }
 
+@font-face {
+  font-family: 'Varela Round';
+  src: url('/fonts/VarelaRound-Regular.ttf');
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
 p {
   font-size: 16px;
-  max-width: 550px;
   margin-top: 0;
 }
 
@@ -36,10 +43,6 @@ h2 {
   font-size: 28px;
   margin-bottom: 0;
 }
-
-/* h4 {
-  font-size: 2vw;
-} */
 
 @media (max-width: 800px) {
   h1 {
@@ -88,10 +91,14 @@ h2 {
   }
 }
 
-.translate {
-  /* transition-delay: 0.5s; */
-  /* transition: all 1s ease-out; */
-  transform: translate(-200px, 0px);
+.title {
+  margin-bottom: 0;
+  color: var(--blueDocspera);
+}
+
+.title-h2 {
+  margin-top: 0;
+  margin-bottom: 5px;
 }
 
 .carousel-container {
