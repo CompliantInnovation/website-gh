@@ -5,13 +5,21 @@ import LogoAnimation from '../components/LogoAnimation'
 import NumberScroll from '../components/NumberScroll'
 import Carousel from '../components/Carousel'
 import FooterBar from '../components/Footer'
+import { useMedia } from '../hooks/useMedia'
 
 export default function Home() {
+  const isBrowser = () => typeof window !== 'undefined'
+  let smallScreen
+  if (isBrowser) {
+    smallScreen = useMedia('(max-width: 1100px)')
+  }
+
   return (
     <div className='container'>
       <Head>
-        <title>DocSpera</title>
+        <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform</title>
         <link rel='icon' href='/favicon.ico' />
+        <link rel='preload' href='/fonts/VarelaRound-Regular.ttf' as='font' crossOrigin='' />
       </Head>
       <HeaderNav />
 
@@ -27,7 +35,7 @@ export default function Home() {
           backgroundColor: 'var(--blueXLight)',
           maxWidth: '100%',
           marginTop: -10,
-          paddingBottom: 10,
+          paddingBottom: 10
         }}
       >
         <div className='statistics'>
@@ -47,7 +55,7 @@ export default function Home() {
           </div>
           <div>
             <NumberScroll
-              imgSrc='images/episodic-cases.png'
+              imgSrc='images/graphics/episodic-cases.png'
               number={350000}
               title='Episodic Cases'
             />
@@ -62,20 +70,40 @@ export default function Home() {
       </div>
 
       <div className='inner-div'>
-        <div id='vision-section'>
-          {/* Iphone Calendar Mockups */}
-          <div id='iphone-calendar-div'>
-            <img id='iphone-calendar' src='images/product-shots/iphone-calendar.png' />
-          </div>
-
-          <div id='timeline-div'>
-            <h2>
-              Vision to Address Priorities and Unmet Needs Through Patient’s Surgical Journey{' '}
+        {smallScreen ? (
+          <div id='vision-section'>
+            <h2 style={{ marginBottom: 35, maxWidth: 550, textAlign: 'center' }}>
+              Our Vision is to Address Priorities and Unmet Needs Through a Patient’s Surgical
+              Journey
             </h2>
-            {/* Timeline Graphic + Copy  "1. Pre-Operative..." */}
-            <img id='timeline-graphic' src='images/timeline-graphic.png' />
+            {/* Iphone Calendar Mockups */}
+
+            <div id='iphone-calendar-div'>
+              <img id='iphone-calendar' src='images/product-shots/iphone-calendar.png' />
+            </div>
+
+            <div id='timeline-div'>
+              {/* Timeline Graphic + Copy  "1. Pre-Operative..." */}
+              <img id='timeline-graphic' src='images/timeline-graphic.png' />
+            </div>
           </div>
-        </div>
+        ) : (
+          <div id='vision-section'>
+            {/* Iphone Calendar Mockups */}
+            <div id='iphone-calendar-div'>
+              <img id='iphone-calendar' src='images/product-shots/iphone-calendar.png' />
+            </div>
+
+            <div id='timeline-div'>
+              <h2>
+                Our Vision is to Address Priorities and Unmet Needs Through a Patient’s Surgical
+                Journey
+              </h2>
+              {/* Timeline Graphic + Copy  "1. Pre-Operative..." */}
+              <img id='timeline-graphic' src='images/graphics/timeline-graphic.png' />
+            </div>
+          </div>
+        )}
       </div>
 
       <div style={{ backgroundColor: 'var(--blueXLight)' }}>
@@ -102,13 +130,13 @@ export default function Home() {
               </ul>
             </p>
           </div>
-          <img id='connecting-graphic' src='images/connected-graphic.png' />
+          <img id='connecting-graphic' src='images/graphics/connected-graphic.png' />
         </div>
       </div>
 
       <div style={{ backgroundColor: 'var(--blueSky)' }}>
         <div className='inner-div'>
-          <h2 className='products-h2'>View Our Products For...</h2>
+          <h2 className='products-h2'>View our solutions for...</h2>
           <div className='product-section'>
             <div className='box'>
               <h4>
@@ -126,7 +154,8 @@ export default function Home() {
               </p>
               <Link href='/provider'>
                 <button>
-                  View Provider Products <img className='chevron-img' src='images/chevron.png' />
+                  View Provider Products{' '}
+                  <img className='chevron-img' src='images/graphics/chevron.png' />
                 </button>
               </Link>
             </div>
@@ -147,7 +176,7 @@ export default function Home() {
               <Link href='/medical-device'>
                 <button>
                   View Medical Device Products{' '}
-                  <img className='chevron-img' src='images/chevron.png' />
+                  <img className='chevron-img' src='images/graphics/chevron.png' />
                 </button>
               </Link>
             </div>
@@ -194,7 +223,7 @@ export default function Home() {
         />
       </div>
 
-      <img id='map' src='images/map-with-pins.png' alt='map of docspera locations' />
+      <img id='map' src='images/graphics/map-with-pins.png' alt='map of docspera locations' />
 
       <FooterBar />
       <style jsx>{`
@@ -204,22 +233,40 @@ export default function Home() {
         }
 
         #hero-h1 {
-          color: white ;
-          position: absolute;
-          top: 50px;
-          border-radius: 10px;
-          padding: 10px;
-          text-align: center;
-          // filter: drop-shadow(0 -10px 50px #cdf0fd);
-          font-family: 'Varela Round';
-          width: 100%;
-          text-shadow: 0 1px 4px RGBa(0,0,0, .6), 0 0 100px Black
         }
         
         #hero-h1 > h1 {
+          color: white;
           font-size: 64px;
-          margin-bottom: 0;
+          font-family: 'Varela Round';
+          text-align: center;
+          width: 90%;
+          position: absolute;
+          top: 50px;
+          left: calc(100% - 95%);
+          border-radius: 10px;
+          padding: 10px;
           text-shadow: 0 1px 2px RGBa(0,0,0, .6), 0 0 50px #cdf0fd;
+          // text-shadow: 0 1px 2px RGBa(0,0,0, .6), 0 0 50px var(--blueDocspera);
+          margin-bottom: 0;
+        }
+
+        @media (max-width: 1100px) {
+          #hero-h1 > h1 {
+            font-size: 50px;
+          }
+        }
+       
+        @media (max-width: 600px) {
+          #hero-h1 > h1 {
+            font-size: 40px;
+          }
+        }
+      
+        @media (max-width: 400px) {
+          #hero-h1 > h1 {
+            font-size: 36px;
+          }
         }
 
         #hero-h1 > span {
@@ -262,7 +309,7 @@ export default function Home() {
         }
 
         #vision-section h2 {
-          max-width: 500px; 
+          max-width: 550px; 
           margin-bottom: 20px;
         }
 
@@ -293,6 +340,7 @@ export default function Home() {
 
           #vision-section h2 {
             margin: 15px auto;
+
           }
         }
   
@@ -381,6 +429,7 @@ export default function Home() {
         }
 
         .products-h2 {
+          color: var(--blueDocspera);
           text-align: center;
           margin-left: 45px;
           margin-bottom: 20px; 
