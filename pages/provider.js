@@ -4,6 +4,7 @@ import HeaderNav from '../components/HeaderNav'
 import NumberScroll from '../components/NumberScroll'
 import Carousel from '../components/Carousel'
 import FooterBar from '../components/Footer'
+import ProviderSolutions from '../components/ProviderSolutions'
 
 export default function Provider() {
   // const isBrowser = () =>
@@ -116,14 +117,16 @@ export default function Provider() {
   return (
     <>
       <Head>
-        <title>DocSpera</title>
+        <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <HeaderNav />
 
       <div className='container'>
-        <h2>Intelligent Surgical Coordination: Enabling Efficiency and Profitability</h2>
-        <p>
+        <h2 id='hero-h2'>
+          Intelligent Surgical Coordination: Enabling Efficiency and Profitability
+        </h2>
+        <p id='hero-p'>
           DocSpera is an integrated surgical coordination solution to help manage coordination
           across multiple sites and teams, drive improved efficiencies and deliver better patient
           care.
@@ -156,51 +159,7 @@ export default function Provider() {
           </div>
         </div>
 
-        <div className='provider-solutions inner-div'>
-          <h2>Integrated Provider Solutions</h2>
-          <p>
-            Best in class SaaS, real-time, predictive platform for the entire surgical ecosystem
-          </p>
-          <div className='provider-solutions-row'>
-            <div>
-              <img src='images/scheduling.png' />
-              <h4>Integrated Surgical Scheduling & Coordination Across Entire Care Team</h4>
-              {/* <h6>Coordination across entire care team</h6> */}
-              <p>
-                <ul>
-                  <li>Case scheduling & OR management</li>
-                  <li>Image Sharing</li>
-                  <li>EMR & Telehealth intergration</li>
-                </ul>
-              </p>
-              <div>Integrated Workflow</div>
-            </div>
-            <div>
-              <img src='images/smart-scheduling.png' />
-              <h4>Surgical Dashboard for Managing Upcoming Cases</h4>
-              {/* <h6>Manage upcoming cases</h6> */}
-              <p>
-                <ul>
-                  <li>Real-time coordination between Clinic, OR Team & Device Rep</li>
-                  <li>Intelligent case backlog booking</li>
-                </ul>
-              </p>
-              <div>Optimized and Coordinated</div>
-            </div>
-            <div>
-              <img src='images/episode-of-care.png' />
-              <h4>Episode of Care Tracker for Post Operative Care Management</h4>
-              {/* <h6>Post operative care management</h6> */}
-              <p>
-                <ul>
-                  <li>Post-acute management and recovery coordination</li>
-                  <li>Risk stratification & management</li>
-                </ul>
-              </p>
-              <div>Outcomes and Risk Management</div>
-            </div>
-          </div>
-        </div>
+        <ProviderSolutions />
 
         <div id='seamless-integration' className='inner-div'>
           <h2>Seamless Integration </h2>
@@ -246,7 +205,7 @@ export default function Provider() {
         <div id='designed-for-providers' className='inner-div'>
           <h2>Designed for Providers Like You</h2>
           <div>
-            <img id='mock-up-img' src='images/mockups.png' />
+            <img id='mock-up-img' src='images/product-shots/mockups.png' />
 
             <div>
               <div className='box'>
@@ -260,21 +219,21 @@ export default function Provider() {
                 </div>
               </div>
               <div className='box'>
-                <img src='images/security.svg' />
+                <img src='images/graphics/security.svg' />
                 <div>
                   <h4>Secure</h4>
                   <p>Provider verified, SOC 2 level and HIPAA compliant</p>
                 </div>
               </div>
               <div className='box'>
-                <img src='images/data-driven.svg' />
+                <img src='images/graphics/data-driven.svg' />
                 <div>
                   <h4>Driven by Data</h4>
                   <p>Comprehensive and longitudinal data across the continuum of care</p>
                 </div>
               </div>
               <div className='box'>
-                <img src='images/integration.svg' />
+                <img src='images/graphics/integration.svg' />
                 <div>
                   <h4>Effortless Integration</h4>
                   <p>Web and mobile interface easily integrate with other critical systems</p>
@@ -336,9 +295,22 @@ export default function Provider() {
         
         h2 {
           margin-top: 80px;
-          margin-bottom: 20px;
-          max-width: 900px;
+          margin-bottom: 15px;
           z-index: 10;
+        }
+        
+        .container p {
+          margin-bottom: 10px;
+        }
+        
+        #hero-h2 {
+          text-align: center;
+        }
+        
+        #hero-p {
+          text-align: center;
+          max-width: 700px;
+          margin: 0 auto;
         }
 
         #surgeon-doodle {
@@ -355,94 +327,9 @@ export default function Provider() {
           }
         }
 
-        .provider-solutions-row {
-          display: flex;
-          justify-content: space-between;
-        }
-
-        .provider-solutions-row > div {
-          padding: 10px;
-        }
-
-        .provider-solutions-row img {
-          width: 300px;
-          height: 180px;
-          border-radius: 10px;
-          filter: drop-shadow(0 0px 10px lightgray);
-        }
-
-        .provider-solutions-row h4 {
-          margin: 0;
-          margin-top: 20px;
-          color: var(--blueDocspera);
-        }
-
-        .provider-solutions-row h6 {
-          color: var(--blueDark);
-          font-size: 16px;
-          font-weight: 500;
-          margin: 0;
-        }
-
-        .provider-solutions-row ul {
-          margin-left: -20px;
-        }
-
-        .provider-solutions-row p {
-          max-width: 300px;
-        }
-
-        .provider-solutions-row > div > div {
-          padding: 10px ;
-          background-color: var(--blueDocspera);
-          text-align: center;
-          border-radius: 18px;
-          color: white;
-          width: 100%;
-        }
-
-        .provider-solutions.inner-div > div > div {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-
-        }
-
-        @media (max-width: 650px) {
-          .provider-solutions-row {
-            display: flex;
-            flex-direction: column;
-          }
-
-          .provider-solutions-row div {
-            align-content: center;
-            align-items: center;
-            margin-bottom: 10px;
-            padding: 0 50px;
-            width: 100%;
-          }
-        }
-
-        #seamless-integration img {
-          display: block;
-          margin: 10px auto;
-          width: 100%;
-          margin-top: 30px;
-        }
-
-        // .logos div {
-        //   display: flex;
-        //   align-items: center;
-        //   justify-content: space-between;
-        //   height: 100px;
-     
-        // }
-
         .logos > div:nth-child(1) {
           display: none;
         }
-
-
 
         #designed-for-providers > div {
           display: flex;
@@ -506,8 +393,6 @@ export default function Provider() {
         .location {
           color: gray;
         }
-
-      
 
         .logos div {
           display: grid;
