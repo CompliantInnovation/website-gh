@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Head from 'next/head'
 import HeaderNav from '../components/HeaderNav'
 import NumberScroll from '../components/NumberScroll'
+import Carousel from '../components/Carousel'
 import FooterBar from '../components/Footer'
 import ProviderSolutions from '../components/ProviderSolutions'
 
@@ -59,20 +60,20 @@ export default function Provider() {
   }
 
   const instLogos = [
-    { img: 'UCSF.png', width: 100 },
-    { img: 'orthocare.jpg', width: 170 },
-    { img: 'TMI.jpg', width: 170 },
-    { img: 'webster.png', width: 160 },
-    { img: 'emerge-ortho.jpg', width: 180 },
-    { img: 'DOC.png', width: 150 },
-    { img: 'mos.png', width: 170 },
-    { img: 'CPO.png', width: 180 },
-    { img: 'baylor.jpg', width: 160 },
-    { img: 'childress.png', width: 200 },
-    { img: 'trinity.png', width: 180 },
-    { img: 'louisville.png', width: 170 },
-    { img: 'washington.png', width: 200 },
-    { img: 'englewood.png', width: 160 }
+    { img: 'images/logos/UCSF.png', width: 100 },
+    { img: 'images/logos/orthocare.jpg', width: 170 },
+    { img: 'images/logos/TMI.jpg', width: 170 },
+    { img: 'images/logos/webster.png', width: 160 },
+    { img: 'images/logos/emerge-ortho.jpg', width: 180 },
+    { img: 'images/logos/DOC.png', width: 150 },
+    { img: 'images/logos/mos.png', width: 170 },
+    { img: 'images/logos/CPO.png', width: 180 },
+    { img: 'images/logos/baylor.jpg', width: 160 },
+    { img: 'images/logos/childress.png', width: 200 },
+    { img: 'images/logos/trinity.png', width: 180 },
+    { img: 'images/logos/louisville.png', width: 170 },
+    { img: 'images/logos/washington.png', width: 200 },
+    { img: 'images/logos/englewood.png', width: 160 }
   ]
 
   const [viewMoreInst, setViewMoreInst] = useState(false)
@@ -268,7 +269,7 @@ export default function Provider() {
             <div>
               {instLogos.slice(0, numberOfInstLogos).map((logo) => {
                 return (
-                  <img src={`images/logos/${logo.img}`} height={logo.height} width={logo.width} />
+                  <img src={logo.img} height={logo.height} width={logo.width} />
                 )
               })}
               <button onClick={handleViewMoreInst}>
@@ -276,23 +277,10 @@ export default function Provider() {
               </button>
             </div>
             <div>
-              <img src='images/logos/UCSF.png' width={100} />
-              <img src='images/logos/orthocare.jpg' width={170} />
-              <img src='images/logos/TMI.jpg' width={170} />
-              <img src='images/logos/webster.png' width={160} />
-
-              <img src='images/logos/emerge-ortho.jpg' width={180} />
-              <img src='images/logos/DOC.png' width={150} />
-              <img src='images/logos/mos.png' width={170} />
-              <img src='images/logos/CPO.png' width={180} />
-
-              <img src='images/logos/baylor.jpg' width={160} />
-              <img src='images/logos/childress.png' width={200} />
-              <img src='images/logos/trinity.png' width={180} />
-              <img src='images/logos/louisville.png' width={170} />
-
-              <img src='images/logos/washington.png' width={200} />
-              <img src='images/logos/englewood.png' width={160} />
+              <Carousel
+                type='logo'
+                content={instLogos}
+              />
             </div>
           </div>
         </div>
@@ -425,6 +413,29 @@ export default function Provider() {
  
         .institutions div {
           grid-row-gap: 20px;
+        }
+
+        @media (max-width: 1000px) and (min-width: 650px) {
+          .institutions div:nth-child(2) {
+            display: none;
+          }
+
+          .institutions div:nth-child(1) {
+            display: grid;
+          }
+
+          .institutions button {
+            background-color: white;
+            border: 1px solid gray;
+            border-radius: 10px;
+            color: gray;
+            padding: 10px 50px;
+            font-size: 16px;
+            margin: auto;
+            grid-column: span 4;
+            filter: drop-shadow(0 5px  5px lightgray);
+            cursor: pointer;
+          }
         }
 
         @media (max-width: 1025px) {
