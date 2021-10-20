@@ -6,7 +6,7 @@ export default function Company() {
   return (
     <div className='container'>
       <Head>
-        <title>DocSpera</title>
+        <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform </title>
         <link rel='icon' href='/website-gh/favicon.ico' />
       </Head>
       <HeaderNav />
@@ -25,6 +25,13 @@ export default function Company() {
       <style jsx>{`
         .container {
           width: 100%;
+        }
+
+        p {
+          max-width: 700px;
+          margin: 0 auto;
+          text-align: center;
+          padding-top: 10px;
         }
       `}</style>
     </div>
