@@ -44,7 +44,7 @@ export default function HeaderNav() {
     <nav>
       {isBrowser && (
         <Link href='/'>
-          <a>
+          <a id='logo'>
             <img
               id='logo'
               src={`${tabletSize ? 'images/logo-short.png' : 'images/graphics/logo.svg'}`}
@@ -57,9 +57,9 @@ export default function HeaderNav() {
 
       <div id='right-side'>
         <div id='nav-items'>
-          <a className={productDropdown && 'active_a'} onMouseEnter={handleProductOnHover}>
-            <span>Product</span>
-            <div className={productDropdown && 'underline'}></div>
+          <a className={productDropdown && 'active_a' || ((router.pathname == '/provider' || router.pathname == '/medical-device') && 'active_a')} onMouseEnter={handleProductOnHover}>
+            <span>PRODUCT</span>
+            {/* <div className={productDropdown && 'underline'}></div> */}
           </a>
           {productDropdown && (
             <div className='product-dropdown' onMouseLeave={handleProductOnHover}>
@@ -94,17 +94,17 @@ export default function HeaderNav() {
 
           <Link href='/company'>
             <a className={router.pathname == '/company' && 'active_a'}>
-              <span>Company</span>
-              <div className={router.pathname == '/company' && 'underline'}></div>
+              <span>COMPANY</span>
+              {/* <div className={router.pathname == '/company' && 'underline'}></div> */}
             </a>
           </Link>
           <div className='dropdown'>
             <p className={contactDropdown && 'active_a'} onMouseEnter={handleContactOnHover}>
-              <span>Contact</span>
-              <div className={contactDropdown && 'underline'}></div>
+              <span>CONTACT</span>
+              {/* <div className={contactDropdown && 'underline'}></div> */}
             </p>
             {contactDropdown && (
-              <div className='contact-dropdown' onMouseLeave={handleContactOnHover}>
+              <div id='contact-dropdown' onMouseLeave={handleContactOnHover}>
                 <ul>
                   <li>
                     <a href='https://docspera.com/support' target='_blank'>
@@ -128,8 +128,8 @@ export default function HeaderNav() {
             onMouseEnter={handleBlogOnHover}
             onMouseLeave={handleBlogOnHover}
           >
-            <span>Blog</span>
-            <div className={blogHover && 'underline'}></div>
+            <span>BLOG</span>
+            {/* <div className={blogHover && 'underline'}></div> */}
           </a>
           {/* <Link href='/provider'>
             <a className={router.pathname == '/provider' && 'active_a'}>
@@ -151,7 +151,7 @@ export default function HeaderNav() {
           </a>
         ) : (
           <a className='ext-link' href='https://docspera.com/login' target='_blank'>
-            <button onClick={handleLogin}>Log In</button>
+            <button onClick={handleLogin}>LOGIN</button>
           </a>
         )}
       </div>
@@ -199,28 +199,36 @@ export default function HeaderNav() {
         }
 
         #nav-items a {
-          color: var(--blueDark);
+          color: var(--blueDocspera);
           text-decoration: none;
-          padding-right: 50px;
+          margin-right: 50px;
           font-size: 16px;
+          font-weight: bold;
+          padding: 10px 20px;
+          border-radius: 5px;
         }
 
+
         a:hover {
-          color: var(--blueDocspera);
+          background-color: rgba(0, 150, 250, 0.2);
         }
 
         .active_a,
         .dropdown .active_a {
-          color: var(--blueDark);
           font-weight: 600;
+          background-color: rgba(0, 150, 250, 0.2);
         }
 
-        .underline {
-          height: 3px;
-          width: 100%;
-          background-color: var(--blueDocspera);
-          border-radius: 10px;
+        #logo:hover {
+          background-color: rgba(0, 0, 0, 0);
         }
+
+        // .underline {
+        //   height: 3px;
+        //   width: 100%;
+        //   background-color: var(--blueDocspera);
+        //   border-radius: 10px;
+        // }
 
         #ext-link {
           padding: 0;
@@ -292,53 +300,63 @@ export default function HeaderNav() {
 
         .dropdown {
           position: relative;
-          padding-right: 50px;
+          margin-right: 50px;
         }
         .dropdown:hover {
           color: var(--blueDocspera);
         }
 
         .dropdown p {
-          color: var(--blueDark);
+          color: var(--blueDocspera);
           margin: 0;
           font-size: 16px;
+          font-weight: bold;
+          padding: 10px 20px;
+          border-radius: 5px;
         }
 
         .dropdown p:hover {
-          color: var(--blueDark);
+          background-color: rgba(0, 150, 250, 0.2);
         }
 
-        .contact-dropdown {
+        #contact-dropdown {
           display: flex;
           align-items: center;
           justify-content: center;
           position: absolute;
-          top: 100%;
-          left: -16%;
+          top: 110%;
+          left: -10%;
           background-color: rgba(255, 255, 255, 1);
           padding: 0px 10px;
           color: black;
           width: 140px;
-          margin-top: 16px;
+          padding-top: 10px;
+          margin-top: 3px;
+       
         }
 
-        .contact-dropdown ul {
+        #contact-dropdown ul {
           list-style-type: none;
           margin: 0;
           padding: 0;
           padding-bottom: 10px;
         }
-        .contact-dropdown li a {
-          padding-bottom: 10px;
+        #contact-dropdown li a {
           color: grey;
           padding-right: 0 !important;
+          margin: 0 ;
+          font-weight: normal;
+          padding: 0 0 10px 0;
+          
         }
 
-        .contact-dropdown li a:hover {
+        #contact-dropdown li a:hover {
           color: black;
           cursor: default;
           font-weight: bold;
           cursor: pointer;
+          background-color: white;
+          border-radius: 0;
         }
 
         h4 {
