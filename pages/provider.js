@@ -262,11 +262,11 @@ export default function Provider() {
         </div>
 
         <div className='inner-div'>
-          <h2 style={{ minWidth: '100%', marginBottom: 50 }}>
+          <h2 style={{ minWidth: '100%'}}>
             Join 300+ Institutions Using DocSpera Across the US
           </h2>
           <div className='logos institutions'>
-            <div>
+            {/* <div>
               {instLogos.slice(0, numberOfInstLogos).map((logo) => {
                 return (
                   <img src={logo.img} height={logo.height} width={logo.width} />
@@ -276,12 +276,12 @@ export default function Provider() {
                 {viewMoreInst ? 'View Less' : 'View More'}
               </button>
             </div>
-            <div>
+            <div> */}
               <Carousel
                 type='logo'
                 content={instLogos}
               />
-            </div>
+            {/* </div> */}
           </div>
         </div>
       </div>
