@@ -77,7 +77,7 @@ export default function Carousel({ content, type }) {
               return <CarouselItem itemInfo={item} key={idx} type={type} />
             }
           } else if (mobileSize) {
-            if (idx == current) {
+            if (idx == current || idx == current + 1) {
               console.log(current)
               return <CarouselItem itemInfo={item} key={idx} type={type} />
             }
@@ -131,6 +131,7 @@ export default function Carousel({ content, type }) {
           .left-chevron {
             width: 25px;
             height: 25px;
+            margin: 0;
           }
         }
 
