@@ -123,6 +123,7 @@ export default function HeaderNav() {
 
           <a
             className={blogHover && 'active_a'}
+            style={{ marginRight: 0 }}
             href='https://blog.d4.docspera.com/'
             target='_blank'
             onMouseEnter={handleBlogOnHover}
@@ -179,19 +180,7 @@ export default function HeaderNav() {
 
         #nav-items {
           display: flex;
-          padding-right: 15vh;
-        }
-
-        @media (max-width: 1000px) {
-          #nav-items {
-            padding: 0 6vh;
-          }
-        }
-
-        @media (max-width: 804px) {
-          #nav-items {
-            padding: 0 3vh;
-          }
+          padding-right: 10vh;
         }
 
         #nav-items span {
@@ -242,6 +231,7 @@ export default function HeaderNav() {
           color: white;
           padding: 10px 15px;
           font-size: 16px;
+          font-weight: bold;
         }
 
         .product-dropdown {
@@ -363,13 +353,39 @@ export default function HeaderNav() {
           margin: 0;
         }
 
-        @media (max-width: 650px) {
-          #nav-items a {
-            padding-right: 18px;
+
+        @media (max-width: 1050px) {
+          #nav-items {
+            padding-right: 6vh;
           }
-          .dropdown {
-            padding-right: 18px;
+
+          #nav-items a, .dropdown {
+            margin-right: 15px;
           }
+        }
+
+        @media (max-width: 880px) {
+          #nav-items {
+            padding-right: 3vh;
+          }
+          #nav-items a, .dropdown {
+            margin-right: 5px;
+          }
+        }
+
+
+        @media (max-width: 775px) {
+          #nav-items a, .dropdown p {
+            font-size: 15px;
+            padding: 5px 10px;
+          }
+          button {
+            font-size: 14px;
+          }
+          #nav-items {
+            padding:0 10px;
+          }
+     
         }
         // .responsive-nav {
         //   display: none;
