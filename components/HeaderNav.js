@@ -47,7 +47,7 @@ export default function HeaderNav() {
           <a>
             <img
               id='logo'
-              src={`${tabletSize ? 'images/logo-short.png' : 'images/logo.svg'}`}
+              src={`${tabletSize ? 'images/logo-short.png' : 'images/graphics/logo.svg'}`}
               height={`${tabletSize ? 40 : 70}`}
               width={`${tabletSize ? 40 : 150}`}
             />
@@ -67,7 +67,7 @@ export default function HeaderNav() {
                 <div className='box' onClick={handleProductOnHover}>
                   <h4>
                     <img src='images/surgeon-users.png' />
-                    Providers <img className='chevron-img' src='images/chevron.png' />
+                    Providers <img className='chevron-img' src='images/graphics/chevron.png' />
                   </h4>
                   <ul>
                     <li>Episode of Care</li>
@@ -80,7 +80,7 @@ export default function HeaderNav() {
                 <div className='box' onClick={handleProductOnHover}>
                   <h4>
                     <img src='images/medical-device.png' />
-                    Medical Device <img className='chevron-img' src='images/chevron.png' />
+                    Medical Device <img className='chevron-img' src='images/graphics/chevron.png' />
                   </h4>
                   <ul>
                     <li>Advanced Case Notification</li>
