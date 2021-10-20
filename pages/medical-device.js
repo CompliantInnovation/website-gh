@@ -1,27 +1,27 @@
 import Head from 'next/head'
 import HeaderNav from '../components/HeaderNav'
 import NumberScroll from '../components/NumberScroll'
-import Carousel from '../components/Carousel'
 import FooterBar from '../components/Footer'
+import ProviderSolutions from '../components/ProviderSolutions'
 
 export default function MedicalDevicePage() {
   return (
     <>
       <Head>
-        <title>DocSpera</title>
+        <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <HeaderNav />
       <div className='container'>
-        <h2>
+        <h2 id='hero-h2'>
           Power Your Digital and Surgical solutions using a Comprehensive, Intelligent Care
           Coordination platform
         </h2>
-        <p style={{ maxWidth: 600 }}>
+        <p id='hero-p'>
           DocSpera is an integrated, comprehensive, and compliant digital solution powering
           patient-specific data, enabling Clinical insights, including an efficient supply chain.
         </p>
-        <img src='images/medical-device-art-work.png' id='business' width={570} />
+        <img src='images/drawings/medical-device-art-work.png' id='business' width={570} />
         <div className='statistics'>
           <div>
             <NumberScroll imgSrc='images/surgeon-users.png' number={6000} title='Surgeons' plus />
@@ -53,7 +53,7 @@ export default function MedicalDevicePage() {
             <h1 style={{ marginBottom: 20, color: 'white' }}>Enterprise Offerings & Outcomes</h1>
             <div id='offerings-divs'>
               <div>
-                <h3>Docspera Demand</h3>
+                <h3>DocSpera Demand</h3>
                 <img src='images/case-notification.png' />
                 <h4>Advanced Case Notification</h4>
                 <p>
@@ -69,7 +69,7 @@ export default function MedicalDevicePage() {
                 </button>
               </div>
               <div>
-                <h3>DocSpera Integrator</h3>
+                <h3>Provider Premium</h3>
                 <img src='images/provider-solutions.png' height='auto' />
                 <h4>Integrated Provider Solutions</h4>
                 <p>
@@ -106,14 +106,14 @@ export default function MedicalDevicePage() {
 
         <div id='solve-challenges-section'>
           <div className='inner-div'>
-            <h2 style={{ marginBottom: 0 }}>Solving Urgent C-Suite Challenges </h2>
+            <h2 className='title-h2'>Solving Urgent C-Suite Challenges </h2>
             <p style={{ marginTop: 0 }}>
               With early, integrated, real-time capture of surgical cases:
             </p>
             <div id='solve-challenges-divs'>
               <div>
                 <h4>Inventory and Logistic Costs</h4>
-                <img src='images/cancellations.png' />
+                <img src='images/graphics/cancellations.png' />
                 <p>
                   Improved case preparedness and inventory management through earlier, more
                   integrated real-time updates of surgical case
@@ -125,7 +125,7 @@ export default function MedicalDevicePage() {
               </div>
               <div>
                 <h4>Product/Data Understanding</h4>
-                <img src='images/data-driven.png' />
+                <img src='images/graphics/data-driven.png' />
                 <p>Deeper understanding of your product performance across continuum of care</p>
                 <p>
                   Access real-world data and gain insight of your product performance in real-world
@@ -149,10 +149,8 @@ export default function MedicalDevicePage() {
         </div>
 
         <div id='advanced-case-notification' className='inner-div'>
-          <h3 style={{ marginTop: 100, marginBottom: 0 }}>DocSpera Demand</h3>
-          <h2 style={{ marginTop: 0, marginBottom: 0 }}>Real Time Advanced Case Notification</h2>
-          {/* <h2 style={{ marginTop: 100, marginBottom: 0 }}> Real Time Advanced Case Notification</h2> */}
-
+          <h3 className='title'>DocSpera Demand</h3>
+          <h2 className='title-h2'>Real Time Advanced Case Notification</h2>
           <p style={{ margin: 0 }}>Improves Case Preparedness and Supply Chain Efficiencies</p>
           <div style={{ display: 'flex', marginLeft: -20, marginTop: 20 }}>
             <ul>
@@ -164,77 +162,22 @@ export default function MedicalDevicePage() {
               <li className='badge'>Right Location</li>
             </ul>
           </div>
-          <img src='images/advanced-case-notification.png' />
+          <img src='images/graphics/advanced-case-notification-v2.png' />
         </div>
 
-        <div className='provider-solutions inner-div'>
-          <h2>Integrated Provider Solutions</h2>
-          <p>
-            Best in class SaaS, real-time, predictive platform for the entire surgical ecosystem
-          </p>
-          <div className='provider-solutions-row'>
-            <div>
-              <h3 style={{ textAlign: 'center', marginBottom: 10, marginTop: 10, minHeight: 65 }}>
-                Integrated Workflow
-              </h3>
-              <div className='img-div'>
-                <img src='images/share-calendar.png' />
-              </div>
-              <h4>Integrated Surgical Scheduling & Coordination Across Entire Care Team</h4>
-              {/* <h6>Coordination across entire care team</h6> */}
-              <p>
-                <ul>
-                  <li>Case scheduling & OR management</li>
-                  <li>Image Sharing</li>
-                  <li>EMR & Telehealth integration</li>
-                </ul>
-              </p>
-              <button style={{ padding: '10px 20px' }}>View Scheduling Solutions</button>
-            </div>
-            <div>
-              <h3 style={{ textAlign: 'center', marginBottom: 10, marginTop: 10, minHeight: 65 }}>
-                Optimized and Coordinated
-              </h3>
-              <div className='img-div'>
-                <img src='images/smart-scheduling.png' />
-              </div>
-              <h4>Surgical Dashboard for Managing Upcoming Cases</h4>
-              {/* <h6>Manage upcoming cases</h6> */}
-              <p>
-                <ul>
-                  <li>Real-time coordination between Clinic, OR Team & Device Rep</li>
-                  <li>Intelligent case backlog and cancellations re-booking</li>
-                </ul>
-              </p>
-            </div>
-            <div>
-              <h3 style={{ textAlign: 'center', marginBottom: 10, marginTop: 10, minHeight: 65 }}>
-                Outcomes and Risk Management
-              </h3>
-              <div className='img-div'>
-                <img src='images/eoc-mac.png' />
-              </div>
-              <h4>Episode of Care Tracker for Post operative care management </h4>
-              {/* <h6> Tracker for Post operative care management</h6> */}
-              <p>
-                <ul>
-                  <li>Post-acute management and recovery coordination</li>
-                  <li>Risk stratification & management</li>
-                </ul>
-              </p>
-            </div>
-          </div>
+        <div id='integrated-providers-solutions'>
+          <ProviderSolutions />
         </div>
 
         <div id='insights-section'>
           <div className='inner-div'>
-            <h3 style={{ marginTop: 50, marginBottom: 0 }}>DocSpera Insights</h3>
-            <h2 style={{ marginTop: 0, marginBottom: 0 }}>Data Intelligence & RWD Insights</h2>
+            <h3 className='title'>DocSpera Insights</h3>
+            <h2 className='title-h2'>Data Intelligence & RWD Insights</h2>
             <p>
               Support improved care delivery using real-world data and insights across the surgical
-              continuum{' '}
+              continuum
             </p>
-            <img src='images/demand-intel.png' />
+            <img src='images/product-shots/demand-intel.png' />
             <div id='insights-copy-div'>
               <div>
                 <div className='insight-title-div'>
@@ -269,6 +212,20 @@ export default function MedicalDevicePage() {
         .container > h2,
         .container > p {
           padding: 0 5vw;
+        }
+
+        #hero-h2 {
+          text-align: center;
+          padding-top: 80px;
+          max-width: 900px;
+          margin: 0 auto;
+        }
+
+        #hero-p {
+          text-align: center;
+          max-width: 700px;
+          margin: 0 auto;
+          padding-top: 10px;
         }
 
         button {
@@ -328,7 +285,7 @@ export default function MedicalDevicePage() {
           margin-top: 50px;
           padding: 70px 0 100px 0;
           width: 100%;
-          background-color: var(--blueDocspera);
+          background-color: var(--blueDark);
         }
 
         #offerings h2 {
@@ -342,9 +299,15 @@ export default function MedicalDevicePage() {
 
         #offerings-divs {
           display: flex;
-          justify-content: center;
+          justify-content: space-between;
           flex: 1;
           flex-wrap: wrap;
+        }
+
+        @media (max-width: 1042px) {
+          #offerings-divs {
+            justify-content: center;
+          }
         }
 
         #offerings-divs > div {
@@ -355,7 +318,7 @@ export default function MedicalDevicePage() {
           padding: 15px;
           padding-bottom: 150px;
           margin: 10px;
-          max-width: 300px;
+          max-width: 335px;
         }
 
         #offerings-divs img {
@@ -377,7 +340,7 @@ export default function MedicalDevicePage() {
         #offerings-divs h3 {
           text-align: center;
           margin-bottom: 10px;
-          color: var(--blueDark);
+          color: var(--blueDocspera);
         }
 
         .outcome {
@@ -500,57 +463,6 @@ export default function MedicalDevicePage() {
           background-color: white;
           filter: drop-shadow(0 0px 10px lightgray);
           border-radius: 10px;
-        }
-
-        .img-div {
-          max-height: 250px;
-          background-color: transparent !important;
-        }
-
-        .provider-solutions-row img {
-          width: 100%;
-          border-radius: 10px;
-          filter: drop-shadow(0 0px 10px lightgray);
-        }
-
-        .provider-solutions-row h4 {
-          margin: 0;
-          margin-top: 20px;
-          color: var(--blueDocspera);
-          margin-right: 15px;
-          margin-left: 15px;
-        }
-
-        .provider-solutions-row h6 {
-          color: var(--blueDark);
-          font-size: 16px;
-          font-weight: 500;
-          margin: 0;
-        }
-
-        .provider-solutions-row ul {
-          margin-left: -20px;
-        }
-
-        .provider-solutions-row p {
-          max-width: 300px;
-          margin-right: 10px;
-          margin-left: 15px;
-        }
-
-        .provider-solutions-row > div > div {
-          padding: 10px;
-          background-color: var(--blueDocspera);
-          text-align: center;
-          border-radius: 18px;
-          color: white;
-          width: 100%;
-        }
-
-        .view-product-btn {
-          position: static;
-          width: 100%;
-          height: 40px;
         }
       `}</style>
     </>
