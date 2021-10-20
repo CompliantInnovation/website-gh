@@ -35,7 +35,7 @@ export default function CarouselItem({ itemInfo, type }) {
         }
         @media (max-width:614px) {
           img {
-            width: ${itemInfo.width/1.2}px;
+            width: ${itemInfo.width/1.4}px;
           }
         }
         @media (max-width:368px) {
