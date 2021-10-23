@@ -23,15 +23,24 @@ export default function MedicalDevicePage() {
           patient-specific data, enabling Clinical insights, including an efficient supply chain.
         </p>
         {/* <div> */}
-        <img src='images/drawings/medical-device-art-work.png' id='business' width={570} />
+        <img
+          src='/website-gh/images/drawings/medical-device-art-work.png'
+          id='business'
+          width={570}
+        />
         {/* </div> */}
 
         <div style={{ backgroundColor: 'var(--blueXLight' }}>
           <div className='statistics'>
             <div>
-              <NumberScroll imgSrc='images/surgeon-users.png' number={6000} title='Surgeons' plus />
               <NumberScroll
-                imgSrc='images/surgical-cases.png'
+                imgSrc='/website-gh/images/surgeon-users.png'
+                number={6000}
+                title='Surgeons'
+                plus
+              />
+              <NumberScroll
+                imgSrc='/website-gh/images/surgical-cases.png'
                 number={350000}
                 title='Surgical Cases'
                 plus
@@ -39,13 +48,13 @@ export default function MedicalDevicePage() {
             </div>
             <div id='placement'>
               <NumberScroll
-                imgSrc='images/medical-device.png'
+                imgSrc='/website-gh/images/medical-device.png'
                 number={60}
                 title='Top Global Medical Device Companies'
                 percent
               />
               <NumberScroll
-                imgSrc='images/tech-partners.png'
+                imgSrc='/website-gh/images/tech-partners.png'
                 number={30}
                 title='Technology Partners'
                 plus
@@ -60,7 +69,7 @@ export default function MedicalDevicePage() {
             <div id='offerings-divs'>
               <div>
                 <h3>DocSpera Demand</h3>
-                <img src='images/case-notification.png' />
+                <img src='/website-gh/images/case-notification.png' />
                 <h4>Advanced Case Notification</h4>
                 <p>
                   Early and reliable case demand signal to improve case support preparedness and
@@ -76,7 +85,7 @@ export default function MedicalDevicePage() {
               </div>
               <div>
                 <h3>Provider Premium</h3>
-                <img src='images/provider-solutions.png' height='auto' />
+                <img src='/website-gh/images/provider-solutions.png' height='auto' />
                 <h4>Integrated Provider Solutions</h4>
                 <p>
                   Flexible platform & modules to integrate and enhance multiple enterprise software
@@ -92,7 +101,7 @@ export default function MedicalDevicePage() {
               </div>
               <div>
                 <h3>DocSpera Insights</h3>
-                <img src='images/data-intelligence.png' />
+                <img src='/website-gh/images/data-intelligence.png' />
                 <h4>Data Intelligence & RWD Insights</h4>
                 <p>
                   Support the capture of real-world data across the surgical continuum - from
@@ -119,7 +128,7 @@ export default function MedicalDevicePage() {
             <div id='solve-challenges-divs'>
               <div>
                 <h4>Inventory and Logistic Costs</h4>
-                <img src='images/graphics/cancellations.png' />
+                <img src='/website-gh/images/graphics/cancellations.png' />
                 <p>
                   Improved case preparedness and inventory management through earlier, more
                   integrated real-time updates of surgical case
@@ -131,7 +140,7 @@ export default function MedicalDevicePage() {
               </div>
               <div>
                 <h4>Product/Data Understanding</h4>
-                <img src='images/graphics/data-driven.png' />
+                <img src='/website-gh/images/graphics/data-driven.png' />
                 <p>Deeper understanding of your product performance across continuum of care</p>
                 <p>
                   Access real-world data and gain insight of your product performance in real-world
@@ -140,7 +149,7 @@ export default function MedicalDevicePage() {
               </div>
               <div>
                 <h4>Market Penetration</h4>
-                <img src='images/strategic.png' />
+                <img src='/website-gh/images/strategic.png' />
                 <p style={{ maxWidth: 'none' }}>
                   Strengthen market position and become a more strategic partner to your customers
                   through diversified and easily managed risk-sharing based offerings
@@ -172,10 +181,13 @@ export default function MedicalDevicePage() {
             {useMedia('(max-width: 850px') ? (
               <img
                 id='ACN-img-mobile'
-                src='images/graphics/advanced-case-notification-mobile-v3.png'
+                src='/website-gh/images/graphics/advanced-case-notification-mobile-v3.png'
               />
             ) : (
-              <img id='ACN-img-desktop' src='images/graphics/advanced-case-notification-v2.png' />
+              <img
+                id='ACN-img-desktop'
+                src='/website-gh/images/graphics/advanced-case-notification-v2.png'
+              />
             )}
           </div>
         </div>
@@ -193,26 +205,26 @@ export default function MedicalDevicePage() {
               continuum
             </p>
             <div id='demand-intel-img-div'>
-              <img src='images/product-shots/demand-intel.png' />
+              <img src='/website-gh/images/product-shots/demand-intel.png' />
             </div>
             <div id='insights-copy-div'>
               <div>
                 <div className='insight-title-div'>
-                  <img src='images/line-graph.png' />
+                  <img src='/website-gh/images/line-graph.png' />
                   <h4>Demand Intelligence</h4>
                 </div>
                 <p>View aggregated case demand information by region</p>
               </div>
               <div>
                 <div className='insight-title-div'>
-                  <img src='images/mac.png' />
+                  <img src='/website-gh/images/mac.png' />
                   <h4>Device Intelligence</h4>
                 </div>
                 <p>Understand market share across specialty and therapeutic areas</p>
               </div>
               <div>
                 <div className='insight-title-div'>
-                  <img src='images/target.png' />
+                  <img src='/website-gh/images/target.png' />
                   <h4>Device Registry</h4>
                 </div>
                 <p>
