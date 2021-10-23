@@ -61,20 +61,20 @@ export default function Provider() {
   }
 
   const instLogos = [
-    { img: 'images/logos/UCSF.png', width: 100 },
-    { img: 'images/logos/orthocare.jpg', width: 170 },
-    { img: 'images/logos/TMI.jpg', width: 170 },
-    { img: 'images/logos/webster.png', width: 160 },
-    { img: 'images/logos/emerge-ortho.jpg', width: 180 },
-    { img: 'images/logos/DOC.png', width: 150 },
-    { img: 'images/logos/mos.png', width: 170 },
-    { img: 'images/logos/CPO.png', width: 180 },
-    { img: 'images/logos/baylor.jpg', width: 160 },
-    { img: 'images/logos/childress.png', width: 200 },
-    { img: 'images/logos/trinity.png', width: 180 },
-    { img: 'images/logos/louisville.png', width: 170 },
-    { img: 'images/logos/washington.png', width: 200 },
-    { img: 'images/logos/englewood.png', width: 160 }
+    { img: '/website-gh/images/logos/UCSF.png', width: 100 },
+    { img: '/website-gh/images/logos/orthocare.jpg', width: 170 },
+    { img: '/website-gh/images/logos/TMI.jpg', width: 170 },
+    { img: '/website-gh/images/logos/webster.png', width: 160 },
+    { img: '/website-gh/images/logos/emerge-ortho.jpg', width: 180 },
+    { img: '/website-gh/images/logos/DOC.png', width: 150 },
+    { img: '/website-gh/images/logos/mos.png', width: 170 },
+    { img: '/website-gh/images/logos/CPO.png', width: 180 },
+    { img: '/website-gh/images/logos/baylor.jpg', width: 160 },
+    { img: '/website-gh/images/logos/childress.png', width: 200 },
+    { img: '/website-gh/images/logos/trinity.png', width: 180 },
+    { img: '/website-gh/images/logos/louisville.png', width: 170 },
+    { img: '/website-gh/images/logos/washington.png', width: 200 },
+    { img: '/website-gh/images/logos/englewood.png', width: 160 }
   ]
 
   const [viewMoreInst, setViewMoreInst] = useState(false)
@@ -133,12 +133,17 @@ export default function Provider() {
             across multiple sites and teams, drive improved efficiencies and deliver better patient
             care.
           </p>
-          <img src='images/provider-art-work.png' id='surgeon-doodle' />
+          <img src='/website-gh/images/provider-art-work.png' id='surgeon-doodle' />
           <div className='statistics'>
             <div>
-              <NumberScroll imgSrc='images/surgeon-users.png' number={6000} title='Surgeons' plus />
               <NumberScroll
-                imgSrc='images/patient-volume.png'
+                imgSrc='/website-gh/images/surgeon-users.png'
+                number={6000}
+                title='Surgeons'
+                plus
+              />
+              <NumberScroll
+                imgSrc='/website-gh/images/patient-volume.png'
                 number={100000}
                 title='Monthly Patient Visits'
                 plus
@@ -146,13 +151,13 @@ export default function Provider() {
             </div>
             <div>
               <NumberScroll
-                imgSrc='images/practices.png'
+                imgSrc='/website-gh/images/practices.png'
                 number={300}
                 title='Practices, ASCs and Hospitals'
                 plus
               />
               <NumberScroll
-                imgSrc='images/surgical-cases.png'
+                imgSrc='/website-gh/images/surgical-cases.png'
                 number={350000}
                 title='Surgical Cases'
                 plus
@@ -164,7 +169,7 @@ export default function Provider() {
         <div style={{ backgroundColor: 'var(--blueDocspera', height: 400 }}>
           <div id='seamless-integration' className='inner-div'>
             <h2 style={{ color: 'white' }}>Seamless Integration </h2>
-            {/* <img src='images/seamless-integration.png' /> */}
+            {/* <img src='/website-gh/images/seamless-integration.png' /> */}
           </div>
         </div>
 
@@ -177,31 +182,35 @@ export default function Provider() {
             <div>
               {emrLogos.slice(0, numberOfEmrLogos).map((logo) => {
                 return (
-                  <img src={`images/logos/${logo.img}`} height={logo.height} width={logo.width} />
+                  <img
+                    src={`/website-gh/images/logos/${logo.img}`}
+                    height={logo.height}
+                    width={logo.width}
+                  />
                 )
               })}
               <button onClick={handleViewMoreEmr}>{viewMoreEmr ? 'View Less' : 'View More'}</button>
             </div>
             <div>
-              <img src='images/logos/athena-health.png' width={220} />
-              <img src='images/logos/prime.png' width={120} />
-              <img src='images/logos/modernizing-medicine.png' width={190} />
-              <img src='images/logos/medstrat.jpg' width={190} />
+              <img src='/website-gh/images/logos/athena-health.png' width={220} />
+              <img src='/website-gh/images/logos/prime.png' width={120} />
+              <img src='/website-gh/images/logos/modernizing-medicine.png' width={190} />
+              <img src='/website-gh/images/logos/medstrat.jpg' width={190} />
 
-              <img src='images/logos/CMS.jpg' height={65} width={100} />
-              <img src='images/logos/centricity.png' width={150} />
-              <img src='images/logos/medent.png' width={180} />
-              <img src='images/logos/app-orchard.png' width={150} />
+              <img src='/website-gh/images/logos/CMS.jpg' height={65} width={100} />
+              <img src='/website-gh/images/logos/centricity.png' width={150} />
+              <img src='/website-gh/images/logos/medent.png' width={180} />
+              <img src='/website-gh/images/logos/app-orchard.png' width={150} />
 
-              <img src='images/logos/elation-health.jpg' width={190} />
-              <img src='images/logos/next-gen.jpg' width={140} />
-              <img src='images/logos/e-clinical-works.jpg' width={180} />
-              <img src='images/logos/cerner.png' width={170} />
+              <img src='/website-gh/images/logos/elation-health.jpg' width={190} />
+              <img src='/website-gh/images/logos/next-gen.jpg' width={140} />
+              <img src='/website-gh/images/logos/e-clinical-works.jpg' width={180} />
+              <img src='/website-gh/images/logos/cerner.png' width={170} />
 
-              <img src='images/logos/allscripts.png' width={170} />
-              <img src='images/logos/drchrono.png' width={140} />
-              <img src='images/logos/greenway.png' width={150} />
-              <img src='images/logos/SRS.jpg' width={120} />
+              <img src='/website-gh/images/logos/allscripts.png' width={170} />
+              <img src='/website-gh/images/logos/drchrono.png' width={140} />
+              <img src='/website-gh/images/logos/greenway.png' width={150} />
+              <img src='/website-gh/images/logos/SRS.jpg' width={120} />
             </div>
           </div>
         </div>
@@ -210,11 +219,11 @@ export default function Provider() {
           <div id='designed-for-providers' className='inner-div'>
             <h2>Designed for Providers Like You</h2>
             <div>
-              <img id='mock-up-img' src='images/product-shots/mockups.png' />
+              <img id='mock-up-img' src='/website-gh/images/product-shots/mockups.png' />
 
               <div>
                 <div className='box'>
-                  <img src='images/surgical.svg' />
+                  <img src='/website-gh/images/surgical.svg' />
                   <div>
                     <h4>Built for the Surgical Environment</h4>
                     <p>
@@ -224,21 +233,21 @@ export default function Provider() {
                   </div>
                 </div>
                 <div className='box'>
-                  <img src='images/graphics/security.svg' />
+                  <img src='/website-gh/images/graphics/security.svg' />
                   <div>
                     <h4>Secure</h4>
                     <p>Provider verified, SOC 2 level and HIPAA compliant</p>
                   </div>
                 </div>
                 <div className='box'>
-                  <img src='images/graphics/data-driven.svg' />
+                  <img src='/website-gh/images/graphics/data-driven.svg' />
                   <div>
                     <h4>Driven by Data</h4>
                     <p>Comprehensive and longitudinal data across the continuum of care</p>
                   </div>
                 </div>
                 <div className='box'>
-                  <img src='images/graphics/integration.svg' />
+                  <img src='/website-gh/images/graphics/integration.svg' />
                   <div>
                     <h4>Effortless Integration</h4>
                     <p>Web and mobile interface easily integrate with other critical systems</p>
@@ -256,7 +265,10 @@ export default function Provider() {
               {testimonials.map((t, idx) => {
                 return (
                   <div className='testimonial' key={idx}>
-                    <img src={`images/testimonials/${t.pic}`} className='testimonial-img' />
+                    <img
+                      src={`/website-gh/images/testimonials/${t.pic}`}
+                      className='testimonial-img'
+                    />
                     <div>
                       <p>"...{t.quote}..."</p>
                       <span className='name'> - {t.name}</span>
@@ -270,9 +282,7 @@ export default function Provider() {
         </div>
 
         <div className='inner-div'>
-          <h2 style={{ minWidth: '100%'}}>
-            Join 300+ Institutions Using DocSpera Across the US
-          </h2>
+          <h2 style={{ minWidth: '100%' }}>Join 300+ Institutions Using DocSpera Across the US</h2>
           <div className='logos institutions'>
             {/* <div>
               {instLogos.slice(0, numberOfInstLogos).map((logo) => {
@@ -283,10 +293,7 @@ export default function Provider() {
               </button>
             </div>
             <div> */}
-              <Carousel
-                type='logo'
-                content={instLogos}
-              />
+            <Carousel type='logo' content={instLogos} />
             {/* </div> */}
           </div>
         </div>

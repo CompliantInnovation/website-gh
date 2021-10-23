@@ -12,7 +12,7 @@ const ProviderSolutions = () => {
             <div>
               <h4>Integrated Surgical Scheduling & Coordination Across Entire Care Team</h4>
               <div className='img-div'>
-                <img src='images/share-calendar.png' />
+                <img src='/website-gh/images/share-calendar.png' />
               </div>
               <p>
                 <ul>
@@ -30,7 +30,7 @@ const ProviderSolutions = () => {
             <div>
               <h4>Surgical Dashboard for Managing Upcoming Cases</h4>
               <div className='img-div'>
-                <img src='images/product-shots/smart-scheduling.png' />
+                <img src='/website-gh/images/product-shots/smart-scheduling.png' />
               </div>
               <p>
                 <ul>
@@ -47,7 +47,7 @@ const ProviderSolutions = () => {
             <div>
               <h4>Episode of Care Tracker for Post Operative Care Management </h4>
               <div className='img-div'>
-                <img src='images/product-shots/EOC.png' />
+                <img src='/website-gh/images/product-shots/EOC.png' />
               </div>
               <p>
                 <ul>
