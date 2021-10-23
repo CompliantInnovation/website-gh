@@ -32,10 +32,7 @@ export default function Home() {
 
       <div
         style={{
-          backgroundColor: 'var(--blueXLight)',
-          maxWidth: '100%',
-          marginTop: -10,
-          paddingBottom: 10
+          height: useMedia('(max-width: 800px') ? 170 : 0
         }}
       >
         <div className='statistics'>
@@ -227,12 +224,8 @@ export default function Home() {
 
       <FooterBar />
       <style jsx>{`
-
         .container {
           width: 100%;
-        }
-
-        #hero-h1 {
         }
         
         #hero-h1 > h1 {
@@ -277,12 +270,6 @@ export default function Home() {
           z-index: -100;
           min-width: 100%;
           height: 100%;
-        }
-
-        @media (max-width: ) {
-          #landing-bg {
-
-          }
         }
 
 
