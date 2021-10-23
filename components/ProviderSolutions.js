@@ -1,70 +1,78 @@
 import React from 'react'
 
-const ProviderSolutions = (props) => {
+const ProviderSolutions = () => {
   return (
-    <div className='provider-solutions inner-div'>
-      <h3 className='title'>Provider Premium</h3>
-      <h2 className='title-h2'>Integrated Provider Solutions</h2>
-      <p>Best in class SaaS, real-time, predictive platform for the entire surgical ecosystem</p>
-      <div className='provider-solutions-row'>
-        <div className='content'>
-          <div>
-            <div className='img-div'>
-              <img src='images/share-calendar.png' />
+    <div style={{ backgroundColor: 'var(--blueXLight)', width: '100%' }}>
+      <div className='provider-solutions inner-div'>
+        <h3 className='title'>Provider Premium</h3>
+        <h2 className='title-h2'>Integrated Provider Solutions</h2>
+        <p>Best in class SaaS, real-time, predictive platform for the entire surgical ecosystem</p>
+        <div className='provider-solutions-row'>
+          <div className='content'>
+            <div>
+              <h4>Integrated Surgical Scheduling & Coordination Across Entire Care Team</h4>
+              <div className='img-div'>
+                <img src='images/share-calendar.png' />
+              </div>
+              <p>
+                <ul>
+                  <li>Case scheduling & OR management</li>
+                  <li>Image Sharing</li>
+                  <li>EMR & Telehealth integration</li>
+                </ul>
+              </p>
             </div>
-            <h4>Integrated Surgical Scheduling & Coordination Across Entire Care Team</h4>
-            <p>
-              <ul>
-                <li>Case scheduling & OR management</li>
-                <li>Image Sharing</li>
-                <li>EMR & Telehealth integration</li>
-              </ul>
-            </p>
+            <a href='https://docspera.com/scheduling' target='_blank'>
+              <button className='view-product-btn'>View Scheduling Solutions</button>
+            </a>
           </div>
-          <a href='https://docspera.com/scheduling' target='_blank'>
-            <button className='view-product-btn'>View Scheduling Solutions</button>
-          </a>
-        </div>
-        <div className='content'>
-          <div>
-            <div className='img-div'>
-              <img src='images/product-shots/smart-scheduling.png' />
+          <div className='content'>
+            <div>
+              <h4>Surgical Dashboard for Managing Upcoming Cases</h4>
+              <div className='img-div'>
+                <img src='images/product-shots/smart-scheduling.png' />
+              </div>
+              <p>
+                <ul>
+                  <li>Real-time coordination between Clinic, OR Team & Device Rep</li>
+                  <li>Intelligent case backlog and cancellations re-booking</li>
+                </ul>
+              </p>
             </div>
-            <h4>Surgical Dashboard for Managing Upcoming Cases</h4>
-            <p>
-              <ul>
-                <li>Real-time coordination between Clinic, OR Team & Device Rep</li>
-                <li>Intelligent case backlog and cancellations re-booking</li>
-              </ul>
-            </p>
+            <a href='https://docspera.com/or' target='_blank'>
+              <button className='view-product-btn'>View Management Solutions</button>
+            </a>
           </div>
-          <a href='https://docspera.com/or' target='_blank'>
-            <button className='view-product-btn'>View Management Solutions</button>
-          </a>
-        </div>
-        <div className='content'>
-          <div>
-            <div className='img-div'>
-              <img src='images/product-shots/EOC.png' />
+          <div className='content'>
+            <div>
+              <h4>Episode of Care Tracker for Post Operative Care Management </h4>
+              <div className='img-div'>
+                <img src='images/product-shots/EOC.png' />
+              </div>
+              <p>
+                <ul>
+                  <li>Post-acute management and recovery coordination</li>
+                  <li>Risk stratification & management</li>
+                </ul>
+              </p>
             </div>
-            <h4>Episode of Care Tracker for Post Operative Care Management </h4>
-            <p>
-              <ul>
-                <li>Post-acute management and recovery coordination</li>
-                <li>Risk stratification & management</li>
-              </ul>
-            </p>
+            <a href='https://docspera.com/eoc' target='_blank'>
+              <button className='view-product-btn'>View EOC Solutions</button>
+            </a>
           </div>
-          <a href='https://docspera.com/eoc' target='_blank'>
-            <button className='view-product-btn'>View EOC Solutions</button>
-          </a>
         </div>
       </div>
+
       <style jsx>{`
         .provider-solutions-row {
           display: flex;
           justify-content: center;
-          flex-wrap: wrap;
+        }
+
+        @media (max-width: 1000px) {
+          .provider-solutions-row {
+            flex-wrap: wrap;
+          }
         }
 
         .provider-solutions-row > div {
@@ -100,11 +108,10 @@ const ProviderSolutions = (props) => {
         }
 
         .provider-solutions-row h4 {
-          color: var(--blueDocspera);
           text-align: center;
+          height: 90px;
           max-width: 350px;
           margin: 0 auto;
-          padding-top: 20px;
           padding-left: 10px;
           padding-right: 10px;
         }
@@ -154,7 +161,7 @@ const ProviderSolutions = (props) => {
           font-weight: 500;
           width: 100%;
           height: 40px;
-          max-width: 500px;
+          max-width: 350px;
           display: block;
           margin: 0 auto;
         }
