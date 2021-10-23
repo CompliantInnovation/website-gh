@@ -47,7 +47,11 @@ export default function HeaderNav() {
           <a id='logo'>
             <img
               id='logo'
-              src={`${tabletSize ? 'images/logo-short.png' : 'images/graphics/logo.svg'}`}
+              src={`${
+                tabletSize
+                  ? '/website-gh/images/logo-short.png'
+                  : '/website-gh/images/graphics/logo.svg'
+              }`}
               height={`${tabletSize ? 40 : 70}`}
               width={`${tabletSize ? 40 : 150}`}
             />
@@ -57,7 +61,14 @@ export default function HeaderNav() {
 
       <div id='right-side'>
         <div id='nav-items'>
-          <a className={productDropdown && 'active_a' || ((router.pathname == '/provider' || router.pathname == '/medical-device') && 'active_a')} onMouseEnter={handleProductOnHover}>
+          <a
+            className={
+              (productDropdown && 'active_a') ||
+              ((router.pathname == '/provider' || router.pathname == '/medical-device') &&
+                'active_a')
+            }
+            onMouseEnter={handleProductOnHover}
+          >
             <span>PRODUCT</span>
             {/* <div className={productDropdown && 'underline'}></div> */}
           </a>
@@ -66,8 +77,9 @@ export default function HeaderNav() {
               <Link href='/provider'>
                 <div className='box' onClick={handleProductOnHover}>
                   <h4>
-                    <img src='images/surgeon-users.png' />
-                    Providers <img className='chevron-img' src='images/graphics/chevron.png' />
+                    <img src='/website-gh/images/surgeon-users.png' />
+                    Providers{' '}
+                    <img className='chevron-img' src='/website-gh/images/graphics/chevron.png' />
                   </h4>
                   <ul>
                     <li>Episode of Care</li>
@@ -79,8 +91,9 @@ export default function HeaderNav() {
               <Link href='/medical-device'>
                 <div className='box' onClick={handleProductOnHover}>
                   <h4>
-                    <img src='images/medical-device.png' />
-                    Medical Device <img className='chevron-img' src='images/graphics/chevron.png' />
+                    <img src='/website-gh/images/medical-device.png' />
+                    Medical Device{' '}
+                    <img className='chevron-img' src='/website-gh/images/graphics/chevron.png' />
                   </h4>
                   <ul>
                     <li>Advanced Case Notification</li>
@@ -196,7 +209,6 @@ export default function HeaderNav() {
           padding: 10px 20px;
           border-radius: 5px;
         }
-
 
         a:hover {
           background-color: rgba(0, 150, 250, 0.2);
@@ -322,7 +334,6 @@ export default function HeaderNav() {
           width: 140px;
           padding-top: 10px;
           margin-top: 3px;
-       
         }
 
         #contact-dropdown ul {
@@ -334,10 +345,9 @@ export default function HeaderNav() {
         #contact-dropdown li a {
           color: grey;
           padding-right: 0 !important;
-          margin: 0 ;
+          margin: 0;
           font-weight: normal;
           padding: 0 0 10px 0;
-          
         }
 
         #contact-dropdown li a:hover {
@@ -353,13 +363,13 @@ export default function HeaderNav() {
           margin: 0;
         }
 
-
         @media (max-width: 1050px) {
           #nav-items {
             padding-right: 6vh;
           }
 
-          #nav-items a, .dropdown {
+          #nav-items a,
+          .dropdown {
             margin-right: 15px;
           }
         }
@@ -368,14 +378,15 @@ export default function HeaderNav() {
           #nav-items {
             padding-right: 3vh;
           }
-          #nav-items a, .dropdown {
+          #nav-items a,
+          .dropdown {
             margin-right: 5px;
           }
         }
 
-
         @media (max-width: 775px) {
-          #nav-items a, .dropdown p {
+          #nav-items a,
+          .dropdown p {
             font-size: 15px;
             padding: 5px 10px;
           }
@@ -383,9 +394,8 @@ export default function HeaderNav() {
             font-size: 14px;
           }
           #nav-items {
-            padding:0 10px;
+            padding: 0 10px;
           }
-     
         }
         // .responsive-nav {
         //   display: none;
