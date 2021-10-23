@@ -3,6 +3,7 @@ import HeaderNav from '../components/HeaderNav'
 import NumberScroll from '../components/NumberScroll'
 import FooterBar from '../components/Footer'
 import ProviderSolutions from '../components/ProviderSolutions'
+import { useMedia } from '../hooks/useMedia'
 
 export default function MedicalDevicePage() {
   return (
@@ -21,30 +22,35 @@ export default function MedicalDevicePage() {
           DocSpera is an integrated, comprehensive, and compliant digital solution powering
           patient-specific data, enabling Clinical insights, including an efficient supply chain.
         </p>
+        {/* <div> */}
         <img src='images/drawings/medical-device-art-work.png' id='business' width={570} />
-        <div className='statistics'>
-          <div>
-            <NumberScroll imgSrc='images/surgeon-users.png' number={6000} title='Surgeons' plus />
-            <NumberScroll
-              imgSrc='images/surgical-cases.png'
-              number={350000}
-              title='Surgical Cases'
-              plus
-            />
-          </div>
-          <div id='placement'>
-            <NumberScroll
-              imgSrc='images/medical-device.png'
-              number={60}
-              title='Top Global Medical Device Companies'
-              percent
-            />
-            <NumberScroll
-              imgSrc='images/tech-partners.png'
-              number={30}
-              title='Technology Partners'
-              plus
-            />
+        {/* </div> */}
+
+        <div style={{ backgroundColor: 'var(--blueXLight' }}>
+          <div className='statistics'>
+            <div>
+              <NumberScroll imgSrc='images/surgeon-users.png' number={6000} title='Surgeons' plus />
+              <NumberScroll
+                imgSrc='images/surgical-cases.png'
+                number={350000}
+                title='Surgical Cases'
+                plus
+              />
+            </div>
+            <div id='placement'>
+              <NumberScroll
+                imgSrc='images/medical-device.png'
+                number={60}
+                title='Top Global Medical Device Companies'
+                percent
+              />
+              <NumberScroll
+                imgSrc='images/tech-partners.png'
+                number={30}
+                title='Technology Partners'
+                plus
+              />
+            </div>
           </div>
         </div>
 
@@ -162,7 +168,16 @@ export default function MedicalDevicePage() {
               <li className='badge'>Right Location</li>
             </ul>
           </div>
-          <img src='images/graphics/advanced-case-notification-v2.png' />
+          <div>
+            {useMedia('(max-width: 850px') ? (
+              <img
+                id='ACN-img-mobile'
+                src='images/graphics/advanced-case-notification-mobile-v3.png'
+              />
+            ) : (
+              <img id='ACN-img-desktop' src='images/graphics/advanced-case-notification-v2.png' />
+            )}
+          </div>
         </div>
 
         <div id='integrated-providers-solutions'>
@@ -177,7 +192,9 @@ export default function MedicalDevicePage() {
               Support improved care delivery using real-world data and insights across the surgical
               continuum
             </p>
-            <img src='images/product-shots/demand-intel.png' />
+            <div id='demand-intel-img-div'>
+              <img src='images/product-shots/demand-intel.png' />
+            </div>
             <div id='insights-copy-div'>
               <div>
                 <div className='insight-title-div'>
@@ -189,14 +206,14 @@ export default function MedicalDevicePage() {
               <div>
                 <div className='insight-title-div'>
                   <img src='images/mac.png' />
-                  <h4>Market Intelligence</h4>
+                  <h4>Device Intelligence</h4>
                 </div>
                 <p>Understand market share across specialty and therapeutic areas</p>
               </div>
               <div>
                 <div className='insight-title-div'>
                   <img src='images/target.png' />
-                  <h4>Device Intelligence & Registry</h4>
+                  <h4>Device Registry</h4>
                 </div>
                 <p>
                   Longitudinal data from pre-op to recovery and support post market surveillance
@@ -256,7 +273,6 @@ export default function MedicalDevicePage() {
         h2 {
           z-index: 1000;
           max-width: 875px;
-          margin-bottom: 20px;
         }
 
         #business {
@@ -270,7 +286,7 @@ export default function MedicalDevicePage() {
           margin-bottom: 50px;
         }
 
-        @media (max-width: 1200px) {
+        @media (max-width: 700px) {
           #business {
             width: 90%;
             height: auto;
@@ -395,11 +411,7 @@ export default function MedicalDevicePage() {
           color: grey;
         }
 
-        #insights-section {
-          background-color: var(--blueXLight);
-        }
-
-        #insights-section > img {
+        #demand-intel-img-div > img {
           width: 100%;
         }
 
@@ -412,10 +424,21 @@ export default function MedicalDevicePage() {
           padding-top: 10px;
           display: flex;
           justify-content: space-around;
+          flex-wrap: wrap;
         }
 
-        #insights-copy-div p {
-          max-width: 285px;
+        @media (max-width: 600px) {
+          #insights-copy-div {
+            flex-direction: column;
+          }
+          .insight-title-div {
+            height: 0px;
+          }
+        }
+
+        #insights-copy-div > div {
+          flex: 1;
+          padding: 10px;
         }
 
         .insight-title-div {
@@ -425,6 +448,12 @@ export default function MedicalDevicePage() {
           height: 50px;
         }
 
+        @media (max-width: 950px && min-width: 600px) {
+          .insight-title-div {
+            height: 70px;
+          }
+        }
+
         .insight-title-div img {
           width: 40px;
           height: auto;
@@ -432,20 +461,33 @@ export default function MedicalDevicePage() {
           margin-right: 10px;
         }
 
-        #advanced-case-notification img {
+        #ACN-img-desktop {
           margin-top: 20px;
           width: 100%;
         }
 
+        #ACN-img-mobile {
+          width: 400px;
+          margin: 0 auto;
+          display: block;
+        }
+
+        @media (max-width: 530px) {
+          #ACN-img-mobile {
+            width: 100%;
+          }
+        }
+
         #advanced-case-notification ul {
-          margin-top: 0;
+          margin-top: -10px;
         }
 
         #advanced-case-notification li {
           border-radius: 3px;
           margin: 2px;
-          color: var(--blueDocspera);
+          color: grey;
           font-weight: 500;
+          font-size: 16px;
         }
 
         .provider-solutions-row {
