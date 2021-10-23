@@ -3,10 +3,11 @@ import { useMedia } from '../hooks/useMedia'
 
 export default function NumberScroll({ imgSrc, number, title, plus, order, percent }) {
   const isBrowser = () => typeof window !== 'undefined'
-
   let tabletSize
+  let mobileSize
   if (isBrowser) {
     tabletSize = useMedia('(max-width: 775px)')
+    mobileSize = useMedia('(max-width: 500px)')
   }
 
   const spring = useSpring({
@@ -18,23 +19,23 @@ export default function NumberScroll({ imgSrc, number, title, plus, order, perce
   const styles = useSpring({
     from: {
       opacity: 0,
-      fontSize: tabletSize ? '5vw' : '3vw',
+      fontSize: tabletSize ? '5vw' : '30px',
       margin: 0,
-      color: 'var(--blueDocspera)'
+      color: 'var(--blueDark)'
     },
-    to: { opacity: 1, fontSize: tabletSize ? '5vw' : '3vw' },
+    to: { opacity: 1, fontSize: tabletSize ? '5vw' : '30px' },
     config: { duration: 2000, config: config.molasses }
   })
 
   const plusStyles = useSpring({
     from: {
       opacity: 0,
-      fontSize: tabletSize ? '5vw' : '3vw',
+      fontSize: '20px',
       margin: 0,
-      color: 'var(--blueDocspera)'
+      color: 'var(--blueDark)'
     },
     to: { opacity: 1 },
-    config: { duration: 2500 }
+    config: { duration: 1000, delay: 1000 }
   })
 
   return (
@@ -57,12 +58,12 @@ export default function NumberScroll({ imgSrc, number, title, plus, order, perce
 
       <style jsx>{`
         img {
-          height: 12vw;
+          height: 60px;
         }
 
-        @media (min-width: 1000px) {
+        @media (max-width: 500px) {
           img {
-            height: 100px;
+            height: 40px;
           }
         }
 
@@ -76,6 +77,7 @@ export default function NumberScroll({ imgSrc, number, title, plus, order, perce
           text-align: center;
           font-size: 18px;
           max-width: 200px;
+          color: var(--blueDark);
         }
 
         @media (max-width: 800px) {

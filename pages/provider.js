@@ -5,6 +5,7 @@ import NumberScroll from '../components/NumberScroll'
 import Carousel from '../components/Carousel'
 import FooterBar from '../components/Footer'
 import ProviderSolutions from '../components/ProviderSolutions'
+import { useMedia } from '../hooks/useMedia'
 
 export default function Provider() {
   // const isBrowser = () =>
@@ -122,49 +123,52 @@ export default function Provider() {
       </Head>
       <HeaderNav />
 
-      <div className='container'>
-        <h2 id='hero-h2'>
-          Intelligent Surgical Coordination: Enabling Efficiency and Profitability
-        </h2>
-        <p id='hero-p'>
-          DocSpera is an integrated surgical coordination solution to help manage coordination
-          across multiple sites and teams, drive improved efficiencies and deliver better patient
-          care.
-        </p>
-        <img src='images/provider-art-work.png' id='surgeon-doodle' />
-
-        <div className='statistics'>
-          <div>
-            <NumberScroll imgSrc='images/surgeon-users.png' number={6000} title='Surgeons' plus />
-            <NumberScroll
-              imgSrc='images/patient-volume.png'
-              number={100000}
-              title='Monthly Patient Visits'
-              plus
-            />
+      <div className='container' style={{ border: '1px solid pink' }}>
+        <div id='hero-div'>
+          <h2 id='hero-h2'>
+            Intelligent Surgical Coordination: Enabling Efficiency and Profitability
+          </h2>
+          <p id='hero-p'>
+            DocSpera is an integrated surgical coordination solution to help manage coordination
+            across multiple sites and teams, drive improved efficiencies and deliver better patient
+            care.
+          </p>
+          <img src='images/provider-art-work.png' id='surgeon-doodle' />
+          <div className='statistics'>
+            <div>
+              <NumberScroll imgSrc='images/surgeon-users.png' number={6000} title='Surgeons' plus />
+              <NumberScroll
+                imgSrc='images/patient-volume.png'
+                number={100000}
+                title='Monthly Patient Visits'
+                plus
+              />
+            </div>
+            <div>
+              <NumberScroll
+                imgSrc='images/practices.png'
+                number={300}
+                title='Practices, ASCs and Hospitals'
+                plus
+              />
+              <NumberScroll
+                imgSrc='images/surgical-cases.png'
+                number={350000}
+                title='Surgical Cases'
+                plus
+              />
+            </div>
           </div>
-          <div>
-            <NumberScroll
-              imgSrc='images/practices.png'
-              number={300}
-              title='Practices, ASCs and Hospitals'
-              plus
-            />
-            <NumberScroll
-              imgSrc='images/surgical-cases.png'
-              number={350000}
-              title='Surgical Cases'
-              plus
-            />
+        </div>
+
+        <div style={{ backgroundColor: 'var(--blueDocspera', height: 400 }}>
+          <div id='seamless-integration' className='inner-div'>
+            <h2 style={{ color: 'white' }}>Seamless Integration </h2>
+            {/* <img src='images/seamless-integration.png' /> */}
           </div>
         </div>
 
         <ProviderSolutions />
-
-        <div id='seamless-integration' className='inner-div'>
-          <h2>Seamless Integration </h2>
-          <img src='images/seamless-integration.png' />
-        </div>
 
         <div id='rapid-integration' className='inner-div'>
           <h2>Rapid Integration & Deployment at Scale</h2>
@@ -202,62 +206,66 @@ export default function Provider() {
           </div>
         </div>
 
-        <div id='designed-for-providers' className='inner-div'>
-          <h2>Designed for Providers Like You</h2>
-          <div>
-            <img id='mock-up-img' src='images/product-shots/mockups.png' />
-
+        <div style={{ backgroundColor: 'var(--blueXLight' }}>
+          <div id='designed-for-providers' className='inner-div'>
+            <h2>Designed for Providers Like You</h2>
             <div>
-              <div className='box'>
-                <img src='images/surgical.svg' />
-                <div>
-                  <h4>Built for the Surgical Environment</h4>
-                  <p>
-                    Used by thousands of surgeons across hundreds of institution with varying
-                    surgical pathways
-                  </p>
+              <img id='mock-up-img' src='images/product-shots/mockups.png' />
+
+              <div>
+                <div className='box'>
+                  <img src='images/surgical.svg' />
+                  <div>
+                    <h4>Built for the Surgical Environment</h4>
+                    <p>
+                      Used by thousands of surgeons across hundreds of institution with varying
+                      surgical pathways
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div className='box'>
-                <img src='images/graphics/security.svg' />
-                <div>
-                  <h4>Secure</h4>
-                  <p>Provider verified, SOC 2 level and HIPAA compliant</p>
+                <div className='box'>
+                  <img src='images/graphics/security.svg' />
+                  <div>
+                    <h4>Secure</h4>
+                    <p>Provider verified, SOC 2 level and HIPAA compliant</p>
+                  </div>
                 </div>
-              </div>
-              <div className='box'>
-                <img src='images/graphics/data-driven.svg' />
-                <div>
-                  <h4>Driven by Data</h4>
-                  <p>Comprehensive and longitudinal data across the continuum of care</p>
+                <div className='box'>
+                  <img src='images/graphics/data-driven.svg' />
+                  <div>
+                    <h4>Driven by Data</h4>
+                    <p>Comprehensive and longitudinal data across the continuum of care</p>
+                  </div>
                 </div>
-              </div>
-              <div className='box'>
-                <img src='images/graphics/integration.svg' />
-                <div>
-                  <h4>Effortless Integration</h4>
-                  <p>Web and mobile interface easily integrate with other critical systems</p>
+                <div className='box'>
+                  <img src='images/graphics/integration.svg' />
+                  <div>
+                    <h4>Effortless Integration</h4>
+                    <p>Web and mobile interface easily integrate with other critical systems</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className='inner-div'>
-          <h2 style={{ marginBottom: 50 }}>Testimonials</h2>
-          <div id='testimonials'>
-            {testimonials.map((t, idx) => {
-              return (
-                <div className='testimonial' key={idx}>
-                  <img src={`images/testimonials/${t.pic}`} className='testimonial-img' />
-                  <div>
-                    <p>"...{t.quote}..."</p>
-                    <span className='name'> - {t.name}</span>
-                    <p className='location'>{t.location}</p>
+        <div style={{ backgroundColor: 'var(--blueFaint' }}>
+          <div className='inner-div'>
+            <h2 style={{ marginBottom: 50 }}>Testimonials</h2>
+            <div id='testimonials'>
+              {testimonials.map((t, idx) => {
+                return (
+                  <div className='testimonial' key={idx}>
+                    <img src={`images/testimonials/${t.pic}`} className='testimonial-img' />
+                    <div>
+                      <p>"...{t.quote}..."</p>
+                      <span className='name'> - {t.name}</span>
+                      <p className='location'>{t.location}</p>
+                    </div>
                   </div>
-                </div>
-              )
-            })}
+                )
+              })}
+            </div>
           </div>
         </div>
 
@@ -268,9 +276,7 @@ export default function Provider() {
           <div className='logos institutions'>
             {/* <div>
               {instLogos.slice(0, numberOfInstLogos).map((logo) => {
-                return (
-                  <img src={logo.img} height={logo.height} width={logo.width} />
-                )
+                return <img src={logo.img} height={logo.height} width={logo.width} />
               })}
               <button onClick={handleViewMoreInst}>
                 {viewMoreInst ? 'View Less' : 'View More'}
@@ -288,43 +294,38 @@ export default function Provider() {
 
       <FooterBar />
       <style jsx>{`
-        .container {
-          padding: 0 5vw;
-          p
-        }
-        
         h2 {
-          margin-top: 80px;
           margin-bottom: 15px;
           z-index: 10;
         }
-        
+
         .container p {
           margin-bottom: 10px;
         }
-        
+
         #hero-h2 {
           text-align: center;
         }
-        
+
         #hero-p {
           text-align: center;
           max-width: 700px;
           margin: 0 auto;
         }
 
+        #hero-div {
+          height: 100vh;
+          display: block;
+          margin-top: 80px;
+        }
+
         #surgeon-doodle {
-          width: 80%;
+          box-sizing: border-box;
+          max-height: 50vh;
+          max-width: 100%;
           display: block;
           margin: 0 auto;
           z-index: -10000;
-        }
-
-        @media (max-width: 700px) {
-          #surgeon-doodle {
-            margin-top: 40px;
-            width: 100%;
-          }
         }
 
         .logos > div:nth-child(1) {
@@ -333,7 +334,6 @@ export default function Provider() {
 
         #designed-for-providers > div {
           display: flex;
-          margin-top: 50px;
           align-items: center;
         }
 
@@ -398,19 +398,20 @@ export default function Provider() {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
           grid-auto-rows: 1fr;
-          justify-content: space-between;   
+          justify-content: space-between;
           align-items: center;
           align-content: space-between;
         }
 
-        .logos div img:nth-child(4n-2), .logos div img:nth-child(4n-1) {
+        .logos div img:nth-child(4n-2),
+        .logos div img:nth-child(4n-1) {
           justify-self: center;
         }
 
         .logos div img:nth-child(4n) {
           justify-self: end;
         }
- 
+
         .institutions div {
           grid-row-gap: 20px;
         }
@@ -433,7 +434,7 @@ export default function Provider() {
             font-size: 16px;
             margin: auto;
             grid-column: span 4;
-            filter: drop-shadow(0 5px  5px lightgray);
+            filter: drop-shadow(0 5px 5px lightgray);
             cursor: pointer;
           }
         }
@@ -458,18 +459,15 @@ export default function Provider() {
           .testimonial {
             width: 45%;
           }
-
         }
 
         @media (max-width: 650px) {
-     
           .logos img {
             width: 60%;
           }
 
           .logos div:nth-child(1) > img:nth-child(5) {
             height: 75px;
-
           }
 
           .logos > div:nth-child(1) {
@@ -480,11 +478,11 @@ export default function Provider() {
             display: none;
           }
 
-          .logos div { 
-            display:grid;
+          .logos div {
+            display: grid;
             grid-template-columns: repeat(2, 1fr);
             grid-auto-rows: 1fr;
-            justify-content: space-between;   
+            justify-content: space-between;
             align-items: center;
           }
 
@@ -504,7 +502,7 @@ export default function Provider() {
             font-size: 16px;
             margin: auto;
             grid-column: span 2;
-            filter: drop-shadow(0 5px  5px lightgray);
+            filter: drop-shadow(0 5px 5px lightgray);
             cursor: pointer;
           }
 
@@ -513,11 +511,10 @@ export default function Provider() {
           }
           #mock-up-img {
             width: 85%;
-          } 
-       
+          }
         }
 
-        @media(max-width: 480px) {
+        @media (max-width: 480px) {
           .logos img {
             width: 50%;
           }
@@ -527,20 +524,16 @@ export default function Provider() {
             width: 40%;
           }
 
-          .logos div  { 
-            display:grid;
+          .logos div {
+            display: grid;
             grid-template-columns: 1fr;
             grid-auto-rows: 120px;
-
           }
 
           button {
             grid-column: auto;
           }
-      
         }
-
-
       `}</style>
     </>
   )
