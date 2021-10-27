@@ -108,13 +108,11 @@ export default function HeaderNav() {
           <Link href='/company'>
             <a className={router.pathname == '/company' && 'active_a'}>
               <span>COMPANY</span>
-              {/* <div className={router.pathname == '/company' && 'underline'}></div> */}
             </a>
           </Link>
           <div className='dropdown'>
             <p className={contactDropdown && 'active_a'} onMouseEnter={handleContactOnHover}>
               <span>CONTACT</span>
-              {/* <div className={contactDropdown && 'underline'}></div> */}
             </p>
             {contactDropdown && (
               <div id='contact-dropdown' onMouseLeave={handleContactOnHover}>
@@ -143,21 +141,7 @@ export default function HeaderNav() {
             onMouseLeave={handleBlogOnHover}
           >
             <span>BLOG</span>
-            {/* <div className={blogHover && 'underline'}></div> */}
           </a>
-          {/* <Link href='/provider'>
-            <a className={router.pathname == '/provider' && 'active_a'}>
-              <span>Provider</span>
-              <div className={router.pathname == '/provider' && 'underline'}></div>
-            </a>
-          </Link>
-
-          <Link href='/medical-device'>
-            <a className={router.pathname == '/medical-device' && 'active_a'}>
-              <span>Medical Device Co.</span>
-              <div className={router.pathname == '/medical-device' && 'underline'}></div>
-            </a>
-          </Link> */}
         </div>
         {router.pathname == '/login' || isLogin ? (
           <a className='ext-link' href='https://docspera.com/demo' target='_blank'>
@@ -397,33 +381,6 @@ export default function HeaderNav() {
             padding: 0 10px;
           }
         }
-        // .responsive-nav {
-        //   display: none;
-        // }
-
-        // @media (max-width: 768px) {
-        //   #logo {
-        //     display:none;
-        //   }
-        //   #right-side {
-        //     display: flex;
-        //     background-color: white;
-        //     flex-direction: column;
-        //     align-items: center;
-        //     padding: 0;
-        //   }
-
-        //   .responsive-nav {
-        //     display: block;
-        //     position: fixed;
-        //     top: 0;
-        //     right: 0;
-        //     transform: translate(-100%, 75%);
-        //     cursor: pointer;
-        //     z-index: 100;
-        //   }
-
-        // }
       `}</style>
     </nav>
   )

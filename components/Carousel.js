@@ -21,28 +21,11 @@ export default function Carousel({ content, type }) {
   //     img: type === 'blog' ? '/website-gh/images/blog-post.png' : '/website-gh/images/case-study.png',
   //     title: 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
   //     body: 'quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit'
-  //   },
-  //   {
-  //     userId: 1,
-  //     id: 2,
-  //     img: type === 'blog' ? '/website-gh/images/blog-post.png' : '/website-gh/images/case-study.png',
-
-  //     title: 'qui est esse',
-  //     body: 'est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat'
-  //   },
-  //   {
-  //     userId: 1,
-  //     id: 3,
-  //     img: type === 'blog' ? '/website-gh/images/blog-post.png' : '/website-gh/images/case-study.png',
-
-  //     title: 'ea molestias quasi exercitationem repellat qui ipsa sit aut',
-  //     body: 'et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel '
   //   }
   // ]
 
   useEffect(() => {
     if (current + 2 == content.length) {
-      console.log('current!:', current)
       setCurrent(0)
     }
   }, [current])
@@ -70,19 +53,15 @@ export default function Carousel({ content, type }) {
           <Chevron color={current === 0 ? 'grey' : 'black'} />
         </div>
         {content.map((item, idx) => {
-          console.log('idx', idx)
           if (tabletSize) {
             if (idx == current || idx == current + 1 || idx == current + 2) {
-              console.log(current)
               return <CarouselItem itemInfo={item} key={idx} type={type} />
             }
           } else if (mobileSize) {
             if (idx == current || idx == current + 1) {
-              console.log(current)
               return <CarouselItem itemInfo={item} key={idx} type={type} />
             }
           } else if (idx == current || idx == current + 1) {
-            console.log(current)
             return <CarouselItem itemInfo={item} key={idx} type={type} />
           }
         })}
@@ -117,7 +96,6 @@ export default function Carousel({ content, type }) {
           cursor: pointer;
           margin-left: 40px;
         }
-
         @media (max-width: 810px) {
           .right-chevron,
           .left-chevron {
@@ -125,7 +103,6 @@ export default function Carousel({ content, type }) {
             height: 35px;
           }
         }
-
         @media (max-width: 614px) {
           .right-chevron,
           .left-chevron {
@@ -134,7 +111,6 @@ export default function Carousel({ content, type }) {
             margin: 0;
           }
         }
-
         @media (max-width: 368px) {
           .right-chevron,
           .left-chevron {

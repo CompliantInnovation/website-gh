@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import HeaderNav from '../components/HeaderNav'
 import Link from 'next/link'
-import LogoAnimation from '../components/LogoAnimation'
 import NumberScroll from '../components/NumberScroll'
 import Carousel from '../components/Carousel'
 import FooterBar from '../components/Footer'
@@ -18,7 +17,7 @@ export default function Home() {
     <div className='container'>
       <Head>
         <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform</title>
-        <link rel='icon' href='/favicon.ico' />
+        <link rel='icon' href='/website-gh/favicon.ico' />
         <link
           rel='preload'
           href='/website-gh/fonts/VarelaRound-Regular.ttf'
@@ -28,18 +27,14 @@ export default function Home() {
       </Head>
       <HeaderNav />
 
-      <div id='hero-h1'>
-        <h1>Intelligent Surgical Planning Software from Diagnosis to Recovery</h1>
-      </div>
-      <div style={{ height: '95vh', overflow: 'hidden' }}>
-        <img id='landing-bg' src='/website-gh/images/iPad-landing.jpg' />
-      </div>
+      <div>
+        <div id='landing-bg-div'>
+          <img id='landing-bg' src='/website-gh/images/iPad-landing.png' />
+        </div>
+        <div id='hero-h1'>
+          <h1>Intelligent Surgical Planning Software from Diagnosis to Recovery</h1>
+        </div>
 
-      <div
-        style={{
-          height: useMedia('(max-width: 800px') ? 170 : 0
-        }}
-      >
         <div className='statistics'>
           <div>
             <NumberScroll
@@ -88,8 +83,7 @@ export default function Home() {
             </div>
 
             <div id='timeline-div'>
-              {/* Timeline Graphic + Copy  "1. Pre-Operative..." */}
-              <img id='timeline-graphic' src='/website-gh/images/timeline-graphic.png' />
+              <img id='timeline-graphic' src='/website-gh/images/graphics/timeline-graphic.png' />
             </div>
           </div>
         ) : (
@@ -242,11 +236,16 @@ export default function Home() {
         .container {
           width: 100%;
         }
+        @media (max-width: 700px) {
+          .container {
+            overflow: hidden;
+          }
+        }
         
         #hero-h1 > h1 {
           color: white;
-          font-size: 64px;
-          font-family: 'Varela Round';
+          font-size: 4em;
+          font-family: 'Varela Round', 'sans-serif';
           text-align: center;
           width: 90%;
           position: absolute;
@@ -255,11 +254,9 @@ export default function Home() {
           border-radius: 10px;
           padding: 10px;
           text-shadow: 0 1px 2px RGBa(0,0,0, .6), 0 0 50px #cdf0fd;
-          // text-shadow: 0 1px 2px RGBa(0,0,0, .6), 0 0 50px var(--blueDocspera);
           margin-bottom: 0;
         }
-
-        @media (max-width: 1100px) {
+        @media (max-width: 1400px) {
           #hero-h1 > h1 {
             font-size: 50px;
           }
@@ -276,73 +273,95 @@ export default function Home() {
             font-size: 36px;
           }
         }
-
         #hero-h1 > span {
           font-size: 20px;
         }
-
-        #landing-bg {
+        #landing-bg-div {
+          overflow: hidden;
+          width: 100vw;
           z-index: -100;
-          min-width: 100%;
-          height: 100%;
         }
-
-
-
-
+        #landing-bg {
+          width: 100%;
+          height: auto;
+        }
+        @media (max-width: 1000px) {
+          #landing-bg {
+            width: 120%;
+          }
+        }
+        @media (max-width: 500px) {
+          #landing-bg-div {
+            margin-top: -50px;
+          }
+          #hero-h1 > h1 {
+            position: static;
+            color: var(--blueDark);
+            left: 0;
+            font-size: 25px;
+            width: 100%;
+            margin-bottom: -50px;
+            text-shadow: none;
+          }
+        }
+       
+        @media (max-width: 600px) {
+          #landing-bg-div {
+            width: 120%;
+          }
+        }
+        @media (max-width: 800px) {
+          .statistics {
+            padding-top: 20px
+          }
+        }
+        
+        @media (min-width: 800px) {
+          .statistics {
+            padding-top: 50px
+          }
+        }
         // VISION SECTION
-
         #vision-section {
           display: flex;
           align-items: center;
         }
-
         #iphone-calendar-div {
           width: 50%;
         }
-
         #iphone-calendar {
           width: 110%;
           margin-left: -60px;
         }
-
         #timeline-div {
           width: 50%;
         }
-
         #vision-section h2 {
           max-width: 550px; 
           margin-bottom: 20px;
         }
-
         #timeline-graphic {
           max-width: 600px;
         }
-
         @media (max-width: 1100px) {
           #vision-section {
             flex-direction: column;
           }
-
           #iphone-calendar-div {
             width: 60%;
           }
-
           #timeline-div {
             width: 100%;
             overflow: hidden;
           }
-
           #timeline-graphic {
             width: 110%;
             display: block;
             margin: 0 auto;
             padding-left: 30px;
           }
-
           #vision-section h2 {
             margin: 15px auto;
-
           }
         }
   
@@ -350,29 +369,21 @@ export default function Home() {
           #iphone-calendar-div {
             width: 100%;
           }
-
           #vision-section h2 {
             max-width: 100%;
           }
-
           #timeline-graphic {
             padding: 0;
           }
         }
   
-
         @media (max-width: 400px) {
           #timeline-graphic {
             width: 120%;
             margin-left: -10px;
           }
         }
-
-
-
-
         // CONNECTING SECTION
-
         #connecting-section {
           background-color: #2a83bf;
           background-color: var(--blueXLight);
@@ -382,31 +393,25 @@ export default function Home() {
           padding-top: 0px;
           color: black;
         }
-
         #connecting-section h1 {
           margin-top: 60px;
         }
-
         @media (max-width: 1270px) {
           #connecting-section {
             flex-direction: column;
           }
         }
-
         #connecting-graphic {
           width: 60%;
           align-self: flex-end;
           margin-right: -160px;
         }
-
         @media (max-width: 1270px) {
           #connecting-graphic {
             margin-top: -150px;
             margin-right: -30px;
-
           }
         }
-
         @media (max-width: 800px) {
           #connecting-graphic {
             margin-top: 10px;
@@ -414,22 +419,18 @@ export default function Home() {
             width: 100%;
           }
         }
-
         #words-div {
           padding-top: 4vw;
           padding-left: 4vw;
         }
-
         @media (max-width: 1200px) {
           #words-div {
             padding-top: 0;
           }
         }
-
         #words-div > h2 {
           font-weight: 200;
         }
-
         .products-h2 {
           color: var(--blueDocspera);
           text-align: center;
@@ -437,13 +438,11 @@ export default function Home() {
           margin-bottom: 20px; 
           font-weight: 600;
         }
-
         @media (max-width: 800px) {
           .products-h2 {
             margin-left: 0;
           }
         }
-
         .product-section {
           display: flex;
           align-items: center;
@@ -452,18 +451,14 @@ export default function Home() {
           margin: 0px 0 60px 0;
   
         }
-
         .product-section h4 {
           font-size: 24px;
         }
-
-
         .product-section .chevron-img {
           filter: brightness(0) invert(1);
           height: 10px;
           margin: 0 0 0 10px;
         }
-
         .box {      
           padding: 25px 100px;
           border-radius: 10px;
@@ -475,19 +470,16 @@ export default function Home() {
           border-radius: 5px;
           background-color: rgba(255, 255, 255, 1);
         }
-
         .box h4 {
           display: flex;
           align-items: center;
           margin:0 0 15px 0;
         }
-
         .box img {
           filter: brightness(0%);
           height: 30px;
           margin-right: 10px;
         }
-
         .box p {
           display: flex;
           align-items: center;
@@ -495,13 +487,11 @@ export default function Home() {
           color: grey;
           margin-bottom: 5px;
         }
-
         .box p > span {
           padding-right: 10px;
           font-size: 15px;
           color: var(--blueDocspera);
         }
-
         .box button {
           background-color: var(--blueDocspera);
           border: none;
@@ -512,12 +502,10 @@ export default function Home() {
           font-size: 14px;
           margin-top: 10px;
         }
-
         .box button:hover {
           box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.1);
           cursor: pointer;
         }
-
         #map {
           width: 60%;
           display: block;
@@ -526,34 +514,29 @@ export default function Home() {
           margin-top: -120px;
           margin-bottom: 150px;
         }
-
         @media (max-width: 900px) {
           #map {
             width: 90%;
             margin-top: -80px;
           }
         }
-
         #docspera-works-h2 {
           text-align: center;
           margin-bottom: -40px; 
           max-width: 600px;
           margin: 0px auto -40px auto;
         }
-
         @media (max-width: 900px) {
           #docspera-works-h2 { 
             max-width: 600px;
           }
         }
-
         .logos div {
           display: flex;
           align-items: center;
           justify-content: space-between;
           height: 100px;
         }
-
         @media (max-width: 1024px) {
           .product-section {
             display: flex;
@@ -565,7 +548,6 @@ export default function Home() {
             width: 45%;
             padding: 25px 50px;
         }
-
         @media (max-width: 768px) {
           .product-section {
             display: flex;
