@@ -23,7 +23,7 @@ body {
 }
 
 @font-face {
-  font-family: 'Varela Round';
+  font-family: 'Varela Round', sans-serif;
   src: url('/website-gh/fonts/VarelaRound-Regular.ttf');
   font-style: normal;
   font-weight: 500;
@@ -72,7 +72,6 @@ h2 {
   margin: 0 auto;
   max-width: 1150px;
   padding: 100px 5vw 100px 5vw;
-  /* transform: translate(500px, 0); */
 }
 
 @media (max-width: 800px) {
@@ -109,7 +108,7 @@ h2 {
   justify-content: center;
   max-width: 1000px;
   position: sticky;
-  bottom: -40px;
+  bottom: 10px;
   margin: 0 auto;
   margin-top: 10px;
 }

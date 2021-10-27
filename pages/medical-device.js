@@ -10,7 +10,13 @@ export default function MedicalDevicePage() {
     <>
       <Head>
         <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform</title>
-        <link rel='icon' href='/favicon.ico' />
+        <link rel='icon' href='/website-gh/favicon.ico' />
+        <link
+          rel='preload'
+          href='/website-gh/fonts/VarelaRound-Regular.ttf'
+          as='font'
+          crossOrigin=''
+        />
       </Head>
       <HeaderNav />
       <div className='container'>
@@ -30,7 +36,7 @@ export default function MedicalDevicePage() {
         />
         {/* </div> */}
 
-        <div style={{ backgroundColor: 'var(--blueXLight' }}>
+        <div>
           <div className='statistics'>
             <div>
               <NumberScroll
@@ -141,7 +147,7 @@ export default function MedicalDevicePage() {
               <div>
                 <h4>Product/Data Understanding</h4>
                 <img src='/website-gh/images/graphics/data-driven.png' />
-                <p>Deeper understanding of your product performance across continuum of care</p>
+                <p>Deeper understanding of your product performance across continuum of care</p>
                 <p>
                   Access real-world data and gain insight of your product performance in real-world
                   clinical settings
@@ -242,21 +248,18 @@ export default function MedicalDevicePage() {
         .container > p {
           padding: 0 5vw;
         }
-
         #hero-h2 {
           text-align: center;
           padding-top: 80px;
           max-width: 900px;
           margin: 0 auto;
         }
-
         #hero-p {
           text-align: center;
           max-width: 700px;
           margin: 0 auto;
           padding-top: 10px;
         }
-
         button {
           background-color: var(--blueDocspera);
           border: none;
@@ -270,23 +273,19 @@ export default function MedicalDevicePage() {
           font-weight: 500;
           filter: drop-shadow(0 5px 10px transparent);
         }
-
         button:hover {
           filter: drop-shadow(0 5px 5px var(--blueSky));
           transform: translate(0, -3px);
           transition: all 0.2s;
         }
-
         a {
           text-decoration: none;
           color: inherit;
         }
-
         h2 {
           z-index: 1000;
           max-width: 875px;
         }
-
         #business {
           width: auto;
           height: 50vh;
@@ -297,47 +296,39 @@ export default function MedicalDevicePage() {
           margin: 0 auto;
           margin-bottom: 50px;
         }
-
         @media (max-width: 700px) {
           #business {
             width: 90%;
             height: auto;
           }
         }
-
         .statistics {
           margin-top: -50px;
         }
-
         #offerings-section {
           margin-top: 50px;
           padding: 70px 0 100px 0;
           width: 100%;
           background-color: var(--blueDark);
         }
-
         #offerings h2 {
           margin-top: 0;
           color: white;
         }
-
         #offerings {
           padding: 0 5vw;
         }
-
         #offerings-divs {
           display: flex;
           justify-content: space-between;
           flex: 1;
           flex-wrap: wrap;
         }
-
         @media (max-width: 1042px) {
           #offerings-divs {
             justify-content: center;
           }
         }
-
         #offerings-divs > div {
           position: relative;
           flex: 1;
@@ -348,7 +339,6 @@ export default function MedicalDevicePage() {
           margin: 10px;
           max-width: 335px;
         }
-
         #offerings-divs img {
           width: 100%;
           max-height: 175px;
@@ -359,18 +349,15 @@ export default function MedicalDevicePage() {
           margin: 0 auto;
           margin-bottom: 10px;
         }
-
         #offerings-divs h4,
         h3 {
           margin: 0;
         }
-
         #offerings-divs h3 {
           text-align: center;
           margin-bottom: 10px;
           color: var(--blueDocspera);
         }
-
         .outcome {
           background-color: var(--blueXLight);
           border-radius: 5px;
@@ -381,25 +368,20 @@ export default function MedicalDevicePage() {
           height: 90px;
           color: var(--blueDocspera);
         }
-
         .outcome > span {
           color: var(--blueDark);
         }
-
         #solve-challenges-section {
           background-color: var(--blueXLight);
         }
-
         #solve-challenges-section > div {
           margin: 0 auto;
         }
-
         #solve-challenges-divs {
           display: flex;
           flex-wrap: wrap;
           justify-content: center;
         }
-
         #solve-challenges-divs > div {
           margin: 10px;
           padding: 10px;
@@ -409,7 +391,6 @@ export default function MedicalDevicePage() {
           background-color: white;
           border-radius: 10px;
         }
-
         #solve-challenges-divs > div > img {
           max-height: 150px;
           min-height: 100px;
@@ -417,28 +398,23 @@ export default function MedicalDevicePage() {
           margin: 0 auto;
           margin-bottom: 15px;
         }
-
         #solve-challenges-divs > div > p:nth-child(4) {
           font-size: 12px;
           color: grey;
         }
-
         #demand-intel-img-div > img {
           width: 100%;
         }
-
         #insights-section h4 {
           margin: 0;
           color: var(--blueDocspera);
         }
-
         #insights-copy-div {
           padding-top: 10px;
           display: flex;
           justify-content: space-around;
           flex-wrap: wrap;
         }
-
         @media (max-width: 600px) {
           #insights-copy-div {
             flex-direction: column;
@@ -447,53 +423,44 @@ export default function MedicalDevicePage() {
             height: 0px;
           }
         }
-
         #insights-copy-div > div {
           flex: 1;
           padding: 10px;
         }
-
         .insight-title-div {
           display: flex;
           align-items: center;
           margin-bottom: 10px;
           height: 50px;
         }
-
         @media (max-width: 950px && min-width: 600px) {
           .insight-title-div {
             height: 70px;
           }
         }
-
         .insight-title-div img {
           width: 40px;
           height: auto;
           max-height: 40px;
           margin-right: 10px;
         }
-
         #ACN-img-desktop {
           margin-top: 20px;
           width: 100%;
         }
-
         #ACN-img-mobile {
           width: 400px;
           margin: 0 auto;
           display: block;
         }
-
         @media (max-width: 530px) {
           #ACN-img-mobile {
             width: 100%;
           }
         }
-
         #advanced-case-notification ul {
           margin-top: -10px;
         }
-
         #advanced-case-notification li {
           border-radius: 3px;
           margin: 2px;
@@ -501,13 +468,11 @@ export default function MedicalDevicePage() {
           font-weight: 500;
           font-size: 16px;
         }
-
         .provider-solutions-row {
           display: flex;
           justify-content: center;
           flex-wrap: wrap;
         }
-
         .provider-solutions-row > div {
           padding: 10px;
           padding-bottom: 50px;
