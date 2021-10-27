@@ -1,8 +1,6 @@
 import Head from 'next/head'
 import HeaderNav from '../components/HeaderNav'
 import FooterBar from '../components/Footer'
-import { ProGallery } from 'pro-gallery'
-import 'pro-gallery/dist/statics/main.css'
 
 export default function Company() {
   const items = [
@@ -55,15 +53,6 @@ export default function Company() {
           Yahoo!, Phillips, Heartflow, Microsoft, Cisco, Esri, GE, Intuit, and Eli Lilly to name a
           few.
         </p>
-        {isBrowser() && (
-          <ProGallery
-            items={items}
-            options={options}
-            container={container}
-            eventsListener={eventsListener}
-            scrollingElement={scrollingElement}
-          />
-        )}
       </div>
       {/* <div className='inner-div'>
         <h2>About the DocSpera Team</h2>
