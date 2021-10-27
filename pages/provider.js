@@ -119,11 +119,17 @@ export default function Provider() {
     <>
       <Head>
         <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform</title>
-        <link rel='icon' href='/favicon.ico' />
+        <link rel='icon' href='/website-gh/favicon.ico' />
+        <link
+          rel='preload'
+          href='/website-gh/fonts/VarelaRound-Regular.ttf'
+          as='font'
+          crossOrigin=''
+        />
       </Head>
       <HeaderNav />
 
-      <div className='container' style={{ border: '1px solid pink' }}>
+      <div className='container'>
         <div id='hero-div'>
           <h2 id='hero-h2'>
             Intelligent Surgical Coordination: Enabling Efficiency and Profitability
@@ -134,7 +140,7 @@ export default function Provider() {
             care.
           </p>
           <img src='/website-gh/images/provider-art-work.png' id='surgeon-doodle' />
-          <div className='statistics'>
+          <div className='statistics' style={{ marginBottom: 20 }}>
             <div>
               <NumberScroll
                 imgSrc='/website-gh/images/surgeon-users.png'
@@ -166,14 +172,16 @@ export default function Provider() {
           </div>
         </div>
 
-        <div style={{ backgroundColor: 'var(--blueDocspera', height: 400 }}>
+        <div style={{ backgroundColor: 'var(--blueXLight)' }}>
           <div id='seamless-integration' className='inner-div'>
-            <h2 style={{ color: 'white' }}>Seamless Integration </h2>
-            {/* <img src='/website-gh/images/seamless-integration.png' /> */}
+            <h2>Seamless Integration </h2>
+            {/* <img src='/website-gh/images/graphics/seamless-integration.png' /> */}
           </div>
         </div>
 
-        <ProviderSolutions />
+        <div id='provider-solutions-inside-provider'>
+          <ProviderSolutions />
+        </div>
 
         <div id='rapid-integration' className='inner-div'>
           <h2>Rapid Integration & Deployment at Scale</h2>
@@ -282,19 +290,11 @@ export default function Provider() {
         </div>
 
         <div className='inner-div'>
-          <h2 style={{ minWidth: '100%' }}>Join 300+ Institutions Using DocSpera Across the US</h2>
+          <h2 style={{ width: '100%', textAlign: 'center' }}>
+            Join 300+ Institutions Using DocSpera Across the US
+          </h2>
           <div className='logos institutions'>
-            {/* <div>
-              {instLogos.slice(0, numberOfInstLogos).map((logo) => {
-                return <img src={logo.img} height={logo.height} width={logo.width} />
-              })}
-              <button onClick={handleViewMoreInst}>
-                {viewMoreInst ? 'View Less' : 'View More'}
-              </button>
-            </div>
-            <div> */}
             <Carousel type='logo' content={instLogos} />
-            {/* </div> */}
           </div>
         </div>
       </div>
@@ -305,27 +305,30 @@ export default function Provider() {
           margin-bottom: 15px;
           z-index: 10;
         }
-
         .container p {
           margin-bottom: 10px;
         }
-
         #hero-h2 {
           text-align: center;
         }
-
         #hero-p {
           text-align: center;
           max-width: 700px;
           margin: 0 auto;
         }
-
+        @media (max-width: 800px) {
+          #hero-p {
+            max-width: 90%;
+          }
+          #hero-h2 {
+            max-width: 90%;
+            margin: 0 auto;
+          }
+        }
         #hero-div {
-          height: 100vh;
           display: block;
           margin-top: 80px;
         }
-
         #surgeon-doodle {
           box-sizing: border-box;
           max-height: 50vh;
@@ -334,21 +337,36 @@ export default function Provider() {
           margin: 0 auto;
           z-index: -10000;
         }
-
+        #seamless-integration > img {
+          display: block;
+          max-width: 550px;
+          margin: 0 auto;
+          margin-top: 50px;
+          margin-bottom: -160px;
+        }
+        @media (max-width: 620px) {
+          #seamless-integration > img {
+            width: 100%;
+            margin-top: 0;
+          }
+        }
+        @media (max-width: 800px) {
+          #provider-solutions-inside-provider {
+            padding-top: 100px;
+            background-color: var(--blueXLight);
+          }
+        }
         .logos > div:nth-child(1) {
           display: none;
         }
-
         #designed-for-providers > div {
           display: flex;
           align-items: center;
         }
-
         #mock-up-img {
           max-height: 400px;
           margin-right: 50px;
         }
-
         #designed-for-providers .box {
           border: 2px solid var(--blueDocspera);
           margin: 10px 0;
@@ -359,23 +377,19 @@ export default function Provider() {
           display: flex;
           align-items: center;
         }
-
         #designed-for-providers .box h4 {
           margin: 0;
         }
-
         #designed-for-providers .box img {
           width: 50px;
           margin-right: 20px;
           margin-left: 5px;
         }
-
         #testimonials {
           display: flex;
           flex-wrap: wrap;
           justify-content: center;
         }
-
         .testimonial {
           width: 47%;
           filter: drop-shadow(0 0px 5px lightgray);
@@ -384,11 +398,9 @@ export default function Provider() {
           margin: 10px;
           padding: 10px;
         }
-
         .testimonial > div {
           margin-left: 20px;
         }
-
         .testimonial-img {
           height: 100px;
           border-radius: 100px;
@@ -396,11 +408,9 @@ export default function Provider() {
           margin: 10px auto;
           margin-bottom: 20px;
         }
-
         .location {
           color: gray;
         }
-
         .logos div {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
@@ -409,29 +419,23 @@ export default function Provider() {
           align-items: center;
           align-content: space-between;
         }
-
         .logos div img:nth-child(4n-2),
         .logos div img:nth-child(4n-1) {
           justify-self: center;
         }
-
         .logos div img:nth-child(4n) {
           justify-self: end;
         }
-
         .institutions div {
           grid-row-gap: 20px;
         }
-
         @media (max-width: 1000px) and (min-width: 650px) {
           .institutions div:nth-child(2) {
             display: none;
           }
-
           .institutions div:nth-child(1) {
             display: grid;
           }
-
           .institutions button {
             background-color: white;
             border: 1px solid gray;
@@ -445,46 +449,37 @@ export default function Provider() {
             cursor: pointer;
           }
         }
-
         @media (max-width: 1025px) {
           #designed-for-providers > div {
             flex-direction: column;
           }
-
           #mock-up-img {
             margin-bottom: 40px;
           }
         }
-
         @media (max-width: 890px) {
           .logos img {
             width: 80%;
           }
         }
-
         @media (max-width: 835px) {
           .testimonial {
             width: 45%;
           }
         }
-
         @media (max-width: 650px) {
           .logos img {
             width: 60%;
           }
-
           .logos div:nth-child(1) > img:nth-child(5) {
             height: 75px;
           }
-
           .logos > div:nth-child(1) {
             display: grid;
           }
-
           .logos > div:nth-child(2) {
             display: none;
           }
-
           .logos div {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -492,14 +487,12 @@ export default function Provider() {
             justify-content: space-between;
             align-items: center;
           }
-
           .logos div img:nth-child(2n) {
             justify-self: center;
           }
           .logos div img:nth-child(2n-1) {
             justify-self: center;
           }
-
           button {
             background-color: white;
             border: 1px solid gray;
@@ -512,7 +505,6 @@ export default function Provider() {
             filter: drop-shadow(0 5px 5px lightgray);
             cursor: pointer;
           }
-
           .testimonial {
             width: 100%;
           }
@@ -520,23 +512,19 @@ export default function Provider() {
             width: 85%;
           }
         }
-
         @media (max-width: 480px) {
           .logos img {
             width: 50%;
           }
-
           .logos div:nth-child(1) > img:nth-child(5) {
             height: 75px;
             width: 40%;
           }
-
           .logos div {
             display: grid;
             grid-template-columns: 1fr;
             grid-auto-rows: 120px;
           }
-
           button {
             grid-column: auto;
           }

@@ -4,10 +4,8 @@ import { useMedia } from '../hooks/useMedia'
 export default function NumberScroll({ imgSrc, number, title, plus, order, percent }) {
   const isBrowser = () => typeof window !== 'undefined'
   let tabletSize
-  let mobileSize
-  if (isBrowser) {
+  if (isBrowser()) {
     tabletSize = useMedia('(max-width: 775px)')
-    mobileSize = useMedia('(max-width: 500px)')
   }
 
   const spring = useSpring({
@@ -30,12 +28,12 @@ export default function NumberScroll({ imgSrc, number, title, plus, order, perce
   const plusStyles = useSpring({
     from: {
       opacity: 0,
-      fontSize: '20px',
+      fontSize: tabletSize ? '5vw' : '30px',
       margin: 0,
       color: 'var(--blueDark)'
     },
-    to: { opacity: 1 },
-    config: { duration: 1000, delay: 1000 }
+    to: { opacity: 1, fontSize: tabletSize ? '5vw' : '30px' },
+    config: { duration: 2000, delay: 1000 }
   })
 
   return (
@@ -60,26 +58,22 @@ export default function NumberScroll({ imgSrc, number, title, plus, order, perce
         img {
           height: 60px;
         }
-
         @media (max-width: 500px) {
           img {
             height: 40px;
           }
         }
-
         .div {
           display: flex;
           flex-direction: column;
           align-items: center;
         }
-
         .title {
           text-align: center;
           font-size: 18px;
           max-width: 200px;
           color: var(--blueDark);
         }
-
         @media (max-width: 800px) {
           .title {
             font-size: 12px;
