@@ -67,10 +67,7 @@ export default function MobileNav() {
           <div className='product-container' onClick={handleProductOnHover}>
             <div className='menu-item'>
               <div>Products</div>
-              <img
-                id={productDropdown ? 'chevron-img' : ''}
-                src='/website-gh/images/graphics/chevron.png'
-              />
+              <img id={productDropdown ? 'chevron-img' : ''} src='/website-gh/images/graphics/chevron.png' />
             </div>
 
             {productDropdown && (
@@ -102,10 +99,7 @@ export default function MobileNav() {
           <div className='contact-container' onClick={handleContactOnHover}>
             <div className='menu-item'>
               <div>Contact</div>
-              <img
-                id={contactDropdown ? 'chevron-img' : ''}
-                src='/website-gh/images/graphics/chevron.png'
-              />
+              <img id={contactDropdown ? 'chevron-img' : ''} src='/website-gh/images/graphics/chevron.png' />
             </div>
 
             {contactDropdown && (
