@@ -120,12 +120,7 @@ export default function Provider() {
       <Head>
         <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform</title>
         <link rel='icon' href='/website-gh/favicon.ico' />
-        <link
-          rel='preload'
-          href='/website-gh/fonts/VarelaRound-Regular.ttf'
-          as='font'
-          crossOrigin=''
-        />
+        <link rel='preload' href='/website-gh/fonts/VarelaRound-Regular.ttf' as='font' crossOrigin='' />
       </Head>
       <HeaderNav />
 
@@ -172,10 +167,16 @@ export default function Provider() {
           </div>
         </div>
 
-        <div style={{ backgroundColor: 'var(--blueXLight)' }}>
+        <div style={{ backgroundColor: 'var(--blueFaint)' }}>
           <div id='seamless-integration' className='inner-div'>
             <h2>Seamless Integration </h2>
-            {/* <img src='/website-gh/images/graphics/seamless-integration.png' /> */}
+            {useMedia('(max-width: 600px)') ? (
+              
+              <img src='/website-gh/images/graphics/seamless-integration-mobile.png' style={{maxWidth: 300}} />
+              ) : (
+                <img src='/website-gh/images/graphics/seamless-integration-desktop.png' />
+                
+            )}
           </div>
         </div>
 
@@ -190,11 +191,7 @@ export default function Provider() {
             <div>
               {emrLogos.slice(0, numberOfEmrLogos).map((logo) => {
                 return (
-                  <img
-                    src={`/website-gh/images/logos/${logo.img}`}
-                    height={logo.height}
-                    width={logo.width}
-                  />
+                  <img src={`/website-gh/images/logos/${logo.img}`} height={logo.height} width={logo.width} />
                 )
               })}
               <button onClick={handleViewMoreEmr}>{viewMoreEmr ? 'View Less' : 'View More'}</button>
@@ -273,10 +270,7 @@ export default function Provider() {
               {testimonials.map((t, idx) => {
                 return (
                   <div className='testimonial' key={idx}>
-                    <img
-                      src={`/website-gh/images/testimonials/${t.pic}`}
-                      className='testimonial-img'
-                    />
+                    <img src={`/website-gh/images/testimonials/${t.pic}`} className='testimonial-img' />
                     <div>
                       <p>"...{t.quote}..."</p>
                       <span className='name'> - {t.name}</span>
@@ -296,6 +290,7 @@ export default function Provider() {
           <div className='logos institutions'>
             <Carousel type='logo' content={instLogos} />
           </div>
+        <img id='map' src='/website-gh/images/graphics/map-with-pins.png' alt='map of docspera locations' />
         </div>
       </div>
 
@@ -337,19 +332,14 @@ export default function Provider() {
           margin: 0 auto;
           z-index: -10000;
         }
+
         #seamless-integration > img {
           display: block;
-          max-width: 550px;
+          width: 100%;
           margin: 0 auto;
           margin-top: 50px;
-          margin-bottom: -160px;
         }
-        @media (max-width: 620px) {
-          #seamless-integration > img {
-            width: 100%;
-            margin-top: 0;
-          }
-        }
+
         @media (max-width: 800px) {
           #provider-solutions-inside-provider {
             padding-top: 100px;
@@ -512,6 +502,9 @@ export default function Provider() {
             width: 85%;
           }
         }
+
+        
+
         @media (max-width: 480px) {
           .logos img {
             width: 50%;
@@ -528,6 +521,13 @@ export default function Provider() {
           button {
             grid-column: auto;
           }
+        }
+
+        #map {
+          width: 90%;
+          display: block;
+          margin: 0 auto;
+          user-select: none;
         }
       `}</style>
     </>
