@@ -47,11 +47,7 @@ export default function HeaderNav() {
           <a id='logo'>
             <img
               id='logo'
-              src={`${
-                tabletSize
-                  ? '/website-gh/images/logo-short.png'
-                  : '/website-gh/images/graphics/logo.svg'
-              }`}
+              src={`${tabletSize ? '/website-gh/images/logo-short.png' : '/website-gh/images/graphics/logo.svg'}`}
               height={`${tabletSize ? 40 : 70}`}
               width={`${tabletSize ? 40 : 150}`}
             />
@@ -70,7 +66,6 @@ export default function HeaderNav() {
             onMouseEnter={handleProductOnHover}
           >
             <span>PRODUCT</span>
-            {/* <div className={productDropdown && 'underline'}></div> */}
           </a>
           {productDropdown && (
             <div className='product-dropdown' onMouseLeave={handleProductOnHover}>
@@ -78,8 +73,7 @@ export default function HeaderNav() {
                 <div className='box' onClick={handleProductOnHover}>
                   <h4>
                     <img src='/website-gh/images/surgeon-users.png' />
-                    Providers{' '}
-                    <img className='chevron-img' src='/website-gh/images/graphics/chevron.png' />
+                    Providers <img className='chevron-img' src='/website-gh/images/graphics/chevron.png' />
                   </h4>
                   <ul>
                     <li>Episode of Care</li>
@@ -158,10 +152,11 @@ export default function HeaderNav() {
         nav {
           width: 100%;
           display: flex;
-          background-color: white;
+          background-color: ${productDropdown ? 'white' : 'RGBa(255,255,255, .7)'};
+          background-image: Linear-Gradient(RGBa(255,255,255, 1), RGBa(255,255,255, 0)), Linear-Gradient(RGBa(255,255,255, .8), RGBa(255,255,255, 0));
+          box-shadow: 0 0 50px 50px RGBa(255,255,255, .7);
           justify-content: space-between;
           align-items: center;
-          filter: drop-shadow(0 10px 50px #cdf0fd);
           padding-left: 30px;
           padding-right: 30px;
           position: fixed;
@@ -208,13 +203,6 @@ export default function HeaderNav() {
           background-color: rgba(0, 0, 0, 0);
         }
 
-        // .underline {
-        //   height: 3px;
-        //   width: 100%;
-        //   background-color: var(--blueDocspera);
-        //   border-radius: 10px;
-        // }
-
         #ext-link {
           padding: 0;
         }
@@ -223,7 +211,6 @@ export default function HeaderNav() {
           background-color: var(--blueDocspera);
           border: none;
           border-radius: 5px;
-          // filter: drop-shadow(0, 3px, 6px, black);
           color: white;
           padding: 10px 15px;
           font-size: 16px;
