@@ -47,11 +47,7 @@ export default function HeaderNav() {
           <a id='logo'>
             <img
               id='logo'
-              src={`${
-                tabletSize
-                  ? '/website-gh/images/logo-short.png'
-                  : '/website-gh/images/graphics/logo.svg'
-              }`}
+              src={`${tabletSize ? '/website-gh/images/logo-short.png' : '/website-gh/images/graphics/logo.svg'}`}
               height={`${tabletSize ? 40 : 70}`}
               width={`${tabletSize ? 40 : 150}`}
             />
@@ -70,7 +66,6 @@ export default function HeaderNav() {
             onMouseEnter={handleProductOnHover}
           >
             <span>PRODUCT</span>
-            {/* <div className={productDropdown && 'underline'}></div> */}
           </a>
           {productDropdown && (
             <div className='product-dropdown' onMouseLeave={handleProductOnHover}>
@@ -78,8 +73,7 @@ export default function HeaderNav() {
                 <div className='box' onClick={handleProductOnHover}>
                   <h4>
                     <img src='/website-gh/images/surgeon-users.png' />
-                    Providers{' '}
-                    <img className='chevron-img' src='/website-gh/images/graphics/chevron.png' />
+                    Providers <img className='chevron-img' src='/website-gh/images/graphics/chevron.png' />
                   </h4>
                   <ul>
                     <li>Episode of Care</li>
@@ -158,10 +152,11 @@ export default function HeaderNav() {
         nav {
           width: 100%;
           display: flex;
-          background-color: white;
+          background-color: ${productDropdown ? 'white' : 'RGBa(255,255,255, .7)'};
+          background-image: Linear-Gradient(RGBa(255,255,255, 1), RGBa(255,255,255, 0)), Linear-Gradient(RGBa(255,255,255, .8), RGBa(255,255,255, 0));
+          box-shadow: 0 0 50px 50px RGBa(255,255,255, .7);
           justify-content: space-between;
           align-items: center;
-          filter: drop-shadow(0 10px 50px #cdf0fd);
           padding-left: 30px;
           padding-right: 30px;
           position: fixed;
@@ -169,21 +164,17 @@ export default function HeaderNav() {
           z-index: 10000;
           height: 60px;
         }
-
         #right-side {
           display: flex;
           align-items: center;
         }
-
         #nav-items {
           display: flex;
           padding-right: 10vh;
         }
-
         #nav-items span {
           cursor: pointer;
         }
-
         #nav-items a {
           color: var(--blueDocspera);
           text-decoration: none;
@@ -193,43 +184,29 @@ export default function HeaderNav() {
           padding: 10px 20px;
           border-radius: 5px;
         }
-
         a:hover {
           background-color: rgba(0, 150, 250, 0.2);
         }
-
         .active_a,
         .dropdown .active_a {
           font-weight: 600;
           background-color: rgba(0, 150, 250, 0.2);
         }
-
         #logo:hover {
           background-color: rgba(0, 0, 0, 0);
         }
-
-        // .underline {
-        //   height: 3px;
-        //   width: 100%;
-        //   background-color: var(--blueDocspera);
-        //   border-radius: 10px;
-        // }
-
         #ext-link {
           padding: 0;
         }
-
         button {
           background-color: var(--blueDocspera);
           border: none;
           border-radius: 5px;
-          // filter: drop-shadow(0, 3px, 6px, black);
           color: white;
           padding: 10px 15px;
           font-size: 16px;
           font-weight: bold;
         }
-
         .product-dropdown {
           display: flex;
           align-items: center;
@@ -241,49 +218,41 @@ export default function HeaderNav() {
           background-color: rgba(255, 255, 255, 1);
           padding: 20px 0;
         }
-
         .box {
           margin: 30px;
           padding: 40px;
           cursor: pointer;
         }
-
         .box:hover {
           filter: drop-shadow(0px 0px 0.3rem lightgrey);
           border-radius: 10px;
           background-color: rgba(255, 255, 255, 1);
         }
-
         .box h4 {
           display: flex;
           align-items: center;
           padding-bottom: 10px;
         }
-
         .box img {
           filter: brightness(0%);
           height: 30px;
           margin-right: 10px;
         }
-
         .box .chevron-img {
           height: 12px;
           padding: 0 30px;
         }
-
         .box ul {
           list-style-type: none;
           margin: 5px 0;
           padding: 0;
           border-left: 2px solid lightgrey;
         }
-
         .box li {
           font-size: 14px;
           padding: 0 0 4px 10px;
           color: grey;
         }
-
         .dropdown {
           position: relative;
           margin-right: 50px;
@@ -291,7 +260,6 @@ export default function HeaderNav() {
         .dropdown:hover {
           color: var(--blueDocspera);
         }
-
         .dropdown p {
           color: var(--blueDocspera);
           margin: 0;
@@ -300,11 +268,9 @@ export default function HeaderNav() {
           padding: 10px 20px;
           border-radius: 5px;
         }
-
         .dropdown p:hover {
           background-color: rgba(0, 150, 250, 0.2);
         }
-
         #contact-dropdown {
           display: flex;
           align-items: center;
@@ -319,7 +285,6 @@ export default function HeaderNav() {
           padding-top: 10px;
           margin-top: 3px;
         }
-
         #contact-dropdown ul {
           list-style-type: none;
           margin: 0;
@@ -333,7 +298,6 @@ export default function HeaderNav() {
           font-weight: normal;
           padding: 0 0 10px 0;
         }
-
         #contact-dropdown li a:hover {
           color: black;
           cursor: default;
@@ -342,22 +306,18 @@ export default function HeaderNav() {
           background-color: white;
           border-radius: 0;
         }
-
         h4 {
           margin: 0;
         }
-
         @media (max-width: 1050px) {
           #nav-items {
             padding-right: 6vh;
           }
-
           #nav-items a,
           .dropdown {
             margin-right: 15px;
           }
         }
-
         @media (max-width: 880px) {
           #nav-items {
             padding-right: 3vh;
@@ -367,7 +327,6 @@ export default function HeaderNav() {
             margin-right: 5px;
           }
         }
-
         @media (max-width: 775px) {
           #nav-items a,
           .dropdown p {
