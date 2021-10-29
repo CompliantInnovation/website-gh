@@ -18,12 +18,7 @@ export default function Home() {
       <Head>
         <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform</title>
         <link rel='icon' href='/website-gh/favicon.ico' />
-        <link
-          rel='preload'
-          href='/website-gh/fonts/VarelaRound-Regular.ttf'
-          as='font'
-          crossOrigin=''
-        />
+        <link rel='preload' href='/website-gh/fonts/VarelaRound-Regular.ttf' as='font' crossOrigin='' />
       </Head>
       <HeaderNav />
 
@@ -76,10 +71,7 @@ export default function Home() {
             {/* Iphone Calendar Mockups */}
 
             <div id='iphone-calendar-div'>
-              <img
-                id='iphone-calendar'
-                src='/website-gh/images/product-shots/iphone-calendar.png'
-              />
+              <img id='iphone-calendar' src='/website-gh/images/product-shots/iphone-calendar.png' />
             </div>
 
             <div id='timeline-div'>
@@ -90,10 +82,7 @@ export default function Home() {
           <div id='vision-section'>
             {/* Iphone Calendar Mockups */}
             <div id='iphone-calendar-div'>
-              <img
-                id='iphone-calendar'
-                src='/website-gh/images/product-shots/iphone-calendar.png'
-              />
+              <img id='iphone-calendar' src='/website-gh/images/product-shots/iphone-calendar.png' />
             </div>
 
             <div id='timeline-div'>
@@ -138,10 +127,10 @@ export default function Home() {
 
       <div style={{ backgroundColor: 'var(--blueSky)' }}>
         <div className='inner-div'>
-          <h2 className='products-h2'>View our solutions for...</h2>
+          <h2 className='products-h2' style={{fontFamily: 'Varela Round'}}>We have solutions for...</h2>
           <div className='product-section'>
             <div className='box'>
-              <h4>
+              <h4 style={{fontFamily: 'Varela Round'}}>
                 <img src='/website-gh/images/surgeon-users.png' />
                 Providers
               </h4>
@@ -162,7 +151,7 @@ export default function Home() {
               </Link>
             </div>
             <div className='box'>
-              <h4>
+              <h4 style={{fontFamily: 'Varela Round'}}>
                 <img src='/website-gh/images/medical-device.png' />
                 Medical Device
               </h4>
@@ -190,46 +179,23 @@ export default function Home() {
         <h2 id='docspera-works-h2'>
           DocSpera works with leading health solution providers and Organizations
         </h2>
-        <Carousel
-          type='logo'
-          content={[
-            {
-              img: '/website-gh/images/logos/innovacer.png',
-              width: 180
-            },
-            {
-              img: '/website-gh/images/logos/athena-health.png',
-              width: 210
-            },
-            {
-              img: '/website-gh/images/logos/app-orchard.png',
-              width: 170
-            },
-            {
-              img: '/website-gh/images/logos/dolby.png',
-              width: 160
-            },
-            {
-              img: '/website-gh/images/logos/AAHKS.jpg',
-              width: 170
-            },
-            {
-              img: '/website-gh/images/logos/anterior-hip-foundation.png',
-              width: 180
-            },
-            {
-              img: '/website-gh/images/logos/CMS.jpg',
-              width: 120
-            }
-          ]}
-        />
+
+
+
+          <div className='logos'>
+            <div>
+              <img src='/website-gh/images/logos/innovacer.png' width={220} />
+              <img src='/website-gh/images/logos/athena-health.png' width={180} />
+              <img src='/website-gh/images/logos/app-orchard.png' width={170} />
+              <img src='/website-gh/images/logos/dolby.png' width={150} />
+
+              <img src='/website-gh/images/logos/AAHKS.jpg' width={170} />
+              <img src='/website-gh/images/logos/anterior-hip-foundation.png' width={170} />
+              <img src='/website-gh/images/logos/CMS.jpg' width={100} />
+            </div>
+          </div>
       </div>
 
-      <img
-        id='map'
-        src='/website-gh/images/graphics/map-with-pins.png'
-        alt='map of docspera locations'
-      />
 
       <FooterBar />
       <style jsx>{`
@@ -432,6 +398,7 @@ export default function Home() {
           font-weight: 200;
         }
         .products-h2 {
+          font-family: 'Varela Round';
           color: var(--blueDocspera);
           text-align: center;
           margin-left: 45px;
@@ -493,6 +460,7 @@ export default function Home() {
           color: var(--blueDocspera);
         }
         .box button {
+          font-family: 'Varela Round';
           background-color: var(--blueDocspera);
           border: none;
           border-radius: 5px;
@@ -506,20 +474,6 @@ export default function Home() {
           box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.1);
           cursor: pointer;
         }
-        #map {
-          width: 60%;
-          display: block;
-          margin: 0 auto;
-          user-select: none;
-          margin-top: -120px;
-          margin-bottom: 150px;
-        }
-        @media (max-width: 900px) {
-          #map {
-            width: 90%;
-            margin-top: -80px;
-          }
-        }
         #docspera-works-h2 {
           text-align: center;
           margin-bottom: -40px; 
@@ -531,12 +485,83 @@ export default function Home() {
             max-width: 600px;
           }
         }
-        .logos div {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          height: 100px;
+
+
+        .logos {
+          margin-top: 50px;
         }
+
+        .logos div {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          grid-auto-rows: 1fr;
+          justify-content: space-between;
+          align-items: center;
+          align-content: space-between;
+        }
+
+        .logos div img:nth-child(4n-2),
+        .logos div img:nth-child(4n-1) {
+          justify-self: center;
+        }
+
+        .logos div img:nth-child(4n) {
+          justify-self: end;
+        }
+
+
+        @media (max-width: 890px) {
+          .logos img {
+            width: 80%;
+          }
+        }
+
+        @media (max-width: 650px) {
+          .logos img {
+            width: 60%;
+          }
+
+          .logos > div:nth-child(1) {
+            display: grid;
+          }
+
+          .logos > div:nth-child(2) {
+            display: none;
+          }
+          .logos div {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: 1fr;
+            justify-content: space-between;
+            align-items: center;
+          }
+          .logos div img:nth-child(2n) {
+            justify-self: center;
+          }
+          .logos div img:nth-child(2n-1) {
+            justify-self: center;
+          }
+
+          @media (max-width: 480px) {
+            .logos img {
+              width: 50%;
+            }
+            .logos div:nth-child(1) > img:nth-child(5) {
+              // width: 40%;
+            }
+            .logos div {
+              display: grid;
+              grid-template-columns: 1fr;
+              grid-auto-rows: 120px;
+            }
+            button {
+              grid-column: auto;
+            }
+          }
+
+
+
+
         @media (max-width: 1024px) {
           .product-section {
             display: flex;
