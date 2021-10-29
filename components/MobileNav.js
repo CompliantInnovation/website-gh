@@ -67,10 +67,7 @@ export default function MobileNav() {
           <div className='product-container' onClick={handleProductOnHover}>
             <div className='menu-item'>
               <div>Products</div>
-              <img
-                id={productDropdown ? 'chevron-img' : ''}
-                src='/website-gh/images/graphics/chevron.png'
-              />
+              <img id={productDropdown ? 'chevron-img' : ''} src='/website-gh/images/graphics/chevron.png' />
             </div>
 
             {productDropdown && (
@@ -102,10 +99,7 @@ export default function MobileNav() {
           <div className='contact-container' onClick={handleContactOnHover}>
             <div className='menu-item'>
               <div>Contact</div>
-              <img
-                id={contactDropdown ? 'chevron-img' : ''}
-                src='/website-gh/images/graphics/chevron.png'
-              />
+              <img id={contactDropdown ? 'chevron-img' : ''} src='/website-gh/images/graphics/chevron.png' />
             </div>
 
             {contactDropdown && (
@@ -155,7 +149,6 @@ export default function MobileNav() {
           height: 60px;
           z-index: 3;
         }
-
         .mobile-menu {
           display: flex;
           align-items: left;
@@ -169,7 +162,6 @@ export default function MobileNav() {
           padding: 30px;
           z-index: 3;
         }
-
         button {
           background-color: var(--blueDocspera);
           border: none;
@@ -180,7 +172,6 @@ export default function MobileNav() {
           font-size: 16px;
           cursor: pointer;
         }
-
         #x,
         #hamburger {
           height: 20px;
@@ -188,13 +179,11 @@ export default function MobileNav() {
           align-items: center;
           cursor: pointer;
         }
-
         a {
           text-decoration: none;
           color: black;
           cursor: pointer;
         }
-
         .menu-item {
           background-color: white;
           display: flex;
@@ -206,22 +195,18 @@ export default function MobileNav() {
           border: 1px solid white;
           border-radius: 3px;
         }
-
         .menu-item img {
           height: 16px;
         }
-
         .product-container,
         .contact-container {
           background-color: white;
           margin-bottom: 10px;
         }
-
         .product-container .menu-item,
         .contact-container .menu-item {
           margin: 0;
         }
-
         .underline {
           height: 1px;
           width: 95%;
@@ -230,35 +215,29 @@ export default function MobileNav() {
           border-radius: 10px;
           margin-bottom: 10px;
         }
-
         .product-dropdown {
           padding-bottom: 10px;
           font-size: 16px;
         }
-
         .box {
           display: flex;
           align-items: center;
           padding: 10px 20px;
           cursor: pointer;
         }
-
         .box img {
           filter: brightness(0%);
           height: 23px;
           margin-right: 10px;
         }
-
         .box .chevron-img {
           height: 10px;
           padding: 0 30px;
         }
-
         #chevron-img {
           transform: rotate(90deg);
           transition-duration: 0.2s;
         }
-
         .contact-dropdown ul {
           list-style-type: none;
           padding-left: 20px;
