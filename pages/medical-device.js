@@ -11,12 +11,7 @@ export default function MedicalDevicePage() {
       <Head>
         <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform</title>
         <link rel='icon' href='/website-gh/favicon.ico' />
-        <link
-          rel='preload'
-          href='/website-gh/fonts/VarelaRound-Regular.ttf'
-          as='font'
-          crossOrigin=''
-        />
+        <link rel='preload' href='/website-gh/fonts/VarelaRound-Regular.ttf' as='font' crossOrigin='' />
       </Head>
       <HeaderNav />
       <div className='container'>
@@ -28,13 +23,7 @@ export default function MedicalDevicePage() {
           DocSpera is an integrated, comprehensive, and compliant digital solution powering
           patient-specific data, enabling Clinical insights, including an efficient supply chain.
         </p>
-        {/* <div> */}
-        <img
-          src='/website-gh/images/drawings/medical-device-art-work.png'
-          id='business'
-          width={570}
-        />
-        {/* </div> */}
+        <img src='/website-gh/images/drawings/medical-device-art-work.png' id='business' width={570} />
 
         <div>
           <div className='statistics'>
@@ -190,10 +179,7 @@ export default function MedicalDevicePage() {
                 src='/website-gh/images/graphics/advanced-case-notification-mobile-v3.png'
               />
             ) : (
-              <img
-                id='ACN-img-desktop'
-                src='/website-gh/images/graphics/advanced-case-notification-v2.png'
-              />
+              <img id='ACN-img-desktop' src='/website-gh/images/graphics/advanced-case-notification-v2.png' />
             )}
           </div>
         </div>
@@ -403,6 +389,8 @@ export default function MedicalDevicePage() {
           color: grey;
         }
         #demand-intel-img-div > img {
+          filter: drop-shadow(0 0px 10px lightgray);
+          border-radius: 10px;
           width: 100%;
         }
         #insights-section h4 {

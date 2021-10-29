@@ -69,6 +69,7 @@ export default function NumberScroll({ imgSrc, number, title, plus, order, perce
           align-items: center;
         }
         .title {
+          font-family: 'Varela Round';
           text-align: center;
           font-size: 18px;
           max-width: 200px;
