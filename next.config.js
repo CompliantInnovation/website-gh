@@ -7,15 +7,13 @@ const debug = process.env.NODE_ENV !== 'production'
 console.log('DEBUG', debug)
 
 module.exports = {
-  // basePath: '',
+  basePath: '/website-gh',
   exportPathMap: function () {
     return {
       '/': { page: '/' }
     }
   },
-  //assetPrefix: '',
-  assetPrefix: !debug ? '' : '',
-  // assetPrefix: '',
+  assetPrefix: !debug ? '/website-gh' : '',
   webpack: (config, { dev }) => {
     // Perform customizations to webpack config
     // console.log('webpack');
