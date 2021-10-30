@@ -179,9 +179,6 @@ export default function Home() {
         <h2 id='docspera-works-h2'>
           DocSpera works with leading health solution providers and Organizations
         </h2>
-
-
-
           <div className='logos'>
             <div>
               <img src='/website-gh/images/logos/innovacer.png' width={220} />

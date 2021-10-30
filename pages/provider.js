@@ -332,12 +332,14 @@ export default function Provider() {
           margin: 0 auto;
           z-index: -10000;
         }
+
         #seamless-integration > img {
           display: block;
           width: 100%;
           margin: 0 auto;
           margin-top: 50px;
         }
+
         @media (max-width: 800px) {
           #provider-solutions-inside-provider {
             padding-top: 100px;
