@@ -19,6 +19,8 @@ export default function Company() {
         DocSpera's bold and passionate team comes from diverse healthcare, technology and security backgrounds, and is positioned all across the United States to serve our customers everywhere.  We share core values that have helped us succeed throughout our lives, and certainly together as a team – <b>Obsession</b> with our <b>Customer</b>, working <b>Collaboratively</b>, to <b>Quickly</b> execute <b>Bold</b> ideas, with <b>Integrity</b>, and a <b>Quality</b> product – and to <b>Continuously Improve</b>!  Our team brings with it decades of technical, professional service, and executive level experience from innovative companies like Abbott, Baxter, Cisco, Eli Lilly, Esri, GE, Guidant, Intuit, Merck, Microsoft, Penumbra, Siemens, and Yahoo! to name a few.
         </p>
 
+        {/* Company with Jackets Image */}
+        <img className='img' src='/website-gh/images/company/IMG_8940.jpeg' style={{ width: '100%' }} />
         {/* Dinner Images */}
         <div style={{ display: 'flex' }}>
           {/* Vertical Dinner Images (on the Left) */}
@@ -53,8 +55,7 @@ export default function Company() {
         {/* Elizabeth, Luca & Jon */}
         <img className='img' src='/website-gh/images/company/IMG_8865.jpeg' style={{ width: '100%' }} />
 
-        {/* Company with Jackets Image */}
-        <img className='img' src='/website-gh/images/company/IMG_8940.jpeg' style={{ width: '100%' }} />
+        
       </div>
 
       <FooterBar />
