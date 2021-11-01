@@ -17,14 +17,14 @@ export default function Home() {
     <div className='container'>
       <Head>
         <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform</title>
-        <link rel='icon' href='/website-gh/favicon.ico' />
-        <link rel='preload' href='/website-gh/fonts/VarelaRound-Regular.ttf' as='font' crossOrigin='' />
+        <link rel='icon' href='/favicon.ico' />
+        <link rel='preload' href='/fonts/VarelaRound-Regular.ttf' as='font' crossOrigin='' />
       </Head>
       <HeaderNav />
 
       <div>
         <div id='landing-bg-div'>
-          <img id='landing-bg' src='/website-gh/images/iPad-landing.png' />
+          <img id='landing-bg' src='/images/iPad-landing.png' />
         </div>
         <div id='hero-h1'>
           <h1>Intelligent Surgical Planning Software from Diagnosis to Recovery</h1>
@@ -33,13 +33,13 @@ export default function Home() {
         <div className='statistics'>
           <div>
             <NumberScroll
-              imgSrc='/website-gh/images/patient-volume.png'
+              imgSrc='/images/patient-volume.png'
               number={100000}
               title='Monthly Patient Volume'
               plus
             />
             <NumberScroll
-              imgSrc='/website-gh/images/surgeon-users.png'
+              imgSrc='/images/surgeon-users.png'
               number={6000}
               title='Surgeon Users'
               plus
@@ -47,13 +47,13 @@ export default function Home() {
           </div>
           <div>
             <NumberScroll
-              imgSrc='/website-gh/images/graphics/episodic-cases.png'
+              imgSrc='/images/graphics/episodic-cases.png'
               number={350000}
               title='Episodic Cases'
               plus
             />
             <NumberScroll
-              imgSrc='/website-gh/images/practices.png'
+              imgSrc='/images/practices.png'
               number={300}
               title='Practices, ASCs & Hospitals'
               plus
@@ -71,11 +71,11 @@ export default function Home() {
             </h2>
             {/* Iphone Calendar Mockups */}
             <div id='iphone-calendar-div'>
-              <img id='iphone-calendar' src='/website-gh/images/product-shots/iphone-calendar.png' />
+              <img id='iphone-calendar' src='/images/product-shots/iphone-calendar.png' />
             </div>
 
             <div id='timeline-div'>
-              <img id='timeline-graphic' src='/website-gh/images/graphics/timeline-graphic.png' />
+              <img id='timeline-graphic' src='/images/graphics/timeline-graphic.png' />
             </div>
           </div>
         ) : (
@@ -87,12 +87,12 @@ export default function Home() {
               </h2>
               <div id='vision-section'>
             <div id='iphone-calendar-div'>
-              <img id='iphone-calendar' src='/website-gh/images/product-shots/iphone-calendar.png' />
+              <img id='iphone-calendar' src='/images/product-shots/iphone-calendar.png' />
             </div>
 
             <div id='timeline-div'>
               {/* Timeline Graphic + Copy  "1. Pre-Operative..." */}
-              <img id='timeline-graphic' src='/website-gh/images/graphics/timeline-graphic.png' />
+              <img id='timeline-graphic' src='/images/graphics/timeline-graphic.png' />
             </div>
               </div>
               
@@ -124,7 +124,7 @@ export default function Home() {
               </ul>
             </p>
           </div>
-          <img id='connecting-graphic' src='/website-gh/images/graphics/connected-graphic.png' />
+          <img id='connecting-graphic' src='/images/graphics/connected-graphic.png' />
         </div>
       </div>
 
@@ -134,7 +134,7 @@ export default function Home() {
           <div className='product-section'>
             <div className='box'>
               <h4 style={{fontFamily: 'Varela Round'}}>
-                <img src='/website-gh/images/surgeon-users.png' />
+                <img src='/images/surgeon-users.png' />
                 Providers
               </h4>
               <p>
@@ -149,13 +149,13 @@ export default function Home() {
               <Link href='/provider'>
                 <button>
                   View Provider Products{' '}
-                  <img className='chevron-img' src='/website-gh/images/graphics/chevron.png' />
+                  <img className='chevron-img' src='/images/graphics/chevron.png' />
                 </button>
               </Link>
             </div>
             <div className='box'>
               <h4 style={{fontFamily: 'Varela Round'}}>
-                <img src='/website-gh/images/medical-device.png' />
+                <img src='/images/medical-device.png' />
                 Medical Device
               </h4>
               <p>
@@ -170,7 +170,7 @@ export default function Home() {
               <Link href='/medical-device'>
                 <button>
                   View Medical Device Products{' '}
-                  <img className='chevron-img' src='/website-gh/images/graphics/chevron.png' />
+                  <img className='chevron-img' src='/images/graphics/chevron.png' />
                 </button>
               </Link>
             </div>
@@ -184,14 +184,14 @@ export default function Home() {
         </h2>
           <div className='logos'>
             <div>
-              <img src='/website-gh/images/logos/innovacer.png' width={220} />
-              <img src='/website-gh/images/logos/athena-health.png' width={180} />
-              <img src='/website-gh/images/logos/app-orchard.png' width={170} />
-              <img src='/website-gh/images/logos/dolby.png' width={150} />
+              <img src='/images/logos/innovacer.png' width={220} />
+              <img src='/images/logos/athena-health.png' width={180} />
+              <img src='/images/logos/app-orchard.png' width={170} />
+              <img src='/images/logos/dolby.png' width={150} />
 
-              <img src='/website-gh/images/logos/AAHKS.jpg' width={170} />
-              <img src='/website-gh/images/logos/anterior-hip-foundation.png' width={170} />
-              <img src='/website-gh/images/logos/CMS.jpg' width={100} />
+              <img src='/images/logos/AAHKS.jpg' width={170} />
+              <img src='/images/logos/anterior-hip-foundation.png' width={170} />
+              <img src='/images/logos/CMS.jpg' width={100} />
             </div>
           </div>
       </div>
@@ -287,7 +287,7 @@ export default function Home() {
             padding-top: 50px
           }
         }
-        // VISION SECTION
+        / VISION SECTION
         #vision-section {
           display: flex;
           align-items: center;
@@ -349,7 +349,7 @@ export default function Home() {
             margin-left: -10px;
           }
         }
-        // CONNECTING SECTION
+        / CONNECTING SECTION
         #connecting-section {
           background-color: #2a83bf;
           background-color: var(--blueXLight);
@@ -536,7 +536,7 @@ export default function Home() {
               width: 50%;
             }
             .logos div:nth-child(1) > img:nth-child(5) {
-              // width: 40%;
+              / width: 40%;
             }
             .logos div {
               display: grid;
