@@ -167,6 +167,49 @@ export default function Provider() {
           </div>
         </div>
 
+        <div style={{ backgroundColor: 'var(--blueXLight' }}>
+          <div id='designed-for-providers' className='inner-div'>
+            <h2>Designed for Providers Like You</h2>
+            <div>
+              <img id='mock-up-img' src='/website-gh/images/product-shots/mockups.png' />
+
+              <div>
+                <div className='box'>
+                  <img src='/website-gh/images/surgical.svg' />
+                  <div>
+                    <h4>Built for the Surgical Environment</h4>
+                    <p>
+                      Used by thousands of surgeons across hundreds of institution with varying
+                      surgical pathways
+                    </p>
+                  </div>
+                </div>
+                <div className='box'>
+                  <img src='/website-gh/images/graphics/security.svg' />
+                  <div>
+                    <h4>Secure</h4>
+                    <p>Provider verified, SOC 2 level and HIPAA compliant</p>
+                  </div>
+                </div>
+                <div className='box'>
+                  <img src='/website-gh/images/graphics/data-driven.svg' />
+                  <div>
+                    <h4>Driven by Data</h4>
+                    <p>Comprehensive and longitudinal data across the continuum of care</p>
+                  </div>
+                </div>
+                <div className='box'>
+                  <img src='/website-gh/images/graphics/integration.svg' />
+                  <div>
+                    <h4>Effortless Integration</h4>
+                    <p>Web and mobile interface easily integrate with other critical systems</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div style={{ backgroundColor: 'var(--blueFaint)' }}>
           <div id='seamless-integration' className='inner-div'>
             <h2>Seamless Integration </h2>
@@ -220,48 +263,7 @@ export default function Provider() {
           </div>
         </div>
 
-        <div style={{ backgroundColor: 'var(--blueXLight' }}>
-          <div id='designed-for-providers' className='inner-div'>
-            <h2>Designed for Providers Like You</h2>
-            <div>
-              <img id='mock-up-img' src='/website-gh/images/product-shots/mockups.png' />
-
-              <div>
-                <div className='box'>
-                  <img src='/website-gh/images/surgical.svg' />
-                  <div>
-                    <h4>Built for the Surgical Environment</h4>
-                    <p>
-                      Used by thousands of surgeons across hundreds of institution with varying
-                      surgical pathways
-                    </p>
-                  </div>
-                </div>
-                <div className='box'>
-                  <img src='/website-gh/images/graphics/security.svg' />
-                  <div>
-                    <h4>Secure</h4>
-                    <p>Provider verified, SOC 2 level and HIPAA compliant</p>
-                  </div>
-                </div>
-                <div className='box'>
-                  <img src='/website-gh/images/graphics/data-driven.svg' />
-                  <div>
-                    <h4>Driven by Data</h4>
-                    <p>Comprehensive and longitudinal data across the continuum of care</p>
-                  </div>
-                </div>
-                <div className='box'>
-                  <img src='/website-gh/images/graphics/integration.svg' />
-                  <div>
-                    <h4>Effortless Integration</h4>
-                    <p>Web and mobile interface easily integrate with other critical systems</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+       
 
         <div style={{ backgroundColor: 'var(--blueFaint' }}>
           <div className='inner-div'>
