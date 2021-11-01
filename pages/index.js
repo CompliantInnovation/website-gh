@@ -262,7 +262,7 @@ export default function Home() {
           }
           #hero-h1 > h1 {
             position: static;
-            color: var(--blueDark);
+            color: black;
             left: 0;
             font-size: 25px;
             width: 100%;
