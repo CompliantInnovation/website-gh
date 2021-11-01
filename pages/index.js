@@ -130,10 +130,10 @@ export default function Home() {
 
       <div style={{ backgroundColor: 'var(--blueSky)' }}>
         <div className='inner-div'>
-          <h2 className='products-h2' style={{fontFamily: 'Varela Round'}}>We have solutions for...</h2>
+          <h2 className='products-h2'>We have solutions for...</h2>
           <div className='product-section'>
             <div className='box'>
-              <h4 style={{fontFamily: 'Varela Round'}}>
+              <h4>
                 <img src='/website-gh/images/surgeon-users.png' />
                 Providers
               </h4>
@@ -154,7 +154,7 @@ export default function Home() {
               </Link>
             </div>
             <div className='box'>
-              <h4 style={{fontFamily: 'Varela Round'}}>
+              <h4>
                 <img src='/website-gh/images/medical-device.png' />
                 Medical Device
               </h4>
@@ -398,7 +398,7 @@ export default function Home() {
           font-weight: 200;
         }
         .products-h2 {
-          font-family: 'Varela Round';
+          font-family: 'Varela Round', sans-serif;
           color: var(--blueDocspera);
           text-align: center;
           margin-left: 45px;
@@ -438,6 +438,7 @@ export default function Home() {
           background-color: rgba(255, 255, 255, 1);
         }
         .box h4 {
+          font-family: 'Varela Round', sans-serif;
           display: flex;
           align-items: center;
           margin:0 0 15px 0;
@@ -460,7 +461,7 @@ export default function Home() {
           color: var(--blueDocspera);
         }
         .box button {
-          font-family: 'Varela Round';
+          font-family: 'Varela Round', sans-serif;
           background-color: var(--blueDocspera);
           border: none;
           border-radius: 5px;
