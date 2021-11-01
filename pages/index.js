@@ -50,6 +50,7 @@ export default function Home() {
               imgSrc='/website-gh/images/graphics/episodic-cases.png'
               number={350000}
               title='Episodic Cases'
+              plus
             />
             <NumberScroll
               imgSrc='/website-gh/images/practices.png'
@@ -69,7 +70,6 @@ export default function Home() {
               Journey
             </h2>
             {/* Iphone Calendar Mockups */}
-
             <div id='iphone-calendar-div'>
               <img id='iphone-calendar' src='/website-gh/images/product-shots/iphone-calendar.png' />
             </div>
@@ -79,20 +79,23 @@ export default function Home() {
             </div>
           </div>
         ) : (
-          <div id='vision-section'>
+          <div >
             {/* Iphone Calendar Mockups */}
+              <h2 style={{ textAlign: 'center', maxWidth: 700, margin: '10px auto 30px auto' }}>
+                Our Vision is to Address Priorities and Unmet Needs Through a Patient’s Surgical
+                Journey
+              </h2>
+              <div id='vision-section'>
             <div id='iphone-calendar-div'>
               <img id='iphone-calendar' src='/website-gh/images/product-shots/iphone-calendar.png' />
             </div>
 
             <div id='timeline-div'>
-              <h2>
-                Our Vision is to Address Priorities and Unmet Needs Through a Patient’s Surgical
-                Journey
-              </h2>
               {/* Timeline Graphic + Copy  "1. Pre-Operative..." */}
               <img id='timeline-graphic' src='/website-gh/images/graphics/timeline-graphic.png' />
             </div>
+              </div>
+              
           </div>
         )}
       </div>
@@ -102,7 +105,7 @@ export default function Home() {
           <div id='words-div'>
             <h1>DocSpera Integrated Care Coordination Platform</h1>
             <h2>
-              Connecting <b>Surgeons</b>, <br /> <b>Care Teams</b> & <b>Medical Device Co.</b>
+              Connecting <b>Care Teams</b>, <br /> <b>Surgery Locations</b> & <b>Device Partners</b>
             </h2>
             <p style={{ maxWidth: 420, marginLeft: -20 }}>
               <ul>
@@ -115,7 +118,7 @@ export default function Home() {
                   Current and reliable supply chain signaling for improved logistics and support.
                 </li>
                 <li>
-                  Enable early intervention with predictive indicators for patient compliance,
+                  Enables early intervention with predictive indicators for patient compliance,
                   discharge info, & readmission
                 </li>
               </ul>
@@ -177,7 +180,7 @@ export default function Home() {
 
       <div className='inner-div'>
         <h2 id='docspera-works-h2'>
-          DocSpera works with leading health solution providers and Organizations
+          DocSpera works with leading health solution Providers and Organizations
         </h2>
           <div className='logos'>
             <div>
@@ -208,7 +211,7 @@ export default function Home() {
         #hero-h1 > h1 {
           color: white;
           font-size: 4em;
-          font-family: 'Varela Round', 'sans-serif';
+          font-family: 'Varela Round', sans-serif;
           text-align: center;
           width: 90%;
           position: absolute;
@@ -318,7 +321,7 @@ export default function Home() {
             overflow: hidden;
           }
           #timeline-graphic {
-            width: 110%;
+            width: 100%;
             display: block;
             margin: 0 auto;
             padding-left: 30px;
@@ -342,7 +345,7 @@ export default function Home() {
   
         @media (max-width: 400px) {
           #timeline-graphic {
-            width: 120%;
+            width: 108%;
             margin-left: -10px;
           }
         }
