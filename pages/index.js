@@ -266,7 +266,8 @@ export default function Home() {
             left: 0;
             font-size: 25px;
             width: 100%;
-            margin-bottom: -50px;
+            margin-bottom: -30px;
+            margin-top: -5px;
             text-shadow: none;
           }
         }
