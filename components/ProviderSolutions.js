@@ -1,10 +1,14 @@
 import React from 'react'
 
 const ProviderSolutions = () => {
+  const isBrowser = () => typeof window !== 'undefined'
+
   return (
     <div style={{ backgroundColor: 'var(--blueXLight)', width: '100%' }}>
       <div className='provider-solutions inner-div'>
-        <h3 className='title'>Provider Premium</h3>
+        {isBrowser() && !window.location.href.includes('provider') && (
+          <h3 className='title'>Provider Premium</h3>
+        )}
         <h2 className='title-h2'>Integrated Provider Solutions</h2>
         <p>Best in class SaaS, real-time, predictive platform for the entire surgical ecosystem</p>
         <div className='provider-solutions-row'>
