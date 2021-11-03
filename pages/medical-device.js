@@ -230,6 +230,14 @@ export default function MedicalDevicePage() {
       <FooterBar />
 
       <style jsx>{`
+        @font-face {
+          font-family: 'Varela Round', sans-serif;
+          src: url('/website-gh/fonts/VarelaRound-Regular.ttf');
+          font-style: normal;
+          font-weight: 500;
+          font-display: swap;
+        }
+
         .container > h2,
         .container > p {
           padding: 0 5vw;
