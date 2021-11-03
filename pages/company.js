@@ -8,7 +8,7 @@ export default function Company() {
     <div className='container'>
       <Head>
         <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform</title>
-        <link rel='icon' href='/website-gh/favicon.ico' />
+        <link rel='icon' href='favicon.ico' />
         <link rel='preload' href='/website-gh/fonts/VarelaRound-Regular.ttf' as='font' crossOrigin='' />
       </Head>
       <HeaderNav />
@@ -21,9 +21,9 @@ export default function Company() {
 
         {/* Company with Jackets Image */}
         <img className='img' src='/website-gh/images/company/IMG_8940.jpeg' style={{ width: '100%' }} />
-        {/* Dinner Images */}
+        {/* Dinner /website-gh/images */}
         <div style={{ display: 'flex' }}>
-          {/* Vertical Dinner Images (on the Left) */}
+          {/* Vertical Dinner /website-gh/images (on the Left) */}
           <div style={{ width: '32%' }}>
             <img
               className='img'
