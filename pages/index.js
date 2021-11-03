@@ -2,7 +2,6 @@ import Head from 'next/head'
 import HeaderNav from '../components/HeaderNav'
 import Link from 'next/link'
 import NumberScroll from '../components/NumberScroll'
-import Carousel from '../components/Carousel'
 import FooterBar from '../components/Footer'
 import { useMedia } from '../hooks/useMedia'
 
@@ -17,17 +16,17 @@ export default function Home() {
     <div className='container'>
       <Head>
         <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform</title>
-        <link rel='icon' href='/website-gh/favicon.ico' />
+        <link rel='icon' href='favicon.ico' />
         <link rel='preload' href='/website-gh/fonts/VarelaRound-Regular.ttf' as='font' crossOrigin='' />
       </Head>
       <HeaderNav />
 
       <div>
         <div id='landing-bg-div'>
-          <img id='landing-bg' src='/website-gh/images/iPad-landing.png' />
+          {/* <img id='landing-bg' src='/website-gh/images/iPad-landing-bluer.png' /> */}
         </div>
         <div id='hero-h1'>
-          <h1>Intelligent Surgical Planning Software from Diagnosis to Recovery</h1>
+          <h1>Intelligent Surgical Planning Platform from Diagnosis to Recovery</h1>
         </div>
 
         <div className='statistics'>
@@ -42,7 +41,7 @@ export default function Home() {
               imgSrc='/website-gh/images/surgeon-users.png'
               number={6000}
               title='Surgeon Users'
-              plus
+              plusπ
             />
           </div>
           <div>
@@ -62,45 +61,49 @@ export default function Home() {
         </div>
       </div>
 
-      <div className='inner-div'>
-        {smallScreen ? (
-          <div id='vision-section'>
-            <h2 style={{ marginBottom: 35, maxWidth: 550, textAlign: 'center' }}>
-              Our Vision is to Address Priorities and Unmet Needs Through a Patient’s Surgical
-              Journey
-            </h2>
-            {/* Iphone Calendar Mockups */}
-            <div id='iphone-calendar-div'>
-              <img id='iphone-calendar' src='/website-gh/images/product-shots/iphone-calendar.png' />
-            </div>
-
-            <div id='timeline-div'>
-              <img id='timeline-graphic' src='/website-gh/images/graphics/timeline-graphic.png' />
-            </div>
-          </div>
-        ) : (
-          <div >
-            {/* Iphone Calendar Mockups */}
-              <h2 style={{ textAlign: 'center', maxWidth: 700, margin: '10px auto 30px auto' }}>
+      {/* Our Vision is to Adress... Section */}
+      <div style={{backgroundColor: 'var(--blueXLight)'}}>
+        <div className='inner-div'>
+          {smallScreen ? (
+            <div className='vision-section'>
+              <h2 style={{ marginBottom: 35, maxWidth: 550, textAlign: 'center' }}>
                 Our Vision is to Address Priorities and Unmet Needs Through a Patient’s Surgical
                 Journey
               </h2>
-              <div id='vision-section'>
-            <div id='iphone-calendar-div'>
-              <img id='iphone-calendar' src='/website-gh/images/product-shots/iphone-calendar.png' />
-            </div>
-
-            <div id='timeline-div'>
-              {/* Timeline Graphic + Copy  "1. Pre-Operative..." */}
-              <img id='timeline-graphic' src='/website-gh/images/graphics/timeline-graphic.png' />
-            </div>
+              {/* Iphone Calendar Mockups */}
+              <div id='iphone-calendar-div'>
+                <img id='iphone-calendar' src='/website-gh/images/product-shots/iphone-calendar.png' />
               </div>
-              
-          </div>
-        )}
-      </div>
 
-      <div style={{ backgroundColor: 'var(--blueXLight)' }}>
+              <div id='timeline-div'>
+                <img id='timeline-graphic' src='/website-gh/images/graphics/timeline-graphic.png' />
+              </div>
+            </div>
+          ) : (
+            <div >
+              {/* Iphone Calendar Mockups */}
+                <h2 style={{ textAlign: 'center', maxWidth: 700, margin: '10px auto 30px auto' }}>
+                  Our Vision is to Address Priorities and Unmet Needs Through a Patient’s Surgical
+                  Journey
+                </h2>
+                <div className='vision-section'>
+              <div id='iphone-calendar-div'>
+                <img id='iphone-calendar' src='/website-gh/images/product-shots/iphone-calendar.png' />
+              </div>
+
+              <div id='timeline-div'>
+                {/* Timeline Graphic + Copy  "1. Pre-Operative..." */}
+                <img id='timeline-graphic' src='/website-gh/images/graphics/timeline-graphic.png' />
+              </div>
+                </div>
+                
+            </div>
+          )}
+        </div>
+      </div>
+      
+
+      <div style={{ backgroundColor: 'white' }}>
         <div id='connecting-section' className='inner-div'>
           <div id='words-div'>
             <h1>DocSpera Integrated Care Coordination Platform</h1>
@@ -128,8 +131,8 @@ export default function Home() {
         </div>
       </div>
 
-      <div style={{ backgroundColor: 'var(--blueSky)' }}>
-        <div className='inner-div'>
+      <div style={{ backgroundColor: 'var(--blueXLight)' }}>
+        <div className='inner-div' id='solutions'>
           <h2 className='products-h2'>We have solutions for...</h2>
           <div className='product-section'>
             <div className='box'>
@@ -138,17 +141,17 @@ export default function Home() {
                 Providers
               </h4>
               <p>
+                <span>&#10140;</span> Integrated Surgical Scheduling
+              </p>
+              <p>
+                <span>&#10140;</span> Intelligent Dashboard
+              </p>
+              <p>
                 <span>&#10140;</span> Episode of Care
-              </p>
-              <p>
-                <span>&#10140;</span> Prioritized Rebooking
-              </p>
-              <p>
-                <span>&#10140;</span> Data Intelligence &amp; RWD Insights
               </p>
               <Link href='/provider'>
                 <button>
-                  View Provider Products{' '}
+                  View Provider Solutions{' '}
                   <img className='chevron-img' src='/website-gh/images/graphics/chevron.png' />
                 </button>
               </Link>
@@ -156,7 +159,7 @@ export default function Home() {
             <div className='box'>
               <h4>
                 <img src='/website-gh/images/medical-device.png' />
-                Medical Device
+                Device Partners
               </h4>
               <p>
                 <span>&#10140;</span> Advanced Case Notification
@@ -169,7 +172,7 @@ export default function Home() {
               </p>
               <Link href='/medical-device'>
                 <button>
-                  View Medical Device Products{' '}
+                  Device Partner Solutions{' '}
                   <img className='chevron-img' src='/website-gh/images/graphics/chevron.png' />
                 </button>
               </Link>
@@ -184,14 +187,27 @@ export default function Home() {
         </h2>
           <div className='logos'>
             <div>
-              <img src='/website-gh/images/logos/innovacer.png' width={220} />
-              <img src='/website-gh/images/logos/athena-health.png' width={180} />
-              <img src='/website-gh/images/logos/app-orchard.png' width={170} />
-              <img src='/website-gh/images/logos/dolby.png' width={150} />
-
-              <img src='/website-gh/images/logos/AAHKS.jpg' width={170} />
-              <img src='/website-gh/images/logos/anterior-hip-foundation.png' width={170} />
-              <img src='/website-gh/images/logos/CMS.jpg' width={100} />
+              <a href='https://innovaccer.com/marketplace/Intelligent-surgical-planning-from-diagnosis-to-recovery/' target='_blank'>
+                <img src='/website-gh/images/logos/innovacer.png' width={220} />
+              </a>
+              <a href='https://marketplace.athenahealth.com/product/docspera' target='_blank'>
+                <img src='/website-gh/images/logos/athena-health.png' width={180} />
+              </a>
+              <a href='https://apporchard.epic.com/Gallery?id=3515' target='_blank'>
+                <img src='/website-gh/images/logos/app-orchard.png' width={170} />
+              </a>
+              <a href='https://www.aahks.org/' target='_blank'>
+                <img src='/website-gh/images/logos/AAHKS.jpg' width={170} />
+              </a>
+              {/* <a href='https://www.prnewswire.com/news-releases/anterior-hip-foundation-and-docspera-partner-to-uncover-valuable-insights-through-data-analytics-in-order-to-advance-anterior-approach-hip-replacement-300605530.html' target='_blank'>
+                <img src='/website-gh/images/logos/anterior-hip-foundation.png' width={170} />
+              </a> */}
+              <a href='https://www.medicare.gov/manage-your-health/share-your-medicare-claims-medicares-blue-button/organize-share-your-medical-information-claims' target='_blank'>
+                <img src='/website-gh/images/logos/CMS.jpg' width={100} />
+              </a>
+              <a href='https://dolby.io/blog/docspera-integrates-dolby-io-with-surgeon-telehealth-solution-in-1-week/' target='_blank'>
+                <img src='/website-gh/images/logos/dolby.png' width={150} />
+              </a>
             </div>
           </div>
       </div>
@@ -201,11 +217,6 @@ export default function Home() {
       <style jsx>{`
         .container {
           width: 100%;
-        }
-        @media (max-width: 700px) {
-          .container {
-            overflow: hidden;
-          }
         }
         
         #hero-h1 > h1 {
@@ -219,9 +230,10 @@ export default function Home() {
           left: calc(100% - 95%);
           border-radius: 10px;
           padding: 10px;
-          text-shadow: 0 1px 2px RGBa(0,0,0, .6), 0 0 50px #cdf0fd;
+          text-shadow: 0 1px 4px RGBa(0,0,0, .6), 0 0 100px Black;
           margin-bottom: 0;
         }
+
         @media (max-width: 1400px) {
           #hero-h1 > h1 {
             font-size: 50px;
@@ -242,92 +254,116 @@ export default function Home() {
         #hero-h1 > span {
           font-size: 20px;
         }
+
         #landing-bg-div {
           overflow: hidden;
           width: 100vw;
           z-index: -100;
+          min-height: 500px;
+          height: 100vh;
+          position: relative;
+          background-image: url('/website-gh/images/iPad-landing-bluer.png');
+          background-position: 15% 50%, center bottom;
         }
+
         #landing-bg {
+          bottom: 0px;
+          left: 0;
+          transition: 1s;
           width: 100%;
-          height: auto;
         }
-        @media (max-width: 1000px) {
+
+        // H E I G H T queries for landing
+        @media (max-height: 750px) {
           #landing-bg {
-            width: 120%;
+            margin-bottom: -50px;
           }
         }
-        @media (max-width: 500px) {
-          #landing-bg-div {
-            margin-top: -50px;
+
+        @media (max-height: 850px) {
+          #landing-bg {
+            margin-bottom : -50px;
           }
+        }
+
+        // W I D T H queries for landing
+        @media (max-width: 1300px) {
+          #landing-bg {
+            // left: -300px;
+            // width: auto;
+          }
+        }
+
+        @media (max-width: 500px) {
           #hero-h1 > h1 {
-            position: static;
-            color: black;
-            left: 0;
-            font-size: 25px;
-            width: 100%;
-            margin-bottom: -30px;
-            margin-top: -5px;
-            text-shadow: none;
+            font-size: 30px;
           }
         }
        
-        @media (max-width: 600px) {
-          #landing-bg-div {
-            width: 120%;
-          }
-        }
-        @media (max-width: 800px) {
-          .statistics {
-            padding-top: 20px
+        @media (max-width: 650px) {
+          #landing-bg { 
+            left: -250px;
+            height: 100vh;
           }
         }
         
         @media (min-width: 800px) {
           .statistics {
-            padding-top: 50px
+            padding-top: 10px;
+            padding-bottom: 40px;
           }
         }
+
         // VISION SECTION
-        #vision-section {
+        .vision-section {
           display: flex;
           align-items: center;
         }
+        
         #iphone-calendar-div {
           width: 50%;
         }
+
         #iphone-calendar {
           width: 110%;
           margin-left: -60px;
         }
+
         #timeline-div {
           width: 50%;
         }
-        #vision-section h2 {
+
+        .vision-section h2 {
           max-width: 550px; 
           margin-bottom: 20px;
         }
+
         #timeline-graphic {
           max-width: 600px;
         }
+
         @media (max-width: 1100px) {
-          #vision-section {
+          .vision-section {
             flex-direction: column;
           }
+
           #iphone-calendar-div {
             width: 60%;
           }
+
           #timeline-div {
             width: 100%;
             overflow: hidden;
           }
+
           #timeline-graphic {
             width: 100%;
             display: block;
             margin: 0 auto;
             padding-left: 30px;
           }
-          #vision-section h2 {
+
+          .vision-section h2 {
             margin: 15px auto;
           }
         }
@@ -336,7 +372,7 @@ export default function Home() {
           #iphone-calendar-div {
             width: 100%;
           }
-          #vision-section h2 {
+          .vision-section h2 {
             max-width: 100%;
           }
           #timeline-graphic {
@@ -350,35 +386,39 @@ export default function Home() {
             margin-left: -10px;
           }
         }
+
         // CONNECTING SECTION
         #connecting-section {
-          background-color: #2a83bf;
-          background-color: var(--blueXLight);
           display: flex;
           justify-content: center;
           flex: 1;
           padding-top: 0px;
           color: black;
         }
+
         #connecting-section h1 {
           margin-top: 60px;
         }
+
         @media (max-width: 1270px) {
           #connecting-section {
             flex-direction: column;
           }
         }
+
         #connecting-graphic {
           width: 60%;
           align-self: flex-end;
           margin-right: -160px;
         }
+
         @media (max-width: 1270px) {
           #connecting-graphic {
             margin-top: -150px;
             margin-right: -30px;
           }
         }
+
         @media (max-width: 800px) {
           #connecting-graphic {
             margin-top: 10px;
@@ -386,31 +426,34 @@ export default function Home() {
             width: 100%;
           }
         }
+
         #words-div {
           padding-top: 4vw;
           padding-left: 4vw;
         }
+
         @media (max-width: 1200px) {
           #words-div {
             padding-top: 0;
           }
         }
+
         #words-div > h2 {
           font-weight: 200;
         }
+
         .products-h2 {
-          font-family: 'Varela Round', sans-serif;
-          color: var(--blueDocspera);
-          text-align: center;
           margin-left: 45px;
           margin-bottom: 20px; 
           font-weight: 600;
         }
+
         @media (max-width: 800px) {
           .products-h2 {
-            margin-left: 0;
+            margin-left: 0; 
           }
         }
+
         .product-section {
           display: flex;
           align-items: center;
@@ -419,14 +462,17 @@ export default function Home() {
           margin: 0px 0 60px 0;
   
         }
+
         .product-section h4 {
           font-size: 24px;
         }
+
         .product-section .chevron-img {
           filter: brightness(0) invert(1);
           height: 10px;
           margin: 0 0 0 10px;
         }
+
         .box {      
           padding: 25px 100px;
           border-radius: 10px;
@@ -434,21 +480,25 @@ export default function Home() {
           margin: 0 15px;
           box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.1);
         }
+
         .box:hover {
           border-radius: 5px;
           background-color: rgba(255, 255, 255, 1);
         }
+
         .box h4 {
           font-family: 'Varela Round', sans-serif;
           display: flex;
           align-items: center;
           margin:0 0 15px 0;
         }
+
         .box img {
           filter: brightness(0%);
           height: 30px;
           margin-right: 10px;
         }
+
         .box p {
           display: flex;
           align-items: center;
@@ -456,11 +506,13 @@ export default function Home() {
           color: grey;
           margin-bottom: 5px;
         }
+
         .box p > span {
           padding-right: 10px;
           font-size: 15px;
           color: var(--blueDocspera);
         }
+
         .box button {
           font-family: 'Varela Round', sans-serif;
           background-color: var(--blueDocspera);
@@ -472,54 +524,71 @@ export default function Home() {
           font-size: 14px;
           margin-top: 10px;
         }
+
         .box button:hover {
           box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.1);
           cursor: pointer;
         }
+
         #docspera-works-h2 {
           text-align: center;
           margin-bottom: -40px; 
           max-width: 600px;
           margin: 0px auto -40px auto;
         }
+
         @media (max-width: 900px) {
           #docspera-works-h2 { 
             max-width: 600px;
           }
         }
+
         .logos {
           margin-top: 50px;
         }
+
         .logos div {
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
+          grid-template-columns: repeat(3, 1fr);
           grid-auto-rows: 1fr;
           justify-content: space-between;
           align-items: center;
           align-content: space-between;
         }
-        .logos div img:nth-child(4n-2),
-        .logos div img:nth-child(4n-1) {
+        
+        .logos div a:nth-child(2),
+        .logos div a:nth-child(5) {
           justify-self: center;
         }
-        .logos div img:nth-child(4n) {
+
+        .logos div a:nth-child(4n) {
+          justify-self: start;
+        }
+
+        .logos div a:nth-child(6n),
+        .logos div a:nth-child(3n) {
           justify-self: end;
         }
-        @media (max-width: 890px) {
+
+        @media (max-width: 800px) {
           .logos img {
             width: 80%;
           }
         }
+
         @media (max-width: 650px) {
           .logos img {
+            width: 100%;
+          }
+
+          .logos a:nth-child(5) {
+            width: 50%;
+          }
+
+          .logos a {
             width: 60%;
           }
-          .logos > div:nth-child(1) {
-            display: grid;
-          }
-          .logos > div:nth-child(2) {
-            display: none;
-          }
+
           .logos div {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -527,28 +596,31 @@ export default function Home() {
             justify-content: space-between;
             align-items: center;
           }
-          .logos div img:nth-child(2n) {
+
+          .logos div a:nth-child(2n) {
             justify-self: center;
           }
-          .logos div img:nth-child(2n-1) {
+
+          .logos div a:nth-child(2n-1) {
             justify-self: center;
           }
+
           @media (max-width: 480px) {
-            .logos img {
+            .logos a {
               width: 50%;
             }
-            .logos div:nth-child(1) > img:nth-child(5) {
-              // width: 40%;
-            }
+      
             .logos div {
               display: grid;
               grid-template-columns: 1fr;
               grid-auto-rows: 120px;
             }
+
             button {
               grid-column: auto;
             }
           }
+
         @media (max-width: 1024px) {
           .product-section {
             display: flex;
@@ -556,9 +628,11 @@ export default function Home() {
             justify-content: space-evenly;
        
           }
+
           .box {   
             width: 45%;
             padding: 25px 50px;
+          }
         }
         @media (max-width: 768px) {
           .product-section {

@@ -10,7 +10,7 @@ export default function MedicalDevicePage() {
     <>
       <Head>
         <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform</title>
-        <link rel='icon' href='/website-gh/favicon.ico' />
+        <link rel='icon' href='favicon.ico' />
         <link rel='preload' href='/website-gh/fonts/VarelaRound-Regular.ttf' as='font' crossOrigin='' />
       </Head>
       <HeaderNav />
@@ -60,7 +60,7 @@ export default function MedicalDevicePage() {
 
         <div id='offerings-section'>
           <div id='offerings' className='inner-div'>
-            <h1 style={{ marginBottom: 20, color: 'white' }}>Enterprise Offerings & Outcomes</h1>
+            <h1 style={{ marginBottom: 20, color: 'white' }}>Enterprise Offerings and Outcomes</h1>
             <div id='offerings-divs'>
               <div>
                 <h3>DocSpera Demand</h3>
@@ -79,7 +79,7 @@ export default function MedicalDevicePage() {
                 </button>
               </div>
               <div>
-                <h3>Provider Premium</h3>
+                <h3>DocSpera Premium</h3>
                 <img src='/website-gh/images/provider-solutions.png' height='auto' />
                 <h4>Integrated Provider Solutions</h4>
                 <p>
@@ -122,7 +122,7 @@ export default function MedicalDevicePage() {
             </p>
             <div id='solve-challenges-divs'>
               <div>
-                <h4>Inventory and Logistic Costs</h4>
+                <h4>Inventory and Logistics Costs</h4>
                 <img src='/website-gh/images/graphics/cancellations.png' />
                 <p>
                   Improved case preparedness and inventory management through earlier, more
@@ -202,7 +202,7 @@ export default function MedicalDevicePage() {
             <div id='insights-copy-div'>
               <div>
                 <div className='insight-title-div'>
-                  <img src='/website-gh/images/line-graph.png' />
+                  <img src='/website-gh/images/target.png' />
                   <h4>Demand Intelligence</h4>
                 </div>
                 <p>View aggregated case demand information by region</p>
@@ -216,7 +216,7 @@ export default function MedicalDevicePage() {
               </div>
               <div>
                 <div className='insight-title-div'>
-                  <img src='/website-gh/images/target.png' />
+                  <img src='/website-gh/images/line-graph.png' />
                   <h4>Device Registry</h4>
                 </div>
                 <p>

@@ -81,7 +81,7 @@ export default function MobileNav() {
                 </Link>
                 <Link href='/medical-device'>
                   <div className='box'>
-                    <img src='/website-gh/images/medical-device.png' /> Medical Device{' '}
+                    <img src='/website-gh/images/medical-device.png' /> Device Partners{' '}
                     <img className='chevron-img' src='/website-gh/images/graphics/chevron.png' />
                   </div>
                 </Link>
