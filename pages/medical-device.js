@@ -232,7 +232,7 @@ export default function MedicalDevicePage() {
       <style jsx>{`
         @font-face {
           font-family: 'Varela Round', sans-serif;
-          src: url('/website-gh/fonts/VarelaRound-Regular.ttf');
+          src: url('/website-gh/fonts/VarelaRound-Regular.ttf') format('ttf');
           font-style: normal;
           font-weight: 500;
           font-display: swap;
