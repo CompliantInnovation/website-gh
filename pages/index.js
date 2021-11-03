@@ -47,8 +47,8 @@ export default function Home() {
             <NumberScroll
               imgSrc='/website-gh/images/surgeon-users.png'
               number={6000}
-              title='Surgeon Users'
-              plusπ
+              title='Providers'
+              plus
             />
           </div>
           <div>
