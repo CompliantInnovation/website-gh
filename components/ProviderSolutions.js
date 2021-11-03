@@ -14,9 +14,11 @@ const ProviderSolutions = () => {
         <div className='provider-solutions-row'>
           <div className='content'>
             <div>
-              <h4>Integrated Surgical Scheduling & Coordination Across Entire Care Team</h4>
               <div className='img-div'>
-                <img src='/website-gh/images/share-calendar.png' />
+                <img src='/website-gh/images/product-shots/Laptop-Calendar.png' />
+              </div>
+              <div className='h4-div'>
+                <h4>Integrated Surgical Scheduling & Coordination Across Entire Care Team</h4>
               </div>
               <p>
                 <ul>
@@ -32,9 +34,11 @@ const ProviderSolutions = () => {
           </div>
           <div className='content'>
             <div>
-              <h4>Intelligent Dashboard for Managing Upcoming Cases</h4>
               <div className='img-div'>
                 <img src='/website-gh/images/product-shots/smart-scheduling.png' />
+              </div>
+              <div className='h4-div'>
+                <h4>Intelligent Dashboard for Managing Upcoming Cases</h4>
               </div>
               <p>
                 <ul>
@@ -49,9 +53,11 @@ const ProviderSolutions = () => {
           </div>
           <div className='content'>
             <div>
-              <h4>Episode of Care Tracker for Post Operative Care Management </h4>
               <div className='img-div'>
                 <img src='/website-gh/images/product-shots/EOC.png' />
+              </div>
+              <div className='h4-div'>
+                <h4>Episode of Care Tracker for Post Operative Care Management </h4>
               </div>
               <p>
                 <ul>
@@ -88,6 +94,7 @@ const ProviderSolutions = () => {
           min-width: 300px;
           border-radius: 10px;
           padding: 15px;
+          max-width: 300px;
         }
 
         .content {
@@ -97,11 +104,18 @@ const ProviderSolutions = () => {
         }
 
         .img-div {
-          height: 230px;
+          min-height: 230px;
           background-color: transparent !important;
           display: flex;
           align-items: center;
           justify-content: center;
+        }
+
+        @media (max-width:1000px) {
+          .img-div {
+            width: 100%;
+            height: auto;
+          }
         }
 
         .img-div > img {
@@ -111,9 +125,15 @@ const ProviderSolutions = () => {
           filter: drop-shadow(0 0px 10px lightgray);
         }
 
-        .provider-solutions-row h4 {
-          color: var(--blueDocspera);
+        .h4-div {
           height: 90px;
+          display: flex;
+          align-items: center;
+        }
+
+        .provider-solutions-row h4 {
+          text-align: center;
+          color: black;
           max-width: 350px;
           margin: 0 auto;
           padding-left: 10px;
@@ -135,6 +155,7 @@ const ProviderSolutions = () => {
           padding-left: 10px;
           padding-right: 10px;
           margin: 0 auto;
+          margin-top: -10px;
           max-width: 350px;
         }
 
@@ -142,6 +163,7 @@ const ProviderSolutions = () => {
           .provider-solutions-row {
             display: flex;
             flex-direction: column;
+            align-items: center;
           }
 
           .provider-solutions-row div {

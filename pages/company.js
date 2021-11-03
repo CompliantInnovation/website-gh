@@ -8,7 +8,7 @@ export default function Company() {
     <div className='container'>
       <Head>
         <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform</title>
-        <link rel='icon' href='favicon.ico' />
+        <link rel='icon' href='/website-gh/favicon.ico' />
         <link rel='preload' href='/website-gh/fonts/VarelaRound-Regular.ttf' as='font' crossOrigin='' />
       </Head>
       <HeaderNav />
@@ -21,9 +21,9 @@ export default function Company() {
 
         {/* Company with Jackets Image */}
         <img className='img' src='/website-gh/images/company/IMG_8940.jpeg' style={{ width: '100%' }} />
-        {/* Dinner /website-gh/images */}
+        {/* Dinner images */}
         <div style={{ display: 'flex' }}>
-          {/* Vertical Dinner /website-gh/images (on the Left) */}
+          {/* Vertical Dinner images (on the Left) */}
           <div style={{ width: '32%' }}>
             <img
               className='img'
@@ -43,8 +43,8 @@ export default function Company() {
         {/* Brainstorming Session */}
         <div style={{ display: 'flex' }}>
           <div style={{ width: '50%' }}>
-            <img className='img' src='/website-gh/images/company/IMG_8836.jpeg' style={{ width: '100%' }} />
             <img className='img' src='/website-gh/images/company/IMG_8825.jpeg' style={{ width: '100%' }} />
+            <img className='img' src='/website-gh/images/company/IMG_8887.jpg' style={{ width: '100%' }} />
           </div>
           <div style={{ width: '50%', marginLeft: 10 }}>
             <img className='img' src='/website-gh/images/company/IMG_8838.jpeg' style={{ width: '100%' }} />

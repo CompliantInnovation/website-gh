@@ -10,7 +10,7 @@ export default function MedicalDevicePage() {
     <>
       <Head>
         <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform</title>
-        <link rel='icon' href='favicon.ico' />
+        <link rel='icon' href='/website-gh/favicon.ico' />
         <link rel='preload' href='/website-gh/fonts/VarelaRound-Regular.ttf' as='font' crossOrigin='' />
       </Head>
       <HeaderNav />
