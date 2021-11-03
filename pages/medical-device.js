@@ -33,7 +33,7 @@ export default function MedicalDevicePage() {
               <NumberScroll
                 imgSrc='/website-gh/images/surgeon-users.png'
                 number={6000}
-                title='Surgeons'
+                title='Providers'
                 plus
               />
               <NumberScroll
@@ -125,7 +125,7 @@ export default function MedicalDevicePage() {
             <div id='solve-challenges-divs'>
               <div>
                 <h4>Inventory and Logistics Costs</h4>
-                <img src='/website-gh/images/graphics/cancellations.png' />
+                <img src='/website-gh/images/graphics/efficient.png' />
                 <p>
                   Improved case preparedness and inventory management through earlier, more
                   integrated real-time updates of surgical case
@@ -146,7 +146,7 @@ export default function MedicalDevicePage() {
               </div>
               <div>
                 <h4>Market Penetration</h4>
-                <img src='/website-gh/images/strategic.png' />
+                <img src='/website-gh/images/graphics/strategic.png' />
                 <p style={{ maxWidth: 'none' }}>
                   Strengthen market position and become a more strategic partner to your customers
                   through diversified and easily managed risk-sharing based offerings
@@ -238,7 +238,7 @@ export default function MedicalDevicePage() {
         }
         #hero-h2 {
           text-align: center;
-          padding-top: 80px;
+          padding-top: 98px;
           max-width: 900px;
           margin: 0 auto;
         }
