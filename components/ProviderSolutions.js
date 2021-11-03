@@ -7,10 +7,10 @@ const ProviderSolutions = () => {
     <div style={{ backgroundColor: 'var(--blueXLight)', width: '100%' }}>
       <div className='provider-solutions inner-div'>
         {isBrowser() && !window.location.href.includes('provider') && (
-          <h3 className='title'>Provider Premium</h3>
+          <h3 className='title'>DocSpera Premium</h3>
         )}
         <h2 className='title-h2'>Integrated Provider Solutions</h2>
-        <p>Best in class SaaS, real-time, predictive platform for the entire surgical ecosystem</p>
+        <p>Efficient care coordination through patient's entire surgical journey using a best in class, real-time predictive platform</p>
         <div className='provider-solutions-row'>
           <div className='content'>
             <div>
@@ -32,7 +32,7 @@ const ProviderSolutions = () => {
           </div>
           <div className='content'>
             <div>
-              <h4>Surgical Dashboard for Managing Upcoming Cases</h4>
+              <h4>Intelligent Dashboard for Managing Upcoming Cases</h4>
               <div className='img-div'>
                 <img src='/website-gh/images/product-shots/smart-scheduling.png' />
               </div>
@@ -112,7 +112,7 @@ const ProviderSolutions = () => {
         }
 
         .provider-solutions-row h4 {
-          text-align: center;
+          color: var(--blueDocspera);
           height: 90px;
           max-width: 350px;
           margin: 0 auto;
@@ -156,10 +156,10 @@ const ProviderSolutions = () => {
         }
 
         .view-product-btn {
-          background-color: var(--blueDocspera);
-          border: none;
+          background-color: white;
+          border: 2px solid var(--blueDocspera);
           border-radius: 5px;
-          color: white;
+          color: var(--blueDocspera);
           padding: 5px 10px;
           font-size: 16px;
           font-weight: 500;
@@ -169,6 +169,8 @@ const ProviderSolutions = () => {
           display: block;
           margin: 0 auto;
         }
+
+
 
         button:hover {
           cursor: pointer;

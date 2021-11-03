@@ -65,7 +65,7 @@ export default function HeaderNav() {
             }
             onMouseEnter={handleProductOnHover}
           >
-            <span>PRODUCT</span>
+            <span>SOLUTIONS</span>
           </a>
           {productDropdown && (
             <div className='product-dropdown' onMouseLeave={handleProductOnHover}>
@@ -76,9 +76,9 @@ export default function HeaderNav() {
                     Providers <img className='chevron-img' src='/website-gh/images/graphics/chevron.png' />
                   </h4>
                   <ul>
+                    <li>Integrated Surgical Scheduling</li>
+                    <li>Intelligent Dashboard</li>
                     <li>Episode of Care</li>
-                    <li>Prioritized Rebooking</li>
-                    <li>Data Intelligence &amp; RWD Insights</li>
                   </ul>
                 </div>
               </Link>
@@ -86,7 +86,7 @@ export default function HeaderNav() {
                 <div className='box' onClick={handleProductOnHover}>
                   <h4>
                     <img src='/website-gh/images/medical-device.png' />
-                    Medical Device{' '}
+                    Device Partners {' '}
                     <img className='chevron-img' src='/website-gh/images/graphics/chevron.png' />
                   </h4>
                   <ul>

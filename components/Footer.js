@@ -9,13 +9,13 @@ export default function FooterBar() {
           <img id='logo' src='/website-gh/images/logo-white.svg' />
           <div id='icons-div'>
             <a href='https://docspera.com/appstore' target='_blank'>
-              <AppleFilled style={{ color: 'var(--blueDark)', fontSize: 25, cursor: 'pointer' }} />
+              <AppleFilled style={{ color: 'var(--blueDark)', fontsize: 25, cursor: 'pointer' }} />
             </a>
             <a href='https://www.facebook.com/DocSperaApp' target='_blank'>
               <FacebookFilled
                 style={{
                   color: 'var(--blueDark)',
-                  fontSize: 25,
+                  fontsize: 25,
                   marginLeft: 20,
                   cursor: 'pointer'
                 }}
@@ -25,7 +25,7 @@ export default function FooterBar() {
               <TwitterCircleFilled
                 style={{
                   color: 'var(--blueDark)',
-                  fontSize: 25,
+                  fontsize: 25,
                   marginLeft: 20,
                   cursor: 'pointer'
                 }}
@@ -35,7 +35,7 @@ export default function FooterBar() {
               <LinkedinFilled
                 style={{
                   color: 'var(--blueDark)',
-                  fontSize: 25,
+                  fontsize: 25,
                   marginLeft: 20,
                   cursor: 'pointer'
                 }}
