@@ -28,11 +28,13 @@ export default function Home() {
           {/* <img id='landing-bg' src='/website-gh/images/iPad-landing-bluer.png' /> */}
         </div>
         <div id='hero-h1'>
-        {useMedia('(max-width: 950px)') ? (
-            <h1 style={{width: '90%'}}>Intelligent Surgical Planning Platform 
-              from Diagnosis to Recovery</h1>
-        ) : (
-            <h1 >Intelligent Surgical Planning Platform <br></br> from Diagnosis to Recovery</h1>
+        {isBrowser && (
+          useMedia('(max-width: 950px)') ? (
+              <h1 style={{width: '90%'}}>Intelligent Surgical Planning Platform 
+                from Diagnosis to Recovery</h1>
+          ) : (
+              <h1 >Intelligent Surgical Planning Platform <br></br> from Diagnosis to Recovery</h1>
+          )
         )}
         </div>
 
