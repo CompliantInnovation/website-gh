@@ -268,6 +268,7 @@ export default function Home() {
         }
 
         #landing-bg-div {
+          background-color: var(--blueDocspera);
           overflow: hidden;
           width: 100vw;
           z-index: -100;
