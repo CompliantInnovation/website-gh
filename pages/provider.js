@@ -142,7 +142,7 @@ export default function Provider() {
               <NumberScroll
                 imgSrc='/website-gh/images/surgeon-users.png'
                 number={6000}
-                title='Surgeons'
+                title='Providers'
                 plus
               />
               <NumberScroll
@@ -339,6 +339,7 @@ export default function Provider() {
           margin-bottom: 10px;
         }
         #hero-h2 {
+          padding-top: 18px;
           text-align: center;
         }
         #hero-p {
