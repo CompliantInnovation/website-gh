@@ -73,7 +73,7 @@ export default function NumberScroll({ imgSrc, number, title, plus, order, perce
           text-align: center;
           font-size: 18px;
           max-width: 200px;
-          color: var(--blueDark);
+          color: var(--blueDocspera);
         }
         @media (max-width: 800px) {
           .title {
