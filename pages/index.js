@@ -18,6 +18,7 @@ export default function Home() {
         <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform</title>
         <link rel='icon' href='/website-gh/favicon.ico' />
         <link rel='preload' href='/website-gh/fonts/VarelaRound-Regular.ttf' as='font' crossOrigin='' />
+        <link href="/website-gh/fonts/style.css" rel="stylesheet"/>
       </Head>
       <HeaderNav />
 
@@ -222,14 +223,6 @@ export default function Home() {
 
       <FooterBar />
       <style jsx>{`
-        @font-face {
-          font-family: 'Varela Round', sans-serif;
-          src: url('/website-gh/fonts/VarelaRound-Regular.ttf') format('ttf');
-          font-style: normal;
-          font-weight: 500;
-          font-display: swap;
-        }
-
         .container {
           width: 100%;
         }
