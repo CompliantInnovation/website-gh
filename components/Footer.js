@@ -6,8 +6,20 @@ export default function FooterBar() {
     <footer>
       <div id='footer-inner-div'>
         <div style={{ margin: 'auto 0', flexGrow: 1 }}>
-          <img id='logo' src='/website-gh/images/logo-white.svg' />
+          <img id='logo' src='images/logo-white.svg' />
+
           <div id='icons-div'>
+            <a
+              href='mailto: Hello@DocSpera.com'
+              className='section-title'
+              style={{
+                paddingBottom: 10,
+                display: 'block',
+                fontSize: 16
+              }}
+            >
+              Hello@DocSpera.com
+            </a>
             <a href='https://docspera.com/appstore' target='_blank'>
               <AppleFilled style={{ color: 'var(--blueDark)', fontsize: 25, cursor: 'pointer' }} />
             </a>
@@ -171,7 +183,7 @@ export default function FooterBar() {
         }
 
         #icons-div {
-          margin-top: 20px;
+          margin-top: 0px;
         }
 
         #footer-nav {
