@@ -17,25 +17,28 @@ export default function Home() {
       <Head>
         <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform</title>
         <link rel='icon' href='/website-gh/favicon.ico' />
-        <link rel="preconnect" href="https://fonts.googleapis.com"/>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-        <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet"></link>
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+        <link
+          href='https://fonts.googleapis.com/css2?family=Varela+Round&display=swap'
+          rel='stylesheet'
+        ></link>
       </Head>
       <HeaderNav />
 
       <div>
-        <div id='landing-bg-div' style={{border: '2px solid pink', postion: 'relative'}}>
-          {/* <img id='landing-bg' src='/website-gh/images/iPad-landing-bluer.png' /> */}
-        </div>
+        <div id='landing-bg-div' style={{ postion: 'relative' }}></div>
         <div id='hero-h1'>
-        {isBrowser && (
-          useMedia('(max-width: 950px)') ? (
-              <h1 style={{width: '90%'}}>Intelligent Surgical Planning Platform 
-                from Diagnosis to Recovery</h1>
-          ) : (
-              <h1 >Intelligent Surgical Planning Platform <br></br> from Diagnosis to Recovery</h1>
-          )
-        )}
+          {isBrowser &&
+            (useMedia('(max-width: 950px)') ? (
+              <h1 style={{ width: '90%' }}>
+                Intelligent Surgical Planning Platform from Diagnosis to Recovery
+              </h1>
+            ) : (
+              <h1>
+                Intelligent Surgical Planning Platform <br></br> from Diagnosis to Recovery
+              </h1>
+            ))}
         </div>
 
         <div className='statistics'>
@@ -71,7 +74,7 @@ export default function Home() {
       </div>
 
       {/* Our Vision is to Adress... Section */}
-      <div style={{backgroundColor: 'var(--blueXLight)'}}>
+      <div style={{ backgroundColor: 'var(--blueXLight)' }}>
         <div className='inner-div'>
           {smallScreen ? (
             <div className='vision-section'>
@@ -80,7 +83,10 @@ export default function Home() {
                 Journey
               </h1>
               <div id='iphone-calendar-div'>
-                <img id='iphone-calendar' src='/website-gh/images/product-shots/iphone-calendar.png' />
+                <img
+                  id='iphone-calendar'
+                  src='/website-gh/images/product-shots/iphone-calendar.png'
+                />
               </div>
 
               <div id='timeline-div'>
@@ -88,26 +94,30 @@ export default function Home() {
               </div>
             </div>
           ) : (
-            <div >
-                <h2 style={{ textAlign: 'center', maxWidth: 700, margin: '10px auto 30px auto' }}>
-                  Our Vision is to Address Priorities and Unmet Needs Through a Patient’s Surgical
-                  Journey
-                </h2>
-                <div className='vision-section'>
-              <div id='iphone-calendar-div'>
-                <img id='iphone-calendar' src='/website-gh/images/product-shots/iphone-calendar.png' />
-              </div>
-
-              <div id='timeline-div'>
-                <img id='timeline-graphic' src='/website-gh/images/graphics/timeline-graphic.png' />
-              </div>
+            <div>
+              <h2 style={{ textAlign: 'center', maxWidth: 700, margin: '10px auto 30px auto' }}>
+                Our Vision is to Address Priorities and Unmet Needs Through a Patient’s Surgical
+                Journey
+              </h2>
+              <div className='vision-section'>
+                <div id='iphone-calendar-div'>
+                  <img
+                    id='iphone-calendar'
+                    src='/website-gh/images/product-shots/iphone-calendar.png'
+                  />
                 </div>
-                
+
+                <div id='timeline-div'>
+                  <img
+                    id='timeline-graphic'
+                    src='/website-gh/images/graphics/timeline-graphic.png'
+                  />
+                </div>
+              </div>
             </div>
           )}
         </div>
       </div>
-      
 
       <div style={{ backgroundColor: 'white' }}>
         <div id='connecting-section' className='inner-div'>
@@ -159,7 +169,10 @@ export default function Home() {
                 <Link href='/provider'>
                   <button>
                     View Provider Solutions{' '}
-                    <img className='chevron-img' src='/website-gh/images/graphics/chevron-blue.png' />
+                    <img
+                      className='chevron-img'
+                      src='/website-gh/images/graphics/chevron-blue.png'
+                    />
                   </button>
                 </Link>
               </div>
@@ -182,12 +195,14 @@ export default function Home() {
                 <Link href='/medical-device'>
                   <button>
                     View Device Partner Solutions{' '}
-                    <img className='chevron-img' src='/website-gh/images/graphics/chevron-blue.png' />
+                    <img
+                      className='chevron-img'
+                      src='/website-gh/images/graphics/chevron-blue.png'
+                    />
                   </button>
                 </Link>
               </div>
             </div>
-            
           </div>
         </div>
       </div>
@@ -196,33 +211,41 @@ export default function Home() {
         <h2 id='docspera-works-h2'>
           DocSpera works with leading health solution Providers and Organizations
         </h2>
-          <div className='logos'>
-            <div>
-              <a href='https://innovaccer.com/marketplace/Intelligent-surgical-planning-from-diagnosis-to-recovery/' target='_blank'>
-                <img src='/website-gh/images/logos/innovacer.png' width={220} />
-              </a>
-              <a href='https://marketplace.athenahealth.com/product/docspera' target='_blank'>
-                <img src='/website-gh/images/logos/athena-health.png' width={180} />
-              </a>
-              <a href='https://apporchard.epic.com/Gallery?id=3515' target='_blank'>
-                <img src='/website-gh/images/logos/app-orchard.png' width={170} />
-              </a>
-              <a href='https://www.aahks.org/' target='_blank'>
-                <img src='/website-gh/images/logos/AAHKS.jpg' width={170} />
-              </a>
-              {/* <a href='https://www.prnewswire.com/news-releases/anterior-hip-foundation-and-docspera-partner-to-uncover-valuable-insights-through-data-analytics-in-order-to-advance-anterior-approach-hip-replacement-300605530.html' target='_blank'>
+        <div className='logos'>
+          <div>
+            <a
+              href='https://innovaccer.com/marketplace/Intelligent-surgical-planning-from-diagnosis-to-recovery/'
+              target='_blank'
+            >
+              <img src='/website-gh/images/logos/innovacer.png' width={220} />
+            </a>
+            <a href='https://marketplace.athenahealth.com/product/docspera' target='_blank'>
+              <img src='/website-gh/images/logos/athena-health.png' width={180} />
+            </a>
+            <a href='https://apporchard.epic.com/Gallery?id=3515' target='_blank'>
+              <img src='/website-gh/images/logos/app-orchard.png' width={170} />
+            </a>
+            <a href='https://www.aahks.org/' target='_blank'>
+              <img src='/website-gh/images/logos/AAHKS.jpg' width={170} />
+            </a>
+            {/* <a href='https://www.prnewswire.com/news-releases/anterior-hip-foundation-and-docspera-partner-to-uncover-valuable-insights-through-data-analytics-in-order-to-advance-anterior-approach-hip-replacement-300605530.html' target='_blank'>
                 <img src='/website-gh/images/logos/anterior-hip-foundation.png' width={170} />
               </a> */}
-              <a href='https://www.medicare.gov/manage-your-health/share-your-medicare-claims-medicares-blue-button/organize-share-your-medical-information-claims' target='_blank'>
-                <img src='/website-gh/images/logos/CMS.jpg' width={100} />
-              </a>
-              <a href='https://dolby.io/blog/docspera-integrates-dolby-io-with-surgeon-telehealth-solution-in-1-week/' target='_blank'>
-                <img src='/website-gh/images/logos/dolby.png' width={150} />
-              </a>
-            </div>
+            <a
+              href='https://www.medicare.gov/manage-your-health/share-your-medicare-claims-medicares-blue-button/organize-share-your-medical-information-claims'
+              target='_blank'
+            >
+              <img src='/website-gh/images/logos/CMS.jpg' width={100} />
+            </a>
+            <a
+              href='https://dolby.io/blog/docspera-integrates-dolby-io-with-surgeon-telehealth-solution-in-1-week/'
+              target='_blank'
+            >
+              <img src='/website-gh/images/logos/dolby.png' width={150} />
+            </a>
           </div>
+        </div>
       </div>
-
 
       <FooterBar />
       <style jsx>{`
@@ -270,7 +293,6 @@ export default function Home() {
         }
 
         #landing-bg-div {
-          background-color: var(--blueDocspera);
           overflow: hidden;
           width: 100vw;
           z-index: -100;
