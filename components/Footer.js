@@ -6,7 +6,7 @@ export default function FooterBar() {
     <footer>
       <div id='footer-inner-div'>
         <div style={{ margin: 'auto 0', flexGrow: 1 }}>
-          <img id='logo' src='images/logo-white.svg' />
+          <img id='logo' src='/website-gh/images/logo-white.svg' />
 
           <div id='icons-div'>
             <a

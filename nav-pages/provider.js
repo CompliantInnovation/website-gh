@@ -10,29 +10,29 @@ import { useMedia } from '../hooks/useMedia'
 export default function Provider() {
   // const isBrowser = () =>
 
-  if (typeof document !== 'undefined') {
-    const sectionOne = document.querySelector('.statistics')
-    const sections = document.querySelectorAll('.inner-div')
+  // if (typeof document !== 'undefined') {
+  //   const sectionOne = document.querySelector('.statistics')
+  //   const sections = document.querySelectorAll('.inner-div')
 
-    const options = {
-      root: null, // default: viewport
-      threshold: 0, // 0-1 scale, default: 0
-      rootMargin: '-150px'
-    }
+  //   const options = {
+  //     root: null, // default: viewport
+  //     threshold: 0, // 0-1 scale, default: 0
+  //     rootMargin: '-150px'
+  //   }
 
-    const observer = new IntersectionObserver(function (entries, observer) {
-      entries.forEach((entry) => {
-        console.log(entry.target, 'translate?')
-        // entry.target.classList.toggle('translate')
-      })
-    }, options)
+  //   const observer = new IntersectionObserver(function (entries, observer) {
+  //     entries.forEach((entry) => {
+  //       console.log(entry.target, 'translate?')
+  //       // entry.target.classList.toggle('translate')
+  //     })
+  //   }, options)
 
-    sections.forEach((section) => {
-      observer.observe(section)
-    })
-  } else {
-    console.log('NOPE')
-  }
+  //   sections.forEach((section) => {
+  //     observer.observe(section)
+  //   })
+  // } else {
+  //   console.log('NOPE')
+  // }
 
   const emrLogos = [
     { img: 'athena-health.png', height: null, width: 220, url:'https://marketplace.athenahealth.com/product/docsperaß' },
