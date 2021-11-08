@@ -37,9 +37,9 @@ export default function MobileNav() {
     <nav>
       <div className='nav-bar'>
         {mobileNav ? (
-          <img id='x' src='/website-gh//website-gh/images/exit_icon.svg' onClick={openMenu} />
+          <img id='x' src='/website-gh/images/exit_icon.svg' onClick={openMenu} />
         ) : (
-          <img id='hamburger' src='/website-gh//website-gh/images/graphics/hamburger.png' onClick={openMenu} />
+          <img id='hamburger' src='/website-gh/images/graphics/hamburger.png' onClick={openMenu} />
         )}
 
         {state.route == 'login' || isLogin ? (
@@ -61,25 +61,25 @@ export default function MobileNav() {
               openMenu()
             }}>
               <div>Home</div>
-              <img className='chevron-img' src='/website-gh//website-gh/images/graphics/chevron.png' />
+              <img className='chevron-img' src='/website-gh/images/graphics/chevron.png' />
             </div>
 
           <div className='product-container' onClick={handleProductOnHover}>
             <div className='menu-item'>
               <div>Products</div>
-              <img id={productDropdown ? 'chevron-img' : ''} src='/website-gh//website-gh/images/graphics/chevron.png' />
+              <img id={productDropdown ? 'chevron-img' : ''} src='/website-gh/images/graphics/chevron.png' />
             </div>
 
             {productDropdown && (
               <div className='product-dropdown'>
                 <div className='underline'></div>
                 <div className='box' onClick={() => dispatch(changePage('provider'))}>
-                  <img src='/website-gh//website-gh/images/surgeon-users.png' /> Providers{' '}
-                  <img className='chevron-img' src='/website-gh//website-gh/images/graphics/chevron.png' />
+                  <img src='/website-gh/images/surgeon-users.png' /> Providers{' '}
+                  <img className='chevron-img' src='/website-gh/images/graphics/chevron.png' />
                 </div>
                 <div className='box' onClick={() => dispatch(changePage('medical-device'))}>
-                  <img src='/website-gh//website-gh/images/medical-device.png' /> Device Partners{' '}
-                  <img className='chevron-img' src='/website-gh//website-gh/images/graphics/chevron.png' />
+                  <img src='/website-gh/images/medical-device.png' /> Device Partners{' '}
+                  <img className='chevron-img' src='/website-gh/images/graphics/chevron.png' />
                 </div>
               </div>
             )}
@@ -87,13 +87,13 @@ export default function MobileNav() {
 
           <div className='menu-item' onClick={() => dispatch(changePage('company'))}>
             <div>Our Company</div>
-            <img className='chevron-img' src='/website-gh//website-gh/images/graphics/chevron.png' />
+            <img className='chevron-img' src='/website-gh/images/graphics/chevron.png' />
           </div>
 
           <div className='contact-container' onClick={handleContactOnHover}>
             <div className='menu-item'>
               <div>Contact</div>
-              <img id={contactDropdown ? 'chevron-img' : ''} src='/website-gh//website-gh/images/graphics/chevron.png' />
+              <img id={contactDropdown ? 'chevron-img' : ''} src='/website-gh/images/graphics/chevron.png' />
             </div>
 
             {contactDropdown && (
@@ -123,7 +123,7 @@ export default function MobileNav() {
           >
             <div className='menu-item'>
               <div>Blog</div>
-              <img className='chevron-img' src='/website-gh//website-gh/images/graphics/chevron.png' />
+              <img className='chevron-img' src='/website-gh/images/graphics/chevron.png' />
             </div>
           </a>
         </div>
