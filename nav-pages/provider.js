@@ -10,47 +10,47 @@ import { useMedia } from '../hooks/useMedia'
 export default function Provider() {
   // const isBrowser = () =>
 
-  if (typeof document !== 'undefined') {
-    const sectionOne = document.querySelector('.statistics')
-    const sections = document.querySelectorAll('.inner-div')
+  // if (typeof document !== 'undefined') {
+  //   const sectionOne = document.querySelector('.statistics')
+  //   const sections = document.querySelectorAll('.inner-div')
 
-    const options = {
-      root: null, // default: viewport
-      threshold: 0, // 0-1 scale, default: 0
-      rootMargin: '-150px'
-    }
+  //   const options = {
+  //     root: null, // default: viewport
+  //     threshold: 0, // 0-1 scale, default: 0
+  //     rootMargin: '-150px'
+  //   }
 
-    const observer = new IntersectionObserver(function (entries, observer) {
-      entries.forEach((entry) => {
-        console.log(entry.target, 'translate?')
-        // entry.target.classList.toggle('translate')
-      })
-    }, options)
+  //   const observer = new IntersectionObserver(function (entries, observer) {
+  //     entries.forEach((entry) => {
+  //       console.log(entry.target, 'translate?')
+  //       // entry.target.classList.toggle('translate')
+  //     })
+  //   }, options)
 
-    sections.forEach((section) => {
-      observer.observe(section)
-    })
-  } else {
-    console.log('NOPE')
-  }
+  //   sections.forEach((section) => {
+  //     observer.observe(section)
+  //   })
+  // } else {
+  //   console.log('NOPE')
+  // }
 
   const emrLogos = [
-    { img: 'athena-health.png', height: null, width: 220 },
-    { img: 'prime.png', height: null, width: 120 },
-    { img: 'modernizing-medicine.png', height: null, width: 190 },
-    { img: 'medstrat.jpg', height: null, width: 190 },
-    { img: 'CMS.jpg', height: 65, width: 220 },
-    { img: 'centricity.png', height: null, width: 150 },
-    { img: 'medent.png', height: null, width: 180 },
-    { img: 'app-orchard.png', height: null, width: 150 },
-    { img: 'elation-health.jpg', height: null, width: 190 },
-    { img: 'next-gen.jpg', height: null, width: 140 },
-    { img: 'e-clinical-works.jpg', height: null, width: 180 },
-    { img: 'cerner.png', height: null, width: 170 },
-    { img: 'allscripts.png', height: null, width: 170 },
-    { img: 'drchrono.png', height: null, width: 140 },
-    { img: 'greenway.png', height: null, width: 150 },
-    { img: 'SRS.jpg', height: null, width: 120 }
+    { img: 'athena-health.png', height: null, width: 220, url:'https://marketplace.athenahealth.com/product/docsperaß' },
+    { img: 'prime.png', height: null, width: 120, url: 'http://www.primeclinical.com/' },
+    { img: 'modernizing-medicine.png', height: null, width: 190, url: 'https://www.modmed.com/' },
+    { img: 'medstrat.jpg', height: null, width: 190, url: 'https://www.medstrat.com/' },
+    { img: 'CMS.jpg', height: 65, width: 220, url: 'https://www.medicare.gov/manage-your-health/share-your-medicare-claims-medicares-blue-button/organize-share-your-medical-information-claims' },
+    { img: 'centricity.png', height: null, width: 150, url: 'https://www.gehealthcare.com/products/centricity-services' },
+    { img: 'medent.png', height: null, width: 180, url: 'https://www.medent.com/' },
+    { img: 'app-orchard.png', height: null, width: 150, url: 'https://apporchard.epic.com/Gallery?id=3515' },
+    { img: 'elation-health.jpg', height: null, width: 190, url: 'https://www.elationhealth.com/' },
+    { img: 'next-gen.jpg', height: null, width: 140, url: 'https://www.nextgen.com/' },
+    { img: 'e-clinical-works.jpg', height: null, width: 180, url: 'https://www.eclinicalworks.com/' },
+    { img: 'cerner.png', height: null, width: 170, url: 'https://www.cerner.com/' },
+    { img: 'allscripts.png', height: null, width: 170, url: 'https://www.allscripts.com/' },
+    { img: 'drchrono.png', height: null, width: 140, url: 'https://partners.drchrono.com/app/nbg3BfA/docspera'},
+    { img: 'greenway.png', height: null, width: 150, url: 'https://www.greenwayhealth.com/' },
+    { img: 'SRS.jpg', height: null, width: 120, url: '/website-gh/images/logos/SRS.jpg' }
   ]
 
   const [viewMoreEmr, setViewMoreEmr] = useState(false)
@@ -61,20 +61,20 @@ export default function Provider() {
   }
 
   const instLogos = [
-    { img: '/website-gh/images/logos/UCSF.png', width: 100 },
-    { img: '/website-gh/images/logos/orthocare.jpg', width: 170 },
-    { img: '/website-gh/images/logos/TMI.jpg', width: 170 },
-    { img: '/website-gh/images/logos/webster.png', width: 160 },
-    { img: '/website-gh/images/logos/emerge-ortho.jpg', width: 180 },
-    { img: '/website-gh/images/logos/DOC.png', width: 150 },
-    { img: '/website-gh/images/logos/mos.png', width: 170 },
-    { img: '/website-gh/images/logos/CPO.png', width: 180 },
-    { img: '/website-gh/images/logos/baylor.jpg', width: 160 },
-    { img: '/website-gh/images/logos/childress.png', width: 200 },
-    { img: '/website-gh/images/logos/trinity.png', width: 180 },
-    { img: '/website-gh/images/logos/louisville.png', width: 170 },
-    { img: '/website-gh/images/logos/washington.png', width: 200 },
-    { img: '/website-gh/images/logos/englewood.png', width: 160 }
+    { img: '/website-gh/images/logos/UCSF.png', width: 100, url: 'https://www.ucsf.edu/' },
+    { img: '/website-gh/images/logos/orthocare.jpg', width: 170, url: 'https://orthocare.com/' },
+    { img: '/website-gh/images/logos/TMI.jpg', width: 170, url: 'https://www.tmisportsmed.com/' },
+    { img: '/website-gh/images/logos/webster.png', width: 160, url: 'https://www.websterorthopedics.com/' },
+    { img: '/website-gh/images/logos/emerge-ortho.jpg', width: 180, url: 'https://emergeortho.com/' },
+    { img: '/website-gh/images/logos/DOC.png', width: 150, url: 'https://www.doclv.com/' },
+    { img: '/website-gh/images/logos/mos.png', width: 170, url: 'https://miorthosurgeons.com/?fbclid=IwAR3jsBZmXGsBtJ9i76y-0jf6Iv_y2kIzMLIzUMWbFfAQB1tCP8ZtV94-6eY' },
+    { img: '/website-gh/images/logos/CPO.png', width: 180, url: 'https://calpacortho.com/' },
+    { img: '/website-gh/images/logos/baylor.jpg', width: 160, url: '' },
+    { img: '/website-gh/images/logos/childress.png', width: 200, url: 'https://www.childresshospital.com/' },
+    { img: '/website-gh/images/logos/trinity.png', width: 180, url: 'https://trinityparksurgerycenter.com/' },
+    { img: '/website-gh/images/logos/louisville.png', width: 170, url: 'https://www.louortho.com/' },
+    { img: '/website-gh/images/logos/washington.png', width: 200, url: 'https://www.whhs.com/' },
+    { img: '/website-gh/images/logos/englewood.png', width: 160, url: 'https://www.englewoodhealth.org/' }
   ]
 
   const [viewMoreInst, setViewMoreInst] = useState(false)
@@ -120,7 +120,9 @@ export default function Provider() {
       <Head>
         <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform</title>
         <link rel='icon' href='/website-gh/favicon.ico' />
-        <link rel='preload' href='/website-gh/fonts/VarelaRound-Regular.ttf' as='font' crossOrigin='' />
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet"></link>
       </Head>
       <HeaderNav />
 
@@ -140,7 +142,7 @@ export default function Provider() {
               <NumberScroll
                 imgSrc='/website-gh/images/surgeon-users.png'
                 number={6000}
-                title='Surgeons'
+                title='Providers'
                 plus
               />
               <NumberScroll
@@ -179,7 +181,7 @@ export default function Provider() {
                   <div>
                     <h4>Built for the Surgical Environment</h4>
                     <p>
-                      Used by thousands of surgeons across hundreds of institution with varying
+                      Used by thousands of surgeons across hundreds of institutions with varying
                       surgical pathways
                     </p>
                   </div>
@@ -194,8 +196,8 @@ export default function Provider() {
                 <div className='box'>
                   <img src='/website-gh/images/graphics/data-driven.svg' />
                   <div>
-                    <h4>Driven by Data</h4>
-                    <p>Comprehensive and longitudinal data across the continuum of care</p>
+                    <h4>Driven by Data Analytics</h4>
+                    <p>Comprehensive, longitudinal data and analyses across the continuum of care</p>
                   </div>
                 </div>
                 <div className='box'>
@@ -210,15 +212,13 @@ export default function Provider() {
           </div>
         </div>
 
-        <div style={{ backgroundColor: 'var(--blueFaint)' }}>
+        <div style={{ backgroundColor: 'white' }}>
           <div id='seamless-integration' className='inner-div'>
             <h2>Seamless Integration </h2>
             {useMedia('(max-width: 600px)') ? (
-              
-              <img src='/website-gh/images/graphics/seamless-integration-mobile.png' style={{maxWidth: 300}} />
+                <img src='/website-gh/images/graphics/seamless-integration-mobile.png' style={{maxWidth: 350}} />
               ) : (
                 <img src='/website-gh/images/graphics/seamless-integration-desktop.png' />
-                
             )}
           </div>
         </div>
@@ -228,37 +228,70 @@ export default function Provider() {
         </div>
 
         <div id='rapid-integration' className='inner-div'>
-          <h2>Rapid Integration & Deployment at Scale</h2>
-          <p>Integrated with over 30 EMR and 3rd party systems</p>
+          <h2>Rapid Integration and Deployment at Scale</h2>
+          <p>Integrated with over 30 EMRs and 3rd party systems</p>
           <div className='logos'>
             <div>
               {emrLogos.slice(0, numberOfEmrLogos).map((logo) => {
                 return (
-                  <img src={`/website-gh/images/logos/${logo.img}`} height={logo.height} width={logo.width} />
+                  <a href={logo.href}>
+                    <img src={`/website-gh/images/logos/${logo.img}`} height={logo.height} width={logo.width} />
+                  </a>
                 )
               })}
               <button onClick={handleViewMoreEmr}>{viewMoreEmr ? 'View Less' : 'View More'}</button>
             </div>
             <div>
-              <img src='/website-gh/images/logos/athena-health.png' width={220} />
-              <img src='/website-gh/images/logos/prime.png' width={120} />
-              <img src='/website-gh/images/logos/modernizing-medicine.png' width={190} />
-              <img src='/website-gh/images/logos/medstrat.jpg' width={190} />
+              <a href='https://marketplace.athenahealth.com/product/docspera' target='_blank'>
+                <img src='/website-gh/images/logos/athena-health.png' width={220} />
+              </a>
+              <a href='http://www.primeclinical.com/' target='_blank'>
+                <img src='/website-gh/images/logos/prime.png' width={120} />
+              </a>
+              <a href='https://www.modmed.com/' target='_blank'>
+                <img src='/website-gh/images/logos/modernizing-medicine.png' width={190} />
+              </a>
+              <a href='https://www.medstrat.com/' target='_blank'>
+                <img src='/website-gh/images/logos/medstrat.jpg' width={190} />
+              </a>
+              <a href='https://www.medicare.gov/manage-your-health/share-your-medicare-claims-medicares-blue-button/organize-share-your-medical-information-claims' target='_blank'>
+                <img src='/website-gh/images/logos/CMS.jpg' height={65} width={100} />
+              </a>
+              <a href='https://www.gehealthcare.com/products/centricity-services' target='_blank'>
+                <img src='/website-gh/images/logos/centricity.png' width={150} />
+              </a>
+              <a href='https://www.medent.com/' target='_blank'>
+                <img src='/website-gh/images/logos/medent.png' width={180} />
+              </a>
+              <a href='https://apporchard.epic.com/Gallery?id=3515' target='_blank'>
+                <img src='/website-gh/images/logos/app-orchard.png' width={150} />
+              </a>
 
-              <img src='/website-gh/images/logos/CMS.jpg' height={65} width={100} />
-              <img src='/website-gh/images/logos/centricity.png' width={150} />
-              <img src='/website-gh/images/logos/medent.png' width={180} />
-              <img src='/website-gh/images/logos/app-orchard.png' width={150} />
+              <a href='https://www.elationhealth.com/' target='_blank'>
+                <img src='/website-gh/images/logos/elation-health.jpg' width={190} />
+              </a>
+              <a href='https://www.nextgen.com/' target='_blank'>
+                <img src='/website-gh/images/logos/next-gen.jpg' width={140} />
+              </a>
+              <a href='https://www.eclinicalworks.com/' target='_blank'>
+                <img src='/website-gh/images/logos/e-clinical-works.jpg' width={180} />
+              </a>
+              <a href='https://www.cerner.com/' target='_blank'>
+                <img src='/website-gh/images/logos/cerner.png' width={170} />
+              </a>
 
-              <img src='/website-gh/images/logos/elation-health.jpg' width={190} />
-              <img src='/website-gh/images/logos/next-gen.jpg' width={140} />
-              <img src='/website-gh/images/logos/e-clinical-works.jpg' width={180} />
-              <img src='/website-gh/images/logos/cerner.png' width={170} />
-
-              <img src='/website-gh/images/logos/allscripts.png' width={170} />
-              <img src='/website-gh/images/logos/drchrono.png' width={140} />
-              <img src='/website-gh/images/logos/greenway.png' width={150} />
-              <img src='/website-gh/images/logos/SRS.jpg' width={120} />
+              <a href='https://www.allscripts.com/' target='_blank'>
+                <img src='/website-gh/images/logos/allscripts.png' width={170} />   
+              </a>
+              <a href='https://partners.drchrono.com/app/nbg3BfA/docspera' target='_blank'>
+                <img src='/website-gh/images/logos/drchrono.png' width={140} />
+              </a>
+              <a href='https://www.greenwayhealth.com/' target='_blank'>
+                <img src='/website-gh/images/logos/greenway.png' width={150} />
+              </a>
+              <a href='https://www.emrsystems.net/srs-health-ehr-software/' target='_blank'>
+                <img src='/website-gh/images/logos/SRS.jpg' width={120} />
+              </a>
             </div>
           </div>
         </div>
@@ -306,6 +339,7 @@ export default function Provider() {
           margin-bottom: 10px;
         }
         #hero-h2 {
+          padding-top: 18px;
           text-align: center;
         }
         #hero-p {
@@ -366,7 +400,7 @@ export default function Provider() {
           border-radius: 10px;
           filter: drop-shadow(0 0px 5px lightgray);
           background-color: white;
-          display: flex;
+          display: flex;as
           align-items: center;
         }
         #designed-for-providers .box h4 {
@@ -411,12 +445,17 @@ export default function Provider() {
           align-items: center;
           align-content: space-between;
         }
-        .logos div img:nth-child(4n-2),
-        .logos div img:nth-child(4n-1) {
+        .logos div a:nth-child(4n-2),
+        .logos div a:nth-child(4n-1) {
           justify-self: center;
         }
-        .logos div img:nth-child(4n) {
+        .logos div a:nth-child(4n) {
           justify-self: end;
+        }
+
+        .logos img {
+          display: block;
+          margin: 0 auto;
         }
         .institutions div {
           grid-row-gap: 20px;
@@ -460,10 +499,10 @@ export default function Provider() {
           }
         }
         @media (max-width: 650px) {
-          .logos img {
+          .logos a {
             width: 60%;
           }
-          .logos div:nth-child(1) > img:nth-child(5) {
+          .logos div:nth-child(1) > a:nth-child(5) {
             height: 75px;
           }
           .logos > div:nth-child(1) {
@@ -479,10 +518,10 @@ export default function Provider() {
             justify-content: space-between;
             align-items: center;
           }
-          .logos div img:nth-child(2n) {
+          .logos div a:nth-child(2n) {
             justify-self: center;
           }
-          .logos div img:nth-child(2n-1) {
+          .logos div a:nth-child(2n-1) {
             justify-self: center;
           }
           button {
@@ -506,10 +545,10 @@ export default function Provider() {
         }
         
         @media (max-width: 480px) {
-          .logos img {
+          .logos a {
             width: 50%;
           }
-          .logos div:nth-child(1) > img:nth-child(5) {
+          .logos div:nth-child(1) > a:nth-child(5) {
             height: 75px;
             width: 40%;
           }
@@ -522,6 +561,7 @@ export default function Provider() {
             grid-column: auto;
           }
         }
+
         #map {
           width: 90%;
           display: block;

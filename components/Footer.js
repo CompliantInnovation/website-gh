@@ -1,21 +1,36 @@
+import React, { useContext } from 'react'
+import { Context } from '../context/context'
 import Link from 'next/link'
 import { AppleFilled, FacebookFilled, TwitterCircleFilled, LinkedinFilled } from '@ant-design/icons'
 
 export default function FooterBar() {
+  const { state, dispatch } = useContext(Context)
   return (
     <footer>
       <div id='footer-inner-div'>
         <div style={{ margin: 'auto 0', flexGrow: 1 }}>
           <img id='logo' src='/website-gh/images/logo-white.svg' />
+
           <div id='icons-div'>
+            <a
+              href='mailto: Hello@DocSpera.com'
+              className='section-title'
+              style={{
+                paddingBottom: 10,
+                display: 'block',
+                fontSize: 16
+              }}
+            >
+              Hello@DocSpera.com
+            </a>
             <a href='https://docspera.com/appstore' target='_blank'>
-              <AppleFilled style={{ color: 'var(--blueDark)', fontSize: 25, cursor: 'pointer' }} />
+              <AppleFilled style={{ color: 'var(--blueDark)', fontsize: 25, cursor: 'pointer' }} />
             </a>
             <a href='https://www.facebook.com/DocSperaApp' target='_blank'>
               <FacebookFilled
                 style={{
                   color: 'var(--blueDark)',
-                  fontSize: 25,
+                  fontsize: 25,
                   marginLeft: 20,
                   cursor: 'pointer'
                 }}
@@ -25,7 +40,7 @@ export default function FooterBar() {
               <TwitterCircleFilled
                 style={{
                   color: 'var(--blueDark)',
-                  fontSize: 25,
+                  fontsize: 25,
                   marginLeft: 20,
                   cursor: 'pointer'
                 }}
@@ -35,7 +50,7 @@ export default function FooterBar() {
               <LinkedinFilled
                 style={{
                   color: 'var(--blueDark)',
-                  fontSize: 25,
+                  fontsize: 25,
                   marginLeft: 20,
                   cursor: 'pointer'
                 }}
@@ -47,18 +62,18 @@ export default function FooterBar() {
         <div id='footer-nav'>
           <div>
             <span className='section-title'>PRODUCTS FOR</span>
-            <Link href='/provider'>
-              <div className='footer-menu-item'>
-                <a>Providers</a>
-                <img src='/website-gh/images/graphics/chevron-white.png' />
-              </div>
-            </Link>
-            <Link href='/medical-device'>
-              <div className='footer-menu-item'>
-                <a>Medical Device</a>
-                <img src='/website-gh/images/graphics/chevron-white.png' />
-              </div>
-            </Link>
+
+            <div className='footer-menu-item'  onClick={() => dispatch(changePage('provider'))}>
+              <a>Providers</a>
+              <img src='/website-gh/images/graphics/chevron-white.png' />
+            </div>
+
+
+            <div className='footer-menu-item' onClick={() => dispatch(changePage('medical-device'))}>
+              <a>Medical Device</a>
+              <img src='/website-gh/images/graphics/chevron-white.png' />
+            </div>
+
 
             <span className='section-title' style={{ display: 'block', paddingTop: 50 }}>
               SOLUTIONS
@@ -85,12 +100,12 @@ export default function FooterBar() {
 
           <div id='footer-nav-col-2'>
             <span className='section-title'>COMPANY</span>
-            <Link href='/about'>
-              <div className='footer-menu-item'>
-                <a>About Us</a>
-                <img src='/website-gh/images/graphics/chevron-white.png' />
-              </div>
-            </Link>
+
+            <div className='footer-menu-item' onClick={() => dispatch(changePage('company'))}>
+              <a>About Us</a>
+              <img src='/website-gh/images/graphics/chevron-white.png' />
+            </div>
+
 
             <span className='section-title' style={{ display: 'block', paddingTop: 30 }}>
               CONTACT
@@ -171,7 +186,7 @@ export default function FooterBar() {
         }
 
         #icons-div {
-          margin-top: 20px;
+          margin-top: 0px;
         }
 
         #footer-nav {

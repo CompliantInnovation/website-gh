@@ -1,3 +1,4 @@
+import React from 'react'
 import Head from 'next/head'
 import HeaderNav from '../components/HeaderNav'
 import NumberScroll from '../components/NumberScroll'
@@ -5,16 +6,20 @@ import FooterBar from '../components/Footer'
 import ProviderSolutions from '../components/ProviderSolutions'
 import { useMedia } from '../hooks/useMedia'
 
+
 export default function MedicalDevicePage() {
   return (
-    <>
+    <div style={{position: 'relative'}}>
       <Head>
         <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform</title>
         <link rel='icon' href='/website-gh/favicon.ico' />
-        <link rel='preload' href='/website-gh/fonts/VarelaRound-Regular.ttf' as='font' crossOrigin='' />
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet"></link>
       </Head>
       <HeaderNav />
       <div className='container'>
+        
         <h2 id='hero-h2'>
           Power Your Digital and Surgical solutions using a Comprehensive, Intelligent Care
           Coordination platform
@@ -31,7 +36,7 @@ export default function MedicalDevicePage() {
               <NumberScroll
                 imgSrc='/website-gh/images/surgeon-users.png'
                 number={6000}
-                title='Surgeons'
+                title='Providers'
                 plus
               />
               <NumberScroll
@@ -60,7 +65,7 @@ export default function MedicalDevicePage() {
 
         <div id='offerings-section'>
           <div id='offerings' className='inner-div'>
-            <h1 style={{ marginBottom: 20, color: 'white' }}>Enterprise Offerings & Outcomes</h1>
+            <h1 style={{ marginBottom: 20, color: 'white' }}>Enterprise Offerings and Outcomes</h1>
             <div id='offerings-divs'>
               <div>
                 <h3>DocSpera Demand</h3>
@@ -79,7 +84,7 @@ export default function MedicalDevicePage() {
                 </button>
               </div>
               <div>
-                <h3>Provider Premium</h3>
+                <h3>DocSpera Premium</h3>
                 <img src='/website-gh/images/provider-solutions.png' height='auto' />
                 <h4>Integrated Provider Solutions</h4>
                 <p>
@@ -122,8 +127,8 @@ export default function MedicalDevicePage() {
             </p>
             <div id='solve-challenges-divs'>
               <div>
-                <h4>Inventory and Logistic Costs</h4>
-                <img src='/website-gh/images/graphics/cancellations.png' />
+                <h4>Inventory and Logistics Costs</h4>
+                <img src='/website-gh/images/graphics/efficient.png' />
                 <p>
                   Improved case preparedness and inventory management through earlier, more
                   integrated real-time updates of surgical case
@@ -144,7 +149,7 @@ export default function MedicalDevicePage() {
               </div>
               <div>
                 <h4>Market Penetration</h4>
-                <img src='/website-gh/images/strategic.png' />
+                <img src='/website-gh/images/graphics/strategic.png' />
                 <p style={{ maxWidth: 'none' }}>
                   Strengthen market position and become a more strategic partner to your customers
                   through diversified and easily managed risk-sharing based offerings
@@ -202,7 +207,7 @@ export default function MedicalDevicePage() {
             <div id='insights-copy-div'>
               <div>
                 <div className='insight-title-div'>
-                  <img src='/website-gh/images/line-graph.png' />
+                  <img src='/website-gh/images/target.png' />
                   <h4>Demand Intelligence</h4>
                 </div>
                 <p>View aggregated case demand information by region</p>
@@ -216,7 +221,7 @@ export default function MedicalDevicePage() {
               </div>
               <div>
                 <div className='insight-title-div'>
-                  <img src='/website-gh/images/target.png' />
+                  <img src='/website-gh/images/line-graph.png' />
                   <h4>Device Registry</h4>
                 </div>
                 <p>
@@ -226,7 +231,47 @@ export default function MedicalDevicePage() {
             </div>
           </div>
         </div>
+
+        {/*  C A S E   S T U D I E S  */}
+        <div style={{ backgroundColor: 'var(--blueXLight)'}}>
+          <div className='inner-div'>
+            <h2 className='title-h2'>Case Studies</h2>
+            <div id='case-studies-div' >
+              <div className='case-study'>
+                <div className='img-div'>
+                  <img src='/website-gh/caseStudies/case1.png'/>
+                  <h3>Automated Inventory Management</h3>
+                  <p>A Single Center study using Integrated Surgical Care Coordination to improve case visibility, planning, and reduce costs</p>
+                  <a href='https://assets.d4.docspera.com/cymorrison_case1.pdf' target='_blank' rel='noopener noreferrer'>
+                    <button className='case-study-btn'>Read More</button>
+                  </a>
+                </div>
+              </div>
+              <div className='case-study'>
+                <div className='img-div'>
+                  <img src='/website-gh/caseStudies/case2.png'/>
+                  <h3>New Product Launch</h3>
+                  <p>Post-Market Clinical Insights Study Using Real-World Data</p>
+                </div>
+                <a href='https://assets.d4.docspera.com/cymorrison_case2.pdf' target='_blank' rel='noopener noreferrer'>
+                  <button className='case-study-btn'>Read More</button>
+                </a>
+              </div>
+              <div className='case-study'>
+                <div className='img-div'>
+                  <img src='/website-gh/caseStudies/case3.png'/>
+                  <h3>Engage Your Customers</h3>
+                  <p>Integrated Care Coordination Platform supports higher revenue growth, as well as cost and time savings for the sales team</p>
+                </div>
+                <a href='https://assets.d4.docspera.com/cymorrison_case3.pdf' target='_blank' rel='noopener noreferrer'>
+                  <button className='case-study-btn'>Read More</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
       <FooterBar />
 
       <style jsx>{`
@@ -236,7 +281,7 @@ export default function MedicalDevicePage() {
         }
         #hero-h2 {
           text-align: center;
-          padding-top: 80px;
+          padding-top: 98px;
           max-width: 900px;
           margin: 0 auto;
         }
@@ -471,7 +516,67 @@ export default function MedicalDevicePage() {
           filter: drop-shadow(0 0px 10px lightgray);
           border-radius: 10px;
         }
+
+        #case-studies-div {
+          display: flex;
+          width: 100%;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        
+        .case-study {
+          flex: 1 1 0;
+          margin: 10px;
+          padding: 10px;
+          background-color: white;
+          filter: drop-shadow(0 0px 10px lightgray);
+          border-radius: 10px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          max-width: 350px;
+          min-width: 250px;
+        }
+        
+        .img-div > img {
+          border-radius: 10px;
+          width: 100%;
+        }
+
+        .case-study h3 {
+          margin-left: 10px;
+          font-size: 18px;
+          min-height: 50px;
+        }
+
+        .case-study p {
+          margin: 10px;
+        }
+
+        .case-study-btn {
+          position: static;
+          background-color: white;
+          border: 2px solid var(--blueDocspera);
+          border-radius: 5px;
+          color: var(--blueDocspera);
+          padding: 5px 10px;
+          font-size: 16px;
+          font-weight: 500;
+          height: 40px;
+          width: 100%;
+          display: block;
+          margin: 0 auto;
+        }
+
+        button:hover {
+          cursor: pointer;
+          filter: drop-shadow(0 5px 5px var(--blueSky));
+          transform: translate(0, -3px);
+          transition: all 0.2s;
+        }
+
+
       `}</style>
-    </>
+    </div>
   )
 }
