@@ -18,7 +18,7 @@ export default function Carousel({ content, type }) {
   //   {
   //     userId: 1,
   //     id: 1,
-  //     img: type === 'blog' ? '/website-gh/images/blog-post.png' : '/website-gh/images/case-study.png',
+  //     img: type === 'blog' ? 'https://assets.d4.docspera.com/home/images/blog-post.png' : 'https://assets.d4.docspera.com/home/images/case-study.png',
   //     title: 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
   //     body: 'quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit'
   //   }
