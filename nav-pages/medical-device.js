@@ -1,3 +1,4 @@
+import React from 'react'
 import Head from 'next/head'
 import HeaderNav from '../components/HeaderNav'
 import NumberScroll from '../components/NumberScroll'
@@ -5,9 +6,10 @@ import FooterBar from '../components/Footer'
 import ProviderSolutions from '../components/ProviderSolutions'
 import { useMedia } from '../hooks/useMedia'
 
+
 export default function MedicalDevicePage() {
   return (
-    <>
+    <div style={{position: 'relative'}}>
       <Head>
         <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform</title>
         <link rel='icon' href='/website-gh/favicon.ico' />
@@ -17,6 +19,7 @@ export default function MedicalDevicePage() {
       </Head>
       <HeaderNav />
       <div className='container'>
+        
         <h2 id='hero-h2'>
           Power Your Digital and Surgical solutions using a Comprehensive, Intelligent Care
           Coordination platform
@@ -228,7 +231,49 @@ export default function MedicalDevicePage() {
             </div>
           </div>
         </div>
+
+        {/*  C A S E   S T U D I E S  */}
+        <div className='inner-div'>
+          <h2 className='title-h2'>Case Studies</h2>
+          <div id='case-studies-div' >
+            <div className='case-study'>
+              <div className='img-div'>
+                <img src='/website-gh/caseStudies/case1.png'/>
+                <h3>Automated Inventory Management</h3>
+                <p>A Single Center study using Integrated Surgical Care Coordination to improve case visibility, planning, and reduce costs</p>
+                <a href='/caseStudies/cymorrison_case1.pdf' target='_blank' rel='noopener noreferrer'>
+                  <button 
+                    className='case-study-btn'
+                    onClick={() => setModalOpen(true)}
+                  >Read More</button>
+                </a>
+
+              </div>
+            </div>
+            <div className='case-study'>
+              <div className='img-div'>
+                <img src='/website-gh/caseStudies/case2.png'/>
+                <h3>New Product Launch</h3>
+                <p>Post-Market Clinical Insights Study Using Real-World Data</p>
+              </div>
+              <a href='/caseStudies/cymorrison_case2.pdf' target='_blank' rel='noopener noreferrer'>
+                <button className='case-study-btn'>Read More</button>
+              </a>
+            </div>
+            <div className='case-study'>
+              <div className='img-div'>
+                <img src='/website-gh/caseStudies/case3.png'/>
+                <h3>Engage Your Customers</h3>
+                <p>Integrated Care Coordination Platform supports higher revenue growth, as well as cost and time savings for the sales team</p>
+              </div>
+              <a href='/caseStudies/cymorrison_case3.pdf' target='_blank' rel='noopener noreferrer'>
+                <button className='case-study-btn'>Read More</button>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
+
       <FooterBar />
 
       <style jsx>{`
@@ -473,7 +518,66 @@ export default function MedicalDevicePage() {
           filter: drop-shadow(0 0px 10px lightgray);
           border-radius: 10px;
         }
+
+        #case-studies-div {
+          display: flex;
+          width: 100%;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        
+        .case-study {
+          flex: 1 1 0;
+          margin: 10px;
+          padding: 10px;
+          background-color: white;
+          filter: drop-shadow(0 0px 10px lightgray);
+          border-radius: 10px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          max-width: 350px;
+          min-width: 250px;
+        }
+        
+        .img-div > img {
+          border-radius: 10px;
+          width: 100%;
+        }
+
+        .case-study h3 {
+          margin-left: 10px;
+          font-size: 20px;
+        }
+
+        .case-study p {
+          margin: 10px;
+        }
+
+        .case-study-btn {
+          position: static;
+          background-color: white;
+          border: 2px solid var(--blueDocspera);
+          border-radius: 5px;
+          color: var(--blueDocspera);
+          padding: 5px 10px;
+          font-size: 16px;
+          font-weight: 500;
+          height: 40px;
+          width: 100%;
+          display: block;
+          margin: 0 auto;
+        }
+
+        button:hover {
+          cursor: pointer;
+          filter: drop-shadow(0 5px 5px var(--blueSky));
+          transform: translate(0, -3px);
+          transition: all 0.2s;
+        }
+
+
       `}</style>
-    </>
+    </div>
   )
 }
