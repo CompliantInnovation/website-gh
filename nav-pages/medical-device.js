@@ -241,11 +241,8 @@ export default function MedicalDevicePage() {
                 <img src='/website-gh/caseStudies/case1.png'/>
                 <h3>Automated Inventory Management</h3>
                 <p>A Single Center study using Integrated Surgical Care Coordination to improve case visibility, planning, and reduce costs</p>
-                <a href='/caseStudies/cymorrison_case1.pdf' target='_blank' rel='noopener noreferrer'>
-                  <button 
-                    className='case-study-btn'
-                    onClick={() => setModalOpen(true)}
-                  >Read More</button>
+                <a href='/website-gh/caseStudies/cymorrison_case1.pdf' target='_blank' rel='noopener noreferrer'>
+                  <button className='case-study-btn'>Read More</button>
                 </a>
 
               </div>
@@ -256,7 +253,7 @@ export default function MedicalDevicePage() {
                 <h3>New Product Launch</h3>
                 <p>Post-Market Clinical Insights Study Using Real-World Data</p>
               </div>
-              <a href='/caseStudies/cymorrison_case2.pdf' target='_blank' rel='noopener noreferrer'>
+              <a href='/website-gh/caseStudies/cymorrison_case2.pdf' target='_blank' rel='noopener noreferrer'>
                 <button className='case-study-btn'>Read More</button>
               </a>
             </div>
@@ -266,7 +263,7 @@ export default function MedicalDevicePage() {
                 <h3>Engage Your Customers</h3>
                 <p>Integrated Care Coordination Platform supports higher revenue growth, as well as cost and time savings for the sales team</p>
               </div>
-              <a href='/caseStudies/cymorrison_case3.pdf' target='_blank' rel='noopener noreferrer'>
+              <a href='/website-gh/caseStudies/cymorrison_case3.pdf' target='_blank' rel='noopener noreferrer'>
                 <button className='case-study-btn'>Read More</button>
               </a>
             </div>
