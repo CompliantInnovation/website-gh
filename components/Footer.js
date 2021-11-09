@@ -9,7 +9,7 @@ export default function FooterBar() {
     <footer>
       <div id='footer-inner-div'>
         <div style={{ margin: 'auto 0', flexGrow: 1 }}>
-          <img id='logo' src='/website-gh/images/logo-white.svg' />
+          <img id='logo' src='https://assets.d4.docspera.com/home/images/logo-white.svg' />
 
           <div id='icons-div'>
             <a
@@ -63,17 +63,18 @@ export default function FooterBar() {
           <div>
             <span className='section-title'>PRODUCTS FOR</span>
 
-            <div className='footer-menu-item'  onClick={() => dispatch(changePage('provider'))}>
+            <div className='footer-menu-item' onClick={() => dispatch(changePage('provider'))}>
               <a>Providers</a>
-              <img src='/website-gh/images/graphics/chevron-white.png' />
+              <img src='https://assets.d4.docspera.com/home/images/graphics/chevron-white.png' />
             </div>
 
-
-            <div className='footer-menu-item' onClick={() => dispatch(changePage('medical-device'))}>
+            <div
+              className='footer-menu-item'
+              onClick={() => dispatch(changePage('medical-device'))}
+            >
               <a>Medical Device</a>
-              <img src='/website-gh/images/graphics/chevron-white.png' />
+              <img src='https://assets.d4.docspera.com/home/images/graphics/chevron-white.png' />
             </div>
-
 
             <span className='section-title' style={{ display: 'block', paddingTop: 50 }}>
               SOLUTIONS
@@ -81,19 +82,19 @@ export default function FooterBar() {
             <a href='https://docspera.com/scheduling' target='_blank'>
               <div className='footer-menu-item'>
                 <a>Integrated Scheduling</a>
-                <img src='/website-gh/images/graphics/chevron-white.png' />
+                <img src='https://assets.d4.docspera.com/home/images/graphics/chevron-white.png' />
               </div>
             </a>
             <a href='https://docspera.com/or' target='_blank'>
               <div className='footer-menu-item'>
                 <a>Surgical Dashboards</a>
-                <img src='/website-gh/images/graphics/chevron-white.png' />
+                <img src='https://assets.d4.docspera.com/home/images/graphics/chevron-white.png' />
               </div>
             </a>
             <a href='https://docspera.com/eoc' target='_blank'>
               <div className='footer-menu-item'>
                 <a>Episode of Care Tracker</a>
-                <img src='/website-gh/images/graphics/chevron-white.png' />
+                <img src='https://assets.d4.docspera.com/home/images/graphics/chevron-white.png' />
               </div>
             </a>
           </div>
@@ -103,9 +104,8 @@ export default function FooterBar() {
 
             <div className='footer-menu-item' onClick={() => dispatch(changePage('company'))}>
               <a>About Us</a>
-              <img src='/website-gh/images/graphics/chevron-white.png' />
+              <img src='https://assets.d4.docspera.com/home/images/graphics/chevron-white.png' />
             </div>
-
 
             <span className='section-title' style={{ display: 'block', paddingTop: 30 }}>
               CONTACT
@@ -114,14 +114,14 @@ export default function FooterBar() {
             <a href='https://docspera.com/support' target='_blank'>
               <div className='footer-menu-item'>
                 <a>Contact Us</a>
-                <img src='/website-gh/images/graphics/chevron-white.png' />
+                <img src='https://assets.d4.docspera.com/home/images/graphics/chevron-white.png' />
               </div>
             </a>
 
             <a href='https://docspera.com/demo' target='_blank'>
               <div className='footer-menu-item'>
                 <a>Request Demo</a>
-                <img src='/website-gh/images/graphics/chevron-white.png' />
+                <img src='https://assets.d4.docspera.com/home/images/graphics/chevron-white.png' />
               </div>
             </a>
 
@@ -132,7 +132,7 @@ export default function FooterBar() {
             <a href='https://blog.d4.docspera.com/' target='_blank'>
               <div className='footer-menu-item'>
                 <a>DocSpera Blog</a>
-                <img src='/website-gh/images/graphics/chevron-white.png' />
+                <img src='https://assets.d4.docspera.com/home/images/graphics/chevron-white.png' />
               </div>
             </a>
           </div>
