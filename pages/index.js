@@ -21,7 +21,7 @@ export default function Index() {
         return null
     }
   } else {
-    return <div>No state?</div>
+    return <div></div>
   }
 
 }
