@@ -10,12 +10,15 @@ const ProviderSolutions = () => {
           <h3 className='title'>DocSpera Premium</h3>
         )}
         <h2 className='title-h2'>Integrated Provider Solutions</h2>
-        <p>Efficient care coordination through patient's entire surgical journey using a best in class, real-time predictive platform</p>
+        <p>
+          Efficient care coordination through patient's entire surgical journey using a best in
+          class, real-time predictive platform
+        </p>
         <div className='provider-solutions-row'>
           <div className='content'>
             <div>
               <div className='img-div'>
-                <img src='/website-gh/images/product-shots/Laptop-Calendar.png' />
+                <img src='https://assets.d4.docspera.com/home/images/product-shots/Laptop-Calendar.png' />
               </div>
               <div className='h4-div'>
                 <h4>Integrated Surgical Scheduling & Coordination Across Entire Care Team</h4>
@@ -35,7 +38,7 @@ const ProviderSolutions = () => {
           <div className='content'>
             <div>
               <div className='img-div'>
-                <img src='/website-gh/images/product-shots/smart-scheduling.png' />
+                <img src='https://assets.d4.docspera.com/home/images/product-shots/smart-scheduling.png' />
               </div>
               <div className='h4-div'>
                 <h4>Intelligent Dashboard for Managing Upcoming Cases</h4>
@@ -54,7 +57,7 @@ const ProviderSolutions = () => {
           <div className='content'>
             <div>
               <div className='img-div'>
-                <img src='/website-gh/images/product-shots/EOC.png' />
+                <img src='https://assets.d4.docspera.com/home/images/product-shots/EOC.png' />
               </div>
               <div className='h4-div'>
                 <h4>Episode of Care Tracker for Post Operative Care Management </h4>
@@ -111,7 +114,7 @@ const ProviderSolutions = () => {
           justify-content: center;
         }
 
-        @media (max-width:1000px) {
+        @media (max-width: 1000px) {
           .img-div {
             width: 100%;
             height: auto;
@@ -191,8 +194,6 @@ const ProviderSolutions = () => {
           display: block;
           margin: 0 auto;
         }
-
-
 
         button:hover {
           cursor: pointer;
