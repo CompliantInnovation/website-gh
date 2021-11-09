@@ -35,22 +35,57 @@ export default function Provider() {
   // }
 
   const emrLogos = [
-    { img: 'athena-health.png', height: null, width: 220, url:'https://marketplace.athenahealth.com/product/docsperaß' },
+    {
+      img: 'athena-health.png',
+      height: null,
+      width: 220,
+      url: 'https://marketplace.athenahealth.com/product/docsperaß'
+    },
     { img: 'prime.png', height: null, width: 120, url: 'http://www.primeclinical.com/' },
     { img: 'modernizing-medicine.png', height: null, width: 190, url: 'https://www.modmed.com/' },
     { img: 'medstrat.jpg', height: null, width: 190, url: 'https://www.medstrat.com/' },
-    { img: 'CMS.jpg', height: 65, width: 220, url: 'https://www.medicare.gov/manage-your-health/share-your-medicare-claims-medicares-blue-button/organize-share-your-medical-information-claims' },
-    { img: 'centricity.png', height: null, width: 150, url: 'https://www.gehealthcare.com/products/centricity-services' },
+    {
+      img: 'CMS.jpg',
+      height: 65,
+      width: 220,
+      url: 'https://www.medicare.gov/manage-your-health/share-your-medicare-claims-medicares-blue-button/organize-share-your-medical-information-claims'
+    },
+    {
+      img: 'centricity.png',
+      height: null,
+      width: 150,
+      url: 'https://www.gehealthcare.com/products/centricity-services'
+    },
     { img: 'medent.png', height: null, width: 180, url: 'https://www.medent.com/' },
-    { img: 'app-orchard.png', height: null, width: 150, url: 'https://apporchard.epic.com/Gallery?id=3515' },
+    {
+      img: 'app-orchard.png',
+      height: null,
+      width: 150,
+      url: 'https://apporchard.epic.com/Gallery?id=3515'
+    },
     { img: 'elation-health.jpg', height: null, width: 190, url: 'https://www.elationhealth.com/' },
     { img: 'next-gen.jpg', height: null, width: 140, url: 'https://www.nextgen.com/' },
-    { img: 'e-clinical-works.jpg', height: null, width: 180, url: 'https://www.eclinicalworks.com/' },
+    {
+      img: 'e-clinical-works.jpg',
+      height: null,
+      width: 180,
+      url: 'https://www.eclinicalworks.com/'
+    },
     { img: 'cerner.png', height: null, width: 170, url: 'https://www.cerner.com/' },
     { img: 'allscripts.png', height: null, width: 170, url: 'https://www.allscripts.com/' },
-    { img: 'drchrono.png', height: null, width: 140, url: 'https://partners.drchrono.com/app/nbg3BfA/docspera'},
+    {
+      img: 'drchrono.png',
+      height: null,
+      width: 140,
+      url: 'https://partners.drchrono.com/app/nbg3BfA/docspera'
+    },
     { img: 'greenway.png', height: null, width: 150, url: 'https://www.greenwayhealth.com/' },
-    { img: 'SRS.jpg', height: null, width: 120, url: '/website-gh/images/logos/SRS.jpg' }
+    {
+      img: 'SRS.jpg',
+      height: null,
+      width: 120,
+      url: 'https://assets.d4.docspera.com/home/images/logos/SRS.jpg'
+    }
   ]
 
   const [viewMoreEmr, setViewMoreEmr] = useState(false)
@@ -61,20 +96,72 @@ export default function Provider() {
   }
 
   const instLogos = [
-    { img: '/website-gh/images/logos/UCSF.png', width: 100, url: 'https://www.ucsf.edu/' },
-    { img: '/website-gh/images/logos/orthocare.jpg', width: 170, url: 'https://orthocare.com/' },
-    { img: '/website-gh/images/logos/TMI.jpg', width: 170, url: 'https://www.tmisportsmed.com/' },
-    { img: '/website-gh/images/logos/webster.png', width: 160, url: 'https://www.websterorthopedics.com/' },
-    { img: '/website-gh/images/logos/emerge-ortho.jpg', width: 180, url: 'https://emergeortho.com/' },
-    { img: '/website-gh/images/logos/DOC.png', width: 150, url: 'https://www.doclv.com/' },
-    { img: '/website-gh/images/logos/mos.png', width: 170, url: 'https://miorthosurgeons.com/?fbclid=IwAR3jsBZmXGsBtJ9i76y-0jf6Iv_y2kIzMLIzUMWbFfAQB1tCP8ZtV94-6eY' },
-    { img: '/website-gh/images/logos/CPO.png', width: 180, url: 'https://calpacortho.com/' },
-    { img: '/website-gh/images/logos/baylor.jpg', width: 160, url: '' },
-    { img: '/website-gh/images/logos/childress.png', width: 200, url: 'https://www.childresshospital.com/' },
-    { img: '/website-gh/images/logos/trinity.png', width: 180, url: 'https://trinityparksurgerycenter.com/' },
-    { img: '/website-gh/images/logos/louisville.png', width: 170, url: 'https://www.louortho.com/' },
-    { img: '/website-gh/images/logos/washington.png', width: 200, url: 'https://www.whhs.com/' },
-    { img: '/website-gh/images/logos/englewood.png', width: 160, url: 'https://www.englewoodhealth.org/' }
+    {
+      img: 'https://assets.d4.docspera.com/home/images/logos/UCSF.png',
+      width: 100,
+      url: 'https://www.ucsf.edu/'
+    },
+    {
+      img: 'https://assets.d4.docspera.com/home/images/logos/orthocare.jpg',
+      width: 170,
+      url: 'https://orthocare.com/'
+    },
+    {
+      img: 'https://assets.d4.docspera.com/home/images/logos/TMI.jpg',
+      width: 170,
+      url: 'https://www.tmisportsmed.com/'
+    },
+    {
+      img: 'https://assets.d4.docspera.com/home/images/logos/webster.png',
+      width: 160,
+      url: 'https://www.websterorthopedics.com/'
+    },
+    {
+      img: 'https://assets.d4.docspera.com/home/images/logos/emerge-ortho.jpg',
+      width: 180,
+      url: 'https://emergeortho.com/'
+    },
+    {
+      img: 'https://assets.d4.docspera.com/home/images/logos/DOC.png',
+      width: 150,
+      url: 'https://www.doclv.com/'
+    },
+    {
+      img: 'https://assets.d4.docspera.com/home/images/logos/mos.png',
+      width: 170,
+      url: 'https://miorthosurgeons.com/?fbclid=IwAR3jsBZmXGsBtJ9i76y-0jf6Iv_y2kIzMLIzUMWbFfAQB1tCP8ZtV94-6eY'
+    },
+    {
+      img: 'https://assets.d4.docspera.com/home/images/logos/CPO.png',
+      width: 180,
+      url: 'https://calpacortho.com/'
+    },
+    { img: 'https://assets.d4.docspera.com/home/images/logos/baylor.jpg', width: 160, url: '' },
+    {
+      img: 'https://assets.d4.docspera.com/home/images/logos/childress.png',
+      width: 200,
+      url: 'https://www.childresshospital.com/'
+    },
+    {
+      img: 'https://assets.d4.docspera.com/home/images/logos/trinity.png',
+      width: 180,
+      url: 'https://trinityparksurgerycenter.com/'
+    },
+    {
+      img: 'https://assets.d4.docspera.com/home/images/logos/louisville.png',
+      width: 170,
+      url: 'https://www.louortho.com/'
+    },
+    {
+      img: 'https://assets.d4.docspera.com/home/images/logos/washington.png',
+      width: 200,
+      url: 'https://www.whhs.com/'
+    },
+    {
+      img: 'https://assets.d4.docspera.com/home/images/logos/englewood.png',
+      width: 160,
+      url: 'https://www.englewoodhealth.org/'
+    }
   ]
 
   const [viewMoreInst, setViewMoreInst] = useState(false)
@@ -119,10 +206,13 @@ export default function Provider() {
     <>
       <Head>
         <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform</title>
-        <link rel='icon' href='/website-gh/favicon.ico' />
-        <link rel="preconnect" href="https://fonts.googleapis.com"/>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-        <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet"></link>
+        <link rel='icon' href='https://assets.d4.docspera.com/home/favicon.ico' />
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+        <link
+          href='https://fonts.googleapis.com/css2?family=Varela+Round&display=swap'
+          rel='stylesheet'
+        ></link>
       </Head>
       <HeaderNav />
 
@@ -136,17 +226,20 @@ export default function Provider() {
             across multiple sites and teams, drive improved efficiencies and deliver better patient
             care.
           </p>
-          <img src='/website-gh/images/provider-art-work.png' id='surgeon-doodle' />
+          <img
+            src='https://assets.d4.docspera.com/home/images/provider-art-work.png'
+            id='surgeon-doodle'
+          />
           <div className='statistics' style={{ marginBottom: 20 }}>
             <div>
               <NumberScroll
-                imgSrc='/website-gh/images/surgeon-users.png'
+                imgSrc='https://assets.d4.docspera.com/home/images/surgeon-users.png'
                 number={6000}
                 title='Providers'
                 plus
               />
               <NumberScroll
-                imgSrc='/website-gh/images/patient-volume.png'
+                imgSrc='https://assets.d4.docspera.com/home/images/patient-volume.png'
                 number={100000}
                 title='Monthly Patient Visits'
                 plus
@@ -154,13 +247,13 @@ export default function Provider() {
             </div>
             <div>
               <NumberScroll
-                imgSrc='/website-gh/images/practices.png'
+                imgSrc='https://assets.d4.docspera.com/home/images/practices.png'
                 number={300}
                 title='Practices, ASCs and Hospitals'
                 plus
               />
               <NumberScroll
-                imgSrc='/website-gh/images/surgical-cases.png'
+                imgSrc='https://assets.d4.docspera.com/home/images/surgical-cases.png'
                 number={350000}
                 title='Surgical Cases'
                 plus
@@ -173,11 +266,14 @@ export default function Provider() {
           <div id='designed-for-providers' className='inner-div'>
             <h2>Designed for Providers Like You</h2>
             <div>
-              <img id='mock-up-img' src='/website-gh/images/product-shots/mockups.png' />
+              <img
+                id='mock-up-img'
+                src='https://assets.d4.docspera.com/home/images/product-shots/mockups.png'
+              />
 
               <div>
                 <div className='box'>
-                  <img src='/website-gh/images/surgical.svg' />
+                  <img src='https://assets.d4.docspera.com/home/images/surgical.svg' />
                   <div>
                     <h4>Built for the Surgical Environment</h4>
                     <p>
@@ -187,21 +283,23 @@ export default function Provider() {
                   </div>
                 </div>
                 <div className='box'>
-                  <img src='/website-gh/images/graphics/security.svg' />
+                  <img src='https://assets.d4.docspera.com/home/images/graphics/security.svg' />
                   <div>
                     <h4>Secure</h4>
                     <p>Provider verified, SOC 2 level and HIPAA compliant</p>
                   </div>
                 </div>
                 <div className='box'>
-                  <img src='/website-gh/images/graphics/data-driven.svg' />
+                  <img src='https://assets.d4.docspera.com/home/images/graphics/data-driven.svg' />
                   <div>
                     <h4>Driven by Data Analytics</h4>
-                    <p>Comprehensive, longitudinal data and analyses across the continuum of care</p>
+                    <p>
+                      Comprehensive, longitudinal data and analyses across the continuum of care
+                    </p>
                   </div>
                 </div>
                 <div className='box'>
-                  <img src='/website-gh/images/graphics/integration.svg' />
+                  <img src='https://assets.d4.docspera.com/home/images/graphics/integration.svg' />
                   <div>
                     <h4>Effortless Integration</h4>
                     <p>Web and mobile interface easily integrate with other critical systems</p>
@@ -216,9 +314,12 @@ export default function Provider() {
           <div id='seamless-integration' className='inner-div'>
             <h2>Seamless Integration </h2>
             {useMedia('(max-width: 600px)') ? (
-                <img src='/website-gh/images/graphics/seamless-integration-mobile.png' style={{maxWidth: 350}} />
-              ) : (
-                <img src='/website-gh/images/graphics/seamless-integration-desktop.png' />
+              <img
+                src='https://assets.d4.docspera.com/home/images/graphics/seamless-integration-mobile.png'
+                style={{ maxWidth: 350 }}
+              />
+            ) : (
+              <img src='https://assets.d4.docspera.com/home/images/graphics/seamless-integration-desktop.png' />
             )}
           </div>
         </div>
@@ -235,7 +336,11 @@ export default function Provider() {
               {emrLogos.slice(0, numberOfEmrLogos).map((logo) => {
                 return (
                   <a href={logo.href}>
-                    <img src={`/website-gh/images/logos/${logo.img}`} height={logo.height} width={logo.width} />
+                    <img
+                      src={`https://assets.d4.docspera.com/home/images/logos/${logo.img}`}
+                      height={logo.height}
+                      width={logo.width}
+                    />
                   </a>
                 )
               })}
@@ -243,60 +348,104 @@ export default function Provider() {
             </div>
             <div>
               <a href='https://marketplace.athenahealth.com/product/docspera' target='_blank'>
-                <img src='/website-gh/images/logos/athena-health.png' width={220} />
+                <img
+                  src='https://assets.d4.docspera.com/home/images/logos/athena-health.png'
+                  width={220}
+                />
               </a>
               <a href='http://www.primeclinical.com/' target='_blank'>
-                <img src='/website-gh/images/logos/prime.png' width={120} />
+                <img src='https://assets.d4.docspera.com/home/images/logos/prime.png' width={120} />
               </a>
               <a href='https://www.modmed.com/' target='_blank'>
-                <img src='/website-gh/images/logos/modernizing-medicine.png' width={190} />
+                <img
+                  src='https://assets.d4.docspera.com/home/images/logos/modernizing-medicine.png'
+                  width={190}
+                />
               </a>
               <a href='https://www.medstrat.com/' target='_blank'>
-                <img src='/website-gh/images/logos/medstrat.jpg' width={190} />
+                <img
+                  src='https://assets.d4.docspera.com/home/images/logos/medstrat.jpg'
+                  width={190}
+                />
               </a>
-              <a href='https://www.medicare.gov/manage-your-health/share-your-medicare-claims-medicares-blue-button/organize-share-your-medical-information-claims' target='_blank'>
-                <img src='/website-gh/images/logos/CMS.jpg' height={65} width={100} />
+              <a
+                href='https://www.medicare.gov/manage-your-health/share-your-medicare-claims-medicares-blue-button/organize-share-your-medical-information-claims'
+                target='_blank'
+              >
+                <img
+                  src='https://assets.d4.docspera.com/home/images/logos/CMS.jpg'
+                  height={65}
+                  width={100}
+                />
               </a>
               <a href='https://www.gehealthcare.com/products/centricity-services' target='_blank'>
-                <img src='/website-gh/images/logos/centricity.png' width={150} />
+                <img
+                  src='https://assets.d4.docspera.com/home/images/logos/centricity.png'
+                  width={150}
+                />
               </a>
               <a href='https://www.medent.com/' target='_blank'>
-                <img src='/website-gh/images/logos/medent.png' width={180} />
+                <img
+                  src='https://assets.d4.docspera.com/home/images/logos/medent.png'
+                  width={180}
+                />
               </a>
               <a href='https://apporchard.epic.com/Gallery?id=3515' target='_blank'>
-                <img src='/website-gh/images/logos/app-orchard.png' width={150} />
+                <img
+                  src='https://assets.d4.docspera.com/home/images/logos/app-orchard.png'
+                  width={150}
+                />
               </a>
 
               <a href='https://www.elationhealth.com/' target='_blank'>
-                <img src='/website-gh/images/logos/elation-health.jpg' width={190} />
+                <img
+                  src='https://assets.d4.docspera.com/home/images/logos/elation-health.jpg'
+                  width={190}
+                />
               </a>
               <a href='https://www.nextgen.com/' target='_blank'>
-                <img src='/website-gh/images/logos/next-gen.jpg' width={140} />
+                <img
+                  src='https://assets.d4.docspera.com/home/images/logos/next-gen.jpg'
+                  width={140}
+                />
               </a>
               <a href='https://www.eclinicalworks.com/' target='_blank'>
-                <img src='/website-gh/images/logos/e-clinical-works.jpg' width={180} />
+                <img
+                  src='https://assets.d4.docspera.com/home/images/logos/e-clinical-works.jpg'
+                  width={180}
+                />
               </a>
               <a href='https://www.cerner.com/' target='_blank'>
-                <img src='/website-gh/images/logos/cerner.png' width={170} />
+                <img
+                  src='https://assets.d4.docspera.com/home/images/logos/cerner.png'
+                  width={170}
+                />
               </a>
 
               <a href='https://www.allscripts.com/' target='_blank'>
-                <img src='/website-gh/images/logos/allscripts.png' width={170} />   
+                <img
+                  src='https://assets.d4.docspera.com/home/images/logos/allscripts.png'
+                  width={170}
+                />
               </a>
               <a href='https://partners.drchrono.com/app/nbg3BfA/docspera' target='_blank'>
-                <img src='/website-gh/images/logos/drchrono.png' width={140} />
+                <img
+                  src='https://assets.d4.docspera.com/home/images/logos/drchrono.png'
+                  width={140}
+                />
               </a>
               <a href='https://www.greenwayhealth.com/' target='_blank'>
-                <img src='/website-gh/images/logos/greenway.png' width={150} />
+                <img
+                  src='https://assets.d4.docspera.com/home/images/logos/greenway.png'
+                  width={150}
+                />
               </a>
               <a href='https://www.emrsystems.net/srs-health-ehr-software/' target='_blank'>
-                <img src='/website-gh/images/logos/SRS.jpg' width={120} />
+                <img src='https://assets.d4.docspera.com/home/images/logos/SRS.jpg' width={120} />
               </a>
             </div>
           </div>
         </div>
-
-       
 
         <div style={{ backgroundColor: 'var(--blueFaint' }}>
           <div className='inner-div'>
@@ -305,7 +454,10 @@ export default function Provider() {
               {testimonials.map((t, idx) => {
                 return (
                   <div className='testimonial' key={idx}>
-                    <img src={`/website-gh/images/testimonials/${t.pic}`} className='testimonial-img' />
+                    <img
+                      src={`https://assets.d4.docspera.com/home/images/testimonials/${t.pic}`}
+                      className='testimonial-img'
+                    />
                     <div>
                       <p>"...{t.quote}..."</p>
                       <span className='name'> - {t.name}</span>
@@ -325,7 +477,11 @@ export default function Provider() {
           <div className='logos institutions'>
             <Carousel type='logo' content={instLogos} />
           </div>
-        <img id='map' src='/website-gh/images/graphics/map-with-pins.png' alt='map of docspera locations' />
+          <img
+            id='map'
+            src='https://assets.d4.docspera.com/home/images/graphics/map-with-pins.png'
+            alt='map of docspera locations'
+          />
         </div>
       </div>
 
