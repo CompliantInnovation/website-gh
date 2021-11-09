@@ -1,18 +1,24 @@
 import React from 'react'
 
 const ProviderSolutions = () => {
+  const isBrowser = () => typeof window !== 'undefined'
+
   return (
     <div style={{ backgroundColor: 'var(--blueXLight)', width: '100%' }}>
       <div className='provider-solutions inner-div'>
-        <h3 className='title'>Provider Premium</h3>
+        {isBrowser() && !window.location.href.includes('provider') && (
+          <h3 className='title'>DocSpera Premium</h3>
+        )}
         <h2 className='title-h2'>Integrated Provider Solutions</h2>
-        <p>Best in class SaaS, real-time, predictive platform for the entire surgical ecosystem</p>
+        <p>Efficient care coordination through patient's entire surgical journey using a best in class, real-time predictive platform</p>
         <div className='provider-solutions-row'>
           <div className='content'>
             <div>
-              <h4>Integrated Surgical Scheduling & Coordination Across Entire Care Team</h4>
               <div className='img-div'>
-                <img src='/website-gh/images/share-calendar.png' />
+                <img src='/website-gh/images/product-shots/Laptop-Calendar.png' />
+              </div>
+              <div className='h4-div'>
+                <h4>Integrated Surgical Scheduling & Coordination Across Entire Care Team</h4>
               </div>
               <p>
                 <ul>
@@ -28,9 +34,11 @@ const ProviderSolutions = () => {
           </div>
           <div className='content'>
             <div>
-              <h4>Surgical Dashboard for Managing Upcoming Cases</h4>
               <div className='img-div'>
                 <img src='/website-gh/images/product-shots/smart-scheduling.png' />
+              </div>
+              <div className='h4-div'>
+                <h4>Intelligent Dashboard for Managing Upcoming Cases</h4>
               </div>
               <p>
                 <ul>
@@ -45,9 +53,11 @@ const ProviderSolutions = () => {
           </div>
           <div className='content'>
             <div>
-              <h4>Episode of Care Tracker for Post Operative Care Management </h4>
               <div className='img-div'>
                 <img src='/website-gh/images/product-shots/EOC.png' />
+              </div>
+              <div className='h4-div'>
+                <h4>Episode of Care Tracker for Post Operative Care Management </h4>
               </div>
               <p>
                 <ul>
@@ -84,6 +94,7 @@ const ProviderSolutions = () => {
           min-width: 300px;
           border-radius: 10px;
           padding: 15px;
+          max-width: 300px;
         }
 
         .content {
@@ -93,11 +104,18 @@ const ProviderSolutions = () => {
         }
 
         .img-div {
-          height: 230px;
+          min-height: 230px;
           background-color: transparent !important;
           display: flex;
           align-items: center;
           justify-content: center;
+        }
+
+        @media (max-width:1000px) {
+          .img-div {
+            width: 100%;
+            height: auto;
+          }
         }
 
         .img-div > img {
@@ -107,9 +125,15 @@ const ProviderSolutions = () => {
           filter: drop-shadow(0 0px 10px lightgray);
         }
 
+        .h4-div {
+          height: 90px;
+          display: flex;
+          align-items: center;
+        }
+
         .provider-solutions-row h4 {
           text-align: center;
-          height: 90px;
+          color: black;
           max-width: 350px;
           margin: 0 auto;
           padding-left: 10px;
@@ -131,6 +155,7 @@ const ProviderSolutions = () => {
           padding-left: 10px;
           padding-right: 10px;
           margin: 0 auto;
+          margin-top: -10px;
           max-width: 350px;
         }
 
@@ -138,6 +163,7 @@ const ProviderSolutions = () => {
           .provider-solutions-row {
             display: flex;
             flex-direction: column;
+            align-items: center;
           }
 
           .provider-solutions-row div {
@@ -152,10 +178,10 @@ const ProviderSolutions = () => {
         }
 
         .view-product-btn {
-          background-color: var(--blueDocspera);
-          border: none;
+          background-color: white;
+          border: 2px solid var(--blueDocspera);
           border-radius: 5px;
-          color: white;
+          color: var(--blueDocspera);
           padding: 5px 10px;
           font-size: 16px;
           font-weight: 500;
@@ -165,6 +191,8 @@ const ProviderSolutions = () => {
           display: block;
           margin: 0 auto;
         }
+
+
 
         button:hover {
           cursor: pointer;

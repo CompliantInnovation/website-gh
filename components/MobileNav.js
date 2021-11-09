@@ -1,9 +1,8 @@
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { Context, changePage } from '../context/context'
 
 export default function MobileNav() {
-  const router = useRouter()
+  const { state, dispatch } = useContext(Context)
 
   const [productDropdown, setProductDropdown] = useState(false)
   const handleProductOnHover = () => {
@@ -43,7 +42,7 @@ export default function MobileNav() {
           <img id='hamburger' src='/website-gh/images/graphics/hamburger.png' onClick={openMenu} />
         )}
 
-        {router.pathname == '/login' || isLogin ? (
+        {state.route == 'login' || isLogin ? (
           <a href='https://docspera.com/demo' target='_blank'>
             {' '}
             <button onClick={handleLogin}>Demo</button>
@@ -57,12 +56,13 @@ export default function MobileNav() {
 
       {mobileNav && (
         <div className='mobile-menu'>
-          <Link href='/'>
-            <div className='menu-item' onClick={openMenu}>
+            <div className='menu-item' onClick={() => {
+              dispatch(changePage('home'))
+              openMenu()
+            }}>
               <div>Home</div>
               <img className='chevron-img' src='/website-gh/images/graphics/chevron.png' />
             </div>
-          </Link>
 
           <div className='product-container' onClick={handleProductOnHover}>
             <div className='menu-item'>
@@ -73,28 +73,22 @@ export default function MobileNav() {
             {productDropdown && (
               <div className='product-dropdown'>
                 <div className='underline'></div>
-                <Link href='/provider'>
-                  <div className='box'>
-                    <img src='/website-gh/images/surgeon-users.png' /> Providers{' '}
-                    <img className='chevron-img' src='/website-gh/images/graphics/chevron.png' />
-                  </div>
-                </Link>
-                <Link href='/medical-device'>
-                  <div className='box'>
-                    <img src='/website-gh/images/medical-device.png' /> Medical Device{' '}
-                    <img className='chevron-img' src='/website-gh/images/graphics/chevron.png' />
-                  </div>
-                </Link>
+                <div className='box' onClick={() => dispatch(changePage('provider'))}>
+                  <img src='/website-gh/images/surgeon-users.png' /> Providers{' '}
+                  <img className='chevron-img' src='/website-gh/images/graphics/chevron.png' />
+                </div>
+                <div className='box' onClick={() => dispatch(changePage('medical-device'))}>
+                  <img src='/website-gh/images/medical-device.png' /> Device Partners{' '}
+                  <img className='chevron-img' src='/website-gh/images/graphics/chevron.png' />
+                </div>
               </div>
             )}
           </div>
 
-          <Link href='/company'>
-            <div className='menu-item'>
-              <div>Our Company</div>
-              <img className='chevron-img' src='/website-gh/images/graphics/chevron.png' />
-            </div>
-          </Link>
+          <div className='menu-item' onClick={() => dispatch(changePage('company'))}>
+            <div>Our Company</div>
+            <img className='chevron-img' src='/website-gh/images/graphics/chevron.png' />
+          </div>
 
           <div className='contact-container' onClick={handleContactOnHover}>
             <div className='menu-item'>
