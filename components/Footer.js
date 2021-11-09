@@ -1,7 +1,10 @@
+import React, { useContext } from 'react'
+import { Context } from '../context/context'
 import Link from 'next/link'
 import { AppleFilled, FacebookFilled, TwitterCircleFilled, LinkedinFilled } from '@ant-design/icons'
 
 export default function FooterBar() {
+  const { state, dispatch } = useContext(Context)
   return (
     <footer>
       <div id='footer-inner-div'>
@@ -59,18 +62,18 @@ export default function FooterBar() {
         <div id='footer-nav'>
           <div>
             <span className='section-title'>PRODUCTS FOR</span>
-            <Link href='/provider'>
-              <div className='footer-menu-item'>
-                <a>Providers</a>
-                <img src='/website-gh/images/graphics/chevron-white.png' />
-              </div>
-            </Link>
-            <Link href='/medical-device'>
-              <div className='footer-menu-item'>
-                <a>Medical Device</a>
-                <img src='/website-gh/images/graphics/chevron-white.png' />
-              </div>
-            </Link>
+
+            <div className='footer-menu-item'  onClick={() => dispatch(changePage('provider'))}>
+              <a>Providers</a>
+              <img src='/website-gh/images/graphics/chevron-white.png' />
+            </div>
+
+
+            <div className='footer-menu-item' onClick={() => dispatch(changePage('medical-device'))}>
+              <a>Medical Device</a>
+              <img src='/website-gh/images/graphics/chevron-white.png' />
+            </div>
+
 
             <span className='section-title' style={{ display: 'block', paddingTop: 50 }}>
               SOLUTIONS
@@ -97,12 +100,12 @@ export default function FooterBar() {
 
           <div id='footer-nav-col-2'>
             <span className='section-title'>COMPANY</span>
-            <Link href='/about'>
-              <div className='footer-menu-item'>
-                <a>About Us</a>
-                <img src='/website-gh/images/graphics/chevron-white.png' />
-              </div>
-            </Link>
+
+            <div className='footer-menu-item' onClick={() => dispatch(changePage('company'))}>
+              <a>About Us</a>
+              <img src='/website-gh/images/graphics/chevron-white.png' />
+            </div>
+
 
             <span className='section-title' style={{ display: 'block', paddingTop: 30 }}>
               CONTACT
