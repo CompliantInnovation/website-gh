@@ -233,39 +233,41 @@ export default function MedicalDevicePage() {
         </div>
 
         {/*  C A S E   S T U D I E S  */}
-        <div className='inner-div'>
-          <h2 className='title-h2'>Case Studies</h2>
-          <div id='case-studies-div' >
-            <div className='case-study'>
-              <div className='img-div'>
-                <img src='/website-gh/caseStudies/case1.png'/>
-                <h3>Automated Inventory Management</h3>
-                <p>A Single Center study using Integrated Surgical Care Coordination to improve case visibility, planning, and reduce costs</p>
-                <a href='https://assets.d4.docspera.com/cymorrison_case1.pdf' target='_blank' rel='noopener noreferrer'>
+        <div style={{ backgroundColor: 'var(--blueXLight)'}}>
+          <div className='inner-div'>
+            <h2 className='title-h2'>Case Studies</h2>
+            <div id='case-studies-div' >
+              <div className='case-study'>
+                <div className='img-div'>
+                  <img src='/website-gh/caseStudies/case1.png'/>
+                  <h3>Automated Inventory Management</h3>
+                  <p>A Single Center study using Integrated Surgical Care Coordination to improve case visibility, planning, and reduce costs</p>
+                  <a href='https://assets.d4.docspera.com/cymorrison_case1.pdf' target='_blank' rel='noopener noreferrer'>
+                    <button className='case-study-btn'>Read More</button>
+                  </a>
+
+                </div>
+              </div>
+              <div className='case-study'>
+                <div className='img-div'>
+                  <img src='/website-gh/caseStudies/case2.png'/>
+                  <h3>New Product Launch</h3>
+                  <p>Post-Market Clinical Insights Study Using Real-World Data</p>
+                </div>
+                <a href='https://assets.d4.docspera.com/cymorrison_case2.pdf' target='_blank' rel='noopener noreferrer'>
                   <button className='case-study-btn'>Read More</button>
                 </a>
-
               </div>
-            </div>
-            <div className='case-study'>
-              <div className='img-div'>
-                <img src='/website-gh/caseStudies/case2.png'/>
-                <h3>New Product Launch</h3>
-                <p>Post-Market Clinical Insights Study Using Real-World Data</p>
+              <div className='case-study'>
+                <div className='img-div'>
+                  <img src='/website-gh/caseStudies/case3.png'/>
+                  <h3>Engage Your Customers</h3>
+                  <p>Integrated Care Coordination Platform supports higher revenue growth, as well as cost and time savings for the sales team</p>
+                </div>
+                <a href='https://assets.d4.docspera.com/cymorrison_case3.pdf' target='_blank' rel='noopener noreferrer'>
+                  <button className='case-study-btn'>Read More</button>
+                </a>
               </div>
-              <a href='https://assets.d4.docspera.com/cymorrison_case2.pdf' target='_blank' rel='noopener noreferrer'>
-                <button className='case-study-btn'>Read More</button>
-              </a>
-            </div>
-            <div className='case-study'>
-              <div className='img-div'>
-                <img src='/website-gh/caseStudies/case3.png'/>
-                <h3>Engage Your Customers</h3>
-                <p>Integrated Care Coordination Platform supports higher revenue growth, as well as cost and time savings for the sales team</p>
-              </div>
-              <a href='https://assets.d4.docspera.com/cymorrison_case3.pdf' target='_blank' rel='noopener noreferrer'>
-                <button className='case-study-btn'>Read More</button>
-              </a>
             </div>
           </div>
         </div>
