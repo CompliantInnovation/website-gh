@@ -190,6 +190,7 @@ export default function HeaderNav() {
           background-color: rgba(0, 150, 250, 0.2);
         }
         #logo:hover {
+          cursor: pointer;
           background-color: rgba(0, 0, 0, 0);
         }
         #ext-link {
@@ -203,6 +204,9 @@ export default function HeaderNav() {
           padding: 10px 15px;
           font-size: 16px;
           font-weight: bold;
+        }
+        button:hover {
+          cursor: pointer;
         }
         .product-dropdown {
           display: flex;
