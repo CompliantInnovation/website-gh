@@ -45,7 +45,11 @@ export default function HeaderNav() {
         <a id='logo' onClick={() => dispatch(changePage('home'))}>
           <img
             id='logo'
-            src={`${tabletSize ? '/website-gh/images/logo-short.png' : '/website-gh/images/graphics/logo.svg'}`}
+            src={`${
+              tabletSize
+                ? 'https://assets.d4.docspera.com/home/images/logo-short.png'
+                : 'https://assets.d4.docspera.com/home/images/graphics/logo.svg'
+            }`}
             height={`${tabletSize ? 40 : 70}`}
             width={`${tabletSize ? 40 : 150}`}
           />
@@ -57,8 +61,7 @@ export default function HeaderNav() {
           <a
             className={
               (productDropdown && 'active_a') ||
-              ((state.route == 'provider' || state.route == 'medical-device') &&
-                'active_a')
+              ((state.route == 'provider' || state.route == 'medical-device') && 'active_a')
             }
             onMouseEnter={handleProductOnHover}
           >
@@ -66,13 +69,20 @@ export default function HeaderNav() {
           </a>
           {productDropdown && (
             <div className='product-dropdown' onMouseLeave={handleProductOnHover}>
-              <div className='box' onClick={() => {
-                dispatch(changePage('provider'))
-                handleProductOnHover()
-              }}>
+              <div
+                className='box'
+                onClick={() => {
+                  dispatch(changePage('provider'))
+                  handleProductOnHover()
+                }}
+              >
                 <h4>
-                  <img src='/website-gh/images/surgeon-users.png' />
-                  Providers <img className='chevron-img' src='/website-gh/images/graphics/chevron.png' />
+                  <img src='https://assets.d4.docspera.com/home/images/surgeon-users.png' />
+                  Providers{' '}
+                  <img
+                    className='chevron-img'
+                    src='https://assets.d4.docspera.com/home/images/graphics/chevron.png'
+                  />
                 </h4>
                 <ul>
                   <li>Integrated Surgical Scheduling</li>
@@ -80,25 +90,34 @@ export default function HeaderNav() {
                   <li>Episode of Care</li>
                 </ul>
               </div>
-                <div className='box' onClick={() => {
+              <div
+                className='box'
+                onClick={() => {
                   dispatch(changePage('medical-device'))
                   handleProductOnHover()
-                }}>
-                  <h4>
-                    <img src='/website-gh/images/medical-device.png' />
-                    Device Partners {' '}
-                    <img className='chevron-img' src='/website-gh/images/graphics/chevron.png' />
-                  </h4>
-                  <ul>
-                    <li>Advanced Case Notification</li>
-                    <li>Integrated Provider Solutions</li>
-                    <li>Data Intelligence &amp; RWD Insights</li>
-                  </ul>
-                </div>
+                }}
+              >
+                <h4>
+                  <img src='https://assets.d4.docspera.com/home/images/medical-device.png' />
+                  Device Partners{' '}
+                  <img
+                    className='chevron-img'
+                    src='https://assets.d4.docspera.com/home/images/graphics/chevron.png'
+                  />
+                </h4>
+                <ul>
+                  <li>Advanced Case Notification</li>
+                  <li>Integrated Provider Solutions</li>
+                  <li>Data Intelligence &amp; RWD Insights</li>
+                </ul>
+              </div>
             </div>
           )}
 
-          <a className={state.route == 'company' && 'active_a'} onClick={() => dispatch(changePage('company'))}>
+          <a
+            className={state.route == 'company' && 'active_a'}
+            onClick={() => dispatch(changePage('company'))}
+          >
             <span>COMPANY</span>
           </a>
           <div className='dropdown'>
@@ -150,8 +169,9 @@ export default function HeaderNav() {
           width: 100%;
           display: flex;
           background-color: ${productDropdown ? 'white' : 'RGBa(255,255,255, .7)'};
-          background-image: Linear-Gradient(RGBa(255,255,255, 1), RGBa(255,255,255, 0)), Linear-Gradient(RGBa(255,255,255, .8), RGBa(255,255,255, 0));
-          box-shadow: 0 0 50px 50px RGBa(255,255,255, .7);
+          background-image: Linear-Gradient(RGBa(255, 255, 255, 1), RGBa(255, 255, 255, 0)),
+            Linear-Gradient(RGBa(255, 255, 255, 0.8), RGBa(255, 255, 255, 0));
+          box-shadow: 0 0 50px 50px RGBa(255, 255, 255, 0.7);
           justify-content: space-between;
           align-items: center;
           padding-left: 30px;
