@@ -17,22 +17,22 @@ export default function NumberScroll({ imgSrc, number, title, plus, order, perce
   const styles = useSpring({
     from: {
       opacity: 0,
-      fontSize: tabletSize ? '5vw' : '30px',
+      fontsize: tabletSize ? '5vw' : '30px',
       margin: 0,
       color: 'var(--blueDark)'
     },
-    to: { opacity: 1, fontSize: tabletSize ? '5vw' : '30px' },
+    to: { opacity: 1, fontsize: tabletSize ? '5vw' : '30px' },
     config: { duration: 2000, config: config.molasses }
   })
 
   const plusStyles = useSpring({
     from: {
       opacity: 0,
-      fontSize: tabletSize ? '5vw' : '30px',
+      fontsize: tabletSize ? '5vw' : '30px',
       margin: 0,
       color: 'var(--blueDark)'
     },
-    to: { opacity: 1, fontSize: tabletSize ? '5vw' : '30px' },
+    to: { opacity: 1, fontsize: tabletSize ? '5vw' : '30px' },
     config: { duration: 2000, delay: 1000 }
   })
 
@@ -69,11 +69,11 @@ export default function NumberScroll({ imgSrc, number, title, plus, order, perce
           align-items: center;
         }
         .title {
-          font-family: 'Varela Round';
+          font-family: 'Varela Round', sans-serif;
           text-align: center;
           font-size: 18px;
           max-width: 200px;
-          color: var(--blueDark);
+          color: var(--blueDocspera);
         }
         @media (max-width: 800px) {
           .title {

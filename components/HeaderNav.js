@@ -1,11 +1,10 @@
-import Link from 'next/link'
-import { useRouter } from 'next/router'
+import React, { useState, useContext } from 'react'
+import { Context, changePage } from '../context/context'
 import { useMedia } from '../hooks/useMedia'
-import React, { useState } from 'react'
 import MobileNav from '../components/MobileNav'
 
 export default function HeaderNav() {
-  const router = useRouter()
+  const { state, dispatch } = useContext(Context)
   const isBrowser = () => typeof window !== 'undefined'
 
   let tabletSize, mobileSize
@@ -43,16 +42,14 @@ export default function HeaderNav() {
   ) : (
     <nav>
       {isBrowser && (
-        <Link href='/'>
-          <a id='logo'>
-            <img
-              id='logo'
-              src={`${tabletSize ? '/website-gh/images/logo-short.png' : '/website-gh/images/graphics/logo.svg'}`}
-              height={`${tabletSize ? 40 : 70}`}
-              width={`${tabletSize ? 40 : 150}`}
-            />
-          </a>
-        </Link>
+        <a id='logo' onClick={() => dispatch(changePage('home'))}>
+          <img
+            id='logo'
+            src={`${tabletSize ? '/website-gh/images/logo-short.png' : '/website-gh/images/graphics/logo.svg'}`}
+            height={`${tabletSize ? 40 : 70}`}
+            width={`${tabletSize ? 40 : 150}`}
+          />
+        </a>
       )}
 
       <div id='right-side'>
@@ -60,33 +57,36 @@ export default function HeaderNav() {
           <a
             className={
               (productDropdown && 'active_a') ||
-              ((router.pathname == '/provider' || router.pathname == '/medical-device') &&
+              ((state.route == 'provider' || state.route == 'medical-device') &&
                 'active_a')
             }
             onMouseEnter={handleProductOnHover}
           >
-            <span>PRODUCT</span>
+            <span>SOLUTIONS</span>
           </a>
           {productDropdown && (
             <div className='product-dropdown' onMouseLeave={handleProductOnHover}>
-              <Link href='/provider'>
-                <div className='box' onClick={handleProductOnHover}>
-                  <h4>
-                    <img src='/website-gh/images/surgeon-users.png' />
-                    Providers <img className='chevron-img' src='/website-gh/images/graphics/chevron.png' />
-                  </h4>
-                  <ul>
-                    <li>Episode of Care</li>
-                    <li>Prioritized Rebooking</li>
-                    <li>Data Intelligence &amp; RWD Insights</li>
-                  </ul>
-                </div>
-              </Link>
-              <Link href='/medical-device'>
-                <div className='box' onClick={handleProductOnHover}>
+              <div className='box' onClick={() => {
+                dispatch(changePage('provider'))
+                handleProductOnHover()
+              }}>
+                <h4>
+                  <img src='/website-gh/images/surgeon-users.png' />
+                  Providers <img className='chevron-img' src='/website-gh/images/graphics/chevron.png' />
+                </h4>
+                <ul>
+                  <li>Integrated Surgical Scheduling</li>
+                  <li>Intelligent Dashboard</li>
+                  <li>Episode of Care</li>
+                </ul>
+              </div>
+                <div className='box' onClick={() => {
+                  dispatch(changePage('medical-device'))
+                  handleProductOnHover()
+                }}>
                   <h4>
                     <img src='/website-gh/images/medical-device.png' />
-                    Medical Device{' '}
+                    Device Partners {' '}
                     <img className='chevron-img' src='/website-gh/images/graphics/chevron.png' />
                   </h4>
                   <ul>
@@ -95,15 +95,12 @@ export default function HeaderNav() {
                     <li>Data Intelligence &amp; RWD Insights</li>
                   </ul>
                 </div>
-              </Link>
             </div>
           )}
 
-          <Link href='/company'>
-            <a className={router.pathname == '/company' && 'active_a'}>
-              <span>COMPANY</span>
-            </a>
-          </Link>
+          <a className={state.route == 'company' && 'active_a'} onClick={() => dispatch(changePage('company'))}>
+            <span>COMPANY</span>
+          </a>
           <div className='dropdown'>
             <p className={contactDropdown && 'active_a'} onMouseEnter={handleContactOnHover}>
               <span>CONTACT</span>
@@ -137,7 +134,7 @@ export default function HeaderNav() {
             <span>BLOG</span>
           </a>
         </div>
-        {router.pathname == '/login' || isLogin ? (
+        {state.route == 'login' || isLogin ? (
           <a className='ext-link' href='https://docspera.com/demo' target='_blank'>
             <button onClick={handleLogin}>Request Demo</button>
           </a>
@@ -193,6 +190,7 @@ export default function HeaderNav() {
           background-color: rgba(0, 150, 250, 0.2);
         }
         #logo:hover {
+          cursor: pointer;
           background-color: rgba(0, 0, 0, 0);
         }
         #ext-link {
@@ -206,6 +204,9 @@ export default function HeaderNav() {
           padding: 10px 15px;
           font-size: 16px;
           font-weight: bold;
+        }
+        button:hover {
+          cursor: pointer;
         }
         .product-dropdown {
           display: flex;
