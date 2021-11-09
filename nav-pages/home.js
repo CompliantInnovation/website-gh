@@ -1,11 +1,13 @@
+import React, { useContext } from 'react'
+import { Context, changePage } from '../context/context' 
 import Head from 'next/head'
 import HeaderNav from '../components/HeaderNav'
-import Link from 'next/link'
 import NumberScroll from '../components/NumberScroll'
 import FooterBar from '../components/Footer'
 import { useMedia } from '../hooks/useMedia'
 
 export default function Home() {
+  const { state, dispatch } = useContext(Context)
   const isBrowser = () => typeof window !== 'undefined'
   let smallScreen
   if (isBrowser) {
@@ -166,15 +168,13 @@ export default function Home() {
                 <p>
                   <span>&#10140;</span> Episode of Care
                 </p>
-                <Link href='/provider'>
-                  <button>
-                    View Provider Solutions{' '}
-                    <img
-                      className='chevron-img'
-                      src='/website-gh/images/graphics/chevron-blue.png'
-                    />
-                  </button>
-                </Link>
+                <button onClick={() => dispatch(changePage('provider'))}>
+                  View Provider Solutions{' '}
+                  <img
+                    className='chevron-img'
+                    src='/website-gh/images/graphics/chevron-blue.png'
+                  />
+                </button>
               </div>
             </div>
             <div className='outer-box'>
@@ -192,15 +192,13 @@ export default function Home() {
                 <p>
                   <span>&#10140;</span> Data Intelligence &amp; RWD Insights
                 </p>
-                <Link href='/medical-device'>
-                  <button>
-                    View Device Partner Solutions{' '}
-                    <img
-                      className='chevron-img'
-                      src='/website-gh/images/graphics/chevron-blue.png'
-                    />
-                  </button>
-                </Link>
+                <button onClick={() => dispatch(changePage('medical-device'))}>
+                  View Device Partner Solutions{' '}
+                  <img
+                    className='chevron-img'
+                    src='/website-gh/images/graphics/chevron-blue.png'
+                  />
+                </button>
               </div>
             </div>
           </div>
