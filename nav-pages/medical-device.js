@@ -245,7 +245,6 @@ export default function MedicalDevicePage() {
                   <a href='https://assets.d4.docspera.com/cymorrison_case1.pdf' target='_blank' rel='noopener noreferrer'>
                     <button className='case-study-btn'>Read More</button>
                   </a>
-
                 </div>
               </div>
               <div className='case-study'>
@@ -546,7 +545,8 @@ export default function MedicalDevicePage() {
 
         .case-study h3 {
           margin-left: 10px;
-          font-size: 20px;
+          font-size: 18px;
+          min-height: 50px;
         }
 
         .case-study p {
