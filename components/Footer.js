@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Context } from '../context/context'
+import { Context, changePage } from '../context/context'
 import Link from 'next/link'
 import { AppleFilled, FacebookFilled, TwitterCircleFilled, LinkedinFilled } from '@ant-design/icons'
 
