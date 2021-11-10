@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Context } from '../context/context'
 import Home from '../nav-pages/home'
 import Provider from '../nav-pages/provider'
@@ -7,11 +7,16 @@ import Company from '../nav-pages/company'
 
 export default function Index() {
   const { state } = useContext(Context)
-  if(state) {  
-    switch(state.route) {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [state.route])
+
+  if (state) {
+    switch (state.route) {
       case 'home':
         return <Home />
-      case 'provider': 
+      case 'provider':
         return <Provider />
       case 'medical-device':
         return <MedicalDevice />
@@ -23,5 +28,4 @@ export default function Index() {
   } else {
     return <div></div>
   }
-
 }
