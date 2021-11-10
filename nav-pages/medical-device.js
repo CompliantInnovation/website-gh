@@ -259,7 +259,7 @@ export default function MedicalDevicePage() {
                     case visibility, planning, and reduce costs
                   </p>
                   <a
-                    href='https://assets.d4.docspera.com/cymorrison_case1.pdf'
+                    href='https://assets.d4.docspera.com/home/caseStudies/Automated_Inventory_Management.pdf'
                     target='_blank'
                     rel='noopener noreferrer'
                   >
@@ -276,7 +276,7 @@ export default function MedicalDevicePage() {
                   <p>Post-Market Clinical Insights Study Using Real-World Data</p>
                 </div>
                 <a
-                  href='https://assets.d4.docspera.com/cymorrison_case2.pdf'
+                  href='https://assets.d4.docspera.com/home/caseStudies/New_Product_Launch.pdf'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
@@ -295,7 +295,7 @@ export default function MedicalDevicePage() {
                   </p>
                 </div>
                 <a
-                  href='https://assets.d4.docspera.com/cymorrison_case3.pdf'
+                  href='https://assets.d4.docspera.com/home/caseStudies/Engage_Your_Customers.pdf'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
