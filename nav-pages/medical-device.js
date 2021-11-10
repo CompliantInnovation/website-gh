@@ -251,7 +251,9 @@ export default function MedicalDevicePage() {
               <div className='case-study'>
                 <div className='img-div'>
                   <img src='https://assets.d4.docspera.com/home/caseStudies/case1.png' />
-                  <h3>Automated Inventory Management</h3>
+                  <div className='h3-div'>
+                    <h3>Automated Inventory Management</h3>
+                  </div>
                   <p>
                     A Single Center study using Integrated Surgical Care Coordination to improve
                     case visibility, planning, and reduce costs
@@ -268,7 +270,9 @@ export default function MedicalDevicePage() {
               <div className='case-study'>
                 <div className='img-div'>
                   <img src='https://assets.d4.docspera.com/home/caseStudies/case2.png' />
-                  <h3>New Product Launch</h3>
+                  <div className='h3-div'>
+                    <h3>New Product Launch</h3>
+                  </div>
                   <p>Post-Market Clinical Insights Study Using Real-World Data</p>
                 </div>
                 <a
@@ -282,7 +286,9 @@ export default function MedicalDevicePage() {
               <div className='case-study'>
                 <div className='img-div'>
                   <img src='https://assets.d4.docspera.com/home/caseStudies/case3.png' />
-                  <h3>Engage Your Customers</h3>
+                  <div className='h3-div'>
+                    <h3>Engage Your Customers</h3>
+                  </div>
                   <p>
                     Integrated Care Coordination Platform supports higher revenue growth, as well as
                     cost and time savings for the sales team
@@ -572,10 +578,16 @@ export default function MedicalDevicePage() {
           width: 100%;
         }
 
+        .case-study .h3-div {
+          display: flex;
+          align-items: center;
+          min-height: 50px;
+        }
+
         .case-study h3 {
           margin-left: 10px;
           font-size: 18px;
-          min-height: 50px;
+          color: var(--blueDocspera);
         }
 
         .case-study p {
