@@ -314,6 +314,8 @@ export default function Home() {
           position: relative;
           background-image: url('https://assets.d4.docspera.com/home/images/iPad-landing-bluer.png');
           background-position: 15% 50%, center bottom;
+          background-repeat: no-repeat;
+          background-size: cover;
         }
 
         #landing-bg {
