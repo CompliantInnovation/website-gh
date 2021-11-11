@@ -32,11 +32,6 @@ export default function HeaderNav() {
     setProductDropdown(false)
   }
 
-  const [isLogin, setIsLogin] = useState(false)
-  const handleLogin = () => {
-    setIsLogin(!isLogin)
-  }
-
   return mobileSize ? (
     <MobileNav />
   ) : (
@@ -153,15 +148,9 @@ export default function HeaderNav() {
             <span>BLOG</span>
           </a>
         </div>
-        {state.route == 'login' || isLogin ? (
-          <a className='ext-link' href='https://docspera.com/demo' target='_blank'>
-            <button onClick={handleLogin}>Request Demo</button>
-          </a>
-        ) : (
-          <a className='ext-link' href='https://docspera.com/login' target='_blank'>
-            <button onClick={handleLogin}>LOGIN</button>
-          </a>
-        )}
+        <a className='ext-link' href='https://docspera.com/login' target='_blank'>
+          <button>LOGIN</button>
+        </a>
       </div>
 
       <style jsx>{`
