@@ -23,11 +23,6 @@ export default function MobileNav() {
     setProductDropdown(false)
   }
 
-  const [isLogin, setIsLogin] = useState(false)
-  const handleLogin = () => {
-    setIsLogin(!isLogin)
-  }
-
   const [mobileNav, setMobileNav] = useState(false)
   const openMenu = () => {
     setMobileNav(!mobileNav)
@@ -49,17 +44,9 @@ export default function MobileNav() {
             onClick={openMenu}
           />
         )}
-
-        {state.route == 'login' || isLogin ? (
-          <a href='https://docspera.com/demo' target='_blank'>
-            {' '}
-            <button onClick={handleLogin}>Demo</button>
-          </a>
-        ) : (
-          <a href='https://docspera.com/login' target='_blank'>
-            <button onClick={handleLogin}>Log In</button>
-          </a>
-        )}
+        <a href='https://docspera.com/login' target='_blank'>
+          <button>Log In</button>
+        </a>
       </div>
 
       {mobileNav && (
