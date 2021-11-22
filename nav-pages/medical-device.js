@@ -201,7 +201,7 @@ export default function MedicalDevicePage() {
         </div>
 
         <div id='integrated-providers-solutions'>
-          <ProviderSolutions />
+          <ProviderSolutions premium />
         </div>
 
         <div id='insights-section'>
