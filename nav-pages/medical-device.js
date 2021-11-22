@@ -201,7 +201,7 @@ export default function MedicalDevicePage() {
         </div>
 
         <div id='integrated-providers-solutions'>
-          <ProviderSolutions />
+          <ProviderSolutions premium />
         </div>
 
         <div id='insights-section'>
@@ -409,11 +409,11 @@ export default function MedicalDevicePage() {
           width: 100%;
           max-height: 175px;
           height: auto;
-          width: auto;
           border-radius: 5px;
           display: block;
           margin: 0 auto;
           margin-bottom: 10px;
+          min-width: 250px;
         }
         #offerings-divs h4,
         h3 {
