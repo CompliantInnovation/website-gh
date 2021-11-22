@@ -1,13 +1,8 @@
-import React, { useContext } from 'react'
-import { Context } from '../context/context'
-
-const ProviderSolutions = () => {
-  const { state } = useContext(Context)
-
+const ProviderSolutions = ({ premium }) => {
   return (
     <div style={{ backgroundColor: 'var(--blueXLight)', width: '100%' }}>
       <div className='provider-solutions inner-div'>
-        {(state.route = 'provider' && <h3 className='title'>DocSpera Premium</h3>)}
+        {premium && <h3 className='title'>DocSpera Premium</h3>}
         <h2 className='title-h2'>Integrated Provider Solutions</h2>
         <p>
           Efficient care coordination through patient's entire surgical journey using a best in
