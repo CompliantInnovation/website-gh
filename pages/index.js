@@ -10,10 +10,10 @@ export default function Index() {
 
   useEffect(() => {
     window.scrollTo(0, 0)
-  }, [state.route])
+  }, [state.page])
 
   if (state) {
-    switch (state.route) {
+    switch (state.page) {
       case 'home':
         return <Home />
       case 'provider':
