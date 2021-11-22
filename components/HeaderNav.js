@@ -56,7 +56,7 @@ export default function HeaderNav() {
           <a
             className={
               (productDropdown && 'active_a') ||
-              ((state.route == 'provider' || state.route == 'medical-device') && 'active_a')
+              ((state.page == 'provider' || state.page == 'medical-device') && 'active_a')
             }
             onMouseEnter={handleProductOnHover}
           >
@@ -110,7 +110,7 @@ export default function HeaderNav() {
           )}
 
           <a
-            className={state.route == 'company' && 'active_a'}
+            className={state.page == 'company' && 'active_a'}
             onClick={() => dispatch(changePage('company'))}
           >
             <span>COMPANY</span>
