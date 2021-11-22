@@ -6,7 +6,7 @@ import MobileNav from '../components/MobileNav'
 export default function HeaderNav() {
   const { state, dispatch } = useContext(Context)
   const isBrowser = () => typeof window !== 'undefined'
-  const [loginHref, setLoginHref] = useState()
+  const [href, setHref] = useState()
 
   let tabletSize, mobileSize
   if (isBrowser) {
@@ -33,21 +33,21 @@ export default function HeaderNav() {
     setProductDropdown(false)
   }
 
-  const getLoginLink = () => {
+  const getLink = (path) => {
     if (typeof window !== 'undefined') {
       if (window.location.href.includes('docvisor')) {
-        setLoginHref('https://docvisor.com/login')
+        setHref(`https://docvisor.com/${path}`)
       } else if (window.location.href.includes('docspera.localhost')) {
-        setLoginHref('http://docspera.localhost/login')
+        setHref(`http://docspera.localhost/${path}`)
       } else if (window.location.href.includes('docspera')) {
-        setLoginHref('https://docspera.com/login')
+        setHref(`https://docspera.com/${path}`)
       } else if (window.location.href.includes('localhost')) {
-        setLoginHref('http://docspera.localhost/login')
+        setHref(`http://docspera.localhost/${path}`)
       } else {
-        setLoginHref('https://docspera.com/login')
+        setHref(`https://docspera.com/${path}`)
       }
     } else {
-      setLoginHref('https://docspera.com/login')
+      setHref(`https://docspera.com/${path}`)
     }
   }
 
@@ -142,12 +142,12 @@ export default function HeaderNav() {
               <div id='contact-dropdown' onMouseLeave={handleContactOnHover}>
                 <ul>
                   <li>
-                    <a href='https://docspera.com/support' target='_blank'>
+                    <a href={href} onClick={() => getLink('support')} target='_blank'>
                       Contact Us
                     </a>
                   </li>
                   <li>
-                    <a href='https://docspera.com/demo' target='_blank'>
+                    <a href={href} onClick={() => getLink('demo')} target='_blank'>
                       Request Demo
                     </a>
                   </li>
@@ -167,7 +167,7 @@ export default function HeaderNav() {
             <span>BLOG</span>
           </a>
         </div>
-        <a className='ext-link' href={loginHref} onClick={() => getLoginLink()} target='_blank'>
+        <a className='ext-link' href={href} onClick={() => getLink('login')} target='_blank'>
           <button>LOGIN</button>
         </a>
       </div>
