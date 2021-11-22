@@ -6,6 +6,7 @@ import MobileNav from '../components/MobileNav'
 export default function HeaderNav() {
   const { state, dispatch } = useContext(Context)
   const isBrowser = () => typeof window !== 'undefined'
+  const [loginHref, setLoginHref] = useState()
 
   let tabletSize, mobileSize
   if (isBrowser) {
@@ -30,6 +31,24 @@ export default function HeaderNav() {
     setBlogHover(!blogHover)
     setContactDropdown(false)
     setProductDropdown(false)
+  }
+
+  const getLoginLink = () => {
+    if (typeof window !== 'undefined') {
+      if (window.location.href.includes('docvisor')) {
+        setLoginHref('https://docvisor.com/login')
+      } else if (window.location.href.includes('docspera.localhost')) {
+        setLoginHref('http://docspera.localhost/login')
+      } else if (window.location.href.includes('docspera')) {
+        setLoginHref('https://docspera.com/login')
+      } else if (window.location.href.includes('localhost')) {
+        setLoginHref('http://docspera.localhost/login')
+      } else {
+        setLoginHref('https://docspera.com/login')
+      }
+    } else {
+      setLoginHref('https://docspera.com/login')
+    }
   }
 
   return mobileSize ? (
@@ -148,7 +167,7 @@ export default function HeaderNav() {
             <span>BLOG</span>
           </a>
         </div>
-        <a className='ext-link' href='https://docspera.com/login' target='_blank'>
+        <a className='ext-link' href={loginHref} onClick={() => getLoginLink()} target='_blank'>
           <button>LOGIN</button>
         </a>
       </div>
