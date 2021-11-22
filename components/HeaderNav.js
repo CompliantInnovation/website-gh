@@ -6,6 +6,7 @@ import MobileNav from '../components/MobileNav'
 export default function HeaderNav() {
   const { state, dispatch } = useContext(Context)
   const isBrowser = () => typeof window !== 'undefined'
+  const [href, setHref] = useState()
 
   let tabletSize, mobileSize
   if (isBrowser) {
@@ -32,6 +33,24 @@ export default function HeaderNav() {
     setProductDropdown(false)
   }
 
+  const getLink = (path) => {
+    if (typeof window !== 'undefined') {
+      if (window.location.href.includes('docvisor')) {
+        setHref(`https://docvisor.com/${path}`)
+      } else if (window.location.href.includes('docspera.localhost')) {
+        setHref(`http://docspera.localhost/${path}`)
+      } else if (window.location.href.includes('docspera')) {
+        setHref(`https://docspera.com/${path}`)
+      } else if (window.location.href.includes('localhost')) {
+        setHref(`http://docspera.localhost/${path}`)
+      } else {
+        setHref(`https://docspera.com/${path}`)
+      }
+    } else {
+      setHref(`https://docspera.com/${path}`)
+    }
+  }
+
   return mobileSize ? (
     <MobileNav />
   ) : (
@@ -56,7 +75,7 @@ export default function HeaderNav() {
           <a
             className={
               (productDropdown && 'active_a') ||
-              ((state.route == 'provider' || state.route == 'medical-device') && 'active_a')
+              ((state.page == 'provider' || state.page == 'medical-device') && 'active_a')
             }
             onMouseEnter={handleProductOnHover}
           >
@@ -110,7 +129,7 @@ export default function HeaderNav() {
           )}
 
           <a
-            className={state.route == 'company' && 'active_a'}
+            className={state.page == 'company' && 'active_a'}
             onClick={() => dispatch(changePage('company'))}
           >
             <span>COMPANY</span>
@@ -123,12 +142,12 @@ export default function HeaderNav() {
               <div id='contact-dropdown' onMouseLeave={handleContactOnHover}>
                 <ul>
                   <li>
-                    <a href='https://docspera.com/support' target='_blank'>
+                    <a href={href} onClick={() => getLink('support')} target='_blank'>
                       Contact Us
                     </a>
                   </li>
                   <li>
-                    <a href='https://docspera.com/demo' target='_blank'>
+                    <a href={href} onClick={() => getLink('demo')} target='_blank'>
                       Request Demo
                     </a>
                   </li>
@@ -148,7 +167,7 @@ export default function HeaderNav() {
             <span>BLOG</span>
           </a>
         </div>
-        <a className='ext-link' href='https://docspera.com/login' target='_blank'>
+        <a className='ext-link' href={href} onClick={() => getLink('login')} target='_blank'>
           <button>LOGIN</button>
         </a>
       </div>
