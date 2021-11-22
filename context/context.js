@@ -7,15 +7,15 @@ const reducer = (state, action) => {
 
   switch (action.type) {
     case 'change-page':
-      result.route = action.payload
+      result.page = action.payload
       return result
-    default: 
+    default:
       return result
   }
 }
 
 const intitialResponseState = {
-  route: 'home'
+  page: 'home'
 }
 
 const changePage = (string) => {
@@ -34,8 +34,4 @@ function ContextProvider(props) {
   return <Context.Provider value={{ state, dispatch }}>{props.children}</Context.Provider>
 }
 
-export {
-  Context,
-  ContextProvider,
-  changePage
-}
+export { Context, ContextProvider, changePage }
