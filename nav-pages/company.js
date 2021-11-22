@@ -36,22 +36,22 @@ export default function Company() {
         <img
           className='img'
           src='https://assets.d4.docspera.com/home/images/company/IMG_8940.jpeg'
-          style={{ width: '100%' }}
+          style={{ width: '100%', marginBottom: 10 }}
         />
         {/* Dinner images */}
-        <div style={{ display: 'flex' }}>
+        <div style={{ display: 'flex', marginBottom: 10 }}>
           {/* Vertical Dinner images (on the Left) */}
           <div style={{ width: '32%' }}>
             <img
               className='img'
               src='https://assets.d4.docspera.com/home/images/company/IMG_8790.jpeg'
-              style={{ width: '100%', marginRight: 5 }}
+              style={{ width: '100%', marginRight: 5, marginBottom: 10 }}
             />
-            <div style={{ width: '100%', overflow: 'hidden' }}>
+            <div style={{ width: '100%', overflow: 'hidden', borderRadius: 5 }}>
               <img
                 className='img'
                 src='https://assets.d4.docspera.com/home/images/company/IMG_8791.jpeg'
-                style={{ width: '108%' }}
+                style={{ width: '100%' }}
               />
             </div>
           </div>
@@ -71,19 +71,19 @@ export default function Company() {
             <img
               className='img'
               src='https://assets.d4.docspera.com/home/images/company/IMG_8825.jpeg'
-              style={{ width: '100%' }}
+              style={{ width: '100%', marginBottom: 10 }}
             />
             <img
               className='img'
               src='https://assets.d4.docspera.com/home/images/company/IMG_8887.jpg'
-              style={{ width: '100%' }}
+              style={{ width: '100%', marginBottom: 10 }}
             />
           </div>
-          <div style={{ width: '50%', marginLeft: 10 }}>
+          <div style={{ width: '50%', marginLeft: 10, marginBottom: 10 }}>
             <img
               className='img'
               src='https://assets.d4.docspera.com/home/images/company/IMG_8838.jpeg'
-              style={{ width: '100%' }}
+              style={{ width: '100%', marginBottom: 10 }}
             />
             <img
               className='img'

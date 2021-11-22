@@ -3,6 +3,7 @@ import { Context, changePage } from '../context/context'
 
 export default function MobileNav() {
   const { state, dispatch } = useContext(Context)
+  const [href, setHref] = useState()
 
   const [productDropdown, setProductDropdown] = useState(false)
   const handleProductOnHover = () => {
@@ -28,6 +29,24 @@ export default function MobileNav() {
     setMobileNav(!mobileNav)
   }
 
+  const getLink = (path) => {
+    if (typeof window !== 'undefined') {
+      if (window.location.href.includes('docvisor')) {
+        setHref(`https://docvisor.com/${path}`)
+      } else if (window.location.href.includes('docspera.localhost')) {
+        setHref(`http://docspera.localhost/${path}`)
+      } else if (window.location.href.includes('docspera')) {
+        setHref(`https://docspera.com/${path}`)
+      } else if (window.location.href.includes('localhost')) {
+        setHref(`http://docspera.localhost/${path}`)
+      } else {
+        setHref(`https://docspera.com/${path}`)
+      }
+    } else {
+      setHref(`https://docspera.com/${path}`)
+    }
+  }
+
   return (
     <nav>
       <div className='nav-bar'>
@@ -44,7 +63,7 @@ export default function MobileNav() {
             onClick={openMenu}
           />
         )}
-        <a href='https://docspera.com/login' target='_blank'>
+        <a href={href} onClick={() => getLink('login')} target='_blank'>
           <button>Log In</button>
         </a>
       </div>
@@ -119,12 +138,12 @@ export default function MobileNav() {
                 <div className='underline'></div>
                 <ul>
                   <li>
-                    <a href='https://docspera.com/support' target='_blank'>
+                    <a href={href} onClick={() => getLink('support')} target='_blank'>
                       Contact Us
                     </a>
                   </li>
                   <li>
-                    <a href='https://docspera.com/demo' target='_blank'>
+                    <a href={href} onClick={() => getLink('demo')} target='_blank'>
                       Request Demo
                     </a>
                   </li>
