@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react'
 import { Context, changePage } from '../context/context'
 import { useMedia } from '../hooks/useMedia'
 import MobileNav from '../components/MobileNav'
+import HeaderNavDropdown from './HeaderNavDropdown'
 
 export default function HeaderNav() {
   const { state, dispatch } = useContext(Context)
@@ -10,26 +11,18 @@ export default function HeaderNav() {
 
   let tabletSize, mobileSize
   if (isBrowser) {
-    tabletSize = useMedia('(max-width: 775px)')
-    mobileSize = useMedia('(max-width: 530px)')
+    tabletSize = useMedia('(max-width: 1050px)')
+    mobileSize = useMedia('(max-width: 875px)')
   }
 
   const [productDropdown, setProductDropdown] = useState(false)
   const handleProductOnHover = () => {
     setProductDropdown(!productDropdown)
-    setContactDropdown(false)
-  }
-
-  const [contactDropdown, setContactDropdown] = useState(false)
-  const handleContactOnHover = () => {
-    setContactDropdown(!contactDropdown)
-    setProductDropdown(false)
   }
 
   const [blogHover, setBlogHover] = useState(false)
   const handleBlogOnHover = () => {
     setBlogHover(!blogHover)
-    setContactDropdown(false)
     setProductDropdown(false)
   }
 
@@ -37,22 +30,28 @@ export default function HeaderNav() {
     if (typeof window !== 'undefined') {
       if (window.location.href.includes('docvisor')) {
         setHref(`https://docvisor.com/${path}`)
+        return `https://docvisor.com/${path}`
       } else if (window.location.href.includes('docspera.localhost')) {
         setHref(`http://docspera.localhost/${path}`)
+        return `http://docspera.localhost/${path}`
       } else if (window.location.href.includes('docspera')) {
         setHref(`https://docspera.com/${path}`)
+        return `https://docspera.com/${path}`
       } else if (window.location.href.includes('localhost')) {
         setHref(`http://docspera.localhost/${path}`)
+        return `http://docspera.localhost/${path}`
       } else {
         setHref(`https://docspera.com/${path}`)
+        return `https://docspera.com/${path}`
       }
     } else {
       setHref(`https://docspera.com/${path}`)
+      return `https://docspera.com/${path}`
     }
   }
 
   return mobileSize ? (
-    <MobileNav />
+    <MobileNav getLink={(path) => getLink(path)} href={href} />
   ) : (
     <nav>
       {isBrowser && (
@@ -128,33 +127,39 @@ export default function HeaderNav() {
             </div>
           )}
 
-          <a
-            className={state.page == 'company' && 'active_a'}
-            onClick={() => dispatch(changePage('company'))}
-          >
-            <span>COMPANY</span>
-          </a>
-          <div className='dropdown'>
-            <p className={contactDropdown && 'active_a'} onMouseEnter={handleContactOnHover}>
-              <span>CONTACT</span>
-            </p>
-            {contactDropdown && (
-              <div id='contact-dropdown' onMouseLeave={handleContactOnHover}>
-                <ul>
-                  <li>
-                    <a href={href} onClick={() => getLink('support')} target='_blank'>
-                      Contact Us
-                    </a>
-                  </li>
-                  <li>
-                    <a href={href} onClick={() => getLink('demo')} target='_blank'>
-                      Request Demo
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            )}
-          </div>
+          <HeaderNavDropdown
+            state={state}
+            title='COMPANY'
+            items={[
+              {
+                id: 'company',
+                pageName: 'About Our Company',
+                onClick: () => dispatch(changePage('company'))
+              },
+              {
+                id: 'leadership',
+                pageName: 'Meet Our Leadership',
+                onClick: () => dispatch(changePage('leadership'))
+              }
+            ]}
+            onHover={() => setProductDropdown(false)}
+          />
+
+          <HeaderNavDropdown
+            state={state}
+            title='CONTACT'
+            items={[
+              {
+                pageName: 'Contact Us',
+                onClick: () => window.open(getLink('support'))
+              },
+              {
+                pageName: 'Request Demo',
+                onClick: () => window.open(getLink('demo'))
+              }
+            ]}
+            onHover={() => setProductDropdown(false)}
+          />
 
           <a
             className={blogHover && 'active_a'}
@@ -187,16 +192,19 @@ export default function HeaderNav() {
           position: fixed;
           top: 0;
           z-index: 10000;
-          height: 60px;
+          height: 70px;
         }
         #right-side {
           display: flex;
-          align-items: center;
+          align-items: flex-start;
         }
+
         #nav-items {
           display: flex;
           padding-right: 10vh;
+          width: 100%;
         }
+
         #nav-items span {
           cursor: pointer;
         }
@@ -209,13 +217,13 @@ export default function HeaderNav() {
           padding: 10px 20px;
           border-radius: 5px;
         }
+
         a:hover {
-          background-color: rgba(0, 150, 250, 0.2);
+          background-color: var(--blueDocsperaLight);
         }
         .active_a,
-        .dropdown .active_a {
-          font-weight: 600;
-          background-color: rgba(0, 150, 250, 0.2);
+        .active_a {
+          background-color: var(--blueDocsperaLight);
         }
         #logo:hover {
           cursor: pointer;
@@ -243,9 +251,10 @@ export default function HeaderNav() {
           position: absolute;
           top: 100%;
           left: 0;
-          width: 100%;
+          width: 100vw;
           background-color: rgba(255, 255, 255, 1);
           padding: 20px 0;
+          border-bottom: 2px solid var(--blueSky);
         }
         .box {
           margin: 30px;
@@ -282,91 +291,22 @@ export default function HeaderNav() {
           padding: 0 0 4px 10px;
           color: grey;
         }
-        .dropdown {
-          position: relative;
-          margin-right: 50px;
-        }
-        .dropdown:hover {
-          color: var(--blueDocspera);
-        }
-        .dropdown p {
-          color: var(--blueDocspera);
-          margin: 0;
-          font-size: 16px;
-          font-weight: bold;
-          padding: 10px 20px;
-          border-radius: 5px;
-        }
-        .dropdown p:hover {
-          background-color: rgba(0, 150, 250, 0.2);
-        }
-        #contact-dropdown {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: absolute;
-          top: 110%;
-          left: -10%;
-          background-color: rgba(255, 255, 255, 1);
-          padding: 0px 10px;
-          color: black;
-          width: 140px;
-          padding-top: 10px;
-          margin-top: 3px;
-        }
-        #contact-dropdown ul {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-          padding-bottom: 10px;
-        }
-        #contact-dropdown li a {
-          color: grey;
-          padding-right: 0 !important;
-          margin: 0;
-          font-weight: normal;
-          padding: 0 0 10px 0;
-        }
-        #contact-dropdown li a:hover {
-          color: black;
-          cursor: default;
-          font-weight: bold;
-          cursor: pointer;
-          background-color: white;
-          border-radius: 0;
-        }
+
         h4 {
           margin: 0;
         }
         @media (max-width: 1050px) {
           #nav-items {
-            padding-right: 6vh;
+             {
+              /* border: 1px solid green; */
+            }
+            padding-right: 20px;
           }
-          #nav-items a,
-          .dropdown {
-            margin-right: 15px;
-          }
-        }
-        @media (max-width: 880px) {
-          #nav-items {
-            padding-right: 3vh;
-          }
-          #nav-items a,
-          .dropdown {
-            margin-right: 5px;
-          }
-        }
-        @media (max-width: 775px) {
-          #nav-items a,
-          .dropdown p {
-            font-size: 15px;
-            padding: 5px 10px;
-          }
-          button {
-            font-size: 14px;
-          }
-          #nav-items {
-            padding: 0 10px;
+
+          #nav-items a {
+             {
+              /* border: 1px solid pink; */
+            }
           }
         }
       `}</style>
