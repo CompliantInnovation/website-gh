@@ -1,56 +1,20 @@
 import React, { useState, useContext } from 'react'
 import { Context, changePage } from '../context/context'
+import MobileNavDropdown from './MobileNavDropdown'
 
-export default function MobileNav() {
+export default function MobileNav({ getLink, href }) {
   const { state, dispatch } = useContext(Context)
-  const [href, setHref] = useState()
+  const isBrowser = () => typeof window !== 'undefined'
 
-  const [productDropdown, setProductDropdown] = useState(false)
-  const handleProductOnHover = () => {
-    setProductDropdown(!productDropdown)
-    setContactDropdown(false)
-  }
-
-  const [contactDropdown, setContactDropdown] = useState(false)
-  const handleContactOnHover = () => {
-    setContactDropdown(!contactDropdown)
-    setProductDropdown(false)
-  }
-
-  const [blogHover, setBlogHover] = useState(false)
-  const handleBlogOnHover = () => {
-    setBlogHover(!blogHover)
-    setContactDropdown(false)
-    setProductDropdown(false)
-  }
-
-  const [mobileNav, setMobileNav] = useState(false)
+  const [isMobileNavOpen, setMobileNavOpen] = useState(false)
   const openMenu = () => {
-    setMobileNav(!mobileNav)
-  }
-
-  const getLink = (path) => {
-    if (typeof window !== 'undefined') {
-      if (window.location.href.includes('docvisor')) {
-        setHref(`https://docvisor.com/${path}`)
-      } else if (window.location.href.includes('docspera.localhost')) {
-        setHref(`http://docspera.localhost/${path}`)
-      } else if (window.location.href.includes('docspera')) {
-        setHref(`https://docspera.com/${path}`)
-      } else if (window.location.href.includes('localhost')) {
-        setHref(`http://docspera.localhost/${path}`)
-      } else {
-        setHref(`https://docspera.com/${path}`)
-      }
-    } else {
-      setHref(`https://docspera.com/${path}`)
-    }
+    setMobileNavOpen(!isMobileNavOpen)
   }
 
   return (
     <nav>
       <div className='nav-bar'>
-        {mobileNav ? (
+        {isMobileNavOpen ? (
           <img
             id='x'
             src='https://assets.d4.docspera.com/home/images/exit_icon.svg'
@@ -63,12 +27,22 @@ export default function MobileNav() {
             onClick={openMenu}
           />
         )}
-        <a href={href} onClick={() => getLink('login')} target='_blank'>
+        {isBrowser && (
+          <a id='logo' onClick={() => dispatch(changePage('home'))}>
+            <img
+              id='logo'
+              src='https://assets.d4.docspera.com/home/images/graphics/logo.svg'
+              height={90}
+              width={150}
+            />
+          </a>
+        )}
+        <a href={href} onClick={() => window.open(getLink('login'))} target='_blank'>
           <button>Log In</button>
         </a>
       </div>
 
-      {mobileNav && (
+      {isMobileNavOpen && (
         <div className='mobile-menu'>
           <div
             className='menu-item'
@@ -84,80 +58,69 @@ export default function MobileNav() {
             />
           </div>
 
-          <div className='product-container' onClick={handleProductOnHover}>
-            <div className='menu-item'>
-              <div>Products</div>
-              <img
-                id={productDropdown ? 'chevron-img' : ''}
-                src='https://assets.d4.docspera.com/home/images/graphics/chevron.png'
-              />
-            </div>
+          <MobileNavDropdown
+            title='Products'
+            items={[
+              {
+                display: (
+                  <div className='box' onClick={() => dispatch(changePage('provider'))}>
+                    <img src='https://assets.d4.docspera.com/home/images/surgeon-users.png' />
+                    Providers
+                  </div>
+                )
+              },
+              {
+                display: (
+                  <div className='box' onClick={() => dispatch(changePage('medical-device'))}>
+                    <img src='https://assets.d4.docspera.com/home/images/medical-device.png' />
+                    Device Partners
+                  </div>
+                )
+              }
+            ]}
+          />
 
-            {productDropdown && (
-              <div className='product-dropdown'>
-                <div className='underline'></div>
-                <div className='box' onClick={() => dispatch(changePage('provider'))}>
-                  <img src='https://assets.d4.docspera.com/home/images/surgeon-users.png' />{' '}
-                  Providers{' '}
-                  <img
-                    className='chevron-img'
-                    src='https://assets.d4.docspera.com/home/images/graphics/chevron.png'
-                  />
-                </div>
-                <div className='box' onClick={() => dispatch(changePage('medical-device'))}>
-                  <img src='https://assets.d4.docspera.com/home/images/medical-device.png' /> Device
-                  Partners{' '}
-                  <img
-                    className='chevron-img'
-                    src='https://assets.d4.docspera.com/home/images/graphics/chevron.png'
-                  />
-                </div>
-              </div>
-            )}
-          </div>
+          <MobileNavDropdown
+            title='Company'
+            items={[
+              {
+                display: (
+                  <div className='box' onClick={() => dispatch(changePage('company'))}>
+                    About Our Company
+                  </div>
+                )
+              },
+              {
+                display: (
+                  <div className='box' onClick={() => dispatch(changePage('leadership'))}>
+                    Meet Our Leadership
+                  </div>
+                )
+              }
+            ]}
+          />
 
-          <div className='menu-item' onClick={() => dispatch(changePage('company'))}>
-            <div>Our Company</div>
-            <img
-              className='chevron-img'
-              src='https://assets.d4.docspera.com/home/images/graphics/chevron.png'
-            />
-          </div>
+          <MobileNavDropdown
+            title='Contact'
+            items={[
+              {
+                display: (
+                  <div className='box' onClick={() => window.open(getLink('support'))}>
+                    Contact Us
+                  </div>
+                )
+              },
+              {
+                display: (
+                  <div className='box' onClick={() => window.open(getLink('demo'))}>
+                    Request Demo
+                  </div>
+                )
+              }
+            ]}
+          />
 
-          <div className='contact-container' onClick={handleContactOnHover}>
-            <div className='menu-item'>
-              <div>Contact</div>
-              <img
-                id={contactDropdown ? 'chevron-img' : ''}
-                src='https://assets.d4.docspera.com/home/images/graphics/chevron.png'
-              />
-            </div>
-
-            {contactDropdown && (
-              <div className='contact-dropdown'>
-                <div className='underline'></div>
-                <ul>
-                  <li>
-                    <a href={href} onClick={() => getLink('support')} target='_blank'>
-                      Contact Us
-                    </a>
-                  </li>
-                  <li>
-                    <a href={href} onClick={() => getLink('demo')} target='_blank'>
-                      Request Demo
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            )}
-          </div>
-
-          <a
-            className={blogHover && 'active_a'}
-            href='https://blog.d4.docspera.com/'
-            target='_blank'
-            onMouseEnter={handleBlogOnHover}
-          >
+          <a href='https://blog.d4.docspera.com/' target='_blank'>
             <div className='menu-item'>
               <div>Blog</div>
               <img
@@ -232,27 +195,6 @@ export default function MobileNav() {
         .menu-item img {
           height: 16px;
         }
-        .product-container,
-        .contact-container {
-          background-color: white;
-          margin-bottom: 10px;
-        }
-        .product-container .menu-item,
-        .contact-container .menu-item {
-          margin: 0;
-        }
-        .underline {
-          height: 1px;
-          width: 95%;
-          margin: auto;
-          background-color: lightgrey;
-          border-radius: 10px;
-          margin-bottom: 10px;
-        }
-        .product-dropdown {
-          padding-bottom: 10px;
-          font-size: 16px;
-        }
         .box {
           display: flex;
           align-items: center;
@@ -267,19 +209,6 @@ export default function MobileNav() {
         .box .chevron-img {
           height: 10px;
           padding: 0 30px;
-        }
-        #chevron-img {
-          transform: rotate(90deg);
-          transition-duration: 0.2s;
-        }
-        .contact-dropdown ul {
-          list-style-type: none;
-          padding-left: 20px;
-        }
-        .contact-dropdown li {
-          font-size: 16px;
-          padding-bottom: 10px;
-          cursor: pointer;
         }
       `}</style>
     </nav>
