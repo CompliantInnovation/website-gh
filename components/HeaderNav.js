@@ -297,16 +297,7 @@ export default function HeaderNav() {
         }
         @media (max-width: 1050px) {
           #nav-items {
-             {
-              /* border: 1px solid green; */
-            }
             padding-right: 20px;
-          }
-
-          #nav-items a {
-             {
-              /* border: 1px solid pink; */
-            }
           }
         }
       `}</style>
