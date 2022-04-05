@@ -4,6 +4,7 @@ import Home from '../nav-pages/home'
 import Provider from '../nav-pages/provider'
 import MedicalDevice from '../nav-pages/medical-device'
 import Company from '../nav-pages/company'
+import Leadership from '../nav-pages/leadership'
 
 export default function Index() {
   const { state } = useContext(Context)
@@ -22,6 +23,8 @@ export default function Index() {
         return <MedicalDevice />
       case 'company':
         return <Company />
+      case 'leadership':
+        return <Leadership />
       default:
         return null
     }
