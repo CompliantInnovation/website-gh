@@ -1,11 +1,13 @@
 :root {
   --blueDark: #234681;
   --blueDocspera: #0096fa;
+  --blueDocsperaLight: #d5eafe;
   --blueSky: #b6e3f8;
   --blueLight: #daf0fb;
   --blueXLight: #eef7fc;
   --blueFaint: #f6fcff;
   --grayLight: #c9c9c9;
+  --blueDocsperaLight: rgba(0, 150, 250, 0.2);
 }
 
 html {
@@ -126,6 +128,11 @@ h2 {
 
 .title {
   color: var(--blueDocspera);
+}
+@media (max-width: 1000px) {
+  .statistics > div > div {
+    width: 180px;
+  }
 }
 
 @media (max-width: 800px) {
