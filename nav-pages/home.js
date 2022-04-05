@@ -265,7 +265,7 @@ export default function Home() {
         .container {
           width: 100%;
         }
-        
+
         #hero-h1 > h1 {
           color: white;
           font-size: 4em;
