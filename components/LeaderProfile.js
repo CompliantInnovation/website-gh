@@ -4,7 +4,7 @@ const LeaderProfile = ({ leader }) => {
   return (
     <div className='profile'>
       <img
-        src={`https://assets.d4.docspera.com/leadership/${leader.picture}`}
+        src={`https://assets.d4.docspera.com/home/images/${leader.picture}`}
         style={{ width: '110%', minHeight: 200, minWidth: 220 }}
       />
       <div className='panel'>
@@ -12,7 +12,7 @@ const LeaderProfile = ({ leader }) => {
         <h4>{leader.title}</h4>
         <div className='linkedIn-box'>
           <div onClick={() => window.open(leader.linkedIn)}>
-            <img src={`https://assets.d4.docspera.com/leadership/linkedin.png`} />
+            <img src={`https://assets.d4.docspera.com/home/images/linkedin.png`} />
           </div>
         </div>
       </div>
