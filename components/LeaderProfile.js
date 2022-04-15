@@ -55,7 +55,7 @@ const LeaderProfile = ({ leader }) => {
         }
         .linkedIn-box div {
           width: 60px;
-          z-index: 100;
+          z-index: 2;
         }
 
         .linkedIn-box div:hover {
@@ -64,7 +64,7 @@ const LeaderProfile = ({ leader }) => {
 
         img {
           width: 100%;
-          z-index: 100;
+          z-index: 2;
         }
       `}</style>
     </div>
