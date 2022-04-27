@@ -1,9 +1,10 @@
 import React, { useState, useContext } from 'react'
 import { Context, changePage } from '../context/context'
 import MobileNavDropdown from './MobileNavDropdown'
+import { useMedia } from '../hooks/useMedia'
 
 export default function MobileNav({ getLink, href }) {
-  const { state, dispatch } = useContext(Context)
+  const { dispatch } = useContext(Context)
   const isBrowser = () => typeof window !== 'undefined'
 
   const [isMobileNavOpen, setMobileNavOpen] = useState(false)
@@ -27,13 +28,14 @@ export default function MobileNav({ getLink, href }) {
             onClick={openMenu}
           />
         )}
-        {isBrowser && (
-          <a id='logo' onClick={() => dispatch(changePage('home'))}>
+        {isBrowser && useMedia('(min-width: 390px)') && (
+          <a
+            style={{ maxWidth: 150, margin: '0 20px' }}
+            onClick={() => dispatch(changePage('home'))}
+          >
             <img
-              id='logo'
               src='https://assets.d4.docspera.com/home/images/graphics/logo.svg'
-              height={90}
-              width={150}
+              width={'100%'}
             />
           </a>
         )}
