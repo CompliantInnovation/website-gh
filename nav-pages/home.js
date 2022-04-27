@@ -20,7 +20,7 @@ export default function Home() {
         <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform</title>
         <link rel='icon' href='https://assets.d4.docspera.com/home/favicon.ico' />
         <link rel='preconnect' href='https://fonts.googleapis.com' />
-        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin />
         <link
           href='https://fonts.googleapis.com/css2?family=Varela+Round&display=swap'
           rel='stylesheet'
@@ -541,8 +541,10 @@ export default function Home() {
         }
 
         .outer-box {
+          flex-grow: 1;
           min-height: 300px;
-          min-width: 400px;
+          padding: 20px;
+          width: 100%;
           background-color: rgba(255, 255, 255, 1);
           box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.1);
           border-radius: 10px;
