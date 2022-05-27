@@ -1,0 +1,25 @@
+# syntax=docker/dockerfile:experimental
+# pull the base image
+FROM node:12-slim
+
+# install build deps
+RUN apt-get -y update && apt-get -y install git zip unzip openssh-client
+
+# add github ssh keys
+RUN mkdir -p -m 0600 ~/.ssh && \
+    ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts && \
+    ssh-keygen -F github.com -l -E sha256 \
+        | grep -q "SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8"
+RUN git config --system url."ssh://git@github.com/".insteadOf "https://github.com/"
+
+# set the working direction
+WORKDIR /app
+
+# add `/app/node_modules/.bin` to $PATH
+ENV PATH /app/node_modules/.bin:$PATH
+
+# add app
+COPY . ./
+
+# start app
+CMD ["npm", "start"]
