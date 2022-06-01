@@ -184,12 +184,12 @@ export default function HeaderNav() {
           background-color: ${productDropdown ? 'white' : 'RGBa(255,255,255, .7)'};
           background-image: Linear-Gradient(RGBa(255, 255, 255, 1), RGBa(255, 255, 255, 0)),
             Linear-Gradient(RGBa(255, 255, 255, 0.8), RGBa(255, 255, 255, 0));
-          box-shadow: 0 0 50px 50px RGBa(255, 255, 255, 0.7);
+          box-shadow: 0 70px 50px 50px RGBa(255, 255, 255, 0.7);
           justify-content: space-between;
           align-items: center;
           padding-left: 30px;
           padding-right: 30px;
-          position: fixed;
+          position: sticky;
           top: 0;
           z-index: 10000;
           height: 70px;
