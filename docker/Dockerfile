@@ -16,8 +16,7 @@ RUN --mount=type=ssh mkdir -p /var/ssh && \
     yarn
 
 # Copy src
-COPY ./public/ ./public/
-COPY ./src/ ./src/
+COPY . .
 
 # Make production build
 RUN yarn run build
