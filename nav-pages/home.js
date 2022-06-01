@@ -5,6 +5,7 @@ import HeaderNav from '../components/HeaderNav'
 import NumberScroll from '../components/NumberScroll'
 import FooterBar from '../components/Footer'
 import { useMedia } from '../hooks/useMedia'
+import AnnoucementBanner from '../components/AnnoucementBanner'
 
 export default function Home() {
   const { state, dispatch } = useContext(Context)
@@ -15,6 +16,8 @@ export default function Home() {
   }
 
   return (
+    <>
+        <AnnoucementBanner />
     <div className='container'>
       <Head>
         <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform</title>
@@ -26,6 +29,7 @@ export default function Home() {
           rel='stylesheet'
         ></link>
       </Head>
+
       <HeaderNav />
 
       <div>
@@ -690,5 +694,6 @@ export default function Home() {
 
       `}</style>
     </div>
+    </>
   )
 }
