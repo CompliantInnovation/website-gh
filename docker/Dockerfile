@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:experimental
-FROM node:10 as build-deps
+FROM node:12 as build-deps
 WORKDIR /usr/src/app/
 
 # Install yarn deps
@@ -10,19 +10,18 @@ RUN mkdir -p -m 0600 ~/.ssh && \
 RUN git config --system url."ssh://git@github.com/".insteadOf "https://github.com/"
 
 COPY package.json ./
-COPY package-lock.json ./
-RUN --mount=type=ssh \
-    mkdir -p /var/ssh && \
+COPY yarn.lock ./
+RUN --mount=type=ssh mkdir -p /var/ssh && \
     GIT_SSH_COMMAND="ssh -o \"ControlMaster auto\" -o \"ControlPersist 300\" -o \"ControlPath /var/ssh/%r@%h:%p\"" \
-    npm install
+    yarn
 
 # Copy src
 COPY . .
 
 # Make production build
-RUN npm run build
+RUN yarn run build
 
 FROM nginx:1.12-alpine
-COPY --from=build-deps /usr/src/app/out/ /usr/share/nginx/html
+COPY --from=build-deps /usr/src/app/out /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
