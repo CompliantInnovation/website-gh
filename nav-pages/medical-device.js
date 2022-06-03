@@ -243,6 +243,24 @@ export default function MedicalDevicePage() {
           </div>
         </div>
 
+        <div id="smart-enterprise">
+          <div className="inner-div">
+          <h2>DocSpera Smart Enterprise</h2>
+          <h3>In a Nutshell</h3>
+          <div id="explainer-vid-container">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/u-qBmXB6Rzc"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          </div>
+        </div>
+
         {/*  C A S E   S T U D I E S  */}
         <div style={{ backgroundColor: 'var(--blueXLight)' }}>
           <div className='inner-div'>
@@ -376,6 +394,23 @@ export default function MedicalDevicePage() {
           padding: 70px 0 100px 0;
           width: 100%;
           background-color: var(--blueDark);
+        }
+        #smart-enterprise {
+          width: 100%;
+          background-color: var(--enterpriseBlue);
+        }
+        #explainer-vid-container {
+          height: 70vh;
+        }
+        #smart-enterprise h2, #smart-enterprise h3 {
+          color: white;
+        }
+        #smart-enterprise h2 {
+          font-size: 1.17rem;
+        }
+        #smart-enterprise h3 {
+          font-size: 1.5rem;
+          margin-bottom: 20px;
         }
         #offerings h2 {
           margin-top: 0;
