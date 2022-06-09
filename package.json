@@ -6,8 +6,7 @@
     "start": "next",
     "build": "rm -rf node_modules/.cache && rimraf out && next build && next export && touch out/.nojekyll",
     "serve": "next start",
-    "export": "next export",
-    "deploy": "rm -rf node_modules/.cache && rimraf out && next build && next export && touch out/.nojekyll && gh-pages -d out -t true"
+    "export": "next export"
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
