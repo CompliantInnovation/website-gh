@@ -1,9 +1,10 @@
 // This file is not going through babel transformation.
 // So, we write it in vanilla JS
 // (But you could use ES2015 features supported by your Node.js version)
+require('./env-config')
 
 module.exports = {
-  // basePath: '/website-gh',
+  basePath: process.env.MOUNT_URL ?? '/website-gh',
   exportPathMap: function () {
     return {
       '/': { page: '/' }
