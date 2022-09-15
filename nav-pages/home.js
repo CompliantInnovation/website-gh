@@ -51,13 +51,13 @@ export default function Home() {
           <div>
             <NumberScroll
               imgSrc='https://assets.d4.docspera.com/home/images/patient-volume.png'
-              number={100000}
+              number={150000}
               title='Monthly Patient Volume'
               plus
             />
             <NumberScroll
               imgSrc='https://assets.d4.docspera.com/home/images/surgeon-users.png'
-              number={6000}
+              number={7000}
               title='Providers'
               plus
             />
@@ -65,7 +65,7 @@ export default function Home() {
           <div>
             <NumberScroll
               imgSrc='https://assets.d4.docspera.com/home/images/graphics/episodic-cases.png'
-              number={350000}
+              number={800000}
               title='Episodic Cases'
               plus
             />
