@@ -10,6 +10,17 @@ export default function FooterBar() {
       <div id='footer-inner-div'>
         <div style={{ margin: 'auto 0', flexGrow: 1 }}>
           <img id='logo' src='https://assets.d4.docspera.com/home/images/logo-white.svg' />
+          <div className='accreditation' style={{ maxWidth: '300px' }}>
+            <img 
+              id='hipaa' alt='HIPPA' 
+              src='https://assets.d4.docspera.com/home/images/HIPAA.svg'
+              style={{ marginRight: '30px' }}
+             />
+            <img 
+              id='soc-2' 
+              alt='SOC-2' 
+              src='https://assets.d4.docspera.com/home/images/SOC-2.svg' />
+          </div>
 
           <div id='icons-div'>
             <a
@@ -224,7 +235,7 @@ export default function FooterBar() {
             flex-direction: column;
           }
 
-          #logo {
+          #logo, .accreditation {
             margin-left: 5vw;
           }
 
