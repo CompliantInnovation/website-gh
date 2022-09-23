@@ -10,7 +10,7 @@ export default function FooterBar() {
       <div id='footer-inner-div'>
         <div style={{ margin: 'auto 0', flexGrow: 1 }}>
           <img id='logo' src='https://assets.d4.docspera.com/home/images/logo-white.svg' />
-          <div className='accreditation' style={{ maxWidth: '300px' }}>
+          <div className='accreditation' style={{ maxWidth: '300px', filter: `brightness(0) invert(1)` }}>
             <img 
               id='hipaa' alt='HIPPA' 
               src='https://assets.d4.docspera.com/home/images/HIPAA.svg'
