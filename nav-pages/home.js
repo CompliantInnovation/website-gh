@@ -277,15 +277,19 @@ export default function Home() {
           text-align: center;
           width: max-content;
           position: absolute;
-          top: 50px;
+          //top: 50px;
           left: 0;
           right: 0;
           border-radius: 10px;
           padding: 10px;
           text-shadow: 0 1px 4px RGBa(0,0,0, .6), 0 0 100px Black;
           display: block;
-          margin: 0 auto;
-          margin-top: 70px;
+          //margin: 0 auto;
+          //margin-top: 70px;
+          
+          top: 30%;
+          left: 50%;
+          transform: translate(-50%,-30%);
         }
 
         @media (max-width: 1400px) {
