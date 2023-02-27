@@ -1,67 +1,67 @@
-import React, { useState, useContext } from 'react'
-import { Context, changePage } from '../context/context'
-import { useMedia } from '../hooks/useMedia'
-import MobileNav from '../components/MobileNav'
-import HeaderNavDropdown from './HeaderNavDropdown'
+import React, { useState, useContext } from "react";
+import { Context, changePage } from "../context/context";
+import { useMedia } from "../hooks/useMedia";
+import MobileNav from "../components/MobileNav";
+import HeaderNavDropdown from "./HeaderNavDropdown";
 
 export default function HeaderNav() {
-  const { state, dispatch } = useContext(Context)
-  const isBrowser = () => typeof window !== 'undefined'
-  const [href, setHref] = useState()
+  const { state, dispatch } = useContext(Context);
+  const isBrowser = () => typeof window !== "undefined";
+  const [href, setHref] = useState();
 
-  let tabletSize, mobileSize
+  let tabletSize, mobileSize;
   if (isBrowser) {
-    tabletSize = useMedia('(max-width: 1050px)')
-    mobileSize = useMedia('(max-width: 875px)')
+    tabletSize = useMedia("(max-width: 1050px)");
+    mobileSize = useMedia("(max-width: 875px)");
   }
 
-  const [productDropdown, setProductDropdown] = useState(false)
+  const [productDropdown, setProductDropdown] = useState(false);
   const handleProductOnHover = () => {
-    setProductDropdown(!productDropdown)
-  }
+    setProductDropdown(!productDropdown);
+  };
 
-  const [blogHover, setBlogHover] = useState(false)
+  const [blogHover, setBlogHover] = useState(false);
   const handleBlogOnHover = () => {
-    setBlogHover(!blogHover)
-    setProductDropdown(false)
-  }
+    setBlogHover(!blogHover);
+    setProductDropdown(false);
+  };
 
   const getLink = (path) => {
-    if (typeof window !== 'undefined') {
-      if (window.location.href.includes('docvisor')) {
-        setHref(`https://docvisor.com/${path}`)
-        return `https://docvisor.com/${path}`
-      } else if (window.location.href.includes('docspera.localhost')) {
-        setHref(`http://docspera.localhost/${path}`)
-        return `http://docspera.localhost/${path}`
-      } else if (window.location.href.includes('docspera')) {
-        setHref(`https://docspera.com/${path}`)
-        return `https://docspera.com/${path}`
-      } else if (window.location.href.includes('localhost')) {
-        setHref(`http://docspera.localhost/${path}`)
-        return `http://docspera.localhost/${path}`
+    if (typeof window !== "undefined") {
+      if (window.location.href.includes("docvisor")) {
+        setHref(`https://docvisor.com/${path}`);
+        return `https://docvisor.com/${path}`;
+      } else if (window.location.href.includes("docspera.localhost")) {
+        setHref(`http://docspera.localhost/${path}`);
+        return `http://docspera.localhost/${path}`;
+      } else if (window.location.href.includes("docspera")) {
+        setHref(`https://docspera.com/${path}`);
+        return `https://docspera.com/${path}`;
+      } else if (window.location.href.includes("localhost")) {
+        setHref(`http://docspera.localhost/${path}`);
+        return `http://docspera.localhost/${path}`;
       } else {
-        setHref(`https://docspera.com/${path}`)
-        return `https://docspera.com/${path}`
+        setHref(`https://docspera.com/${path}`);
+        return `https://docspera.com/${path}`;
       }
     } else {
-      setHref(`https://docspera.com/${path}`)
-      return `https://docspera.com/${path}`
+      setHref(`https://docspera.com/${path}`);
+      return `https://docspera.com/${path}`;
     }
-  }
+  };
 
   return mobileSize ? (
     <MobileNav getLink={(path) => getLink(path)} href={href} />
   ) : (
     <nav>
       {isBrowser && (
-        <a id='logo' onClick={() => dispatch(changePage('home'))}>
+        <a id="logo" onClick={() => dispatch(changePage("home"))}>
           <img
-            id='logo'
+            id="logo"
             src={`${
               tabletSize
-                ? 'https://assets.d4.docspera.com/home/images/logo-short.png'
-                : 'https://assets.d4.docspera.com/home/images/graphics/logo.svg'
+                ? "https://assets.d4.docspera.com/home/images/logo-short.png"
+                : "https://assets.d4.docspera.com/home/images/graphics/logo.svg"
             }`}
             height={`${tabletSize ? 40 : 70}`}
             width={`${tabletSize ? 40 : 150}`}
@@ -69,32 +69,36 @@ export default function HeaderNav() {
         </a>
       )}
 
-      <div id='right-side'>
-        <div id='nav-items'>
+      <div id="right-side">
+        <div id="nav-items">
           <a
             className={
-              (productDropdown && 'active_a') ||
-              ((state.page == 'provider' || state.page == 'medical-device') && 'active_a')
+              (productDropdown && "active_a") ||
+              ((state.page == "provider" || state.page == "medical-device") &&
+                "active_a")
             }
             onMouseEnter={handleProductOnHover}
           >
             <span>SOLUTIONS</span>
           </a>
           {productDropdown && (
-            <div className='product-dropdown' onMouseLeave={handleProductOnHover}>
+            <div
+              className="product-dropdown"
+              onMouseLeave={handleProductOnHover}
+            >
               <div
-                className='box'
+                className="box"
                 onClick={() => {
-                  dispatch(changePage('provider'))
-                  handleProductOnHover()
+                  dispatch(changePage("provider"));
+                  handleProductOnHover();
                 }}
               >
                 <h4>
-                  <img src='https://assets.d4.docspera.com/home/images/surgeon-users.png' />
-                  Providers{' '}
+                  <img src="https://assets.d4.docspera.com/home/images/surgeon-users.png" />
+                  Providers{" "}
                   <img
-                    className='chevron-img'
-                    src='https://assets.d4.docspera.com/home/images/graphics/chevron.png'
+                    className="chevron-img"
+                    src="https://assets.d4.docspera.com/home/images/graphics/chevron.png"
                   />
                 </h4>
                 <ul>
@@ -104,18 +108,18 @@ export default function HeaderNav() {
                 </ul>
               </div>
               <div
-                className='box'
+                className="box"
                 onClick={() => {
-                  dispatch(changePage('medical-device'))
-                  handleProductOnHover()
+                  dispatch(changePage("medical-device"));
+                  handleProductOnHover();
                 }}
               >
                 <h4>
-                  <img src='https://assets.d4.docspera.com/home/images/medical-device.png' />
-                  Device Partners{' '}
+                  <img src="https://assets.d4.docspera.com/home/images/medical-device.png" />
+                  Device Partners{" "}
                   <img
-                    className='chevron-img'
-                    src='https://assets.d4.docspera.com/home/images/graphics/chevron.png'
+                    className="chevron-img"
+                    src="https://assets.d4.docspera.com/home/images/graphics/chevron.png"
                   />
                 </h4>
                 <ul>
@@ -129,50 +133,55 @@ export default function HeaderNav() {
 
           <HeaderNavDropdown
             state={state}
-            title='COMPANY'
+            title="COMPANY"
             items={[
               {
-                id: 'company',
-                pageName: 'About Our Company',
-                onClick: () => dispatch(changePage('company'))
+                id: "company",
+                pageName: "About Our Company",
+                onClick: () => dispatch(changePage("company")),
               },
               {
-                id: 'leadership',
-                pageName: 'Meet Our Leadership',
-                onClick: () => dispatch(changePage('leadership'))
-              }
+                id: "leadership",
+                pageName: "Meet Our Leadership",
+                onClick: () => dispatch(changePage("leadership")),
+              },
             ]}
             onHover={() => setProductDropdown(false)}
           />
 
           <HeaderNavDropdown
             state={state}
-            title='CONTACT'
+            title="CONTACT"
             items={[
               {
-                pageName: 'Contact Us',
-                onClick: () => window.open(getLink('support'))
+                pageName: "Contact Us",
+                onClick: () => window.open(getLink("support")),
               },
               {
-                pageName: 'Request Demo',
-                onClick: () => window.open(getLink('demo'))
-              }
+                pageName: "Request Demo",
+                onClick: () => window.open(getLink("demo")),
+              },
             ]}
             onHover={() => setProductDropdown(false)}
           />
 
-          <a
-            className={blogHover && 'active_a'}
+          <div
+            className={`${blogHover && "active_a"} blog_link`}
             style={{ marginRight: 0 }}
-            href='https://blog.d4.docspera.com/'
-            target='_blank'
+            // href='https://blog.d4.docspera.com/'
+            onClick={() => dispatch(changePage("blog"))}
             onMouseEnter={handleBlogOnHover}
             onMouseLeave={handleBlogOnHover}
           >
             <span>BLOG</span>
-          </a>
+          </div>
         </div>
-        <a className='ext-link' href={href} onClick={() => getLink('login')} target='_blank'>
+        <a
+          className="ext-link"
+          href={href}
+          onClick={() => getLink("login")}
+          target="_blank"
+        >
           <button>LOGIN</button>
         </a>
       </div>
@@ -181,10 +190,17 @@ export default function HeaderNav() {
         nav {
           width: 100%;
           display: flex;
-          background-color: ${productDropdown ? 'white' : 'RGBa(255,255,255, .7)'};
-          background-image: Linear-Gradient(RGBa(255, 255, 255, 1), RGBa(255, 255, 255, 0)),
+          background-color: ${productDropdown
+            ? "white"
+            : "RGBa(255,255,255, .7)"};
+          background-image: Linear-Gradient(
+              RGBa(255, 255, 255, 1),
+              RGBa(255, 255, 255, 0)
+            ),
             Linear-Gradient(RGBa(255, 255, 255, 0.8), RGBa(255, 255, 255, 0));
-          box-shadow: 0 70px 50px 50px RGBa(255, 255, 255, 0.7);
+          box-shadow: ${state.page === "blog"
+            ? "none"
+            : "0 70px 50px 50px RGBa(255, 255, 255, 0.7)"};
           justify-content: space-between;
           align-items: center;
           padding-left: 30px;
@@ -193,10 +209,11 @@ export default function HeaderNav() {
           top: 0;
           z-index: 10000;
           height: 70px;
+          margin-bottom: ${state.page === "blog" ? "20px" : "0"};
         }
         #right-side {
           display: flex;
-          align-items: flex-start;
+          align-items: center;
         }
 
         #nav-items {
@@ -205,10 +222,12 @@ export default function HeaderNav() {
           width: 100%;
         }
 
-        #nav-items span {
+        #nav-items span,
+        .blog_link {
           cursor: pointer;
         }
-        #nav-items a {
+        #nav-items a,
+        #nav-items .blog_link {
           color: var(--blueDocspera);
           text-decoration: none;
           margin-right: 50px;
@@ -302,5 +321,5 @@ export default function HeaderNav() {
         }
       `}</style>
     </nav>
-  )
+  );
 }
