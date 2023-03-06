@@ -29,7 +29,7 @@ export default function Company() {
         <img
           className="img"
           src="https://assets.d4.docspera.com/home/images/IMG_9457.jpg"
-          style={{ width: "50%", marginTop: 40 }}
+          style={{ width: "100%", marginTop: 40 }}
         />
         </div>
         <p>
