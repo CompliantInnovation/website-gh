@@ -198,8 +198,10 @@ export default function HeaderNav() {
               RGBa(255, 255, 255, 0)
             ),
             Linear-Gradient(RGBa(255, 255, 255, 0.8), RGBa(255, 255, 255, 0));
-          box-shadow: ${state.page === "blog"
-            ? "none"
+          box-shadow: ${["blog", "intelligent-scheduler"].includes(state.page)
+            ? state.page === "blog"
+              ? "none"
+              : "0px 3px 5px 0px rgba(0,0,0,0.25)"
             : "0 70px 50px 50px RGBa(255, 255, 255, 0.7)"};
           justify-content: space-between;
           align-items: center;
