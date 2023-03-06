@@ -145,7 +145,7 @@ export default function IntelligentScheduler() {
                   <li>Easily share cases with care team on single platform</li>
                 </ul>
                 <img
-                  src="https://assets.d4.docspera.com/home/images/intelligent-scheduller/EMRImage.png"
+                  src="https://assets.d4.docspera.com/home/images/intelligent-scheduler/EMRImage.png"
                   alt="EMR Image"
                 />
               </div>
@@ -162,7 +162,7 @@ export default function IntelligentScheduler() {
                   <li>Automated capture through digital intake</li>
                 </ul>
                 <img
-                  src="https://assets.d4.docspera.com/home/images/intelligent-scheduller/AssessmentOfPatient.png"
+                  src="https://assets.d4.docspera.com/home/images/intelligent-scheduler/AssessmentOfPatient.png"
                   alt="Assessment Of Patient"
                 />
               </div>
@@ -181,7 +181,7 @@ export default function IntelligentScheduler() {
                   <li>Efficient and Optimized Case Management</li>
                 </ul>
                 <img
-                  src="https://assets.d4.docspera.com/home/images/intelligent-scheduller/IntelligentSchedulerImage.png"
+                  src="https://assets.d4.docspera.com/home/images/intelligent-scheduler/IntelligentSchedulerImage.png"
                   alt="Intelligent Scheduler Image"
                 />
               </div>
@@ -463,7 +463,7 @@ export default function IntelligentScheduler() {
           .cta .contact-btn {
             color: #fff;
             background: #0096FA;
-            background-image: url("https://assets.d4.docspera.com/home/images/intelligent-scheduller/contactInactive.svg");
+            background-image: url("https://assets.d4.docspera.com/home/images/intelligent-scheduler/contactInactive.svg");
             background-position: 22px 50%;
             background-repeat: no-repeat;
             transition: background-color .3s;
@@ -471,7 +471,7 @@ export default function IntelligentScheduler() {
 
           .cta .contact-btn:hover {
             background: #B1E0FF;
-            background-image: url("https://assets.d4.docspera.com/home/images/intelligent-scheduller/contactHovered.svg");
+            background-image: url("https://assets.d4.docspera.com/home/images/intelligent-scheduler/contactHovered.svg");
             color: #0096FA;
             background-position: 22px 50%;
             background-repeat: no-repeat;
@@ -482,7 +482,7 @@ export default function IntelligentScheduler() {
             background: #fff;
             border: 1px solid #0096FA;
             padding-left: 60px;
-            background-image: url("https://assets.d4.docspera.com/home/images/intelligent-scheduller/demoInactive.svg");
+            background-image: url("https://assets.d4.docspera.com/home/images/intelligent-scheduler/demoInactive.svg");
             background-position: 22px 50%;
             background-repeat: no-repeat;
             transition: background-color .3s;
@@ -491,7 +491,7 @@ export default function IntelligentScheduler() {
           .cta .demo-btn:hover {
             color: #fff;
             background: #0096FA;
-            background-image: url("https://assets.d4.docspera.com/home/images/intelligent-scheduller/demoHovered.svg");
+            background-image: url("https://assets.d4.docspera.com/home/images/intelligent-scheduler/demoHovered.svg");
             background-position: 22px 50%;
             background-repeat: no-repeat;
           }
