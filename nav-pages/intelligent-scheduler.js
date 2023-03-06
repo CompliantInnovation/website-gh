@@ -13,7 +13,7 @@ import Computer from "../components/icons/Computer";
 import Clock from "../components/icons/Clock";
 import QuestionPan from "../components/icons/QuestionPan";
 import SolutionBulb from "../components/icons/SolutionBulb";
-import Check from "../components/icons/check";
+import Check from "../components/icons/Check";
 import DoubleArrow from "../components/icons/DoubleArrow";
 
 export default function IntelligentScheduler() {
