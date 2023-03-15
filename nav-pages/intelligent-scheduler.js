@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
-import { Context, changePage } from "../context/context";
+import { Context } from "../context/context";
 import Head from "next/head";
 import HeaderNav from "../components/HeaderNav";
-import NumberScroll from "../components/NumberScroll";
 import FooterBar from "../components/Footer";
 import { useMedia } from "../hooks/useMedia";
 import AnnoucementBanner from "../components/AnnoucementBanner";
@@ -145,7 +144,7 @@ export default function IntelligentScheduler() {
                   <li>Easily share cases with care team on single platform</li>
                 </ul>
                 <img
-                  src="https://assets.d4.docspera.com/home/images/intelligent-scheduler/EMRImage.png"
+                  src="https://assets.d4.docspera.com/home/images/intelligent-scheduler/SchedulerImage.jpg"
                   alt="EMR Image"
                 />
               </div>
@@ -162,7 +161,7 @@ export default function IntelligentScheduler() {
                   <li>Automated capture through digital intake</li>
                 </ul>
                 <img
-                  src="https://assets.d4.docspera.com/home/images/intelligent-scheduler/AssessmentOfPatient.png"
+                  src="https://assets.d4.docspera.com/home/images/intelligent-scheduler/UnderstandingThing.jpg"
                   alt="Assessment Of Patient"
                 />
               </div>
@@ -181,7 +180,7 @@ export default function IntelligentScheduler() {
                   <li>Efficient and Optimized Case Management</li>
                 </ul>
                 <img
-                  src="https://assets.d4.docspera.com/home/images/intelligent-scheduler/IntelligentSchedulerImage.png"
+                  src="https://assets.d4.docspera.com/home/images/intelligent-scheduler/IntelligentSchedulerImage.jpg"
                   alt="Intelligent Scheduler Image"
                 />
               </div>
@@ -211,28 +210,27 @@ export default function IntelligentScheduler() {
         <style jsx>{`
           .container {
             width: 100%;
-            font-family: Rubik;
+            font-family: Rubik, serif;
           }
+
           .scheduler-hero-section {
-            background: #fff
-              url("https://assets.d4.docspera.com/home/images/intelligent-scheduler/Images/IntelligentSchedulerMicrosite_DoctorImage.png");
+            background: #fff url("https://assets.d4.docspera.com/home/images/intelligent-scheduler/Images/IntelligentSchedulerMicrosite_DoctorImage.png");
             min-height: 600px;
             background-repeat: no-repeat;
-            background-position: 110% 0px;
+            background-position: 110% 0;
             position: relative;
           }
+
           .scheduler-hero-section:after {
             content: "";
             position: absolute;
             height: 150px;
             bottom: 0;
             width: 100%;
-            background: linear-gradient(
-              0deg,
-              rgba(218, 240, 251, 1) 0%,
-              rgba(218, 240, 251, 1) 31%,
-              rgba(0, 212, 255, 0) 100%
-            );
+            background: linear-gradient(0deg,
+            rgba(218, 240, 251, 1) 0%,
+            rgba(218, 240, 251, 1) 31%,
+            rgba(0, 212, 255, 0) 100%);
           }
 
           .case-study-main-container:after {
@@ -241,12 +239,10 @@ export default function IntelligentScheduler() {
             height: 150px;
             bottom: -150px;
             width: 100%;
-            background: linear-gradient(
-              0deg,
-              rgba(0, 212, 255, 0) 0%,
-              rgba(218, 240, 251, 1) 31%,
-              rgba(218, 240, 251, 1) 100%
-            );
+            background: linear-gradient(0deg,
+            rgba(0, 212, 255, 0) 0%,
+            rgba(218, 240, 251, 1) 31%,
+            rgba(218, 240, 251, 1) 100%);
           }
 
           .hero-text-content {
@@ -277,7 +273,7 @@ export default function IntelligentScheduler() {
 
           .hero-text-content ul,
           .workflow-case ul {
-            margin-left: 0px;
+            margin-left: 0;
             padding-left: 20px;
           }
 
@@ -403,7 +399,7 @@ export default function IntelligentScheduler() {
             line-height: 27px;
             width: 316px;
             margin-left: 20px;
-            margin-bottom: 0px;
+            margin-bottom: 0;
           }
 
           .workflow li {
@@ -436,30 +432,28 @@ export default function IntelligentScheduler() {
             top: -150px;
             right: 0;
             left: 0;
-            z-index-1;
+            z-index: 1;
             width: 100%;
-            background: linear-gradient(
-              0deg,
-              rgba(218, 240, 251, 1) 0%,
-              rgba(218, 240, 251, 1) 31%,
-              rgba(0, 212, 255, 0) 100%
-            );
+            background: linear-gradient(0deg,
+            rgba(218, 240, 251, 1) 0%,
+            rgba(218, 240, 251, 1) 31%,
+            rgba(0, 212, 255, 0) 100%);
           }
 
-          .cta a { 
+          .cta a {
             margin-right: 50px;
             text-decoration: none;
             padding: 15px 22px;
             border-radius: 5px;
             display: inline-block;
-            box-shadow: 0px 1px 2px #00000033;
+            box-shadow: 0 1px 2px #00000033;
             font-size: 18px;
             line-height: 22px;
             font-weight: bold;
             padding-left: 54px;
 
           }
-          
+
           .cta .contact-btn {
             color: #fff;
             background: #0096FA;
@@ -476,7 +470,7 @@ export default function IntelligentScheduler() {
             background-position: 22px 50%;
             background-repeat: no-repeat;
           }
-          
+
           .cta .demo-btn {
             color: #0096FA;
             background: #fff;
