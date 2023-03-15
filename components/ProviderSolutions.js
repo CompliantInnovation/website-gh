@@ -41,7 +41,7 @@ const ProviderSolutions = ({ premium }) => {
           <div className="content">
             <div>
               <div className="img-div">
-                <img src="https://assets.d4.docspera.com/home/images/intelligent-scheduler/Images/IntelligentSchedulerImage.png" />
+                <img src="https://assets.d4.docspera.com/home/images/intelligent-scheduler/Images/IntelligentSchedulerImage.jpg" />
               </div>
               <div className="h4-div">
                 <h4>Intelligent Dashboard for Managing Upcoming Cases</h4>
@@ -102,7 +102,6 @@ const ProviderSolutions = ({ premium }) => {
 
         .provider-solutions-row > div {
           margin: 10px;
-          padding: 10px;
           flex: 1;
           background-color: white;
           filter: drop-shadow(0 0px 10px lightgray);
