@@ -26,7 +26,7 @@ export default function Home() {
     {
       name: "Dr. Alexander Sah",
       title: "Sah Orthopaedic Associates",
-      img: "/images/testimonials/Alex.png",
+      img: "https://assets.d4.docspera.com/home/images/testimonials/Alex.png",
       videoURL: "https://www.youtube.com/embed/pLWFCRYPoMc",
       quote:
         '"With DocSpera, the implant reps, nurses, surgical scheduler, technicians in the OR, all already know what implants will be used, they even know the sizes."',
@@ -34,7 +34,7 @@ export default function Home() {
     {
       name: "Casey Smith",
       title: "Device Consultant",
-      img: "/images/testimonials/Smith.png",
+      img: "https://assets.d4.docspera.com/home/images/testimonials/Smith.png",
       videoURL: "https://www.youtube.com/embed/zXI3UuwWX0c",
       quote:
         '"Since the implementation of DocSpera into my distributorship, I have noticed a vast improvement in my work/life balance."',
@@ -42,7 +42,7 @@ export default function Home() {
     {
       name: "Dr. Robert Mayle",
       title: "California Pacific Orthopaedics",
-      img: "/images/testimonials/Mayle.png",
+      img: "https://assets.d4.docspera.com/home/images/testimonials/Mayle.png",
       videoURL: "https://www.youtube.com/embed/L3CNetQcAis",
       quote:
         '"It\'s become an integral role to our workflow. It has provided great time savings. It has helped us communicate effectively. It has helped us anticipate needs and inventory."',
