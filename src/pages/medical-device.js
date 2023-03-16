@@ -11,7 +11,7 @@ export default function MedicalDevicePage() {
     <div style={{ position: 'relative' }}>
       <Head>
         <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform</title>
-        <link rel='icon' href='https://assets.d4.docspera.com/home/favicon.ico' />
+        <link rel='icon' href='/favicon.ico' />
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin />
         <link
@@ -30,7 +30,7 @@ export default function MedicalDevicePage() {
           patient-specific data, enabling Clinical insights, including an efficient supply chain.
         </p>
         <img
-          src='https://assets.d4.docspera.com/home/images/drawings/medical-device-art-work.png'
+          src='/images/drawings/medical-device-art-work.png'
           id='business'
           width={570}
         />
@@ -39,13 +39,13 @@ export default function MedicalDevicePage() {
           <div className='statistics'>
             <div>
               <NumberScroll
-                imgSrc='https://assets.d4.docspera.com/home/images/surgeon-users.png'
+                imgSrc='/images/surgeon-users.png'
                 number={6000}
                 title='Providers'
                 plus
               />
               <NumberScroll
-                imgSrc='https://assets.d4.docspera.com/home/images/surgical-cases.png'
+                imgSrc='/images/surgical-cases.png'
                 number={350000}
                 title='Surgical Cases'
                 plus
@@ -53,13 +53,13 @@ export default function MedicalDevicePage() {
             </div>
             <div id='placement'>
               <NumberScroll
-                imgSrc='https://assets.d4.docspera.com/home/images/medical-device.png'
+                imgSrc='/images/medical-device.png'
                 number={60}
                 title='Top Global Medical Device Companies'
                 percent
               />
               <NumberScroll
-                imgSrc='https://assets.d4.docspera.com/home/images/tech-partners.png'
+                imgSrc='/images/tech-partners.png'
                 number={30}
                 title='Technology Partners'
                 plus
@@ -74,7 +74,7 @@ export default function MedicalDevicePage() {
             <div id='offerings-divs'>
               <div>
                 <h3>DocSpera Demand</h3>
-                <img src='https://assets.d4.docspera.com/home/images/case-notification.png' />
+                <img src='/images/case-notification.png' />
                 <h4>Advanced Case Notification</h4>
                 <p>
                   Early and reliable case demand signal to improve case support preparedness and
@@ -85,13 +85,13 @@ export default function MedicalDevicePage() {
                   preparation
                 </p>
                 <button>
-                  <a href='#advanced-case-notification'>View</a>
+                  <a href='src/nav-pages#advanced-case-notification'>View</a>
                 </button>
               </div>
               <div>
                 <h3>DocSpera Premium</h3>
                 <img
-                  src='https://assets.d4.docspera.com/home/images/provider-solutions.png'
+                  src='/images/provider-solutions.png'
                   height='auto'
                 />
                 <h4>Integrated Provider Solutions</h4>
@@ -104,12 +104,12 @@ export default function MedicalDevicePage() {
                   individual capabilities
                 </p>
                 <button>
-                  <a href='#integrated-providers-solutions'>View</a>
+                  <a href='src/nav-pages#integrated-providers-solutions'>View</a>
                 </button>
               </div>
               <div>
                 <h3>DocSpera Insights</h3>
-                <img src='https://assets.d4.docspera.com/home/images/data-intelligence.png' />
+                <img src='/images/data-intelligence.png' />
                 <h4>Data Intelligence & RWD Insights</h4>
                 <p>
                   Support the capture of real-world data across the surgical continuum - from
@@ -120,7 +120,7 @@ export default function MedicalDevicePage() {
                   outcome studies
                 </p>
                 <button>
-                  <a href='#insights-section'>View</a>
+                  <a href='src/nav-pages#insights-section'>View</a>
                 </button>
               </div>
             </div>
@@ -136,7 +136,7 @@ export default function MedicalDevicePage() {
             <div id='solve-challenges-divs'>
               <div>
                 <h4>Inventory and Logistics Costs</h4>
-                <img src='https://assets.d4.docspera.com/home/images/graphics/efficient.png' />
+                <img src='/images/graphics/efficient.png' />
                 <p>
                   Improved case preparedness and inventory management through earlier, more
                   integrated real-time updates of surgical case
@@ -148,7 +148,7 @@ export default function MedicalDevicePage() {
               </div>
               <div>
                 <h4>Product/Data Understanding</h4>
-                <img src='https://assets.d4.docspera.com/home/images/graphics/data-driven.png' />
+                <img src='/images/graphics/data-driven.png' />
                 <p>Deeper understanding of your product performance across continuum of care</p>
                 <p>
                   Access real-world data and gain insight of your product performance in real-world
@@ -157,7 +157,7 @@ export default function MedicalDevicePage() {
               </div>
               <div>
                 <h4>Market Penetration</h4>
-                <img src='https://assets.d4.docspera.com/home/images/graphics/strategic.png' />
+                <img src='/images/graphics/strategic.png' />
                 <p style={{ maxWidth: 'none' }}>
                   Strengthen market position and become a more strategic partner to your customers
                   through diversified and easily managed risk-sharing based offerings
@@ -189,12 +189,12 @@ export default function MedicalDevicePage() {
             {useMedia('(max-width: 850px') ? (
               <img
                 id='ACN-img-mobile'
-                src='https://assets.d4.docspera.com/home/images/graphics/advanced-case-notification-mobile-v3.png'
+                src='/images/graphics/advanced-case-notification-mobile-v3.png'
               />
             ) : (
               <img
                 id='ACN-img-desktop'
-                src='https://assets.d4.docspera.com/home/images/graphics/advanced-case-notification-v2.png'
+                src='/images/graphics/advanced-case-notification-v2.png'
               />
             )}
           </div>
@@ -213,26 +213,26 @@ export default function MedicalDevicePage() {
               continuum
             </p>
             <div id='demand-intel-img-div'>
-              <img src='https://assets.d4.docspera.com/home/images/product-shots/demand-intel.png' />
+              <img src='/images/product-shots/demand-intel.png' />
             </div>
             <div id='insights-copy-div'>
               <div>
                 <div className='insight-title-div'>
-                  <img src='https://assets.d4.docspera.com/home/images/target.png' />
+                  <img src='/images/target.png' />
                   <h4>Demand Intelligence</h4>
                 </div>
                 <p>View aggregated case demand information by region</p>
               </div>
               <div>
                 <div className='insight-title-div'>
-                  <img src='https://assets.d4.docspera.com/home/images/mac.png' />
+                  <img src='/images/mac.png' />
                   <h4>Device Intelligence</h4>
                 </div>
                 <p>Understand market share across specialty and therapeutic areas</p>
               </div>
               <div>
                 <div className='insight-title-div'>
-                  <img src='https://assets.d4.docspera.com/home/images/line-graph.png' />
+                  <img src='/images/line-graph.png' />
                   <h4>Device Registry</h4>
                 </div>
                 <p>
@@ -268,7 +268,7 @@ export default function MedicalDevicePage() {
             <div id='case-studies-div'>
               <div className='case-study'>
                 <div className='img-div'>
-                  <img src='https://assets.d4.docspera.com/home/caseStudies/case1.png' />
+                  <img src='/caseStudies/case1.png' />
                   <div className='h3-div'>
                     <h3>Automated Inventory Management</h3>
                   </div>
@@ -277,7 +277,7 @@ export default function MedicalDevicePage() {
                     case visibility, planning, and reduce costs
                   </p>
                   <a
-                    href='https://assets.d4.docspera.com/home/caseStudies/Automated_Inventory_Management.pdf'
+                    href='/caseStudies/Automated_Inventory_Management.pdf'
                     target='_blank'
                     rel='noopener noreferrer'
                   >
@@ -287,14 +287,14 @@ export default function MedicalDevicePage() {
               </div>
               <div className='case-study'>
                 <div className='img-div'>
-                  <img src='https://assets.d4.docspera.com/home/caseStudies/case2.png' />
+                  <img src='/caseStudies/case2.png' />
                   <div className='h3-div'>
                     <h3>New Product Launch</h3>
                   </div>
                   <p>Post-Market Clinical Insights Study Using Real-World Data</p>
                 </div>
                 <a
-                  href='https://assets.d4.docspera.com/home/caseStudies/New_Product_Launch.pdf'
+                  href='/caseStudies/New_Product_Launch.pdf'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
@@ -303,7 +303,7 @@ export default function MedicalDevicePage() {
               </div>
               <div className='case-study'>
                 <div className='img-div'>
-                  <img src='https://assets.d4.docspera.com/home/caseStudies/case3.png' />
+                  <img src='/caseStudies/case3.png' />
                   <div className='h3-div'>
                     <h3>Engage Your Customers</h3>
                   </div>
@@ -313,7 +313,7 @@ export default function MedicalDevicePage() {
                   </p>
                 </div>
                 <a
-                  href='https://assets.d4.docspera.com/home/caseStudies/Engage_Your_Customers.pdf'
+                  href='/caseStudies/Engage_Your_Customers.pdf'
                   target='_blank'
                   rel='noopener noreferrer'
                 >

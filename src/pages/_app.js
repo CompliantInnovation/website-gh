@@ -1,8 +1,6 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
-import { ContextProvider } from '../context/context'
 import '../styles/global.css'
-
 
 export default function App({ Component, pageProps }) {
   const router = useRouter()
@@ -18,10 +16,8 @@ export default function App({ Component, pageProps }) {
       router.events.off('routeChangeComplete', handleRouteChange)
     }
   }, [router.events])
-  
+
   return (
-    <ContextProvider>
-      <Component {...pageProps} />
-    </ContextProvider>
+    <Component {...pageProps} />
   )
 }

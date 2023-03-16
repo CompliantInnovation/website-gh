@@ -84,7 +84,7 @@ export default function Provider() {
       img: 'SRS.jpg',
       height: null,
       width: 120,
-      url: 'https://assets.d4.docspera.com/home/images/logos/SRS.jpg'
+      url: '/images/logos/SRS.jpg'
     }
   ]
 
@@ -97,68 +97,68 @@ export default function Provider() {
 
   const instLogos = [
     {
-      img: 'https://assets.d4.docspera.com/home/images/logos/UCSF.png',
+      img: '/images/logos/UCSF.png',
       width: 100,
       url: 'https://www.ucsf.edu/'
     },
     {
-      img: 'https://assets.d4.docspera.com/home/images/logos/orthocare.jpg',
+      img: '/images/logos/orthocare.jpg',
       width: 170,
       url: 'https://orthocare.com/'
     },
     {
-      img: 'https://assets.d4.docspera.com/home/images/logos/TMI.jpg',
+      img: '/images/logos/TMI.jpg',
       width: 170,
       url: 'https://www.tmisportsmed.com/'
     },
     {
-      img: 'https://assets.d4.docspera.com/home/images/logos/webster.png',
+      img: '/images/logos/webster.png',
       width: 160,
       url: 'https://www.websterorthopedics.com/'
     },
     {
-      img: 'https://assets.d4.docspera.com/home/images/logos/emerge-ortho.jpg',
+      img: '/images/logos/emerge-ortho.jpg',
       width: 180,
       url: 'https://emergeortho.com/'
     },
     {
-      img: 'https://assets.d4.docspera.com/home/images/logos/DOC.png',
+      img: '/images/logos/DOC.png',
       width: 150,
       url: 'https://www.doclv.com/'
     },
     {
-      img: 'https://assets.d4.docspera.com/home/images/logos/mos.png',
+      img: '/images/logos/mos.png',
       width: 170,
       url: 'https://miorthosurgeons.com/?fbclid=IwAR3jsBZmXGsBtJ9i76y-0jf6Iv_y2kIzMLIzUMWbFfAQB1tCP8ZtV94-6eY'
     },
     {
-      img: 'https://assets.d4.docspera.com/home/images/logos/CPO.png',
+      img: '/images/logos/CPO.png',
       width: 180,
       url: 'https://calpacortho.com/'
     },
-    { img: 'https://assets.d4.docspera.com/home/images/logos/baylor.jpg', width: 160, url: '' },
+    { img: '/images/logos/baylor.jpg', width: 160, url: '' },
     {
-      img: 'https://assets.d4.docspera.com/home/images/logos/childress.png',
+      img: '/images/logos/childress.png',
       width: 200,
       url: 'https://www.childresshospital.com/'
     },
     {
-      img: 'https://assets.d4.docspera.com/home/images/logos/trinity.png',
+      img: '/images/logos/trinity.png',
       width: 180,
       url: 'https://trinityparksurgerycenter.com/'
     },
     {
-      img: 'https://assets.d4.docspera.com/home/images/logos/louisville.png',
+      img: '/images/logos/louisville.png',
       width: 170,
       url: 'https://www.louortho.com/'
     },
     {
-      img: 'https://assets.d4.docspera.com/home/images/logos/washington.png',
+      img: '/images/logos/washington.png',
       width: 200,
       url: 'https://www.whhs.com/'
     },
     {
-      img: 'https://assets.d4.docspera.com/home/images/logos/englewood.png',
+      img: '/images/logos/englewood.png',
       width: 160,
       url: 'https://www.englewoodhealth.org/'
     }
@@ -206,7 +206,7 @@ export default function Provider() {
     <>
       <Head>
         <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform</title>
-        <link rel='icon' href='https://assets.d4.docspera.com/home/favicon.ico' />
+        <link rel='icon' href='/favicon.ico' />
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin />
         <link
@@ -227,19 +227,19 @@ export default function Provider() {
             care.
           </p>
           <img
-            src='https://assets.d4.docspera.com/home/images/provider-art-work.png'
+            src='/images/provider-art-work.png'
             id='surgeon-doodle'
           />
           <div className='statistics' style={{ marginBottom: 20 }}>
             <div>
               <NumberScroll
-                imgSrc='https://assets.d4.docspera.com/home/images/surgeon-users.png'
+                imgSrc='/images/surgeon-users.png'
                 number={6000}
                 title='Providers'
                 plus
               />
               <NumberScroll
-                imgSrc='https://assets.d4.docspera.com/home/images/patient-volume.png'
+                imgSrc='/images/patient-volume.png'
                 number={100000}
                 title='Monthly Patient Visits'
                 plus
@@ -247,13 +247,13 @@ export default function Provider() {
             </div>
             <div>
               <NumberScroll
-                imgSrc='https://assets.d4.docspera.com/home/images/practices.png'
+                imgSrc='/images/practices.png'
                 number={300}
                 title='Practices, ASCs and Hospitals'
                 plus
               />
               <NumberScroll
-                imgSrc='https://assets.d4.docspera.com/home/images/surgical-cases.png'
+                imgSrc='/images/surgical-cases.png'
                 number={350000}
                 title='Surgical Cases'
                 plus
@@ -268,12 +268,12 @@ export default function Provider() {
             <div>
               <img
                 id='mock-up-img'
-                src='https://assets.d4.docspera.com/home/images/product-shots/mockups.png'
+                src='/images/product-shots/mockups.png'
               />
 
               <div>
                 <div className='box'>
-                  <img src='https://assets.d4.docspera.com/home/images/surgical.svg' />
+                  <img src='/images/surgical.svg' />
                   <div>
                     <h4>Built for the Surgical Environment</h4>
                     <p>
@@ -283,14 +283,14 @@ export default function Provider() {
                   </div>
                 </div>
                 <div className='box'>
-                  <img src='https://assets.d4.docspera.com/home/images/graphics/security.svg' />
+                  <img src='/images/graphics/security.svg' />
                   <div>
                     <h4>Secure</h4>
                     <p>Provider verified, SOC 2 level and HIPAA compliant</p>
                   </div>
                 </div>
                 <div className='box'>
-                  <img src='https://assets.d4.docspera.com/home/images/graphics/data-driven.svg' />
+                  <img src='/images/graphics/data-driven.svg' />
                   <div>
                     <h4>Driven by Data Analytics</h4>
                     <p>
@@ -299,7 +299,7 @@ export default function Provider() {
                   </div>
                 </div>
                 <div className='box'>
-                  <img src='https://assets.d4.docspera.com/home/images/graphics/integration.svg' />
+                  <img src='/images/graphics/integration.svg' />
                   <div>
                     <h4>Effortless Integration</h4>
                     <p>Web and mobile interface easily integrate with other critical systems</p>
@@ -315,11 +315,11 @@ export default function Provider() {
             <h2>Seamless Integration </h2>
             {useMedia('(max-width: 600px)') ? (
               <img
-                src='https://assets.d4.docspera.com/home/images/graphics/seamless-integration-mobile.png'
+                src='/images/graphics/seamless-integration-mobile.png'
                 style={{ maxWidth: 350 }}
               />
             ) : (
-              <img src='https://assets.d4.docspera.com/home/images/graphics/seamless-integration-desktop.png' />
+              <img src='/images/graphics/seamless-integration-desktop.png' />
             )}
           </div>
         </div>
@@ -335,9 +335,9 @@ export default function Provider() {
             <div>
               {emrLogos.slice(0, numberOfEmrLogos).map((logo) => {
                 return (
-                  <a href={logo.href}>
+                  <a href={logo.href} key={logo.href}>
                     <img
-                      src={`https://assets.d4.docspera.com/home/images/logos/${logo.img}`}
+                      src={`/images/logos/${logo.img}`}
                       height={logo.height}
                       width={logo.width}
                     />
@@ -349,22 +349,22 @@ export default function Provider() {
             <div>
               <a href='https://marketplace.athenahealth.com/product/docspera' target='_blank'>
                 <img
-                  src='https://assets.d4.docspera.com/home/images/logos/athena-health.png'
+                  src='/images/logos/athena-health.png'
                   width={220}
                 />
               </a>
               <a href='http://www.primeclinical.com/' target='_blank'>
-                <img src='https://assets.d4.docspera.com/home/images/logos/prime.png' width={120} />
+                <img src='/images/logos/prime.png' width={120} />
               </a>
               <a href='https://www.modmed.com/' target='_blank'>
                 <img
-                  src='https://assets.d4.docspera.com/home/images/logos/modernizing-medicine.png'
+                  src='/images/logos/modernizing-medicine.png'
                   width={190}
                 />
               </a>
               <a href='https://www.medstrat.com/' target='_blank'>
                 <img
-                  src='https://assets.d4.docspera.com/home/images/logos/medstrat.jpg'
+                  src='/images/logos/medstrat.jpg'
                   width={190}
                 />
               </a>
@@ -373,75 +373,75 @@ export default function Provider() {
                 target='_blank'
               >
                 <img
-                  src='https://assets.d4.docspera.com/home/images/logos/CMS.jpg'
+                  src='/images/logos/CMS.jpg'
                   height={65}
                   width={100}
                 />
               </a>
               <a href='https://www.gehealthcare.com/products/centricity-services' target='_blank'>
                 <img
-                  src='https://assets.d4.docspera.com/home/images/logos/centricity.png'
+                  src='/images/logos/centricity.png'
                   width={150}
                 />
               </a>
               <a href='https://www.medent.com/' target='_blank'>
                 <img
-                  src='https://assets.d4.docspera.com/home/images/logos/medent.png'
+                  src='/images/logos/medent.png'
                   width={180}
                 />
               </a>
               <a href='https://apporchard.epic.com/Gallery?id=3515' target='_blank'>
                 <img
-                  src='https://assets.d4.docspera.com/home/images/logos/app-orchard.png'
+                  src='/images/logos/app-orchard.png'
                   width={150}
                 />
               </a>
 
               <a href='https://www.elationhealth.com/' target='_blank'>
                 <img
-                  src='https://assets.d4.docspera.com/home/images/logos/elation-health.jpg'
+                  src='/images/logos/elation-health.jpg'
                   width={190}
                 />
               </a>
               <a href='https://www.nextgen.com/' target='_blank'>
                 <img
-                  src='https://assets.d4.docspera.com/home/images/logos/next-gen.jpg'
+                  src='/images/logos/next-gen.jpg'
                   width={140}
                 />
               </a>
               <a href='https://www.eclinicalworks.com/' target='_blank'>
                 <img
-                  src='https://assets.d4.docspera.com/home/images/logos/e-clinical-works.jpg'
+                  src='/images/logos/e-clinical-works.jpg'
                   width={180}
                 />
               </a>
               <a href='https://www.cerner.com/' target='_blank'>
                 <img
-                  src='https://assets.d4.docspera.com/home/images/logos/cerner.png'
+                  src='/images/logos/cerner.png'
                   width={170}
                 />
               </a>
 
               <a href='https://www.allscripts.com/' target='_blank'>
                 <img
-                  src='https://assets.d4.docspera.com/home/images/logos/allscripts.png'
+                  src='/images/logos/allscripts.png'
                   width={170}
                 />
               </a>
               <a href='https://partners.drchrono.com/app/nbg3BfA/docspera' target='_blank'>
                 <img
-                  src='https://assets.d4.docspera.com/home/images/logos/drchrono.png'
+                  src='/images/logos/drchrono.png'
                   width={140}
                 />
               </a>
               <a href='https://www.greenwayhealth.com/' target='_blank'>
                 <img
-                  src='https://assets.d4.docspera.com/home/images/logos/greenway.png'
+                  src='/images/logos/greenway.png'
                   width={150}
                 />
               </a>
               <a href='https://www.emrsystems.net/srs-health-ehr-software/' target='_blank'>
-                <img src='https://assets.d4.docspera.com/home/images/logos/SRS.jpg' width={120} />
+                <img src='/images/logos/SRS.jpg' width={120} />
               </a>
             </div>
           </div>
@@ -455,11 +455,11 @@ export default function Provider() {
                 return (
                   <div className='testimonial' key={idx}>
                     <img
-                      src={`https://assets.d4.docspera.com/home/images/testimonials/${t.pic}`}
+                      src={`/images/testimonials/${t.pic}`}
                       className='testimonial-img'
                     />
                     <div>
-                      <p>"...{t.quote}..."</p>
+                      <p>&ldquo;...{t.quote}...&rdquo;</p>
                       <span className='name'> - {t.name}</span>
                       <p className='location'>{t.location}</p>
                     </div>
@@ -479,7 +479,7 @@ export default function Provider() {
           </div>
           <img
             id='map'
-            src='https://assets.d4.docspera.com/home/images/graphics/map-with-pins.png'
+            src='/images/graphics/map-with-pins.png'
             alt='map of docspera locations'
           />
         </div>

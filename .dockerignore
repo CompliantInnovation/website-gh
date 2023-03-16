@@ -1,7 +1,8 @@
 node_modules
 .next
-.DS_Storeout/
+.DS_Store
 out/
 .idea/
 .git/
 *.md
+deployment/

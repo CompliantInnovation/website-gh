@@ -1,5 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
-import { Context, changePage } from "../context/context";
+import React, { useState } from "react";
 import Head from "next/head";
 import HeaderNav from "../components/HeaderNav";
 import NumberScroll from "../components/NumberScroll";
@@ -14,9 +13,8 @@ import Close from "../components/icons/Close";
 
 console.log({ useInterval });
 
-export default function Home() {
-  const { state, dispatch } = useContext(Context);
-  const isBrowser = () => typeof window !== "undefined";
+export default function Index() {
+    const isBrowser = () => typeof window !== "undefined";
   let smallScreen;
   if (isBrowser) {
     smallScreen = useMedia("(max-width: 1100px)");
@@ -26,7 +24,7 @@ export default function Home() {
     {
       name: "Dr. Alexander Sah",
       title: "Sah Orthopaedic Associates",
-      img: "https://assets.d4.docspera.com/home/images/testimonials/Alex.png",
+      img: "/images/testimonials/Alex.png",
       videoURL: "https://www.youtube.com/embed/pLWFCRYPoMc",
       quote:
         '"With DocSpera, the implant reps, nurses, surgical scheduler, technicians in the OR, all already know what implants will be used, they even know the sizes."',
@@ -34,7 +32,7 @@ export default function Home() {
     {
       name: "Casey Smith",
       title: "Device Consultant",
-      img: "https://assets.d4.docspera.com/home/images/testimonials/Smith.png",
+      img: "/images/testimonials/Smith.png",
       videoURL: "https://www.youtube.com/embed/zXI3UuwWX0c",
       quote:
         '"Since the implementation of DocSpera into my distributorship, I have noticed a vast improvement in my work/life balance."',
@@ -42,7 +40,7 @@ export default function Home() {
     {
       name: "Dr. Robert Mayle",
       title: "California Pacific Orthopaedics",
-      img: "https://assets.d4.docspera.com/home/images/testimonials/Mayle.png",
+      img: "/images/testimonials/Mayle.png",
       videoURL: "https://www.youtube.com/embed/L3CNetQcAis",
       quote:
         '"It\'s become an integral role to our workflow. It has provided great time savings. It has helped us communicate effectively. It has helped us anticipate needs and inventory."',
@@ -84,7 +82,7 @@ export default function Home() {
           </title>
           <link
             rel="icon"
-            href="https://assets.d4.docspera.com/home/favicon.ico"
+            href="/favicon.ico"
           />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
@@ -120,13 +118,13 @@ export default function Home() {
           <div className="statistics">
             <div>
               <NumberScroll
-                imgSrc="https://assets.d4.docspera.com/home/images/patient-volume.png"
+                imgSrc="/images/patient-volume.png"
                 number={150000}
                 title="Monthly Patient Volume"
                 plus
               />
               <NumberScroll
-                imgSrc="https://assets.d4.docspera.com/home/images/surgeon-users.png"
+                imgSrc="/images/surgeon-users.png"
                 number={7000}
                 title="Providers"
                 plus
@@ -134,13 +132,13 @@ export default function Home() {
             </div>
             <div>
               <NumberScroll
-                imgSrc="https://assets.d4.docspera.com/home/images/graphics/episodic-cases.png"
+                imgSrc="/images/graphics/episodic-cases.png"
                 number={800000}
                 title="Episodic Cases"
                 plus
               />
               <NumberScroll
-                imgSrc="https://assets.d4.docspera.com/home/images/practices.png"
+                imgSrc="/images/practices.png"
                 number={300}
                 title="Practices, ASCs & Hospitals"
                 plus
@@ -167,14 +165,14 @@ export default function Home() {
                 <div id="iphone-calendar-div">
                   <img
                     id="iphone-calendar"
-                    src="https://assets.d4.docspera.com/home/images/product-shots/iphone-calendar.png"
+                    src="/images/product-shots/iphone-calendar.png"
                   />
                 </div>
 
                 <div id="timeline-div">
                   <img
                     id="timeline-graphic"
-                    src="https://assets.d4.docspera.com/home/images/graphics/timeline-graphic.png"
+                    src="/images/graphics/timeline-graphic.png"
                   />
                 </div>
               </div>
@@ -194,14 +192,14 @@ export default function Home() {
                   <div id="iphone-calendar-div">
                     <img
                       id="iphone-calendar"
-                      src="https://assets.d4.docspera.com/home/images/product-shots/iphone-calendar.png"
+                      src="/images/product-shots/iphone-calendar.png"
                     />
                   </div>
 
                   <div id="timeline-div">
                     <img
                       id="timeline-graphic"
-                      src="https://assets.d4.docspera.com/home/images/graphics/timeline-graphic.png"
+                      src="/images/graphics/timeline-graphic.png"
                     />
                   </div>
                 </div>
@@ -238,7 +236,7 @@ export default function Home() {
             </div>
             <img
               id="connecting-graphic"
-              src="https://assets.d4.docspera.com/home/images/graphics/connected-graphic.png"
+              src="/images/graphics/connected-graphic.png"
             />
           </div>
         </div>
@@ -376,7 +374,7 @@ export default function Home() {
               <div className="outer-box">
                 <div className="box">
                   <h4>
-                    <img src="https://assets.d4.docspera.com/home/images/surgeon-users.png" />
+                    <img src="/images/surgeon-users.png" />
                     Providers
                   </h4>
                   <p>
@@ -388,11 +386,11 @@ export default function Home() {
                   <p>
                     <span>&#10140;</span> Episode of Care
                   </p>
-                  <button onClick={() => dispatch(changePage("provider"))}>
+                  <button onClick={() => router.push("/provider")}>
                     View Provider Solutions{" "}
                     <img
                       className="chevron-img"
-                      src="https://assets.d4.docspera.com/home/images/graphics/chevron-blue.png"
+                      src="/images/graphics/chevron-blue.png"
                     />
                   </button>
                 </div>
@@ -400,7 +398,7 @@ export default function Home() {
               <div className="outer-box">
                 <div className="box">
                   <h4>
-                    <img src="https://assets.d4.docspera.com/home/images/medical-device.png" />
+                    <img src="/images/medical-device.png" />
                     Device Partners
                   </h4>
                   <p>
@@ -413,12 +411,12 @@ export default function Home() {
                     <span>&#10140;</span> Data Intelligence &amp; RWD Insights
                   </p>
                   <button
-                    onClick={() => dispatch(changePage("medical-device"))}
+                    onClick={() => router.push("/medical-device")}
                   >
                     View Device Partner Solutions{" "}
                     <img
                       className="chevron-img"
-                      src="https://assets.d4.docspera.com/home/images/graphics/chevron-blue.png"
+                      src="/images/graphics/chevron-blue.png"
                     />
                   </button>
                 </div>
@@ -439,7 +437,7 @@ export default function Home() {
                 target="_blank"
               >
                 <img
-                  src="https://assets.d4.docspera.com/home/images/logos/innovacer.png"
+                  src="/images/logos/innovacer.png"
                   width={220}
                 />
               </a>
@@ -448,7 +446,7 @@ export default function Home() {
                 target="_blank"
               >
                 <img
-                  src="https://assets.d4.docspera.com/home/images/logos/athena-health.png"
+                  src="/images/logos/athena-health.png"
                   width={180}
                 />
               </a>
@@ -457,25 +455,25 @@ export default function Home() {
                 target="_blank"
               >
                 <img
-                  src="https://assets.d4.docspera.com/home/images/logos/app-orchard.png"
+                  src="/images/logos/app-orchard.png"
                   width={170}
                 />
               </a>
               <a href="https://www.aahks.org/" target="_blank">
                 <img
-                  src="https://assets.d4.docspera.com/home/images/logos/AAHKS.jpg"
+                  src="/images/logos/AAHKS.jpg"
                   width={170}
                 />
               </a>
               {/* <a href='https://www.prnewswire.com/news-releases/anterior-hip-foundation-and-docspera-partner-to-uncover-valuable-insights-through-data-analytics-in-order-to-advance-anterior-approach-hip-replacement-300605530.html' target='_blank'>
-                <img src='https://assets.d4.docspera.com/home/images/logos/anterior-hip-foundation.png' width={170} />
+                <img src='/images/logos/anterior-hip-foundation.png' width={170} />
               </a> */}
               <a
                 href="https://www.medicare.gov/manage-your-health/share-your-medicare-claims-medicares-blue-button/organize-share-your-medical-information-claims"
                 target="_blank"
               >
                 <img
-                  src="https://assets.d4.docspera.com/home/images/logos/CMS.jpg"
+                  src="/images/logos/CMS.jpg"
                   width={100}
                 />
               </a>
@@ -484,7 +482,7 @@ export default function Home() {
                 target="_blank"
               >
                 <img
-                  src="https://assets.d4.docspera.com/home/images/logos/dolby.png"
+                  src="/images/logos/dolby.png"
                   width={150}
                 />
               </a>
@@ -548,7 +546,7 @@ export default function Home() {
           min-height: 500px;
           height: 100vh;
           position: relative;
-          background-image: url('https://assets.d4.docspera.com/home/images/iPad-landing-bluer.png');
+          background-image: url('/images/iPad-landing-bluer.png');
           background-position: 15% 50%, center bottom;
           background-repeat: no-repeat;
           background-size: cover;

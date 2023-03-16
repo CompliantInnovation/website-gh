@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { Context } from "../context/context";
+import React from "react";
 import Head from "next/head";
 import HeaderNav from "../components/HeaderNav";
 import FooterBar from "../components/Footer";
@@ -16,12 +15,8 @@ import Check from "../components/icons/Check";
 import DoubleArrow from "../components/icons/DoubleArrow";
 
 export default function IntelligentScheduler() {
-  const { state, dispatch } = useContext(Context);
-  const isBrowser = () => typeof window !== "undefined";
-  let smallScreen;
-  if (isBrowser) {
-    smallScreen = useMedia("(max-width: 1100px)");
-  }
+    const isBrowser = () => typeof window !== "undefined";
+  useMedia("(max-width: 1100px)")
 
   return (
     <>
@@ -34,7 +29,7 @@ export default function IntelligentScheduler() {
           </title>
           <link
             rel="icon"
-            href="https://assets.d4.docspera.com/home/favicon.ico"
+            href="/favicon.ico"
           />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
@@ -144,7 +139,7 @@ export default function IntelligentScheduler() {
                   <li>Easily share cases with care team on single platform</li>
                 </ul>
                 <img
-                  src="https://assets.d4.docspera.com/home/images/intelligent-scheduler/SchedulerImage.jpg"
+                  src="/images/intelligent-scheduler/SchedulerImage.jpg"
                   alt="EMR Image"
                 />
               </div>
@@ -161,7 +156,7 @@ export default function IntelligentScheduler() {
                   <li>Automated capture through digital intake</li>
                 </ul>
                 <img
-                  src="https://assets.d4.docspera.com/home/images/intelligent-scheduler/UnderstandingThing.jpg"
+                  src="/images/intelligent-scheduler/UnderstandingThing.jpg"
                   alt="Assessment Of Patient"
                 />
               </div>
@@ -180,7 +175,7 @@ export default function IntelligentScheduler() {
                   <li>Efficient and Optimized Case Management</li>
                 </ul>
                 <img
-                  src="https://assets.d4.docspera.com/home/images/intelligent-scheduler/IntelligentSchedulerImage.jpg"
+                  src="/images/intelligent-scheduler/IntelligentSchedulerImage.jpg"
                   alt="Intelligent Scheduler Image"
                 />
               </div>
@@ -214,7 +209,7 @@ export default function IntelligentScheduler() {
           }
 
           .scheduler-hero-section {
-            background: #fff url("https://assets.d4.docspera.com/home/images/intelligent-scheduler/Images/IntelligentSchedulerMicrosite_DoctorImage.png");
+            background: #fff url("/images/intelligent-scheduler/UnderstandingThing.jpg");
             min-height: 600px;
             background-repeat: no-repeat;
             background-position: 110% 0;
@@ -457,7 +452,7 @@ export default function IntelligentScheduler() {
           .cta .contact-btn {
             color: #fff;
             background: #0096FA;
-            background-image: url("https://assets.d4.docspera.com/home/images/intelligent-scheduler/contactInactive.svg");
+            background-image: url("/images/intelligent-scheduler/contactInactive.svg");
             background-position: 22px 50%;
             background-repeat: no-repeat;
             transition: background-color .3s;
@@ -465,7 +460,7 @@ export default function IntelligentScheduler() {
 
           .cta .contact-btn:hover {
             background: #B1E0FF;
-            background-image: url("https://assets.d4.docspera.com/home/images/intelligent-scheduler/contactHovered.svg");
+            background-image: url("/images/intelligent-scheduler/contactHovered.svg");
             color: #0096FA;
             background-position: 22px 50%;
             background-repeat: no-repeat;
@@ -476,7 +471,7 @@ export default function IntelligentScheduler() {
             background: #fff;
             border: 1px solid #0096FA;
             padding-left: 60px;
-            background-image: url("https://assets.d4.docspera.com/home/images/intelligent-scheduler/demoInactive.svg");
+            background-image: url("/images/intelligent-scheduler/demoInactive.svg");
             background-position: 22px 50%;
             background-repeat: no-repeat;
             transition: background-color .3s;
@@ -485,7 +480,7 @@ export default function IntelligentScheduler() {
           .cta .demo-btn:hover {
             color: #fff;
             background: #0096FA;
-            background-image: url("https://assets.d4.docspera.com/home/images/intelligent-scheduler/demoHovered.svg");
+            background-image: url("/images/intelligent-scheduler/demoHovered.svg");
             background-position: 22px 50%;
             background-repeat: no-repeat;
           }

@@ -33,6 +33,8 @@ jobs:
       - name: Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
         env:
           NODE_ENV: production
+          MOUNT_URL: '/website-gh'
+          ASSET_PREFIX: 'https://assets.d4.docspera.com/home/'
         run: yarn build
 
       - name: Deploy 🚀

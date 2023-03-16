@@ -1,24 +1,24 @@
-import React, { useContext } from 'react'
-import { Context, changePage } from '../context/context'
+import React from 'react'
+
 import Link from 'next/link'
 import { AppleFilled, FacebookFilled, TwitterCircleFilled, LinkedinFilled } from '@ant-design/icons'
 
 export default function FooterBar() {
-  const { state, dispatch } = useContext(Context)
+
   return (
     <footer>
       <div id='footer-inner-div'>
         <div style={{ margin: 'auto 0', flexGrow: 1 }}>
           <img id='logo' src='https://assets.d4.docspera.com/home/images/logo-white.svg' />
           <div className='accreditation' style={{ maxWidth: '300px', filter: `brightness(0) invert(1)` }}>
-            <img 
-              id='hipaa' alt='HIPPA' 
+            <img
+              id='hipaa' alt='HIPPA'
               src='https://assets.d4.docspera.com/home/images/HIPAA.svg'
               style={{ marginRight: '30px' }}
              />
-            <img 
-              id='soc-2' 
-              alt='SOC-2' 
+            <img
+              id='soc-2'
+              alt='SOC-2'
               src='https://assets.d4.docspera.com/home/images/SOC-2.svg' />
           </div>
 
@@ -74,14 +74,14 @@ export default function FooterBar() {
           <div>
             <span className='section-title'>PRODUCTS FOR</span>
 
-            <div className='footer-menu-item' onClick={() => dispatch(changePage('provider'))}>
+            <div className='footer-menu-item' onClick={() => router.push('/provider')}>
               <a>Providers</a>
               <img src='https://assets.d4.docspera.com/home/images/graphics/chevron-white.png' />
             </div>
 
             <div
               className='footer-menu-item'
-              onClick={() => dispatch(changePage('medical-device'))}
+              onClick={() => router.push('/medical-device')}
             >
               <a>Medical Device</a>
               <img src='https://assets.d4.docspera.com/home/images/graphics/chevron-white.png' />
@@ -113,7 +113,7 @@ export default function FooterBar() {
           <div id='footer-nav-col-2'>
             <span className='section-title'>COMPANY</span>
 
-            <div className='footer-menu-item' onClick={() => dispatch(changePage('company'))}>
+            <div className='footer-menu-item' onClick={() => router.push('/company')}>
               <a>About Us</a>
               <img src='https://assets.d4.docspera.com/home/images/graphics/chevron-white.png' />
             </div>

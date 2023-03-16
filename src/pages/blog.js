@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { Context, changePage } from "../context/context";
+import React from "react";
 import Head from "next/head";
 import HeaderNav from "../components/HeaderNav";
 import NumberScroll from "../components/NumberScroll";
@@ -8,8 +7,7 @@ import { useMedia } from "../hooks/useMedia";
 import AnnoucementBanner from "../components/AnnoucementBanner";
 
 export default function Blog() {
-  const { state, dispatch } = useContext(Context);
-  const isBrowser = () => typeof window !== "undefined";
+    const isBrowser = () => typeof window !== "undefined";
   let smallScreen;
   if (isBrowser) {
     smallScreen = useMedia("(max-width: 1100px)");
@@ -26,7 +24,7 @@ export default function Blog() {
           </title>
           <link
             rel="icon"
-            href="https://assets.d4.docspera.com/home/favicon.ico"
+            href="/favicon.ico"
           />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />

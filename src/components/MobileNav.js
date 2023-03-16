@@ -1,10 +1,11 @@
-import React, { useState, useContext } from "react";
-import { Context, changePage } from "../context/context";
+import React, { useState } from "react";
+
 import MobileNavDropdown from "./MobileNavDropdown";
 import { useMedia } from "../hooks/useMedia";
+import { useRouter } from 'next/router'
 
 export default function MobileNav({ getLink, href }) {
-  const { dispatch } = useContext(Context);
+  const router = useRouter()
   const isBrowser = () => typeof window !== "undefined";
 
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);
@@ -31,7 +32,7 @@ export default function MobileNav({ getLink, href }) {
         {isBrowser && useMedia("(min-width: 390px)") && (
           <a
             style={{ maxWidth: 150, margin: "0 20px" }}
-            onClick={() => dispatch(changePage("home"))}
+            onClick={() => router.push("/home")}
           >
             <img
               src="https://assets.d4.docspera.com/home/images/graphics/logo.svg"
@@ -53,7 +54,7 @@ export default function MobileNav({ getLink, href }) {
           <div
             className="menu-item"
             onClick={() => {
-              dispatch(changePage("home"));
+              router.push("/home");
               openMenu();
             }}
           >
@@ -71,7 +72,7 @@ export default function MobileNav({ getLink, href }) {
                 display: (
                   <div
                     className="box"
-                    onClick={() => dispatch(changePage("provider"))}
+                    onClick={() => router.push("/provider")}
                   >
                     <img src="https://assets.d4.docspera.com/home/images/surgeon-users.png" />
                     Providers
@@ -82,7 +83,7 @@ export default function MobileNav({ getLink, href }) {
                 display: (
                   <div
                     className="box"
-                    onClick={() => dispatch(changePage("medical-device"))}
+                    onClick={() => router.push("/medical-device")}
                   >
                     <img src="https://assets.d4.docspera.com/home/images/medical-device.png" />
                     Device Partners
@@ -99,7 +100,7 @@ export default function MobileNav({ getLink, href }) {
                 display: (
                   <div
                     className="box"
-                    onClick={() => dispatch(changePage("company"))}
+                    onClick={() => router.push("/company")}
                   >
                     About Our Company
                   </div>
@@ -109,7 +110,7 @@ export default function MobileNav({ getLink, href }) {
                 display: (
                   <div
                     className="box"
-                    onClick={() => dispatch(changePage("leadership"))}
+                    onClick={() => router.push("/leadership")}
                   >
                     Meet Our Leadership
                   </div>
@@ -145,7 +146,7 @@ export default function MobileNav({ getLink, href }) {
           />
 
           <div
-            onClick={() => dispatch(changePage("blog"))}
+            onClick={() => router.push("/blog")}
             className="menu-item"
           >
             <div>Blog</div>

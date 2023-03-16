@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
-import { Context, changePage } from "../context/context";
+import React from 'react'
+import { useRouter } from 'next/router'
 
 const ProviderSolutions = ({ premium }) => {
-  const { dispatch } = useContext(Context);
+  const router = useRouter()
+
   return (
-    <div style={{ backgroundColor: "var(--blueXLight)", width: "100%" }}>
+    <div style={{ backgroundColor: 'var(--blueXLight)', width: '100%' }}>
       <div className="provider-solutions inner-div">
         {premium && <h3 className="title">DocSpera Premium</h3>}
         <h2 className="title-h2">Integrated Provider Solutions</h2>
@@ -16,7 +17,7 @@ const ProviderSolutions = ({ premium }) => {
           <div className="content">
             <div>
               <div className="img-div">
-                <img src="https://assets.d4.docspera.com/home/images/product-shots/Laptop-Calendar.png" />
+                <img src="https://assets.d4.docspera.com/home/images/product-shots/Laptop-Calendar.png"/>
               </div>
               <div className="h4-div">
                 <h4>
@@ -41,7 +42,8 @@ const ProviderSolutions = ({ premium }) => {
           <div className="content">
             <div>
               <div className="img-div">
-                <img src="https://assets.d4.docspera.com/home/images/intelligent-scheduler/IntelligentSchedulerImage.jpg" />
+                <img
+                  src="https://assets.d4.docspera.com/home/images/intelligent-scheduler/IntelligentSchedulerImage.jpg"/>
               </div>
               <div className="h4-div">
                 <h4>Intelligent Dashboard for Managing Upcoming Cases</h4>
@@ -57,7 +59,7 @@ const ProviderSolutions = ({ premium }) => {
             </div>
             {/* <a href='https://docspera.com/or' target='_blank'> */}
             <button
-              onClick={() => dispatch(changePage("intelligent-scheduler"))}
+              onClick={() => router.push('/intelligent-scheduler')}
               className="view-product-btn"
             >
               View Intelligent Solution
@@ -67,11 +69,11 @@ const ProviderSolutions = ({ premium }) => {
           <div className="content">
             <div>
               <div className="img-div">
-                <img src="https://assets.d4.docspera.com/home/images/product-shots/EOC.png" />
+                <img src="https://assets.d4.docspera.com/home/images/product-shots/EOC.png"/>
               </div>
               <div className="h4-div">
                 <h4>
-                  Episode of Care Tracker for Post Operative Care Management{" "}
+                  Episode of Care Tracker for Post Operative Care Management{' '}
                 </h4>
               </div>
               <p>
@@ -234,7 +236,7 @@ const ProviderSolutions = ({ premium }) => {
         }
       `}</style>
     </div>
-  );
-};
+  )
+}
 
-export default ProviderSolutions;
+export default ProviderSolutions

@@ -12,7 +12,7 @@ export default function Company() {
         </title>
         <link
           rel="icon"
-          href="https://assets.d4.docspera.com/home/favicon.ico"
+          href="/favicon.ico"
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
@@ -28,7 +28,7 @@ export default function Company() {
         <div style={{ width: "100%", display: "flex", justifyContent: "center"}}>
         <img
           className="img"
-          src="https://assets.d4.docspera.com/home/images/IMG_9457.jpg"
+          src="/images/IMG_9457.jpg"
           style={{ width: "100%", marginTop: 40 }}
         />
         </div>
@@ -56,14 +56,14 @@ export default function Company() {
           <div style={{ width: "50%", marginRight: 7.5 }}>
             <img
               className="img"
-              src="https://assets.d4.docspera.com/home/images/IMG_9513.jpeg"
+              src="/images/IMG_9513.jpeg"
               style={{ width: "100%", marginBottom: 10 }}
             />
           </div>
           <div style={{ width: "50%", marginLeft: 7.5, marginBottom: 10 }}>
             <img
               className="img"
-              src="https://assets.d4.docspera.com/home/images/company/IMG_8849.jpeg"
+              src="/images/company/IMG_8849.jpeg"
               style={{ width: "100%" }}
             />
           </div>
@@ -72,7 +72,7 @@ export default function Company() {
         {/* Dinner images */}
         <img
           className="img"
-          src="https://assets.d4.docspera.com/home/images/company/IMG_8790.jpeg"
+          src="/images/company/IMG_8790.jpeg"
           style={{ width: "100%", marginBottom: 10 }}
         />
         <div style={{ display: "flex" }}>
@@ -80,14 +80,14 @@ export default function Company() {
           <div style={{ width: "50%", marginRight: 7.5 }}>
             <img
               className="img"
-              src="https://assets.d4.docspera.com/home/images/IMG_9496.jpeg"
+              src="/images/IMG_9496.jpeg"
               style={{ width: "100%" }}
             />
           </div>
           <div style={{ width: "50%", marginLeft: 7.5, marginBottom: 10 }}>
             <img
               className="img"
-              src="https://assets.d4.docspera.com/home/images/IMG_9466.jpg"
+              src="/images/IMG_9466.jpg"
               style={{ width: "100%" }}
             />
           </div>
@@ -98,21 +98,21 @@ export default function Company() {
           <div style={{ width: "33%", marginRight: 7.5 }}>
             <img
               className="img"
-              src="https://assets.d4.docspera.com/home/images/company/IMG_8865.jpeg"
+              src="/images/company/IMG_8865.jpeg"
               style={{ width: "100%" }}
             />
           </div>
           <div style={{ width: "33%", marginLeft: 7.5, marginBottom: 10 }}>
             <img
               className="img"
-              src="https://assets.d4.docspera.com/home/images/company/IMG_8825.jpeg"
+              src="/images/company/IMG_8825.jpeg"
               style={{ width: "100%" }}
             />
           </div>
           <div style={{ width: "33%", marginLeft: 15, marginBottom: 10 }}>
             <img
               className="img"
-              src="https://assets.d4.docspera.com/home/images/company/IMG_8791.jpeg"
+              src="/images/company/IMG_8791.jpeg"
               style={{ width: "100%" }}
             />
           </div>
@@ -120,7 +120,7 @@ export default function Company() {
         {/* Company with Jackets Image */}
         <img
           className="img"
-          src="https://assets.d4.docspera.com/home/images/company/IMG_8940.jpeg"
+          src="/images/company/IMG_8940.jpeg"
           style={{ width: "100%" }}
         />
       </div>
