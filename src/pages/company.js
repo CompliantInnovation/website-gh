@@ -27,7 +27,7 @@ export default function Company () {
         <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
           <img
             className="img"
-            src="/images/IMG_9457.jpg"
+            src="/images/company/IMG_9457.jpg"
             style={{ width: '100%', marginTop: 40 }}
           />
         </div>
@@ -55,7 +55,7 @@ export default function Company () {
           <div style={{ width: '50%', marginRight: 7.5 }}>
             <img
               className="img"
-              src="/images/IMG_9513.jpeg"
+              src="/images/company/IMG_9513.jpeg"
               style={{ width: '100%', marginBottom: 10 }}
             />
           </div>
@@ -79,14 +79,14 @@ export default function Company () {
           <div style={{ width: '50%', marginRight: 7.5 }}>
             <img
               className="img"
-              src="/images/IMG_9496.jpeg"
+              src="/images/company/IMG_9496.jpeg"
               style={{ width: '100%' }}
             />
           </div>
           <div style={{ width: '50%', marginLeft: 7.5, marginBottom: 10 }}>
             <img
               className="img"
-              src="/images/IMG_9466.jpg"
+              src="/images/company/IMG_9466.jpg"
               style={{ width: '100%' }}
             />
           </div>
