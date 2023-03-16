@@ -52,7 +52,7 @@ export default function HeaderNav ({ page }) {
   ) : (
     <nav>
       {isBrowser && (
-        <a id="logo" onClick={() => router.push('/home')}>
+        <a id="logo" onClick={() => router.push('/')}>
           <img
             id="logo"
             src={`${

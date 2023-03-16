@@ -6,6 +6,12 @@ require('./env-config')
 module.exports = {
   basePath: process.env.MOUNT_URL ?? '',
   assetPrefix: process.env.ASSET_PREFIX ?? '',
+  output: 'export',
+  trailingSlash: true,
+  exportPathMap: {
+    '/': { page: '/' }, // Index page
+    '/home': { page: '/' }, // Index page
+  },
   webpack: (config, { dev }) => {
     // Perform customizations to webpack config
     // console.log('webpack');
