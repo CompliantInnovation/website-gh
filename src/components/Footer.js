@@ -1,31 +1,29 @@
 import React from 'react'
+import { AppleFilled, FacebookFilled, LinkedinFilled, TwitterCircleFilled } from '@ant-design/icons'
 
-import Link from 'next/link'
-import { AppleFilled, FacebookFilled, TwitterCircleFilled, LinkedinFilled } from '@ant-design/icons'
-
-export default function FooterBar() {
+export default function FooterBar () {
 
   return (
     <footer>
-      <div id='footer-inner-div'>
+      <div id="footer-inner-div">
         <div style={{ margin: 'auto 0', flexGrow: 1 }}>
-          <img id='logo' src='https://assets.d4.docspera.com/home/images/logo-white.svg' />
-          <div className='accreditation' style={{ maxWidth: '300px', filter: `brightness(0) invert(1)` }}>
+          <img id="logo" src="https://assets.d4.docspera.com/home/images/logo-white.svg"/>
+          <div className="accreditation" style={{ maxWidth: '300px', filter: `brightness(0) invert(1)` }}>
             <img
-              id='hipaa' alt='HIPPA'
-              src='https://assets.d4.docspera.com/home/images/HIPAA.svg'
+              id="hipaa" alt="HIPPA"
+              src="https://assets.d4.docspera.com/home/images/HIPAA.svg"
               style={{ marginRight: '30px' }}
-             />
+            />
             <img
-              id='soc-2'
-              alt='SOC-2'
-              src='https://assets.d4.docspera.com/home/images/SOC-2.svg' />
+              id="soc-2"
+              alt="SOC-2"
+              src="https://assets.d4.docspera.com/home/images/SOC-2.svg"/>
           </div>
 
-          <div id='icons-div'>
+          <div id="icons-div">
             <a
-              href='mailto: Hello@DocSpera.com'
-              className='section-title'
+              href="mailto: Hello@DocSpera.com"
+              className="section-title"
               style={{
                 paddingBottom: 10,
                 display: 'block',
@@ -34,10 +32,10 @@ export default function FooterBar() {
             >
               Hello@DocSpera.com
             </a>
-            <a href='https://docspera.com/appstore' target='_blank'>
-              <AppleFilled style={{ color: 'var(--blueDark)', fontsize: 25, cursor: 'pointer' }} />
+            <a href="https://docspera.com/appstore" target="_blank">
+              <AppleFilled style={{ color: 'var(--blueDark)', fontsize: 25, cursor: 'pointer' }}/>
             </a>
-            <a href='https://www.facebook.com/DocSperaApp' target='_blank'>
+            <a href="https://www.facebook.com/DocSperaApp" target="_blank">
               <FacebookFilled
                 style={{
                   color: 'var(--blueDark)',
@@ -47,7 +45,7 @@ export default function FooterBar() {
                 }}
               />
             </a>
-            <a href='https://twitter.com/DocSperaApp' target='_blank'>
+            <a href="https://twitter.com/DocSperaApp" target="_blank">
               <TwitterCircleFilled
                 style={{
                   color: 'var(--blueDark)',
@@ -57,7 +55,7 @@ export default function FooterBar() {
                 }}
               />
             </a>
-            <a href='https://www.linkedin.com/company/docspera/mycompany/' target='_blank'>
+            <a href="https://www.linkedin.com/company/docspera/mycompany/" target="_blank">
               <LinkedinFilled
                 style={{
                   color: 'var(--blueDark)',
@@ -70,80 +68,80 @@ export default function FooterBar() {
           </div>
         </div>
 
-        <div id='footer-nav'>
+        <div id="footer-nav">
           <div>
-            <span className='section-title'>PRODUCTS FOR</span>
+            <span className="section-title">PRODUCTS FOR</span>
 
-            <div className='footer-menu-item' onClick={() => router.push('/provider')}>
+            <div className="footer-menu-item" onClick={() => router.push('/provider')}>
               <a>Providers</a>
-              <img src='https://assets.d4.docspera.com/home/images/graphics/chevron-white.png' />
+              <img src="https://assets.d4.docspera.com/home/images/graphics/chevron-white.png"/>
             </div>
 
             <div
-              className='footer-menu-item'
+              className="footer-menu-item"
               onClick={() => router.push('/medical-device')}
             >
               <a>Medical Device</a>
-              <img src='https://assets.d4.docspera.com/home/images/graphics/chevron-white.png' />
+              <img src="https://assets.d4.docspera.com/home/images/graphics/chevron-white.png"/>
             </div>
 
-            <span className='section-title' style={{ display: 'block', paddingTop: 50 }}>
+            <span className="section-title" style={{ display: 'block', paddingTop: 50 }}>
               SOLUTIONS
             </span>
-            <a href='https://docspera.com/scheduling' target='_blank'>
-              <div className='footer-menu-item'>
+            <a href="https://docspera.com/scheduling" target="_blank">
+              <div className="footer-menu-item">
                 <a>Integrated Scheduling</a>
-                <img src='https://assets.d4.docspera.com/home/images/graphics/chevron-white.png' />
+                <img src="https://assets.d4.docspera.com/home/images/graphics/chevron-white.png"/>
               </div>
             </a>
-            <a href='https://docspera.com/or' target='_blank'>
-              <div className='footer-menu-item'>
+            <a href="https://docspera.com/or" target="_blank">
+              <div className="footer-menu-item">
                 <a>Surgical Dashboards</a>
-                <img src='https://assets.d4.docspera.com/home/images/graphics/chevron-white.png' />
+                <img src="https://assets.d4.docspera.com/home/images/graphics/chevron-white.png"/>
               </div>
             </a>
-            <a href='https://docspera.com/eoc' target='_blank'>
-              <div className='footer-menu-item'>
+            <a href="https://docspera.com/eoc" target="_blank">
+              <div className="footer-menu-item">
                 <a>Episode of Care Tracker</a>
-                <img src='https://assets.d4.docspera.com/home/images/graphics/chevron-white.png' />
+                <img src="https://assets.d4.docspera.com/home/images/graphics/chevron-white.png"/>
               </div>
             </a>
           </div>
 
-          <div id='footer-nav-col-2'>
-            <span className='section-title'>COMPANY</span>
+          <div id="footer-nav-col-2">
+            <span className="section-title">COMPANY</span>
 
-            <div className='footer-menu-item' onClick={() => router.push('/company')}>
+            <div className="footer-menu-item" onClick={() => router.push('/company')}>
               <a>About Us</a>
-              <img src='https://assets.d4.docspera.com/home/images/graphics/chevron-white.png' />
+              <img src="https://assets.d4.docspera.com/home/images/graphics/chevron-white.png"/>
             </div>
 
-            <span className='section-title' style={{ display: 'block', paddingTop: 30 }}>
+            <span className="section-title" style={{ display: 'block', paddingTop: 30 }}>
               CONTACT
             </span>
 
-            <a href='https://docspera.com/support' target='_blank'>
-              <div className='footer-menu-item'>
+            <a href="https://docspera.com/support" target="_blank">
+              <div className="footer-menu-item">
                 <a>Contact Us</a>
-                <img src='https://assets.d4.docspera.com/home/images/graphics/chevron-white.png' />
+                <img src="https://assets.d4.docspera.com/home/images/graphics/chevron-white.png"/>
               </div>
             </a>
 
-            <a href='https://docspera.com/demo' target='_blank'>
-              <div className='footer-menu-item'>
+            <a href="https://docspera.com/demo" target="_blank">
+              <div className="footer-menu-item">
                 <a>Request Demo</a>
-                <img src='https://assets.d4.docspera.com/home/images/graphics/chevron-white.png' />
+                <img src="https://assets.d4.docspera.com/home/images/graphics/chevron-white.png"/>
               </div>
             </a>
 
-            <span className='section-title' style={{ display: 'block', paddingTop: 30 }}>
+            <span className="section-title" style={{ display: 'block', paddingTop: 30 }}>
               BLOG
             </span>
 
-            <a href='https://blog.d4.docspera.com/' target='_blank'>
-              <div className='footer-menu-item'>
+            <a href="https://blog.d4.docspera.com/" target="_blank">
+              <div className="footer-menu-item">
                 <a>DocSpera Blog</a>
-                <img src='https://assets.d4.docspera.com/home/images/graphics/chevron-white.png' />
+                <img src="https://assets.d4.docspera.com/home/images/graphics/chevron-white.png"/>
               </div>
             </a>
           </div>
@@ -177,6 +175,7 @@ export default function FooterBar() {
           #footer-inner-div {
             margin-left: 0;
           }
+
           #logo {
             margin-left: 0;
           }
@@ -249,6 +248,7 @@ export default function FooterBar() {
           #footer-nav {
             flex-direction: column;
           }
+
           #footer-nav-col-2 {
             margin-left: 0;
             padding-top: 50px;

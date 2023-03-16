@@ -2,17 +2,17 @@ import React from 'react'
 
 const LeaderProfile = ({ leader }) => {
   return (
-    <div className='profile'>
+    <div className="profile">
       <img
         src={`https://assets.d4.docspera.com/home/images/${leader.picture}`}
         style={{ width: '110%', minHeight: 200, minWidth: 220 }}
       />
-      <div className='panel'>
+      <div className="panel">
         <h3>{leader.name}</h3>
         <h4>{leader.title}</h4>
-        <div className='linkedIn-box'>
+        <div className="linkedIn-box">
           <div onClick={() => window.open(leader.linkedIn)}>
-            <img src={`https://assets.d4.docspera.com/home/images/linkedin.png`} />
+            <img src={`https://assets.d4.docspera.com/home/images/linkedin.png`}/>
           </div>
         </div>
       </div>
@@ -36,16 +36,19 @@ const LeaderProfile = ({ leader }) => {
           margin-top: -130px;
           flex-grow: 1;
         }
+
         h3 {
           text-align: center;
           color: var(--blueDocspera);
           margin-bottom: 0;
         }
+
         h4 {
           text-align: center;
           font-size: 14px;
           margin-top: 4px;
         }
+
         .linkedIn-box {
           width: 100%;
           display: flex;
@@ -53,6 +56,7 @@ const LeaderProfile = ({ leader }) => {
           padding: 6px 14px;
           cursor: pointer;
         }
+
         .linkedIn-box div {
           width: 60px;
           z-index: 2;

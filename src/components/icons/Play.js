@@ -1,4 +1,5 @@
-import * as React from "react";
+import * as React from 'react'
+
 const PlayIcon = (props) => (
   <svg
     width={20}
@@ -13,5 +14,5 @@ const PlayIcon = (props) => (
       fill="#fff"
     />
   </svg>
-);
-export default PlayIcon;
+)
+export default PlayIcon

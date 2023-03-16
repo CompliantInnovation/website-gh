@@ -7,7 +7,7 @@ import FooterBar from '../components/Footer'
 import ProviderSolutions from '../components/ProviderSolutions'
 import { useMedia } from '../hooks/useMedia'
 
-export default function Provider() {
+export default function Provider () {
   // const isBrowser = () =>
 
   // if (typeof document !== 'undefined') {
@@ -206,56 +206,56 @@ export default function Provider() {
     <>
       <Head>
         <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform</title>
-        <link rel='icon' href='/favicon.ico' />
-        <link rel='preconnect' href='https://fonts.googleapis.com' />
-        <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin />
+        <link rel="icon" href="/favicon.ico"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
         <link
-          href='https://fonts.googleapis.com/css2?family=Varela+Round&display=swap'
-          rel='stylesheet'
+          href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+          rel="stylesheet"
         ></link>
       </Head>
-      <HeaderNav />
+      <HeaderNav/>
 
-      <div className='container'>
-        <div id='hero-div'>
-          <h2 id='hero-h2'>
+      <div className="container">
+        <div id="hero-div">
+          <h2 id="hero-h2">
             Intelligent Surgical Coordination: Enabling Efficiency and Profitability
           </h2>
-          <p id='hero-p'>
+          <p id="hero-p">
             DocSpera is an integrated surgical coordination solution to help manage coordination
             across multiple sites and teams, drive improved efficiencies and deliver better patient
             care.
           </p>
           <img
-            src='/images/provider-art-work.png'
-            id='surgeon-doodle'
+            src="/images/provider-art-work.png"
+            id="surgeon-doodle"
           />
-          <div className='statistics' style={{ marginBottom: 20 }}>
+          <div className="statistics" style={{ marginBottom: 20 }}>
             <div>
               <NumberScroll
-                imgSrc='/images/surgeon-users.png'
+                imgSrc="/images/surgeon-users.png"
                 number={6000}
-                title='Providers'
+                title="Providers"
                 plus
               />
               <NumberScroll
-                imgSrc='/images/patient-volume.png'
+                imgSrc="/images/patient-volume.png"
                 number={100000}
-                title='Monthly Patient Visits'
+                title="Monthly Patient Visits"
                 plus
               />
             </div>
             <div>
               <NumberScroll
-                imgSrc='/images/practices.png'
+                imgSrc="/images/practices.png"
                 number={300}
-                title='Practices, ASCs and Hospitals'
+                title="Practices, ASCs and Hospitals"
                 plus
               />
               <NumberScroll
-                imgSrc='/images/surgical-cases.png'
+                imgSrc="/images/surgical-cases.png"
                 number={350000}
-                title='Surgical Cases'
+                title="Surgical Cases"
                 plus
               />
             </div>
@@ -263,17 +263,17 @@ export default function Provider() {
         </div>
 
         <div style={{ backgroundColor: 'var(--blueXLight' }}>
-          <div id='designed-for-providers' className='inner-div'>
+          <div id="designed-for-providers" className="inner-div">
             <h2>Designed for Providers Like You</h2>
             <div>
               <img
-                id='mock-up-img'
-                src='/images/product-shots/mockups.png'
+                id="mock-up-img"
+                src="/images/product-shots/mockups.png"
               />
 
               <div>
-                <div className='box'>
-                  <img src='/images/surgical.svg' />
+                <div className="box">
+                  <img src="/images/surgical.svg"/>
                   <div>
                     <h4>Built for the Surgical Environment</h4>
                     <p>
@@ -282,15 +282,15 @@ export default function Provider() {
                     </p>
                   </div>
                 </div>
-                <div className='box'>
-                  <img src='/images/graphics/security.svg' />
+                <div className="box">
+                  <img src="/images/graphics/security.svg"/>
                   <div>
                     <h4>Secure</h4>
                     <p>Provider verified, SOC 2 level and HIPAA compliant</p>
                   </div>
                 </div>
-                <div className='box'>
-                  <img src='/images/graphics/data-driven.svg' />
+                <div className="box">
+                  <img src="/images/graphics/data-driven.svg"/>
                   <div>
                     <h4>Driven by Data Analytics</h4>
                     <p>
@@ -298,8 +298,8 @@ export default function Provider() {
                     </p>
                   </div>
                 </div>
-                <div className='box'>
-                  <img src='/images/graphics/integration.svg' />
+                <div className="box">
+                  <img src="/images/graphics/integration.svg"/>
                   <div>
                     <h4>Effortless Integration</h4>
                     <p>Web and mobile interface easily integrate with other critical systems</p>
@@ -311,27 +311,27 @@ export default function Provider() {
         </div>
 
         <div style={{ backgroundColor: 'white' }}>
-          <div id='seamless-integration' className='inner-div'>
+          <div id="seamless-integration" className="inner-div">
             <h2>Seamless Integration </h2>
             {useMedia('(max-width: 600px)') ? (
               <img
-                src='/images/graphics/seamless-integration-mobile.png'
+                src="/images/graphics/seamless-integration-mobile.png"
                 style={{ maxWidth: 350 }}
               />
             ) : (
-              <img src='/images/graphics/seamless-integration-desktop.png' />
+              <img src="/images/graphics/seamless-integration-desktop.png"/>
             )}
           </div>
         </div>
 
-        <div id='provider-solutions-inside-provider'>
-          <ProviderSolutions />
+        <div id="provider-solutions-inside-provider">
+          <ProviderSolutions/>
         </div>
 
-        <div id='rapid-integration' className='inner-div'>
+        <div id="rapid-integration" className="inner-div">
           <h2>Rapid Integration and Deployment at Scale</h2>
           <p>Integrated with over 30 EMRs and 3rd party systems</p>
-          <div className='logos'>
+          <div className="logos">
             <div>
               {emrLogos.slice(0, numberOfEmrLogos).map((logo) => {
                 return (
@@ -347,121 +347,121 @@ export default function Provider() {
               <button onClick={handleViewMoreEmr}>{viewMoreEmr ? 'View Less' : 'View More'}</button>
             </div>
             <div>
-              <a href='https://marketplace.athenahealth.com/product/docspera' target='_blank'>
+              <a href="https://marketplace.athenahealth.com/product/docspera" target="_blank">
                 <img
-                  src='/images/logos/athena-health.png'
+                  src="/images/logos/athena-health.png"
                   width={220}
                 />
               </a>
-              <a href='http://www.primeclinical.com/' target='_blank'>
-                <img src='/images/logos/prime.png' width={120} />
+              <a href="http://www.primeclinical.com/" target="_blank">
+                <img src="/images/logos/prime.png" width={120}/>
               </a>
-              <a href='https://www.modmed.com/' target='_blank'>
+              <a href="https://www.modmed.com/" target="_blank">
                 <img
-                  src='/images/logos/modernizing-medicine.png'
+                  src="/images/logos/modernizing-medicine.png"
                   width={190}
                 />
               </a>
-              <a href='https://www.medstrat.com/' target='_blank'>
+              <a href="https://www.medstrat.com/" target="_blank">
                 <img
-                  src='/images/logos/medstrat.jpg'
+                  src="/images/logos/medstrat.jpg"
                   width={190}
                 />
               </a>
               <a
-                href='https://www.medicare.gov/manage-your-health/share-your-medicare-claims-medicares-blue-button/organize-share-your-medical-information-claims'
-                target='_blank'
+                href="https://www.medicare.gov/manage-your-health/share-your-medicare-claims-medicares-blue-button/organize-share-your-medical-information-claims"
+                target="_blank"
               >
                 <img
-                  src='/images/logos/CMS.jpg'
+                  src="/images/logos/CMS.jpg"
                   height={65}
                   width={100}
                 />
               </a>
-              <a href='https://www.gehealthcare.com/products/centricity-services' target='_blank'>
+              <a href="https://www.gehealthcare.com/products/centricity-services" target="_blank">
                 <img
-                  src='/images/logos/centricity.png'
+                  src="/images/logos/centricity.png"
                   width={150}
                 />
               </a>
-              <a href='https://www.medent.com/' target='_blank'>
+              <a href="https://www.medent.com/" target="_blank">
                 <img
-                  src='/images/logos/medent.png'
+                  src="/images/logos/medent.png"
                   width={180}
                 />
               </a>
-              <a href='https://apporchard.epic.com/Gallery?id=3515' target='_blank'>
+              <a href="https://apporchard.epic.com/Gallery?id=3515" target="_blank">
                 <img
-                  src='/images/logos/app-orchard.png'
+                  src="/images/logos/app-orchard.png"
                   width={150}
                 />
               </a>
 
-              <a href='https://www.elationhealth.com/' target='_blank'>
+              <a href="https://www.elationhealth.com/" target="_blank">
                 <img
-                  src='/images/logos/elation-health.jpg'
+                  src="/images/logos/elation-health.jpg"
                   width={190}
                 />
               </a>
-              <a href='https://www.nextgen.com/' target='_blank'>
+              <a href="https://www.nextgen.com/" target="_blank">
                 <img
-                  src='/images/logos/next-gen.jpg'
+                  src="/images/logos/next-gen.jpg"
                   width={140}
                 />
               </a>
-              <a href='https://www.eclinicalworks.com/' target='_blank'>
+              <a href="https://www.eclinicalworks.com/" target="_blank">
                 <img
-                  src='/images/logos/e-clinical-works.jpg'
+                  src="/images/logos/e-clinical-works.jpg"
                   width={180}
                 />
               </a>
-              <a href='https://www.cerner.com/' target='_blank'>
+              <a href="https://www.cerner.com/" target="_blank">
                 <img
-                  src='/images/logos/cerner.png'
+                  src="/images/logos/cerner.png"
                   width={170}
                 />
               </a>
 
-              <a href='https://www.allscripts.com/' target='_blank'>
+              <a href="https://www.allscripts.com/" target="_blank">
                 <img
-                  src='/images/logos/allscripts.png'
+                  src="/images/logos/allscripts.png"
                   width={170}
                 />
               </a>
-              <a href='https://partners.drchrono.com/app/nbg3BfA/docspera' target='_blank'>
+              <a href="https://partners.drchrono.com/app/nbg3BfA/docspera" target="_blank">
                 <img
-                  src='/images/logos/drchrono.png'
+                  src="/images/logos/drchrono.png"
                   width={140}
                 />
               </a>
-              <a href='https://www.greenwayhealth.com/' target='_blank'>
+              <a href="https://www.greenwayhealth.com/" target="_blank">
                 <img
-                  src='/images/logos/greenway.png'
+                  src="/images/logos/greenway.png"
                   width={150}
                 />
               </a>
-              <a href='https://www.emrsystems.net/srs-health-ehr-software/' target='_blank'>
-                <img src='/images/logos/SRS.jpg' width={120} />
+              <a href="https://www.emrsystems.net/srs-health-ehr-software/" target="_blank">
+                <img src="/images/logos/SRS.jpg" width={120}/>
               </a>
             </div>
           </div>
         </div>
 
         <div style={{ backgroundColor: 'var(--blueFaint' }}>
-          <div className='inner-div'>
+          <div className="inner-div">
             <h2 style={{ marginBottom: 50 }}>Testimonials</h2>
-            <div id='testimonials'>
+            <div id="testimonials">
               {testimonials.map((t, idx) => {
                 return (
-                  <div className='testimonial' key={idx}>
+                  <div className="testimonial" key={idx}>
                     <img
                       src={`/images/testimonials/${t.pic}`}
-                      className='testimonial-img'
+                      className="testimonial-img"
                     />
                     <div>
                       <p>&ldquo;...{t.quote}...&rdquo;</p>
-                      <span className='name'> - {t.name}</span>
-                      <p className='location'>{t.location}</p>
+                      <span className="name"> - {t.name}</span>
+                      <p className="location">{t.location}</p>
                     </div>
                   </div>
                 )
@@ -470,52 +470,59 @@ export default function Provider() {
           </div>
         </div>
 
-        <div className='inner-div'>
+        <div className="inner-div">
           <h2 style={{ width: '100%', textAlign: 'center' }}>
             Join 300+ Institutions Using DocSpera Across the US
           </h2>
-          <div className='logos institutions'>
-            <Carousel type='logo' content={instLogos} />
+          <div className="logos institutions">
+            <Carousel type="logo" content={instLogos}/>
           </div>
           <img
-            id='map'
-            src='/images/graphics/map-with-pins.png'
-            alt='map of docspera locations'
+            id="map"
+            src="/images/graphics/map-with-pins.png"
+            alt="map of docspera locations"
           />
         </div>
       </div>
 
-      <FooterBar />
+      <FooterBar/>
       <style jsx>{`
         h2 {
           margin-bottom: 15px;
           z-index: 10;
         }
+
         .container p {
           margin-bottom: 10px;
         }
+
         #hero-h2 {
           padding-top: 18px;
           text-align: center;
         }
+
         #hero-p {
           text-align: center;
           max-width: 700px;
           margin: 0 auto;
         }
+
         @media (max-width: 800px) {
           #hero-p {
             max-width: 90%;
           }
+
           #hero-h2 {
             max-width: 90%;
             margin: 0 auto;
           }
         }
+
         #hero-div {
           display: block;
           margin-top: 80px;
         }
+
         #surgeon-doodle {
           box-sizing: border-box;
           max-height: 50vh;
@@ -538,17 +545,21 @@ export default function Provider() {
             background-color: var(--blueXLight);
           }
         }
+
         .logos > div:nth-child(1) {
           display: none;
         }
+
         #designed-for-providers > div {
           display: flex;
           align-items: center;
         }
+
         #mock-up-img {
           max-height: 400px;
           margin-right: 50px;
         }
+
         #designed-for-providers .box {
           border: 2px solid var(--blueDocspera);
           margin: 10px 0;
@@ -556,22 +567,27 @@ export default function Provider() {
           border-radius: 10px;
           filter: drop-shadow(0 0px 5px lightgray);
           background-color: white;
-          display: flex;as
+          display: flex;
+          as
           align-items: center;
         }
+
         #designed-for-providers .box h4 {
           margin: 0;
         }
+
         #designed-for-providers .box img {
           width: 50px;
           margin-right: 20px;
           margin-left: 5px;
         }
+
         #testimonials {
           display: flex;
           flex-wrap: wrap;
           justify-content: center;
         }
+
         .testimonial {
           width: 47%;
           filter: drop-shadow(0 0px 5px lightgray);
@@ -580,9 +596,11 @@ export default function Provider() {
           margin: 10px;
           padding: 10px;
         }
+
         .testimonial > div {
           margin-left: 20px;
         }
+
         .testimonial-img {
           height: 100px;
           border-radius: 100px;
@@ -590,9 +608,11 @@ export default function Provider() {
           margin: 10px auto;
           margin-bottom: 20px;
         }
+
         .location {
           color: gray;
         }
+
         .logos div {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
@@ -601,10 +621,12 @@ export default function Provider() {
           align-items: center;
           align-content: space-between;
         }
+
         .logos div a:nth-child(4n-2),
         .logos div a:nth-child(4n-1) {
           justify-self: center;
         }
+
         .logos div a:nth-child(4n) {
           justify-self: end;
         }
@@ -613,16 +635,20 @@ export default function Provider() {
           display: block;
           margin: 0 auto;
         }
+
         .institutions div {
           grid-row-gap: 20px;
         }
+
         @media (max-width: 1000px) and (min-width: 650px) {
           .institutions div:nth-child(2) {
             display: none;
           }
+
           .institutions div:nth-child(1) {
             display: grid;
           }
+
           .institutions button {
             background-color: white;
             border: 1px solid gray;
@@ -636,37 +662,46 @@ export default function Provider() {
             cursor: pointer;
           }
         }
+
         @media (max-width: 1025px) {
           #designed-for-providers > div {
             flex-direction: column;
           }
+
           #mock-up-img {
             margin-bottom: 40px;
           }
         }
+
         @media (max-width: 890px) {
           .logos img {
             width: 80%;
           }
         }
+
         @media (max-width: 835px) {
           .testimonial {
             width: 45%;
           }
         }
+
         @media (max-width: 650px) {
           .logos a {
             width: 60%;
           }
+
           .logos div:nth-child(1) > a:nth-child(5) {
             height: 75px;
           }
+
           .logos > div:nth-child(1) {
             display: grid;
           }
+
           .logos > div:nth-child(2) {
             display: none;
           }
+
           .logos div {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -674,12 +709,15 @@ export default function Provider() {
             justify-content: space-between;
             align-items: center;
           }
+
           .logos div a:nth-child(2n) {
             justify-self: center;
           }
+
           .logos div a:nth-child(2n-1) {
             justify-self: center;
           }
+
           button {
             background-color: white;
             border: 1px solid gray;
@@ -692,27 +730,32 @@ export default function Provider() {
             filter: drop-shadow(0 5px 5px lightgray);
             cursor: pointer;
           }
+
           .testimonial {
             width: 100%;
           }
+
           #mock-up-img {
             width: 85%;
           }
         }
-        
+
         @media (max-width: 480px) {
           .logos a {
             width: 50%;
           }
+
           .logos div:nth-child(1) > a:nth-child(5) {
             height: 75px;
             width: 40%;
           }
+
           .logos div {
             display: grid;
             grid-template-columns: 1fr;
             grid-auto-rows: 120px;
           }
+
           button {
             grid-column: auto;
           }

@@ -1,26 +1,26 @@
-import React from "react";
-import Head from "next/head";
-import HeaderNav from "../components/HeaderNav";
-import FooterBar from "../components/Footer";
-import { useMedia } from "../hooks/useMedia";
-import AnnoucementBanner from "../components/AnnoucementBanner";
-import InfoCard from "../components/InfoCard";
-import Calendar from "../components/icons/Calendar";
-import DownArrow from "../components/icons/DownArrow";
-import Computer from "../components/icons/Computer";
-import Clock from "../components/icons/Clock";
-import QuestionPan from "../components/icons/QuestionPan";
-import SolutionBulb from "../components/icons/SolutionBulb";
-import Check from "../components/icons/Check";
-import DoubleArrow from "../components/icons/DoubleArrow";
+import React from 'react'
+import Head from 'next/head'
+import HeaderNav from '../components/HeaderNav'
+import FooterBar from '../components/Footer'
+import { useMedia } from '../hooks/useMedia'
+import AnnoucementBanner from '../components/AnnoucementBanner'
+import InfoCard from '../components/InfoCard'
+import Calendar from '../components/icons/Calendar'
+import DownArrow from '../components/icons/DownArrow'
+import Computer from '../components/icons/Computer'
+import Clock from '../components/icons/Clock'
+import QuestionPan from '../components/icons/QuestionPan'
+import SolutionBulb from '../components/icons/SolutionBulb'
+import Check from '../components/icons/Check'
+import DoubleArrow from '../components/icons/DoubleArrow'
 
-export default function IntelligentScheduler() {
-    const isBrowser = () => typeof window !== "undefined";
-  useMedia("(max-width: 1100px)")
+export default function IntelligentScheduler () {
+  const isBrowser = () => typeof window !== 'undefined'
+  const smallScreen = useMedia('(max-width: 1100px)')
 
   return (
     <>
-      <AnnoucementBanner />
+      <AnnoucementBanner/>
       <div className="container">
         <Head>
           <title>
@@ -31,8 +31,8 @@ export default function IntelligentScheduler() {
             rel="icon"
             href="/favicon.ico"
           />
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+          <link rel="preconnect" href="https://fonts.googleapis.com"/>
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
           <link
             href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
             rel="stylesheet"
@@ -43,13 +43,13 @@ export default function IntelligentScheduler() {
           ></link>
         </Head>
 
-        <HeaderNav />
+        <HeaderNav/>
         <div className="container">
           <div className="scheduler-hero-section">
             <div className="hero-text-content">
               <h1>INTELLIGENT SCHEDULER PLATFORM</h1>
               <h2>
-                DocSpera's AI-based <em>surgical scheduling platform</em>
+                DocSpera&apos;s AI-based <em>surgical scheduling platform</em>
               </h2>
               <ul>
                 <li>Automate re-bookings and reduce surgical backlogs</li>
@@ -59,19 +59,19 @@ export default function IntelligentScheduler() {
             <div className="cards-container">
               <div className="cards-inner-container">
                 <InfoCard
-                  icon={<Calendar />}
+                  icon={<Calendar/>}
                   subText="Reduction in Cancellations*"
                   mainText="36%"
-                  mainTextIcon={<DownArrow />}
+                  mainTextIcon={<DownArrow/>}
                 />
                 <InfoCard
-                  icon={<Computer />}
+                  icon={<Computer/>}
                   subText="Backlog Reduction*"
                   mainText="40%"
-                  mainTextIcon={<DownArrow />}
+                  mainTextIcon={<DownArrow/>}
                 />
                 <InfoCard
-                  icon={<Clock />}
+                  icon={<Clock/>}
                   subText="Per week time saved on patient follow-up and booking*"
                   mainText="6-7 HOURS"
                 />
@@ -84,43 +84,43 @@ export default function IntelligentScheduler() {
               <div className="case-study-group-container">
                 <div className="case-study-group">
                   <div
-                    style={{ transform: "translateY(-10px)" }}
+                    style={{ transform: 'translateY(-10px)' }}
                     className="case-study-icon-container"
                   >
-                    <QuestionPan />
+                    <QuestionPan/>
                   </div>
-                  <h4 style={{ color: "#0096FA" }}>PROBLEM</h4>
-                  <p style={{ width: "186px" }}>
+                  <h4 style={{ color: '#0096FA' }}>PROBLEM</h4>
+                  <p style={{ width: '186px' }}>
                     A large hospital was struggling with a large patient backlog
                     and increased loss of patients from the practice
                   </p>
                 </div>
                 <div className="case-study-group center-case-study">
                   <div className="case-study-icon-container">
-                    <SolutionBulb />
+                    <SolutionBulb/>
                   </div>
-                  <h4 style={{ color: "#0064B0" }}>SOLUTION</h4>
-                  <p style={{ width: "266px" }}>
-                    DocSpera's Intelligent Scheduler was integrated to manage
-                    patient backlog{" "}
+                  <h4 style={{ color: '#0064B0' }}>SOLUTION</h4>
+                  <p style={{ width: '266px' }}>
+                    DocSpera&apos;s Intelligent Scheduler was integrated to manage
+                    patient backlog{' '}
                   </p>
-                  <p style={{ width: "266px" }}>
+                  <p style={{ width: '266px' }}>
                     Therefore, DocSpera was able to prioritize patients with
                     higher needs and availability for rebooking
                   </p>
                 </div>
                 <div className="case-study-group">
                   <div className="case-study-icon-container">
-                    <Check />
+                    <Check/>
                   </div>
-                  <h4 style={{ color: "#00386D" }}>RESULTS</h4>
-                  <p style={{ width: "309px" }}>
+                  <h4 style={{ color: '#00386D' }}>RESULTS</h4>
+                  <p style={{ width: '309px' }}>
                     <em>40%</em> of backlog patients into booked patients
                   </p>
-                  <p style={{ width: "309px" }}>
+                  <p style={{ width: '309px' }}>
                     <em>15%</em> saved time spent rebooking for nursing staff
                   </p>
-                  <p style={{ width: "309px" }}>
+                  <p style={{ width: '309px' }}>
                     <em>80%</em> of patients engaged with DocSpera
                   </p>
                 </div>
@@ -145,9 +145,9 @@ export default function IntelligentScheduler() {
               </div>
               <DoubleArrow
                 style={{
-                  alignSelf: "center",
-                  margin: "0 20px",
-                  minWidth: "50px",
+                  alignSelf: 'center',
+                  margin: '0 20px',
+                  minWidth: '50px',
                 }}
               />
               <div className="workflow-case">
@@ -162,13 +162,13 @@ export default function IntelligentScheduler() {
               </div>
               <DoubleArrow
                 style={{
-                  alignSelf: "center",
-                  margin: "0 20px",
-                  minWidth: "50px",
+                  alignSelf: 'center',
+                  margin: '0 20px',
+                  minWidth: '50px',
                 }}
               />
               <div className="workflow-case">
-                <h4 style={{ width: "419px" }}>
+                <h4 style={{ width: '419px' }}>
                   Prioritize and Optimize Cases based on Readiness for Booking
                 </h4>
                 <ul>
@@ -201,7 +201,7 @@ export default function IntelligentScheduler() {
           </div>
         </div>
 
-        <FooterBar />
+        <FooterBar/>
         <style jsx>{`
           .container {
             width: 100%;
@@ -488,5 +488,5 @@ export default function IntelligentScheduler() {
         `}</style>
       </div>
     </>
-  );
+  )
 }

@@ -9,11 +9,8 @@ export default function HeaderNav ({ page }) {
   const [href, setHref] = useState()
   const router = useRouter()
 
-  let tabletSize, mobileSize
-  if (isBrowser) {
-    tabletSize = useMedia('(max-width: 1050px)')
-    mobileSize = useMedia('(max-width: 875px)')
-  }
+  const tabletSize = useMedia('(max-width: 1050px)')
+  const mobileSize = useMedia('(max-width: 875px)')
 
   const [productDropdown, setProductDropdown] = useState(false)
   const handleProductOnHover = () => {

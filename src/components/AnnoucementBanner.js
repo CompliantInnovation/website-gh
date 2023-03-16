@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react'
 
-export default function AnnoucementBanner() {
+export default function AnnoucementBanner () {
   return (
     <header>
       <div className="annoucement">
-        DocSpera Achieves &nbsp; <strong>SOC 2 Type II Accreditation</strong>{" "}
+        DocSpera Achieves &nbsp; <strong>SOC 2 Type II Accreditation</strong>{' '}
         &nbsp; for its Data Platform&nbsp;
         <strong>
           <a
@@ -25,16 +25,19 @@ export default function AnnoucementBanner() {
           justify-content: center;
           align-items: center;
         }
+
         .annoucement a {
           color: white;
         }
+
         .annoucement a:visted {
           color: white;
         }
+
         .annoucement a:hover {
           color: white;
         }
       `}</style>
     </header>
-  );
+  )
 }

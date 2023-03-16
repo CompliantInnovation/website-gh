@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
-import MobileNavDropdown from "./MobileNavDropdown";
-import { useMedia } from "../hooks/useMedia";
+import MobileNavDropdown from './MobileNavDropdown'
+import { useMedia } from '../hooks/useMedia'
 import { useRouter } from 'next/router'
 
-export default function MobileNav({ getLink, href }) {
+export default function MobileNav ({ getLink, href }) {
   const router = useRouter()
-  const isBrowser = () => typeof window !== "undefined";
-
-  const [isMobileNavOpen, setMobileNavOpen] = useState(false);
+  const isBrowser = () => typeof window !== 'undefined'
+  const min390 = useMedia('(min-width: 390px)')
+  const [isMobileNavOpen, setMobileNavOpen] = useState(false)
   const openMenu = () => {
-    setMobileNavOpen(!isMobileNavOpen);
-  };
+    setMobileNavOpen(!isMobileNavOpen)
+  }
 
   return (
     <nav>
@@ -29,20 +29,20 @@ export default function MobileNav({ getLink, href }) {
             onClick={openMenu}
           />
         )}
-        {isBrowser && useMedia("(min-width: 390px)") && (
+        {isBrowser && min390 && (
           <a
-            style={{ maxWidth: 150, margin: "0 20px" }}
-            onClick={() => router.push("/home")}
+            style={{ maxWidth: 150, margin: '0 20px' }}
+            onClick={() => router.push('/home')}
           >
             <img
               src="https://assets.d4.docspera.com/home/images/graphics/logo.svg"
-              width={"100%"}
+              width={'100%'}
             />
           </a>
         )}
         <a
           href={href}
-          onClick={() => window.open(getLink("login"))}
+          onClick={() => window.open(getLink('login'))}
           target="_blank"
         >
           <button>Log In</button>
@@ -54,8 +54,8 @@ export default function MobileNav({ getLink, href }) {
           <div
             className="menu-item"
             onClick={() => {
-              router.push("/home");
-              openMenu();
+              router.push('/home')
+              openMenu()
             }}
           >
             <div>Home</div>
@@ -72,9 +72,9 @@ export default function MobileNav({ getLink, href }) {
                 display: (
                   <div
                     className="box"
-                    onClick={() => router.push("/provider")}
+                    onClick={() => router.push('/provider')}
                   >
-                    <img src="https://assets.d4.docspera.com/home/images/surgeon-users.png" />
+                    <img src="https://assets.d4.docspera.com/home/images/surgeon-users.png"/>
                     Providers
                   </div>
                 ),
@@ -83,9 +83,9 @@ export default function MobileNav({ getLink, href }) {
                 display: (
                   <div
                     className="box"
-                    onClick={() => router.push("/medical-device")}
+                    onClick={() => router.push('/medical-device')}
                   >
-                    <img src="https://assets.d4.docspera.com/home/images/medical-device.png" />
+                    <img src="https://assets.d4.docspera.com/home/images/medical-device.png"/>
                     Device Partners
                   </div>
                 ),
@@ -100,7 +100,7 @@ export default function MobileNav({ getLink, href }) {
                 display: (
                   <div
                     className="box"
-                    onClick={() => router.push("/company")}
+                    onClick={() => router.push('/company')}
                   >
                     About Our Company
                   </div>
@@ -110,7 +110,7 @@ export default function MobileNav({ getLink, href }) {
                 display: (
                   <div
                     className="box"
-                    onClick={() => router.push("/leadership")}
+                    onClick={() => router.push('/leadership')}
                   >
                     Meet Our Leadership
                   </div>
@@ -126,7 +126,7 @@ export default function MobileNav({ getLink, href }) {
                 display: (
                   <div
                     className="box"
-                    onClick={() => window.open(getLink("support"))}
+                    onClick={() => window.open(getLink('support'))}
                   >
                     Contact Us
                   </div>
@@ -136,7 +136,7 @@ export default function MobileNav({ getLink, href }) {
                 display: (
                   <div
                     className="box"
-                    onClick={() => window.open(getLink("demo"))}
+                    onClick={() => window.open(getLink('demo'))}
                   >
                     Request Demo
                   </div>
@@ -146,7 +146,7 @@ export default function MobileNav({ getLink, href }) {
           />
 
           <div
-            onClick={() => router.push("/blog")}
+            onClick={() => router.push('/blog')}
             className="menu-item"
           >
             <div>Blog</div>
@@ -172,6 +172,7 @@ export default function MobileNav({ getLink, href }) {
           height: 60px;
           z-index: 3;
         }
+
         .mobile-menu {
           display: flex;
           align-items: left;
@@ -185,6 +186,7 @@ export default function MobileNav({ getLink, href }) {
           padding: 30px;
           z-index: 3;
         }
+
         button {
           background-color: var(--blueDocspera);
           border: none;
@@ -195,6 +197,7 @@ export default function MobileNav({ getLink, href }) {
           font-size: 16px;
           cursor: pointer;
         }
+
         #x,
         #hamburger {
           height: 20px;
@@ -202,11 +205,13 @@ export default function MobileNav({ getLink, href }) {
           align-items: center;
           cursor: pointer;
         }
+
         a {
           text-decoration: none;
           color: black;
           cursor: pointer;
         }
+
         .menu-item {
           background-color: white;
           display: flex;
@@ -218,25 +223,29 @@ export default function MobileNav({ getLink, href }) {
           border: 1px solid white;
           border-radius: 3px;
         }
+
         .menu-item img {
           height: 16px;
         }
+
         .box {
           display: flex;
           align-items: center;
           padding: 10px 20px;
           cursor: pointer;
         }
+
         .box img {
           filter: brightness(0%);
           height: 23px;
           margin-right: 10px;
         }
+
         .box .chevron-img {
           height: 10px;
           padding: 0 30px;
         }
       `}</style>
     </nav>
-  );
+  )
 }

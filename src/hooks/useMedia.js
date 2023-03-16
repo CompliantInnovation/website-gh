@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
-export function useMedia(query) {
+export function useMedia (query) {
   let [matches, setMatches] = useState()
 
   useEffect(() => {

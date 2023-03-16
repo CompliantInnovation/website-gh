@@ -1,11 +1,10 @@
-import Link from 'next/link'
-export default function CarouselItem({ itemInfo, type }) {
+export default function CarouselItem ({ itemInfo, type }) {
   return (
-    <div className='carousel-item'>
-      <img src={itemInfo.img} height={125} width={250} />
+    <div className="carousel-item">
+      <img src={itemInfo.img} height={125} width={250}/>
       {/* TODO: Limit amount of text to be displayed as title space is 200px high */}
-      {itemInfo.title && <p className='title'>{itemInfo.title}</p>}
-      {itemInfo.bod && <p className='body'>{itemInfo.body}</p>}
+      {itemInfo.title && <p className="title">{itemInfo.title}</p>}
+      {itemInfo.bod && <p className="body">{itemInfo.body}</p>}
 
       <style jsx>{`
         .carousel-item {
@@ -14,6 +13,7 @@ export default function CarouselItem({ itemInfo, type }) {
           display: flex;
           flex-direction: column;
         }
+
         img {
           border-radius: ${type == 'case-study' || (type == 'blog' && '10px')};
           filter: ${type == 'case-study' ||
@@ -22,25 +22,29 @@ export default function CarouselItem({ itemInfo, type }) {
           width: ${itemInfo.width}px;
           user-select: none;
         }
+
         .title {
           max-width: 250px;
           font-weight: 700;
           height: 50px;
           margin-top: 10px;
         }
+
         .body {
           max-width: 250px;
           align-self: flex-end;
           margin-top: 20px;
         }
-        @media (max-width:614px) {
+
+        @media (max-width: 614px) {
           img {
-            width: ${itemInfo.width/1.4}px;
+            width: ${itemInfo.width / 1.4}px;
           }
         }
-        @media (max-width:368px) {
+
+        @media (max-width: 368px) {
           img {
-            width: ${itemInfo.width/1.7}px;
+            width: ${itemInfo.width / 1.7}px;
           }
         }
       `}</style>

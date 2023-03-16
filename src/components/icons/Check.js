@@ -1,4 +1,5 @@
-import * as React from "react";
+import * as React from 'react'
+
 const Check = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -12,5 +13,5 @@ const Check = (props) => (
       fill="#00386d"
     />
   </svg>
-);
-export default Check;
+)
+export default Check

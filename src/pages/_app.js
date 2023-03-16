@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import '../styles/global.css'
 
-export default function App({ Component, pageProps }) {
+export default function App ({ Component, pageProps }) {
   const router = useRouter()
 
   useEffect(() => {

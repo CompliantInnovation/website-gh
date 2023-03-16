@@ -3,30 +3,30 @@ import HeaderNav from '../components/HeaderNav'
 import FooterBar from '../components/Footer'
 import LeaderProfile from '../components/LeaderProfile'
 
-export default function Leadership() {
+export default function Leadership () {
   return (
-    <div className='container'>
+    <div className="container">
       <Head>
         <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform</title>
-        <link rel='icon' href='/favicon.ico' />
-        <link rel='preconnect' href='https://fonts.googleapis.com' />
-        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+        <link rel="icon" href="/favicon.ico"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
         <link
-          href='https://fonts.googleapis.com/css2?family=Varela+Round&display=swap'
-          rel='stylesheet'
+          href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+          rel="stylesheet"
         ></link>
       </Head>
-      <HeaderNav />
+      <HeaderNav/>
 
-      <div className='inner-div'>
+      <div className="inner-div">
         <h2>Meet our Leadership</h2>
         <p>
-          DocSpera is supported by the market's most influential surgeons and medical advisors.
+          DocSpera is supported by the market&apos;s most influential surgeons and medical advisors.
           Company HQ in Silicon Valley with experience at prominent healthcare and technology
           companies.
         </p>
 
-        <div id='leader-container'>
+        <div id="leader-container">
           <div>
             <LeaderProfile
               leader={{
@@ -66,14 +66,16 @@ export default function Leadership() {
         </div>
       </div>
 
-      <FooterBar />
+      <FooterBar/>
       <style jsx>{`
         .container {
           width: 100%;
         }
+
         h2 {
           text-align: center;
         }
+
         p {
           max-width: 800px;
           margin: 0 auto;
@@ -81,15 +83,18 @@ export default function Leadership() {
           padding-top: 30px;
           padding-bottom: 50px;
         }
+
         #leader-container {
           width: 100%;
           display: flex;
           justify-content: center;
           flex-wrap: wrap;
         }
+
         #leader-container div {
           display: flex;
         }
+
         @media (max-width: 450px) {
           #leader-container div {
             display: flex;

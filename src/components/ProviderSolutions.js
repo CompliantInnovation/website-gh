@@ -10,7 +10,7 @@ const ProviderSolutions = ({ premium }) => {
         {premium && <h3 className="title">DocSpera Premium</h3>}
         <h2 className="title-h2">Integrated Provider Solutions</h2>
         <p>
-          Efficient care coordination through patient's entire surgical journey
+          Efficient care coordination through patient&apos;s entire surgical journey
           using a best in class, real-time predictive platform
         </p>
         <div className="provider-solutions-row">

@@ -4,19 +4,19 @@ const MobileNavDropdown = ({ state, title, items }) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false)
 
   return (
-    <div className='container' onClick={() => setDropdownOpen(!isDropdownOpen)}>
-      <div className='menu-item'>
+    <div className="container" onClick={() => setDropdownOpen(!isDropdownOpen)}>
+      <div className="menu-item">
         <div>{title}</div>
         <img
           id={isDropdownOpen ? 'chevron-img' : ''}
-          className='chevron-img'
-          src='https://assets.d4.docspera.com/home/images/graphics/chevron.png'
+          className="chevron-img"
+          src="https://assets.d4.docspera.com/home/images/graphics/chevron.png"
         />
       </div>
 
       {isDropdownOpen && (
-        <div className='dropdown'>
-          <div className='underline'></div>
+        <div className="dropdown">
+          <div className="underline"></div>
           {items.map((navItem) => navItem.display)}
         </div>
       )}

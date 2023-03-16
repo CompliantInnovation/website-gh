@@ -1,4 +1,5 @@
-import * as React from "react";
+import * as React from 'react'
+
 const Clock = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -12,5 +13,5 @@ const Clock = (props) => (
       fill="#0096fa"
     />
   </svg>
-);
-export default Clock;
+)
+export default Clock

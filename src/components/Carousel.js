@@ -1,18 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import CarouselItem from './CarouselItem'
 import Chevron from './Chevron'
 import { useMedia } from '../hooks/useMedia'
-import Link from 'next/link'
 
-export default function Carousel({ content, type }) {
+export default function Carousel ({ content, type }) {
   const [current, setCurrent] = useState(0)
   const isBrowser = () => typeof window !== 'undefined'
 
-  let tabletSize, mobileSize
-  if (isBrowser) {
-    tabletSize = useMedia('(min-width: 810px)')
-    mobileSize = useMedia('(max-width: 614px)')
-  }
+  const tabletSize = useMedia('(min-width: 810px)')
+  const mobileSize = useMedia('(max-width: 614px)')
 
   // content = [
   //   {
@@ -47,26 +43,26 @@ export default function Carousel({ content, type }) {
   }
 
   return (
-    <div className='container'>
-      <div className='carousel'>
-        <div className='left-chevron' onClick={() => previousSlide()}>
-          <Chevron color={current === 0 ? 'grey' : 'black'} />
+    <div className="container">
+      <div className="carousel">
+        <div className="left-chevron" onClick={() => previousSlide()}>
+          <Chevron color={current === 0 ? 'grey' : 'black'}/>
         </div>
         {content.map((item, idx) => {
           if (tabletSize) {
             if (idx == current || idx == current + 1 || idx == current + 2) {
-              return <CarouselItem itemInfo={item} key={idx} type={type} />
+              return <CarouselItem itemInfo={item} key={idx} type={type}/>
             }
           } else if (mobileSize) {
             if (idx == current || idx == current + 1) {
-              return <CarouselItem itemInfo={item} key={idx} type={type} />
+              return <CarouselItem itemInfo={item} key={idx} type={type}/>
             }
           } else if (idx == current || idx == current + 1) {
-            return <CarouselItem itemInfo={item} key={idx} type={type} />
+            return <CarouselItem itemInfo={item} key={idx} type={type}/>
           }
         })}
-        <div className='right-chevron' onClick={() => nextSlide()}>
-          <Chevron />
+        <div className="right-chevron" onClick={() => nextSlide()}>
+          <Chevron/>
         </div>
       </div>
       <style jsx>{`
@@ -77,12 +73,14 @@ export default function Carousel({ content, type }) {
           max-width: 800px;
           margin: 0 auto;
         }
+
         .carousel {
           display: flex;
           justify-content: space-between;
           align-items: center;
           width: 100%;
         }
+
         .left-chevron {
           width: 40px;
           height: 40px;
@@ -90,12 +88,14 @@ export default function Carousel({ content, type }) {
           cursor: pointer;
           margin-right: 40px;
         }
+
         .right-chevron {
           width: 40px;
           height: 40px;
           cursor: pointer;
           margin-left: 40px;
         }
+
         @media (max-width: 810px) {
           .right-chevron,
           .left-chevron {
@@ -103,6 +103,7 @@ export default function Carousel({ content, type }) {
             height: 35px;
           }
         }
+
         @media (max-width: 614px) {
           .right-chevron,
           .left-chevron {
@@ -111,6 +112,7 @@ export default function Carousel({ content, type }) {
             margin: 0;
           }
         }
+
         @media (max-width: 368px) {
           .right-chevron,
           .left-chevron {

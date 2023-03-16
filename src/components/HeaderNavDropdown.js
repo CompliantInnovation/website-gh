@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const HeaderNavDropdown = ({ state, title, items, onHover }) => {
   const [isHovered, setHovered] = useState(false)
@@ -10,7 +10,7 @@ const HeaderNavDropdown = ({ state, title, items, onHover }) => {
   return (
     <div style={{ width: 200 }}>
       <div
-        id='container'
+        id="container"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
@@ -18,7 +18,7 @@ const HeaderNavDropdown = ({ state, title, items, onHover }) => {
           <span className={`title`}>{title}</span>
         </div>
         {isHovered && (
-          <div id='nav-items-container'>
+          <div id="nav-items-container">
             {items?.map((item, idx) => {
               return (
                 <a

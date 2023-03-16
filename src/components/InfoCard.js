@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react'
 
-export default function InfoCard({ icon, subText, mainText, mainTextIcon }) {
+export default function InfoCard ({ icon, subText, mainText, mainTextIcon }) {
   return (
     <div className="card-container">
       <div className="icon-container">{icon}</div>
       <p className="main-text">
-        {mainText} {mainTextIcon ? mainTextIcon : ""}
+        {mainText} {mainTextIcon ? mainTextIcon : ''}
       </p>
       <p className="sub-text">{subText}</p>
 
@@ -53,5 +53,5 @@ export default function InfoCard({ icon, subText, mainText, mainTextIcon }) {
         }
       `}</style>
     </div>
-  );
+  )
 }

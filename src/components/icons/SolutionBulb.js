@@ -1,4 +1,5 @@
-import * as React from "react";
+import * as React from 'react'
+
 const SolutionBulb = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -18,5 +19,5 @@ const SolutionBulb = (props) => (
       />
     </g>
   </svg>
-);
-export default SolutionBulb;
+)
+export default SolutionBulb

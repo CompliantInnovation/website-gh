@@ -1,12 +1,9 @@
-import { useSpring, animated, config } from 'react-spring'
+import { animated, config, useSpring } from 'react-spring'
 import { useMedia } from '../hooks/useMedia'
 
-export default function NumberScroll({ imgSrc, number, title, plus, order, percent }) {
+export default function NumberScroll ({ imgSrc, number, title, plus, order, percent }) {
   const isBrowser = () => typeof window !== 'undefined'
-  let tabletSize
-  if (isBrowser()) {
-    tabletSize = useMedia('(max-width: 775px)')
-  }
+  let tabletSize = useMedia('(max-width: 775px)')
 
   const spring = useSpring({
     from: { val: 0 },
@@ -37,8 +34,8 @@ export default function NumberScroll({ imgSrc, number, title, plus, order, perce
   })
 
   return (
-    <div className='div'>
-      <img src={imgSrc} />
+    <div className="div">
+      <img src={imgSrc}/>
       {typeof number === 'number' ? (
         <div style={{ display: 'flex' }}>
           <animated.h1 style={styles}>
@@ -52,22 +49,25 @@ export default function NumberScroll({ imgSrc, number, title, plus, order, perce
       ) : (
         <animated.h1 style={tabletSize ? styles : styles}>{number}</animated.h1>
       )}
-      <span className='title'>{title}</span>
+      <span className="title">{title}</span>
 
       <style jsx>{`
         img {
           height: 60px;
         }
+
         @media (max-width: 500px) {
           img {
             height: 40px;
           }
         }
+
         .div {
           display: flex;
           flex-direction: column;
           align-items: center;
         }
+
         .title {
           font-family: 'Varela Round', sans-serif;
           text-align: center;
@@ -75,6 +75,7 @@ export default function NumberScroll({ imgSrc, number, title, plus, order, perce
           max-width: 200px;
           color: var(--blueDocspera);
         }
+
         @media (max-width: 800px) {
           .title {
             font-size: 12px;
