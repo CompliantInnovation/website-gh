@@ -32,7 +32,7 @@ export default function MobileNav ({ getLink, href }) {
         {isBrowser && min390 && (
           <a
             style={{ maxWidth: 150, margin: '0 20px' }}
-            onClick={() => router.push('/home')}
+            onClick={() => router.push('/')}
           >
             <img
               src="https://assets.d4.docspera.com/home/images/graphics/logo.svg"
@@ -54,7 +54,7 @@ export default function MobileNav ({ getLink, href }) {
           <div
             className="menu-item"
             onClick={() => {
-              router.push('/home')
+              router.push('/')
               openMenu()
             }}
           >
