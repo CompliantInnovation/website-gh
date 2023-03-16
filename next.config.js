@@ -4,13 +4,8 @@
 require('./env-config')
 
 module.exports = {
-  basePath: process.env.MOUNT_URL ?? '/website-gh',
-  exportPathMap: function () {
-    return {
-      '/': { page: '/' }
-    }
-  },
-  assetPrefix: '',
+  basePath: process.env.MOUNT_URL ?? '',
+  assetPrefix: process.env.ASSET_PREFIX ?? '',
   webpack: (config, { dev }) => {
     // Perform customizations to webpack config
     // console.log('webpack');
@@ -23,12 +18,5 @@ module.exports = {
     })
     // Important: return the modified config
     return config
-  } /*,
-  webpackDevMiddleware: (config) => {
-    // Perform customizations to webpack dev middleware config
-    // console.log('webpackDevMiddleware');
-    // console.log(config);
-    // Important: return the modified config
-    return config
-  }, */
+  }
 }
