@@ -1,21 +1,28 @@
+import React, { useContext } from "react";
+import { Context, changePage } from "../context/context";
+
 const ProviderSolutions = ({ premium }) => {
+  const { dispatch } = useContext(Context);
   return (
-    <div style={{ backgroundColor: 'var(--blueXLight)', width: '100%' }}>
-      <div className='provider-solutions inner-div'>
-        {premium && <h3 className='title'>DocSpera Premium</h3>}
-        <h2 className='title-h2'>Integrated Provider Solutions</h2>
+    <div style={{ backgroundColor: "var(--blueXLight)", width: "100%" }}>
+      <div className="provider-solutions inner-div">
+        {premium && <h3 className="title">DocSpera Premium</h3>}
+        <h2 className="title-h2">Integrated Provider Solutions</h2>
         <p>
-          Efficient care coordination through patient's entire surgical journey using a best in
-          class, real-time predictive platform
+          Efficient care coordination through patient's entire surgical journey
+          using a best in class, real-time predictive platform
         </p>
-        <div className='provider-solutions-row'>
-          <div className='content'>
+        <div className="provider-solutions-row">
+          <div className="content">
             <div>
-              <div className='img-div'>
-                <img src='https://assets.d4.docspera.com/home/images/product-shots/Laptop-Calendar.png' />
+              <div className="img-div">
+                <img src="https://assets.d4.docspera.com/home/images/product-shots/Laptop-Calendar.png" />
               </div>
-              <div className='h4-div'>
-                <h4>Integrated Surgical Scheduling & Coordination Across Entire Care Team</h4>
+              <div className="h4-div">
+                <h4>
+                  Integrated Surgical Scheduling & Coordination Across Entire
+                  Care Team
+                </h4>
               </div>
               <p>
                 <ul>
@@ -25,36 +32,47 @@ const ProviderSolutions = ({ premium }) => {
                 </ul>
               </p>
             </div>
-            <a href='https://docspera.com/scheduling' target='_blank'>
-              <button className='view-product-btn'>View Scheduling Solutions</button>
+            <a href="https://docspera.com/scheduling" target="_blank">
+              <button className="view-product-btn">
+                View Scheduling Solutions
+              </button>
             </a>
           </div>
-          <div className='content'>
+          <div className="content">
             <div>
-              <div className='img-div'>
-                <img src='https://assets.d4.docspera.com/home/images/product-shots/smart-scheduling.png' />
+              <div className="img-div">
+                <img src="https://assets.d4.docspera.com/home/images/intelligent-scheduler/IntelligentSchedulerImage.jpg" />
               </div>
-              <div className='h4-div'>
+              <div className="h4-div">
                 <h4>Intelligent Dashboard for Managing Upcoming Cases</h4>
               </div>
               <p>
                 <ul>
-                  <li>Real-time coordination between Clinic, OR Team & Device Rep</li>
+                  <li>
+                    Real-time coordination between Clinic, OR Team & Device Rep
+                  </li>
                   <li>Intelligent case backlog and cancellations re-booking</li>
                 </ul>
               </p>
             </div>
-            <a href='https://docspera.com/or' target='_blank'>
-              <button className='view-product-btn'>View Management Solutions</button>
-            </a>
+            {/* <a href='https://docspera.com/or' target='_blank'> */}
+            <button
+              onClick={() => dispatch(changePage("intelligent-scheduler"))}
+              className="view-product-btn"
+            >
+              View Intelligent Solution
+            </button>
+            {/* </a> */}
           </div>
-          <div className='content'>
+          <div className="content">
             <div>
-              <div className='img-div'>
-                <img src='https://assets.d4.docspera.com/home/images/product-shots/EOC.png' />
+              <div className="img-div">
+                <img src="https://assets.d4.docspera.com/home/images/product-shots/EOC.png" />
               </div>
-              <div className='h4-div'>
-                <h4>Episode of Care Tracker for Post Operative Care Management </h4>
+              <div className="h4-div">
+                <h4>
+                  Episode of Care Tracker for Post Operative Care Management{" "}
+                </h4>
               </div>
               <p>
                 <ul>
@@ -63,8 +81,8 @@ const ProviderSolutions = ({ premium }) => {
                 </ul>
               </p>
             </div>
-            <a href='https://docspera.com/eoc' target='_blank'>
-              <button className='view-product-btn'>View EOC Solutions</button>
+            <a href="https://docspera.com/eoc" target="_blank">
+              <button className="view-product-btn">View EOC Solutions</button>
             </a>
           </div>
         </div>
@@ -84,11 +102,10 @@ const ProviderSolutions = ({ premium }) => {
 
         .provider-solutions-row > div {
           margin: 10px;
-          padding: 10px;
           flex: 1;
           background-color: white;
           filter: drop-shadow(0 0px 10px lightgray);
-          min-width: 300px;
+          min-width: 330px;
           border-radius: 10px;
           padding: 15px;
           max-width: 300px;
@@ -98,6 +115,26 @@ const ProviderSolutions = ({ premium }) => {
           display: flex;
           flex-direction: column;
           justify-content: space-between;
+        }
+
+        .content ul {
+          font-size: 13px;
+        }
+
+        .content ul li {
+          list-style: none;
+          position: relative;
+          margin-bottom: 10px;
+        }
+
+        .content ul li:before {
+          position: absolute;
+          content: "";
+          width: 8px;
+          height: 8px;
+          background: black;
+          left: -15px;
+          top: 6px;
         }
 
         .img-div {
@@ -125,7 +162,7 @@ const ProviderSolutions = ({ premium }) => {
         .h4-div {
           height: 90px;
           display: flex;
-          align-items: center;
+          align-items: flex-start;
         }
 
         .provider-solutions-row h4 {
@@ -197,7 +234,7 @@ const ProviderSolutions = ({ premium }) => {
         }
       `}</style>
     </div>
-  )
-}
+  );
+};
 
-export default ProviderSolutions
+export default ProviderSolutions;
