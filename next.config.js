@@ -8,9 +8,14 @@ module.exports = {
   assetPrefix: process.env.ASSET_PREFIX ?? '',
   output: 'export',
   trailingSlash: true,
-  exportPathMap: {
-    '/': { page: '/' }, // Index page
-    '/home': { page: '/' }, // Index page
+  exportPathMap: async function (
+    defaultPathMap,
+    { dev, dir, outDir, distDir, buildId }
+  ) {
+    return {
+      '/': { page: '/' },
+      '/home': { page: '/' },
+    }
   },
   webpack: (config, { dev }) => {
     // Perform customizations to webpack config
