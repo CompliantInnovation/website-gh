@@ -209,7 +209,7 @@ export default function IntelligentScheduler () {
           }
 
           .scheduler-hero-section {
-            background: #fff url("/images/intelligent-scheduler/UnderstandingThing.jpg");
+            background: #fff url("/images/intelligent-scheduler/IntelligentSchedulerMicrosite_DoctorImage.png");
             min-height: 600px;
             background-repeat: no-repeat;
             background-position: 110% 0;
