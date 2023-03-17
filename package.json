@@ -4,9 +4,8 @@
   "version": "1.0.2",
   "scripts": {
     "start": "next",
-    "build": "rm -rf node_modules/.cache && rimraf out && next build && next export && touch out/.nojekyll",
+    "build": "next build && next export",
     "serve": "next start",
-    "export": "next export"
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
