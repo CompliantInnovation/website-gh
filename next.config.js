@@ -1,13 +1,14 @@
 // This file is not going through babel transformation.
 // So, we write it in vanilla JS
 // (But you could use ES2015 features supported by your Node.js version)
-require('./env-config')
+const envConfig = require('./env-config')
 
 module.exports = {
   basePath: process.env.MOUNT_URL ?? '',
   assetPrefix: process.env.ASSET_PREFIX ?? '',
   output: 'export',
   trailingSlash: true,
+  env: envConfig,
   // exportPathMap: async function (
   //   defaultPathMap,
   //   { dev, dir, outDir, distDir, buildId }
