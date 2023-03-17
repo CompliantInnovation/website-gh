@@ -1,27 +1,23 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react';
 
-import MobileNavDropdown from './MobileNavDropdown'
-import { useMedia } from '../hooks/useMedia'
-import { useRouter } from 'next/router'
+import MobileNavDropdown from './MobileNavDropdown';
+import {useMedia} from '../hooks/useMedia';
+import {useRouter} from 'next/router';
 
-export default function MobileNav ({ getLink, href }) {
-  const router = useRouter()
-  const isBrowser = () => typeof window !== 'undefined'
-  const min390 = useMedia('(min-width: 390px)')
-  const [isMobileNavOpen, setMobileNavOpen] = useState(false)
+export default function MobileNav({getLink, href}) {
+  const router = useRouter();
+  const isBrowser = () => typeof window !== 'undefined';
+  const min390 = useMedia('(min-width: 390px)');
+  const [isMobileNavOpen, setMobileNavOpen] = useState(false);
   const openMenu = () => {
-    setMobileNavOpen(!isMobileNavOpen)
-  }
+    setMobileNavOpen(!isMobileNavOpen);
+  };
 
   return (
     <nav>
       <div className="nav-bar">
         {isMobileNavOpen ? (
-          <img
-            id="x"
-            src="/images/exit_icon.svg"
-            onClick={openMenu}
-          />
+          <img id="x" src="/images/exit_icon.svg" onClick={openMenu} />
         ) : (
           <img
             id="hamburger"
@@ -31,20 +27,15 @@ export default function MobileNav ({ getLink, href }) {
         )}
         {isBrowser && min390 && (
           <a
-            style={{ maxWidth: 150, margin: '0 20px' }}
-            onClick={() => router.push('/')}
-          >
-            <img
-              src="/images/graphics/logo.svg"
-              width={'100%'}
-            />
+            style={{maxWidth: 150, margin: '0 20px'}}
+            onClick={() => router.push('/')}>
+            <img src="/images/graphics/logo.svg" width={'100%'} />
           </a>
         )}
         <a
           href={href}
           onClick={() => window.open(getLink('login'))}
-          target="_blank"
-        >
+          target="_blank">
           <button>Log In</button>
         </a>
       </div>
@@ -54,15 +45,11 @@ export default function MobileNav ({ getLink, href }) {
           <div
             className="menu-item"
             onClick={() => {
-              router.push('/')
-              openMenu()
-            }}
-          >
+              router.push('/');
+              openMenu();
+            }}>
             <div>Home</div>
-            <img
-              className="chevron-img"
-              src="/images/graphics/chevron.png"
-            />
+            <img className="chevron-img" src="/images/graphics/chevron.png" />
           </div>
 
           <MobileNavDropdown
@@ -70,11 +57,8 @@ export default function MobileNav ({ getLink, href }) {
             items={[
               {
                 display: (
-                  <div
-                    className="box"
-                    onClick={() => router.push('/provider')}
-                  >
-                    <img src="/images/surgeon-users.png"/>
+                  <div className="box" onClick={() => router.push('/provider')}>
+                    <img src="/images/surgeon-users.png" />
                     Providers
                   </div>
                 ),
@@ -83,9 +67,8 @@ export default function MobileNav ({ getLink, href }) {
                 display: (
                   <div
                     className="box"
-                    onClick={() => router.push('/medical-device')}
-                  >
-                    <img src="/images/medical-device.png"/>
+                    onClick={() => router.push('/medical-device')}>
+                    <img src="/images/medical-device.png" />
                     Device Partners
                   </div>
                 ),
@@ -98,10 +81,7 @@ export default function MobileNav ({ getLink, href }) {
             items={[
               {
                 display: (
-                  <div
-                    className="box"
-                    onClick={() => router.push('/company')}
-                  >
+                  <div className="box" onClick={() => router.push('/company')}>
                     About Our Company
                   </div>
                 ),
@@ -110,8 +90,7 @@ export default function MobileNav ({ getLink, href }) {
                 display: (
                   <div
                     className="box"
-                    onClick={() => router.push('/leadership')}
-                  >
+                    onClick={() => router.push('/leadership')}>
                     Meet Our Leadership
                   </div>
                 ),
@@ -126,8 +105,7 @@ export default function MobileNav ({ getLink, href }) {
                 display: (
                   <div
                     className="box"
-                    onClick={() => window.open(getLink('support'))}
-                  >
+                    onClick={() => window.open(getLink('support'))}>
                     Contact Us
                   </div>
                 ),
@@ -136,8 +114,7 @@ export default function MobileNav ({ getLink, href }) {
                 display: (
                   <div
                     className="box"
-                    onClick={() => window.open(getLink('demo'))}
-                  >
+                    onClick={() => window.open(getLink('demo'))}>
                     Request Demo
                   </div>
                 ),
@@ -145,15 +122,9 @@ export default function MobileNav ({ getLink, href }) {
             ]}
           />
 
-          <div
-            onClick={() => router.push('/blog')}
-            className="menu-item"
-          >
+          <div onClick={() => router.push('/blog')} className="menu-item">
             <div>Blog</div>
-            <img
-              className="chevron-img"
-              src="/images/graphics/chevron.png"
-            />
+            <img className="chevron-img" src="/images/graphics/chevron.png" />
           </div>
         </div>
       )}
@@ -247,5 +218,5 @@ export default function MobileNav ({ getLink, href }) {
         }
       `}</style>
     </nav>
-  )
+  );
 }

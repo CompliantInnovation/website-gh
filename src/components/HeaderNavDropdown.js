@@ -1,19 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, {useEffect, useState} from 'react';
 
-const HeaderNavDropdown = ({ state, title, items, onHover }) => {
-  const [isHovered, setHovered] = useState(false)
+const HeaderNavDropdown = ({state, title, items, onHover}) => {
+  const [isHovered, setHovered] = useState(false);
 
   useEffect(() => {
-    isHovered && onHover()
-  }, [isHovered])
+    isHovered && onHover();
+  }, [isHovered]);
 
   return (
-    <div style={{ width: 200 }}>
+    <div style={{width: 200}}>
       <div
         id="container"
         onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-      >
+        onMouseLeave={() => setHovered(false)}>
         <div className={`title-container  ${isHovered && 'highlight-title'}`}>
           <span className={`title`}>{title}</span>
         </div>
@@ -24,11 +23,10 @@ const HeaderNavDropdown = ({ state, title, items, onHover }) => {
                 <a
                   key={idx}
                   onClick={item.onClick}
-                  className={item?.id === state?.page ? 'active-a' : ''}
-                >
+                  className={item?.id === state?.page ? 'active-a' : ''}>
                   {item.pageName}
                 </a>
-              )
+              );
             })}
           </div>
         )}
@@ -110,7 +108,7 @@ const HeaderNavDropdown = ({ state, title, items, onHover }) => {
         }
       `}</style>
     </div>
-  )
-}
+  );
+};
 
-export default HeaderNavDropdown
+export default HeaderNavDropdown;

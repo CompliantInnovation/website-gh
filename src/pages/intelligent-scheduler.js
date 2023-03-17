@@ -1,49 +1,44 @@
-import React from 'react'
-import Head from 'next/head'
-import HeaderNav from '../components/HeaderNav'
-import FooterBar from '../components/Footer'
-import { useMedia } from '../hooks/useMedia'
-import AnnoucementBanner from '../components/AnnoucementBanner'
-import InfoCard from '../components/InfoCard'
-import Calendar from '../components/icons/Calendar'
-import DownArrow from '../components/icons/DownArrow'
-import Computer from '../components/icons/Computer'
-import Clock from '../components/icons/Clock'
-import QuestionPan from '../components/icons/QuestionPan'
-import SolutionBulb from '../components/icons/SolutionBulb'
-import Check from '../components/icons/Check'
-import DoubleArrow from '../components/icons/DoubleArrow'
+import React from 'react';
+import Head from 'next/head';
+import HeaderNav from '../components/HeaderNav';
+import FooterBar from '../components/Footer';
+import {useMedia} from '../hooks/useMedia';
+import AnnoucementBanner from '../components/AnnoucementBanner';
+import InfoCard from '../components/InfoCard';
+import Calendar from '../components/icons/Calendar';
+import DownArrow from '../components/icons/DownArrow';
+import Computer from '../components/icons/Computer';
+import Clock from '../components/icons/Clock';
+import QuestionPan from '../components/icons/QuestionPan';
+import SolutionBulb from '../components/icons/SolutionBulb';
+import Check from '../components/icons/Check';
+import DoubleArrow from '../components/icons/DoubleArrow';
 
-export default function IntelligentScheduler () {
-  const isBrowser = () => typeof window !== 'undefined'
-  const smallScreen = useMedia('(max-width: 1100px)')
+export default function IntelligentScheduler() {
+  const isBrowser = () => typeof window !== 'undefined';
+  const smallScreen = useMedia('(max-width: 1100px)');
 
   return (
     <>
-      <AnnoucementBanner/>
+      <AnnoucementBanner />
       <div className="container">
         <Head>
           <title>
             DocSpera | HIPAA Compliant, Integrated Surgical Coordination
             Platform
           </title>
-          <link
-            rel="icon"
-            href="/favicon.ico"
-          />
-          <link rel="preconnect" href="https://fonts.googleapis.com"/>
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
+          <link rel="icon" href="/favicon.ico" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
           <link
             href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
-            rel="stylesheet"
-          ></link>
+            rel="stylesheet"></link>
           <link
             href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-            rel="stylesheet"
-          ></link>
+            rel="stylesheet"></link>
         </Head>
 
-        <HeaderNav/>
+        <HeaderNav />
         <div className="container">
           <div className="scheduler-hero-section">
             <div className="hero-text-content">
@@ -59,19 +54,19 @@ export default function IntelligentScheduler () {
             <div className="cards-container">
               <div className="cards-inner-container">
                 <InfoCard
-                  icon={<Calendar/>}
+                  icon={<Calendar />}
                   subText="Reduction in Cancellations*"
                   mainText="36%"
-                  mainTextIcon={<DownArrow/>}
+                  mainTextIcon={<DownArrow />}
                 />
                 <InfoCard
-                  icon={<Computer/>}
+                  icon={<Computer />}
                   subText="Backlog Reduction*"
                   mainText="40%"
-                  mainTextIcon={<DownArrow/>}
+                  mainTextIcon={<DownArrow />}
                 />
                 <InfoCard
-                  icon={<Clock/>}
+                  icon={<Clock />}
                   subText="Per week time saved on patient follow-up and booking*"
                   mainText="6-7 HOURS"
                 />
@@ -84,43 +79,42 @@ export default function IntelligentScheduler () {
               <div className="case-study-group-container">
                 <div className="case-study-group">
                   <div
-                    style={{ transform: 'translateY(-10px)' }}
-                    className="case-study-icon-container"
-                  >
-                    <QuestionPan/>
+                    style={{transform: 'translateY(-10px)'}}
+                    className="case-study-icon-container">
+                    <QuestionPan />
                   </div>
-                  <h4 style={{ color: '#0096FA' }}>PROBLEM</h4>
-                  <p style={{ width: '186px' }}>
+                  <h4 style={{color: '#0096FA'}}>PROBLEM</h4>
+                  <p style={{width: '186px'}}>
                     A large hospital was struggling with a large patient backlog
                     and increased loss of patients from the practice
                   </p>
                 </div>
                 <div className="case-study-group center-case-study">
                   <div className="case-study-icon-container">
-                    <SolutionBulb/>
+                    <SolutionBulb />
                   </div>
-                  <h4 style={{ color: '#0064B0' }}>SOLUTION</h4>
-                  <p style={{ width: '266px' }}>
-                    DocSpera&apos;s Intelligent Scheduler was integrated to manage
-                    patient backlog{' '}
+                  <h4 style={{color: '#0064B0'}}>SOLUTION</h4>
+                  <p style={{width: '266px'}}>
+                    DocSpera&apos;s Intelligent Scheduler was integrated to
+                    manage patient backlog{' '}
                   </p>
-                  <p style={{ width: '266px' }}>
+                  <p style={{width: '266px'}}>
                     Therefore, DocSpera was able to prioritize patients with
                     higher needs and availability for rebooking
                   </p>
                 </div>
                 <div className="case-study-group">
                   <div className="case-study-icon-container">
-                    <Check/>
+                    <Check />
                   </div>
-                  <h4 style={{ color: '#00386D' }}>RESULTS</h4>
-                  <p style={{ width: '309px' }}>
+                  <h4 style={{color: '#00386D'}}>RESULTS</h4>
+                  <p style={{width: '309px'}}>
                     <em>40%</em> of backlog patients into booked patients
                   </p>
-                  <p style={{ width: '309px' }}>
+                  <p style={{width: '309px'}}>
                     <em>15%</em> saved time spent rebooking for nursing staff
                   </p>
-                  <p style={{ width: '309px' }}>
+                  <p style={{width: '309px'}}>
                     <em>80%</em> of patients engaged with DocSpera
                   </p>
                 </div>
@@ -168,7 +162,7 @@ export default function IntelligentScheduler () {
                 }}
               />
               <div className="workflow-case">
-                <h4 style={{ width: '419px' }}>
+                <h4 style={{width: '419px'}}>
                   Prioritize and Optimize Cases based on Readiness for Booking
                 </h4>
                 <ul>
@@ -187,21 +181,19 @@ export default function IntelligentScheduler () {
             <a
               className="contact-btn"
               href="https://docspera.com/support"
-              target="_blank"
-            >
+              target="_blank">
               Get in touch with us
             </a>
             <a
               className="demo-btn"
               href="https://docspera.com/demo"
-              target="_blank"
-            >
+              target="_blank">
               Request a Demo
             </a>
           </div>
         </div>
 
-        <FooterBar/>
+        <FooterBar />
         <style jsx>{`
           .container {
             width: 100%;
@@ -209,7 +201,8 @@ export default function IntelligentScheduler () {
           }
 
           .scheduler-hero-section {
-            background: #fff url("/images/intelligent-scheduler/IntelligentSchedulerMicrosite_DoctorImage.png");
+            background: #fff
+              url('/images/intelligent-scheduler/IntelligentSchedulerMicrosite_DoctorImage.png');
             min-height: 600px;
             background-repeat: no-repeat;
             background-position: 110% 0;
@@ -217,27 +210,31 @@ export default function IntelligentScheduler () {
           }
 
           .scheduler-hero-section:after {
-            content: "";
+            content: '';
             position: absolute;
             height: 150px;
             bottom: 0;
             width: 100%;
-            background: linear-gradient(0deg,
-            rgba(218, 240, 251, 1) 0%,
-            rgba(218, 240, 251, 1) 31%,
-            rgba(0, 212, 255, 0) 100%);
+            background: linear-gradient(
+              0deg,
+              rgba(218, 240, 251, 1) 0%,
+              rgba(218, 240, 251, 1) 31%,
+              rgba(0, 212, 255, 0) 100%
+            );
           }
 
           .case-study-main-container:after {
-            content: "";
+            content: '';
             position: absolute;
             height: 150px;
             bottom: -150px;
             width: 100%;
-            background: linear-gradient(0deg,
-            rgba(0, 212, 255, 0) 0%,
-            rgba(218, 240, 251, 1) 31%,
-            rgba(218, 240, 251, 1) 100%);
+            background: linear-gradient(
+              0deg,
+              rgba(0, 212, 255, 0) 0%,
+              rgba(218, 240, 251, 1) 31%,
+              rgba(218, 240, 251, 1) 100%
+            );
           }
 
           .hero-text-content {
@@ -246,7 +243,8 @@ export default function IntelligentScheduler () {
             padding-top: 30px;
           }
 
-          .hero-text-content h1, .cta h3 {
+          .hero-text-content h1,
+          .cta h3 {
             color: #0096fa;
             font-weight: bold;
             font-size: 34px;
@@ -286,7 +284,7 @@ export default function IntelligentScheduler () {
           .hero-text-content ul li:before,
           .workflow-case li:before {
             position: absolute;
-            content: "";
+            content: '';
             width: 8px;
             height: 8px;
             background: #0096fa;
@@ -409,7 +407,7 @@ export default function IntelligentScheduler () {
 
           .cta {
             height: 250px;
-            background: #DAF0FB;
+            background: #daf0fb;
             position: relative;
             padding-left: 30px;
             padding-right: 30px;
@@ -421,7 +419,7 @@ export default function IntelligentScheduler () {
           }
 
           .cta:after {
-            content: "";
+            content: '';
             position: absolute;
             height: 150px;
             top: -150px;
@@ -429,10 +427,12 @@ export default function IntelligentScheduler () {
             left: 0;
             z-index: 1;
             width: 100%;
-            background: linear-gradient(0deg,
-            rgba(218, 240, 251, 1) 0%,
-            rgba(218, 240, 251, 1) 31%,
-            rgba(0, 212, 255, 0) 100%);
+            background: linear-gradient(
+              0deg,
+              rgba(218, 240, 251, 1) 0%,
+              rgba(218, 240, 251, 1) 31%,
+              rgba(0, 212, 255, 0) 100%
+            );
           }
 
           .cta a {
@@ -446,47 +446,45 @@ export default function IntelligentScheduler () {
             line-height: 22px;
             font-weight: bold;
             padding-left: 54px;
-
           }
 
           .cta .contact-btn {
             color: #fff;
-            background: #0096FA;
-            background-image: url("/images/intelligent-scheduler/contactInactive.svg");
+            background: #0096fa;
+            background-image: url('/images/intelligent-scheduler/contactInactive.svg');
             background-position: 22px 50%;
             background-repeat: no-repeat;
-            transition: background-color .3s;
+            transition: background-color 0.3s;
           }
 
           .cta .contact-btn:hover {
-            background: #B1E0FF;
-            background-image: url("/images/intelligent-scheduler/contactHovered.svg");
-            color: #0096FA;
+            background: #b1e0ff;
+            background-image: url('/images/intelligent-scheduler/contactHovered.svg');
+            color: #0096fa;
             background-position: 22px 50%;
             background-repeat: no-repeat;
           }
 
           .cta .demo-btn {
-            color: #0096FA;
+            color: #0096fa;
             background: #fff;
-            border: 1px solid #0096FA;
+            border: 1px solid #0096fa;
             padding-left: 60px;
-            background-image: url("/images/intelligent-scheduler/demoInactive.svg");
+            background-image: url('/images/intelligent-scheduler/demoInactive.svg');
             background-position: 22px 50%;
             background-repeat: no-repeat;
-            transition: background-color .3s;
+            transition: background-color 0.3s;
           }
 
           .cta .demo-btn:hover {
             color: #fff;
-            background: #0096FA;
-            background-image: url("/images/intelligent-scheduler/demoHovered.svg");
+            background: #0096fa;
+            background-image: url('/images/intelligent-scheduler/demoHovered.svg');
             background-position: 22px 50%;
             background-repeat: no-repeat;
           }
-
         `}</style>
       </div>
     </>
-  )
+  );
 }

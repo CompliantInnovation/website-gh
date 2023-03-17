@@ -1,13 +1,12 @@
-import * as React from 'react'
+import * as React from 'react';
 
-const QuestionPan = (props) => (
+const QuestionPan = props => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={54}
     height={54}
     viewBox="0 -13 59.162 59.162"
-    {...props}
-  >
+    {...props}>
     <g id="ProblemIcon" transform="translate(-701.344 -982.652) rotate(-16)">
       <path
         id="Icon_metro-search"
@@ -27,5 +26,5 @@ const QuestionPan = (props) => (
       />
     </g>
   </svg>
-)
-export default QuestionPan
+);
+export default QuestionPan;

@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-const Chevron = (props) => {
+const Chevron = props => {
   return (
     <svg fill={props.color} x="0px" y="0px" viewBox="0 0 64 64">
       <g>
@@ -11,7 +11,7 @@ const Chevron = (props) => {
         />
       </g>
     </svg>
-  )
-}
+  );
+};
 
-export default Chevron
+export default Chevron;

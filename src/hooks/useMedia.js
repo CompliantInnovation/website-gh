@@ -1,19 +1,19 @@
-import { useEffect, useState } from 'react'
+import {useEffect, useState} from 'react';
 
-export function useMedia (query) {
-  let [matches, setMatches] = useState()
+export function useMedia(query) {
+  let [matches, setMatches] = useState();
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      let media = window.matchMedia(query)
+      let media = window.matchMedia(query);
       if (media.matches !== matches) {
-        setMatches(media.matches)
+        setMatches(media.matches);
       }
-      let listener = () => setMatches(media.matches)
-      media.addListener(listener)
-      return () => media.removeListener(listener)
+      let listener = () => setMatches(media.matches);
+      media.addListener(listener);
+      return () => media.removeListener(listener);
     }
-  }, [query])
+  }, [query]);
 
-  return matches
+  return matches;
 }

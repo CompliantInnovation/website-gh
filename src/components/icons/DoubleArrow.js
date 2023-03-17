@@ -1,13 +1,12 @@
-import * as React from 'react'
+import * as React from 'react';
 
-const DoubleArrow = (props) => (
+const DoubleArrow = props => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={55.023}
     height={40.6}
     viewBox="0 0 55.023 40.6"
-    {...props}
-  >
+    {...props}>
     <g data-name="Group 36" fill="#002855">
       <path
         data-name="Icon open-chevron-right"
@@ -19,5 +18,5 @@ const DoubleArrow = (props) => (
       />
     </g>
   </svg>
-)
-export default DoubleArrow
+);
+export default DoubleArrow;
