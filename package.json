@@ -25,6 +25,7 @@
     "eslint-config-next": "13.2.4",
     "eslint-plugin-next": "^0.0.0",
     "gh-pages": "^2.1.1",
+    "prettier": "^2.8.4",
     "rimraf": "^3.0.0"
   }
 }

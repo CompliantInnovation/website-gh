@@ -1,56 +1,56 @@
-import React, { useState } from 'react'
-import { useMedia } from '../hooks/useMedia'
-import MobileNav from './MobileNav'
-import HeaderNavDropdown from './HeaderNavDropdown'
-import { useRouter } from 'next/router'
-import { LOGIN_URL } from '../config'
-import Link from 'next/link'
+import React, {useState} from 'react';
+import {useMedia} from '../hooks/useMedia';
+import MobileNav from './MobileNav';
+import HeaderNavDropdown from './HeaderNavDropdown';
+import {useRouter} from 'next/router';
+import {LOGIN_URL} from '../config';
+import Link from 'next/link';
 
-export default function HeaderNav ({ page }) {
-  const isBrowser = () => typeof window !== 'undefined'
-  const [href, setHref] = useState()
-  const router = useRouter()
+export default function HeaderNav({page}) {
+  const isBrowser = () => typeof window !== 'undefined';
+  const [href, setHref] = useState();
+  const router = useRouter();
 
-  const tabletSize = useMedia('(max-width: 1050px)')
-  const mobileSize = useMedia('(max-width: 875px)')
+  const tabletSize = useMedia('(max-width: 1050px)');
+  const mobileSize = useMedia('(max-width: 875px)');
 
-  const [productDropdown, setProductDropdown] = useState(false)
+  const [productDropdown, setProductDropdown] = useState(false);
   const handleProductOnHover = () => {
-    setProductDropdown(!productDropdown)
-  }
+    setProductDropdown(!productDropdown);
+  };
 
-  const [blogHover, setBlogHover] = useState(false)
+  const [blogHover, setBlogHover] = useState(false);
   const handleBlogOnHover = () => {
-    setBlogHover(!blogHover)
-    setProductDropdown(false)
-  }
+    setBlogHover(!blogHover);
+    setProductDropdown(false);
+  };
 
-  const getLink = (path) => {
+  const getLink = path => {
     if (typeof window !== 'undefined') {
       if (window.location.href.includes('docvisor')) {
-        setHref(`https://docvisor.com/${path}`)
-        return `https://docvisor.com/${path}`
+        setHref(`https://docvisor.com/${path}`);
+        return `https://docvisor.com/${path}`;
       } else if (window.location.href.includes('docspera.localhost')) {
-        setHref(`http://docspera.localhost/${path}`)
-        return `http://docspera.localhost/${path}`
+        setHref(`http://docspera.localhost/${path}`);
+        return `http://docspera.localhost/${path}`;
       } else if (window.location.href.includes('docspera')) {
-        setHref(`https://docspera.com/${path}`)
-        return `https://docspera.com/${path}`
+        setHref(`https://docspera.com/${path}`);
+        return `https://docspera.com/${path}`;
       } else if (window.location.href.includes('localhost')) {
-        setHref(`http://docspera.localhost/${path}`)
-        return `http://docspera.localhost/${path}`
+        setHref(`http://docspera.localhost/${path}`);
+        return `http://docspera.localhost/${path}`;
       } else {
-        setHref(`https://docspera.com/${path}`)
-        return `https://docspera.com/${path}`
+        setHref(`https://docspera.com/${path}`);
+        return `https://docspera.com/${path}`;
       }
     } else {
-      setHref(`https://docspera.com/${path}`)
-      return `https://docspera.com/${path}`
+      setHref(`https://docspera.com/${path}`);
+      return `https://docspera.com/${path}`;
     }
-  }
+  };
 
   return mobileSize ? (
-    <MobileNav getLink={(path) => getLink(path)} href={href}/>
+    <MobileNav getLink={path => getLink(path)} href={href} />
   ) : (
     <nav>
       {isBrowser && (
@@ -73,27 +73,23 @@ export default function HeaderNav ({ page }) {
           <a
             className={
               (productDropdown && 'active_a') ||
-              ((page === 'provider' || page === 'medical-device') &&
-                'active_a')
+              ((page === 'provider' || page === 'medical-device') && 'active_a')
             }
-            onMouseEnter={handleProductOnHover}
-          >
+            onMouseEnter={handleProductOnHover}>
             <span>SOLUTIONS</span>
           </a>
           {productDropdown && (
             <div
               className="product-dropdown"
-              onMouseLeave={handleProductOnHover}
-            >
+              onMouseLeave={handleProductOnHover}>
               <div
                 className="box"
                 onClick={() => {
-                  router.push('/provider')
-                  handleProductOnHover()
-                }}
-              >
+                  router.push('/provider');
+                  handleProductOnHover();
+                }}>
                 <h4>
-                  <img src="/images/surgeon-users.png"/>
+                  <img src="/images/surgeon-users.png" />
                   Providers{' '}
                   <img
                     className="chevron-img"
@@ -109,12 +105,11 @@ export default function HeaderNav ({ page }) {
               <div
                 className="box"
                 onClick={() => {
-                  router.push('/medical-device')
-                  handleProductOnHover()
-                }}
-              >
+                  router.push('/medical-device');
+                  handleProductOnHover();
+                }}>
                 <h4>
-                  <img src="/images/medical-device.png"/>
+                  <img src="/images/medical-device.png" />
                   Device Partners{' '}
                   <img
                     className="chevron-img"
@@ -166,20 +161,15 @@ export default function HeaderNav ({ page }) {
 
           <div
             className={`${blogHover && 'active_a'} blog_link`}
-            style={{ marginRight: 0 }}
+            style={{marginRight: 0}}
             // href='https://blog.d4.docspera.com/'
             onClick={() => router.push('/blog')}
             onMouseEnter={handleBlogOnHover}
-            onMouseLeave={handleBlogOnHover}
-          >
+            onMouseLeave={handleBlogOnHover}>
             <span>BLOG</span>
           </div>
         </div>
-        <Link
-          className="ext-link"
-          href={LOGIN_URL}
-          target="_blank"
-        >
+        <Link className="ext-link" href={LOGIN_URL} target="_blank">
           <button>LOGIN</button>
         </Link>
       </div>
@@ -189,16 +179,18 @@ export default function HeaderNav ({ page }) {
           width: 100%;
           display: flex;
           background-color: ${productDropdown
-                  ? 'white'
-                  : 'RGBa(255,255,255, .7)'};
-          background-image: Linear-Gradient(RGBa(255, 255, 255, 1),
-          RGBa(255, 255, 255, 0)),
-          Linear-Gradient(RGBa(255, 255, 255, 0.8), RGBa(255, 255, 255, 0));
+            ? 'white'
+            : 'RGBa(255,255,255, .7)'};
+          background-image: Linear-Gradient(
+              RGBa(255, 255, 255, 1),
+              RGBa(255, 255, 255, 0)
+            ),
+            Linear-Gradient(RGBa(255, 255, 255, 0.8), RGBa(255, 255, 255, 0));
           box-shadow: ${['blog', 'intelligent-scheduler'].includes(page)
-                  ? page === 'blog'
-                          ? 'none'
-                          : '0px 3px 5px 0px rgba(0,0,0,0.25)'
-                  : '0 70px 50px 50px RGBa(255, 255, 255, 0.7)'};
+            ? page === 'blog'
+              ? 'none'
+              : '0px 3px 5px 0px rgba(0,0,0,0.25)'
+            : '0 70px 50px 50px RGBa(255, 255, 255, 0.7)'};
           justify-content: space-between;
           align-items: center;
           padding-left: 30px;
@@ -335,5 +327,5 @@ export default function HeaderNav ({ page }) {
         }
       `}</style>
     </nav>
-  )
+  );
 }

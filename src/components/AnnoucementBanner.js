@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-export default function AnnoucementBanner () {
+export default function AnnoucementBanner() {
   return (
     <header>
       <div className="annoucement">
@@ -9,8 +9,7 @@ export default function AnnoucementBanner () {
         <strong>
           <a
             target="_blank"
-            href="https://www.prweb.com/releases/2022/5/prweb18694588.htm"
-          >
+            href="https://www.prweb.com/releases/2022/5/prweb18694588.htm">
             READ THE ANNOUNCEMENT
           </a>
         </strong>
@@ -39,5 +38,5 @@ export default function AnnoucementBanner () {
         }
       `}</style>
     </header>
-  )
+  );
 }

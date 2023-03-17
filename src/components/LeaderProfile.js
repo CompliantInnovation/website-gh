@@ -1,18 +1,18 @@
-import React from 'react'
+import React from 'react';
 
-const LeaderProfile = ({ leader }) => {
+const LeaderProfile = ({leader}) => {
   return (
     <div className="profile">
       <img
         src={`/images/${leader.picture}`}
-        style={{ width: '110%', minHeight: 200, minWidth: 220 }}
+        style={{width: '110%', minHeight: 200, minWidth: 220}}
       />
       <div className="panel">
         <h3>{leader.name}</h3>
         <h4>{leader.title}</h4>
         <div className="linkedIn-box">
           <div onClick={() => window.open(leader.linkedIn)}>
-            <img src={`/images/linkedin.png`}/>
+            <img src={`/images/linkedin.png`} />
           </div>
         </div>
       </div>
@@ -72,7 +72,7 @@ const LeaderProfile = ({ leader }) => {
         }
       `}</style>
     </div>
-  )
-}
+  );
+};
 
-export default LeaderProfile
+export default LeaderProfile;

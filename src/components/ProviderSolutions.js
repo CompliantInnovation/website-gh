@@ -1,23 +1,23 @@
-import React from 'react'
-import { useRouter } from 'next/router'
+import React from 'react';
+import {useRouter} from 'next/router';
 
-const ProviderSolutions = ({ premium }) => {
-  const router = useRouter()
+const ProviderSolutions = ({premium}) => {
+  const router = useRouter();
 
   return (
-    <div style={{ backgroundColor: 'var(--blueXLight)', width: '100%' }}>
+    <div style={{backgroundColor: 'var(--blueXLight)', width: '100%'}}>
       <div className="provider-solutions inner-div">
         {premium && <h3 className="title">DocSpera Premium</h3>}
         <h2 className="title-h2">Integrated Provider Solutions</h2>
         <p>
-          Efficient care coordination through patient&apos;s entire surgical journey
-          using a best in class, real-time predictive platform
+          Efficient care coordination through patient&apos;s entire surgical
+          journey using a best in class, real-time predictive platform
         </p>
         <div className="provider-solutions-row">
           <div className="content">
             <div>
               <div className="img-div">
-                <img src="/images/product-shots/Laptop-Calendar.png"/>
+                <img src="/images/product-shots/Laptop-Calendar.png" />
               </div>
               <div className="h4-div">
                 <h4>
@@ -42,8 +42,7 @@ const ProviderSolutions = ({ premium }) => {
           <div className="content">
             <div>
               <div className="img-div">
-                <img
-                  src="/images/intelligent-scheduler/IntelligentSchedulerImage.jpg"/>
+                <img src="/images/intelligent-scheduler/IntelligentSchedulerImage.jpg" />
               </div>
               <div className="h4-div">
                 <h4>Intelligent Dashboard for Managing Upcoming Cases</h4>
@@ -60,8 +59,7 @@ const ProviderSolutions = ({ premium }) => {
             {/* <a href='https://docspera.com/or' target='_blank'> */}
             <button
               onClick={() => router.push('/intelligent-scheduler')}
-              className="view-product-btn"
-            >
+              className="view-product-btn">
               View Intelligent Solution
             </button>
             {/* </a> */}
@@ -69,7 +67,7 @@ const ProviderSolutions = ({ premium }) => {
           <div className="content">
             <div>
               <div className="img-div">
-                <img src="/images/product-shots/EOC.png"/>
+                <img src="/images/product-shots/EOC.png" />
               </div>
               <div className="h4-div">
                 <h4>
@@ -131,7 +129,7 @@ const ProviderSolutions = ({ premium }) => {
 
         .content ul li:before {
           position: absolute;
-          content: "";
+          content: '';
           width: 8px;
           height: 8px;
           background: black;
@@ -236,7 +234,7 @@ const ProviderSolutions = ({ premium }) => {
         }
       `}</style>
     </div>
-  )
-}
+  );
+};
 
-export default ProviderSolutions
+export default ProviderSolutions;

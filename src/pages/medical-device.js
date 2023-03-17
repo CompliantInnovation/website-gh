@@ -1,33 +1,35 @@
-import React from 'react'
-import Head from 'next/head'
-import HeaderNav from '../components/HeaderNav'
-import NumberScroll from '../components/NumberScroll'
-import FooterBar from '../components/Footer'
-import ProviderSolutions from '../components/ProviderSolutions'
-import { useMedia } from '../hooks/useMedia'
+import React from 'react';
+import Head from 'next/head';
+import HeaderNav from '../components/HeaderNav';
+import NumberScroll from '../components/NumberScroll';
+import FooterBar from '../components/Footer';
+import ProviderSolutions from '../components/ProviderSolutions';
+import {useMedia} from '../hooks/useMedia';
 
-export default function MedicalDevicePage () {
+export default function MedicalDevicePage() {
   return (
-    <div style={{ position: 'relative' }}>
+    <div style={{position: 'relative'}}>
       <Head>
-        <title>DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform</title>
-        <link rel="icon" href="/favicon.ico"/>
-        <link rel="preconnect" href="https://fonts.googleapis.com"/>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
+        <title>
+          DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform
+        </title>
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <link
           href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
-          rel="stylesheet"
-        ></link>
+          rel="stylesheet"></link>
       </Head>
-      <HeaderNav/>
+      <HeaderNav />
       <div className="container">
         <h2 id="hero-h2">
-          Power Your Digital and Surgical solutions using a Comprehensive, Intelligent Care
-          Coordination platform
+          Power Your Digital and Surgical solutions using a Comprehensive,
+          Intelligent Care Coordination platform
         </h2>
         <p id="hero-p">
-          DocSpera is an integrated, comprehensive, and compliant digital solution powering
-          patient-specific data, enabling Clinical insights, including an efficient supply chain.
+          DocSpera is an integrated, comprehensive, and compliant digital
+          solution powering patient-specific data, enabling Clinical insights,
+          including an efficient supply chain.
         </p>
         <img
           src="/images/drawings/medical-device-art-work.png"
@@ -70,19 +72,21 @@ export default function MedicalDevicePage () {
 
         <div id="offerings-section">
           <div id="offerings" className="inner-div">
-            <h1 style={{ marginBottom: 20, color: 'white' }}>Enterprise Offerings and Outcomes</h1>
+            <h1 style={{marginBottom: 20, color: 'white'}}>
+              Enterprise Offerings and Outcomes
+            </h1>
             <div id="offerings-divs">
               <div>
                 <h3>DocSpera Demand</h3>
-                <img src="/images/case-notification.png"/>
+                <img src="/images/case-notification.png" />
                 <h4>Advanced Case Notification</h4>
                 <p>
-                  Early and reliable case demand signal to improve case support preparedness and
-                  supply chain management
+                  Early and reliable case demand signal to improve case support
+                  preparedness and supply chain management
                 </p>
                 <p className="outcome">
-                  <span>Benefit:</span> Up to 5 weeks additional time for more accurate case
-                  preparation
+                  <span>Benefit:</span> Up to 5 weeks additional time for more
+                  accurate case preparation
                 </p>
                 <button>
                   <a href="src/nav-pages#advanced-case-notification">View</a>
@@ -90,34 +94,33 @@ export default function MedicalDevicePage () {
               </div>
               <div>
                 <h3>DocSpera Premium</h3>
-                <img
-                  src="/images/provider-solutions.png"
-                  height="auto"
-                />
+                <img src="/images/provider-solutions.png" height="auto" />
                 <h4>Integrated Provider Solutions</h4>
                 <p>
-                  Flexible platform & modules to integrate and enhance multiple enterprise software
-                  offerings
+                  Flexible platform & modules to integrate and enhance multiple
+                  enterprise software offerings
                 </p>
                 <p className="outcome">
-                  <span>Benefit:</span> Offer better digital offerings to providers, not just
-                  individual capabilities
+                  <span>Benefit:</span> Offer better digital offerings to
+                  providers, not just individual capabilities
                 </p>
                 <button>
-                  <a href="src/nav-pages#integrated-providers-solutions">View</a>
+                  <a href="src/nav-pages#integrated-providers-solutions">
+                    View
+                  </a>
                 </button>
               </div>
               <div>
                 <h3>DocSpera Insights</h3>
-                <img src="/images/data-intelligence.png"/>
+                <img src="/images/data-intelligence.png" />
                 <h4>Data Intelligence & RWD Insights</h4>
                 <p>
-                  Support the capture of real-world data across the surgical continuum - from
-                  surgical decision to recovery.
+                  Support the capture of real-world data across the surgical
+                  continuum - from surgical decision to recovery.
                 </p>
                 <p className="outcome">
-                  <span>Benefit:</span> Provide clinical registry enablement, regional trends and
-                  outcome studies
+                  <span>Benefit:</span> Provide clinical registry enablement,
+                  regional trends and outcome studies
                 </p>
                 <button>
                   <a href="src/nav-pages#insights-section">View</a>
@@ -130,41 +133,46 @@ export default function MedicalDevicePage () {
         <div id="solve-challenges-section">
           <div className="inner-div">
             <h2 className="title-h2">Solving Urgent C-Suite Challenges </h2>
-            <p style={{ marginTop: 0 }}>
+            <p style={{marginTop: 0}}>
               With early, integrated, real-time capture of surgical cases:
             </p>
             <div id="solve-challenges-divs">
               <div>
                 <h4>Inventory and Logistics Costs</h4>
-                <img src="/images/graphics/efficient.png"/>
+                <img src="/images/graphics/efficient.png" />
                 <p>
-                  Improved case preparedness and inventory management through earlier, more
-                  integrated real-time updates of surgical case
+                  Improved case preparedness and inventory management through
+                  earlier, more integrated real-time updates of surgical case
                 </p>
                 <p>
-                  70% reduction in implant needs driving improvements across shipping,
-                  sterilization, tray sizing, cancellation management, etc.
+                  70% reduction in implant needs driving improvements across
+                  shipping, sterilization, tray sizing, cancellation management,
+                  etc.
                 </p>
               </div>
               <div>
                 <h4>Product/Data Understanding</h4>
-                <img src="/images/graphics/data-driven.png"/>
-                <p>Deeper understanding of your product performance across continuum of care</p>
+                <img src="/images/graphics/data-driven.png" />
                 <p>
-                  Access real-world data and gain insight of your product performance in real-world
-                  clinical settings
+                  Deeper understanding of your product performance across
+                  continuum of care
+                </p>
+                <p>
+                  Access real-world data and gain insight of your product
+                  performance in real-world clinical settings
                 </p>
               </div>
               <div>
                 <h4>Market Penetration</h4>
-                <img src="/images/graphics/strategic.png"/>
-                <p style={{ maxWidth: 'none' }}>
-                  Strengthen market position and become a more strategic partner to your customers
-                  through diversified and easily managed risk-sharing based offerings
+                <img src="/images/graphics/strategic.png" />
+                <p style={{maxWidth: 'none'}}>
+                  Strengthen market position and become a more strategic partner
+                  to your customers through diversified and easily managed
+                  risk-sharing based offerings
                 </p>
                 <p>
-                  Complement implant sales with digital offerings that extends your solutions in
-                  more strategic engagements
+                  Complement implant sales with digital offerings that extends
+                  your solutions in more strategic engagements
                 </p>
               </div>
             </div>
@@ -174,8 +182,10 @@ export default function MedicalDevicePage () {
         <div id="advanced-case-notification" className="inner-div">
           <h3 className="title">DocSpera Demand</h3>
           <h2 className="title-h2">Real Time Advanced Case Notification</h2>
-          <p style={{ margin: 0 }}>Improves Case Preparedness and Supply Chain Efficiencies</p>
-          <div style={{ display: 'flex', marginLeft: -20, marginTop: 20 }}>
+          <p style={{margin: 0}}>
+            Improves Case Preparedness and Supply Chain Efficiencies
+          </p>
+          <div style={{display: 'flex', marginLeft: -20, marginTop: 20}}>
             <ul>
               <li className="badge">Inventory</li>
               <li className="badge">Shipping</li>
@@ -201,7 +211,7 @@ export default function MedicalDevicePage () {
         </div>
 
         <div id="integrated-providers-solutions">
-          <ProviderSolutions premium/>
+          <ProviderSolutions premium />
         </div>
 
         <div id="insights-section">
@@ -209,34 +219,37 @@ export default function MedicalDevicePage () {
             <h3 className="title">DocSpera Insights</h3>
             <h2 className="title-h2">Data Intelligence & RWD Insights</h2>
             <p>
-              Support improved care delivery using real-world data and insights across the surgical
-              continuum
+              Support improved care delivery using real-world data and insights
+              across the surgical continuum
             </p>
             <div id="demand-intel-img-div">
-              <img src="/images/product-shots/demand-intel.png"/>
+              <img src="/images/product-shots/demand-intel.png" />
             </div>
             <div id="insights-copy-div">
               <div>
                 <div className="insight-title-div">
-                  <img src="/images/target.png"/>
+                  <img src="/images/target.png" />
                   <h4>Demand Intelligence</h4>
                 </div>
                 <p>View aggregated case demand information by region</p>
               </div>
               <div>
                 <div className="insight-title-div">
-                  <img src="/images/mac.png"/>
+                  <img src="/images/mac.png" />
                   <h4>Device Intelligence</h4>
                 </div>
-                <p>Understand market share across specialty and therapeutic areas</p>
+                <p>
+                  Understand market share across specialty and therapeutic areas
+                </p>
               </div>
               <div>
                 <div className="insight-title-div">
-                  <img src="/images/line-graph.png"/>
+                  <img src="/images/line-graph.png" />
                   <h4>Device Registry</h4>
                 </div>
                 <p>
-                  Longitudinal data from pre-op to recovery and support post market surveillance
+                  Longitudinal data from pre-op to recovery and support post
+                  market surveillance
                 </p>
               </div>
             </div>
@@ -255,68 +268,68 @@ export default function MedicalDevicePage () {
                 title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
+                allowfullscreen></iframe>
             </div>
           </div>
         </div>
 
         {/*  C A S E   S T U D I E S  */}
-        <div style={{ backgroundColor: 'var(--blueXLight)' }}>
+        <div style={{backgroundColor: 'var(--blueXLight)'}}>
           <div className="inner-div">
             <h2 className="title-h2">Case Studies</h2>
             <div id="case-studies-div">
               <div className="case-study">
                 <div className="img-div">
-                  <img src="/caseStudies/case1.png"/>
+                  <img src="/caseStudies/case1.png" />
                   <div className="h3-div">
                     <h3>Automated Inventory Management</h3>
                   </div>
                   <p>
-                    A Single Center study using Integrated Surgical Care Coordination to improve
-                    case visibility, planning, and reduce costs
+                    A Single Center study using Integrated Surgical Care
+                    Coordination to improve case visibility, planning, and
+                    reduce costs
                   </p>
                   <a
                     href="/caseStudies/Automated_Inventory_Management.pdf"
                     target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                    rel="noopener noreferrer">
                     <button className="case-study-btn">Read More</button>
                   </a>
                 </div>
               </div>
               <div className="case-study">
                 <div className="img-div">
-                  <img src="/caseStudies/case2.png"/>
+                  <img src="/caseStudies/case2.png" />
                   <div className="h3-div">
                     <h3>New Product Launch</h3>
                   </div>
-                  <p>Post-Market Clinical Insights Study Using Real-World Data</p>
+                  <p>
+                    Post-Market Clinical Insights Study Using Real-World Data
+                  </p>
                 </div>
                 <a
                   href="/caseStudies/New_Product_Launch.pdf"
                   target="_blank"
-                  rel="noopener noreferrer"
-                >
+                  rel="noopener noreferrer">
                   <button className="case-study-btn">Read More</button>
                 </a>
               </div>
               <div className="case-study">
                 <div className="img-div">
-                  <img src="/caseStudies/case3.png"/>
+                  <img src="/caseStudies/case3.png" />
                   <div className="h3-div">
                     <h3>Engage Your Customers</h3>
                   </div>
                   <p>
-                    Integrated Care Coordination Platform supports higher revenue growth, as well as
-                    cost and time savings for the sales team
+                    Integrated Care Coordination Platform supports higher
+                    revenue growth, as well as cost and time savings for the
+                    sales team
                   </p>
                 </div>
                 <a
                   href="/caseStudies/Engage_Your_Customers.pdf"
                   target="_blank"
-                  rel="noopener noreferrer"
-                >
+                  rel="noopener noreferrer">
                   <button className="case-study-btn">Read More</button>
                 </a>
               </div>
@@ -325,7 +338,7 @@ export default function MedicalDevicePage () {
         </div>
       </div>
 
-      <FooterBar/>
+      <FooterBar />
 
       <style jsx>{`
         .container > h2,
@@ -415,7 +428,8 @@ export default function MedicalDevicePage () {
           height: 70vh;
         }
 
-        #smart-enterprise h2, #smart-enterprise h3 {
+        #smart-enterprise h2,
+        #smart-enterprise h3 {
           color: white;
         }
 
@@ -580,14 +594,10 @@ export default function MedicalDevicePage () {
         :
 
         600
-        px
-
-        )
-        {
-        .insight-title-div {
-          height: 70px;
-        }
-
+        px) {
+          .insight-title-div {
+            height: 70px;
+          }
         }
         .insight-title-div img {
           width: 40px;
@@ -707,5 +717,5 @@ export default function MedicalDevicePage () {
         }
       `}</style>
     </div>
-  )
+  );
 }

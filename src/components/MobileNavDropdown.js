@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react';
 
-const MobileNavDropdown = ({ state, title, items }) => {
-  const [isDropdownOpen, setDropdownOpen] = useState(false)
+const MobileNavDropdown = ({state, title, items}) => {
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
 
   return (
     <div className="container" onClick={() => setDropdownOpen(!isDropdownOpen)}>
@@ -17,7 +17,7 @@ const MobileNavDropdown = ({ state, title, items }) => {
       {isDropdownOpen && (
         <div className="dropdown">
           <div className="underline"></div>
-          {items.map((navItem) => navItem.display)}
+          {items.map(navItem => navItem.display)}
         </div>
       )}
 
@@ -67,7 +67,7 @@ const MobileNavDropdown = ({ state, title, items }) => {
         }
       `}</style>
     </div>
-  )
-}
+  );
+};
 
-export default MobileNavDropdown
+export default MobileNavDropdown;

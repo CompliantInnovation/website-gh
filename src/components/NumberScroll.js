@@ -1,45 +1,53 @@
-import { animated, config, useSpring } from 'react-spring'
-import { useMedia } from '../hooks/useMedia'
+import {animated, config, useSpring} from 'react-spring';
+import {useMedia} from '../hooks/useMedia';
 
-export default function NumberScroll ({ imgSrc, number, title, plus, order, percent }) {
-  const isBrowser = () => typeof window !== 'undefined'
-  let tabletSize = useMedia('(max-width: 775px)')
+export default function NumberScroll({
+  imgSrc,
+  number,
+  title,
+  plus,
+  order,
+  percent,
+}) {
+  const isBrowser = () => typeof window !== 'undefined';
+  let tabletSize = useMedia('(max-width: 775px)');
 
   const spring = useSpring({
-    from: { val: 0 },
-    to: { val: typeof number == 'number' ? number : 0 },
-    config: { duration: 2000, config: config.molasses }
-  })
+    from: {val: 0},
+    to: {val: typeof number == 'number' ? number : 0},
+    config: {duration: 2000, config: config.molasses},
+  });
 
   const styles = useSpring({
     from: {
       opacity: 0,
       fontsize: tabletSize ? '5vw' : '30px',
       margin: 0,
-      color: 'var(--blueDark)'
+      color: 'var(--blueDark)',
     },
-    to: { opacity: 1, fontsize: tabletSize ? '5vw' : '30px' },
-    config: { duration: 2000, config: config.molasses }
-  })
+    to: {opacity: 1, fontsize: tabletSize ? '5vw' : '30px'},
+    config: {duration: 2000, config: config.molasses},
+  });
 
   const plusStyles = useSpring({
     from: {
       opacity: 0,
       fontsize: tabletSize ? '5vw' : '30px',
       margin: 0,
-      color: 'var(--blueDark)'
+      color: 'var(--blueDark)',
     },
-    to: { opacity: 1, fontsize: tabletSize ? '5vw' : '30px' },
-    config: { duration: 2000, delay: 1000 }
-  })
+    to: {opacity: 1, fontsize: tabletSize ? '5vw' : '30px'},
+    config: {duration: 2000, delay: 1000},
+  });
 
   return (
     <div className="div">
-      <img src={imgSrc}/>
+      <img src={imgSrc} />
       {typeof number === 'number' ? (
-        <div style={{ display: 'flex' }}>
+        <div style={{display: 'flex'}}>
           <animated.h1 style={styles}>
-            {isNaN(spring) && spring.val.to((val) => Math.floor(val).toLocaleString('en-US'))}
+            {isNaN(spring) &&
+              spring.val.to(val => Math.floor(val).toLocaleString('en-US'))}
           </animated.h1>
           <animated.h1 style={tabletSize ? plusStyles : plusStyles}>
             {plus && '+'}
@@ -83,5 +91,5 @@ export default function NumberScroll ({ imgSrc, number, title, plus, order, perc
         }
       `}</style>
     </div>
-  )
+  );
 }

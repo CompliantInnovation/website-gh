@@ -1,7 +1,7 @@
-export default function CarouselItem ({ itemInfo, type }) {
+export default function CarouselItem({itemInfo, type}) {
   return (
     <div className="carousel-item">
-      <img src={itemInfo.img} height={125} width={250}/>
+      <img src={itemInfo.img} height={125} width={250} />
       {/* TODO: Limit amount of text to be displayed as title space is 200px high */}
       {itemInfo.title && <p className="title">{itemInfo.title}</p>}
       {itemInfo.bod && <p className="body">{itemInfo.body}</p>}
@@ -49,5 +49,5 @@ export default function CarouselItem ({ itemInfo, type }) {
         }
       `}</style>
     </div>
-  )
+  );
 }

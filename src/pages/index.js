@@ -1,24 +1,24 @@
-import React, { useState } from 'react'
-import Head from 'next/head'
-import HeaderNav from '../components/HeaderNav'
-import NumberScroll from '../components/NumberScroll'
-import FooterBar from '../components/Footer'
-import { useMedia } from '../hooks/useMedia'
-import useInterval from '../hooks/useInterval'
-import AnnoucementBanner from '../components/AnnoucementBanner'
-import LeftArrow from '../components/icons/LeftArrow'
-import RightArrow from '../components/icons/RigthArrow'
-import Play from '../components/icons/Play'
-import Close from '../components/icons/Close'
-import { useRouter } from 'next/router'
+import React, {useState} from 'react';
+import Head from 'next/head';
+import HeaderNav from '../components/HeaderNav';
+import NumberScroll from '../components/NumberScroll';
+import FooterBar from '../components/Footer';
+import {useMedia} from '../hooks/useMedia';
+import useInterval from '../hooks/useInterval';
+import AnnoucementBanner from '../components/AnnoucementBanner';
+import LeftArrow from '../components/icons/LeftArrow';
+import RightArrow from '../components/icons/RigthArrow';
+import Play from '../components/icons/Play';
+import Close from '../components/icons/Close';
+import {useRouter} from 'next/router';
 
-console.log({ useInterval })
+console.log({useInterval});
 
-export default function Index () {
-  const router = useRouter()
-  const isBrowser = () => typeof window !== 'undefined'
-  const smallScreen = useMedia('(max-width: 1100px)')
-  const max950w = useMedia('(max-width: 950px)')
+export default function Index() {
+  const router = useRouter();
+  const isBrowser = () => typeof window !== 'undefined';
+  const smallScreen = useMedia('(max-width: 1100px)');
+  const max950w = useMedia('(max-width: 950px)');
 
   const sepecialistData = [
     {
@@ -45,65 +45,60 @@ export default function Index () {
       quote:
         '"It\'s become an integral role to our workflow. It has provided great time savings. It has helped us communicate effectively. It has helped us anticipate needs and inventory."',
     },
-  ]
+  ];
 
   const [stateSpecialistData, setStateSpecialistData] =
-    useState(sepecialistData)
+    useState(sepecialistData);
 
-  const [showModal, setShowModal] = useState(false)
+  const [showModal, setShowModal] = useState(false);
 
-  const [selectedVid, setSelectedVid] = useState('')
+  const [selectedVid, setSelectedVid] = useState('');
 
   const next = () => {
-    setStateSpecialistData((prevData) => [
+    setStateSpecialistData(prevData => [
       prevData[prevData.length - 1],
       ...prevData.slice(0, prevData.length - 1),
-    ])
-  }
+    ]);
+  };
   const prev = () => {
-    setStateSpecialistData((prevData) => [
+    setStateSpecialistData(prevData => [
       ...prevData.slice(1, prevData.length),
       prevData[0],
-    ])
-  }
+    ]);
+  };
 
   useInterval(() => {
-    next()
-  }, 1000 * 5)
+    next();
+  }, 1000 * 5);
 
   return (
     <>
-      <AnnoucementBanner/>
+      <AnnoucementBanner />
       <div className="container">
         <Head>
           <title>
             DocSpera | HIPAA Compliant, Integrated Surgical Coordination
             Platform
           </title>
-          <link
-            rel="icon"
-            href="/favicon.ico"
-          />
-          <link rel="preconnect" href="https://fonts.googleapis.com"/>
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
+          <link rel="icon" href="/favicon.ico" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
           <link
             href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
-            rel="stylesheet"
-          ></link>
+            rel="stylesheet"></link>
           <link
             href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-            rel="stylesheet"
-          ></link>
+            rel="stylesheet"></link>
         </Head>
 
-        <HeaderNav/>
+        <HeaderNav />
 
         <div>
-          <div id="landing-bg-div" style={{ postion: 'relative' }}></div>
+          <div id="landing-bg-div" style={{postion: 'relative'}}></div>
           <div id="hero-h1">
             {isBrowser &&
               (max950w ? (
-                <h1 style={{ width: '90%' }}>
+                <h1 style={{width: '90%'}}>
                   Intelligent Surgical Planning Platform from Diagnosis to
                   Recovery
                 </h1>
@@ -148,7 +143,7 @@ export default function Index () {
         </div>
 
         {/* Our Vision is to Adress... Section */}
-        <div style={{ backgroundColor: 'var(--blueXLight)' }}>
+        <div style={{backgroundColor: 'var(--blueXLight)'}}>
           <div className="inner-div">
             {smallScreen ? (
               <div className="vision-section">
@@ -157,8 +152,7 @@ export default function Index () {
                     marginBottom: 35,
                     maxWidth: 550,
                     textAlign: 'center',
-                  }}
-                >
+                  }}>
                   Our Vision is to Address Priorities and Unmet Needs Through a
                   Patient’s Surgical Journey
                 </h1>
@@ -183,8 +177,7 @@ export default function Index () {
                     textAlign: 'center',
                     maxWidth: 700,
                     margin: '10px auto 30px auto',
-                  }}
-                >
+                  }}>
                   Our Vision is to Address Priorities and Unmet Needs Through a
                   Patient’s Surgical Journey
                 </h2>
@@ -208,15 +201,15 @@ export default function Index () {
           </div>
         </div>
 
-        <div style={{ backgroundColor: 'white' }}>
+        <div style={{backgroundColor: 'white'}}>
           <div id="connecting-section" className="inner-div">
             <div id="words-div">
               <h1>DocSpera Integrated Care Coordination Platform</h1>
               <h2>
-                Connecting <b>Care Teams</b>, <br/> <b>Surgery Locations</b> &{' '}
+                Connecting <b>Care Teams</b>, <br /> <b>Surgery Locations</b> &{' '}
                 <b>Device Partners</b>
               </h2>
-              <p style={{ maxWidth: 420, marginLeft: -20 }}>
+              <p style={{maxWidth: 420, marginLeft: -20}}>
                 <ul>
                   <li>
                     Single institution-agnostic interface managing cases from
@@ -249,8 +242,7 @@ export default function Index () {
               position: 'relative',
               minHeight: '150px',
               padding: '30px 80px 80px 80px',
-            }}
-          >
+            }}>
             <LeftArrow
               style={{
                 position: 'absolute',
@@ -281,15 +273,14 @@ export default function Index () {
                 <blockquote>{stateSpecialistData[1].quote}</blockquote>
                 <button
                   onClick={() => {
-                    setSelectedVid(stateSpecialistData[0].videoURL)
-                    setShowModal(true)
-                  }}
-                >
-                  <Play/> &nbsp; VIEW MORE
+                    setSelectedVid(stateSpecialistData[0].videoURL);
+                    setShowModal(true);
+                  }}>
+                  <Play /> &nbsp; VIEW MORE
                 </button>
               </div>
             ) : (
-              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <div style={{display: 'flex', justifyContent: 'space-between'}}>
                 <div className="specialist">
                   <img
                     width={85}
@@ -314,11 +305,10 @@ export default function Index () {
                       </div>
                       <button
                         onClick={() => {
-                          setSelectedVid(stateSpecialistData[1].videoURL)
-                          setShowModal(true)
-                        }}
-                      >
-                        <Play/> &nbsp; VIEW MORE
+                          setSelectedVid(stateSpecialistData[1].videoURL);
+                          setShowModal(true);
+                        }}>
+                        <Play /> &nbsp; VIEW MORE
                       </button>
                     </div>
                   </div>
@@ -337,12 +327,11 @@ export default function Index () {
           </div>
           {showModal && (
             <div
-              onClick={(e) => {
-                e.stopPropagation()
-                setShowModal(false)
+              onClick={e => {
+                e.stopPropagation();
+                setShowModal(false);
               }}
-              className="modal-container"
-            >
+              className="modal-container">
               <div>
                 <Close
                   style={{
@@ -360,21 +349,20 @@ export default function Index () {
                   title={`${stateSpecialistData[2].name} `}
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
+                  allowfullscreen></iframe>
               </div>
             </div>
           )}
         </div>
 
-        <div style={{ backgroundColor: 'var(--blueXLight)' }}>
+        <div style={{backgroundColor: 'var(--blueXLight)'}}>
           <div className="inner-div" id="solutions">
             <h2 className="products-h2">We have solutions for...</h2>
             <div className="product-section">
               <div className="outer-box">
                 <div className="box">
                   <h4>
-                    <img src="/images/surgeon-users.png"/>
+                    <img src="/images/surgeon-users.png" />
                     Providers
                   </h4>
                   <p>
@@ -398,7 +386,7 @@ export default function Index () {
               <div className="outer-box">
                 <div className="box">
                   <h4>
-                    <img src="/images/medical-device.png"/>
+                    <img src="/images/medical-device.png" />
                     Device Partners
                   </h4>
                   <p>
@@ -410,9 +398,7 @@ export default function Index () {
                   <p>
                     <span>&#10140;</span> Data Intelligence &amp; RWD Insights
                   </p>
-                  <button
-                    onClick={() => router.push('/medical-device')}
-                  >
+                  <button onClick={() => router.push('/medical-device')}>
                     View Device Partner Solutions{' '}
                     <img
                       className="chevron-img"
@@ -434,63 +420,40 @@ export default function Index () {
             <div>
               <a
                 href="https://innovaccer.com/marketplace/Intelligent-surgical-planning-from-diagnosis-to-recovery/"
-                target="_blank"
-              >
-                <img
-                  src="/images/logos/innovacer.png"
-                  width={220}
-                />
+                target="_blank">
+                <img src="/images/logos/innovacer.png" width={220} />
               </a>
               <a
                 href="https://marketplace.athenahealth.com/product/docspera"
-                target="_blank"
-              >
-                <img
-                  src="/images/logos/athena-health.png"
-                  width={180}
-                />
+                target="_blank">
+                <img src="/images/logos/athena-health.png" width={180} />
               </a>
               <a
                 href="https://apporchard.epic.com/Gallery?id=3515"
-                target="_blank"
-              >
-                <img
-                  src="/images/logos/app-orchard.png"
-                  width={170}
-                />
+                target="_blank">
+                <img src="/images/logos/app-orchard.png" width={170} />
               </a>
               <a href="https://www.aahks.org/" target="_blank">
-                <img
-                  src="/images/logos/AAHKS.jpg"
-                  width={170}
-                />
+                <img src="/images/logos/AAHKS.jpg" width={170} />
               </a>
               {/* <a href='https://www.prnewswire.com/news-releases/anterior-hip-foundation-and-docspera-partner-to-uncover-valuable-insights-through-data-analytics-in-order-to-advance-anterior-approach-hip-replacement-300605530.html' target='_blank'>
                 <img src='/images/logos/anterior-hip-foundation.png' width={170} />
               </a> */}
               <a
                 href="https://www.medicare.gov/manage-your-health/share-your-medicare-claims-medicares-blue-button/organize-share-your-medical-information-claims"
-                target="_blank"
-              >
-                <img
-                  src="/images/logos/CMS.jpg"
-                  width={100}
-                />
+                target="_blank">
+                <img src="/images/logos/CMS.jpg" width={100} />
               </a>
               <a
                 href="https://dolby.io/blog/docspera-integrates-dolby-io-with-surgeon-telehealth-solution-in-1-week/"
-                target="_blank"
-              >
-                <img
-                  src="/images/logos/dolby.png"
-                  width={150}
-                />
+                target="_blank">
+                <img src="/images/logos/dolby.png" width={150} />
               </a>
             </div>
           </div>
         </div>
 
-        <FooterBar/>
+        <FooterBar />
         <style jsx>{`
           .container {
             width: 100%;
@@ -1090,5 +1053,5 @@ export default function Index () {
         `}</style>
       </div>
     </>
-  )
+  );
 }

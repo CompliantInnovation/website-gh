@@ -13,9 +13,9 @@ npm run dev
 
 Deploy it to github
 
-Edit ```env-config.js``` and replace ```'Next-gh-page-example'``` by your project name.
+Edit `env-config.js` and replace `'Next-gh-page-example'` by your project name.
 
-Edit ```next.config.js``` and replace ```'Next-gh-page-example'``` by your project name.
+Edit `next.config.js` and replace `'Next-gh-page-example'` by your project name.
 
 1. Create repository.
 2. Link it to your github account.
@@ -41,11 +41,11 @@ You can add on to the deploy command to create the CNAME file for you. GitHub de
 
 ```bash
 
-rm -rf node_modules/.cache 
-&& rimraf out 
-&& next build 
-&& next export 
-&& touch out/.nojekyll 
+rm -rf node_modules/.cache
+&& rimraf out
+&& next build
+&& next export
+&& touch out/.nojekyll
 && touch out/CNAME
 && echo \"example.com\" >> out/CNAME
 && gh-pages -d out
@@ -61,7 +61,6 @@ https://github.com/thierryc/Next-gh-page-example/
 https://thierryc.github.io/Next-gh-page-example/
 
 ```
-
 
 ## The idea behind the example
 

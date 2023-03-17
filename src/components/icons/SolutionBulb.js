@@ -1,13 +1,12 @@
-import * as React from 'react'
+import * as React from 'react';
 
-const SolutionBulb = (props) => (
+const SolutionBulb = props => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={30.277}
     height={43.252}
     viewBox="0 0 30.277 43.252"
-    {...props}
-  >
+    {...props}>
     <g fill="#0064b0">
       <path
         data-name="Icon material-lightbulb-outline"
@@ -19,5 +18,5 @@ const SolutionBulb = (props) => (
       />
     </g>
   </svg>
-)
-export default SolutionBulb
+);
+export default SolutionBulb;

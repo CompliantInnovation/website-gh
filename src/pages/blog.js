@@ -1,36 +1,32 @@
-import React from 'react'
-import Head from 'next/head'
-import HeaderNav from '../components/HeaderNav'
-import FooterBar from '../components/Footer'
-import { useMedia } from '../hooks/useMedia'
-import AnnoucementBanner from '../components/AnnoucementBanner'
+import React from 'react';
+import Head from 'next/head';
+import HeaderNav from '../components/HeaderNav';
+import FooterBar from '../components/Footer';
+import {useMedia} from '../hooks/useMedia';
+import AnnoucementBanner from '../components/AnnoucementBanner';
 
-export default function Blog () {
-  const isBrowser = () => typeof window !== 'undefined'
-  const smallScreen = useMedia('(max-width: 1100px)')
+export default function Blog() {
+  const isBrowser = () => typeof window !== 'undefined';
+  const smallScreen = useMedia('(max-width: 1100px)');
 
   return (
     <>
-      <AnnoucementBanner/>
+      <AnnoucementBanner />
       <div className="container">
         <Head>
           <title>
             DocSpera | HIPAA Compliant, Integrated Surgical Coordination
             Platform
           </title>
-          <link
-            rel="icon"
-            href="/favicon.ico"
-          />
-          <link rel="preconnect" href="https://fonts.googleapis.com"/>
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
+          <link rel="icon" href="/favicon.ico" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
           <link
             href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
-            rel="stylesheet"
-          ></link>
+            rel="stylesheet"></link>
         </Head>
 
-        <HeaderNav/>
+        <HeaderNav />
 
         <iframe
           src="https://blog.d4.docspera.com/"
@@ -42,7 +38,7 @@ export default function Blog () {
           }}
         />
 
-        <FooterBar/>
+        <FooterBar />
         <style jsx>{`
           .container {
             width: 100%;
@@ -50,5 +46,5 @@ export default function Blog () {
         `}</style>
       </div>
     </>
-  )
+  );
 }

@@ -20,9 +20,9 @@ npm run dev
 
 Deploy it to github
 
-Edit ```env-config.js``` and replace ```'Next-gh-page-example'``` by your project name.
+Edit `env-config.js` and replace `'Next-gh-page-example'` by your project name.
 
-Edit ```next.config.js``` and replace ```'Next-gh-page-example'``` by your project name.
+Edit `next.config.js` and replace `'Next-gh-page-example'` by your project name.
 
 1. Create repository.
 2. Link it to your github account.
