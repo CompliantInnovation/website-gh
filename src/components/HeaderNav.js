@@ -3,6 +3,8 @@ import { useMedia } from '../hooks/useMedia'
 import MobileNav from './MobileNav'
 import HeaderNavDropdown from './HeaderNavDropdown'
 import { useRouter } from 'next/router'
+import { LOGIN_URL } from '../config'
+import Link from 'next/link'
 
 export default function HeaderNav ({ page }) {
   const isBrowser = () => typeof window !== 'undefined'
@@ -173,14 +175,13 @@ export default function HeaderNav ({ page }) {
             <span>BLOG</span>
           </div>
         </div>
-        <a
+        <Link
           className="ext-link"
-          href={href}
-          onClick={() => getLink('login')}
+          href={LOGIN_URL}
           target="_blank"
         >
           <button>LOGIN</button>
-        </a>
+        </Link>
       </div>
 
       <style jsx>{`
