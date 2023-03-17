@@ -1,0 +1,16 @@
+namespace: ${environment}
+cfngin_bucket: ""
+
+sys_path: ./
+
+pre_destroy:
+  - path: runway.cfngin.hooks.cleanup_s3.purge_bucket
+    args:
+      bucket_name: ${default tf_state_bucket_name::undefined}
+
+stacks:
+  - name: cfngin-47ba7149-1cbe-4f41-a6e4-f4c9d53d2714-homepage
+    template_path: templates/tf_state.yml
+    variables:
+      BucketName: ${default tf_state_bucket_name::undefined}
+      TableName: ${default tf_state_table_name::undefined}

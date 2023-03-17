@@ -1,0 +1,25 @@
+###########################################
+## Generic System Management
+###########################################
+
+default_tags:
+  prod:
+    owner: "Professional Services"
+    project: "DocSpera Homepage"
+  stage:
+    owner: "Professional Services"
+    project: "DocSpera Homepage"
+  dev:
+    owner: "Professional Services"
+    project: "DocSpera Homepage"
+
+aws_account_id:
+  prod: "074255615689"
+  stage: "447372360764"
+  dev: "054448591523"
+
+# which region the environment will deploy to
+aws_region:
+  prod: "us-west-2"
+  stage: "us-west-2"
+  dev: "us-east-2"
