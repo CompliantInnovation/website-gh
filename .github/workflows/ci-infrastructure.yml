@@ -1,0 +1,59 @@
+name: DEV Infrastructure CD
+on:
+  push:
+    branches:
+      - master
+      - develop
+  workflow_dispatch: # To trigger manual build
+jobs:
+  #  test:
+  #    name: Test
+  #    runs-on: ubuntu-latest
+  #    steps:
+  #      - name: Checkout
+  #        uses: actions/checkout@v2
+  #      - name: Run tests # TODO: add tests
+  #        run: |
+  #          exit 0;
+  build:
+    name: Build
+    strategy:
+      matrix:
+        flavor: ['dev', 'staging', 'production']
+    uses: ./.github/workflows/ci-android-build.yml
+    with:
+      package: 'docspera-app'
+      flavor: ${{ matrix.flavor }}
+  distribute-prod:
+    name: Distribute Production APK
+    needs: build
+    uses: ./.github/workflows/cd-android-firebase.yml
+    with:
+      environment: production
+      apk-artifact-name: 'app-production-universal-release.apk'
+      firebase-testers-group: 'docspera-qa'
+      firebase-app-id: '1:428450786001:android:39f44dc2c2eea04c'
+    secrets:
+      firebase-credentials: ${{ secrets.DOCSPERA_FIREBASE_CREDENTIALS_FILE_CONTENT }}
+  distribute-staging:
+    name: Distribute Staging APK
+    needs: build
+    uses: ./.github/workflows/cd-android-firebase.yml
+    with:
+      environment: staging
+      apk-artifact-name: 'app-staging-universal-release.apk'
+      firebase-testers-group: 'docspera-qa'
+      firebase-app-id: '1:428450786001:android:59d0efa5adada379ea33f0'
+    secrets:
+      firebase-credentials: ${{ secrets.DOCSPERA_FIREBASE_CREDENTIALS_FILE_CONTENT }}
+  distribute-dev:
+    name: Distribute Dev APK
+    needs: build
+    uses: ./.github/workflows/cd-android-firebase.yml
+    with:
+      environment: dev
+      apk-artifact-name: 'app-dev-universal-release.apk'
+      firebase-testers-group: 'docspera-qa'
+      firebase-app-id: '1:428450786001:android:9b500878720af1f7ea33f0'
+    secrets:
+      firebase-credentials: ${{ secrets.DOCSPERA_FIREBASE_CREDENTIALS_FILE_CONTENT }}
