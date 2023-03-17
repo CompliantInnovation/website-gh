@@ -10,10 +10,12 @@ import LeftArrow from '../components/icons/LeftArrow'
 import RightArrow from '../components/icons/RigthArrow'
 import Play from '../components/icons/Play'
 import Close from '../components/icons/Close'
+import { useRouter } from 'next/router'
 
 console.log({ useInterval })
 
 export default function Index () {
+  const router = useRouter()
   const isBrowser = () => typeof window !== 'undefined'
   const smallScreen = useMedia('(max-width: 1100px)')
   const max950w = useMedia('(max-width: 950px)')
