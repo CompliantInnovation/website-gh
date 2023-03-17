@@ -1,0 +1,52 @@
+---
+# Full syntax at https://github.com/onicagroup/runway
+variables:
+  # parameters passed to every TF stack
+  env_params: &env_params
+    aws_account_id: ${var aws_account_id.${env DEPLOY_ENVIRONMENT}}
+    region: ${var aws_region.${env DEPLOY_ENVIRONMENT}}
+    environment: ${env DEPLOY_ENVIRONMENT}
+    default_tags: ${var default_tags.${env DEPLOY_ENVIRONMENT}}
+    tf_state_bucket: ${cfn ${env DEPLOY_ENVIRONMENT}-cfngin-47ba7149-1cbe-4f41-a6e4-f4c9d53d2714-homepage.TerraformStateBucketName}
+    project_name: "47ba7149-1cbe-4f41-a6e4-f4c9d53d2714-homepage"
+
+  # the role which will be assumed, to run Terraform
+  assume_roles: &assume_roles
+    arn: ${var assume_role.${env DEPLOY_ENVIRONMENT}}
+    post_deploy_env_revert: true
+
+  # these are global terraform options applied to all deployments below
+  terraform_module_options: &terraform_module_options
+    terraform_backend_config:
+      bucket: ${cfn ${env DEPLOY_ENVIRONMENT}-cfngin-47ba7149-1cbe-4f41-a6e4-f4c9d53d2714-homepage.TerraformStateBucketName}
+      dynamodb_table: ${cfn ${env DEPLOY_ENVIRONMENT}-cfngin-47ba7149-1cbe-4f41-a6e4-f4c9d53d2714-homepage.TerraformStateTableName}
+      region: ${var aws_region.${env DEPLOY_ENVIRONMENT}}
+    terraform_version: 1.0.7
+    terraform_write_auto_tfvars: true
+
+deployments:
+  ## Backend module - used to store terraform state
+  - name: backend
+    modules:
+      - path: tfstate.cfn
+        tags:
+          - backend
+    account_id: ${var aws_account_id.${env DEPLOY_ENVIRONMENT}}
+    regions:
+      - ${var aws_region.${env DEPLOY_ENVIRONMENT}}
+    parameters:
+      aws_account_id: ${var aws_account_id.${env DEPLOY_ENVIRONMENT}}
+      region: ${var aws_region.${env DEPLOY_ENVIRONMENT}}
+      environment: ${env DEPLOY_ENVIRONMENT}
+
+  - name: s3-bucket
+    account_id: ${var aws_account_id.${env DEPLOY_ENVIRONMENT}}
+    modules:
+      - path: s3-bucket.tf
+        tags: []
+    parameters:
+      <<: *env_params
+    module_options:
+      <<: *terraform_module_options
+    regions:
+      - ${var aws_region.${env DEPLOY_ENVIRONMENT}}
