@@ -121,35 +121,6 @@ resource "aws_cloudfront_distribution" "website" {
     }
   }
 
-  security_headers_config {
-    content_type_options {
-      override = true
-    }
-
-    frame_options {
-      override     = true
-      frame_option = "DENY"
-    }
-
-    referrer_policy {
-      override        = true
-      referrer_policy = "same-origin"
-    }
-
-    strict_transport_security {
-      override                   = true
-      access_control_max_age_sec = 63072000
-      include_subdomains         = true
-      preload                    = true
-    }
-
-    xss_protection {
-      override   = true
-      mode_block = true
-      protection = true
-    }
-  }
-
   default_root_object = var.cloudfront_default_root_object
   enabled             = true
   is_ipv6_enabled     = var.cloudfront_is_ipv6_enabled
