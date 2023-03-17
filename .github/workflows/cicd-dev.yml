@@ -1,0 +1,49 @@
+name: DEV - Cloudfront CI/CD
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - develop
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment:
+      name: Development
+      url: ${{ steps.step_id.outputs.url_output }}
+    concurrency:
+      group: dev-deploy
+      cancel-in-progress: true
+    steps:
+      - name: Setup Runway
+        uses: supplypike/setup-bin@v1
+        with:
+          uri: "https://oni.ca/runway/2.6.3/linux"
+          name: 'runway'
+          version: '2.6.3' # this enables caching
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{ secrets.AWS_IAM_ASSUME_ROLE_ARN }}
+          role-session-name: github-actions
+          aws-region: ${{ env.AWS_REGION }}
+      - name: Runway Init
+        run: cd runway && runway init --ci
+      - name: Get Terraform Outputs
+        id: terraform_outputs
+        run: |
+          cd runway/s3-website.tf;
+          runway tfenv run output >> $GITHUB_OUTPUT
+      - name: Build 🔧
+        uses: ./.github/workflows/ci-build.yml
+        with:
+          asset-prefix: ${{ steps.terraform_outputs.outputs.cloudfront_distribution_domain_name }}
+          base-url: ''
+      - name: Deploy 🚀
+        uses: ./.github/workflows/cd-cloudfront.yml
+        with:
+          s3-bucket-name: ${{ steps.terraform_outputs.outputs.s3_bucket_id }}
+          cloudfront-distribution-id: ${{ steps.terraform_outputs.outputs.cloudfront_distribution_id }}
+          aws-region: ${{ env.AWS_REGION }}
+          artifact-name: ${{ steps.build.outputs.artifact-name }}
+          aws-iam-assume-role-arn: ${{ secrets.AWS_IAM_ASSUME_ROLE_ARN }}

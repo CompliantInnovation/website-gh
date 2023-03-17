@@ -1,6 +1,29 @@
-name: CI Build
+name: Build
 on:
   workflow_dispatch:
+    inputs:
+      asset-prefix:
+        description: 'Asset prefix for the build'
+        required: true
+        default: ''
+      base-url:
+        description: 'Base URL for the build'
+        required: true
+        default: ''
+  workflow_call:
+    inputs:
+      asset-prefix:
+        description: 'Asset prefix for the build'
+        required: true
+        default: ''
+      base-url:
+        description: 'Base URL for the build'
+        required: true
+        default: ''
+    outputs:
+      artifact-name:
+        description: 'Name of the artifact'
+        value: build-artifact-${{ github.sha }}
 jobs:
   build:
     name: Build
@@ -16,10 +39,14 @@ jobs:
           cache: 'yarn'
       - run: yarn install --frozen-lockfile # optional, --immutable
       - name: Build
+        env:
+          NODE_ENV: production
+          ASSET_PREFIX: ${{ github.event.inputs.asset-prefix }}
+          MOUNT_URL: ${{ github.event.inputs.base-url }}
         run: |
           yarn build
       - name: Upload build to artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: build.zip
+          name: build-artifact-${{ github.sha }}
           path: ./out

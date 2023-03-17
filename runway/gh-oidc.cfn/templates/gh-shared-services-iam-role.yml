@@ -1,0 +1,76 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Github Actions IAM Administrator Role
+
+Conditions:
+  IamRoleNameOmitted: !Or
+    - !Equals
+      - !Ref "IamRoleName"
+      - ""
+    - !Equals
+      - !Ref "IamRoleName"
+      - undefined
+
+Parameters:
+  IamRoleName:
+    Type: String
+    Default: ""
+    Description: Name for the Github Actions IAM Role
+  MaxSessionDuration:
+    Type: Number
+    Default: 43200
+    Description: |
+      The maximum session duration (in seconds) that you want to set 
+      for the specified role. If you do not specify a value for this 
+      setting, the default value of one hour is applied. This setting 
+      can have a value from 1 hour to 12 hours.
+  GithubRepoTrustPolicySubject:
+    Type: String
+    Default: "CompliantInnovation/docspera-terraform-templates"
+    Description: |
+      Github Repository to limit OIDC tokens to when assuming the role
+      created by this template.
+  GithubOIDCProviderArn:
+    Type: String
+    Description: ARN of the Github OIDC provider
+Resources:
+  GithubIamRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument: !Sub |
+        {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Federated": "${GithubOIDCProviderArn}"
+              },
+              "Action": "sts:AssumeRoleWithWebIdentity",
+              "Condition": {
+                "StringLike": {
+                  "token.actions.githubusercontent.com:sub": "repo:${GithubRepoTrustPolicySubject}:*"
+                },
+                "ForAllValues:StringEquals": {
+                  "token.actions.githubusercontent.com:iss": "https://token.actions.githubusercontent.com",
+                  "token.actions.githubusercontent.com:aud": "sts.amazonaws.com"
+                }
+              }
+            }
+          ]
+        }
+      Description: "Role for Github Actions to assume to update shared services tooling"
+      ManagedPolicyArns:
+        - "arn:aws:iam::aws:policy/AdministratorAccess"
+      MaxSessionDuration: !Ref "MaxSessionDuration"
+      Path: "/github-actions/"
+      # TODO: Add Permissions boundary / PermissionsBoundary: String
+      Policies: []
+      RoleName: !If
+        - IamRoleNameOmitted
+        - !Ref "AWS::NoValue"
+        - !Ref "IamRoleName"
+
+Outputs:
+  GithubActionsIamRole:
+    Description: Arn of Github Actions IAM Role
+    Value: !GetAtt "GithubIamRole.Arn"

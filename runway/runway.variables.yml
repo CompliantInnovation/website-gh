@@ -23,3 +23,13 @@ aws_region:
   prod: "us-west-2"
   stage: "us-west-2"
   dev: "us-east-2"
+
+github_actions_oidc_repo:
+  prod: "CompliantInnovation/website-gh"
+  stage: "CompliantInnovation/website-gh"
+  dev: "CompliantInnovation/website-gh"
+
+github_actions_oidc_provider_arn:
+  prod: "arn:aws:iam::054448591523:oidc-provider/token.actions.githubusercontent.com"
+  stage: "arn:aws:iam::054448591523:oidc-provider/token.actions.githubusercontent.com"
+  dev: "arn:aws:iam::054448591523:oidc-provider/token.actions.githubusercontent.com"

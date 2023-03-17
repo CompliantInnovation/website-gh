@@ -1,0 +1,12 @@
+namespace: ${environment}
+cfngin_bucket: ""
+
+sys_path: ./
+
+stacks:
+  - name: github-actions-iam-role
+    stack_name: 47ba7149-1cbe-4f41-a6e4-f4c9d53d2714-homepage-github-actions-iam-role
+    template_path: templates/gh-shared-services-iam-role.yml
+    variables:
+      GithubOIDCProviderArn: ${github_actions_oidc_provider_arn}
+      GithubRepoTrustPolicySubject: ${github_actions_oidc_repo}

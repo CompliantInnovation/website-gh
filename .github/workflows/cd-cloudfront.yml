@@ -1,0 +1,46 @@
+name: CD CloudFront
+on:
+  workflow_call:
+    inputs:
+      aws-region:
+        required: true
+        type: string
+      s3-bucket-name:
+        description: 'S3 bucket name'
+        required: true
+        default: 'docspera-homepage'
+      cloudfront-distribution-id:
+        description: 'CloudFront distribution ID'
+        required: true
+        default: 'E1ZQZQZQZQZQZQ'
+      s3-bucket-prefix:
+        description: 'S3 bucket prefix'
+        required: true
+        default: ''
+      artifact-name:
+        description: 'Artifact name'
+        required: true
+        default: 'Out'
+    secrets:
+      aws-iam-assume-role-arn:
+        required: true
+jobs:
+  deploy:
+    - name: Download artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: ${{ inputs.artifact-name }}
+        path: ./out
+    - name: Display structure of downloaded artifacts
+      run: ls -R
+      working-directory: ./apks
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        role-to-assume: ${{ secrets.aws-iam-assume-role-arn }}
+        role-session-name: github-actions
+        aws-region: ${{ inputs.aws-region }}
+    - name: Sync S3 bucket
+      run: aws s3 sync ./out s3://${{ inputs.s3-bucket-name }}/${{ inputs.s3-bucket-prefix }} --delete
+    - name: Invalidate CloudFront distribution
+      run: aws cloudfront create-invalidation --distribution-id ${{ inputs.cloudfront-distribution-id }} --paths "/*"
