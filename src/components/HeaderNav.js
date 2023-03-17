@@ -57,8 +57,8 @@ export default function HeaderNav ({ page }) {
             id="logo"
             src={`${
               tabletSize
-                ? 'https://assets.d4.docspera.com/home/images/logo-short.png'
-                : 'https://assets.d4.docspera.com/home/images/graphics/logo.svg'
+                ? '/images/logo-short.png'
+                : '/images/graphics/logo.svg'
             }`}
             height={`${tabletSize ? 40 : 70}`}
             width={`${tabletSize ? 40 : 150}`}
@@ -91,11 +91,11 @@ export default function HeaderNav ({ page }) {
                 }}
               >
                 <h4>
-                  <img src="https://assets.d4.docspera.com/home/images/surgeon-users.png"/>
+                  <img src="/images/surgeon-users.png"/>
                   Providers{' '}
                   <img
                     className="chevron-img"
-                    src="https://assets.d4.docspera.com/home/images/graphics/chevron.png"
+                    src="/images/graphics/chevron.png"
                   />
                 </h4>
                 <ul>
@@ -112,11 +112,11 @@ export default function HeaderNav ({ page }) {
                 }}
               >
                 <h4>
-                  <img src="https://assets.d4.docspera.com/home/images/medical-device.png"/>
+                  <img src="/images/medical-device.png"/>
                   Device Partners{' '}
                   <img
                     className="chevron-img"
-                    src="https://assets.d4.docspera.com/home/images/graphics/chevron.png"
+                    src="/images/graphics/chevron.png"
                   />
                 </h4>
                 <ul>
