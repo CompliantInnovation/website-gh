@@ -17,11 +17,6 @@ variable "environment" {
   description = "Environment Name"
 }
 
-variable "aws_account_id" {
-  type        = string
-  description = "AWS Account Id"
-}
-
 variable "region" {
   type        = string
   description = "AWS Region"
@@ -41,7 +36,7 @@ variable "cloudfront_default_root_object" {
   default     = "index.html"
 }
 
-variable "cloudfront_custom_error_response" {
+variable "cloudfront_custom_error_responses" {
   type = list(object({
     error_caching_min_ttl = number
     error_code            = number
@@ -74,7 +69,7 @@ variable "cloudfront_viewer_certificate" {
   default = {
     acm_certificate_arn            = ""
     ssl_support_method             = "sni-only"
-    minimum_protocol_version       = "TLSv1.2_2019"
+    minimum_protocol_version       = "TLSv1"
     cloudfront_default_certificate = true
   }
 }
@@ -84,7 +79,6 @@ variable "cloudfront_http_version" {
   description = "Cloudfront Http Version"
   default     = "http2and3"
 }
-
 
 variable "cloudfront_is_ipv6_enabled" {
   type        = bool

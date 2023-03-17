@@ -2,9 +2,7 @@
 # Terraform Configuration
 #------------------------------------------------------------------------------
 locals {
-  tenant      = var.aws_account_id
   environment = var.environment
-  region      = var.region
 
   project_name = var.project_name
   name         = basename(path.cwd)
@@ -21,7 +19,8 @@ locals {
 # S3 Bucket Website
 #------------------------------------------------------------------------------
 module "s3_bucket" {
-  source = "terraform-aws-modules/s3-bucket/aws"
+  source  = "terraform-aws-modules/s3-bucket/aws"
+  version = "3.8.2"
 
   bucket = local.bucket_name
   acl    = "private"
@@ -29,6 +28,7 @@ module "s3_bucket" {
   tags = local.tags
 
   versioning = {
+    enabled    = true
     status     = true
     mfa_delete = false
   }
@@ -89,14 +89,23 @@ resource "aws_cloudfront_distribution" "website" {
 
   comment = "CloudFront Distribution for S3 Bucket Website"
 
-  # TODO - Add variable for Custom Error Responses
-  # custom_error_response (Optional) - One or more custom error response elements (multiples allowed).
+  dynamic "custom_error_response" {
+    for_each = var.cloudfront_custom_error_responses
+    content {
+      error_caching_min_ttl = custom_error_response.value.error_caching_min_ttl
+      error_code            = custom_error_response.value.error_code
+      response_code         = custom_error_response.value.response_code
+      response_page_path    = custom_error_response.value.response_page_path
+    }
+  }
 
-  # TODO - Add variables for cache and origin request policies.
   default_cache_behavior {
-    cache_policy_id          = "658327ea-f89d-4fab-a63d-7e88639e58f6" # Managed-CachingOptimized
-    origin_request_policy_id = "88a5eaf4-2fd4-4709-b370-b4c650ea3fcf" # Managed-CORS-S3Origin
-    allowed_methods          = [
+    cache_policy_id            = "658327ea-f89d-4fab-a63d-7e88639e58f6" # Managed-CachingOptimized
+    origin_request_policy_id   = "88a5eaf4-2fd4-4709-b370-b4c650ea3fcf" # Managed-CORS-S3Origin
+    response_headers_policy_id = "eaab4381-ed33-4a86-88ca-d9558dc6cd63"
+    # Managed-CORS-with-preflight-and-SecurityHeadersPolicy
+
+    allowed_methods = [
       "GET", "HEAD", "OPTIONS"
     ]
     cached_methods = [
@@ -112,7 +121,36 @@ resource "aws_cloudfront_distribution" "website" {
     }
   }
 
-  default_root_object = "index.html"
+  security_headers_config {
+    content_type_options {
+      override = true
+    }
+
+    frame_options {
+      override     = true
+      frame_option = "DENY"
+    }
+
+    referrer_policy {
+      override        = true
+      referrer_policy = "same-origin"
+    }
+
+    strict_transport_security {
+      override                   = true
+      access_control_max_age_sec = 63072000
+      include_subdomains         = true
+      preload                    = true
+    }
+
+    xss_protection {
+      override   = true
+      mode_block = true
+      protection = true
+    }
+  }
+
+  default_root_object = var.cloudfront_default_root_object
   enabled             = true
   is_ipv6_enabled     = var.cloudfront_is_ipv6_enabled
   http_version        = var.cloudfront_http_version

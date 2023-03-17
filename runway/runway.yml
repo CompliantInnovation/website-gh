@@ -39,10 +39,10 @@ deployments:
       region: ${var aws_region.${env DEPLOY_ENVIRONMENT}}
       environment: ${env DEPLOY_ENVIRONMENT}
 
-  - name: s3-bucket
+  - name: s3-website
     account_id: ${var aws_account_id.${env DEPLOY_ENVIRONMENT}}
     modules:
-      - path: s3-bucket.tf
+      - path: s3-website.tf
         tags: []
     parameters:
       <<: *env_params
