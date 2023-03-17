@@ -1,8 +1,16 @@
 {
+  "ignorePatterns": [
+	"node_modules/",
+	"dist/",
+	"coverage/",
+	".next",
+	"src/.next/",
+	"out/"
+  ],
   "extends": "next/core-web-vitals",
   "settings": {
-    "next": {
-      "rootDir": "src/"
-    }
+	"next": {
+	  "rootDir": "src/"
+	}
   }
 }
