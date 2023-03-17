@@ -10,7 +10,7 @@ const MobileNavDropdown = ({ state, title, items }) => {
         <img
           id={isDropdownOpen ? 'chevron-img' : ''}
           className="chevron-img"
-          src="https://assets.d4.docspera.com/home/images/graphics/chevron.png"
+          src="/images/graphics/chevron.png"
         />
       </div>
 

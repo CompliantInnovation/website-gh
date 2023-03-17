@@ -19,13 +19,13 @@ export default function MobileNav ({ getLink, href }) {
         {isMobileNavOpen ? (
           <img
             id="x"
-            src="https://assets.d4.docspera.com/home/images/exit_icon.svg"
+            src="/images/exit_icon.svg"
             onClick={openMenu}
           />
         ) : (
           <img
             id="hamburger"
-            src="https://assets.d4.docspera.com/home/images/graphics/hamburger.png"
+            src="/images/graphics/hamburger.png"
             onClick={openMenu}
           />
         )}
@@ -35,7 +35,7 @@ export default function MobileNav ({ getLink, href }) {
             onClick={() => router.push('/')}
           >
             <img
-              src="https://assets.d4.docspera.com/home/images/graphics/logo.svg"
+              src="/images/graphics/logo.svg"
               width={'100%'}
             />
           </a>
@@ -61,7 +61,7 @@ export default function MobileNav ({ getLink, href }) {
             <div>Home</div>
             <img
               className="chevron-img"
-              src="https://assets.d4.docspera.com/home/images/graphics/chevron.png"
+              src="/images/graphics/chevron.png"
             />
           </div>
 
@@ -74,7 +74,7 @@ export default function MobileNav ({ getLink, href }) {
                     className="box"
                     onClick={() => router.push('/provider')}
                   >
-                    <img src="https://assets.d4.docspera.com/home/images/surgeon-users.png"/>
+                    <img src="/images/surgeon-users.png"/>
                     Providers
                   </div>
                 ),
@@ -85,7 +85,7 @@ export default function MobileNav ({ getLink, href }) {
                     className="box"
                     onClick={() => router.push('/medical-device')}
                   >
-                    <img src="https://assets.d4.docspera.com/home/images/medical-device.png"/>
+                    <img src="/images/medical-device.png"/>
                     Device Partners
                   </div>
                 ),
@@ -152,7 +152,7 @@ export default function MobileNav ({ getLink, href }) {
             <div>Blog</div>
             <img
               className="chevron-img"
-              src="https://assets.d4.docspera.com/home/images/graphics/chevron.png"
+              src="/images/graphics/chevron.png"
             />
           </div>
         </div>

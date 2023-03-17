@@ -17,7 +17,7 @@ const ProviderSolutions = ({ premium }) => {
           <div className="content">
             <div>
               <div className="img-div">
-                <img src="https://assets.d4.docspera.com/home/images/product-shots/Laptop-Calendar.png"/>
+                <img src="/images/product-shots/Laptop-Calendar.png"/>
               </div>
               <div className="h4-div">
                 <h4>
@@ -43,7 +43,7 @@ const ProviderSolutions = ({ premium }) => {
             <div>
               <div className="img-div">
                 <img
-                  src="https://assets.d4.docspera.com/home/images/intelligent-scheduler/IntelligentSchedulerImage.jpg"/>
+                  src="/images/intelligent-scheduler/IntelligentSchedulerImage.jpg"/>
               </div>
               <div className="h4-div">
                 <h4>Intelligent Dashboard for Managing Upcoming Cases</h4>
@@ -69,7 +69,7 @@ const ProviderSolutions = ({ premium }) => {
           <div className="content">
             <div>
               <div className="img-div">
-                <img src="https://assets.d4.docspera.com/home/images/product-shots/EOC.png"/>
+                <img src="/images/product-shots/EOC.png"/>
               </div>
               <div className="h4-div">
                 <h4>
