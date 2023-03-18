@@ -39,7 +39,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: ${{ inputs.environment }}
-      url: ${{ steps.get-url.outputs.domain-name }}
+      url: "https://${{ steps.get-url.outputs.domain-name }}"
     steps:
       - name: Download artifact
         uses: actions/download-artifact@v3
@@ -62,4 +62,4 @@ jobs:
       - id: get-url
         name: Get CloudFront distribution URL
         run: |
-          echo "domain-name=https://$(aws cloudfront get-distribution --id ${{ inputs.cloudfront-distribution-id }} --output json --query 'Distribution.DomainName')" >> $GITHUB_OUTPUT;
+          echo domain-name=$(aws cloudfront get-distribution --id ${{ inputs.cloudfront-distribution-id }} --output json --query 'Distribution.DomainName') >> $GITHUB_OUTPUT;
