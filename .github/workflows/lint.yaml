@@ -1,5 +1,4 @@
 name: Lint
-
 on:
   workflow_dispatch:
   push:
@@ -7,8 +6,7 @@ on:
       - master
       - develop
   pull_request:
-    types: ['opened', 'edited', 'reopened', 'synchronize']
-
+    types: [ 'opened', 'edited', 'reopened', 'synchronize' ]
 jobs:
   run-linters:
     name: Run linters

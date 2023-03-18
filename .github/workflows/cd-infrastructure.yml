@@ -1,3 +1,4 @@
+name: Infrastructure CD
 on:
   workflow_call:
     inputs:
@@ -36,7 +37,7 @@ jobs:
       DEPLOY_ENVIRONMENT: ${{ inputs.deploy-environment || vars.DEPLOY_ENVIRONMENT }}
     steps:
       - name: Setup Runway
-        uses: supplypike/setup-bin@v1
+        uses: supplypike/setup-bin@v3
         with:
           uri: "https://oni.ca/runway/2.6.3/linux"
           name: 'runway'
