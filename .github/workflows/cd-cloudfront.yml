@@ -39,7 +39,7 @@ jobs:
         path: ./out
     - name: Display structure of downloaded artifacts
       run: ls -R
-      working-directory: ./apks
+      working-directory: ./out
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
