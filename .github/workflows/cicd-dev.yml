@@ -70,7 +70,7 @@ jobs:
       s3-bucket-prefix: ''
       s3-bucket-name: ${{ needs.configure.outputs.s3_bucket_id }}
       cloudfront-distribution-id: ${{ needs.configure.outputs.cloudfront_distribution_id }}
-      aws-region: ${{ needs.configure.configure.aws_region }}
+      aws-region: ${{ needs.configure.outputs.aws_region }}
       artifact-name: ${{ needs.build.outputs.artifact-name }}
     secrets:
       aws-iam-assume-role-arn: ${{ secrets.AWS_IAM_ASSUME_ROLE_ARN }}
