@@ -5,6 +5,9 @@ on:
     branches:
       - develop
       - master
+concurrency:
+  group: dev-deploy
+  cancel-in-progress: true
 jobs:
   configure:
     name: Configure Build Environment
@@ -12,9 +15,6 @@ jobs:
     permissions:
       id-token: write # This is required for requesting the JWT
       contents: read  # This is required for actions/checkout
-    concurrency:
-      group: dev-deploy
-      cancel-in-progress: true
     outputs:
       s3_bucket_id: ${{ steps.terraform_outputs.outputs.s3_bucket_id }}
       cloudfront_distribution_domain_name: ${{ steps.terraform_outputs.outputs.cloudfront_distribution_domain_name }}
