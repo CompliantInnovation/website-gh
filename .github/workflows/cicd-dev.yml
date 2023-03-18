@@ -5,18 +5,23 @@ on:
     branches:
       - develop
       - master
+environment:
+  name: Development
+  url: ${{ steps.terraform_outputs.outputs.cloudfront_distribution_domain_name }}
 jobs:
-  build:
+  configure:
+    name: Configure Build Environment
     runs-on: ubuntu-latest
     permissions:
       id-token: write # This is required for requesting the JWT
       contents: read  # This is required for actions/checkout
-    environment:
-      name: Development
-      url: ${{ steps.step_id.outputs.url_output }}
     concurrency:
       group: dev-deploy
       cancel-in-progress: true
+    outputs:
+      s3_bucket_id: ${{ steps.terraform_outputs.outputs.s3_bucket_id }}
+      cloudfront_distribution_domain_name: ${{ steps.terraform_outputs.outputs.cloudfront_distribution_domain_name }}
+      cloudfront_distribution_id: ${{ steps.terraform_outputs.outputs.cloudfront_distribution_id }}
     env:
       DEPLOY_ENVIRONMENT: ${{ vars.DEPLOY_ENVIRONMENT }}
     steps:
@@ -44,27 +49,24 @@ jobs:
         id: terraform_outputs
         run: |
           cd runway/s3-website.tf;
-          runway tfenv run output >> $GITHUB_OUTPUT
-
-      # Setup Build
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          cache: 'yarn'
-
-      - name: Install Dependencies
-        run: yarn install --frozen-lockfile # optional, --immutable
-
-      - name: Build 🔧
-        env:
-          NODE_ENV: production
-          ASSET_PREFIX: ${{ steps.terraform_outputs.outputs.cloudfront_distribution_domain_name }}
-#          MOUNT_URL: ${{ github.event.inputs.base-url }}
-        run: |
-          yarn build
-
-      - name: Deploy to S3 bucket 🚀
-        run: aws s3 sync ./out s3://${{ steps.terraform_outputs.outputs.s3_bucket_id }}/ --delete
-
-      - name: Invalidate CloudFront distribution
-        run: aws cloudfront create-invalidation --distribution-id ${{ steps.terraform_outputs.outputs.cloudfront_distribution_id }} --paths "/*"
+          echo "s3_bucket_id=$(runway tfenv run -- output -raw s3_bucket_id)" >> $GITHUB_OUTPUT;
+          echo "cloudfront_distribution_domain_name=$(runway tfenv run -- output -raw cloudfront_distribution_domain_name)" >> $GITHUB_OUTPUT;
+          echo "cloudfront_distribution_id=$(runway tfenv run -- output -raw cloudfront_distribution_id)" >> $GITHUB_OUTPUT;
+  build:
+    name: Build 🔧
+    needs: configure
+    uses: ./.github/workflows/ci-build.yml
+    with:
+      asset-prefix: ${{ needs.build.outputs.cloudfront_distribution_domain_name }}
+      base-url: ''
+  deploy:
+    name: Deploy 🚀
+    needs: build
+    uses: ./.github/workflows/cd-cloudfront.yml
+    with:
+      s3-bucket-name: ${{ needs.build.outputs.s3_bucket_id }}
+      cloudfront-distribution-id: ${{ needs.build.outputs.cloudfront_distribution_id }}
+      aws-region: ${{ vars.AWS_REGION }}
+      artifact-name: ${{ needs.build.outputs.artifact-name }}
+    secrets:
+      aws-iam-assume-role-arn: ${{ secrets.AWS_IAM_ASSUME_ROLE_ARN }}
