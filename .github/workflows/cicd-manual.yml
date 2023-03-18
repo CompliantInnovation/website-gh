@@ -29,7 +29,6 @@ jobs:
   deploy:
     name: Deploy 🚀
     needs:
-      - select-env
       - infrastructure
       - build
     uses: ./.github/workflows/cd-cloudfront.yml
