@@ -39,6 +39,9 @@ jobs:
           version: '2.6.3' # this enables caching
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          submodules: true
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
@@ -48,7 +51,7 @@ jobs:
       - name: Runway Deploy
         env:
           DEPLOY_ENVIRONMENT: ${{ inputs.environment }}
-        run: runway deploy --ci
+        run: cd runway && runway deploy --ci
       - name: Get Outputs
         id: outputs
         run: |
