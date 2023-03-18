@@ -62,4 +62,4 @@ jobs:
       - id: get-url
         name: Get CloudFront distribution URL
         run: |
-          echo domain-name=$(aws cloudfront get-distribution --id ${{ inputs.cloudfront-distribution-id }} --output json --query 'Distribution.DomainName') >> $GITHUB_OUTPUT;
+          echo domain-name=$(aws cloudfront get-distribution --id ${{ inputs.cloudfront-distribution-id }} --output json --query 'Distribution.DomainName' | tr -d '"') >> $GITHUB_OUTPUT;
