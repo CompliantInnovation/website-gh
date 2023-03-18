@@ -51,8 +51,7 @@ jobs:
       group: ${{ github.workflow }}-${{ needs.select-env.outputs.environment_name || inputs.environment }}
     with:
       environment: ${{ needs.select-env.outputs.environment_name || inputs.environment }}
-      s3-bucket-prefix: ''
-      s3-bucket-name: ${{ needs.infrastructure.outputs.s3_bucket_id }}
-      cloudfront-distribution-id: ${{ needs.infrastructure.outputs.cloudfront_distribution_id }}
-      aws-region: ${{ needs.infrastructure.outputs.aws_region }}
+      s3-bucket-prefix: ${{ vars.S3_BUCKET_PREFIX || '' }}
+      s3-bucket-name: ${{ needs.infrastructure.outputs.s3-bucket-id }}
+      cloudfront-distribution-id: ${{ needs.infrastructure.outputs.cloudfront-distribution-id }}
       artifact-name: ${{ needs.build.outputs.artifact-name }}
