@@ -33,6 +33,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Runway Init
+        with:
+          DEPLOY_ENVIRONMENT: ${{ vars.DEPLOY_ENVIRONMENT }}
         run: cd runway && runway init --ci
       - name: Get Terraform Outputs
         id: terraform_outputs
