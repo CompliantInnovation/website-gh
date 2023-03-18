@@ -51,6 +51,10 @@ jobs:
     env:
       AWS_DEFAULT_REGION: ${{ inputs.aws-region || vars.AWS_REGION }}
       DEPLOY_ENVIRONMENT: ${{ inputs.deploy-environment || vars.DEPLOY_ENVIRONMENT }}
+    outputs:
+      s3-bucket-id: ${{ steps.outputs.outputs.s3-bucket-id }}
+      cloudfront-distribution-id: ${{ steps.outputs.outputs.cloudfront-distribution-id }}
+      cloudfront-distribution-domain-name: ${{ steps.outputs.outputs.cloudfront-distribution-domain-name }}
     steps:
       - name: Setup Runway
         uses: supplypike/setup-bin@v3
