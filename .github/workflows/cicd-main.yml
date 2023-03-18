@@ -1,5 +1,16 @@
 name: CI/CD
 on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment'
+        required: true
+        type: choice
+        default: 'Development'
+        options:
+          - 'Development'
+          - 'Staging'
+          - 'Production'
   push:
     branches:
       - develop
@@ -9,8 +20,8 @@ jobs:
   select-env:
     name: Select Environment
     runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_dispatch' }}
     outputs:
-      deploy_environment: ${{ steps.select_env.outputs.deploy_environment }}
       environment_name: ${{ steps.select_env.outputs.environment_name }}
     steps:
       - name: Determine Environment
@@ -18,22 +29,19 @@ jobs:
         run: |
           if [[ "${{ github.ref }}" == "refs/heads/master" ]]; then
             echo "environment_name=Production" >> $GITHUB_OUTPUT;
-            echo "deploy_environment=PROD" >> $GITHUB_OUTPUT;
           elif [[ "${{ github.ref }}" =~ "refs/heads/release/" ]]; then
             echo "environment_name=Staging" >> $GITHUB_OUTPUT;
-            echo "deploy_environment=stage" >> $GITHUB_OUTPUT;
           else
             echo "environment_name=Development" >> $GITHUB_OUTPUT;
-            echo "deploy_environment=dev" >> $GITHUB_OUTPUT;
           fi
   infrastructure:
     name: Deploy Infrastructure
     uses: ./.github/workflows/cd-infrastructure.yml
     needs: select-env
     concurrency:
-      group: ${{ github.workflow }}-${{ needs.select-env.outputs.deploy_environment }}
+      group: ${{ github.workflow }}-${{ needs.select-env.outputs.environment_name || inputs.environment }}
     with:
-      environment: ${{ needs.select-env.outputs.environment_name }}
+      environment: ${{ needs.select-env.outputs.environment_name || inputs.environment }}
   build:
     name: Build 🔧
     needs: infrastructure
@@ -49,9 +57,9 @@ jobs:
       - build
     uses: ./.github/workflows/cd-cloudfront.yml
     concurrency:
-      group: ${{ github.workflow }}-${{ needs.select-env.outputs.deploy_environment }}
+      group: ${{ github.workflow }}-${{ needs.select-env.outputs.environment_name || inputs.environment }}
     with:
-      environment: ${{ needs.select-env.outputs.environment_name }}
+      environment: ${{ needs.select-env.outputs.environment_name || inputs.environment }}
       s3-bucket-prefix: ''
       s3-bucket-name: ${{ needs.infrastructure.outputs.s3_bucket_id }}
       cloudfront-distribution-id: ${{ needs.infrastructure.outputs.cloudfront_distribution_id }}
