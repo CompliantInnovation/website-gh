@@ -64,10 +64,8 @@ jobs:
     name: Deploy 🚀
     needs: build
     uses: ./.github/workflows/cd-cloudfront.yml
-    environment:
-      name: Development
-      url: ${{ needs.build.outputs.outputs.cloudfront_distribution_domain_name }}
     with:
+      environment: 'Development'
       s3-bucket-prefix: ''
       s3-bucket-name: ${{ needs.build.outputs.s3_bucket_id }}
       cloudfront-distribution-id: ${{ needs.build.outputs.cloudfront_distribution_id }}

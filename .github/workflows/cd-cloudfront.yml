@@ -2,6 +2,9 @@ name: CD CloudFront
 on:
   workflow_call:
     inputs:
+      environment:
+        type: string
+        required: false
       aws-region:
         type: string
         required: true
@@ -31,6 +34,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
     steps:
     - name: Download artifact
       uses: actions/download-artifact@v3
