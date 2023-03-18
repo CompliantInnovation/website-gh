@@ -22,6 +22,8 @@ jobs:
   deploy:
     name: Deploy 🚀
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     needs:
       - build
     concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
@@ -31,6 +33,12 @@ jobs:
         with:
           name: ${{ needs.build.outputs.artifact-name }}
           path: ./out
+      - name: Check out Git repository # clone the repo to local ci workspace
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          submodules: true
+          lfs: true
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
