@@ -7,33 +7,30 @@ on:
   push:
     branches:
       - develop
+  workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
   build:
+    name: Build 🔧
+    needs: configure
     concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    uses: ./.github/workflows/ci-build.yml
+    with:
+      asset-prefix: ${{ needs.build.outputs.cloudfront_distribution_domain_name }}
+      base-url: ''
+  deploy:
+    name: Deploy 🚀
+    needs:
+      - build
+    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - uses: actions/setup-node@v3
+      - name: Download artifact
+        uses: actions/download-artifact@v3
         with:
-          node-version: 16
-
-      - name: Install dependencies
-        run: yarn --frozen-lockfile
-
-      - name: Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
-        env:
-          NODE_ENV: production
-        run: yarn build
-
+          name: ${{ needs.build.outputs.artifact-name }}
+          path: ./out
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:

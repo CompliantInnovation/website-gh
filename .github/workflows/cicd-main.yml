@@ -1,0 +1,109 @@
+name: CI/CD
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - develop
+      - 'release/*'
+      - master
+concurrency:
+  group: ${{ github.workflow }}-${{ jobs.select-env }}
+  cancel-in-progress: true
+jobs:
+  select-env:
+    name: Select Environment
+    runs-on: ubuntu-latest
+    outputs:
+      deploy_environment: ${{ steps.select_env.outputs.deploy_environment }}
+    steps:
+      - name: Determine Environment
+        id: select_env
+        run: |
+          if [[ "${{ github.ref }}" == "refs/heads/master" ]]; then
+            echo "environment_name=Production" >> $GITHUB_OUTPUT
+            echo "deploy_environment=PROD" >> $GITHUB_OUTPUT
+          elif [[ "${{ github.ref }}" =~ "refs/heads/release/" ]]; then
+            echo "environment_name=Staging" >> $GITHUB_OUTPUT
+            echo "deploy_environment=stage" >> $GITHUB_OUTPUT
+          else
+            echo "environment_name=Development" >> $GITHUB_OUTPUT
+            echo "deploy_environment=dev" >> $GITHUB_OUTPUT
+          fi
+  infrastructure:
+    name: Deploy Infrastructure
+    uses: ./.github/workflows/cd-infrastructure.yml
+    needs: select-env
+    with:
+      environment: ${{ needs.select-env.outputs.deploy_environment }}
+      region: ${{ vars.AWS_REGION }}
+    secrets:
+      aws-iam-assume-role-arn: ${{ secrets.AWS_IAM_ASSUME_ROLE_ARN }}
+#  configure:
+#    name: Configure Environment
+#    needs:
+#      - select-env
+#      - infrastructure
+#    runs-on: ubuntu-latest
+#    permissions:
+#      id-token: write # This is required for requesting the JWT
+#      contents: read  # This is required for actions/checkout
+#    outputs:
+#      aws_region: ${{ vars.AWS_REGION }}
+#      s3_bucket_id: ${{ steps.terraform_outputs.outputs.s3_bucket_id }}
+#      cloudfront_distribution_domain_name: ${{ steps.terraform_outputs.outputs.cloudfront_distribution_domain_name }}
+#      cloudfront_distribution_id: ${{ steps.terraform_outputs.outputs.cloudfront_distribution_id }}
+#    environment:
+#      name: ${{ needs.select-env.outputs.deploy_environment }}
+#    env:
+#      DEPLOY_ENVIRONMENT: ${{ needs.select-env.outputs.deploy_environment }}
+#    steps:
+#      - name: Setup Runway
+#        uses: supplypike/setup-bin@v3
+#        with:
+#          uri: "https://oni.ca/runway/2.6.3/linux"
+#          name: 'runway'
+#          version: '2.6.3' # this enables caching
+#
+#      - name: Configure AWS Credentials
+#        uses: aws-actions/configure-aws-credentials@v2
+#        with:
+#          role-to-assume: ${{ secrets.AWS_IAM_ASSUME_ROLE_ARN }}
+#          role-session-name: github-actions
+#          aws-region: ${{ vars.AWS_REGION }}
+#
+#      - name: Checkout
+#        uses: actions/checkout@v3
+#
+#      - name: Runway Init
+#        run: cd runway && runway init --ci
+#
+#      - name: Get Terraform Outputs
+#        id: terraform_outputs
+#        run: |
+#          cd runway/s3-website.tf;
+#          echo "s3_bucket_id=$(runway tfenv run -- output -raw s3_bucket_id)" >> $GITHUB_OUTPUT;
+#          echo "cloudfront_distribution_domain_name=$(runway tfenv run -- output -raw cloudfront_distribution_domain_name)" >> $GITHUB_OUTPUT;
+#          echo "cloudfront_distribution_id=$(runway tfenv run -- output -raw cloudfront_distribution_id)" >> $GITHUB_OUTPUT;
+  build:
+    name: Build 🔧
+    needs: infrastructure
+    uses: ./.github/workflows/ci-build.yml
+    with:
+      asset-prefix: ${{ needs.infrastructure.outputs.cloudfront_distribution_domain_name }}
+      base-url: ''
+  deploy:
+    name: Deploy 🚀
+    needs:
+      - select-env
+      - infrastructure
+      - build
+    uses: ./.github/workflows/cd-cloudfront.yml
+    with:
+      environment: ${{ needs.select-env.outputs.deploy_environment }}
+      s3-bucket-prefix: ''
+      s3-bucket-name: ${{ needs.infrastructure.outputs.s3_bucket_id }}
+      cloudfront-distribution-id: ${{ needs.infrastructure.outputs.cloudfront_distribution_id }}
+      aws-region: ${{ needs.infrastructure.outputs.aws_region }}
+      artifact-name: ${{ needs.build.outputs.artifact-name }}
+    secrets:
+      aws-iam-assume-role-arn: ${{ secrets.AWS_IAM_ASSUME_ROLE_ARN }}

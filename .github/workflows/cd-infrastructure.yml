@@ -1,30 +1,57 @@
-name: Infrastructure CD
 on:
-  push:
-    branches:
-      - master
-      - develop
-  workflow_dispatch: # To trigger manual build
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string
+      aws-region:
+        required: true
+        type: string
+    secrets:
+      aws-iam-assume-role-arn:
+        required: true
+    outputs:
+      s3-bucket-id:
+        description: 'S3 bucket ID'
+        value: ${{ steps.outputs.s3-bucket-id }}
+      cloudfront-distribution-id:
+        description: 'CloudFront distribution ID'
+        value: ${{ steps.outputs.cloudfront-distribution-id }}
+      cloudfront-distribution-domain-name:
+        description: 'CloudFront distribution domain name'
+        value: ${{ steps.outputs.cloudfront-distribution-domain-name }}
 jobs:
-  runway:
-    name: Runway Deploy
+  deploy:
+    name: "Deploy Runway"
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    permissions:
+      id-token: write # This is required for requesting the JWT
+      contents: read  # This is required for actions/checkout
     steps:
       - name: Setup Runway
-        uses: supplypike/setup-bin@v3
+        uses: supplypike/setup-bin@v1
         with:
           uri: "https://oni.ca/runway/2.6.3/linux"
           name: 'runway'
           version: '2.6.3' # this enables caching
-
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          role-to-assume: ${{ secrets.AWS_IAM_ASSUME_ROLE_ARN }}
+          role-to-assume: ${{ secrets.aws-iam-assume-role-arn }}
           role-session-name: github-actions
-          aws-region: ${{ vars.AWS_REGION }}
-
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Runway Init
-        run: cd runway && runway init --ci
+          aws-region: ${{ inputs.aws-region }}
+      - name: Runway Deploy
+        env:
+          AWS_DEFAULT_REGION: ${{ inputs.aws-region }}
+          DEPLOY_ENVIRONMENT: ${{ inputs.environment }}
+        run: runway deploy --ci
+      - name: Get Outputs
+        id: outputs
+        run: |
+          cd runway/s3-website.tf;
+          echo "s3_bucket_id=$(runway tfenv run -- output -raw s3_bucket_id)" >> $GITHUB_OUTPUT;
+          echo "cloudfront_distribution_domain_name=$(runway tfenv run -- output -raw cloudfront_distribution_domain_name)" >> $GITHUB_OUTPUT;
+          echo "cloudfront_distribution_id=$(runway tfenv run -- output -raw cloudfront_distribution_id)" >> $GITHUB_OUTPUT;
