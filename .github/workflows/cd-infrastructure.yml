@@ -11,6 +11,10 @@ on:
       deploy-environment:
         required: false
         type: string
+      runway-tags:
+        required: false
+        type: string
+        default: 'ci'
     secrets:
       aws-iam-assume-role-arn:
         required: true
@@ -54,7 +58,7 @@ jobs:
           role-session-name: github-actions
           aws-region: ${{ inputs.aws-region || vars.AWS_REGION }}
       - name: Runway Deploy
-        run: cd runway && runway deploy --ci
+        run: cd runway && runway deploy --ci --tag ${{ inputs.runway-tags }} --env ${{ env.DEPLOY_ENVIRONMENT }}
       - name: Get Outputs
         id: outputs
         run: |
