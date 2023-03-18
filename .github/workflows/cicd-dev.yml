@@ -26,14 +26,14 @@ jobs:
       name: Development
     steps:
       - name: Setup Runway
-        uses: supplypike/setup-bin@v1
+        uses: supplypike/setup-bin@v3
         with:
           uri: "https://oni.ca/runway/2.6.3/linux"
           name: 'runway'
           version: '2.6.3' # this enables caching
 
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
+        uses: aws-actions/configure-aws-credentials@v2
         with:
           role-to-assume: ${{ secrets.AWS_IAM_ASSUME_ROLE_ARN }}
           role-session-name: github-actions

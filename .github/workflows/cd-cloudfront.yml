@@ -48,7 +48,7 @@ jobs:
       run: ls -R
       working-directory: ./out
     - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v1
+      uses: aws-actions/configure-aws-credentials@v2
       with:
         role-to-assume: ${{ secrets.aws-iam-assume-role-arn }}
         role-session-name: github-actions
