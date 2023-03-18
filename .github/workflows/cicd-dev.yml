@@ -5,8 +5,6 @@ on:
     branches:
       - develop
       - master
-env:
-  DEPLOY_ENVIRONMENT: ${{ vars.DEPLOY_ENVIRONMENT }}
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,6 +17,8 @@ jobs:
     concurrency:
       group: dev-deploy
       cancel-in-progress: true
+    env:
+      DEPLOY_ENVIRONMENT: ${{ vars.DEPLOY_ENVIRONMENT }}
     steps:
       - name: Setup Runway
         uses: supplypike/setup-bin@v1
@@ -26,29 +26,45 @@ jobs:
           uri: "https://oni.ca/runway/2.6.3/linux"
           name: 'runway'
           version: '2.6.3' # this enables caching
+
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           role-to-assume: ${{ secrets.AWS_IAM_ASSUME_ROLE_ARN }}
           role-session-name: github-actions
           aws-region: ${{ vars.AWS_REGION }}
+
       - name: Checkout
         uses: actions/checkout@v3
+
       - name: Runway Init
         run: cd runway && runway init --ci
+
       - name: Get Terraform Outputs
         id: terraform_outputs
         run: |
           cd runway/s3-website.tf;
           runway tfenv run output >> $GITHUB_OUTPUT
-      - uses: ./.github/workflows/ci-build.yml
+
+      # Setup Build
+      - uses: actions/setup-node@v3
         with:
-          asset-prefix: ${{ steps.terraform_outputs.outputs.cloudfront_distribution_domain_name }}
-          base-url: ''
-      - uses: ./.github/workflows/cd-cloudfront.yml
-        with:
-          s3-bucket-name: ${{ steps.terraform_outputs.outputs.s3_bucket_id }}
-          cloudfront-distribution-id: ${{ steps.terraform_outputs.outputs.cloudfront_distribution_id }}
-          aws-region: ${{ vars.AWS_REGION }}
-          artifact-name: ${{ steps.build.outputs.artifact-name }}
-          aws-iam-assume-role-arn: ${{ secrets.AWS_IAM_ASSUME_ROLE_ARN }}
+          node-version: 16
+          cache: 'yarn'
+
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile # optional, --immutable
+
+      - name: Build 🔧
+        env:
+          NODE_ENV: production
+          ASSET_PREFIX: ${{ steps.terraform_outputs.outputs.cloudfront_distribution_domain_name }}
+#          MOUNT_URL: ${{ github.event.inputs.base-url }}
+        run: |
+          yarn build
+
+      - name: Deploy to S3 bucket 🚀
+        run: aws s3 sync ./out s3://${{ steps.terraform_outputs.outputs.s3_bucket_id }}/ --delete
+
+      - name: Invalidate CloudFront distribution
+        run: aws cloudfront create-invalidation --distribution-id ${{ steps.terraform_outputs.outputs.cloudfront_distribution_id }} --paths "/*"
