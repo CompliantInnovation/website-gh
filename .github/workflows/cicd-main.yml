@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       deploy_environment: ${{ steps.select_env.outputs.deploy_environment }}
+      environment_name: ${{ steps.select_env.outputs.environment_name }}
     steps:
       - name: Determine Environment
         id: select_env
