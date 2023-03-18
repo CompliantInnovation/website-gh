@@ -13,9 +13,11 @@ on:
   workflow_call:
     inputs:
       asset-prefix:
+        type: string
         required: true
         default: ''
       base-url:
+        type: string
         required: true
         default: ''
     outputs:
