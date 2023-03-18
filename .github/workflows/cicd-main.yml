@@ -30,6 +30,8 @@ jobs:
     name: Deploy Infrastructure
     uses: ./.github/workflows/cd-infrastructure.yml
     needs: select-env
+    environment:
+      name: ${{ needs.select-env.outputs.environment_name }}
     concurrency:
       group: ${{ github.workflow }}-${{ needs.select-env.outputs.deploy_environment }}
       cancel-in-progress: true

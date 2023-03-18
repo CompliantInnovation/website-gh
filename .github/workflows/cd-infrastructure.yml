@@ -44,7 +44,7 @@ jobs:
         with:
           role-to-assume: ${{ secrets.aws-iam-assume-role-arn }}
           role-session-name: github-actions
-          aws-region: ${{ env.AWS_DEFAULT_REGION }}
+          aws-region: ${{ inputs.aws-region || vars.AWS_REGION }}
       - name: Runway Deploy
         env:
           DEPLOY_ENVIRONMENT: ${{ inputs.environment }}
