@@ -33,13 +33,13 @@ on:
     outputs:
       s3-bucket-id:
         description: 'S3 bucket ID'
-        value: ${{ jobs.deploy.outputs.s3-bucket-id }}
+        value: ${{ jobs.outputs.outputs.s3-bucket-id }}
       cloudfront-distribution-id:
         description: 'CloudFront distribution ID'
-        value: ${{ jobs.deploy.outputs.cloudfront-distribution-id }}
+        value: ${{ jobs.outputs.outputs.cloudfront-distribution-id }}
       cloudfront-distribution-domain-name:
         description: 'CloudFront distribution domain name'
-        value: ${{ jobs.deploy.outputs.cloudfront-distribution-domain-name }}
+        value: ${{ jobs.outputs.outputs.cloudfront-distribution-domain-name }}
 jobs:
   deploy:
     name: "Deploy Runway"
