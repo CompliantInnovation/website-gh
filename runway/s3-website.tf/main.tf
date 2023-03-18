@@ -150,10 +150,10 @@ resource "aws_cloudfront_distribution" "website" {
   }, local.tags)
 
   viewer_certificate {
-    acm_certificate_arn            = var.cloudfront_viewer_certificate.acm_certificate_arn
+#    acm_certificate_arn            = var.cloudfront_viewer_certificate.acm_certificate_arn
     ssl_support_method             = var.cloudfront_viewer_certificate.ssl_support_method
     minimum_protocol_version       = var.cloudfront_viewer_certificate.minimum_protocol_version
-    cloudfront_default_certificate = var.cloudfront_viewer_certificate.cloudfront_default_certificate
+    cloudfront_default_certificate = true
   }
 
   # TODO - Work to add Web ACL variables

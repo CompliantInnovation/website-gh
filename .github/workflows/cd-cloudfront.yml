@@ -60,5 +60,6 @@ jobs:
       - name: Invalidate CloudFront distribution
         run: aws cloudfront create-invalidation --distribution-id ${{ inputs.cloudfront-distribution-id }} --paths "/*"
       - id: get-url
+        name: Get CloudFront distribution URL
         run: |
-          echo "domain-name=$(aws cloudfront get-distribution --id ${{ inputs.cloudfront-distribution-id }} --output json --query 'Distribution.DomainName')" >> $GITHUB_OUTPUT;
+          echo "domain-name=https://$(aws cloudfront get-distribution --id ${{ inputs.cloudfront-distribution-id }} --output json --query 'Distribution.DomainName')" >> $GITHUB_OUTPUT;

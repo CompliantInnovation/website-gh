@@ -67,7 +67,7 @@ variable "cloudfront_viewer_certificate" {
     cloudfront_default_certificate = bool
   })
   default = {
-    acm_certificate_arn            = ""
+    acm_certificate_arn             = ""
     ssl_support_method             = "sni-only"
     minimum_protocol_version       = "TLSv1"
     cloudfront_default_certificate = true
