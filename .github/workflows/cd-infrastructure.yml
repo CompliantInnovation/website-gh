@@ -5,7 +5,7 @@ on:
         required: true
         type: string
       aws-region:
-        required: true
+        required: false
         type: string
     secrets:
       aws-iam-assume-role-arn:
@@ -28,6 +28,8 @@ jobs:
     permissions:
       id-token: write # This is required for requesting the JWT
       contents: read  # This is required for actions/checkout
+    env:
+      AWS_DEFAULT_REGION: ${{ inputs.aws-region || vars.AWS_REGION }}
     steps:
       - name: Setup Runway
         uses: supplypike/setup-bin@v1
@@ -42,10 +44,9 @@ jobs:
         with:
           role-to-assume: ${{ secrets.aws-iam-assume-role-arn }}
           role-session-name: github-actions
-          aws-region: ${{ inputs.aws-region }}
+          aws-region: ${{ env.AWS_DEFAULT_REGION }}
       - name: Runway Deploy
         env:
-          AWS_DEFAULT_REGION: ${{ inputs.aws-region }}
           DEPLOY_ENVIRONMENT: ${{ inputs.environment }}
         run: runway deploy --ci
       - name: Get Outputs
