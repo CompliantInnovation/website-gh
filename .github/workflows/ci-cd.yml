@@ -1,16 +1,37 @@
-name: DEV - Cloudfront CI/CD
+name: CI/CD
 on:
   workflow_dispatch:
   push:
     branches:
       - develop
+      - 'release/*'
       - master
 concurrency:
-  group: dev-deploy
+  group: ${{ github.workflow }}-${{ jobs.select-env }}
   cancel-in-progress: true
 jobs:
+  select-env:
+    name: Select Environment
+    runs-on: ubuntu-latest
+    outputs:
+      deploy_environment: ${{ steps.select_env.outputs.deploy_environment }}
+    steps:
+      - name: Determine Environment
+        id: select_env
+        run: |
+          if [[ "${{ github.ref }}" == "refs/heads/master" ]]; then
+            echo "environment_name=Production" >> $GITHUB_OUTPUT
+            echo "deploy_environment=PROD" >> $GITHUB_OUTPUT
+          elif [[ "${{ github.ref }}" =~ "refs/heads/release/" ]]; then
+            echo "environment_name=Staging" >> $GITHUB_OUTPUT
+            echo "deploy_environment=stage" >> $GITHUB_OUTPUT
+          else
+            echo "environment_name=Development" >> $GITHUB_OUTPUT
+            echo "deploy_environment=dev" >> $GITHUB_OUTPUT
+          fi
   configure:
-    name: Configure Build Environment
+    name: Configure Environment
+    needs: select-env
     runs-on: ubuntu-latest
     permissions:
       id-token: write # This is required for requesting the JWT
@@ -20,10 +41,10 @@ jobs:
       s3_bucket_id: ${{ steps.terraform_outputs.outputs.s3_bucket_id }}
       cloudfront_distribution_domain_name: ${{ steps.terraform_outputs.outputs.cloudfront_distribution_domain_name }}
       cloudfront_distribution_id: ${{ steps.terraform_outputs.outputs.cloudfront_distribution_id }}
-    env:
-      DEPLOY_ENVIRONMENT: ${{ vars.DEPLOY_ENVIRONMENT }}
     environment:
-      name: Development
+      name: ${{ needs.select-env.outputs.deploy_environment }}
+    env:
+      DEPLOY_ENVIRONMENT: ${{ needs.select-env.outputs.deploy_environment }}
     steps:
       - name: Setup Runway
         uses: supplypike/setup-bin@v3
@@ -62,11 +83,12 @@ jobs:
   deploy:
     name: Deploy 🚀
     needs:
-     - build
-     - configure
+      - select-env
+      - configure
+      - build
     uses: ./.github/workflows/cd-cloudfront.yml
     with:
-      environment: 'Development'
+      environment: ${{ needs.select-env.outputs.deploy_environment }}
       s3-bucket-prefix: ''
       s3-bucket-name: ${{ needs.configure.outputs.s3_bucket_id }}
       cloudfront-distribution-id: ${{ needs.configure.outputs.cloudfront_distribution_id }}

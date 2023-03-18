@@ -1,0 +1,30 @@
+name: Infrastructure CD
+on:
+  push:
+    branches:
+      - master
+      - develop
+  workflow_dispatch: # To trigger manual build
+jobs:
+  runway:
+    name: Runway Deploy
+    steps:
+      - name: Setup Runway
+        uses: supplypike/setup-bin@v3
+        with:
+          uri: "https://oni.ca/runway/2.6.3/linux"
+          name: 'runway'
+          version: '2.6.3' # this enables caching
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: ${{ secrets.AWS_IAM_ASSUME_ROLE_ARN }}
+          role-session-name: github-actions
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Runway Init
+        run: cd runway && runway init --ci
