@@ -55,8 +55,6 @@ jobs:
     name: Build 🔧
     needs: configure
     uses: ./.github/workflows/ci-build.yml
-    environment:
-      name: Development
     with:
       asset-prefix: ${{ needs.build.outputs.cloudfront_distribution_domain_name }}
       base-url: ''
