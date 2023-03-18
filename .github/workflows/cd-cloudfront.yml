@@ -3,21 +3,25 @@ on:
   workflow_call:
     inputs:
       aws-region:
-        required: true
         type: string
+        required: true
       s3-bucket-name:
+        type: string
         description: 'S3 bucket name'
         required: true
         default: 'docspera-homepage'
       cloudfront-distribution-id:
+        type: string
         description: 'CloudFront distribution ID'
         required: true
         default: 'E1ZQZQZQZQZQZQ'
       s3-bucket-prefix:
+        type: string
         description: 'S3 bucket prefix'
         required: true
         default: ''
       artifact-name:
+        type: string
         description: 'Artifact name'
         required: true
         default: 'Out'

@@ -3,10 +3,12 @@ on:
   workflow_dispatch:
     inputs:
       asset-prefix:
+        type: string
         description: 'Asset prefix for the build'
         required: true
         default: ''
       base-url:
+        type: string
         description: 'Base URL for the build'
         required: true
         default: ''
@@ -14,10 +16,12 @@ on:
     inputs:
       asset-prefix:
         type: string
+        description: 'Asset prefix for the build'
         required: true
         default: ''
       base-url:
         type: string
+        description: 'Base URL for the build'
         required: true
         default: ''
     outputs:
