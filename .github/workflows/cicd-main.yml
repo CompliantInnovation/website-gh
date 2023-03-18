@@ -59,5 +59,3 @@ jobs:
       cloudfront-distribution-id: ${{ needs.infrastructure.outputs.cloudfront_distribution_id }}
       aws-region: ${{ needs.infrastructure.outputs.aws_region }}
       artifact-name: ${{ needs.build.outputs.artifact-name }}
-    secrets:
-      aws-iam-assume-role-arn: ${{ secrets.AWS_IAM_ASSUME_ROLE_ARN }}
