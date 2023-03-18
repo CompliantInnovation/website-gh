@@ -7,6 +7,9 @@ on:
       aws-region:
         required: false
         type: string
+      deploy-environment:
+        required: false
+        type: string
     secrets:
       aws-iam-assume-role-arn:
         required: true
@@ -30,6 +33,7 @@ jobs:
       contents: read  # This is required for actions/checkout
     env:
       AWS_DEFAULT_REGION: ${{ inputs.aws-region || vars.AWS_REGION }}
+      DEPLOY_ENVIRONMENT: ${{ inputs.deploy-environment || vars.DEPLOY_ENVIRONMENT }}
     steps:
       - name: Setup Runway
         uses: supplypike/setup-bin@v1
@@ -49,8 +53,6 @@ jobs:
           role-session-name: github-actions
           aws-region: ${{ inputs.aws-region || vars.AWS_REGION }}
       - name: Runway Deploy
-        env:
-          DEPLOY_ENVIRONMENT: ${{ inputs.environment }}
         run: cd runway && runway deploy --ci
       - name: Get Outputs
         id: outputs
