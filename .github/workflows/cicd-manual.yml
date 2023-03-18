@@ -15,7 +15,6 @@ jobs:
   infrastructure:
     name: Deploy Infrastructure
     uses: ./.github/workflows/cd-infrastructure.yml
-    needs: select-env
     concurrency:
       group: ${{ github.workflow }}-${{ inputs.environment }}
     with:
