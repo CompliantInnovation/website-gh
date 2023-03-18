@@ -26,7 +26,7 @@ jobs:
         with:
           role-to-assume: ${{ secrets.AWS_IAM_ASSUME_ROLE_ARN }}
           role-session-name: github-actions
-          aws-region: ${{ env.AWS_REGION }}
+          aws-region: ${{ vars.AWS_REGION }}
       - name: Runway Init
         run: cd runway && runway init --ci
       - name: Get Terraform Outputs
@@ -44,6 +44,6 @@ jobs:
         with:
           s3-bucket-name: ${{ steps.terraform_outputs.outputs.s3_bucket_id }}
           cloudfront-distribution-id: ${{ steps.terraform_outputs.outputs.cloudfront_distribution_id }}
-          aws-region: ${{ env.AWS_REGION }}
+          aws-region: ${{ vars.AWS_REGION }}
           artifact-name: ${{ steps.build.outputs.artifact-name }}
           aws-iam-assume-role-arn: ${{ secrets.AWS_IAM_ASSUME_ROLE_ARN }}
