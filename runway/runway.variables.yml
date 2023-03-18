@@ -30,6 +30,6 @@ github_actions_oidc_repo:
   dev: "CompliantInnovation/homepage"
 
 github_actions_oidc_provider_arn:
-  prod: "arn:aws:iam::054448591523:oidc-provider/token.actions.githubusercontent.com"
-  stage: "arn:aws:iam::054448591523:oidc-provider/token.actions.githubusercontent.com"
+  prod: "arn:aws:iam::074255615689:oidc-provider/token.actions.githubusercontent.com"
+  stage: "arn:aws:iam::447372360764:oidc-provider/token.actions.githubusercontent.com"
   dev: "arn:aws:iam::054448591523:oidc-provider/token.actions.githubusercontent.com"

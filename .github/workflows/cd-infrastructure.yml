@@ -58,7 +58,7 @@ jobs:
           role-session-name: github-actions
           aws-region: ${{ inputs.aws-region || vars.AWS_REGION }}
       - name: Runway Deploy
-        run: cd runway && runway deploy --ci --tag ${{ inputs.runway-tags }} --env ${{ env.DEPLOY_ENVIRONMENT }}
+        run: cd runway && runway deploy --ci --tag ${{ inputs.runway-tags }} --deploy-environment ${{ env.DEPLOY_ENVIRONMENT }}
       - name: Get Outputs
         id: outputs
         run: |
