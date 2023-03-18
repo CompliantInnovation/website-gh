@@ -14,11 +14,10 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     name: Build 🔧
-    needs: configure
     concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
     uses: ./.github/workflows/ci-build.yml
     with:
-      asset-prefix: ${{ needs.build.outputs.cloudfront_distribution_domain_name }}
+      asset-prefix: ''
       base-url: ''
   deploy:
     name: Deploy 🚀
