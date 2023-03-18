@@ -6,9 +6,6 @@ on:
       - develop
       - 'release/*'
       - master
-concurrency:
-  group: ${{ github.workflow }}-${{ jobs.select-env }}
-  cancel-in-progress: true
 jobs:
   select-env:
     name: Select Environment
@@ -33,6 +30,9 @@ jobs:
     name: Deploy Infrastructure
     uses: ./.github/workflows/cd-infrastructure.yml
     needs: select-env
+    concurrency:
+      group: ${{ github.workflow }}-${{ jobs.select-env }}
+      cancel-in-progress: true
     with:
       environment: ${{ needs.select-env.outputs.deploy_environment }}
       region: ${{ vars.AWS_REGION }}
@@ -98,6 +98,9 @@ jobs:
       - infrastructure
       - build
     uses: ./.github/workflows/cd-cloudfront.yml
+    concurrency:
+      group: ${{ github.workflow }}-${{ jobs.select-env }}
+      cancel-in-progress: true
     with:
       environment: ${{ needs.select-env.outputs.deploy_environment }}
       s3-bucket-prefix: ''
