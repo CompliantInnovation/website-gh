@@ -31,7 +31,7 @@ jobs:
     uses: ./.github/workflows/cd-infrastructure.yml
     needs: select-env
     concurrency:
-      group: ${{ github.workflow }}-${{ jobs.select-env }}
+      group: ${{ github.workflow }}-${{ needs.select-env.outputs.deploy_environment }}
       cancel-in-progress: true
     with:
       environment: ${{ needs.select-env.outputs.deploy_environment }}
@@ -99,7 +99,7 @@ jobs:
       - build
     uses: ./.github/workflows/cd-cloudfront.yml
     concurrency:
-      group: ${{ github.workflow }}-${{ jobs.select-env }}
+      group: ${{ github.workflow }}-${{ needs.select-env.outputs.deploy_environment }}
       cancel-in-progress: true
     with:
       environment: ${{ needs.select-env.outputs.deploy_environment }}
