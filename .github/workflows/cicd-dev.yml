@@ -16,6 +16,7 @@ jobs:
       id-token: write # This is required for requesting the JWT
       contents: read  # This is required for actions/checkout
     outputs:
+      aws_region: ${{ vars.AWS_REGION }}
       s3_bucket_id: ${{ steps.terraform_outputs.outputs.s3_bucket_id }}
       cloudfront_distribution_domain_name: ${{ steps.terraform_outputs.outputs.cloudfront_distribution_domain_name }}
       cloudfront_distribution_id: ${{ steps.terraform_outputs.outputs.cloudfront_distribution_id }}
@@ -60,14 +61,16 @@ jobs:
       base-url: ''
   deploy:
     name: Deploy 🚀
-    needs: build
+    needs:
+     - build
+     - configure
     uses: ./.github/workflows/cd-cloudfront.yml
     with:
       environment: 'Development'
       s3-bucket-prefix: ''
       s3-bucket-name: ${{ needs.build.outputs.s3_bucket_id }}
       cloudfront-distribution-id: ${{ needs.build.outputs.cloudfront_distribution_id }}
-      aws-region: ${{ vars.AWS_REGION }}
+      aws-region: ${{ needs.configure.outputs.aws_region }}
       artifact-name: ${{ needs.build.outputs.artifact-name }}
     secrets:
       aws-iam-assume-role-arn: ${{ secrets.AWS_IAM_ASSUME_ROLE_ARN }}
