@@ -17,14 +17,14 @@ jobs:
         id: select_env
         run: |
           if [[ "${{ github.ref }}" == "refs/heads/master" ]]; then
-            echo "environment_name=Production" >> $GITHUB_OUTPUT
-            echo "deploy_environment=PROD" >> $GITHUB_OUTPUT
+            echo "environment_name=Production" >> $GITHUB_OUTPUT;
+            echo "deploy_environment=PROD" >> $GITHUB_OUTPUT;
           elif [[ "${{ github.ref }}" =~ "refs/heads/release/" ]]; then
-            echo "environment_name=Staging" >> $GITHUB_OUTPUT
-            echo "deploy_environment=stage" >> $GITHUB_OUTPUT
+            echo "environment_name=Staging" >> $GITHUB_OUTPUT;
+            echo "deploy_environment=stage" >> $GITHUB_OUTPUT;
           else
-            echo "environment_name=Development" >> $GITHUB_OUTPUT
-            echo "deploy_environment=dev" >> $GITHUB_OUTPUT
+            echo "environment_name=Development" >> $GITHUB_OUTPUT;
+            echo "deploy_environment=dev" >> $GITHUB_OUTPUT;
           fi
   infrastructure:
     name: Deploy Infrastructure
