@@ -35,7 +35,7 @@ jobs:
       cancel-in-progress: true
     with:
       environment: ${{ needs.select-env.outputs.deploy_environment }}
-      region: ${{ vars.AWS_REGION }}
+      aws-region: ${{ vars.AWS_REGION }}
     secrets:
       aws-iam-assume-role-arn: ${{ secrets.AWS_IAM_ASSUME_ROLE_ARN }}
 #  configure:
