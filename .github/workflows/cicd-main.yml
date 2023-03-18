@@ -1,16 +1,5 @@
 name: CI/CD
 on:
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: 'Environment'
-        required: true
-        type: choice
-        default: 'Development'
-        options:
-          - 'Development'
-          - 'Staging'
-          - 'Production'
   push:
     branches:
       - develop

@@ -1,0 +1,45 @@
+name: CI/CD
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment'
+        required: true
+        type: choice
+        default: 'Development'
+        options:
+          - 'Development'
+          - 'Staging'
+          - 'Production'
+jobs:
+  infrastructure:
+    name: Deploy Infrastructure
+    uses: ./.github/workflows/cd-infrastructure.yml
+    needs: select-env
+    concurrency:
+      group: ${{ github.workflow }}-${{ inputs.environment }}
+    with:
+      environment: ${{ inputs.environment }}
+  build:
+    name: Build 🔧
+    needs: infrastructure
+    uses: ./.github/workflows/ci-build.yml
+    with:
+      asset-prefix: ${{ needs.infrastructure.outputs.cloudfront_distribution_domain_name }}
+      base-url: ''
+  deploy:
+    name: Deploy 🚀
+    needs:
+      - select-env
+      - infrastructure
+      - build
+    uses: ./.github/workflows/cd-cloudfront.yml
+    concurrency:
+      group: ${{ github.workflow }}-${{ inputs.environment }}
+    with:
+      environment: ${{ inputs.environment }}
+      s3-bucket-prefix: ''
+      s3-bucket-name: ${{ needs.infrastructure.outputs.s3_bucket_id }}
+      cloudfront-distribution-id: ${{ needs.infrastructure.outputs.cloudfront_distribution_id }}
+      aws-region: ${{ needs.infrastructure.outputs.aws_region }}
+      artifact-name: ${{ needs.build.outputs.artifact-name }}
