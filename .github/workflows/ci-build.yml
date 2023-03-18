@@ -29,7 +29,6 @@ on:
         value: build-artifact-${{ github.sha }}
 jobs:
   build:
-    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Check out Git repository # clone the repo to local ci workspace

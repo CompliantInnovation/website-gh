@@ -8,6 +8,9 @@ on:
 concurrency:
   group: dev-deploy
   cancel-in-progress: true
+environment:
+  name: Development
+#  url: ${{ steps.terraform_outputs.outputs.cloudfront_distribution_domain_name }}
 jobs:
   configure:
     name: Configure Build Environment
