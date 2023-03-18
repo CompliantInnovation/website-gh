@@ -30,9 +30,6 @@ on:
         required: false
         type: string
         default: 'ci'
-    secrets:
-      AWS_IAM_ASSUME_ROLE_ARN:
-        required: false
     outputs:
       s3-bucket-id:
         description: 'S3 bucket ID'
