@@ -29,8 +29,8 @@ on:
         required: true
         default: 'Out'
     secrets:
-      aws-iam-assume-role-arn:
-        required: true
+      AWS_IAM_ASSUME_ROLE_ARN:
+        required: false
 jobs:
   deploy:
     permissions:
@@ -52,7 +52,7 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          role-to-assume: ${{ secrets.aws-iam-assume-role-arn }}
+          role-to-assume: ${{ secrets.AWS_IAM_ASSUME_ROLE_ARN }}
           role-session-name: github-actions
           aws-region: ${{ inputs.aws-region }}
       - name: Sync S3 bucket
