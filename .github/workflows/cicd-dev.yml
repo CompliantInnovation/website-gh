@@ -64,6 +64,7 @@ jobs:
     needs: build
     uses: ./.github/workflows/cd-cloudfront.yml
     with:
+      s3-bucket-prefix: ''
       s3-bucket-name: ${{ needs.build.outputs.s3_bucket_id }}
       cloudfront-distribution-id: ${{ needs.build.outputs.cloudfront_distribution_id }}
       aws-region: ${{ vars.AWS_REGION }}
