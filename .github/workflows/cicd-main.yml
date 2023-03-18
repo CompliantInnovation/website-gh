@@ -26,6 +26,7 @@ jobs:
   infrastructure:
     name: Deploy Infrastructure
     uses: ./.github/workflows/cd-infrastructure.yml
+    secrets: inherit
     needs: select-env
     concurrency:
       group: ${{ github.workflow }}-${{ needs.select-env.outputs.environment_name || inputs.environment }}
@@ -45,6 +46,7 @@ jobs:
       - infrastructure
       - build
     uses: ./.github/workflows/cd-cloudfront.yml
+    secrets: inherit
     concurrency:
       group: ${{ github.workflow }}-${{ needs.select-env.outputs.environment_name || inputs.environment }}
     with:
