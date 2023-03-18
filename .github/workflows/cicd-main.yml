@@ -32,7 +32,6 @@ jobs:
     needs: select-env
     concurrency:
       group: ${{ github.workflow }}-${{ needs.select-env.outputs.deploy_environment }}
-      cancel-in-progress: true
     with:
       environment: ${{ needs.select-env.outputs.environment_name }}
     secrets:
@@ -53,7 +52,6 @@ jobs:
     uses: ./.github/workflows/cd-cloudfront.yml
     concurrency:
       group: ${{ github.workflow }}-${{ needs.select-env.outputs.deploy_environment }}
-      cancel-in-progress: true
     with:
       environment: ${{ needs.select-env.outputs.environment_name }}
       s3-bucket-prefix: ''
