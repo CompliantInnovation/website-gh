@@ -71,7 +71,7 @@ jobs:
         with:
           role-to-assume: ${{ secrets.AWS_IAM_ASSUME_ROLE_ARN }}
           role-session-name: github-actions
-          aws-region: ${{ inputs.aws-region || vars.AWS_REGION }}
+          aws-region: ${{ env.AWS_DEFAULT_REGION }}
       - name: Runway Deploy
         run: cd runway && runway deploy --ci --tag ${{ inputs.runway-tags }} --deploy-environment ${{ env.DEPLOY_ENVIRONMENT }}
       - name: Get Outputs

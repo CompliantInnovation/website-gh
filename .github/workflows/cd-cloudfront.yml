@@ -7,7 +7,7 @@ on:
         required: false
       aws-region:
         type: string
-        required: true
+        required: false
       s3-bucket-name:
         type: string
         description: 'S3 bucket name'
@@ -37,6 +37,8 @@ jobs:
       id-token: write # This is required for requesting the JWT
       contents: read  # This is required for actions/checkout
     runs-on: ubuntu-latest
+    env:
+      AWS_DEFAULT_REGION: ${{ inputs.aws-region || vars.AWS_REGION }}
     environment:
       name: ${{ inputs.environment }}
       url: "https://${{ steps.get-url.outputs.domain-name }}"
@@ -54,7 +56,7 @@ jobs:
         with:
           role-to-assume: ${{ secrets.AWS_IAM_ASSUME_ROLE_ARN }}
           role-session-name: github-actions
-          aws-region: ${{ inputs.aws-region }}
+          aws-region: ${{ env.AWS_DEFAULT_REGION }}
       - name: Sync S3 bucket
         run: aws s3 sync ./out s3://${{ inputs.s3-bucket-name }}/${{ inputs.s3-bucket-prefix }} --delete
       - name: Invalidate CloudFront distribution
