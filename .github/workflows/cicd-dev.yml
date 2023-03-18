@@ -8,9 +8,6 @@ on:
 concurrency:
   group: dev-deploy
   cancel-in-progress: true
-environment:
-  name: Development
-#  url: ${{ steps.terraform_outputs.outputs.cloudfront_distribution_domain_name }}
 jobs:
   configure:
     name: Configure Build Environment
@@ -26,7 +23,6 @@ jobs:
       DEPLOY_ENVIRONMENT: ${{ vars.DEPLOY_ENVIRONMENT }}
     environment:
       name: Development
-      url: ${{ steps.terraform_outputs.outputs.cloudfront_distribution_domain_name }}
     steps:
       - name: Setup Runway
         uses: supplypike/setup-bin@v1
@@ -59,6 +55,8 @@ jobs:
     name: Build 🔧
     needs: configure
     uses: ./.github/workflows/ci-build.yml
+    environment:
+      name: Development
     with:
       asset-prefix: ${{ needs.build.outputs.cloudfront_distribution_domain_name }}
       base-url: ''
@@ -66,6 +64,9 @@ jobs:
     name: Deploy 🚀
     needs: build
     uses: ./.github/workflows/cd-cloudfront.yml
+    environment:
+      name: Development
+      url: ${{ needs.build.outputs.outputs.cloudfront_distribution_domain_name }}
     with:
       s3-bucket-prefix: ''
       s3-bucket-name: ${{ needs.build.outputs.s3_bucket_id }}
