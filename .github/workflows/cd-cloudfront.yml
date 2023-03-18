@@ -37,23 +37,28 @@ jobs:
       id-token: write # This is required for requesting the JWT
       contents: read  # This is required for actions/checkout
     runs-on: ubuntu-latest
-    environment: ${{ inputs.environment }}
+    environment:
+      name: ${{ inputs.environment }}
+      url: ${{ steps.get-url.outputs.domain-name }}
     steps:
-    - name: Download artifact
-      uses: actions/download-artifact@v3
-      with:
-        name: ${{ inputs.artifact-name }}
-        path: ./out
-    - name: Display structure of downloaded artifacts
-      run: ls -R
-      working-directory: ./out
-    - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v2
-      with:
-        role-to-assume: ${{ secrets.aws-iam-assume-role-arn }}
-        role-session-name: github-actions
-        aws-region: ${{ inputs.aws-region }}
-    - name: Sync S3 bucket
-      run: aws s3 sync ./out s3://${{ inputs.s3-bucket-name }}/${{ inputs.s3-bucket-prefix }} --delete
-    - name: Invalidate CloudFront distribution
-      run: aws cloudfront create-invalidation --distribution-id ${{ inputs.cloudfront-distribution-id }} --paths "/*"
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: ${{ inputs.artifact-name }}
+          path: ./out
+      - name: Display structure of downloaded artifacts
+        run: ls -R
+        working-directory: ./out
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: ${{ secrets.aws-iam-assume-role-arn }}
+          role-session-name: github-actions
+          aws-region: ${{ inputs.aws-region }}
+      - name: Sync S3 bucket
+        run: aws s3 sync ./out s3://${{ inputs.s3-bucket-name }}/${{ inputs.s3-bucket-prefix }} --delete
+      - name: Invalidate CloudFront distribution
+        run: aws cloudfront create-invalidation --distribution-id ${{ inputs.cloudfront-distribution-id }} --paths "/*"
+      - id: get-url
+        run: |
+          echo "domain-name=$(aws cloudfront get-distribution --id ${{ inputs.cloudfront-distribution-id }} --output json --query 'Distribution.DomainName')" >> $GITHUB_OUTPUT;
