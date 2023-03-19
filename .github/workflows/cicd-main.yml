@@ -38,6 +38,7 @@ jobs:
     uses: ./.github/workflows/ci-build.yml
     with:
       asset-prefix: "https://${{ needs.infrastructure.outputs.cloudfront-distribution-domain-name }}/"
+      static-asset-prefix: "https://${{ needs.infrastructure.outputs.cloudfront-distribution-domain-name }}"
       base-url: ''
   deploy:
     name: Deploy 🚀

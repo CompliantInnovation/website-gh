@@ -72,6 +72,7 @@ jobs:
         env:
           NODE_ENV: production
           ASSET_PREFIX: "/${{ env.GITHUB_REPO_NAME }}/"
+          STATIC_ASSET_PREFIX: "/${{ env.GITHUB_REPO_NAME }}"
           MOUNT_URL: "/${{ env.GITHUB_REPO_NAME }}"
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Static HTML export with Next.js

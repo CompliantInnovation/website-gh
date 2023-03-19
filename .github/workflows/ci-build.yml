@@ -7,6 +7,11 @@ on:
         description: 'Asset prefix for the build'
         required: true
         default: ''
+      static-asset-prefix:
+        type: string
+        description: 'Static ssset prefix for the build'
+        required: true
+        default: ''
       base-url:
         type: string
         description: 'Base URL for the build'
@@ -59,6 +64,7 @@ jobs:
         env:
           NODE_ENV: production
           ASSET_PREFIX: ${{ github.event.inputs.asset-prefix }}
+          STATIC_ASSET_PREFIX: ${{ github.event.inputs.static-asset-prefix }}
           MOUNT_URL: ${{ github.event.inputs.base-url }}
         run: |
           yarn build
