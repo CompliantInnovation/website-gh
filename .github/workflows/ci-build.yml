@@ -28,6 +28,11 @@ on:
         description: 'Asset prefix for the build'
         required: true
         default: ''
+      static-asset-prefix:
+        type: string
+        description: 'Static ssset prefix for the build'
+        required: true
+        default: ''
       base-url:
         type: string
         description: 'Base URL for the build'
