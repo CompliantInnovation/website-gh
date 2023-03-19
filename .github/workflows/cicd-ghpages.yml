@@ -66,13 +66,13 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - id: repo-name
         run: |
-          echo "GITHUB_REPO_NAME=$(echo ${{ github.repository_id }} | cut -d '/' -f 2)" >> $GITHUB_ENV
+          echo "GITHUB_REPO_NAME=$(echo ${{ github.repository }} | cut -d '/' -f 2)" >> $GITHUB_ENV
         shell: bash
       - name: Build with Next.js
         env:
           NODE_ENV: production
-          ASSET_PREFIX: "${{ env.GITHUB_REPO_NAME }}/"
-          MOUNT_URL: ${{ env.GITHUB_REPO_NAME }}
+          ASSET_PREFIX: "/${{ env.GITHUB_REPO_NAME }}/"
+          MOUNT_URL: "/${{ env.GITHUB_REPO_NAME }}"
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Static HTML export with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next export
