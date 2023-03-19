@@ -74,7 +74,7 @@ jobs:
           ASSET_PREFIX: "/${{ env.GITHUB_REPO_NAME }}/"
           STATIC_ASSET_PREFIX: "/${{ env.GITHUB_REPO_NAME }}"
           MOUNT_URL: "/${{ env.GITHUB_REPO_NAME }}"
-        run: ${{ steps.detect-package-manager.outputs.runner }} yarn build
+        run: ${{ steps.detect-package-manager.outputs.runner }} build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
