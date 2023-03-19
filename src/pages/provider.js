@@ -254,12 +254,6 @@ export default function Provider() {
         <title>
           DocSpera | HIPAA Compliant, Integrated Surgical Coordination Platform
         </title>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
-          rel="stylesheet"></link>
       </Head>
       <HeaderNav />
 
