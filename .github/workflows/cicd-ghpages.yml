@@ -52,12 +52,6 @@ jobs:
           cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Setup Pages
         uses: actions/configure-pages@v3
-        with:
-          # Automatically inject basePath in your Next.js configuration file and disable
-          # server side image optimization (https://nextjs.org/docs/api-reference/next/image#unoptimized).
-          #
-          # You may remove this line if you want to manage the configuration yourself.
-          static_site_generator: next
       - name: Restore cache
         uses: actions/cache@v3
         with:
@@ -70,7 +64,15 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      - id: repo-name
+        run: |
+          echo "GITHUB_REPO_NAME=$(echo ${{ github.repository_id }} | cut -d '/' -f 2)" >> $GITHUB_ENV
+        shell: bash
       - name: Build with Next.js
+        env:
+          NODE_ENV: production
+          ASSET_PREFIX: "${{ env.GITHUB_REPO_NAME }}/"
+          MOUNT_URL: ${{ env.GITHUB_REPO_NAME }}
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Static HTML export with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next export
