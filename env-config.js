@@ -1,6 +1,8 @@
 const mountUrl = process.env.MOUNT_URL ? process.env.MOUNT_URL : '';
 const assetsPrefix = process.env.ASSET_PREFIX ? process.env.ASSET_PREFIX : '';
-const staticSssetsPrefix = process.env.STATIC_ASSET_PREFIX ? process.env.STATIC_ASSET_PREFIX : '';
+const staticSssetsPrefix = process.env.STATIC_ASSET_PREFIX
+  ? process.env.STATIC_ASSET_PREFIX
+  : '';
 const loginUrl = process.env.LOGIN_URL ? process.env.LOGIN_URL : '/login';
 
 module.exports = {
