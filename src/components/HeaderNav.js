@@ -89,11 +89,11 @@ export default function HeaderNav({page}) {
                   handleProductOnHover();
                 }}>
                 <h4>
-                  <img src="/images/surgeon-users.png" />
+                  <img src={staticAssetPrefix + '/images/surgeon-users.png'} />
                   Providers{' '}
                   <img
                     className="chevron-img"
-                    src="/images/graphics/chevron.png"
+                    src={staticAssetPrefix + '/images/graphics/chevron.png'}
                   />
                 </h4>
                 <ul>
@@ -109,11 +109,11 @@ export default function HeaderNav({page}) {
                   handleProductOnHover();
                 }}>
                 <h4>
-                  <img src="/images/medical-device.png" />
+                  <img src={staticAssetPrefix + '/images/medical-device.png'} />
                   Device Partners{' '}
                   <img
                     className="chevron-img"
-                    src="/images/graphics/chevron.png"
+                    src={staticAssetPrefix + '/images/graphics/chevron.png'}
                   />
                 </h4>
                 <ul>

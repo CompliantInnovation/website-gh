@@ -7,6 +7,7 @@ import {
 } from '@ant-design/icons';
 import {useRouter} from 'next/router';
 import Link from 'next/link';
+import {staticAssetPrefix} from '../../next.config';
 
 export default function FooterBar() {
   const router = useRouter();
@@ -15,17 +16,21 @@ export default function FooterBar() {
     <footer>
       <div id="footer-inner-div">
         <div style={{margin: 'auto 0', flexGrow: 1}}>
-          <img id="logo" src="/images/logo-white.svg" />
+          <img id="logo" src={staticAssetPrefix + '/images/logo-white.svg'} />
           <div
             className="accreditation"
             style={{maxWidth: '300px', filter: `brightness(0) invert(1)`}}>
             <img
               id="hipaa"
               alt="HIPPA"
-              src="/images/HIPAA.svg"
+              src={staticAssetPrefix + '/images/HIPAA.svg'}
               style={{marginRight: '30px'}}
             />
-            <img id="soc-2" alt="SOC-2" src="/images/SOC-2.svg" />
+            <img
+              id="soc-2"
+              alt="SOC-2"
+              src={staticAssetPrefix + '/images/SOC-2.svg'}
+            />
           </div>
 
           <div id="icons-div">
@@ -91,14 +96,18 @@ export default function FooterBar() {
               className="footer-menu-item"
               onClick={() => router.push('/provider')}>
               <a>Providers</a>
-              <img src="/images/graphics/chevron-white.png" />
+              <img
+                src={staticAssetPrefix + '/images/graphics/chevron-white.png'}
+              />
             </div>
 
             <div
               className="footer-menu-item"
               onClick={() => router.push('/medical-device')}>
               <a>Medical Device</a>
-              <img src="/images/graphics/chevron-white.png" />
+              <img
+                src={staticAssetPrefix + '/images/graphics/chevron-white.png'}
+              />
             </div>
 
             <span
@@ -109,19 +118,25 @@ export default function FooterBar() {
             <a href="https://docspera.com/scheduling" target="_blank">
               <div className="footer-menu-item">
                 <a>Integrated Scheduling</a>
-                <img src="/images/graphics/chevron-white.png" />
+                <img
+                  src={staticAssetPrefix + '/images/graphics/chevron-white.png'}
+                />
               </div>
             </a>
             <a href="https://docspera.com/or" target="_blank">
               <div className="footer-menu-item">
                 <a>Surgical Dashboards</a>
-                <img src="/images/graphics/chevron-white.png" />
+                <img
+                  src={staticAssetPrefix + '/images/graphics/chevron-white.png'}
+                />
               </div>
             </a>
             <a href="https://docspera.com/eoc" target="_blank">
               <div className="footer-menu-item">
                 <a>Episode of Care Tracker</a>
-                <img src="/images/graphics/chevron-white.png" />
+                <img
+                  src={staticAssetPrefix + '/images/graphics/chevron-white.png'}
+                />
               </div>
             </a>
           </div>
@@ -133,7 +148,9 @@ export default function FooterBar() {
               className="footer-menu-item"
               onClick={() => router.push('/company')}>
               <a>About Us</a>
-              <img src="/images/graphics/chevron-white.png" />
+              <img
+                src={staticAssetPrefix + '/images/graphics/chevron-white.png'}
+              />
             </div>
 
             <span
@@ -145,14 +162,18 @@ export default function FooterBar() {
             <a href="https://docspera.com/support" target="_blank">
               <div className="footer-menu-item">
                 <a>Contact Us</a>
-                <img src="/images/graphics/chevron-white.png" />
+                <img
+                  src={staticAssetPrefix + '/images/graphics/chevron-white.png'}
+                />
               </div>
             </a>
 
             <a href="https://docspera.com/demo" target="_blank">
               <div className="footer-menu-item">
                 <a>Request Demo</a>
-                <img src="/images/graphics/chevron-white.png" />
+                <img
+                  src={staticAssetPrefix + '/images/graphics/chevron-white.png'}
+                />
               </div>
             </a>
 
@@ -165,7 +186,9 @@ export default function FooterBar() {
             <Link href="/blog">
               <div className="footer-menu-item">
                 <a>DocSpera Blog</a>
-                <img src="/images/graphics/chevron-white.png" />
+                <img
+                  src={staticAssetPrefix + '/images/graphics/chevron-white.png'}
+                />
               </div>
             </Link>
           </div>

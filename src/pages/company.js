@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import HeaderNav from '../components/HeaderNav';
 import FooterBar from '../components/Footer';
+import {staticAssetPrefix} from '../../next.config';
 
 export default function Company() {
   return (
@@ -23,7 +24,7 @@ export default function Company() {
         <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
           <img
             className="img"
-            src="/images/company/IMG_9457.jpg"
+            src={staticAssetPrefix + '/images/company/IMG_9457.jpg'}
             style={{width: '100%', marginTop: 40}}
           />
         </div>
@@ -51,14 +52,14 @@ export default function Company() {
           <div style={{width: '50%', marginRight: 7.5}}>
             <img
               className="img"
-              src="/images/company/IMG_9513.jpeg"
+              src={staticAssetPrefix + '/images/company/IMG_9513.jpeg'}
               style={{width: '100%', marginBottom: 10}}
             />
           </div>
           <div style={{width: '50%', marginLeft: 7.5, marginBottom: 10}}>
             <img
               className="img"
-              src="/images/company/IMG_8849.jpeg"
+              src={staticAssetPrefix + '/images/company/IMG_8849.jpeg'}
               style={{width: '100%'}}
             />
           </div>
@@ -67,7 +68,7 @@ export default function Company() {
         {/* Dinner images */}
         <img
           className="img"
-          src="/images/company/IMG_8790.jpeg"
+          src={staticAssetPrefix + '/images/company/IMG_8790.jpeg'}
           style={{width: '100%', marginBottom: 10}}
         />
         <div style={{display: 'flex'}}>
@@ -75,14 +76,14 @@ export default function Company() {
           <div style={{width: '50%', marginRight: 7.5}}>
             <img
               className="img"
-              src="/images/company/IMG_9496.jpeg"
+              src={staticAssetPrefix + '/images/company/IMG_9496.jpeg'}
               style={{width: '100%'}}
             />
           </div>
           <div style={{width: '50%', marginLeft: 7.5, marginBottom: 10}}>
             <img
               className="img"
-              src="/images/company/IMG_9466.jpg"
+              src={staticAssetPrefix + '/images/company/IMG_9466.jpg'}
               style={{width: '100%'}}
             />
           </div>
@@ -93,21 +94,21 @@ export default function Company() {
           <div style={{width: '33%', marginRight: 7.5}}>
             <img
               className="img"
-              src="/images/company/IMG_8865.jpeg"
+              src={staticAssetPrefix + '/images/company/IMG_8865.jpeg'}
               style={{width: '100%'}}
             />
           </div>
           <div style={{width: '33%', marginLeft: 7.5, marginBottom: 10}}>
             <img
               className="img"
-              src="/images/company/IMG_8825.jpeg"
+              src={staticAssetPrefix + '/images/company/IMG_8825.jpeg'}
               style={{width: '100%'}}
             />
           </div>
           <div style={{width: '33%', marginLeft: 15, marginBottom: 10}}>
             <img
               className="img"
-              src="/images/company/IMG_8791.jpeg"
+              src={staticAssetPrefix + '/images/company/IMG_8791.jpeg'}
               style={{width: '100%'}}
             />
           </div>
@@ -115,7 +116,7 @@ export default function Company() {
         {/* Company with Jackets Image */}
         <img
           className="img"
-          src="/images/company/IMG_8940.jpeg"
+          src={staticAssetPrefix + '/images/company/IMG_8940.jpeg'}
           style={{width: '100%'}}
         />
       </div>

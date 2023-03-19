@@ -6,6 +6,7 @@ import Carousel from '../components/Carousel';
 import FooterBar from '../components/Footer';
 import ProviderSolutions from '../components/ProviderSolutions';
 import {useMedia} from '../hooks/useMedia';
+import {staticAssetPrefix} from '../../next.config';
 
 export default function Provider() {
   // const isBrowser = () =>
@@ -273,17 +274,20 @@ export default function Provider() {
             manage coordination across multiple sites and teams, drive improved
             efficiencies and deliver better patient care.
           </p>
-          <img src="/images/provider-art-work.png" id="surgeon-doodle" />
+          <img
+            src={staticAssetPrefix + '/images/provider-art-work.png'}
+            id="surgeon-doodle"
+          />
           <div className="statistics" style={{marginBottom: 20}}>
             <div>
               <NumberScroll
-                imgSrc="/images/surgeon-users.png"
+                imgsrc={staticAssetPrefix + '/images/surgeon-users.png'}
                 number={6000}
                 title="Providers"
                 plus
               />
               <NumberScroll
-                imgSrc="/images/patient-volume.png"
+                imgsrc={staticAssetPrefix + '/images/patient-volume.png'}
                 number={100000}
                 title="Monthly Patient Visits"
                 plus
@@ -291,13 +295,13 @@ export default function Provider() {
             </div>
             <div>
               <NumberScroll
-                imgSrc="/images/practices.png"
+                imgsrc={staticAssetPrefix + '/images/practices.png'}
                 number={300}
                 title="Practices, ASCs and Hospitals"
                 plus
               />
               <NumberScroll
-                imgSrc="/images/surgical-cases.png"
+                imgsrc={staticAssetPrefix + '/images/surgical-cases.png'}
                 number={350000}
                 title="Surgical Cases"
                 plus
@@ -310,11 +314,14 @@ export default function Provider() {
           <div id="designed-for-providers" className="inner-div">
             <h2>Designed for Providers Like You</h2>
             <div>
-              <img id="mock-up-img" src="/images/product-shots/mockups.png" />
+              <img
+                id="mock-up-img"
+                src={staticAssetPrefix + '/images/product-shots/mockups.png'}
+              />
 
               <div>
                 <div className="box">
-                  <img src="/images/surgical.svg" />
+                  <img src={staticAssetPrefix + '/images/surgical.svg'} />
                   <div>
                     <h4>Built for the Surgical Environment</h4>
                     <p>
@@ -324,14 +331,18 @@ export default function Provider() {
                   </div>
                 </div>
                 <div className="box">
-                  <img src="/images/graphics/security.svg" />
+                  <img
+                    src={staticAssetPrefix + '/images/graphics/security.svg'}
+                  />
                   <div>
                     <h4>Secure</h4>
                     <p>Provider verified, SOC 2 level and HIPAA compliant</p>
                   </div>
                 </div>
                 <div className="box">
-                  <img src="/images/graphics/data-driven.svg" />
+                  <img
+                    src={staticAssetPrefix + '/images/graphics/data-driven.svg'}
+                  />
                   <div>
                     <h4>Driven by Data Analytics</h4>
                     <p>
@@ -341,7 +352,9 @@ export default function Provider() {
                   </div>
                 </div>
                 <div className="box">
-                  <img src="/images/graphics/integration.svg" />
+                  <img
+                    src={staticAssetPrefix + '/images/graphics/integration.svg'}
+                  />
                   <div>
                     <h4>Effortless Integration</h4>
                     <p>
@@ -360,11 +373,19 @@ export default function Provider() {
             <h2>Seamless Integration </h2>
             {useMedia('(max-width: 600px)') ? (
               <img
-                src="/images/graphics/seamless-integration-mobile.png"
+                src={
+                  staticAssetPrefix +
+                  '/images/graphics/seamless-integration-mobile.png'
+                }
                 style={{maxWidth: 350}}
               />
             ) : (
-              <img src="/images/graphics/seamless-integration-desktop.png" />
+              <img
+                src={
+                  staticAssetPrefix +
+                  '/images/graphics/seamless-integration-desktop.png'
+                }
+              />
             )}
           </div>
         </div>
@@ -397,64 +418,115 @@ export default function Provider() {
               <a
                 href="https://marketplace.athenahealth.com/product/docspera"
                 target="_blank">
-                <img src="/images/logos/athena-health.png" width={220} />
+                <img
+                  src={staticAssetPrefix + '/images/logos/athena-health.png'}
+                  width={220}
+                />
               </a>
               <a href="http://www.primeclinical.com/" target="_blank">
-                <img src="/images/logos/prime.png" width={120} />
+                <img
+                  src={staticAssetPrefix + '/images/logos/prime.png'}
+                  width={120}
+                />
               </a>
               <a href="https://www.modmed.com/" target="_blank">
-                <img src="/images/logos/modernizing-medicine.png" width={190} />
+                <img
+                  src={
+                    staticAssetPrefix + '/images/logos/modernizing-medicine.png'
+                  }
+                  width={190}
+                />
               </a>
               <a href="https://www.medstrat.com/" target="_blank">
-                <img src="/images/logos/medstrat.jpg" width={190} />
+                <img
+                  src={staticAssetPrefix + '/images/logos/medstrat.jpg'}
+                  width={190}
+                />
               </a>
               <a
                 href="https://www.medicare.gov/manage-your-health/share-your-medicare-claims-medicares-blue-button/organize-share-your-medical-information-claims"
                 target="_blank">
-                <img src="/images/logos/CMS.jpg" height={65} width={100} />
+                <img
+                  src={staticAssetPrefix + '/images/logos/CMS.jpg'}
+                  height={65}
+                  width={100}
+                />
               </a>
               <a
                 href="https://www.gehealthcare.com/products/centricity-services"
                 target="_blank">
-                <img src="/images/logos/centricity.png" width={150} />
+                <img
+                  src={staticAssetPrefix + '/images/logos/centricity.png'}
+                  width={150}
+                />
               </a>
               <a href="https://www.medent.com/" target="_blank">
-                <img src="/images/logos/medent.png" width={180} />
+                <img
+                  src={staticAssetPrefix + '/images/logos/medent.png'}
+                  width={180}
+                />
               </a>
               <a
                 href="https://apporchard.epic.com/Gallery?id=3515"
                 target="_blank">
-                <img src="/images/logos/app-orchard.png" width={150} />
+                <img
+                  src={staticAssetPrefix + '/images/logos/app-orchard.png'}
+                  width={150}
+                />
               </a>
 
               <a href="https://www.elationhealth.com/" target="_blank">
-                <img src="/images/logos/elation-health.jpg" width={190} />
+                <img
+                  src={staticAssetPrefix + '/images/logos/elation-health.jpg'}
+                  width={190}
+                />
               </a>
               <a href="https://www.nextgen.com/" target="_blank">
-                <img src="/images/logos/next-gen.jpg" width={140} />
+                <img
+                  src={staticAssetPrefix + '/images/logos/next-gen.jpg'}
+                  width={140}
+                />
               </a>
               <a href="https://www.eclinicalworks.com/" target="_blank">
-                <img src="/images/logos/e-clinical-works.jpg" width={180} />
+                <img
+                  src={staticAssetPrefix + '/images/logos/e-clinical-works.jpg'}
+                  width={180}
+                />
               </a>
               <a href="https://www.cerner.com/" target="_blank">
-                <img src="/images/logos/cerner.png" width={170} />
+                <img
+                  src={staticAssetPrefix + '/images/logos/cerner.png'}
+                  width={170}
+                />
               </a>
 
               <a href="https://www.allscripts.com/" target="_blank">
-                <img src="/images/logos/allscripts.png" width={170} />
+                <img
+                  src={staticAssetPrefix + '/images/logos/allscripts.png'}
+                  width={170}
+                />
               </a>
               <a
                 href="https://partners.drchrono.com/app/nbg3BfA/docspera"
                 target="_blank">
-                <img src="/images/logos/drchrono.png" width={140} />
+                <img
+                  src={staticAssetPrefix + '/images/logos/drchrono.png'}
+                  width={140}
+                />
               </a>
               <a href="https://www.greenwayhealth.com/" target="_blank">
-                <img src="/images/logos/greenway.png" width={150} />
+                <img
+                  src={staticAssetPrefix + '/images/logos/greenway.png'}
+                  width={150}
+                />
               </a>
               <a
                 href="https://www.emrsystems.net/srs-health-ehr-software/"
                 target="_blank">
-                <img src="/images/logos/SRS.jpg" width={120} />
+                <img
+                  src={staticAssetPrefix + '/images/logos/SRS.jpg'}
+                  width={120}
+                />
               </a>
             </div>
           </div>
@@ -492,7 +564,7 @@ export default function Provider() {
           </div>
           <img
             id="map"
-            src="/images/graphics/map-with-pins.png"
+            src={staticAssetPrefix + '/images/graphics/map-with-pins.png'}
             alt="map of docspera locations"
           />
         </div>

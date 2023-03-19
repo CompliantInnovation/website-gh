@@ -11,8 +11,7 @@ import RightArrow from '../components/icons/RigthArrow';
 import Play from '../components/icons/Play';
 import Close from '../components/icons/Close';
 import {useRouter} from 'next/router';
-
-console.log({useInterval});
+import {staticAssetPrefix} from '../../next.config';
 
 export default function Index() {
   const router = useRouter();
@@ -113,13 +112,13 @@ export default function Index() {
           <div className="statistics">
             <div>
               <NumberScroll
-                imgSrc="/images/patient-volume.png"
+                imgsrc={staticAssetPrefix + '/images/patient-volume.png'}
                 number={150000}
                 title="Monthly Patient Volume"
                 plus
               />
               <NumberScroll
-                imgSrc="/images/surgeon-users.png"
+                imgsrc={staticAssetPrefix + '/images/surgeon-users.png'}
                 number={7000}
                 title="Providers"
                 plus
@@ -127,13 +126,15 @@ export default function Index() {
             </div>
             <div>
               <NumberScroll
-                imgSrc="/images/graphics/episodic-cases.png"
+                imgsrc={
+                  staticAssetPrefix + '/images/graphics/episodic-cases.png'
+                }
                 number={800000}
                 title="Episodic Cases"
                 plus
               />
               <NumberScroll
-                imgSrc="/images/practices.png"
+                imgsrc={staticAssetPrefix + '/images/practices.png'}
                 number={300}
                 title="Practices, ASCs & Hospitals"
                 plus
@@ -159,14 +160,20 @@ export default function Index() {
                 <div id="iphone-calendar-div">
                   <img
                     id="iphone-calendar"
-                    src="/images/product-shots/iphone-calendar.png"
+                    src={
+                      staticAssetPrefix +
+                      '/images/product-shots/iphone-calendar.png'
+                    }
                   />
                 </div>
 
                 <div id="timeline-div">
                   <img
                     id="timeline-graphic"
-                    src="/images/graphics/timeline-graphic.png"
+                    src={
+                      staticAssetPrefix +
+                      '/images/graphics/timeline-graphic.png'
+                    }
                   />
                 </div>
               </div>
@@ -185,14 +192,20 @@ export default function Index() {
                   <div id="iphone-calendar-div">
                     <img
                       id="iphone-calendar"
-                      src="/images/product-shots/iphone-calendar.png"
+                      src={
+                        staticAssetPrefix +
+                        '/images/product-shots/iphone-calendar.png'
+                      }
                     />
                   </div>
 
                   <div id="timeline-div">
                     <img
                       id="timeline-graphic"
-                      src="/images/graphics/timeline-graphic.png"
+                      src={
+                        staticAssetPrefix +
+                        '/images/graphics/timeline-graphic.png'
+                      }
                     />
                   </div>
                 </div>
@@ -229,7 +242,7 @@ export default function Index() {
             </div>
             <img
               id="connecting-graphic"
-              src="/images/graphics/connected-graphic.png"
+              src={staticAssetPrefix + '/images/graphics/connected-graphic.png'}
             />
           </div>
         </div>
@@ -265,7 +278,7 @@ export default function Index() {
               <div className="specialist single-specialist">
                 <img
                   width={188}
-                  src={stateSpecialistData[0].img}
+                  src={staticAssetPrefix + stateSpecialistData[0].img}
                   alt={stateSpecialistData[0].name}
                 />
                 <h4>{stateSpecialistData[0].name}</h4>
@@ -362,7 +375,9 @@ export default function Index() {
               <div className="outer-box">
                 <div className="box">
                   <h4>
-                    <img src="/images/surgeon-users.png" />
+                    <img
+                      src={staticAssetPrefix + '/images/surgeon-users.png'}
+                    />
                     Providers
                   </h4>
                   <p>
@@ -378,7 +393,9 @@ export default function Index() {
                     View Provider Solutions{' '}
                     <img
                       className="chevron-img"
-                      src="/images/graphics/chevron-blue.png"
+                      src={
+                        staticAssetPrefix + '/images/graphics/chevron-blue.png'
+                      }
                     />
                   </button>
                 </div>
@@ -386,7 +403,9 @@ export default function Index() {
               <div className="outer-box">
                 <div className="box">
                   <h4>
-                    <img src="/images/medical-device.png" />
+                    <img
+                      src={staticAssetPrefix + '/images/medical-device.png'}
+                    />
                     Device Partners
                   </h4>
                   <p>
@@ -402,7 +421,9 @@ export default function Index() {
                     View Device Partner Solutions{' '}
                     <img
                       className="chevron-img"
-                      src="/images/graphics/chevron-blue.png"
+                      src={
+                        staticAssetPrefix + '/images/graphics/chevron-blue.png'
+                      }
                     />
                   </button>
                 </div>
@@ -421,20 +442,32 @@ export default function Index() {
               <a
                 href="https://innovaccer.com/marketplace/Intelligent-surgical-planning-from-diagnosis-to-recovery/"
                 target="_blank">
-                <img src="/images/logos/innovacer.png" width={220} />
+                <img
+                  src={staticAssetPrefix + '/images/logos/innovacer.png'}
+                  width={220}
+                />
               </a>
               <a
                 href="https://marketplace.athenahealth.com/product/docspera"
                 target="_blank">
-                <img src="/images/logos/athena-health.png" width={180} />
+                <img
+                  src={staticAssetPrefix + '/images/logos/athena-health.png'}
+                  width={180}
+                />
               </a>
               <a
                 href="https://apporchard.epic.com/Gallery?id=3515"
                 target="_blank">
-                <img src="/images/logos/app-orchard.png" width={170} />
+                <img
+                  src={staticAssetPrefix + '/images/logos/app-orchard.png'}
+                  width={170}
+                />
               </a>
               <a href="https://www.aahks.org/" target="_blank">
-                <img src="/images/logos/AAHKS.jpg" width={170} />
+                <img
+                  src={staticAssetPrefix + '/images/logos/AAHKS.jpg'}
+                  width={170}
+                />
               </a>
               {/* <a href='https://www.prnewswire.com/news-releases/anterior-hip-foundation-and-docspera-partner-to-uncover-valuable-insights-through-data-analytics-in-order-to-advance-anterior-approach-hip-replacement-300605530.html' target='_blank'>
                 <img src='/images/logos/anterior-hip-foundation.png' width={170} />
@@ -442,12 +475,18 @@ export default function Index() {
               <a
                 href="https://www.medicare.gov/manage-your-health/share-your-medicare-claims-medicares-blue-button/organize-share-your-medical-information-claims"
                 target="_blank">
-                <img src="/images/logos/CMS.jpg" width={100} />
+                <img
+                  src={staticAssetPrefix + '/images/logos/CMS.jpg'}
+                  width={100}
+                />
               </a>
               <a
                 href="https://dolby.io/blog/docspera-integrates-dolby-io-with-surgeon-telehealth-solution-in-1-week/"
                 target="_blank">
-                <img src="/images/logos/dolby.png" width={150} />
+                <img
+                  src={staticAssetPrefix + '/images/logos/dolby.png'}
+                  width={150}
+                />
               </a>
             </div>
           </div>

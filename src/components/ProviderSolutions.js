@@ -1,5 +1,6 @@
 import React from 'react';
 import {useRouter} from 'next/router';
+import {staticAssetPrefix} from '../../next.config';
 
 const ProviderSolutions = ({premium}) => {
   const router = useRouter();
@@ -17,7 +18,12 @@ const ProviderSolutions = ({premium}) => {
           <div className="content">
             <div>
               <div className="img-div">
-                <img src="/images/product-shots/Laptop-Calendar.png" />
+                <img
+                  src={
+                    staticAssetPrefix +
+                    '/images/product-shots/Laptop-Calendar.png'
+                  }
+                />
               </div>
               <div className="h4-div">
                 <h4>
@@ -42,7 +48,12 @@ const ProviderSolutions = ({premium}) => {
           <div className="content">
             <div>
               <div className="img-div">
-                <img src="/images/intelligent-scheduler/IntelligentSchedulerImage.jpg" />
+                <img
+                  src={
+                    staticAssetPrefix +
+                    '/images/intelligent-scheduler/IntelligentSchedulerImage.jpg'
+                  }
+                />
               </div>
               <div className="h4-div">
                 <h4>Intelligent Dashboard for Managing Upcoming Cases</h4>
@@ -67,7 +78,9 @@ const ProviderSolutions = ({premium}) => {
           <div className="content">
             <div>
               <div className="img-div">
-                <img src="/images/product-shots/EOC.png" />
+                <img
+                  src={staticAssetPrefix + '/images/product-shots/EOC.png'}
+                />
               </div>
               <div className="h4-div">
                 <h4>

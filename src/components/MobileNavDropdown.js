@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {staticAssetPrefix} from '../../next.config';
 
 const MobileNavDropdown = ({state, title, items}) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -10,7 +11,7 @@ const MobileNavDropdown = ({state, title, items}) => {
         <img
           id={isDropdownOpen ? 'chevron-img' : ''}
           className="chevron-img"
-          src="/images/graphics/chevron.png"
+          src={staticAssetPrefix + '/images/graphics/chevron.png'}
         />
       </div>
 

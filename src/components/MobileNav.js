@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import MobileNavDropdown from './MobileNavDropdown';
 import {useMedia} from '../hooks/useMedia';
 import {useRouter} from 'next/router';
+import {staticAssetPrefix} from '../../next.config';
 
 export default function MobileNav({getLink, href}) {
   const router = useRouter();
@@ -17,11 +18,15 @@ export default function MobileNav({getLink, href}) {
     <nav>
       <div className="nav-bar">
         {isMobileNavOpen ? (
-          <img id="x" src="/images/exit_icon.svg" onClick={openMenu} />
+          <img
+            id="x"
+            src={staticAssetPrefix + '/images/exit_icon.svg'}
+            onClick={openMenu}
+          />
         ) : (
           <img
             id="hamburger"
-            src="/images/graphics/hamburger.png"
+            src={staticAssetPrefix + '/images/graphics/hamburger.png'}
             onClick={openMenu}
           />
         )}
@@ -29,7 +34,10 @@ export default function MobileNav({getLink, href}) {
           <a
             style={{maxWidth: 150, margin: '0 20px'}}
             onClick={() => router.push('/')}>
-            <img src="/images/graphics/logo.svg" width={'100%'} />
+            <img
+              src={staticAssetPrefix + '/images/graphics/logo.svg'}
+              width={'100%'}
+            />
           </a>
         )}
         <a
@@ -49,7 +57,10 @@ export default function MobileNav({getLink, href}) {
               openMenu();
             }}>
             <div>Home</div>
-            <img className="chevron-img" src="/images/graphics/chevron.png" />
+            <img
+              className="chevron-img"
+              src={staticAssetPrefix + '/images/graphics/chevron.png'}
+            />
           </div>
 
           <MobileNavDropdown
@@ -58,7 +69,9 @@ export default function MobileNav({getLink, href}) {
               {
                 display: (
                   <div className="box" onClick={() => router.push('/provider')}>
-                    <img src="/images/surgeon-users.png" />
+                    <img
+                      src={staticAssetPrefix + '/images/surgeon-users.png'}
+                    />
                     Providers
                   </div>
                 ),
@@ -68,7 +81,9 @@ export default function MobileNav({getLink, href}) {
                   <div
                     className="box"
                     onClick={() => router.push('/medical-device')}>
-                    <img src="/images/medical-device.png" />
+                    <img
+                      src={staticAssetPrefix + '/images/medical-device.png'}
+                    />
                     Device Partners
                   </div>
                 ),
@@ -124,7 +139,10 @@ export default function MobileNav({getLink, href}) {
 
           <div onClick={() => router.push('/blog')} className="menu-item">
             <div>Blog</div>
-            <img className="chevron-img" src="/images/graphics/chevron.png" />
+            <img
+              className="chevron-img"
+              src={staticAssetPrefix + '/images/graphics/chevron.png'}
+            />
           </div>
         </div>
       )}

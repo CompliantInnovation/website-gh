@@ -13,6 +13,7 @@ import QuestionPan from '../components/icons/QuestionPan';
 import SolutionBulb from '../components/icons/SolutionBulb';
 import Check from '../components/icons/Check';
 import DoubleArrow from '../components/icons/DoubleArrow';
+import {staticAssetPrefix} from '../../next.config';
 
 export default function IntelligentScheduler() {
   const isBrowser = () => typeof window !== 'undefined';
@@ -133,7 +134,10 @@ export default function IntelligentScheduler() {
                   <li>Easily share cases with care team on single platform</li>
                 </ul>
                 <img
-                  src="/images/intelligent-scheduler/SchedulerImage.jpg"
+                  src={
+                    staticAssetPrefix +
+                    '/images/intelligent-scheduler/SchedulerImage.jpg'
+                  }
                   alt="EMR Image"
                 />
               </div>
@@ -150,7 +154,10 @@ export default function IntelligentScheduler() {
                   <li>Automated capture through digital intake</li>
                 </ul>
                 <img
-                  src="/images/intelligent-scheduler/UnderstandingThing.jpg"
+                  src={
+                    staticAssetPrefix +
+                    '/images/intelligent-scheduler/UnderstandingThing.jpg'
+                  }
                   alt="Assessment Of Patient"
                 />
               </div>
@@ -169,7 +176,10 @@ export default function IntelligentScheduler() {
                   <li>Efficient and Optimized Case Management</li>
                 </ul>
                 <img
-                  src="/images/intelligent-scheduler/IntelligentSchedulerImage.jpg"
+                  src={
+                    staticAssetPrefix +
+                    '/images/intelligent-scheduler/IntelligentSchedulerImage.jpg'
+                  }
                   alt="Intelligent Scheduler Image"
                 />
               </div>

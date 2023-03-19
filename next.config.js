@@ -5,6 +5,7 @@ const envConfig = require('./env-config');
 
 module.exports = {
   basePath: process.env.MOUNT_URL ?? '',
+  staticAssetPrefix: process.env.STATIC_ASSET_PREFIX ?? '',
   assetPrefix: process.env.ASSET_PREFIX ?? '',
   output: 'export',
   trailingSlash: true,

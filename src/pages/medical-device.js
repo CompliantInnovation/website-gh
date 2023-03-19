@@ -5,6 +5,7 @@ import NumberScroll from '../components/NumberScroll';
 import FooterBar from '../components/Footer';
 import ProviderSolutions from '../components/ProviderSolutions';
 import {useMedia} from '../hooks/useMedia';
+import {staticAssetPrefix} from '../../next.config';
 
 export default function MedicalDevicePage() {
   return (
@@ -32,7 +33,9 @@ export default function MedicalDevicePage() {
           including an efficient supply chain.
         </p>
         <img
-          src="/images/drawings/medical-device-art-work.png"
+          src={
+            staticAssetPrefix + '/images/drawings/medical-device-art-work.png'
+          }
           id="business"
           width={570}
         />
@@ -41,13 +44,13 @@ export default function MedicalDevicePage() {
           <div className="statistics">
             <div>
               <NumberScroll
-                imgSrc="/images/surgeon-users.png"
+                imgsrc={staticAssetPrefix + '/images/surgeon-users.png'}
                 number={6000}
                 title="Providers"
                 plus
               />
               <NumberScroll
-                imgSrc="/images/surgical-cases.png"
+                imgsrc={staticAssetPrefix + '/images/surgical-cases.png'}
                 number={350000}
                 title="Surgical Cases"
                 plus
@@ -55,13 +58,13 @@ export default function MedicalDevicePage() {
             </div>
             <div id="placement">
               <NumberScroll
-                imgSrc="/images/medical-device.png"
+                imgsrc={staticAssetPrefix + '/images/medical-device.png'}
                 number={60}
                 title="Top Global Medical Device Companies"
                 percent
               />
               <NumberScroll
-                imgSrc="/images/tech-partners.png"
+                imgsrc={staticAssetPrefix + '/images/tech-partners.png'}
                 number={30}
                 title="Technology Partners"
                 plus
@@ -78,7 +81,9 @@ export default function MedicalDevicePage() {
             <div id="offerings-divs">
               <div>
                 <h3>DocSpera Demand</h3>
-                <img src="/images/case-notification.png" />
+                <img
+                  src={staticAssetPrefix + '/images/case-notification.png'}
+                />
                 <h4>Advanced Case Notification</h4>
                 <p>
                   Early and reliable case demand signal to improve case support
@@ -94,7 +99,10 @@ export default function MedicalDevicePage() {
               </div>
               <div>
                 <h3>DocSpera Premium</h3>
-                <img src="/images/provider-solutions.png" height="auto" />
+                <img
+                  src={staticAssetPrefix + '/images/provider-solutions.png'}
+                  height="auto"
+                />
                 <h4>Integrated Provider Solutions</h4>
                 <p>
                   Flexible platform & modules to integrate and enhance multiple
@@ -112,7 +120,9 @@ export default function MedicalDevicePage() {
               </div>
               <div>
                 <h3>DocSpera Insights</h3>
-                <img src="/images/data-intelligence.png" />
+                <img
+                  src={staticAssetPrefix + '/images/data-intelligence.png'}
+                />
                 <h4>Data Intelligence & RWD Insights</h4>
                 <p>
                   Support the capture of real-world data across the surgical
@@ -139,7 +149,9 @@ export default function MedicalDevicePage() {
             <div id="solve-challenges-divs">
               <div>
                 <h4>Inventory and Logistics Costs</h4>
-                <img src="/images/graphics/efficient.png" />
+                <img
+                  src={staticAssetPrefix + '/images/graphics/efficient.png'}
+                />
                 <p>
                   Improved case preparedness and inventory management through
                   earlier, more integrated real-time updates of surgical case
@@ -152,7 +164,9 @@ export default function MedicalDevicePage() {
               </div>
               <div>
                 <h4>Product/Data Understanding</h4>
-                <img src="/images/graphics/data-driven.png" />
+                <img
+                  src={staticAssetPrefix + '/images/graphics/data-driven.png'}
+                />
                 <p>
                   Deeper understanding of your product performance across
                   continuum of care
@@ -164,7 +178,9 @@ export default function MedicalDevicePage() {
               </div>
               <div>
                 <h4>Market Penetration</h4>
-                <img src="/images/graphics/strategic.png" />
+                <img
+                  src={staticAssetPrefix + '/images/graphics/strategic.png'}
+                />
                 <p style={{maxWidth: 'none'}}>
                   Strengthen market position and become a more strategic partner
                   to your customers through diversified and easily managed
@@ -199,12 +215,18 @@ export default function MedicalDevicePage() {
             {useMedia('(max-width: 850px') ? (
               <img
                 id="ACN-img-mobile"
-                src="/images/graphics/advanced-case-notification-mobile-v3.png"
+                src={
+                  staticAssetPrefix +
+                  '/images/graphics/advanced-case-notification-mobile-v3.png'
+                }
               />
             ) : (
               <img
                 id="ACN-img-desktop"
-                src="/images/graphics/advanced-case-notification-v2.png"
+                src={
+                  staticAssetPrefix +
+                  '/images/graphics/advanced-case-notification-v2.png'
+                }
               />
             )}
           </div>
@@ -223,19 +245,23 @@ export default function MedicalDevicePage() {
               across the surgical continuum
             </p>
             <div id="demand-intel-img-div">
-              <img src="/images/product-shots/demand-intel.png" />
+              <img
+                src={
+                  staticAssetPrefix + '/images/product-shots/demand-intel.png'
+                }
+              />
             </div>
             <div id="insights-copy-div">
               <div>
                 <div className="insight-title-div">
-                  <img src="/images/target.png" />
+                  <img src={staticAssetPrefix + '/images/target.png'} />
                   <h4>Demand Intelligence</h4>
                 </div>
                 <p>View aggregated case demand information by region</p>
               </div>
               <div>
                 <div className="insight-title-div">
-                  <img src="/images/mac.png" />
+                  <img src={staticAssetPrefix + '/images/mac.png'} />
                   <h4>Device Intelligence</h4>
                 </div>
                 <p>
@@ -244,7 +270,7 @@ export default function MedicalDevicePage() {
               </div>
               <div>
                 <div className="insight-title-div">
-                  <img src="/images/line-graph.png" />
+                  <img src={staticAssetPrefix + '/images/line-graph.png'} />
                   <h4>Device Registry</h4>
                 </div>
                 <p>
@@ -589,16 +615,12 @@ export default function MedicalDevicePage() {
           height: 50px;
         }
 
-        @media (max-width: 950px & & min-width
-
-        :
-
-        600
-        px) {
+        @media (max-width: 950px) and (min-width: 600px) {
           .insight-title-div {
             height: 70px;
           }
         }
+
         .insight-title-div img {
           width: 40px;
           height: auto;
